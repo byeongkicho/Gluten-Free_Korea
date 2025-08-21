@@ -3,7 +3,6 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --border: rgba(0, 0, 0, 0.1);
 }
 
 @theme inline {
@@ -13,20 +12,11 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* Respect system preference */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    --border: rgba(255, 255, 255, 0.15);
   }
-}
-
-/* Also respond to manual toggle via .dark on html */
-.dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --border: rgba(255, 255, 255, 0.15);
 }
 
 body {

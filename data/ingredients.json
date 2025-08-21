@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Soy Sauce (간장)",
+    "status": "Avoid",
+    "note": "Usually contains wheat unless labeled gluten-free."
+  },
+  {
+    "name": "Rice (쌀)",
+    "status": "Safe",
+    "note": "Naturally gluten-free and widely available."
+  },
+  {
+    "name": "Barley Tea (보리차)",
+    "status": "Avoid",
+    "note": "Made from barley; contains gluten."
+  },
+  {
+    "name": "Sweet Potato Noodles (당면)",
+    "status": "Safe",
+    "note": "Made from sweet potato starch."
+  },
+  {
+    "name": "Gochujang (고추장)",
+    "status": "Caution",
+    "note": "Often contains wheat; check labels for GF versions."
+  },
+  {
+    "name": "Doenjang (된장)",
+    "status": "Caution",
+    "note": "Some brands include wheat; verify ingredients."
+  },
+  {
+    "name": "Buckwheat (메밀)",
+    "status": "Caution",
+    "note": "Gluten-free by itself but cross-contact is common in noodle shops."
+  },
+  {
+    "name": "Rice Cakes (떡)",
+    "status": "Caution",
+    "note": "Base is rice, but fillings/sauces may contain gluten."
+  },
+  {
+    "name": "Sesame Oil (참기름)",
+    "status": "Safe",
+    "note": "Pure oil is gluten-free."
+  },
+  {
+    "name": "Malt Syrup (물엿)",
+    "status": "Avoid",
+    "note": "May be derived from barley; avoid unless verified."
+  }
+]

@@ -1,6 +1,12 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-200 text-center py-4 text-sm text-gray-500 mt-12">
+    <footer
+      className="text-center py-4 text-sm mt-12"
+      style={{
+        color: "var(--foreground)",
+        borderTop: "1px solid var(--border)",
+      }}
+    >
       © {new Date().getFullYear()} GF Korea. All rights reserved.
     </footer>
   );

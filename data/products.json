@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Gluten-Free Soy Sauce",
+    "vendor": "Online Market",
+    "price": "₩7,900",
+    "note": "Certified GF alternative to traditional soy sauce.",
+    "url": "https://example.com/gf-soy-sauce?aff_id=YOUR_ID",
+    "image": "/globe.svg",
+    "tags": ["Pantry", "Sauce"]
+  },
+  {
+    "name": "Sweet Potato Noodles (당면)",
+    "vendor": "K-Shop",
+    "price": "₩5,500",
+    "note": "Naturally gluten-free; perfect for japchae.",
+    "url": "https://example.com/dangmyeon?aff_id=YOUR_ID",
+    "image": "/window.svg",
+    "tags": ["Noodles", "Staples"]
+  },
+  {
+    "name": "GF Snack Box",
+    "vendor": "SnackHub",
+    "price": "₩19,900",
+    "note": "Curated gluten-free Korean snacks.",
+    "url": "https://example.com/gf-snack-box?aff_id=YOUR_ID",
+    "image": "/file.svg",
+    "tags": ["Snacks", "Bundle"]
+  },
+  {
+    "name": "Rice Flour (쌀가루)",
+    "vendor": "Baking Store",
+    "price": "₩6,900",
+    "note": "Great for baking and frying.",
+    "url": "https://example.com/rice-flour?aff_id=YOUR_ID",
+    "image": "/next.svg",
+    "tags": ["Baking", "Staples"]
+  },
+  {
+    "name": "GF Gochujang",
+    "vendor": "Kimchi Mart",
+    "price": "₩8,900",
+    "note": "Wheat-free gochujang; check label details.",
+    "url": "https://example.com/gf-gochujang?aff_id=YOUR_ID",
+    "image": "/vercel.svg",
+    "tags": ["Pantry", "Sauce"]
+  }
+]
