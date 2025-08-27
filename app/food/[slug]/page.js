@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import restaurants from "../../../data/restaurants.json";
+import slugify from "@/lib/slugify";
 
 export default function RestaurantDetailPage({ params }) {
-  const restaurant = restaurants.find(
-    (r) => r.name.toLowerCase().replace(/[^a-z0-9]/g, "-") === params.slug
-  );
+  const restaurant = restaurants.find((r) => slugify(r.name) === params.slug);
 
   if (!restaurant) {
     return (

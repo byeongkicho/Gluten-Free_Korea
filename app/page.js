@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Badge from "@/app/components/ui/Badge";
 
 const recentUpdates = [
   {
@@ -178,17 +179,17 @@ export default function Home() {
                 className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <span
-                    className={`text-xs px-2 py-1 rounded-full font-medium ${
+                  <Badge
+                    variant={
                       item.type === "Restaurant"
-                        ? "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300"
+                        ? "blue"
                         : item.type === "Product"
-                        ? "bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300"
-                        : "bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300"
-                    }`}
+                        ? "purple"
+                        : "green"
+                    }
                   >
                     {item.type}
-                  </span>
+                  </Badge>
                   <span className="text-xs text-gray-500 dark:text-gray-400">
                     {new Date(item.updateDate).toLocaleDateString()}
                   </span>

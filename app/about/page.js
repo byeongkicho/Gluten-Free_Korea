@@ -1,54 +1,26 @@
+import AboutContent, { metadata as aboutMeta } from "@/content/about.mdx";
+
+export const metadata = aboutMeta;
+
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-950">
-      {/* Hero Section */}
+      {/* Hero Section (from MDX metadata) */}
       <section className="py-20 px-6 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white transition-all duration-300 hover:scale-105">
-            About GF Korea
+            {aboutMeta.title}
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-600 dark:text-gray-300 transition-colors duration-300 hover:text-gray-800 dark:hover:text-gray-100">
-            Helping the gluten-free community navigate Korea safely
+            {aboutMeta.description}
           </p>
         </div>
       </section>
 
-      {/* Story Section */}
+      {/* Story Section (render MDX) */}
       <section className="py-16 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white transition-all duration-300 hover:text-blue-600 dark:hover:text-blue-400">
-                Why I Started This Website
-              </h2>
-              <div className="space-y-4 text-gray-600 dark:text-gray-300">
-                <p className="transition-all duration-300 hover:text-gray-800 dark:hover:text-gray-100">
-                  After moving back to Korea, I realized how difficult it is to
-                  find safe gluten-free food, especially for people like my wife
-                  who has celiac disease.
-                </p>
-                <p className="transition-all duration-300 hover:text-gray-800 dark:hover:text-gray-100">
-                  Even restaurants that claim to offer gluten-free bread
-                  sometimes use wheat flour blends. I've spent a lot of time
-                  researching and verifying safe restaurants in Seoul and across
-                  Korea, and I want to share those tips to help others stay
-                  safe.
-                </p>
-              </div>
-            </div>
-            <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 transition-all duration-300 hover:shadow-lg hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer transform active:scale-95">
-              <div className="text-6xl mb-4 transition-transform duration-300 hover:rotate-12">
-                🏠
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white transition-colors duration-300 hover:text-blue-600 dark:hover:text-blue-400">
-                Personal Experience
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 transition-colors duration-300 hover:text-gray-800 dark:hover:text-gray-100">
-                Living with celiac disease in Korea taught us the importance of
-                community knowledge and verified information.
-              </p>
-            </div>
-          </div>
+        <div className="max-w-3xl mx-auto prose prose-zinc dark:prose-invert">
+          <AboutContent />
         </div>
       </section>
 

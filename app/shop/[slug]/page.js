@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import products from "../../../data/products.json";
+import slugify from "@/lib/slugify";
 
 export default function ProductDetailPage({ params }) {
-  const product = products.find(
-    (p) => p.name.toLowerCase().replace(/[^a-z0-9]/g, "-") === params.slug
-  );
+  const product = products.find((p) => slugify(p.name) === params.slug);
 
   if (!product) {
     return (
