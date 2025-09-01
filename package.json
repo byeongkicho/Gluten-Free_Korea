@@ -9,11 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@mdx-js/react": "^3.1.0",
-=======
     "@next/mdx": "^15.5.0",
->>>>>>> 678372c912866381be375b08499fe3105d52ba9d
     "@supabase/supabase-js": "^2.56.0",
     "next": "15.4.3",
     "react": "19.1.0",
@@ -21,11 +18,8 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-<<<<<<< HEAD
     "@mdx-js/loader": "^3.1.0",
     "@next/mdx": "^15.5.2",
-=======
->>>>>>> 678372c912866381be375b08499fe3105d52ba9d
     "@tailwindcss/postcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.4.3",

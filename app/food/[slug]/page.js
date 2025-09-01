@@ -1,10 +1,13 @@
+// app/food/[slug]/page.js
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import restaurants from "../../../data/restaurants.json";
 import slugify from "@/lib/slugify";
 
-export default function RestaurantDetailPage({ params }) {
-  const restaurant = restaurants.find((r) => slugify(r.name) === params.slug);
+export default async function RestaurantDetailPage({ params }) {
+  const { slug } = await params; // ⬅️ await params
+  const restaurant = restaurants.find((r) => slugify(r.name) === slug);
 
   if (!restaurant) {
     return (
@@ -16,10 +19,11 @@ export default function RestaurantDetailPage({ params }) {
           <p className="text-gray-600 dark:text-gray-300 mb-6">
             The restaurant you're looking for doesn't exist.
           </p>
-          <Link href="/food">
-            <span className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-              Back to Food Guide
-            </span>
+          <Link
+            href="/food"
+            className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            Back to Food Guide
           </Link>
         </div>
       </main>
@@ -32,10 +36,11 @@ export default function RestaurantDetailPage({ params }) {
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="mb-6">
-            <Link href="/food">
-              <span className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors">
-                ← Back to Food Guide
-              </span>
+            <Link
+              href="/food"
+              className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+            >
+              ← Back to Food Guide
             </Link>
           </div>
 
@@ -47,8 +52,9 @@ export default function RestaurantDetailPage({ params }) {
                 alt={restaurant.name}
                 fill
                 className="object-cover"
+                priority
               />
-              <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+              <div className="absolute inset-0 bg-black/20" />
               <div className="absolute bottom-6 left-6 right-6">
                 <div className="flex items-center justify-between">
                   <div>
@@ -85,9 +91,9 @@ export default function RestaurantDetailPage({ params }) {
                     Specialties
                   </h3>
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {restaurant.tags.map((tag, index) => (
+                    {(restaurant.tags ?? []).map((tag, i) => (
                       <span
-                        key={index}
+                        key={i}
                         className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium"
                       >
                         {tag}
@@ -149,4 +155,19 @@ export default function RestaurantDetailPage({ params }) {
       </section>
     </main>
   );
+}
+
+// Pre-generate static paths (optional but nice with JSON data)
+export function generateStaticParams() {
+  return restaurants.map((r) => ({ slug: slugify(r.name) }));
+}
+
+// Metadata example (also must await params)
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const item = restaurants.find((r) => slugify(r.name) === slug);
+  return {
+    title: item ? `${item.name} – Gluten-Free Guide` : "Restaurant Not Found",
+    description: item?.note ?? "Gluten-free food guide in Korea",
+  };
 }

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import Badge from "@/app/components/ui/Badge";
+import Badge from "./components/ui/Badge";
 
 const recentUpdates = [
   {
