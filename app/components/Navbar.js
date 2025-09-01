@@ -17,16 +17,27 @@ export default function Navbar() {
                 Home
               </span>
             </Link>
+<<<<<<< HEAD
+=======
+            <Link href="/food">
+              <span className="text-lg font-semibold text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-300 cursor-pointer">
+                Food
+              </span>
+            </Link>
+>>>>>>> 678372c912866381be375b08499fe3105d52ba9d
             <Link href="/shop">
               <span className="text-lg font-semibold text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-300 cursor-pointer">
                 Shop
               </span>
             </Link>
+<<<<<<< HEAD
             <Link href="/dining">
               <span className="text-lg font-semibold text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-300 cursor-pointer">
                 Dining
               </span>
             </Link>
+=======
+>>>>>>> 678372c912866381be375b08499fe3105d52ba9d
             <Link href="/about">
               <span className="text-lg font-semibold text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-300 cursor-pointer">
                 About

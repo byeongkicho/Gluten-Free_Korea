@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 
 import AboutContent, { metadata as aboutMeta } from "@/content/about.mdx";
 import MDXClientRenderer from "app/components/MDXClientRenderer.tsx"
+=======
+import AboutContent, { metadata as aboutMeta } from "@/content/about.mdx";
+>>>>>>> 678372c912866381be375b08499fe3105d52ba9d
 
 export const metadata = aboutMeta;
 
