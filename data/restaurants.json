@@ -1,0 +1,83 @@
+[
+  {
+    "name": "Sunny Bakery",
+    "type": "Bakery",
+    "location": "Seoul, Gangnam",
+    "note": "Dedicated gluten-free bakery with breads and cakes.",
+    "tags": ["Dedicated GF", "Desserts"],
+    "rating": 4.8,
+    "image": "/globe.svg"
+  },
+  {
+    "name": "Rice & Shine",
+    "type": "Restaurant",
+    "location": "Seoul, Itaewon",
+    "note": "Korean fusion with rice-based dishes.",
+    "tags": ["Rice Bowls", "Fusion"],
+    "rating": 4.6,
+    "image": "/window.svg"
+  },
+  {
+    "name": "Green Table",
+    "type": "Cafe",
+    "location": "Busan, Haeundae",
+    "note": "Gluten-free desserts and specialty coffee.",
+    "tags": ["Desserts", "Coffee"],
+    "rating": 4.5,
+    "image": "/file.svg"
+  },
+  {
+    "name": "Safe Spoon",
+    "type": "Restaurant",
+    "location": "Seoul, Hongdae",
+    "note": "Grilled meats and sides with clear allergen labels.",
+    "tags": ["Grill", "Allergen Labels"],
+    "rating": 4.7,
+    "image": "/next.svg"
+  },
+  {
+    "name": "Flourless Seoul",
+    "type": "Bakery",
+    "location": "Seoul, Apgujeong",
+    "note": "Cakes and pastries made without wheat.",
+    "tags": ["Cakes", "Pastries"],
+    "rating": 4.4,
+    "image": "/vercel.svg"
+  },
+  {
+    "name": "Kimchi Kitchen",
+    "type": "Restaurant",
+    "location": "Daegu",
+    "note": "Traditional dishes with gluten-free substitutions.",
+    "tags": ["Traditional", "Substitutions"],
+    "rating": 4.3,
+    "image": "/globe.svg"
+  },
+  {
+    "name": "Bean & Rice",
+    "type": "Cafe",
+    "location": "Incheon",
+    "note": "Light meals, salads, and smoothies.",
+    "tags": ["Light Meals", "Smoothies"],
+    "rating": 4.2,
+    "image": "/file.svg"
+  },
+  {
+    "name": "Seaside GF Bakes",
+    "type": "Bakery",
+    "location": "Busan",
+    "note": "Coastal bakery with seasonal items.",
+    "tags": ["Seasonal", "Bread"],
+    "rating": 4.5,
+    "image": "/window.svg"
+  },
+  {
+    "name": "Seoul Noodle Lab (GF)",
+    "type": "Restaurant",
+    "location": "Seoul, Yeouido",
+    "note": "Hand-pulled noodles with rice and buckwheat blends.",
+    "tags": ["Noodles", "Buckwheat"],
+    "rating": 4.6,
+    "image": "/next.svg"
+  }
+]
