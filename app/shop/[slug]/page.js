@@ -14,7 +14,7 @@ export default function ProductDetailPage({ params }) {
             Product Not Found
           </h1>
           <p className="text-gray-600 dark:text-gray-300 mb-6">
-            The product you're looking for doesn't exist.
+            The product you are looking for does not exist.
           </p>
           <Link href="/shop">
             <span className="inline-block px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">

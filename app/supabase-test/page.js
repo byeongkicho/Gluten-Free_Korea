@@ -152,7 +152,7 @@ export default function SupabaseTestPage() {
         <div className="bg-blue-50 rounded-lg p-6 mt-6">
           <h3 className="text-lg font-semibold text-blue-900 mb-3">Next Steps</h3>
           <ul className="text-blue-800 space-y-2">
-            <li>• Make sure you've created a <code className="bg-blue-100 px-1 rounded">.env.local</code> file with your Supabase credentials</li>
+            <li>• Make sure you have created a <code className="bg-blue-100 px-1 rounded">.env.local</code> file with your Supabase credentials</li>
             <li>• Test the connection using the button above</li>
             <li>• Click on any table name to view its data</li>
             <li>• Use the <code className="bg-blue-100 px-1 rounded">getSupabaseClient()</code> function in your components to access data</li>

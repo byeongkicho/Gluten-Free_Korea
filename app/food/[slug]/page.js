@@ -17,7 +17,7 @@ export default async function RestaurantDetailPage({ params }) {
             Restaurant Not Found
           </h1>
           <p className="text-gray-600 dark:text-gray-300 mb-6">
-            The restaurant you're looking for doesn't exist.
+            The restaurant you are looking for does not exist.
           </p>
           <Link
             href="/food"
