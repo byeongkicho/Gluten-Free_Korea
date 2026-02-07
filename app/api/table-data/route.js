@@ -1,4 +1,6 @@
-import { getTableData } from '../../../lib/supabaseClient.js';
+export const runtime = "edge";
+
+import { getTableData } from "../../../lib/supabaseClient.js";
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);

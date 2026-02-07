@@ -1,40 +1,44 @@
-# Gluten Free Website Project
+# Gluten-Free Korea
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+A practical guide for people with celiac disease or gluten sensitivity living in Korea or visiting Korea.
 
-## Getting Started
+## What this site is
 
-First, run the development server:
+- Dining directory: gluten-free friendly restaurants/cafes (with notes and safety caveats)
+- Food guide: ingredient safety + practical tips
+- Shop essentials: recommended gluten-free products (affiliate disclosure)
+
+## Tech
+
+- Next.js (App Router)
+- Tailwind CSS
+- Optional Supabase (falls back to local JSON when env vars are not set)
+
+## Local development
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npm run lint
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment (Cloudflare Pages)
 
-## Learn More
+See `.ai/checklists/deploy-pages.md`.
 
-To learn more about Next.js, take a look at the following resources:
+## Environment variables (optional)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+If you choose to enable Supabase, set these in the hosting dashboard (do not commit):
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `NEXT_PUBLIC_SUPABASE_URL=YOUR_VALUE_HERE`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_VALUE_HERE`
 
-## Deploy on Vercel
+## Affiliate disclosure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-> > > > > > > 678372c912866381be375b08499fe3105d52ba9d
+Some links may be affiliate links. If you purchase through them, we may earn a commission at no extra cost to you.

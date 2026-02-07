@@ -1,4 +1,6 @@
-import { testSupabaseConnection } from '../../../lib/supabaseClient.js';
+export const runtime = "edge";
+
+import { testSupabaseConnection } from "../../../lib/supabaseClient.js";
 
 export async function GET() {
   try {

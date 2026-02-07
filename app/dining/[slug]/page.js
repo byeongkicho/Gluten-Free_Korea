@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { notFound } from "next/navigation";
 import Card from "@/app/components/ui/Card";
 import Badge from "@/app/components/ui/Badge";

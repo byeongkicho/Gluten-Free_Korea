@@ -9,16 +9,26 @@ Deploy this Next.js site to Cloudflare Pages cheaply and repeatably.
 - No secrets committed.
 - Build artifacts not committed (`.next/`, `out/`).
 
-## Cloudflare Pages settings
+## Recommended approach (fastest for Next.js on Pages)
 
-- Framework preset: Next.js (if available)
-- Build command: `npm run build`
-- Output directory:
-  - If using Next.js SSR/Edge: follow Cloudflare Pages Next integration (no static output dir)
-  - If exporting static site: `out` (requires `next export` or `output: 'export'`)
+Use Cloudflare's Next.js adapter during the build.
+
+- Add dev dependency: `@cloudflare/next-on-pages`
+- Build command (Cloudflare Pages):
+
+```bash
+npm run build && npx @cloudflare/next-on-pages
+```
 
 Notes:
-- This repo appears to use App Router + dynamic routes. Default assumption: SSR/Edge compatible deployment.
+- This produces a `.vercel/output`-style bundle that Cloudflare Pages can run.
+- Do not commit generated output.
+
+## Cloudflare Pages settings
+
+- Framework preset: Next.js
+- Build command: `npm run build && npx @cloudflare/next-on-pages`
+- Build output directory: `.vercel/output/static`
 
 ## Environment variables (placeholders)
 
@@ -30,7 +40,7 @@ If Supabase is enabled later, set in Cloudflare dashboard (do not commit):
 ## Monetization (placeholders)
 
 - AdSense: add verification/ads script later (no keys committed)
-- Coupang Partners: links should include `rel="nofollow sponsored"` and clear disclosure.
+- Coupang Partners: links should include `rel=\"nofollow sponsored\"` and clear disclosure.
 
 ## Verify (local)
 
@@ -45,6 +55,6 @@ Functional checks:
 
 - Home loads
 - `/food`, `/shop`, `/dining` load
-- Deep-link refresh works for `/food/<slug>` and `/shop/<slug>`
+- Deep-link refresh works for `/food/<slug>`, `/dining/<slug>`, `/shop/<slug>`
 - Images load
 - No runtime errors when Supabase env vars are missing (should fall back to local JSON)

@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { getSupabaseClient } from "@/lib/supabaseClient.js";
 
 export async function GET() {
