@@ -50,6 +50,11 @@ export default function Home() {
             Your guide to safe gluten-free dining and shopping in Korea
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/guides/getting-started">
+              <span className="inline-block px-8 py-3 rounded-lg font-semibold transition-all hover:scale-105 bg-gray-900 text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100">
+                Start here →
+              </span>
+            </Link>
             <Link href="/food">
               <span className="inline-block px-8 py-3 rounded-lg font-semibold transition-all hover:scale-105 bg-blue-600 text-white hover:bg-blue-700">
                 Explore Food Guide →
