@@ -6,7 +6,7 @@
     "note": "Dedicated gluten-free bakery with breads and cakes.",
     "tags": ["Dedicated GF", "Desserts"],
     "rating": 4.8,
-    "image": "/globe.svg"
+    "image": "/images/food/sunny-bakery.svg"
   },
   {
     "name": "Rice & Shine",
@@ -15,7 +15,7 @@
     "note": "Korean fusion with rice-based dishes.",
     "tags": ["Rice Bowls", "Fusion"],
     "rating": 4.6,
-    "image": "/window.svg"
+    "image": "/images/food/rice-shine.svg"
   },
   {
     "name": "Green Table",
@@ -24,7 +24,7 @@
     "note": "Gluten-free desserts and specialty coffee.",
     "tags": ["Desserts", "Coffee"],
     "rating": 4.5,
-    "image": "/file.svg"
+    "image": "/images/food/green-table.svg"
   },
   {
     "name": "Safe Spoon",
@@ -33,7 +33,7 @@
     "note": "Grilled meats and sides with clear allergen labels.",
     "tags": ["Grill", "Allergen Labels"],
     "rating": 4.7,
-    "image": "/next.svg"
+    "image": "/images/food/safe-spoon.svg"
   },
   {
     "name": "Flourless Seoul",
@@ -42,7 +42,7 @@
     "note": "Cakes and pastries made without wheat.",
     "tags": ["Cakes", "Pastries"],
     "rating": 4.4,
-    "image": "/vercel.svg"
+    "image": "/images/food/flourless-seoul.svg"
   },
   {
     "name": "Kimchi Kitchen",
@@ -51,7 +51,7 @@
     "note": "Traditional dishes with gluten-free substitutions.",
     "tags": ["Traditional", "Substitutions"],
     "rating": 4.3,
-    "image": "/globe.svg"
+    "image": "/images/food/kimchi-kitchen.svg"
   },
   {
     "name": "Bean & Rice",
@@ -60,7 +60,7 @@
     "note": "Light meals, salads, and smoothies.",
     "tags": ["Light Meals", "Smoothies"],
     "rating": 4.2,
-    "image": "/file.svg"
+    "image": "/images/food/bean-rice.svg"
   },
   {
     "name": "Seaside GF Bakes",
@@ -69,7 +69,7 @@
     "note": "Coastal bakery with seasonal items.",
     "tags": ["Seasonal", "Bread"],
     "rating": 4.5,
-    "image": "/window.svg"
+    "image": "/images/food/seaside-gf-bakes.svg"
   },
   {
     "name": "Seoul Noodle Lab (GF)",
@@ -78,6 +78,6 @@
     "note": "Hand-pulled noodles with rice and buckwheat blends.",
     "tags": ["Noodles", "Buckwheat"],
     "rating": 4.6,
-    "image": "/next.svg"
+    "image": "/images/food/seoul-noodle-lab-gf.svg"
   }
 ]
