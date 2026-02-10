@@ -9,7 +9,7 @@ import slugify from "@/lib/slugify";
 
 export default async function DiningPlacePage({ params }) {
   const restaurants = await fetchRestaurants();
-  const slug = params?.slug;
+  const { slug } = await params;
 
   const restaurant = restaurants.find((r) => {
     const rSlug = r.slug || slugify(r.name);
