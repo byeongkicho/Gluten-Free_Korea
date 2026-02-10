@@ -45,15 +45,22 @@
     "type": "Dining",
     "location": "Seoul, Yongsan-gu (Hannam)",
     "address": "서울 용산구 한남동 738-15",
-    "note": "Gluten-free pizza option (user-submitted). Verify cross-contamination and kitchen procedures on visit.",
-    "tags": ["GF options", "Pizza"],
+    "note": "A gluten-free pizza spot founded by an owner with celiac experience (user-reported). Made to order; when it is busy, expect a wait. Recommended: four-mushroom pizza. Cool interior with nostalgic pop music; located on B1. (User review, 2026-02-10; still verify on visit.)",
+    "tags": ["Dedicated GF", "Pizza"],
     "rating": null,
     "image": "/images/food/237-pizza.svg",
+    "photos": [
+      "/uploads/food/237-pizza/237-pizza-01.jpg",
+      "/uploads/food/237-pizza/237-pizza-02.jpg",
+      "/uploads/food/237-pizza/237-pizza-03.jpg",
+      "/uploads/food/237-pizza/237-pizza-04.jpg"
+    ],
     "naverMapUrl": "https://naver.me/GV2t9Zs5",
     "website": "https://www.237pizza.com/",
     "sources": [
       "User submitted (Excel, 2026-02-10)",
-      "https://www.237pizza.com/"
+      "https://www.237pizza.com/",
+      "User photos + review (Telegram, 2026-02-10)"
     ]
   },
   {
