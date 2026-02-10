@@ -88,7 +88,7 @@ export default async function GuidePage({ params }: PageProps) {
           </header>
 
           <article className="mt-10 prose prose-zinc dark:prose-invert max-w-none prose-a:font-semibold prose-a:underline-offset-4 prose-a:text-blue-700 dark:prose-a:text-blue-300">
-            <GuideBody guide={guide} />
+            <GuideBody slug={guide.slug} />
           </article>
         </div>
       </section>

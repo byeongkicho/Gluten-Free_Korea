@@ -1,32 +1,42 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
-import type { Guide } from "@/lib/guides";
+async function loadGuideComponent(slug: string) {
+  // Keep this explicit (no filesystem scanning) to match repo guardrails.
+  switch (slug) {
+    case "getting-started":
+      return (await import("@/content/guides/getting-started.mdx")).default;
+    case "dining-card-korean":
+      return (await import("@/content/guides/dining-card-korean.mdx")).default;
+    default:
+      return null;
+  }
+}
 
-export default function GuideBody({ guide }: { guide: Guide }) {
+export default function GuideBody({ slug }: { slug: string }) {
   const [Component, setComponent] = useState<React.ComponentType | null>(null);
-
-  const loader = useMemo(() => guide.load, [guide]);
 
   useEffect(() => {
     let cancelled = false;
-    loader()
-      .then((mod) => {
-        if (!cancelled) setComponent(() => mod.default);
+
+    loadGuideComponent(slug)
+      .then((C) => {
+        if (!cancelled) setComponent(() => C);
       })
       .catch(() => {
         if (!cancelled) setComponent(null);
       });
+
     return () => {
       cancelled = true;
     };
-  }, [loader]);
+  }, [slug]);
 
   if (!Component) {
     return (
       <div className="text-sm text-gray-600 dark:text-gray-300">
-        Loading guide
+        Loading guide...
       </div>
     );
   }

@@ -11,7 +11,6 @@ export type Guide = {
   meta: GuideMeta;
   // Lightweight heuristic: store minutes directly to avoid heavy parsing deps.
   readingMinutes?: number;
-  load: () => Promise<{ default: React.ComponentType }>;
 };
 
 export const guides: Guide[] = [
@@ -26,7 +25,6 @@ export const guides: Guide[] = [
       tags: ["Guide", "Korea", "Celiac", "Gluten-Free"],
     },
     readingMinutes: 6,
-    load: () => import("@/content/guides/getting-started.mdx"),
   },
   {
     slug: "dining-card-korean",
@@ -39,7 +37,6 @@ export const guides: Guide[] = [
       tags: ["Guide", "Korea", "Celiac", "Dining Card"],
     },
     readingMinutes: 4,
-    load: () => import("@/content/guides/dining-card-korean.mdx"),
   },
 ].sort((a, b) => {
   const aUpdated = a.meta.updated || a.meta.date || "";
