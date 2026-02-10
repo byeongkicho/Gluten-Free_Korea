@@ -23,8 +23,16 @@
     "image": "/images/food/monil2-house.svg",
     "naverMapUrl": "https://naver.me/Gj6g4AOw",
     "website": "https://www.instagram.com/monil2_house",
+    "photos": [
+      "/uploads/food/monil2-house/monil2-house-01.jpg",
+      "/uploads/food/monil2-house/monil2-house-02.jpg",
+      "/uploads/food/monil2-house/monil2-house-03.jpg",
+      "/uploads/food/monil2-house/monil2-house-04.jpg",
+      "/uploads/food/monil2-house/monil2-house-05.jpg"
+    ],
     "sources": [
-      "https://www.findmeglutenfree.com/biz/monil2-house/6153761948565504"
+      "https://www.findmeglutenfree.com/biz/monil2-house/6153761948565504",
+      "User photos (Telegram, 2026-02-10)"
     ]
   },
   {
@@ -37,9 +45,10 @@
     "rating": null,
     "image": "/images/food/237-pizza.svg",
     "naverMapUrl": "https://naver.me/GV2t9Zs5",
-    "website": "237 피자 | 100% 글루텐 프리 나폴리 피자",
+    "website": "https://www.237pizza.com/",
     "sources": [
-      "User submitted (Excel, 2026-02-10)"
+      "User submitted (Excel, 2026-02-10)",
+      "https://www.237pizza.com/"
     ]
   },
   {
