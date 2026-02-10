@@ -1,83 +1,81 @@
 [
   {
-    "name": "Sunny Bakery",
+    "name": "Sunnyhouse",
+    "type": "Bakery / Cafe",
+    "location": "Seoul, Mapo-gu (Sangsu)",
+    "note": "Gluten-free cafe & bakery (community-reported). Verify current address and cross-contamination policies on visit.",
+    "tags": ["GF options", "Dessert", "Cafe"],
+    "rating": null,
+    "image": "/images/food/sunnyhouse.svg",
+    "naverMapUrl": "https://map.naver.com/v5/search/Sunnyhouse%20%EC%84%B1%EC%88%98%20%EA%B0%95%EB%B3%80%20%EC%84%9C%EC%9A%B8",
+    "sources": [
+      "https://www.findmeglutenfree.com/biz/sunnyhouse/5158248445116416"
+    ]
+  },
+  {
+    "name": "모닐이네하우스 monil2_house",
     "type": "Bakery",
-    "location": "Seoul, Gangnam",
-    "note": "Dedicated gluten-free bakery with breads and cakes.",
-    "tags": ["Dedicated GF", "Desserts"],
-    "rating": 4.8,
-    "image": "/images/food/sunny-bakery.svg"
+    "location": "Seoul, Mapo-gu (Yeonnam)",
+    "note": "Dedicated gluten-free bakery/cafe (community-reported). Still verify ingredients and processes on visit.",
+    "tags": ["Dedicated GF", "Bread", "Dessert"],
+    "rating": null,
+    "image": "/images/food/monil2-house.svg",
+    "naverMapUrl": "https://map.naver.com/v5/search/%EB%AA%A8%EB%8B%90%EC%9D%B4%EB%84%A4%ED%95%98%EC%9A%B0%EC%8A%A4",
+    "sources": [
+      "https://www.findmeglutenfree.com/biz/monil2-house/6153761948565504"
+    ]
   },
   {
-    "name": "Rice & Shine",
-    "type": "Restaurant",
-    "location": "Seoul, Itaewon",
-    "note": "Korean fusion with rice-based dishes.",
-    "tags": ["Rice Bowls", "Fusion"],
-    "rating": 4.6,
-    "image": "/images/food/rice-shine.svg"
-  },
-  {
-    "name": "Green Table",
+    "name": "café interact",
     "type": "Cafe",
-    "location": "Busan, Haeundae",
-    "note": "Gluten-free desserts and specialty coffee.",
-    "tags": ["Desserts", "Coffee"],
-    "rating": 4.5,
-    "image": "/images/food/green-table.svg"
+    "location": "Seoul, Gangnam-gu (Nonhyeon)",
+    "note": "Dedicated gluten-free dessert cafe (community-reported). Great option for cakes/pastries.",
+    "tags": ["Dedicated GF", "Dessert", "Cafe"],
+    "rating": null,
+    "image": "/images/food/cafe-interact.svg",
+    "naverMapUrl": "https://map.naver.com/v5/search/cafe%20interact%20%EB%85%BC%ED%98%84",
+    "sources": [
+      "https://www.findmeglutenfree.com/biz/cafe-interact/5329750536617984"
+    ]
   },
   {
-    "name": "Safe Spoon",
-    "type": "Restaurant",
-    "location": "Seoul, Hongdae",
-    "note": "Grilled meats and sides with clear allergen labels.",
-    "tags": ["Grill", "Allergen Labels"],
-    "rating": 4.7,
-    "image": "/images/food/safe-spoon.svg"
-  },
-  {
-    "name": "Flourless Seoul",
+    "name": "KETOBBANG",
     "type": "Bakery",
-    "location": "Seoul, Apgujeong",
-    "note": "Cakes and pastries made without wheat.",
-    "tags": ["Cakes", "Pastries"],
-    "rating": 4.4,
-    "image": "/images/food/flourless-seoul.svg"
+    "location": "Seoul, Mapo-gu (Mangwon)",
+    "note": "Dedicated gluten-free (keto-style) bakes (community-reported).",
+    "tags": ["Dedicated GF", "Keto", "Dessert"],
+    "rating": null,
+    "image": "/images/food/ketobbang.svg",
+    "naverMapUrl": "https://map.naver.com/v5/search/KETOBBANG%20%EB%A7%9D%EC%9B%90",
+    "sources": [
+      "https://www.findmeglutenfree.com/biz/ketobbang/5620864086835200"
+    ]
   },
   {
-    "name": "Kimchi Kitchen",
-    "type": "Restaurant",
-    "location": "Daegu",
-    "note": "Traditional dishes with gluten-free substitutions.",
-    "tags": ["Traditional", "Substitutions"],
-    "rating": 4.3,
-    "image": "/images/food/kimchi-kitchen.svg"
-  },
-  {
-    "name": "Bean & Rice",
+    "name": "연남다방",
     "type": "Cafe",
-    "location": "Incheon",
-    "note": "Light meals, salads, and smoothies.",
-    "tags": ["Light Meals", "Smoothies"],
-    "rating": 4.2,
-    "image": "/images/food/bean-rice.svg"
+    "location": "Seoul, Mapo-gu (Yeonnam)",
+    "note": "Rice flour cake cafe reported as gluten-free by the community. Verify availability and cross-contamination on visit.",
+    "tags": ["GF options", "Dessert", "Rice flour"],
+    "rating": null,
+    "image": "/images/food/yeonnam-cafe.svg",
+    "naverMapUrl": "https://map.naver.com/v5/search/%EC%97%B0%EB%82%A8%EB%8B%A4%EB%B0%A9",
+    "sources": [
+      "https://www.findmeglutenfree.com/biz/yeonnam-cafe/6751436865667072"
+    ]
   },
   {
-    "name": "Seaside GF Bakes",
+    "name": "Immu Bakeshop",
     "type": "Bakery",
-    "location": "Busan",
-    "note": "Coastal bakery with seasonal items.",
-    "tags": ["Seasonal", "Bread"],
-    "rating": 4.5,
-    "image": "/images/food/seaside-gf-bakes.svg"
-  },
-  {
-    "name": "Seoul Noodle Lab (GF)",
-    "type": "Restaurant",
-    "location": "Seoul, Yeouido",
-    "note": "Hand-pulled noodles with rice and buckwheat blends.",
-    "tags": ["Noodles", "Buckwheat"],
-    "rating": 4.6,
-    "image": "/images/food/seoul-noodle-lab-gf.svg"
+    "location": "Seoul, Mapo-gu (Seogyo)",
+    "note": "Not a dedicated GF facility; some cakes are marked gluten-free. Verify ordering (and ingredients like oat milk) on visit.",
+    "tags": ["GF options", "Not dedicated", "Dessert"],
+    "rating": null,
+    "image": "/images/food/immu-bakeshop.svg",
+    "naverMapUrl": "https://map.naver.com/v5/search/Immu%20Bakeshop%20%ED%99%8D%EB%8C%80",
+    "sources": [
+      "https://www.findmeglutenfree.com/biz/immu-bakeshop/4966486560604160",
+      "https://gogohanguk.com/en/blog/eating-gluten-free-in-korea/"
+    ]
   }
 ]
