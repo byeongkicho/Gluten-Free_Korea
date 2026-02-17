@@ -7,7 +7,7 @@ import slugify from "@/lib/slugify";
 
 export default async function RestaurantDetailPage({ params }) {
   const { slug } = await params; // ⬅️ await params
-  const restaurant = restaurants.find((r) => slugify(r.name) === slug);
+  const restaurant = restaurants.find((r) => (r.slug || slugify(r.name)) === slug);
 
   if (!restaurant) {
     return (
@@ -159,13 +159,13 @@ export default async function RestaurantDetailPage({ params }) {
 
 // Pre-generate static paths (optional but nice with JSON data)
 export function generateStaticParams() {
-  return restaurants.map((r) => ({ slug: slugify(r.name) }));
+  return restaurants.map((r) => ({ slug: r.slug || slugify(r.name) }));
 }
 
 // Metadata example (also must await params)
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const item = restaurants.find((r) => slugify(r.name) === slug);
+  const item = restaurants.find((r) => (r.slug || slugify(r.name)) === slug);
   return {
     title: item ? `${item.name} – Gluten-Free Guide` : "Restaurant Not Found",
     description: item?.note ?? "Gluten-free food guide in Korea",
