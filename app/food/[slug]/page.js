@@ -2,11 +2,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import restaurants from "../../../data/restaurants.json";
+import restaurantsJson from "../../../data/restaurants.json";
 import slugify from "@/lib/slugify";
+import { fetchRestaurants } from "@/lib/fetchContent";
 
 export default async function RestaurantDetailPage({ params }) {
   const { slug } = await params; // ⬅️ await params
+  const restaurants = await fetchRestaurants();
   const restaurant = restaurants.find((r) => (r.slug || slugify(r.name)) === slug);
 
   if (!restaurant) {
@@ -159,12 +161,14 @@ export default async function RestaurantDetailPage({ params }) {
 
 // Pre-generate static paths (optional but nice with JSON data)
 export function generateStaticParams() {
-  return restaurants.map((r) => ({ slug: r.slug || slugify(r.name) }));
+  // Use local JSON for build-time params. Runtime data may come from Supabase.
+  return restaurantsJson.map((r) => ({ slug: r.slug || slugify(r.name) }));
 }
 
 // Metadata example (also must await params)
 export async function generateMetadata({ params }) {
   const { slug } = await params;
+  const restaurants = await fetchRestaurants();
   const item = restaurants.find((r) => (r.slug || slugify(r.name)) === slug);
   return {
     title: item ? `${item.name} – Gluten-Free Guide` : "Restaurant Not Found",
