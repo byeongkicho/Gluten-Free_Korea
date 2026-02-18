@@ -1,0 +1,172 @@
+[
+  {
+    "slug": "sunnyhouse",
+    "name_ko": "Sunnyhouse",
+    "category": "CAFE",
+    "gf_level": "GF_OPTIONS",
+    "area": "Seoul, Mapo-gu (Sangsu)",
+    "naver_map_url": "https://map.naver.com/v5/search/Sunnyhouse%20%EC%84%B1%EC%88%98%20%EA%B0%95%EB%B3%80%20%EC%84%9C%EC%9A%B8",
+    "short_review": "Gluten-free cafe & bakery (community-reported)",
+    "review": "Gluten-free cafe & bakery (community-reported). Verify current address and cross-contamination policies on visit.",
+    "tags": [
+      "GF options",
+      "Dessert",
+      "Cafe"
+    ],
+    "sources": [
+      "https://www.findmeglutenfree.com/biz/sunnyhouse/5158248445116416"
+    ]
+  },
+  {
+    "slug": "모닐이네하우스-글루텐프리-공방카페",
+    "name_ko": "모닐이네하우스 글루텐프리 공방카페",
+    "category": "CAFE",
+    "gf_level": "DEDICATED_GF",
+    "area": "Seoul, Mapo-gu (Yeonnam)",
+    "address": "서울 마포구 연남동 252-3",
+    "naver_map_url": "https://naver.me/Gj6g4AOw",
+    "website": "https://www.instagram.com/monil2_house",
+    "short_review": "Hongdae/Yeonnam celiac-friendly bakery & cafe",
+    "review": "Hongdae/Yeonnam celiac-friendly bakery & cafe. The staff confirmed gluten-free when asked. Highlights: pizza, churros with chocolate dip, salt bread, coffee, and gluten-free cakes. Price is a bit higher than non-GF, but worth it; would revisit. (User review, 2026-02-10; still verify on visit.)",
+    "tags": [
+      "Dedicated GF",
+      "Bread",
+      "Dessert"
+    ],
+    "photos": [
+      "/uploads/food/monil2-house/monil2-house-01.jpg",
+      "/uploads/food/monil2-house/monil2-house-02.jpg",
+      "/uploads/food/monil2-house/monil2-house-03.jpg",
+      "/uploads/food/monil2-house/monil2-house-04.jpg",
+      "/uploads/food/monil2-house/monil2-house-05.jpg",
+      "/uploads/food/monil2-house/monil2-house-06.jpg",
+      "/uploads/food/monil2-house/monil2-house-07.jpg",
+      "/uploads/food/monil2-house/monil2-house-08.jpg",
+      "/uploads/food/monil2-house/monil2-house-09.jpg",
+      "/uploads/food/monil2-house/monil2-house-10.jpg"
+    ],
+    "sources": [
+      "https://www.findmeglutenfree.com/biz/monil2-house/6153761948565504",
+      "User photos (Telegram, 2026-02-10)"
+    ]
+  },
+  {
+    "slug": "237-피자",
+    "name_ko": "237 피자",
+    "category": "DINING",
+    "gf_level": "DEDICATED_GF",
+    "area": "Seoul, Yongsan-gu (Hannam)",
+    "address": "서울 용산구 한남동 738-15",
+    "naver_map_url": "https://naver.me/GV2t9Zs5",
+    "website": "https://www.237pizza.com/",
+    "short_review": "A gluten-free pizza spot founded by an owner with celiac experience (user-reported)",
+    "review": "A gluten-free pizza spot founded by an owner with celiac experience (user-reported). Made to order; when it is busy, expect a wait. Recommended: four-mushroom pizza. Cool interior with nostalgic pop music; located on B1. (User review, 2026-02-10; still verify on visit.)",
+    "tags": [
+      "Dedicated GF",
+      "Pizza"
+    ],
+    "photos": [
+      "/uploads/food/237-pizza/237-pizza-01.jpg",
+      "/uploads/food/237-pizza/237-pizza-02.jpg",
+      "/uploads/food/237-pizza/237-pizza-03.jpg",
+      "/uploads/food/237-pizza/237-pizza-04.jpg"
+    ],
+    "sources": [
+      "User submitted (Excel, 2026-02-10)",
+      "https://www.237pizza.com/",
+      "User photos + review (Telegram, 2026-02-10)"
+    ]
+  },
+  {
+    "slug": "caf-interact",
+    "name_ko": "café interact",
+    "category": "CAFE",
+    "gf_level": "DEDICATED_GF",
+    "area": "Seoul, Gangnam-gu (Nonhyeon)",
+    "naver_map_url": "https://map.naver.com/v5/search/cafe%20interact%20%EB%85%BC%ED%98%84",
+    "short_review": "Dedicated gluten-free dessert cafe (community-reported)",
+    "review": "Dedicated gluten-free dessert cafe (community-reported). Great option for cakes/pastries.",
+    "tags": [
+      "Dedicated GF",
+      "Dessert",
+      "Cafe"
+    ],
+    "sources": [
+      "https://www.findmeglutenfree.com/biz/cafe-interact/5329750536617984"
+    ]
+  },
+  {
+    "slug": "ketobbang",
+    "name_ko": "KETOBBANG",
+    "category": "CAFE",
+    "gf_level": "DEDICATED_GF",
+    "area": "Seoul, Mapo-gu (Mangwon)",
+    "naver_map_url": "https://map.naver.com/v5/search/KETOBBANG%20%EB%A7%9D%EC%9B%90",
+    "short_review": "Dedicated gluten-free (keto-style) bakes (community-reported)",
+    "review": "Dedicated gluten-free (keto-style) bakes (community-reported).",
+    "tags": [
+      "Dedicated GF",
+      "Keto",
+      "Dessert"
+    ],
+    "sources": [
+      "https://www.findmeglutenfree.com/biz/ketobbang/5620864086835200"
+    ]
+  },
+  {
+    "slug": "연남다방",
+    "name_ko": "연남다방",
+    "category": "CAFE",
+    "gf_level": "GF_OPTIONS",
+    "area": "Seoul, Mapo-gu (Yeonnam)",
+    "naver_map_url": "https://map.naver.com/v5/search/%EC%97%B0%EB%82%A8%EB%8B%A4%EB%B0%A9",
+    "short_review": "Rice flour cake cafe reported as gluten-free by the community",
+    "review": "Rice flour cake cafe reported as gluten-free by the community. Verify availability and cross-contamination on visit.",
+    "tags": [
+      "GF options",
+      "Dessert",
+      "Rice flour"
+    ],
+    "sources": [
+      "https://www.findmeglutenfree.com/biz/yeonnam-cafe/6751436865667072"
+    ]
+  },
+  {
+    "slug": "immu-bakeshop",
+    "name_ko": "Immu Bakeshop",
+    "category": "CAFE",
+    "gf_level": "GF_OPTIONS",
+    "area": "Seoul, Mapo-gu (Seogyo)",
+    "naver_map_url": "https://map.naver.com/v5/search/Immu%20Bakeshop%20%ED%99%8D%EB%8C%80",
+    "short_review": "Not a dedicated GF facility; some cakes are marked gluten-free",
+    "review": "Not a dedicated GF facility; some cakes are marked gluten-free. Verify ordering (and ingredients like oat milk) on visit.",
+    "tags": [
+      "GF options",
+      "Not dedicated",
+      "Dessert"
+    ],
+    "sources": [
+      "https://www.findmeglutenfree.com/biz/immu-bakeshop/4966486560604160",
+      "https://gogohanguk.com/en/blog/eating-gluten-free-in-korea/"
+    ]
+  },
+  {
+    "slug": "카페-리벌스",
+    "name_ko": "카페 리벌스",
+    "category": "CAFE",
+    "gf_level": "DEDICATED_GF",
+    "area": "Pyeongtaek, Godeok",
+    "naver_map_url": "https://naver.me/x5Goe0I6",
+    "short_review": "Staff confirmed all menu items are gluten-free and flour-free (no wheat flour)",
+    "review": "Staff confirmed all menu items are gluten-free and flour-free (no wheat flour). Cross-contamination prevention guidance was provided. (User report, 2026-02-18; still verify on visit.)",
+    "tags": [
+      "Dedicated GF",
+      "Cafe",
+      "Dessert"
+    ],
+    "sources": [
+      "User report (Slack, 2026-02-18)",
+      "https://naver.me/x5Goe0I6"
+    ]
+  }
+]

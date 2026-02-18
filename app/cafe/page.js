@@ -2,16 +2,16 @@ import Link from "next/link";
 import PlaceCard from "@/app/components/PlaceCard";
 import { getPlacesByCategory } from "@/lib/places";
 
-export default async function DiningPage() {
-  const places = getPlacesByCategory("DINING");
+export default async function CafePage() {
+  const places = getPlacesByCategory("CAFE");
 
   return (
     <main className="p-6 max-w-6xl mx-auto">
-      <h1 className="text-3xl font-bold mb-8 text-blue-800">Dining</h1>
+      <h1 className="text-3xl font-bold mb-8 text-blue-800">Cafe</h1>
 
       {places.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-gray-600 dark:text-gray-400">No dining places found.</p>
+          <p className="text-gray-600 dark:text-gray-400">No cafes found.</p>
         </div>
       )}
 

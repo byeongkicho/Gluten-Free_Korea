@@ -21,27 +21,15 @@ export default function Navbar() {
             </span>
           </Link>
 
-          <Link href="/food">
-            <span className="text-lg font-semibold text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-300 cursor-pointer">
-              Food
-            </span>
-          </Link>
-
           <Link href="/dining">
             <span className="text-lg font-semibold text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-300 cursor-pointer">
               Dining
             </span>
           </Link>
 
-          <Link href="/shop">
+          <Link href="/cafe">
             <span className="text-lg font-semibold text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-300 cursor-pointer">
-              Shop
-            </span>
-          </Link>
-
-          <Link href="/guides">
-            <span className="text-lg font-semibold text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-300 cursor-pointer">
-              Guides
+              Cafe
             </span>
           </Link>
 

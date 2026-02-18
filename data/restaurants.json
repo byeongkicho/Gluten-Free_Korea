@@ -115,5 +115,19 @@
       "https://www.findmeglutenfree.com/biz/immu-bakeshop/4966486560604160",
       "https://gogohanguk.com/en/blog/eating-gluten-free-in-korea/"
     ]
+  },
+  {
+    "name": "카페 리벌스",
+    "type": "Bakery / Cafe",
+    "location": "Pyeongtaek, Godeok",
+    "note": "Staff confirmed all menu items are gluten-free and flour-free (no wheat flour). Cross-contamination prevention guidance was provided. (User report, 2026-02-18; still verify on visit.)",
+    "tags": ["Dedicated GF", "Cafe", "Dessert"],
+    "rating": null,
+    "image": "/images/food/cafe-reverse.svg",
+    "naverMapUrl": "https://naver.me/x5Goe0I6",
+    "sources": [
+      "User report (Slack, 2026-02-18)",
+      "https://naver.me/x5Goe0I6"
+    ]
   }
 ]
