@@ -33,8 +33,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "GF Korea",
-  description: "A guide to gluten-free living and safe eats in Korea.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://gfkorea.com"),
+  title: {
+    default: "Gluten-Free Korea",
+    template: "%s | Gluten-Free Korea",
+  },
+  description: "Gluten-free places in Korea (Dining & Cafe).",
+  openGraph: {
+    title: "Gluten-Free Korea",
+    description: "Gluten-free places in Korea (Dining & Cafe).",
+    url: "/",
+    siteName: "Gluten-Free Korea",
+    images: [
+      {
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Gluten-Free Korea",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {

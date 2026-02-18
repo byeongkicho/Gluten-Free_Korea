@@ -4,6 +4,33 @@ import Card from "@/app/components/ui/Card";
 import Badge from "@/app/components/ui/Badge";
 import { getPlaceBySlug } from "@/lib/places";
 
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const place = getPlaceBySlug(slug);
+  if (!place) return {};
+
+  const title = `${place.name_ko}`;
+  const description = place.short_review || place.review || "Gluten-free place in Korea.";
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `/place/${place.slug}`,
+      images: [
+        {
+          url: "/og-default.png",
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+  };
+}
+
 function gfLabel(gfLevel) {
   switch (gfLevel) {
     case "DEDICATED_GF":
