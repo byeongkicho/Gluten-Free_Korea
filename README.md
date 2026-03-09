@@ -1,44 +1,34 @@
-# Gluten-Free Korea
+# Gluten-Free Korea (MVP)
 
-A practical guide for people with celiac disease or gluten sensitivity living in Korea or visiting Korea.
+Minimal MVP focused on content display.
 
-## What this site is
+## Routes
 
-- Dining directory: gluten-free friendly restaurants/cafes (with notes and safety caveats)
-- Food guide: ingredient safety + practical tips
-- Shop essentials: recommended gluten-free products (affiliate disclosure)
+- `/` : unified places list
+- `/place/[slug]` : place detail
+- `/guide` : basic safety guide
 
 ## Tech
 
-- Next.js (App Router)
+- Next.js App Router
 - Tailwind CSS
-- Optional Supabase (falls back to local JSON when env vars are not set)
+- Cloudflare Pages build via `@cloudflare/next-on-pages`
 
 ## Local development
 
 ```bash
-npm ci
+npm install
 npm run dev
 ```
 
 ## Build
 
 ```bash
-npm run lint
 npm run build
+npm run pages:build
 ```
 
-## Deployment (Cloudflare Pages)
+## Notes
 
-See `.ai/checklists/deploy-pages.md`.
-
-## Environment variables (optional)
-
-If you choose to enable Supabase, set these in the hosting dashboard (do not commit):
-
-- `NEXT_PUBLIC_SUPABASE_URL=YOUR_VALUE_HERE`
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_VALUE_HERE`
-
-## Affiliate disclosure
-
-Some links may be affiliate links. If you purchase through them, we may earn a commission at no extra cost to you.
+- Data source: `data/restaurants.json`
+- Keep `.env*` files out of git

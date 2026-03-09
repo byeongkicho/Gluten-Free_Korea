@@ -10,9 +10,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mdx-js/react": "^3.1.0",
-    "@next/mdx": "^15.5.0",
-    "@supabase/supabase-js": "^2.56.0",
     "next": "15.4.3",
     "react": "19.1.0",
     "react-dom": "19.1.0"
@@ -20,9 +17,9 @@
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.13.16",
     "@eslint/eslintrc": "^3",
-    "@mdx-js/loader": "^3.1.0",
-    "@next/mdx": "^15.5.2",
     "@tailwindcss/postcss": "^4",
+    "@types/node": "25.3.5",
+    "@types/react": "19.2.14",
     "eslint": "^9",
     "eslint-config-next": "15.4.3",
     "tailwindcss": "^4"
