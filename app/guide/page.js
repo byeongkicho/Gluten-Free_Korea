@@ -5,18 +5,36 @@ export const metadata = {
 
 export default function GuidePage() {
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-950 px-6 py-10">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Guide</h1>
-        <div className="mt-6 space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
-          <p>
-            This is a minimal MVP guide page. Keep it short, practical, and safety-first.
-          </p>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>Ask staff clearly about wheat, barley, and rye.</li>
-            <li>Always ask about shared fryer/oil and prep tools.</li>
-            <li>When unsure, choose naturally gluten-free dishes.</li>
-            <li>Re-check menu and ingredients every visit.</li>
+    <main className="min-h-screen px-4 py-8 sm:px-6 sm:py-10 md:py-14">
+      <div className="mx-auto max-w-3xl">
+        <h1 className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
+          <span className="lang-en">Safety Guide</span>
+          <span className="lang-ko">안전 가이드</span>
+        </h1>
+        <div className="mt-6 rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-900 sm:p-6">
+          <ul className="space-y-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+            <li>
+              <span className="lang-en">
+                Clearly ask whether wheat, barley, or rye is included.
+              </span>
+              <span className="lang-ko">밀, 보리, 호밀 포함 여부를 직원에게 명확히 확인하세요.</span>
+            </li>
+            <li>
+              <span className="lang-en">
+                Ask if fryers, oil, or prep tools are shared.
+              </span>
+              <span className="lang-ko">튀김기/기름/조리도구를 함께 쓰는지 반드시 물어보세요.</span>
+            </li>
+            <li>
+              <span className="lang-en">
+                If uncertain, choose dishes with simple ingredients.
+              </span>
+              <span className="lang-ko">확신이 없으면 원재료가 단순한 메뉴를 선택하세요.</span>
+            </li>
+            <li>
+              <span className="lang-en">Reconfirm every visit, even at the same place.</span>
+              <span className="lang-ko">같은 매장이라도 방문할 때마다 다시 확인하세요.</span>
+            </li>
           </ul>
         </div>
       </div>

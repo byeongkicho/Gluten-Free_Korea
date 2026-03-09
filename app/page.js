@@ -11,23 +11,42 @@ export default function HomePage() {
   const hasPlaces = safePlaces.length > 0;
 
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-950 px-6 py-10">
-      <div className="max-w-5xl mx-auto">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-          Gluten-Free Korea
-        </h1>
-        <p className="mt-3 text-gray-600 dark:text-gray-300">
-          Unified places list (dining + cafe + bakery). Always verify ingredients and cross-contamination on visit.
-        </p>
+    <main className="min-h-screen px-4 py-8 sm:px-6 sm:py-10 md:py-14">
+      <div className="mx-auto max-w-6xl">
+        <section className="rounded-2xl border border-gray-200 bg-gradient-to-b from-white to-gray-50 p-5 sm:p-7 dark:border-gray-800 dark:from-gray-950 dark:to-gray-900">
+          <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700 dark:text-emerald-300">
+            <span className="lang-en">Gluten-Free Directory</span>
+            <span className="lang-ko">글루텐프리 디렉토리</span>
+          </p>
+          <h1 className="mt-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-3xl md:text-4xl">
+            Gluten-Free Korea
+          </h1>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+            <span className="lang-en">
+              A simple directory of gluten-free restaurants, cafes, and bakeries in
+              Korea. Always reconfirm ingredients and cross-contamination when you
+              visit.
+            </span>
+            <span className="lang-ko">
+              한국에서 글루텐프리 식당, 카페, 베이커리를 한 곳에서 찾을 수 있는
+              간단한 목록입니다. 방문 시 재료와 교차오염 여부는 항상 다시 확인하세요.
+            </span>
+          </p>
+          <p className="mt-4 text-sm font-medium text-gray-700 dark:text-gray-200">
+            <span className="lang-en">Listed places: {safePlaces.length}</span>
+            <span className="lang-ko">현재 등록 장소 {safePlaces.length}곳</span>
+          </p>
+        </section>
 
         {!hasPlaces ? (
-          <div className="mt-8 rounded-xl border border-dashed border-gray-300 dark:border-gray-700 p-8 text-center">
-            <p className="text-gray-700 dark:text-gray-300">
-              등록된 장소가 아직 없습니다.
+          <div className="mt-8 rounded-2xl border border-dashed border-gray-300 p-8 text-center dark:border-gray-700 sm:p-10">
+            <p className="text-sm text-gray-700 dark:text-gray-300">
+              <span className="lang-en">No places listed yet.</span>
+              <span className="lang-ko">등록된 장소가 아직 없습니다.</span>
             </p>
           </div>
         ) : (
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <section className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {safePlaces.map((place) => {
               const slug = place.slug;
               const displayName = place.name || "이름 미정";
@@ -37,29 +56,41 @@ export default function HomePage() {
                 <Link
                   key={slug}
                   href={`/place/${slug}`}
-                  className="rounded-xl border border-gray-200 dark:border-gray-800 p-5 bg-white dark:bg-gray-900 hover:shadow-md transition-shadow"
+                  className="group rounded-2xl border border-gray-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-gray-300 hover:shadow-sm dark:border-gray-800 dark:bg-gray-900 dark:hover:border-gray-700 sm:p-5"
                 >
-                  <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  <p className="text-xs font-medium uppercase tracking-wide text-emerald-700 dark:text-emerald-300">
+                    {displayType}
+                  </p>
+                  <h2 className="mt-2 line-clamp-2 text-base font-semibold leading-snug text-gray-900 dark:text-white sm:text-lg">
                     {displayName}
                   </h2>
-                  <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                    {displayType}
-                    {place.location ? ` · ${place.location}` : ""}
+                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                    {place.location || (
+                      <>
+                        <span className="lang-en">Location coming soon</span>
+                        <span className="lang-ko">위치 정보 준비중</span>
+                      </>
+                    )}
                   </p>
-                  <div className="mt-3 flex flex-wrap gap-2">
+                  <div className="mt-4 flex flex-wrap gap-2">
                     {(place.tags || []).slice(0, 3).map((tag) => (
                       <span
                         key={tag}
-                        className="text-xs px-2 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300"
+                        className="rounded-full border border-gray-200 px-2.5 py-1 text-xs text-gray-700 dark:border-gray-700 dark:text-gray-300"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
+                  <p className="mt-5 text-sm font-medium text-gray-900 dark:text-white">
+                    <span className="lang-en">View details</span>
+                    <span className="lang-ko">상세 보기</span>{" "}
+                    <span className="inline-block transition group-hover:translate-x-0.5">→</span>
+                  </p>
                 </Link>
               );
             })}
-          </div>
+          </section>
         )}
       </div>
     </main>

@@ -2,19 +2,24 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import MetadataLocaleSync from "./components/MetadataLocaleSync";
 
-// Prevent flash of incorrect theme by setting class on initial HTML before hydration
-function ThemeScript() {
+// Set theme and language classes before hydration to avoid UI flicker.
+function InitScript() {
   return (
     <script
       dangerouslySetInnerHTML={{
         __html: `(() => {
   try {
-    const saved = localStorage.getItem('theme');
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const theme = saved === 'dark' || saved === 'light' ? saved : (prefersDark ? 'dark' : 'light');
-    if (theme === 'dark') document.documentElement.classList.add('dark');
+    if (prefersDark) document.documentElement.classList.add('dark');
     else document.documentElement.classList.remove('dark');
+
+    const savedLang = localStorage.getItem('lang');
+    const lang = savedLang === 'ko' ? 'ko' : 'en';
+    document.documentElement.classList.remove('lang-en', 'lang-ko');
+    document.documentElement.classList.add(lang === 'ko' ? 'lang-ko' : 'lang-en');
+    document.documentElement.setAttribute('lang', lang === 'ko' ? 'ko' : 'en');
   } catch (e) {}
 })();`,
       }}
@@ -65,12 +70,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="lang-en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning
       >
-        <ThemeScript />
+        <InitScript />
+        <MetadataLocaleSync />
         <Navbar />
         {children}
         <Footer />

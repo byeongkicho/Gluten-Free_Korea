@@ -32,5 +32,25 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+.lang-ko {
+  display: none;
+}
+
+html.lang-ko .lang-ko {
+  display: inline;
+}
+
+html.lang-ko .lang-en {
+  display: none;
+}
+
+html.lang-en .lang-en {
+  display: inline;
+}
+
+html.lang-en .lang-ko {
+  display: none;
 }

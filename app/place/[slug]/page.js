@@ -18,18 +18,24 @@ function getValidatedPlaces() {
   return rows;
 }
 
+const validatedPlaces = getValidatedPlaces();
+
+function getPlaceBySlug(slug) {
+  return validatedPlaces.find((p) => p.slug === slug);
+}
+
 export function generateStaticParams() {
-  return getValidatedPlaces()
+  return validatedPlaces
     .filter((p) => typeof p.slug === "string" && p.slug.trim().length > 0)
     .map((p) => ({ slug: p.slug }));
 }
 
 export function generateMetadata({ params }) {
   const { slug } = params;
-  const place = getValidatedPlaces().find((p) => p.slug === slug);
+  const place = getPlaceBySlug(slug);
   const title = place ? `${place.name} | Gluten-Free Korea` : "Place Not Found";
   const description = place?.note || "Gluten-free place detail";
-  const path = place ? `/place/${slug}` : `/place/${slug}`;
+  const path = `/place/${slug}`;
   const image = "/file.svg";
 
   return {
@@ -60,53 +66,104 @@ export function generateMetadata({ params }) {
 
 export default function PlaceDetailPage({ params }) {
   const { slug } = params;
-  const place = getValidatedPlaces().find((p) => p.slug === slug);
+  const place = getPlaceBySlug(slug);
 
   if (!place) notFound();
 
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-950 px-6 py-10">
-      <div className="max-w-3xl mx-auto">
+    <main className="min-h-screen px-4 py-8 sm:px-6 sm:py-10 md:py-14">
+      <div className="mx-auto max-w-3xl">
         <Link
           href="/"
-          className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+          className="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
         >
-          ← Back to list
+          <span className="lang-en">← Back to list</span>
+          <span className="lang-ko">← 목록으로 돌아가기</span>
         </Link>
 
-        <h1 className="mt-4 text-3xl font-bold text-gray-900 dark:text-white">
-          {place.name}
-        </h1>
+        <section className="mt-4 rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-900 sm:p-6">
+          <p className="text-xs font-medium uppercase tracking-wide text-emerald-700 dark:text-emerald-300">
+            {place.type || "Place"}
+          </p>
+          <h1 className="mt-2 text-2xl font-semibold leading-tight text-gray-900 dark:text-white sm:text-3xl">
+            {place.name}
+          </h1>
+          <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
+            {place.location || (
+              <>
+                <span className="lang-en">Location coming soon</span>
+                <span className="lang-ko">위치 정보 준비중</span>
+              </>
+            )}
+          </p>
+          {place.address ? (
+            <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{place.address}</p>
+          ) : null}
 
-        <p className="mt-2 text-gray-600 dark:text-gray-300">
-          {place.type}{place.location ? ` · ${place.location}` : ""}
-        </p>
-
-        {place.tags?.length ? (
-          <div className="mt-4 flex flex-wrap gap-2">
-            {place.tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-xs px-2 py-1 rounded-full border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        ) : null}
+          {place.tags?.length ? (
+            <div className="mt-4 flex flex-wrap gap-2">
+              {place.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-gray-200 px-2.5 py-1 text-xs text-gray-700 dark:border-gray-700 dark:text-gray-300"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          ) : null}
+        </section>
 
         {place.note ? (
-          <section className="mt-8 rounded-xl border border-gray-200 dark:border-gray-800 p-5">
-            <h2 className="font-semibold text-gray-900 dark:text-white">Notes</h2>
-            <p className="mt-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+          <section className="mt-5 rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-900 sm:p-6">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-900 dark:text-white">
+              Notes
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
               {place.note}
             </p>
           </section>
         ) : null}
 
-        <section className="mt-6 rounded-xl bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 p-4">
+        {(place.website || place.naverMapUrl) && (
+          <section className="mt-5 rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-900 sm:p-6">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-900 dark:text-white">
+              Links
+            </h2>
+            <div className="mt-3 grid grid-cols-1 gap-2 sm:flex sm:flex-wrap sm:gap-3">
+              {place.website ? (
+                <a
+                  href={place.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-lg border border-gray-300 px-3 py-2 text-center text-sm text-gray-800 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
+                >
+                  Website
+                </a>
+              ) : null}
+              {place.naverMapUrl ? (
+                <a
+                  href={place.naverMapUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-lg border border-gray-300 px-3 py-2 text-center text-sm text-gray-800 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
+                >
+                  Naver Map
+                </a>
+              ) : null}
+            </div>
+          </section>
+        )}
+
+        <section className="mt-5 rounded-2xl border border-amber-200 bg-amber-50 p-5 dark:border-amber-800 dark:bg-amber-900/20">
           <p className="text-sm text-amber-900 dark:text-amber-100">
-            Safety reminder: always confirm ingredients and cross-contamination with staff.
+            <span className="lang-en">
+              Safety note: always reconfirm ingredients and cross-contamination
+              with staff.
+            </span>
+            <span className="lang-ko">
+              안전 안내: 재료와 조리도구 교차오염 여부를 방문 시점에 꼭 다시 확인하세요.
+            </span>
           </p>
         </section>
       </div>
