@@ -1,24 +1,66 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import places from "@/data/restaurants.json";
-import slugify from "@/lib/slugify";
 
-export function generateStaticParams() {
-  return places.map((p) => ({ slug: p.slug || slugify(p.name) }));
+function getValidatedPlaces() {
+  const rows = Array.isArray(places) ? places : [];
+  const seen = new Set();
+
+  for (const place of rows) {
+    const slug = place?.slug;
+    if (!slug || typeof slug !== "string") continue;
+    if (seen.has(slug)) {
+      throw new Error(`Duplicate slug found in data/restaurants.json: ${slug}`);
+    }
+    seen.add(slug);
+  }
+
+  return rows;
 }
 
-export async function generateMetadata({ params }) {
-  const { slug } = await params;
-  const place = places.find((p) => (p.slug || slugify(p.name)) === slug);
+export function generateStaticParams() {
+  return getValidatedPlaces()
+    .filter((p) => typeof p.slug === "string" && p.slug.trim().length > 0)
+    .map((p) => ({ slug: p.slug }));
+}
+
+export function generateMetadata({ params }) {
+  const { slug } = params;
+  const place = getValidatedPlaces().find((p) => p.slug === slug);
+  const title = place ? `${place.name} | Gluten-Free Korea` : "Place Not Found";
+  const description = place?.note || "Gluten-free place detail";
+  const path = place ? `/place/${slug}` : `/place/${slug}`;
+  const image = "/file.svg";
+
   return {
-    title: place ? `${place.name} | Gluten-Free Korea` : "Place Not Found",
-    description: place?.note || "Gluten-free place detail",
+    title,
+    description,
+    openGraph: {
+      type: "article",
+      url: path,
+      title,
+      description,
+      images: [
+        {
+          url: image,
+          width: 1200,
+          height: 630,
+          alt: place?.name || "GF Korea place detail",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
+    },
   };
 }
 
-export default async function PlaceDetailPage({ params }) {
-  const { slug } = await params;
-  const place = places.find((p) => (p.slug || slugify(p.name)) === slug);
+export default function PlaceDetailPage({ params }) {
+  const { slug } = params;
+  const place = getValidatedPlaces().find((p) => p.slug === slug);
 
   if (!place) notFound();
 

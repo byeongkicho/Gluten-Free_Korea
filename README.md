@@ -24,7 +24,6 @@ npm run dev
 ## Build
 
 ```bash
-npm run build
 npm run pages:build
 ```
 
@@ -32,3 +31,44 @@ npm run pages:build
 
 - Data source: `data/restaurants.json`
 - Keep `.env*` files out of git
+
+## Cloudflare Pages (recommended)
+
+- Build command: `npm run pages:build`
+- Build output directory: `.vercel/output/static`
+
+## Places data schema (`data/restaurants.json`)
+
+### Required fields
+
+- `slug` (unique, URL-safe string)
+- `name`
+- `type`
+
+### Optional fields
+
+- `location`
+- `address`
+- `note`
+- `tags` (array of strings)
+- `rating`
+- `website`
+- `naverMapUrl`
+- `sources` (array of strings)
+- `image`
+- `photos` (array of strings)
+
+### Example
+
+```json
+{
+  "slug": "example-place",
+  "name": "Example Place",
+  "type": "Dining",
+  "location": "Seoul",
+  "note": "Always verify ingredients and cross-contamination on visit.",
+  "tags": ["Dedicated GF"],
+  "website": "https://example.com",
+  "sources": ["User review (2026-03-09)"]
+}
+```

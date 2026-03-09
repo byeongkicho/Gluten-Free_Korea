@@ -1,5 +1,6 @@
 [
   {
+    "slug": "monil2-house",
     "name": "모닐이네하우스 글루텐프리 공방카페",
     "type": "Bakery",
     "location": "Seoul, Mapo-gu (Yeonnam)",
@@ -11,27 +12,15 @@
       "Dessert"
     ],
     "rating": null,
-    "image": "/images/food/monil2-house.svg",
     "naverMapUrl": "https://naver.me/Gj6g4AOw",
     "website": "https://www.instagram.com/monil2_house",
-    "photos": [
-      "/uploads/food/monil2-house/monil2-house-01.jpg",
-      "/uploads/food/monil2-house/monil2-house-02.jpg",
-      "/uploads/food/monil2-house/monil2-house-03.jpg",
-      "/uploads/food/monil2-house/monil2-house-04.jpg",
-      "/uploads/food/monil2-house/monil2-house-05.jpg",
-      "/uploads/food/monil2-house/monil2-house-06.jpg",
-      "/uploads/food/monil2-house/monil2-house-07.jpg",
-      "/uploads/food/monil2-house/monil2-house-08.jpg",
-      "/uploads/food/monil2-house/monil2-house-09.jpg",
-      "/uploads/food/monil2-house/monil2-house-10.jpg"
-    ],
     "sources": [
       "https://www.findmeglutenfree.com/biz/monil2-house/6153761948565504",
       "User photos (Telegram, 2026-02-10)"
     ]
   },
   {
+    "slug": "237-pizza",
     "name": "237 피자",
     "type": "Dining",
     "location": "Seoul, Yongsan-gu (Hannam)",
@@ -42,13 +31,6 @@
       "Pizza"
     ],
     "rating": null,
-    "image": "/images/food/237-pizza.svg",
-    "photos": [
-      "/uploads/food/237-pizza/237-pizza-01.jpg",
-      "/uploads/food/237-pizza/237-pizza-02.jpg",
-      "/uploads/food/237-pizza/237-pizza-03.jpg",
-      "/uploads/food/237-pizza/237-pizza-04.jpg"
-    ],
     "naverMapUrl": "https://naver.me/GV2t9Zs5",
     "website": "https://www.237pizza.com/",
     "sources": [

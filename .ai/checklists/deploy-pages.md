@@ -17,7 +17,7 @@ Use Cloudflare's Next.js adapter during the build.
 - Build command (Cloudflare Pages):
 
 ```bash
-npm run build && npx @cloudflare/next-on-pages
+npm run pages:build
 ```
 
 Notes:
@@ -27,7 +27,7 @@ Notes:
 ## Cloudflare Pages settings
 
 - Framework preset: Next.js
-- Build command: `npm run build && npx @cloudflare/next-on-pages`
+- Build command: `npm run pages:build`
 - Build output directory: `.vercel/output/static`
 
 ## Environment variables (placeholders)
@@ -48,13 +48,14 @@ Commands (run locally):
 
 - `npm ci`
 - `npm run lint`
-- `npm run build`
+- `npm run pages:build`
 - `npm run dev`
 
 Functional checks:
 
 - Home loads
-- `/food`, `/shop`, `/dining` load
-- Deep-link refresh works for `/food/<slug>`, `/dining/<slug>`, `/shop/<slug>`
+- `/guide` loads
+- Place detail loads for `/place/<slug>`
+- Deep-link refresh works for `/place/<slug>`
 - Images load
 - No runtime errors when Supabase env vars are missing (should fall back to local JSON)

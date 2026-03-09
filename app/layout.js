@@ -32,9 +32,35 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+const defaultTitle = "GF Korea";
+const defaultDescription = "A guide to gluten-free living and safe eats in Korea.";
+const defaultOgImage = "/file.svg";
+
 export const metadata = {
-  title: "GF Korea",
-  description: "A guide to gluten-free living and safe eats in Korea.",
+  metadataBase: new URL(siteUrl),
+  title: defaultTitle,
+  description: defaultDescription,
+  openGraph: {
+    type: "website",
+    url: "/",
+    title: defaultTitle,
+    description: defaultDescription,
+    images: [
+      {
+        url: defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: "GF Korea",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: defaultTitle,
+    description: defaultDescription,
+    images: [defaultOgImage],
+  },
 };
 
 export default function RootLayout({ children }) {
