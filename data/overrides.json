@@ -1,1 +1,27 @@
-{}
+{
+  "1650174352": {
+    "slug": "monil2-house",
+    "type": "Bakery",
+    "location": "Seoul, Mapo-gu (Yeonnam)",
+    "note": "Hongdae/Yeonnam celiac-friendly bakery & cafe. Staff confirmed gluten-free when asked. Highlights: pizza, churros with chocolate dip, salt bread, coffee, gluten-free cakes. Price is slightly higher than non-GF. (User review, 2026-02-10; verify on visit.)",
+    "tags": ["Dedicated GF", "Bread", "Dessert"],
+    "website": "https://www.instagram.com/monil2_house",
+    "sources": [
+      "https://www.findmeglutenfree.com/biz/monil2-house/6153761948565504",
+      "User photos (Telegram, 2026-02-10)"
+    ]
+  },
+  "1741203487": {
+    "slug": "237-pizza",
+    "type": "Dining",
+    "location": "Seoul, Yongsan-gu (Hannam)",
+    "note": "Gluten-free pizza spot founded by an owner with celiac experience (user-reported). Made to order; expect a wait when busy. Recommended: four-mushroom pizza. Cool interior, nostalgic pop music, located on B1. (User review, 2026-02-10; verify on visit.)",
+    "tags": ["Dedicated GF", "Pizza"],
+    "website": "https://www.237pizza.com/",
+    "sources": [
+      "User submitted (Excel, 2026-02-10)",
+      "https://www.237pizza.com/",
+      "User photos + review (Telegram, 2026-02-10)"
+    ]
+  }
+}
