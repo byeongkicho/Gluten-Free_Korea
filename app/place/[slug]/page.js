@@ -9,6 +9,27 @@ const TYPE_MAP = {
   "제과,베이커리": "Bakery",
 };
 
+const TAG_PRIORITY = [
+  "Dedicated GF",
+  "Restaurant",
+  "Cafe",
+  "Bakery",
+  "Pizza",
+  "Bread",
+  "Dessert",
+];
+
+function sortTags(tags) {
+  if (!Array.isArray(tags)) return [];
+  const priority = new Map(TAG_PRIORITY.map((tag, index) => [tag, index]));
+  return [...tags].sort((a, b) => {
+    const ai = priority.has(a) ? priority.get(a) : Number.MAX_SAFE_INTEGER;
+    const bi = priority.has(b) ? priority.get(b) : Number.MAX_SAFE_INTEGER;
+    if (ai !== bi) return ai - bi;
+    return String(a).localeCompare(String(b));
+  });
+}
+
 function getValidatedPlaces() {
   const rows = Array.isArray(places) ? places : [];
   const seen = new Set();
@@ -43,7 +64,12 @@ export async function generateMetadata({ params }) {
   const title = place
     ? `${place.name} – Gluten-Free Options in Korea | Gluten-Free Korea`
     : "Place Not Found";
-  const description = place?.note || "Gluten-free place detail";
+  const fallbackParts = [
+    place?.type,
+    place?.location || place?.address,
+    "Verify ingredients and cross-contamination on visit.",
+  ].filter(Boolean);
+  const description = place?.note || fallbackParts.join(" · ") || "Gluten-free place detail";
   const path = `/place/${slug}`;
   const image = "/og-default.png";
 
@@ -115,7 +141,8 @@ export default async function PlaceDetailPage({ params }) {
             <span className="lang-ko">{displayType}</span>
           </p>
           <h1 className="mt-2 text-2xl font-semibold leading-tight text-gray-900 dark:text-white sm:text-3xl">
-            {place.name}
+            <span className="lang-en">{place.nameEn || place.name}</span>
+            <span className="lang-ko">{place.name}</span>
           </h1>
           <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
             {place.location || (
@@ -146,7 +173,7 @@ export default async function PlaceDetailPage({ params }) {
 
           {place.tags?.length ? (
             <div className="mt-4 flex flex-wrap gap-2">
-              {place.tags.map((tag) => (
+              {sortTags(place.tags).map((tag) => (
                 <span
                   key={tag}
                   className="rounded-full border border-gray-200 px-2.5 py-1 text-xs text-gray-700 dark:border-gray-700 dark:text-gray-300"

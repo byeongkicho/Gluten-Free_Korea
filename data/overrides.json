@@ -1,11 +1,16 @@
 {
   "1650174352": {
+    "nameEn": "Monil2 House Gluten-Free Cafe",
     "slug": "monil2-house",
     "type": "Bakery",
     "location": "Seoul, Mapo-gu (Yeonnam)",
     "addressEn": "9 Sungmisan-ro 26-gil, Mapo-gu, Seoul",
-    "note": "Hongdae/Yeonnam celiac-friendly bakery & cafe. Staff confirmed gluten-free when asked. Highlights: pizza, churros with chocolate dip, salt bread, coffee, gluten-free cakes. Price is slightly higher than non-GF. (User review, 2026-02-10; verify on visit.)",
-    "tags": ["Dedicated GF", "Bread", "Dessert"],
+    "note": "Celiac-friendly bakery and cafe in Yeonnam known for gluten-free breads and desserts; confirm daily availability and handling with staff before ordering.",
+    "tags": [
+      "Dedicated GF",
+      "Bread",
+      "Dessert"
+    ],
     "website": "https://www.instagram.com/monil2_house",
     "sources": [
       "https://www.findmeglutenfree.com/biz/monil2-house/6153761948565504",
@@ -13,12 +18,16 @@
     ]
   },
   "1741203487": {
+    "nameEn": "237 Pizza",
     "slug": "237-pizza",
     "type": "Dining",
     "location": "Seoul, Yongsan-gu (Hannam)",
     "addressEn": "237 Itaewon-ro, Yongsan-gu, Seoul",
-    "note": "Gluten-free pizza spot founded by an owner with celiac experience (user-reported). Made to order; expect a wait when busy. Recommended: four-mushroom pizza. Cool interior, nostalgic pop music, located on B1. (User review, 2026-02-10; verify on visit.)",
-    "tags": ["Dedicated GF", "Pizza"],
+    "note": "Gluten-free pizza shop in Hannam (B1) with made-to-order pies; check current wait time and preparation details with staff when visiting.",
+    "tags": [
+      "Dedicated GF",
+      "Pizza"
+    ],
     "website": "https://www.237pizza.com/",
     "sources": [
       "User submitted (Excel, 2026-02-10)",
@@ -27,40 +36,89 @@
     ]
   },
   "1056359801": {
+    "nameEn": "Cucciolo Seoul",
     "location": "Seoul, Yongsan-gu (Samgakji)",
     "addressEn": "100 Hangang-daero, Yongsan-gu, Seoul",
-    "note": "Italian restaurant by Cucciolo Group, located in the Amore Pacific HQ building. Verify gluten-free options with staff on visit."
+    "note": "Italian restaurant by Cucciolo Group in the Amore Pacific building; verify current gluten-free options and kitchen handling with staff on visit.",
+    "tags": [
+      "Restaurant",
+      "Italian"
+    ]
   },
   "1434476104": {
+    "nameEn": "Ssal Tongdak (Rice Fried Chicken) Dangsan",
     "location": "Seoul, Yeongdeungpo-gu (Dangsan)",
-    "addressEn": "1 Dangsan-ro 45-gil, Yeongdeungpo-gu, Seoul"
+    "addressEn": "1 Dangsan-ro 45-gil, Yeongdeungpo-gu, Seoul",
+    "note": "Rice-based fried chicken franchise with multiple branches. Some locations may be delivery-only, so check availability before visiting. Plain fried chicken is typically gluten-free, but many sauces/seasonings (e.g., soy sauce, gochujang-based, teriyaki-style) may contain gluten—confirm ingredients and cross-contact handling with staff before ordering.",
+    "tags": [
+      "Restaurant",
+      "Fried Chicken"
+    ]
   },
   "1312707678": {
+    "nameEn": "Cafe Rebus",
     "location": "Gyeonggi, Pyeongtaek (Godeok)",
-    "addressEn": "41 Godeok-yeoyeom 4-ro, Pyeongtaek, Gyeonggi-do"
+    "addressEn": "41 Godeok-yeoyeom 4-ro, Pyeongtaek, Gyeonggi-do",
+    "note": "Fully gluten-free cafe in the Pyeongtaek (Godeok) area. Recommended: seasonal fruit cake. Ample parking available. Still confirm any seasonal/menu changes and cross-contact handling with staff on visit.",
+    "tags": [
+      "Cafe"
+    ]
   },
   "1218176536": {
+    "nameEn": "Minimalize Itaewon",
     "location": "Seoul, Yongsan-gu (Noksapyeong)",
-    "addressEn": "21 Noksapyeong-daero 32-gil, Yongsan-gu, Seoul"
+    "addressEn": "21 Noksapyeong-daero 32-gil, Yongsan-gu, Seoul",
+    "note": "Itaewon-area cafe on the 2nd floor (no elevator). They sell both gluten-free and non-gluten-free items, so confirm which products are GF before ordering. Recommended: matcha cake. No parking available. Also confirm preparation/cross-contact handling with staff.",
+    "tags": [
+      "Cafe"
+    ]
   },
   "1128289843": {
+    "nameEn": "Glunic",
     "location": "Seoul, Seongdong-gu (Seoul Forest)",
-    "addressEn": "16-12 Seoulsup 2-gil, Seongdong-gu, Seoul"
+    "addressEn": "16-12 Seoulsup 2-gil, Seongdong-gu, Seoul",
+    "note": "Cafe near Seoul Forest with limited public gluten-free detail; confirm current options and cross-contact policy directly with staff.",
+    "tags": [
+      "Cafe",
+      "Dessert"
+    ]
   },
   "33489623": {
+    "nameEn": "Toujours Dolgama Village",
     "location": "Cheonan, South Chungcheong (Dongnam-gu)",
     "addressEn": "706 Pungse-ro, Dongnam-gu, Cheonan, Chungcheongnam-do",
-    "note": "Toujours Dolgama - a village-style stone kiln bakery in Cheonan. Scenic setting; verify gluten-free items with staff."
+    "note": "Toujours Dolgama is a village-style stone-kiln bakery complex in Cheonan (large site). It may be difficult to reach by public transport, so check directions in advance. There is a separate shop selling rice-based gluten-free cakes—confirm which items are GF before purchasing. You can buy the cake and then order coffee to enjoy it inside the main area. Ample parking available.",
+    "tags": [
+      "Bakery",
+      "Dessert"
+    ]
   },
   "1907181273": {
+    "nameEn": "Cafe Pepper",
     "location": "Seoul, Songpa-gu (Songridangil)",
     "addressEn": "12 Baekjegobun-ro 45-gil, Songpa-gu, Seoul",
-    "note": "Dedicated gluten-free cafe near Lotte World. All desserts use rice flour. Items labeled GF or LG. 3-min walk from Songpanaru Station (Line 9, Exit 1)."
+    "note": "Dedicated gluten-free cafe in Songridan-gil (near Lotte World) with gluten-free cakes (often rice-flour based). Expect waiting on weekends/holidays. Located on the 2nd floor with no elevator. Confirm current labels and item availability with staff on visit.",
+    "tags": [
+      "Dedicated GF",
+      "Cafe",
+      "Dessert"
+    ]
   },
   "1413655852": {
-    "location": "Seoul, Seodaemun-gu (Sinchon)"
+    "nameEn": "Grain Seoul",
+    "location": "Seoul, Seodaemun-gu (Sinchon)",
+    "note": "Sinchon-area restaurant with gluten-free brunch options (including pancakes). Staff are attentive to allergies, but confirm specific menu items and kitchen cross-contact handling before ordering. Located on the 2nd floor with no elevator.",
+    "tags": [
+      "Restaurant"
+    ]
   },
   "1142091847": {
-    "location": "Seoul, Yongsan-gu"
+    "nameEn": "Sunny Bread",
+    "location": "Seoul, Yongsan-gu",
+    "note": "Yongsan cafe listing where GF details are not fully confirmed; verify ingredients and cross-contact precautions with staff at visit time.",
+    "tags": [
+      "Cafe",
+      "Bakery"
+    ]
   }
 }

@@ -11,7 +11,8 @@
     "start": "next start",
     "lint": "next lint",
     "import:naver": "node scripts/import_naver.mjs",
-    "publish:local": "npm run import:naver && npm run build:places && npm run validate:places"
+    "publish:local": "npm run import:naver && npm run build:places && npm run validate:places",
+    "enrich:notes": "node scripts/enrich_notes.mjs"
   },
   "dependencies": {
     "next": "15.4.3",
@@ -19,6 +20,7 @@
     "react-dom": "19.1.0"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.78.0",
     "@cloudflare/next-on-pages": "^1.13.16",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
