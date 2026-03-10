@@ -3,6 +3,7 @@
     "slug": "monil2-house",
     "type": "Bakery",
     "location": "Seoul, Mapo-gu (Yeonnam)",
+    "addressEn": "9 Sungmisan-ro 26-gil, Mapo-gu, Seoul",
     "note": "Hongdae/Yeonnam celiac-friendly bakery & cafe. Staff confirmed gluten-free when asked. Highlights: pizza, churros with chocolate dip, salt bread, coffee, gluten-free cakes. Price is slightly higher than non-GF. (User review, 2026-02-10; verify on visit.)",
     "tags": ["Dedicated GF", "Bread", "Dessert"],
     "website": "https://www.instagram.com/monil2_house",
@@ -15,6 +16,7 @@
     "slug": "237-pizza",
     "type": "Dining",
     "location": "Seoul, Yongsan-gu (Hannam)",
+    "addressEn": "237 Itaewon-ro, Yongsan-gu, Seoul",
     "note": "Gluten-free pizza spot founded by an owner with celiac experience (user-reported). Made to order; expect a wait when busy. Recommended: four-mushroom pizza. Cool interior, nostalgic pop music, located on B1. (User review, 2026-02-10; verify on visit.)",
     "tags": ["Dedicated GF", "Pizza"],
     "website": "https://www.237pizza.com/",
@@ -23,5 +25,42 @@
       "https://www.237pizza.com/",
       "User photos + review (Telegram, 2026-02-10)"
     ]
+  },
+  "1056359801": {
+    "location": "Seoul, Yongsan-gu (Samgakji)",
+    "addressEn": "100 Hangang-daero, Yongsan-gu, Seoul",
+    "note": "Italian restaurant by Cucciolo Group, located in the Amore Pacific HQ building. Verify gluten-free options with staff on visit."
+  },
+  "1434476104": {
+    "location": "Seoul, Yeongdeungpo-gu (Dangsan)",
+    "addressEn": "1 Dangsan-ro 45-gil, Yeongdeungpo-gu, Seoul"
+  },
+  "1312707678": {
+    "location": "Gyeonggi, Pyeongtaek (Godeok)",
+    "addressEn": "41 Godeok-yeoyeom 4-ro, Pyeongtaek, Gyeonggi-do"
+  },
+  "1218176536": {
+    "location": "Seoul, Yongsan-gu (Noksapyeong)",
+    "addressEn": "21 Noksapyeong-daero 32-gil, Yongsan-gu, Seoul"
+  },
+  "1128289843": {
+    "location": "Seoul, Seongdong-gu (Seoul Forest)",
+    "addressEn": "16-12 Seoulsup 2-gil, Seongdong-gu, Seoul"
+  },
+  "33489623": {
+    "location": "Cheonan, South Chungcheong (Dongnam-gu)",
+    "addressEn": "706 Pungse-ro, Dongnam-gu, Cheonan, Chungcheongnam-do",
+    "note": "Toujours Dolgama - a village-style stone kiln bakery in Cheonan. Scenic setting; verify gluten-free items with staff."
+  },
+  "1907181273": {
+    "location": "Seoul, Songpa-gu (Songridangil)",
+    "addressEn": "12 Baekjegobun-ro 45-gil, Songpa-gu, Seoul",
+    "note": "Dedicated gluten-free cafe near Lotte World. All desserts use rice flour. Items labeled GF or LG. 3-min walk from Songpanaru Station (Line 9, Exit 1)."
+  },
+  "1413655852": {
+    "location": "Seoul, Seodaemun-gu (Sinchon)"
+  },
+  "1142091847": {
+    "location": "Seoul, Yongsan-gu"
   }
 }

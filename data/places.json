@@ -4,7 +4,7 @@
     "name": "쿠촐로 서울",
     "type": "음식점",
     "address": "서울 용산구 한강대로 100",
-    "note": "",
+    "note": "Italian restaurant by Cucciolo Group, located in the Amore Pacific HQ building. Verify gluten-free options with staff on visit.",
     "tags": [],
     "rating": null,
     "naverMapUrl": "https://map.naver.com/p/entry/place/1056359801",
@@ -12,7 +12,9 @@
     "sources": [],
     "naverPlaceId": "1056359801",
     "lat": 37.5287912,
-    "lng": 126.9686735
+    "lng": 126.9686735,
+    "location": "Seoul, Yongsan-gu (Samgakji)",
+    "addressEn": "100 Hangang-daero, Yongsan-gu, Seoul"
   },
   {
     "slug": "237-pizza",
@@ -35,7 +37,8 @@
     "naverPlaceId": "1741203487",
     "lat": 37.5362354,
     "lng": 126.9994926,
-    "location": "Seoul, Yongsan-gu (Hannam)"
+    "location": "Seoul, Yongsan-gu (Hannam)",
+    "addressEn": "237 Itaewon-ro, Yongsan-gu, Seoul"
   },
   {
     "slug": "place-1434476104",
@@ -50,7 +53,9 @@
     "sources": [],
     "naverPlaceId": "1434476104",
     "lat": 37.5331103,
-    "lng": 126.9006365
+    "lng": 126.9006365,
+    "location": "Seoul, Yeongdeungpo-gu (Dangsan)",
+    "addressEn": "1 Dangsan-ro 45-gil, Yeongdeungpo-gu, Seoul"
   },
   {
     "slug": "place-1312707678",
@@ -65,7 +70,9 @@
     "sources": [],
     "naverPlaceId": "1312707678",
     "lat": 37.0452933,
-    "lng": 127.052023
+    "lng": 127.052023,
+    "location": "Gyeonggi, Pyeongtaek (Godeok)",
+    "addressEn": "41 Godeok-yeoyeom 4-ro, Pyeongtaek, Gyeonggi-do"
   },
   {
     "slug": "place-1218176536",
@@ -80,7 +87,9 @@
     "sources": [],
     "naverPlaceId": "1218176536",
     "lat": 37.5336338,
-    "lng": 126.9901609
+    "lng": 126.9901609,
+    "location": "Seoul, Yongsan-gu (Noksapyeong)",
+    "addressEn": "21 Noksapyeong-daero 32-gil, Yongsan-gu, Seoul"
   },
   {
     "slug": "place-1128289843",
@@ -95,7 +104,9 @@
     "sources": [],
     "naverPlaceId": "1128289843",
     "lat": 37.5469645,
-    "lng": 127.0401552
+    "lng": 127.0401552,
+    "location": "Seoul, Seongdong-gu (Seoul Forest)",
+    "addressEn": "16-12 Seoulsup 2-gil, Seongdong-gu, Seoul"
   },
   {
     "slug": "monil2-house",
@@ -118,14 +129,15 @@
     "naverPlaceId": "1650174352",
     "lat": 37.563473,
     "lng": 126.9225228,
-    "location": "Seoul, Mapo-gu (Yeonnam)"
+    "location": "Seoul, Mapo-gu (Yeonnam)",
+    "addressEn": "9 Sungmisan-ro 26-gil, Mapo-gu, Seoul"
   },
   {
     "slug": "place-33489623",
     "name": "뚜쥬루 빵돌가마마을",
     "type": "카페",
     "address": "충남 천안시 동남구 풍세로 706",
-    "note": "",
+    "note": "Toujours Dolgama - a village-style stone kiln bakery in Cheonan. Scenic setting; verify gluten-free items with staff.",
     "tags": [],
     "rating": null,
     "naverMapUrl": "https://map.naver.com/p/entry/place/33489623",
@@ -133,14 +145,16 @@
     "sources": [],
     "naverPlaceId": "33489623",
     "lat": 36.7733038,
-    "lng": 127.1392007
+    "lng": 127.1392007,
+    "location": "Cheonan, South Chungcheong (Dongnam-gu)",
+    "addressEn": "706 Pungse-ro, Dongnam-gu, Cheonan, Chungcheongnam-do"
   },
   {
     "slug": "place-1907181273",
     "name": "카페 페퍼",
     "type": "카페",
     "address": "서울 송파구 백제고분로45길 12",
-    "note": "",
+    "note": "Dedicated gluten-free cafe near Lotte World. All desserts use rice flour. Items labeled GF or LG. 3-min walk from Songpanaru Station (Line 9, Exit 1).",
     "tags": [],
     "rating": null,
     "naverMapUrl": "https://map.naver.com/p/entry/place/1907181273",
@@ -148,7 +162,9 @@
     "sources": [],
     "naverPlaceId": "1907181273",
     "lat": 37.5096343,
-    "lng": 127.1101663
+    "lng": 127.1101663,
+    "location": "Seoul, Songpa-gu (Songridangil)",
+    "addressEn": "12 Baekjegobun-ro 45-gil, Songpa-gu, Seoul"
   },
   {
     "slug": "grain-seoul-1413655852",
@@ -163,7 +179,8 @@
     "sources": [],
     "naverPlaceId": "1413655852",
     "lat": 37.5662742,
-    "lng": 126.9274575
+    "lng": 126.9274575,
+    "location": "Seoul, Seodaemun-gu (Sinchon)"
   },
   {
     "slug": "sunny-bread-1142091847",
@@ -178,6 +195,7 @@
     "sources": [],
     "naverPlaceId": "1142091847",
     "lat": 37.5458631,
-    "lng": 126.9224075
+    "lng": 126.9224075,
+    "location": "Seoul, Yongsan-gu"
   }
 ]

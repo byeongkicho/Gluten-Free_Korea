@@ -125,8 +125,23 @@ export default async function PlaceDetailPage({ params }) {
               </>
             )}
           </p>
-          {place.address ? (
-            <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{place.address}</p>
+          {place.address || place.addressEn ? (
+            <div className="mt-3 rounded-lg border border-gray-100 bg-gray-50 p-3 dark:border-gray-700 dark:bg-gray-800">
+              <p className="text-xs font-medium text-gray-500 dark:text-gray-400">
+                <span className="lang-en">Address (show to taxi driver)</span>
+                <span className="lang-ko">주소 (택시 기사님께 보여주세요)</span>
+              </p>
+              {place.address ? (
+                <p className="mt-1 text-sm font-medium text-gray-900 dark:text-white">
+                  {place.address}
+                </p>
+              ) : null}
+              {place.addressEn ? (
+                <p className="mt-0.5 text-sm text-gray-600 dark:text-gray-300">
+                  {place.addressEn}
+                </p>
+              ) : null}
+            </div>
           ) : null}
 
           {place.tags?.length ? (
