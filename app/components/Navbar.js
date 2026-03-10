@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LanguageToggle from "./LanguageToggle";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   return (
@@ -21,6 +22,7 @@ export default function Navbar() {
             <span className="lang-en">Guide</span>
             <span className="lang-ko">가이드</span>
           </Link>
+          <ThemeToggle />
           <LanguageToggle />
         </div>
       </div>

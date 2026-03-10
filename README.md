@@ -2,6 +2,12 @@
 
 Minimal MVP focused on content display.
 
+## Operating docs
+
+- SSOT: `docs/PROJECT.md`
+- Decisions (append-only): `docs/DECISIONS.md`
+- Operating model + runbook: `docs/OPERATING_MODEL.md`, `docs/RUNBOOK.md`
+
 ## Routes
 
 - `/` : unified places list
@@ -29,7 +35,7 @@ npm run pages:build
 
 ## Notes
 
-- Data source: `data/restaurants.json`
+- Runtime data source: `data/places.json` (generated)
 - Keep `.env*` files out of git
 
 ## Cloudflare Pages (recommended)
@@ -37,7 +43,7 @@ npm run pages:build
 - Build command: `npm run pages:build`
 - Build output directory: `.vercel/output/static`
 
-## Places data schema (`data/restaurants.json`)
+## Places data schema (`data/places.json`)
 
 ### Required fields
 

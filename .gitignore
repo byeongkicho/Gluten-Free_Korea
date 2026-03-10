@@ -43,3 +43,12 @@ next-env.d.ts
 .env
 .env.*
 !.env.example
+
+# local agent data
+.claude/
+
+# raw exports (commit sanitized candidates only)
+data/raw/
+data/*.raw.json
+data/*export*.json
+data/naver-export*.json

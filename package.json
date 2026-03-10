@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3000",
+    "build:places": "node scripts/build_places.mjs",
+    "validate:places": "node scripts/validate_places.mjs",
     "build": "next build",
-    "pages:build": "npm run build && next-on-pages",
+    "pages:build": "npm run build:places && npm run build && next-on-pages",
     "start": "next start",
     "lint": "next lint"
   },

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import places from "@/data/restaurants.json";
+import places from "@/data/places.json";
+
+export const runtime = "edge";
 
 function getValidatedPlaces() {
   const rows = Array.isArray(places) ? places : [];
@@ -10,7 +12,7 @@ function getValidatedPlaces() {
     const slug = place?.slug;
     if (!slug || typeof slug !== "string") continue;
     if (seen.has(slug)) {
-      throw new Error(`Duplicate slug found in data/restaurants.json: ${slug}`);
+      throw new Error(`Duplicate slug found in data/places.json: ${slug}`);
     }
     seen.add(slug);
   }
@@ -24,19 +26,15 @@ function getPlaceBySlug(slug) {
   return validatedPlaces.find((p) => p.slug === slug);
 }
 
-export function generateStaticParams() {
-  return validatedPlaces
-    .filter((p) => typeof p.slug === "string" && p.slug.trim().length > 0)
-    .map((p) => ({ slug: p.slug }));
-}
-
-export function generateMetadata({ params }) {
-  const { slug } = params;
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
   const place = getPlaceBySlug(slug);
-  const title = place ? `${place.name} | Gluten-Free Korea` : "Place Not Found";
+  const title = place
+    ? `${place.name} – Gluten-Free Options in Korea | Gluten-Free Korea`
+    : "Place Not Found";
   const description = place?.note || "Gluten-free place detail";
   const path = `/place/${slug}`;
-  const image = "/file.svg";
+  const image = "/og-default.png";
 
   return {
     title,
@@ -64,14 +62,31 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function PlaceDetailPage({ params }) {
-  const { slug } = params;
+export default async function PlaceDetailPage({ params }) {
+  const { slug } = await params;
   const place = getPlaceBySlug(slug);
 
   if (!place) notFound();
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    name: place.name,
+    description: place.note || undefined,
+    address: place.address
+      ? { "@type": "PostalAddress", streetAddress: place.address }
+      : undefined,
+    url: place.website || `${siteUrl}/place/${slug}`,
+    servesCuisine: "Gluten-Free",
+  };
+
   return (
     <main className="min-h-screen px-4 py-8 sm:px-6 sm:py-10 md:py-14">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="mx-auto max-w-3xl">
         <Link
           href="/"

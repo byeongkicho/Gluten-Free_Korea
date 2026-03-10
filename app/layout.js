@@ -11,8 +11,10 @@ function InitScript() {
       dangerouslySetInnerHTML={{
         __html: `(() => {
   try {
+    const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (prefersDark) document.documentElement.classList.add('dark');
+    const isDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+    if (isDark) document.documentElement.classList.add('dark');
     else document.documentElement.classList.remove('dark');
 
     const savedLang = localStorage.getItem('lang');
@@ -40,7 +42,7 @@ const geistMono = Geist_Mono({
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 const defaultTitle = "GF Korea";
 const defaultDescription = "A guide to gluten-free living and safe eats in Korea.";
-const defaultOgImage = "/file.svg";
+const defaultOgImage = "/og-default.png";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import places from "@/data/restaurants.json";
+import places from "@/data/places.json";
 
 export const metadata = {
   title: "Gluten-Free Korea",
@@ -72,6 +72,11 @@ export default function HomePage() {
                       </>
                     )}
                   </p>
+                  {place.note ? (
+                    <p className="mt-3 line-clamp-2 text-xs leading-relaxed text-gray-500 dark:text-gray-400">
+                      {place.note}
+                    </p>
+                  ) : null}
                   <div className="mt-4 flex flex-wrap gap-2">
                     {(place.tags || []).slice(0, 3).map((tag) => (
                       <span
