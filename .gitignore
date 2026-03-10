@@ -53,3 +53,6 @@ data/*.raw.json
 data/*export*.json
 data/naver-export*.json
 data/naver_raw.json
+
+# local screenshots
+screenshot*.png
