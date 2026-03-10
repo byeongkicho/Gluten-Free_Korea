@@ -2,7 +2,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import places from "@/data/places.json";
 
-export const runtime = "edge";
+const TYPE_MAP = {
+  "음식점": "Restaurant",
+  "카페": "Cafe",
+  "베이커리": "Bakery",
+  "제과,베이커리": "Bakery",
+};
 
 function getValidatedPlaces() {
   const rows = Array.isArray(places) ? places : [];
@@ -24,6 +29,12 @@ const validatedPlaces = getValidatedPlaces();
 
 function getPlaceBySlug(slug) {
   return validatedPlaces.find((p) => p.slug === slug);
+}
+
+export function generateStaticParams() {
+  return validatedPlaces
+    .filter((p) => typeof p.slug === "string" && p.slug.trim().length > 0)
+    .map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }) {
@@ -69,6 +80,8 @@ export default async function PlaceDetailPage({ params }) {
   if (!place) notFound();
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const displayType = place.type || "Place";
+  const displayTypeEn = TYPE_MAP[place.type] || place.type || "Place";
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
@@ -98,7 +111,8 @@ export default async function PlaceDetailPage({ params }) {
 
         <section className="mt-4 rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-900 sm:p-6">
           <p className="text-xs font-medium uppercase tracking-wide text-emerald-700 dark:text-emerald-300">
-            {place.type || "Place"}
+            <span className="lang-en">{displayTypeEn}</span>
+            <span className="lang-ko">{displayType}</span>
           </p>
           <h1 className="mt-2 text-2xl font-semibold leading-tight text-gray-900 dark:text-white sm:text-3xl">
             {place.name}

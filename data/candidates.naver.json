@@ -1,1 +1,134 @@
-[]
+[
+  {
+    "sid": "1056359801",
+    "name": "쿠촐로 서울",
+    "address": "서울 용산구 한강대로 100",
+    "mcid": "DINING",
+    "mcidName": "음식점",
+    "px": 126.9686735,
+    "py": 37.5287912,
+    "memo": "",
+    "useTime": 1773114688000,
+    "lastUpdateTime": 1773114688000
+  },
+  {
+    "sid": "1741203487",
+    "name": "237피자",
+    "address": "서울 용산구 이태원로 237",
+    "mcid": "DINING",
+    "mcidName": "음식점",
+    "px": 126.9994926,
+    "py": 37.5362354,
+    "memo": "",
+    "useTime": 1773114688000,
+    "lastUpdateTime": 1773114688000
+  },
+  {
+    "sid": "1434476104",
+    "name": "쌀통닭 당산역점",
+    "address": "서울 영등포구 당산로45길 1",
+    "mcid": "DINING",
+    "mcidName": "음식점",
+    "px": 126.9006365,
+    "py": 37.5331103,
+    "memo": "",
+    "useTime": 1773114688000,
+    "lastUpdateTime": 1773114688000
+  },
+  {
+    "sid": "1312707678",
+    "name": "카페 리벌스",
+    "address": "경기 평택시 고덕여염4로 41",
+    "mcid": "CAFE",
+    "mcidName": "카페",
+    "px": 127.052023,
+    "py": 37.0452933,
+    "memo": "",
+    "useTime": 1773114688000,
+    "lastUpdateTime": 1773114688000
+  },
+  {
+    "sid": "1218176536",
+    "name": "미니마이즈 이태원점",
+    "address": "서울 용산구 녹사평대로32길 21",
+    "mcid": "CAFE",
+    "mcidName": "카페",
+    "px": 126.9901609,
+    "py": 37.5336338,
+    "memo": "",
+    "useTime": 1773114688000,
+    "lastUpdateTime": 1773114688000
+  },
+  {
+    "sid": "1128289843",
+    "name": "글루닉",
+    "address": "서울 성동구 서울숲2길 16-12",
+    "mcid": "CAFE",
+    "mcidName": "카페",
+    "px": 127.0401552,
+    "py": 37.5469645,
+    "memo": "",
+    "useTime": 1773114688000,
+    "lastUpdateTime": 1773114688000
+  },
+  {
+    "sid": "1650174352",
+    "name": "모닐이네하우스 글루텐프리 공방카페",
+    "address": "서울 마포구 성미산로26길 9",
+    "mcid": "CAFE",
+    "mcidName": "카페",
+    "px": 126.9225228,
+    "py": 37.563473,
+    "memo": "",
+    "useTime": 1773114688000,
+    "lastUpdateTime": 1773114688000
+  },
+  {
+    "sid": "33489623",
+    "name": "뚜쥬루 빵돌가마마을",
+    "address": "충남 천안시 동남구 풍세로 706",
+    "mcid": "CAFE",
+    "mcidName": "카페",
+    "px": 127.1392007,
+    "py": 36.7733038,
+    "memo": "",
+    "useTime": 1773114688000,
+    "lastUpdateTime": 1773114688000
+  },
+  {
+    "sid": "1907181273",
+    "name": "카페 페퍼",
+    "address": "서울 송파구 백제고분로45길 12",
+    "mcid": "CAFE",
+    "mcidName": "카페",
+    "px": 127.1101663,
+    "py": 37.5096343,
+    "memo": "",
+    "useTime": 1773114688000,
+    "lastUpdateTime": 1773114688000
+  },
+  {
+    "sid": "1413655852",
+    "name": "Grain Seoul",
+    "address": "Seoul Seodaemun-gu",
+    "mcid": "DINING",
+    "mcidName": "음식점",
+    "px": 126.9274575,
+    "py": 37.5662742,
+    "memo": "",
+    "useTime": 1773114688000,
+    "lastUpdateTime": 1773114688000
+  },
+  {
+    "sid": "1142091847",
+    "name": "Sunny Bread",
+    "address": "Seoul Yongsan-gu",
+    "mcid": "CAFE",
+    "mcidName": "카페",
+    "px": 126.9224075,
+    "py": 37.5458631,
+    "memo": "",
+    "useTime": 1773114688000,
+    "lastUpdateTime": 1773114688000
+  }
+]

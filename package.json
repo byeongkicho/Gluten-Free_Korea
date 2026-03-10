@@ -3,13 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3000",
+    "dev": "next dev -H 0.0.0.0 -p 3000",
     "build:places": "node scripts/build_places.mjs",
     "validate:places": "node scripts/validate_places.mjs",
     "build": "next build",
     "pages:build": "npm run build:places && npm run build && next-on-pages",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "import:naver": "node scripts/import_naver.mjs",
+    "publish:local": "npm run import:naver && npm run build:places && npm run validate:places"
   },
   "dependencies": {
     "next": "15.4.3",

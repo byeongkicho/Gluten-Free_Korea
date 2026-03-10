@@ -30,12 +30,14 @@ npm run dev
 ## Build
 
 ```bash
+npm run publish:local  # import:naver -> build:places -> validate:places
 npm run pages:build
 ```
 
 ## Notes
 
 - Runtime data source: `data/places.json` (generated)
+- Candidate import source (local only): `data/naver_raw.json` (gitignored)
 - Keep `.env*` files out of git
 
 ## Cloudflare Pages (recommended)

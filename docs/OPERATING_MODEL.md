@@ -13,12 +13,12 @@ Lock a simple operating model: plan with Claude, implement with Codex, and keep 
 - Tool wrappers: `CLAUDE.md`, `AGENTS.md`
 
 ## Pipeline Model
+- Local raw input (gitignored): `data/naver_raw.json`
 - Candidate pool: `data/candidates.naver.json`
-- Publishing selection: `data/selected_sids.txt`
 - Editorial overrides: `data/overrides.json`
 - Generated runtime output: `data/places.json`
 
-Flow: `candidates -> selected_sids -> overrides -> build_places -> places.json`
+Flow: `naver_raw -> import_naver -> candidates -> overrides -> build_places -> places.json`
 
 ## Rules
 - Runtime must read only `data/places.json`.

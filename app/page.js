@@ -1,6 +1,13 @@
 import Link from "next/link";
 import places from "@/data/places.json";
 
+const TYPE_MAP = {
+  "음식점": "Restaurant",
+  "카페": "Cafe",
+  "베이커리": "Bakery",
+  "제과,베이커리": "Bakery",
+};
+
 export const metadata = {
   title: "Gluten-Free Korea",
   description: "A simple guide to gluten-free friendly places in Korea.",
@@ -51,6 +58,7 @@ export default function HomePage() {
               const slug = place.slug;
               const displayName = place.name || "이름 미정";
               const displayType = place.type || "정보 준비중";
+              const displayTypeEn = TYPE_MAP[place.type] || place.type || "Place";
 
               return (
                 <Link
@@ -59,18 +67,19 @@ export default function HomePage() {
                   className="group rounded-2xl border border-gray-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-gray-300 hover:shadow-sm dark:border-gray-800 dark:bg-gray-900 dark:hover:border-gray-700 sm:p-5"
                 >
                   <p className="text-xs font-medium uppercase tracking-wide text-emerald-700 dark:text-emerald-300">
-                    {displayType}
+                    <span className="lang-en">{displayTypeEn}</span>
+                    <span className="lang-ko">{displayType}</span>
                   </p>
                   <h2 className="mt-2 line-clamp-2 text-base font-semibold leading-snug text-gray-900 dark:text-white sm:text-lg">
                     {displayName}
                   </h2>
                   <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                    {place.location || (
-                      <>
-                        <span className="lang-en">Location coming soon</span>
-                        <span className="lang-ko">위치 정보 준비중</span>
-                      </>
-                    )}
+                    <span className="lang-en">
+                      {place.location || place.address || "Location coming soon"}
+                    </span>
+                    <span className="lang-ko">
+                      {place.address || place.location || "위치 정보 준비중"}
+                    </span>
                   </p>
                   {place.note ? (
                     <p className="mt-3 line-clamp-2 text-xs leading-relaxed text-gray-500 dark:text-gray-400">

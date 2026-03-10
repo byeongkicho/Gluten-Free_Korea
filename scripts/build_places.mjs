@@ -7,7 +7,6 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 
 const candidatesPath = path.join(rootDir, "data", "candidates.naver.json");
-const selectedSidsPath = path.join(rootDir, "data", "selected_sids.txt");
 const overridesPath = path.join(rootDir, "data", "overrides.json");
 const outputPath = path.join(rootDir, "data", "places.json");
 
@@ -83,18 +82,10 @@ async function readJson(filePath) {
 }
 
 async function main() {
-  const [candidatesRaw, selectedRaw, overridesRaw] = await Promise.all([
+  const [candidatesRaw, overridesRaw] = await Promise.all([
     readJson(candidatesPath),
-    fs.readFile(selectedSidsPath, "utf8"),
     readJson(overridesPath),
   ]);
-
-  const selectedSids = new Set(
-    selectedRaw
-      .split(/\r?\n/)
-      .map((line) => line.trim())
-      .filter((line) => line && !line.startsWith("#"))
-  );
 
   const overridesBySid = sanitizeOverridesBySid(overridesRaw);
   const sanitizedCandidates = toArray(candidatesRaw).map(sanitizeCandidate);
@@ -110,9 +101,8 @@ async function main() {
   const usedSlugs = new Set();
   const places = [];
 
-  for (const sid of selectedSids) {
-    const candidate = dedupedCandidatesBySid.get(sid);
-    if (!candidate) continue;
+  for (const candidate of dedupedCandidatesBySid.values()) {
+    const sid = candidate.sid;
 
     const baseName = typeof candidate.name === "string" ? candidate.name.trim() : "";
     const slugRoot = asciiSlug(baseName) || "place";

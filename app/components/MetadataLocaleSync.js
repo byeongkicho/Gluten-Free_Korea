@@ -14,12 +14,20 @@ function getPlaceTitleFromPage() {
   return heading.textContent?.trim() || null;
 }
 
+function getSafeLang() {
+  try {
+    return localStorage.getItem("lang") === "ko" ? "ko" : "en";
+  } catch (_e) {
+    return "en";
+  }
+}
+
 export default function MetadataLocaleSync() {
   const pathname = usePathname();
 
   useEffect(() => {
     function apply() {
-      const lang = localStorage.getItem("lang") === "ko" ? "ko" : "en";
+      const lang = getSafeLang();
 
       let title = "GF Korea";
       let description = "A guide to gluten-free living and safe eats in Korea.";
@@ -50,13 +58,15 @@ export default function MetadataLocaleSync() {
             : "Always reconfirm ingredients and cross-contamination before visit.";
       }
 
-      document.title = title;
-      setMeta("meta[name='description']", description);
-      setMeta("meta[property='og:title']", title);
-      setMeta("meta[property='og:description']", description);
-      setMeta("meta[name='twitter:title']", title);
-      setMeta("meta[name='twitter:description']", description);
-      setMeta("meta[property='og:locale']", lang === "ko" ? "ko_KR" : "en_US");
+      try {
+        document.title = title;
+        setMeta("meta[name='description']", description);
+        setMeta("meta[property='og:title']", title);
+        setMeta("meta[property='og:description']", description);
+        setMeta("meta[name='twitter:title']", title);
+        setMeta("meta[name='twitter:description']", description);
+        setMeta("meta[property='og:locale']", lang === "ko" ? "ko_KR" : "en_US");
+      } catch (_e) {}
     }
 
     apply();

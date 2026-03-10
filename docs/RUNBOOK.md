@@ -1,20 +1,17 @@
 # RUNBOOK.md
 
 ## Daily Publishing Flow
-1. Update `data/candidates.naver.json` with sanitized candidates.
-2. Add/remove `sid` lines in `data/selected_sids.txt`.
-3. Add per-`sid` content overrides in `data/overrides.json`.
-4. Generate output: `npm run build:places`.
-5. Validate output: `npm run validate:places`.
-6. Verify deploy build: `npm run pages:build`.
-7. Commit and push.
+1. Save latest Naver export JSON to `data/naver_raw.json` (local only, gitignored).
+2. Regenerate publish data: `npm run publish:local`.
+3. Add per-`sid` content overrides in `data/overrides.json` if needed, then rerun `npm run publish:local`.
+4. Verify deploy build: `npm run pages:build`.
+5. Commit and push.
 
 ## Fast Pre-Deploy Command
 ```bash
-npm run build:places && npm run validate:places && npm run pages:build
+npm run publish:local && npm run pages:build
 ```
 
 ## Guardrails
-- If `selected_sids.txt` is empty, build should still pass.
 - Treat `data/places.json` as generated output.
 - Keep routes unchanged unless a dedicated planning PR says otherwise.
