@@ -70,7 +70,7 @@ Keep the static routes (/, /guide) using a fixed date '2026-03-10', not new Date
 
 ---
 
-### [ ] TASK-02: Remove dead Tailwind v3 config
+### [x] TASK-02: Remove dead Tailwind v3 config
 
 **Priority:** P0 — dead config causes confusion; content paths reference non-existent `./pages/`
 **Files:** `tailwind.config.js`
