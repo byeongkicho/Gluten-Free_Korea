@@ -253,7 +253,7 @@ Requirements:
 
 ---
 
-### [ ] TASK-09: Add security headers in next.config.mjs
+### [x] TASK-09: Add security headers in next.config.mjs
 
 **Priority:** P2
 **Files:** `next.config.mjs`
