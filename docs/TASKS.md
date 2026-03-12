@@ -143,7 +143,7 @@ server "en" and client-restored language class. No other changes needed.
 
 ---
 
-### [ ] TASK-05: Extract shared place utilities to `lib/places.js`
+### [x] TASK-05: Extract shared place utilities to `lib/places.js`
 
 **Priority:** P1
 **Files:** `app/page.js`, `app/place/[slug]/page.js`, `lib/places.js` (new)
