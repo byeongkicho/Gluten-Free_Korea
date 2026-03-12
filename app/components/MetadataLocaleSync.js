@@ -61,11 +61,6 @@ export default function MetadataLocaleSync() {
       try {
         document.title = title;
         setMeta("meta[name='description']", description);
-        setMeta("meta[property='og:title']", title);
-        setMeta("meta[property='og:description']", description);
-        setMeta("meta[name='twitter:title']", title);
-        setMeta("meta[name='twitter:description']", description);
-        setMeta("meta[property='og:locale']", lang === "ko" ? "ko_KR" : "en_US");
       } catch (_e) {}
     }
 
