@@ -172,7 +172,7 @@ Do not change any logic, only move and re-export.
 
 ---
 
-### [ ] TASK-06: Remove client-side OG meta tag updates from MetadataLocaleSync
+### [x] TASK-06: Remove client-side OG meta tag updates from MetadataLocaleSync
 
 **Priority:** P1 — SNS crawlers don't run JS; these updates have no effect and add complexity
 **Files:** `app/components/MetadataLocaleSync.js`
