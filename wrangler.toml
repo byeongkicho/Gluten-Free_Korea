@@ -1,0 +1,9 @@
+name = "gluten-free-korea"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+pages_build_output_dir = ".vercel/output/static"
+
+[vars]
+NEXT_PUBLIC_SITE_URL = "https://gluten-free-korea.pages.dev"
+SITE_URL = "https://gluten-free-korea.pages.dev"

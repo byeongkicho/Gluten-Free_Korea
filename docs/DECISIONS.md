@@ -35,3 +35,31 @@ Rule: never edit old entries; add a new entry to supersede prior decisions.
 - Decision: `build_places.mjs` now iterates all deduped candidates directly and no longer reads `data/selected_sids.txt`.
 - Supersedes: “select:sync publishes all candidates by default” for runtime behavior.
 - Rationale: removes one file and one command from the operational loop while preserving overrides and dedupe.
+
+## 2026-03-10 — Cloudflare Pages deployment via wrangler CLI
+- Status: accepted
+- Decision: Deploy using `npx wrangler pages deploy` with API token authentication. Project name: `gluten-free-korea`.
+- Config: `wrangler.toml` at repo root manages compatibility flags and env vars.
+- Rationale: SSH environment prevents browser-based OAuth login; API token with Cloudflare Pages:Edit permission works headlessly.
+
+## 2026-03-10 — wrangler.toml manages env vars (not dashboard)
+- Status: accepted
+- Decision: All environment variables (`NEXT_PUBLIC_SITE_URL`, `SITE_URL`) are declared in `wrangler.toml [vars]`. Dashboard env var management is disabled when wrangler.toml is present.
+- Consequence: Non-secret env vars must be committed to `wrangler.toml`; only secrets (encrypted) can be set via dashboard.
+
+## 2026-03-10 — SITE_URL for sitemap runtime fallback
+- Status: accepted
+- Decision: `app/sitemap.js` uses `process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL` with hardcoded fallback `https://gluten-free-korea.pages.dev`.
+- Rationale: `NEXT_PUBLIC_SITE_URL` is inlined at build time by Next.js; sitemap may run at runtime in Cloudflare Workers where build-time inlining is unavailable. `SITE_URL` (non-prefixed) is available at runtime via wrangler.toml vars.
+
+## 2026-03-12 — Codex-executable improvement backlog in docs/TASKS.md
+- Status: accepted
+- Decision: Improvement tasks (P0–P3) and deployment automation are tracked in `docs/TASKS.md` using a Codex-executable format. Claude plans; Codex executes.
+- Task scope: sitemap dates, Tailwind v4 cleanup, html lang, aria-labels, shared utils extraction, OG meta cleanup, canonical URLs, custom 404, security headers, GitHub Actions CI/CD.
+- CI/CD target: GitHub Actions → `npm run pages:build` → `npx wrangler pages deploy` on push to main.
+- Rationale: Separates planning (Claude) from implementation (Codex) to keep context clean and diffs reviewable.
+
+## 2026-03-10 — Bilingual place data (nameEn, addressEn, location)
+- Status: accepted
+- Decision: All 11 places have `nameEn`, `addressEn`, and `location` (English) fields in `overrides.json`. Place detail pages show Korean + English address side by side for taxi use.
+- Rationale: Target users are English-speaking tourists who need readable addresses for navigation.
