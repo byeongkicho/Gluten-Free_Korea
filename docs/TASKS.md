@@ -280,7 +280,7 @@ Do not change anything else in next.config.mjs.
 
 ## P3 — Nice to Have
 
-### [ ] TASK-10: Replace `new Date().getFullYear()` in Footer with static year
+### [x] TASK-10: Replace `new Date().getFullYear()` in Footer with static year
 
 **Priority:** P3 — static site; year will be baked at build time anyway; make it explicit
 **Files:** `app/components/Footer.js`
