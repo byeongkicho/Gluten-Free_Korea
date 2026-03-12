@@ -94,7 +94,7 @@ No other changes needed.
 
 ---
 
-### [ ] TASK-03: Set server-side `lang` attribute on `<html>`
+### [x] TASK-03: Set server-side `lang` attribute on `<html>`
 
 **Priority:** P0 — screen readers and crawlers read `lang` before JS runs
 **Files:** `app/layout.js`
