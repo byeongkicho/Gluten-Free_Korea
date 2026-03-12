@@ -199,7 +199,7 @@ not og:* or twitter:* tags.
 
 ## P2 — SEO & Production Polish
 
-### [ ] TASK-07: Add canonical URLs to page metadata
+### [x] TASK-07: Add canonical URLs to page metadata
 
 **Priority:** P2
 **Files:** `app/layout.js`, `app/place/[slug]/page.js`, `app/guide/page.js`
