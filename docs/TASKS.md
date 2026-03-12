@@ -227,7 +227,7 @@ Do not change any other metadata fields.
 
 ---
 
-### [ ] TASK-08: Add custom 404 page
+### [x] TASK-08: Add custom 404 page
 
 **Priority:** P2
 **Files:** `app/not-found.js` (new)
