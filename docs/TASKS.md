@@ -118,7 +118,7 @@ server "en" and client-restored language class. No other changes needed.
 
 ## P1 — Quality & Accessibility
 
-### [ ] TASK-04: Add `aria-label` to ThemeToggle and LanguageToggle
+### [x] TASK-04: Add `aria-label` to ThemeToggle and LanguageToggle
 
 **Priority:** P1
 **Files:** `app/components/ThemeToggle.js`, `app/components/LanguageToggle.js`
