@@ -43,7 +43,7 @@ Create .github/workflows/deploy.yml that:
 
 ## P0 — Fix Now
 
-### [ ] TASK-01: Fix sitemap lastModified to use per-place dates
+### [x] TASK-01: Fix sitemap lastModified to use per-place dates
 
 **Priority:** P0 — incorrect dates cause Google to distrust the sitemap
 **Files:** `app/sitemap.js`, `data/overrides.json`, `scripts/build_places.mjs`
