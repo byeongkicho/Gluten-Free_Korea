@@ -82,6 +82,7 @@ async function readJson(filePath) {
 }
 
 async function main() {
+  const todayIso = new Date().toISOString().slice(0, 10);
   const [candidatesRaw, overridesRaw] = await Promise.all([
     readJson(candidatesPath),
     readJson(overridesPath),
@@ -132,6 +133,7 @@ async function main() {
     if (!Array.isArray(merged.tags)) merged.tags = [];
     if (!Array.isArray(merged.sources)) merged.sources = [];
     if (merged.rating === undefined) merged.rating = null;
+    merged.updatedAt = todayIso;
 
     places.push(merged);
   }

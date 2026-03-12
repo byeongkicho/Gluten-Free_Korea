@@ -18,7 +18,8 @@
     "lng": 126.9686735,
     "nameEn": "Cucciolo Seoul",
     "location": "Seoul, Yongsan-gu (Samgakji)",
-    "addressEn": "100 Hangang-daero, Yongsan-gu, Seoul"
+    "addressEn": "100 Hangang-daero, Yongsan-gu, Seoul",
+    "updatedAt": "2026-03-12"
   },
   {
     "slug": "237-pizza",
@@ -43,7 +44,8 @@
     "lng": 126.9994926,
     "nameEn": "237 Pizza",
     "location": "Seoul, Yongsan-gu (Hannam)",
-    "addressEn": "237 Itaewon-ro, Yongsan-gu, Seoul"
+    "addressEn": "237 Itaewon-ro, Yongsan-gu, Seoul",
+    "updatedAt": "2026-03-12"
   },
   {
     "slug": "place-1434476104",
@@ -64,7 +66,8 @@
     "lng": 126.9006365,
     "nameEn": "Ssal Tongdak (Rice Fried Chicken) Dangsan",
     "location": "Seoul, Yeongdeungpo-gu (Dangsan)",
-    "addressEn": "1 Dangsan-ro 45-gil, Yeongdeungpo-gu, Seoul"
+    "addressEn": "1 Dangsan-ro 45-gil, Yeongdeungpo-gu, Seoul",
+    "updatedAt": "2026-03-12"
   },
   {
     "slug": "place-1312707678",
@@ -82,9 +85,10 @@
     "naverPlaceId": "1312707678",
     "lat": 37.0452933,
     "lng": 127.052023,
-    "nameEn": "Cafe Rebus",
+    "nameEn": "Cafe Rebirths",
     "location": "Gyeonggi, Pyeongtaek (Godeok)",
-    "addressEn": "41 Godeok-yeoyeom 4-ro, Pyeongtaek, Gyeonggi-do"
+    "addressEn": "41 Godeok-yeoyeom 4-ro, Pyeongtaek, Gyeonggi-do",
+    "updatedAt": "2026-03-12"
   },
   {
     "slug": "place-1218176536",
@@ -102,9 +106,10 @@
     "naverPlaceId": "1218176536",
     "lat": 37.5336338,
     "lng": 126.9901609,
-    "nameEn": "Minimalize Itaewon",
+    "nameEn": "Minimize Itaewon",
     "location": "Seoul, Yongsan-gu (Noksapyeong)",
-    "addressEn": "21 Noksapyeong-daero 32-gil, Yongsan-gu, Seoul"
+    "addressEn": "21 Noksapyeong-daero 32-gil, Yongsan-gu, Seoul",
+    "updatedAt": "2026-03-12"
   },
   {
     "slug": "place-1128289843",
@@ -125,7 +130,8 @@
     "lng": 127.0401552,
     "nameEn": "Glunic",
     "location": "Seoul, Seongdong-gu (Seoul Forest)",
-    "addressEn": "16-12 Seoulsup 2-gil, Seongdong-gu, Seoul"
+    "addressEn": "16-12 Seoulsup 2-gil, Seongdong-gu, Seoul",
+    "updatedAt": "2026-03-12"
   },
   {
     "slug": "monil2-house",
@@ -150,7 +156,8 @@
     "lng": 126.9225228,
     "nameEn": "Monil2 House Gluten-Free Cafe",
     "location": "Seoul, Mapo-gu (Yeonnam)",
-    "addressEn": "9 Sungmisan-ro 26-gil, Mapo-gu, Seoul"
+    "addressEn": "9 Sungmisan-ro 26-gil, Mapo-gu, Seoul",
+    "updatedAt": "2026-03-12"
   },
   {
     "slug": "place-33489623",
@@ -171,7 +178,8 @@
     "lng": 127.1392007,
     "nameEn": "Toujours Dolgama Village",
     "location": "Cheonan, South Chungcheong (Dongnam-gu)",
-    "addressEn": "706 Pungse-ro, Dongnam-gu, Cheonan, Chungcheongnam-do"
+    "addressEn": "706 Pungse-ro, Dongnam-gu, Cheonan, Chungcheongnam-do",
+    "updatedAt": "2026-03-12"
   },
   {
     "slug": "place-1907181273",
@@ -193,7 +201,8 @@
     "lng": 127.1101663,
     "nameEn": "Cafe Pepper",
     "location": "Seoul, Songpa-gu (Songridangil)",
-    "addressEn": "12 Baekjegobun-ro 45-gil, Songpa-gu, Seoul"
+    "addressEn": "12 Baekjegobun-ro 45-gil, Songpa-gu, Seoul",
+    "updatedAt": "2026-03-12"
   },
   {
     "slug": "grain-seoul-1413655852",
@@ -212,7 +221,8 @@
     "lat": 37.5662742,
     "lng": 126.9274575,
     "nameEn": "Grain Seoul",
-    "location": "Seoul, Seodaemun-gu (Sinchon)"
+    "location": "Seoul, Seodaemun-gu (Sinchon)",
+    "updatedAt": "2026-03-12"
   },
   {
     "slug": "sunny-bread-1142091847",
@@ -232,6 +242,7 @@
     "lat": 37.5458631,
     "lng": 126.9224075,
     "nameEn": "Sunny Bread",
-    "location": "Seoul, Yongsan-gu"
+    "location": "Seoul, Yongsan-gu",
+    "updatedAt": "2026-03-12"
   }
 ]
