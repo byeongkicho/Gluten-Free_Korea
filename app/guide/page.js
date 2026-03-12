@@ -1,6 +1,7 @@
 export const metadata = {
   title: "Guide | Gluten-Free Korea",
   description: "Basic gluten-free safety guide for Korea.",
+  alternates: { canonical: "/guide" },
 };
 
 export default function GuidePage() {

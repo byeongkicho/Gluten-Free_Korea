@@ -46,6 +46,7 @@ const defaultOgImage = "/og-default.png";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
+  alternates: { canonical: "/" },
   title: defaultTitle,
   description: defaultDescription,
   openGraph: {
