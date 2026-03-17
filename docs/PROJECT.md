@@ -18,6 +18,7 @@
 - Build script: `scripts/build_places.mjs` → `data/places.json`
 - Validation script: `scripts/validate_places.mjs`
 - Generated output: `data/places.json` (do not edit manually)
+- Bilingual note fields: `note` (EN) + optional `note_ko` (KO) may be provided in overrides and passed through to runtime data
 
 ### Pipeline flow
 ```

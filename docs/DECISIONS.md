@@ -63,3 +63,8 @@ Rule: never edit old entries; add a new entry to supersede prior decisions.
 - Status: accepted
 - Decision: All 11 places have `nameEn`, `addressEn`, and `location` (English) fields in `overrides.json`. Place detail pages show Korean + English address side by side for taxi use.
 - Rationale: Target users are English-speaking tourists who need readable addresses for navigation.
+
+## 2026-03-12 — Bilingual safety notes via note_ko
+- Status: accepted
+- Decision: Place overrides may include `note_ko` alongside English `note`, and `build_places.mjs` passes both through into `data/places.json`.
+- Rationale: The UI now renders practical safety notes in both English and Korean without introducing a second runtime data source.

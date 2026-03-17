@@ -297,6 +297,203 @@ Making it explicit avoids confusion about whether this is a runtime or build-tim
 
 ---
 
+## P2 — UX Features
+
+### [x] TASK-11: 검색 + 지역 필터
+
+**Priority:** P2
+**Files:** `app/components/PlaceFilter.js`
+
+**Codex prompt:**
+```
+Project: Next.js 15 App Router, Tailwind CSS v4, React 19.
+File: app/components/PlaceFilter.js (existing "use client" component)
+
+Current state: PlaceFilter accepts { places }, has [active, setActive] for type filter,
+and renders a type-filter button row + card grid.
+
+Add two new filter mechanisms. Do NOT change any existing card markup, Naver Map link,
+lang-en/lang-ko spans, or type-filter button row.
+
+--- CHANGE 1: Text search input ---
+Add state: const [query, setQuery] = useState("")
+
+Add a search input ABOVE the existing type-filter button row:
+  <input
+    type="search"
+    value={query}
+    onChange={e => setQuery(e.target.value)}
+    placeholder="Search places…"
+    className="w-full rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 dark:border-gray-700 dark:bg-gray-900 dark:text-white dark:placeholder-gray-500 dark:focus:border-emerald-500 dark:focus:ring-emerald-900/30"
+  />
+
+Search logic (case-insensitive, applied BEFORE type filter):
+  const q = query.trim().toLowerCase()
+  Match if q is empty OR any of these fields contain q:
+    place.name, place.nameEn, place.address, place.addressEn, place.location
+
+--- CHANGE 2: District filter buttons ---
+Add state: const [district, setDistrict] = useState("All")
+
+Add this helper function inside the component, above the return:
+  function extractDistrict(location) {
+    if (!location) return null
+    const after = location.indexOf(",")
+    if (after === -1) return null
+    const part = location.slice(after + 1).trim()
+    const paren = part.indexOf("(")
+    return paren === -1 ? part.trim() : part.slice(0, paren).trim()
+  }
+
+Derive unique districts from ALL places (not filtered):
+  const districts = [...new Set(places.map(p => extractDistrict(p.location)).filter(Boolean))].sort()
+
+Add a district button row BETWEEN the search input and the type-filter row:
+  Buttons: "All" first, then each district string.
+  "All" button label:
+    <span className="lang-en">All Areas</span><span className="lang-ko">전체 지역</span>
+  District button label: show district string as-is for both lang spans.
+  Active/inactive button classes: same as existing type-filter buttons.
+  Button row className: flex flex-wrap gap-2 mb-3
+
+--- Combined filter logic ---
+Apply filters in this order:
+  1. query filter (text search)
+  2. district filter
+  3. type filter (existing active state)
+
+const afterSearch = q
+  ? places.filter(p => [p.name, p.nameEn, p.address, p.addressEn, p.location]
+      .some(f => f && f.toLowerCase().includes(q)))
+  : places
+const afterDistrict = district === "All"
+  ? afterSearch
+  : afterSearch.filter(p => extractDistrict(p.location) === district)
+const visiblePlaces = active === "All"
+  ? afterDistrict
+  : afterDistrict.filter(p => p.type === active)
+
+Add empty state below the grid (when visiblePlaces.length === 0):
+  <p className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+    <span className="lang-en">No places match your filters.</span>
+    <span className="lang-ko">조건에 맞는 장소가 없습니다.</span>
+  </p>
+
+Do not add new files. Do not change routing or card markup.
+```
+
+**Done when:**
+- `PlaceFilter.js` contains `query`, `district`, `extractDistrict`, `afterSearch`, `afterDistrict`
+- Search input is rendered above district buttons, district buttons above type buttons
+- Empty state renders when `visiblePlaces.length === 0`
+
+---
+
+### [x] TASK-12: 이름/주소 복사 버튼
+
+**Priority:** P2
+**Files:** `app/components/PlaceFilter.js`
+
+**Codex prompt:**
+```
+Project: Next.js 15 App Router, Tailwind CSS v4, React 19.
+File: app/components/PlaceFilter.js (existing "use client" component)
+
+Add a copy button to each place card.
+Copy content: "${place.name}  ${place.address}" (two spaces between name and address)
+
+Add a CopyButton sub-component at the top of the file (before the main export):
+
+function CopyButton({ text }) {
+  const [copied, setCopied] = useState(false)
+  function handleCopy() {
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1800)
+    })
+  }
+  return (
+    <button
+      type="button"
+      onClick={e => { e.preventDefault(); handleCopy() }}
+      className="relative z-10 inline-flex items-center gap-1 rounded-lg border border-gray-200 px-2.5 py-1.5 text-xs text-gray-500 transition hover:border-gray-300 hover:text-gray-700 dark:border-gray-700 dark:text-gray-400 dark:hover:border-gray-600 dark:hover:text-gray-200"
+      aria-label="Copy name and address"
+    >
+      {copied ? (
+        <span className="text-emerald-600 dark:text-emerald-400">복사됨 ✓</span>
+      ) : (
+        <>
+          <span className="lang-en">Copy</span>
+          <span className="lang-ko">복사</span>
+        </>
+      )}
+    </button>
+  )
+}
+
+In each card, inside the <div className="relative z-10 mt-auto pt-5"> block,
+wrap the Naver Map <a> and the new CopyButton in:
+  <div className="flex flex-wrap items-center gap-2">
+    {place.naverMapUrl ? <a ...>Naver Map</a> : null}
+    <CopyButton text={`${place.name}  ${place.address}`} />
+  </div>
+
+The "View details →" <p> stays below this button row, unchanged.
+Do not change any other card markup. Do not add new files.
+```
+
+**Done when:**
+- `PlaceFilter.js` contains `CopyButton` function
+- `PlaceFilter.js` contains `navigator.clipboard`
+- `PlaceFilter.js` contains `e.preventDefault()` in the copy handler
+- `PlaceFilter.js` contains `복사됨 ✓`
+
+---
+
+### [x] TASK-13: 가이드 — 쌀빵 경고 섹션 추가
+
+**Priority:** P2
+**Files:** `app/guide/page.js`
+
+**Codex prompt:**
+```
+Project: Next.js 15 App Router, Tailwind CSS v4.
+File: app/guide/page.js
+
+The guide page currently has 4 sections in this order:
+  1. Safety checklist (ul, no heading)
+  2. Hidden Gluten in Korean Food (section with h2)
+  3. Useful Korean Phrases (section with h2)
+  4. Amber disclaimer box (section)
+
+Add a new section between section 2 and section 3 (after Hidden Gluten, before Useful Korean Phrases).
+
+--- New section: Rice Bread Warning ---
+Use the same card styling as sections 2 and 3:
+  className="mt-5 rounded-2xl border border-amber-200 bg-amber-50 p-5 dark:border-amber-800 dark:bg-amber-900/20 sm:p-6"
+(amber tint to signal it is a warning, not a neutral info card)
+
+Section heading (h2, same styling as other h2s but amber color):
+  className="text-lg font-semibold text-amber-900 dark:text-amber-100"
+  lang-en: "⚠️ Rice Bread ≠ Gluten-Free"
+  lang-ko: "⚠️ 쌀빵 = 글루텐프리가 아닙니다"
+
+Body paragraph (mt-3 text-sm leading-relaxed):
+  className="mt-3 text-sm leading-relaxed text-amber-900 dark:text-amber-200"
+  lang-en: "In Korea, products sold as 'rice bread' (쌀빵) are not always gluten-free. Some use a mix of rice flour and wheat flour (e.g. 90% rice, 10% wheat). Always check the label or ask staff directly before purchasing."
+  lang-ko: "한국에서 '쌀빵'으로 판매되는 제품이 항상 글루텐프리인 것은 아닙니다. 쌀가루와 밀가루를 혼합해 만드는 경우가 있습니다 (예: 쌀가루 90% + 밀가루 10%). 구매 전 반드시 라벨을 확인하거나 직원에게 밀가루 포함 여부를 직접 물어보세요."
+
+Do not change any other section. Do not add new files.
+```
+
+**Done when:**
+- `app/guide/page.js` contains `쌀빵 = 글루텐프리가 아닙니다`
+- `app/guide/page.js` contains `Rice Bread` warning text
+- Amber border/background classes are used on the new section
+- All other sections are unchanged
+
+---
+
 ## Execution order for Codex
 
 Run tasks in this order for cleanest diffs:
@@ -313,6 +510,9 @@ TASK-07  # canonical URLs — metadata only
 TASK-08  # 404 page — new file
 TASK-09  # security headers — config only
 TASK-10  # footer year — trivial
+TASK-11  # search + district filter — PlaceFilter.js
+TASK-12  # copy button — PlaceFilter.js
+TASK-13  # rice bread warning section — guide/page.js
 ```
 
 ## Codex usage tips for this repo

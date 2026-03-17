@@ -28,7 +28,7 @@ in the exact execution order listed at the bottom of that file.
 Process tasks in this exact order (matches `docs/TASKS.md`):
 
 ```
-TASK-00 → TASK-02 → TASK-03 → TASK-01 → TASK-05 → TASK-04 → TASK-06 → TASK-07 → TASK-08 → TASK-09 → TASK-10
+TASK-00 → TASK-02 → TASK-03 → TASK-01 → TASK-05 → TASK-04 → TASK-06 → TASK-07 → TASK-08 → TASK-09 → TASK-10 → TASK-11 → TASK-12 → TASK-13
 ```
 
 Skip any task already marked `[x]` in TASKS.md.
@@ -376,6 +376,82 @@ CHECK-10-D: Footer.js contains "2026".
 
 ---
 
+### TASK-11: 검색 + 지역 필터
+
+**Pre-flight:**
+```
+CHECK-11-A: app/components/PlaceFilter.js exists.
+CHECK-11-B: PlaceFilter.js does NOT contain "query" state or "extractDistrict".
+  → If found: skip task (already done), move to TASK-12.
+CHECK-11-C: PlaceFilter.js contains "use client" on line 1.
+```
+
+**Execute:** Follow the Codex prompt in TASKS.md for TASK-11.
+
+**Post-flight:**
+```
+CHECK-11-D: PlaceFilter.js contains "query" and "setQuery".
+CHECK-11-E: PlaceFilter.js contains "district" and "setDistrict".
+CHECK-11-F: PlaceFilter.js contains "extractDistrict".
+CHECK-11-G: PlaceFilter.js contains "afterSearch" and "afterDistrict".
+CHECK-11-H: PlaceFilter.js contains "No places match" (empty state).
+CHECK-11-I: npm run build exits 0 with no errors.
+```
+
+**Commit message:** `feat: add text search and district filter to PlaceFilter`
+
+---
+
+### TASK-12: 이름/주소 복사 버튼
+
+**Pre-flight:**
+```
+CHECK-12-A: app/components/PlaceFilter.js exists.
+CHECK-12-B: PlaceFilter.js does NOT contain "CopyButton".
+  → If found: skip task (already done).
+CHECK-12-C: PlaceFilter.js contains "mt-auto pt-5" (card bottom section exists).
+```
+
+**Execute:** Follow the Codex prompt in TASKS.md for TASK-12.
+
+**Post-flight:**
+```
+CHECK-12-D: PlaceFilter.js contains "CopyButton".
+CHECK-12-E: PlaceFilter.js contains "navigator.clipboard".
+CHECK-12-F: PlaceFilter.js contains "e.preventDefault()".
+CHECK-12-G: PlaceFilter.js contains "복사됨 ✓".
+CHECK-12-H: npm run build exits 0 with no errors.
+```
+
+**Commit message:** `feat: add copy name/address button to place cards`
+
+---
+
+### TASK-13: 가이드 — 쌀빵 경고 섹션
+
+**Pre-flight:**
+```
+CHECK-13-A: app/guide/page.js exists.
+CHECK-13-B: guide/page.js does NOT contain "쌀빵 = 글루텐프리가 아닙니다".
+  → If found: skip task (already done).
+CHECK-13-C: guide/page.js contains "Useful Korean Phrases" (insertion point exists).
+```
+
+**Execute:** Follow the Codex prompt in TASKS.md for TASK-13.
+
+**Post-flight:**
+```
+CHECK-13-D: guide/page.js contains "쌀빵 = 글루텐프리가 아닙니다".
+CHECK-13-E: guide/page.js contains "Rice Bread".
+CHECK-13-F: guide/page.js contains "border-amber-200" on the new section.
+CHECK-13-G: New section appears BEFORE the "Useful Korean Phrases" section in the file.
+CHECK-13-H: npm run build exits 0 with no errors.
+```
+
+**Commit message:** `feat: add rice bread gluten warning section to guide`
+
+---
+
 ## After all tasks complete
 
 1. Run `git log --oneline -15` and confirm each task has its own commit.
@@ -393,6 +469,9 @@ TASK-07  [✓/✗]  Canonical URLs
 TASK-08  [✓/✗]  Custom 404 page
 TASK-09  [✓/✗]  Security headers
 TASK-10  [✓/✗]  Hardcode footer year
+TASK-11  [✓/✗]  Search + district filter
+TASK-12  [✓/✗]  Copy name/address button
+TASK-13  [✓/✗]  Rice bread warning in guide
 ```
 
 3. If any task stopped early, list the failed check ID and the exact file/line that caused it.

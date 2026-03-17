@@ -2,7 +2,7 @@
   {
     "slug": "place-1056359801",
     "name": "쿠촐로 서울",
-    "type": "음식점",
+    "type": "Restaurant",
     "address": "서울 용산구 한강대로 100",
     "note": "Italian restaurant by Cucciolo Group in the Amore Pacific building; verify current gluten-free options and kitchen handling with staff on visit.",
     "tags": [
@@ -19,12 +19,13 @@
     "nameEn": "Cucciolo Seoul",
     "location": "Seoul, Yongsan-gu (Samgakji)",
     "addressEn": "100 Hangang-daero, Yongsan-gu, Seoul",
-    "updatedAt": "2026-03-12"
+    "note_ko": "아모레퍼시픽 빌딩 내 쿠초로 그룹의 이탈리안 레스토랑. 방문 시 글루텐프리 옵션과 주방 처리 방식을 직원에게 직접 확인하세요.",
+    "updatedAt": "2026-03-17"
   },
   {
     "slug": "237-pizza",
     "name": "237피자",
-    "type": "Dining",
+    "type": "Restaurant",
     "address": "서울 용산구 이태원로 237",
     "note": "Gluten-free pizza shop in Hannam (B1) with made-to-order pies; check current wait time and preparation details with staff when visiting.",
     "tags": [
@@ -45,12 +46,13 @@
     "nameEn": "237 Pizza",
     "location": "Seoul, Yongsan-gu (Hannam)",
     "addressEn": "237 Itaewon-ro, Yongsan-gu, Seoul",
-    "updatedAt": "2026-03-12"
+    "note_ko": "한남동 지하 1층에 위치한 글루텐프리 피자 전문점. 주문 즉시 만들어주며, 방문 전 대기 시간과 조리 세부 사항을 직원에게 확인하세요.",
+    "updatedAt": "2026-03-17"
   },
   {
     "slug": "place-1434476104",
     "name": "쌀통닭 당산역점",
-    "type": "음식점",
+    "type": "Restaurant",
     "address": "서울 영등포구 당산로45길 1",
     "note": "Rice-based fried chicken franchise with multiple branches. Some locations may be delivery-only, so check availability before visiting. Plain fried chicken is typically gluten-free, but many sauces/seasonings (e.g., soy sauce, gochujang-based, teriyaki-style) may contain gluten—confirm ingredients and cross-contact handling with staff before ordering.",
     "tags": [
@@ -67,15 +69,17 @@
     "nameEn": "Ssal Tongdak (Rice Fried Chicken) Dangsan",
     "location": "Seoul, Yeongdeungpo-gu (Dangsan)",
     "addressEn": "1 Dangsan-ro 45-gil, Yeongdeungpo-gu, Seoul",
-    "updatedAt": "2026-03-12"
+    "note_ko": "쌀가루 기반 프라이드치킨 프랜차이즈로 여러 지점 운영. 일부 지점은 배달 전용일 수 있으니 방문 전 확인하세요. 일반 후라이드는 보통 글루텐프리이나, 간장·고추장·데리야키 등 소스는 글루텐이 포함될 수 있으니 주문 전 재료와 교차오염 여부를 직원에게 확인하세요.",
+    "updatedAt": "2026-03-17"
   },
   {
     "slug": "place-1312707678",
     "name": "카페 리벌스",
-    "type": "카페",
+    "type": "Cafe",
     "address": "경기 평택시 고덕여염4로 41",
     "note": "Fully gluten-free cafe in the Pyeongtaek (Godeok) area. Recommended: seasonal fruit cake. Ample parking available. Still confirm any seasonal/menu changes and cross-contact handling with staff on visit.",
     "tags": [
+      "Dedicated GF",
       "Cafe"
     ],
     "rating": null,
@@ -88,12 +92,13 @@
     "nameEn": "Cafe Rebirths",
     "location": "Gyeonggi, Pyeongtaek (Godeok)",
     "addressEn": "41 Godeok-yeoyeom 4-ro, Pyeongtaek, Gyeonggi-do",
-    "updatedAt": "2026-03-12"
+    "note_ko": "경기 평택 고덕 지역의 완전 글루텐프리 카페. 추천 메뉴: 계절 과일 케이크. 주차 가능. 시즌별 메뉴 변경 및 교차오염 여부는 방문 시 직원에게 확인하세요.",
+    "updatedAt": "2026-03-17"
   },
   {
     "slug": "place-1218176536",
     "name": "미니마이즈 이태원점",
-    "type": "카페",
+    "type": "Cafe",
     "address": "서울 용산구 녹사평대로32길 21",
     "note": "Itaewon-area cafe on the 2nd floor (no elevator). They sell both gluten-free and non-gluten-free items, so confirm which products are GF before ordering. Recommended: matcha cake. No parking available. Also confirm preparation/cross-contact handling with staff.",
     "tags": [
@@ -109,12 +114,13 @@
     "nameEn": "Minimize Itaewon",
     "location": "Seoul, Yongsan-gu (Noksapyeong)",
     "addressEn": "21 Noksapyeong-daero 32-gil, Yongsan-gu, Seoul",
-    "updatedAt": "2026-03-12"
+    "note_ko": "이태원 2층 카페 (엘리베이터 없음). 글루텐프리와 일반 제품을 함께 판매하므로 주문 전 어떤 제품이 GF인지 직원에게 확인하세요. 추천 메뉴: 말차 케이크. 주차 불가.",
+    "updatedAt": "2026-03-17"
   },
   {
     "slug": "place-1128289843",
     "name": "글루닉",
-    "type": "카페",
+    "type": "Cafe",
     "address": "서울 성동구 서울숲2길 16-12",
     "note": "Cafe near Seoul Forest with limited public gluten-free detail; confirm current options and cross-contact policy directly with staff.",
     "tags": [
@@ -131,7 +137,8 @@
     "nameEn": "Glunic",
     "location": "Seoul, Seongdong-gu (Seoul Forest)",
     "addressEn": "16-12 Seoulsup 2-gil, Seongdong-gu, Seoul",
-    "updatedAt": "2026-03-12"
+    "note_ko": "서울숲 인근 카페로 공개된 글루텐프리 정보가 제한적입니다. 방문 시 현재 메뉴와 교차오염 정책을 직원에게 직접 확인하세요.",
+    "updatedAt": "2026-03-17"
   },
   {
     "slug": "monil2-house",
@@ -157,12 +164,13 @@
     "nameEn": "Monil2 House Gluten-Free Cafe",
     "location": "Seoul, Mapo-gu (Yeonnam)",
     "addressEn": "9 Sungmisan-ro 26-gil, Mapo-gu, Seoul",
-    "updatedAt": "2026-03-12"
+    "note_ko": "연남동에 위치한 셀리악 친화적 베이커리 카페. 글루텐프리 빵과 디저트로 유명하며, 방문 전 당일 재고와 조리 방식을 직원에게 꼭 확인하세요.",
+    "updatedAt": "2026-03-17"
   },
   {
     "slug": "place-33489623",
     "name": "뚜쥬루 빵돌가마마을",
-    "type": "카페",
+    "type": "Cafe",
     "address": "충남 천안시 동남구 풍세로 706",
     "note": "Toujours Dolgama is a village-style stone-kiln bakery complex in Cheonan (large site). It may be difficult to reach by public transport, so check directions in advance. There is a separate shop selling rice-based gluten-free cakes—confirm which items are GF before purchasing. You can buy the cake and then order coffee to enjoy it inside the main area. Ample parking available.",
     "tags": [
@@ -179,16 +187,16 @@
     "nameEn": "Toujours Dolgama Village",
     "location": "Cheonan, South Chungcheong (Dongnam-gu)",
     "addressEn": "706 Pungse-ro, Dongnam-gu, Cheonan, Chungcheongnam-do",
-    "updatedAt": "2026-03-12"
+    "note_ko": "천안에 위치한 대형 돌가마 베이커리 단지. 대중교통으로 접근이 어려울 수 있으니 사전에 길을 확인하세요. 쌀 기반 글루텐프리 케이크를 판매하는 별도 매장이 있으며, 구매 전 GF 품목을 확인하세요. 케이크 구입 후 메인 구역에서 커피와 함께 즐길 수 있습니다. 주차 가능.",
+    "updatedAt": "2026-03-17"
   },
   {
     "slug": "place-1907181273",
     "name": "카페 페퍼",
-    "type": "카페",
+    "type": "Cafe",
     "address": "서울 송파구 백제고분로45길 12",
-    "note": "Dedicated gluten-free cafe in Songridan-gil (near Lotte World) with gluten-free cakes (often rice-flour based). Expect waiting on weekends/holidays. Located on the 2nd floor with no elevator. Confirm current labels and item availability with staff on visit.",
+    "note": "Gluten-free cafe in Songridan-gil (near Lotte World) with gluten-free cakes (often rice-flour based). Expect waiting on weekends/holidays. Located on the 2nd floor with no elevator. Confirm current labels, cross-contact handling, and item availability with staff on visit.",
     "tags": [
-      "Dedicated GF",
       "Cafe",
       "Dessert"
     ],
@@ -202,12 +210,13 @@
     "nameEn": "Cafe Pepper",
     "location": "Seoul, Songpa-gu (Songridangil)",
     "addressEn": "12 Baekjegobun-ro 45-gil, Songpa-gu, Seoul",
-    "updatedAt": "2026-03-12"
+    "note_ko": "송리단길(롯데월드 인근)의 글루텐프리 카페로 쌀가루 기반 케이크를 판매합니다. 주말·공휴일 대기 가능성이 있고 2층이며 엘리베이터는 없습니다. 방문 시 현재 메뉴, 교차오염 여부, 재고를 직원에게 확인하세요.",
+    "updatedAt": "2026-03-17"
   },
   {
     "slug": "grain-seoul-1413655852",
     "name": "Grain Seoul",
-    "type": "음식점",
+    "type": "Restaurant",
     "address": "Seoul Seodaemun-gu",
     "note": "Sinchon-area restaurant with gluten-free brunch options (including pancakes). Staff are attentive to allergies, but confirm specific menu items and kitchen cross-contact handling before ordering. Located on the 2nd floor with no elevator.",
     "tags": [
@@ -222,12 +231,13 @@
     "lng": 126.9274575,
     "nameEn": "Grain Seoul",
     "location": "Seoul, Seodaemun-gu (Sinchon)",
-    "updatedAt": "2026-03-12"
+    "note_ko": "신촌 인근 레스토랑으로 팬케이크 포함 글루텐프리 브런치 옵션 제공. 알레르기에 대해 직원이 친절하게 응대하지만, 방문 시 구체적인 메뉴 항목과 교차오염 여부를 꼭 확인하세요. 2층이며 엘리베이터 없음.",
+    "updatedAt": "2026-03-17"
   },
   {
     "slug": "sunny-bread-1142091847",
     "name": "Sunny Bread",
-    "type": "카페",
+    "type": "Cafe",
     "address": "Seoul Yongsan-gu",
     "note": "Yongsan cafe listing where GF details are not fully confirmed; verify ingredients and cross-contact precautions with staff at visit time.",
     "tags": [
@@ -243,6 +253,7 @@
     "lng": 126.9224075,
     "nameEn": "Sunny Bread",
     "location": "Seoul, Yongsan-gu",
-    "updatedAt": "2026-03-12"
+    "note_ko": "용산구 카페로 글루텐프리 세부 정보가 완전히 확인되지 않은 매장입니다. 방문 시 재료와 교차오염 예방 조치를 직원에게 직접 확인하세요.",
+    "updatedAt": "2026-03-17"
   }
 ]

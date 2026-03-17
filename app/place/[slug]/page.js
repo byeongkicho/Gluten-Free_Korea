@@ -80,8 +80,10 @@ export default async function PlaceDetailPage({ params }) {
   if (!place) notFound();
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-  const displayType = place.type || "Place";
-  const displayTypeEn = TYPE_MAP[place.type] || place.type || "Place";
+  const displayTypeEn = place.type || "Place";
+  const displayType = TYPE_MAP[place.type] || place.type || "장소";
+  const noteEn = place.note || place.note_ko;
+  const noteKo = place.note_ko || place.note;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
@@ -150,7 +152,11 @@ export default async function PlaceDetailPage({ params }) {
               {sortTags(place.tags).map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-gray-200 px-2.5 py-1 text-xs text-gray-700 dark:border-gray-700 dark:text-gray-300"
+                  className={
+                    tag === "Dedicated GF"
+                      ? "rounded-full bg-emerald-100 border border-emerald-200 px-2.5 py-1 text-xs font-medium text-emerald-800 dark:bg-emerald-900/30 dark:border-emerald-700 dark:text-emerald-300"
+                      : "rounded-full border border-gray-200 px-2.5 py-1 text-xs text-gray-700 dark:border-gray-700 dark:text-gray-300"
+                  }
                 >
                   {tag}
                 </span>
@@ -159,13 +165,14 @@ export default async function PlaceDetailPage({ params }) {
           ) : null}
         </section>
 
-        {place.note ? (
+        {noteEn || noteKo ? (
           <section className="mt-5 rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-900 sm:p-6">
             <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-900 dark:text-white">
               Notes
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-              {place.note}
+              <span className="lang-en">{noteEn}</span>
+              <span className="lang-ko">{noteKo}</span>
             </p>
           </section>
         ) : null}

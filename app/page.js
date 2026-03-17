@@ -1,6 +1,5 @@
-import Link from "next/link";
 import places from "@/data/places.json";
-import { TYPE_MAP, sortTags } from "@/app/lib/places";
+import PlaceFilter from "@/app/components/PlaceFilter";
 
 export const metadata = {
   title: "Gluten-Free Korea",
@@ -64,72 +63,7 @@ export default function HomePage() {
             </p>
           </div>
         ) : (
-          <section className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 [&>a:last-child:nth-child(odd)]:sm:col-span-2 [&>a:last-child:nth-child(odd)]:sm:w-full [&>a:last-child:nth-child(odd)]:lg:col-span-1">
-            {safePlaces.map((place) => {
-              const slug = place.slug;
-              const displayType = place.type || "정보 준비중";
-              const displayTypeEn = TYPE_MAP[place.type] || place.type || "Place";
-
-              return (
-                <Link
-                  key={slug}
-                  href={`/place/${slug}`}
-                  className="group flex flex-col rounded-2xl border border-gray-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-gray-300 hover:shadow-sm dark:border-gray-800 dark:bg-gray-900 dark:hover:border-gray-700 sm:p-5"
-                >
-                  <p className="text-xs font-medium uppercase tracking-wide text-emerald-700 dark:text-emerald-300">
-                    <span className="lang-en">{displayTypeEn}</span>
-                    <span className="lang-ko">{displayType}</span>
-                  </p>
-                  <h2 className="mt-2 line-clamp-2 text-base font-semibold leading-snug text-gray-900 dark:text-white sm:text-lg">
-                    <span className="lang-en">{place.nameEn || place.name || "Untitled"}</span>
-                    <span className="lang-ko">{place.name || "이름 미정"}</span>
-                  </h2>
-                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                    <span className="lang-en">
-                      {place.location || place.address || "Location coming soon"}
-                    </span>
-                    <span className="lang-ko">
-                      {place.address || place.location || "위치 정보 준비중"}
-                    </span>
-                  </p>
-                  {place.note ? (
-                    <p className="mt-3 line-clamp-2 text-xs leading-relaxed text-gray-500 dark:text-gray-400">
-                      {place.note}
-                    </p>
-                  ) : null}
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {sortTags(place.tags).slice(0, 3).map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-gray-200 px-2.5 py-1 text-xs text-gray-700 dark:border-gray-700 dark:text-gray-300"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="mt-auto pt-5">
-                    {place.naverMapUrl ? (
-                      <a
-                        href={place.naverMapUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex rounded-lg border border-gray-300 px-3 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
-                      >
-                        Naver Map
-                      </a>
-                    ) : null}
-                    <p className="pt-3 text-sm font-medium text-gray-900 dark:text-white">
-                      <span className="lang-en">View details</span>
-                      <span className="lang-ko">상세 보기</span>{" "}
-                      <span className="inline-block transition group-hover:translate-x-0.5">
-                        →
-                      </span>
-                    </p>
-                  </div>
-                </Link>
-              );
-            })}
-          </section>
+          <PlaceFilter places={safePlaces} />
         )}
       </div>
     </main>

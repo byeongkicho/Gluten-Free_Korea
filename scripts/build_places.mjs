@@ -20,6 +20,21 @@ function parseNumber(value) {
   return Number.isFinite(num) ? num : null;
 }
 
+function normalizeType(value) {
+  const normalized = {
+    "음식점": "Restaurant",
+    "카페": "Cafe",
+    "베이커리": "Bakery",
+    "제과,베이커리": "Bakery",
+    Dining: "Restaurant",
+    Bakery: "Bakery",
+    Cafe: "Cafe",
+    Restaurant: "Restaurant",
+  };
+
+  return normalized[value] || value;
+}
+
 function asciiSlug(value) {
   if (!value || typeof value !== "string") return "";
   return value
@@ -129,6 +144,8 @@ async function main() {
       ...basePlace,
       ...(overridesBySid[sid] || {}),
     };
+
+    merged.type = normalizeType(merged.type);
 
     if (!Array.isArray(merged.tags)) merged.tags = [];
     if (!Array.isArray(merged.sources)) merged.sources = [];

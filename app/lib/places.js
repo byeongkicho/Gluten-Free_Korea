@@ -1,8 +1,7 @@
 export const TYPE_MAP = {
-  "음식점": "Restaurant",
-  "카페": "Cafe",
-  "베이커리": "Bakery",
-  "제과,베이커리": "Bakery",
+  Restaurant: "음식점",
+  Cafe: "카페",
+  Bakery: "베이커리",
 };
 
 export const TAG_PRIORITY = [
