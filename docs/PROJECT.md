@@ -7,7 +7,7 @@
 - **Live URL:** https://gluten-free-korea.pages.dev
 
 ## Routes (current)
-- `/` home place directory
+- `/` home place directory with text search, district/type filters, optional nearby sorting via browser geolocation, and clearer permission recovery messaging
 - `/guide` static gluten-free safety guide
 - `/place/[slug]` place detail route backed by `data/places.json`
 
@@ -77,9 +77,12 @@ npm run build:places && npm run pages:build && npx wrangler pages deploy .vercel
 - Static-first: all pages must be statically renderable at build time
 - Naver raw export must not be committed — gitignored
 
-## Known Gaps (as of 2026-03-10)
-- sitemap.xml URLs show `localhost:3000` — fix: `rm -rf .next` then full redeploy
-- GitHub auto-deploy not connected (currently manual wrangler deploy)
+## Known Gaps (as of 2026-03-20)
+- sitemap.xml URLs show `localhost:3000` until a full clean redeploy (`rm -rf .next` then rebuild/deploy)
+- GitHub auto-deploy is not connected yet (currently manual wrangler deploy)
 - Grain Seoul, Sunny Bread: `addressEn` is district-level only
-- No search/filter on homepage
+- No map view yet
+- Nearby UI is improved, but optional radius filtering is still not implemented
+- No favorites/share flow yet
+- Place detail has separate copy buttons for name, Korean address, and English address; homepage card-level combined copy was intentionally removed
 - No image optimization (no `image` field used in cards yet)

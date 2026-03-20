@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import CopyButton from "@/app/components/CopyButton";
 import places from "@/data/places.json";
 import { TYPE_MAP, sortTags } from "@/app/lib/places";
 
@@ -116,10 +117,20 @@ export default async function PlaceDetailPage({ params }) {
             <span className="lang-en">{displayTypeEn}</span>
             <span className="lang-ko">{displayType}</span>
           </p>
-          <h1 className="mt-2 text-2xl font-semibold leading-tight text-gray-900 dark:text-white sm:text-3xl">
-            <span className="lang-en">{place.nameEn || place.name}</span>
-            <span className="lang-ko">{place.name}</span>
-          </h1>
+          <div className="mt-2 flex flex-wrap items-start justify-between gap-3">
+            <h1 className="text-2xl font-semibold leading-tight text-gray-900 dark:text-white sm:text-3xl">
+              <span className="lang-en">{place.nameEn || place.name}</span>
+              <span className="lang-ko">{place.name}</span>
+            </h1>
+            {place.name ? (
+              <CopyButton
+                text={place.name}
+                ariaLabel="Copy place name"
+                labelEn="Copy name"
+                labelKo="이름 복사"
+              />
+            ) : null}
+          </div>
           <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
             {place.location || (
               <>
@@ -135,14 +146,28 @@ export default async function PlaceDetailPage({ params }) {
                 <span className="lang-ko">주소 (택시 기사님께 보여주세요)</span>
               </p>
               {place.address ? (
-                <p className="mt-1 text-sm font-medium text-gray-900 dark:text-white">
-                  {place.address}
-                </p>
+                <div className="mt-2 flex items-start justify-between gap-3">
+                  <p className="min-w-0 text-sm font-medium text-gray-900 dark:text-white">
+                    {place.address}
+                  </p>
+                  <CopyButton
+                    text={place.address}
+                    ariaLabel="Copy Korean address"
+                    className="mt-0.5"
+                  />
+                </div>
               ) : null}
               {place.addressEn ? (
-                <p className="mt-0.5 text-sm text-gray-600 dark:text-gray-300">
-                  {place.addressEn}
-                </p>
+                <div className="mt-2 flex items-start justify-between gap-3">
+                  <p className="min-w-0 text-sm text-gray-600 dark:text-gray-300">
+                    {place.addressEn}
+                  </p>
+                  <CopyButton
+                    text={place.addressEn}
+                    ariaLabel="Copy English address"
+                    className="mt-0.5"
+                  />
+                </div>
               ) : null}
             </div>
           ) : null}

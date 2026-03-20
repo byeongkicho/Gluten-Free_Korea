@@ -524,3 +524,33 @@ TASK-13  # rice bread warning section — guide/page.js
 - Do not run `next build` locally to verify TASK-09 headers — headers() only works in
   Node.js mode; Cloudflare Pages serves static files with its own cache headers.
   Verify TASK-09 via `npx wrangler pages dev .vercel/output/static` instead.
+
+---
+
+## Next Session Notes
+
+Current UI state already implemented:
+- Homepage: text search + district/type filters + nearby sorting using browser geolocation
+- Homepage cards: explicit `View details` button only (card-wide click removed)
+- Place detail: separate copy buttons for place name, Korean address, English address
+
+Recommended next actions:
+1. Refine nearby UX
+   - Add a clearer recovery path after location permission is denied
+   - Consider a small "Retry" / "Open browser settings" style hint
+   - Add radius filtering such as `Within 1km` / `Within 3km`
+2. Map view MVP
+   - Add `List / Map` toggle on `/`
+   - Reuse current filtered place set
+   - Keep `Naver Map` as the primary external map action
+3. Share / utility polish
+   - Add share button on place detail
+   - Consider `Open in Google Maps` as a secondary helper link, not the primary CTA
+
+Context from latest session:
+- Nearby sorting uses existing `lat` / `lng` in `data/places.json`; no new runtime data source added
+- Local geolocation can show "Location permission was denied" if the browser has previously blocked `localhost` / `127.0.0.1`
+- Nearby controls were simplified to:
+  - `Recommended`
+  - `Turn on location`
+  - `Nearest` (only appears after location is available)
