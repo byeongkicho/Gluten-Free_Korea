@@ -120,9 +120,18 @@ async function main() {
   for (const candidate of dedupedCandidatesBySid.values()) {
     const sid = candidate.sid;
 
+    const overrides = overridesBySid[sid] || {};
     const baseName = typeof candidate.name === "string" ? candidate.name.trim() : "";
-    const slugRoot = asciiSlug(baseName) || "place";
-    const slug = ensureUniqueSlug(`${slugRoot}-${sid}`, usedSlugs);
+
+    // Use explicit slug from overrides, or derive from nameEn, then name, then fallback
+    let slug;
+    if (overrides.slug && typeof overrides.slug === "string") {
+      slug = ensureUniqueSlug(overrides.slug.trim(), usedSlugs);
+    } else {
+      const nameForSlug = overrides.nameEn || baseName;
+      const slugRoot = asciiSlug(nameForSlug) || "place";
+      slug = ensureUniqueSlug(slugRoot, usedSlugs);
+    }
 
     const basePlace = {
       slug,
@@ -142,7 +151,7 @@ async function main() {
 
     const merged = {
       ...basePlace,
-      ...(overridesBySid[sid] || {}),
+      ...overrides,
     };
 
     merged.type = normalizeType(merged.type);

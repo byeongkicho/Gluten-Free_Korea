@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
-import { TYPE_MAP, sortTags } from "@/app/lib/places";
+import { TYPE_MAP } from "@/app/lib/places";
+import PlaceCard from "./PlaceCard";
 
 function getTypeLabel(type) {
   const korean = TYPE_MAP[type] || type;
@@ -22,14 +22,6 @@ function getTypeLabel(type) {
       <span className="lang-ko">{korean}</span>
     </>
   );
-}
-
-function getTagClass(tag) {
-  if (tag === "Dedicated GF") {
-    return "rounded-full bg-emerald-100 border border-emerald-200 px-2.5 py-1 text-xs font-medium text-emerald-800 dark:bg-emerald-900/30 dark:border-emerald-700 dark:text-emerald-300";
-  }
-
-  return "rounded-full border border-gray-200 px-2.5 py-1 text-xs text-gray-700 dark:border-gray-700 dark:text-gray-300";
 }
 
 function getDistanceKm(from, to) {
@@ -58,11 +50,27 @@ function getDistanceKm(from, to) {
   return earthRadiusKm * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
-function formatDistance(distanceKm) {
-  if (typeof distanceKm !== "number" || Number.isNaN(distanceKm)) return null;
-  if (distanceKm < 1) return `${Math.round(distanceKm * 1000)}m`;
-  return `${distanceKm.toFixed(distanceKm < 10 ? 1 : 0)}km`;
+function extractDistrict(location) {
+  if (!location) return null;
+  const after = location.indexOf(",");
+  if (after === -1) return null;
+  const part = location.slice(after + 1).trim();
+  const paren = part.indexOf("(");
+  return paren === -1 ? part.trim() : part.slice(0, paren).trim();
 }
+
+const RADIUS_OPTIONS = [
+  { value: null, labelEn: "All", labelKo: "전체" },
+  { value: 1, labelEn: "≤ 1 km", labelKo: "1km 이내" },
+  { value: 3, labelEn: "≤ 3 km", labelKo: "3km 이내" },
+  { value: 5, labelEn: "≤ 5 km", labelKo: "5km 이내" },
+  { value: 10, labelEn: "≤ 10 km", labelKo: "10km 이내" },
+];
+
+const pillActive =
+  "rounded-full px-3.5 py-2 text-sm font-medium transition bg-emerald-600 text-white shadow-sm shadow-emerald-600/20 dark:bg-emerald-500";
+const pillInactive =
+  "rounded-full px-3.5 py-2 text-sm font-medium transition border border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-800";
 
 export default function PlaceFilter({ places }) {
   const safePlaces = Array.isArray(places) ? places : [];
@@ -72,21 +80,14 @@ export default function PlaceFilter({ places }) {
   const [sortMode, setSortMode] = useState("default");
   const [userLocation, setUserLocation] = useState(null);
   const [locationState, setLocationState] = useState("idle");
+  const [radiusKm, setRadiusKm] = useState(null);
+
   const types = [...new Set(safePlaces.map((place) => place?.type).filter(Boolean))].sort((a, b) =>
     String(a).localeCompare(String(b))
   );
-
-  function extractDistrict(location) {
-    if (!location) return null;
-    const after = location.indexOf(",");
-    if (after === -1) return null;
-    const part = location.slice(after + 1).trim();
-    const paren = part.indexOf("(");
-    return paren === -1 ? part.trim() : part.slice(0, paren).trim();
-  }
-
   const districts = [...new Set(safePlaces.map((p) => extractDistrict(p.location)).filter(Boolean))].sort();
 
+  // --- Filter pipeline ---
   const q = query.trim().toLowerCase();
   const afterSearch = q
     ? safePlaces.filter((p) =>
@@ -107,14 +108,21 @@ export default function PlaceFilter({ places }) {
     ...place,
     distanceKm: getDistanceKm(userLocation, place),
   }));
+  const afterRadius =
+    radiusKm && userLocation
+      ? withDistance.filter(
+          (p) => typeof p.distanceKm === "number" && p.distanceKm <= radiusKm
+        )
+      : withDistance;
   const visiblePlaces =
     sortMode === "nearest" && userLocation
-      ? [...withDistance].sort((a, b) => {
-          const aDistance = typeof a.distanceKm === "number" ? a.distanceKm : Number.MAX_SAFE_INTEGER;
-          const bDistance = typeof b.distanceKm === "number" ? b.distanceKm : Number.MAX_SAFE_INTEGER;
-          return aDistance - bDistance;
+      ? [...afterRadius].sort((a, b) => {
+          const aD = typeof a.distanceKm === "number" ? a.distanceKm : Number.MAX_SAFE_INTEGER;
+          const bD = typeof b.distanceKm === "number" ? b.distanceKm : Number.MAX_SAFE_INTEGER;
+          return aD - bD;
         })
-      : withDistance;
+      : afterRadius;
+
   const activeDistrictLabel = district === "All" ? "All areas" : district;
   const activeTypeLabel = active === "All" ? "All types" : active;
   const hasLocation = Boolean(userLocation);
@@ -143,19 +151,15 @@ export default function PlaceFilter({ places }) {
           setLocationState("denied");
           return;
         }
-
         setLocationState("error");
       },
-      {
-        enableHighAccuracy: true,
-        timeout: 10000,
-        maximumAge: 300000,
-      }
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 300000 }
     );
   }
 
   function resetNearby() {
     setSortMode("default");
+    setRadiusKm(null);
   }
 
   function renderLocationStatus() {
@@ -204,7 +208,7 @@ export default function PlaceFilter({ places }) {
     if (locationState === "error") {
       return (
         <p className="mt-2 text-sm text-amber-700 dark:text-amber-300" aria-live="polite">
-          <span className="lang-en">We couldn’t get your location. Please try again in a moment.</span>
+          <span className="lang-en">We couldn&apos;t get your location. Please try again in a moment.</span>
           <span className="lang-ko">현재 위치를 가져오지 못했습니다. 잠시 후 다시 시도해주세요.</span>
         </p>
       );
@@ -221,6 +225,7 @@ export default function PlaceFilter({ places }) {
   return (
     <section className="mt-8">
       <div className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm shadow-gray-100/60 dark:border-gray-800 dark:bg-gray-900 dark:shadow-none sm:p-5">
+        {/* Header */}
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-300">
@@ -244,6 +249,7 @@ export default function PlaceFilter({ places }) {
           </div>
         </div>
 
+        {/* Search */}
         <label className="relative mt-4 block">
           <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500">
             <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" className="h-4 w-4">
@@ -265,6 +271,7 @@ export default function PlaceFilter({ places }) {
           />
         </label>
 
+        {/* Nearby controls */}
         <div className="mt-4">
           <p className="mb-2 text-xs font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400">
             <span className="lang-en">Nearby</span>
@@ -274,11 +281,7 @@ export default function PlaceFilter({ places }) {
             <button
               type="button"
               onClick={resetNearby}
-              className={
-                sortMode === "default"
-                  ? "rounded-full px-3.5 py-2 text-sm font-medium transition bg-emerald-600 text-white shadow-sm shadow-emerald-600/20 dark:bg-emerald-500"
-                  : "rounded-full px-3.5 py-2 text-sm font-medium transition border border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-800"
-              }
+              className={sortMode === "default" ? pillActive : pillInactive}
             >
               <span className="lang-en">Recommended</span>
               <span className="lang-ko">추천순</span>
@@ -287,11 +290,7 @@ export default function PlaceFilter({ places }) {
               <button
                 type="button"
                 onClick={() => setSortMode("nearest")}
-                className={
-                  sortMode === "nearest"
-                    ? "rounded-full px-3.5 py-2 text-sm font-medium transition bg-emerald-600 text-white shadow-sm shadow-emerald-600/20 dark:bg-emerald-500"
-                    : "rounded-full px-3.5 py-2 text-sm font-medium transition border border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-800"
-                }
+                className={sortMode === "nearest" ? pillActive : pillInactive}
               >
                 <span className="lang-en">Nearest</span>
                 <span className="lang-ko">가까운 순</span>
@@ -300,7 +299,7 @@ export default function PlaceFilter({ places }) {
             <button
               type="button"
               onClick={requestLocation}
-              className="rounded-full border border-gray-200 bg-white px-3.5 py-2 text-sm font-medium text-gray-700 transition hover:border-gray-300 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-800"
+              className={pillInactive}
             >
               <span className="lang-en">
                 {locationState === "loading"
@@ -322,6 +321,34 @@ export default function PlaceFilter({ places }) {
               </span>
             </button>
           </div>
+
+          {/* Radius filter — only shown when location is available */}
+          {hasLocation && sortMode === "nearest" ? (
+            <div className="mt-3">
+              <p className="mb-1.5 text-xs font-medium text-gray-500 dark:text-gray-400">
+                <span className="lang-en">Distance</span>
+                <span className="lang-ko">거리 범위</span>
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {RADIUS_OPTIONS.map((opt) => (
+                  <button
+                    key={opt.labelEn}
+                    type="button"
+                    onClick={() => setRadiusKm(opt.value)}
+                    className={
+                      radiusKm === opt.value
+                        ? "rounded-full bg-emerald-100 border border-emerald-300 px-2.5 py-1 text-xs font-medium text-emerald-800 dark:bg-emerald-900/40 dark:border-emerald-700 dark:text-emerald-300"
+                        : "rounded-full border border-gray-200 px-2.5 py-1 text-xs text-gray-600 hover:border-gray-300 dark:border-gray-700 dark:text-gray-400 dark:hover:border-gray-600"
+                    }
+                  >
+                    <span className="lang-en">{opt.labelEn}</span>
+                    <span className="lang-ko">{opt.labelKo}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : null}
+
           {renderLocationStatus()}
           {showSettingsHint ? (
             <div className="mt-3 flex flex-wrap gap-2">
@@ -337,71 +364,58 @@ export default function PlaceFilter({ places }) {
           ) : null}
         </div>
 
+        {/* Area filter */}
         <div className="mt-4">
           <p className="mb-2 text-xs font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400">
             <span className="lang-en">Area</span>
             <span className="lang-ko">지역</span>
           </p>
           <div className="flex flex-wrap gap-2">
-            {["All", ...districts].map((d) => {
-              const isActive = district === d;
-
-              return (
-                <button
-                  key={d}
-                  type="button"
-                  onClick={() => setDistrict(d)}
-                  className={
-                    isActive
-                      ? "rounded-full px-3.5 py-2 text-sm font-medium transition bg-emerald-600 text-white shadow-sm shadow-emerald-600/20 dark:bg-emerald-500"
-                      : "rounded-full px-3.5 py-2 text-sm font-medium transition border border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-800"
-                  }
-                >
-                  {d === "All" ? (
-                    <>
-                      <span className="lang-en">All Areas</span>
-                      <span className="lang-ko">전체 지역</span>
-                    </>
-                  ) : (
-                    <>
-                      <span className="lang-en">{d}</span>
-                      <span className="lang-ko">{d}</span>
-                    </>
-                  )}
-                </button>
-              );
-            })}
+            {["All", ...districts].map((d) => (
+              <button
+                key={d}
+                type="button"
+                onClick={() => setDistrict(d)}
+                className={district === d ? pillActive : pillInactive}
+              >
+                {d === "All" ? (
+                  <>
+                    <span className="lang-en">All Areas</span>
+                    <span className="lang-ko">전체 지역</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="lang-en">{d}</span>
+                    <span className="lang-ko">{d}</span>
+                  </>
+                )}
+              </button>
+            ))}
           </div>
         </div>
 
+        {/* Type filter */}
         <div className="mt-4">
           <p className="mb-2 text-xs font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400">
             <span className="lang-en">Type</span>
             <span className="lang-ko">유형</span>
           </p>
           <div className="flex flex-wrap gap-2">
-            {["All", ...types].map((type) => {
-              const isActive = active === type;
-
-              return (
-                <button
-                  key={type}
-                  type="button"
-                  onClick={() => setActive(type)}
-                  className={
-                    isActive
-                      ? "rounded-full px-3.5 py-2 text-sm font-medium transition bg-emerald-600 text-white shadow-sm shadow-emerald-600/20 dark:bg-emerald-500"
-                      : "rounded-full px-3.5 py-2 text-sm font-medium transition border border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-800"
-                  }
-                >
-                  {getTypeLabel(type)}
-                </button>
-              );
-            })}
+            {["All", ...types].map((type) => (
+              <button
+                key={type}
+                type="button"
+                onClick={() => setActive(type)}
+                className={active === type ? pillActive : pillInactive}
+              >
+                {getTypeLabel(type)}
+              </button>
+            ))}
           </div>
         </div>
       </div>
 
+      {/* Place grid */}
       {visiblePlaces.length === 0 ? (
         <p className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
           <span className="lang-en">No places match your filters.</span>
@@ -409,108 +423,9 @@ export default function PlaceFilter({ places }) {
         </p>
       ) : (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 [&>div:last-child:nth-child(odd)]:sm:col-span-2 [&>div:last-child:nth-child(odd)]:sm:w-full [&>div:last-child:nth-child(odd)]:lg:col-span-1">
-          {visiblePlaces.map((place) => {
-            const slug = place.slug;
-            const displayTypeEn = place.type || "Place";
-            const displayType = TYPE_MAP[place.type] || place.type || "장소";
-            const noteEn = place.note || place.note_ko;
-            const noteKo = place.note_ko || place.note;
-            const primaryNameEn = place.nameEn || place.name || "Untitled";
-            const primaryNameKo = place.name || place.nameEn || "이름 미정";
-            const secondaryNameEn = place.name && place.name !== primaryNameEn ? place.name : null;
-            const secondaryNameKo = place.nameEn && place.nameEn !== primaryNameKo ? place.nameEn : null;
-            const distanceLabel = formatDistance(place.distanceKm);
-
-            return (
-              <div
-                key={slug}
-                className="group relative flex min-h-[260px] flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white p-4 shadow-sm shadow-gray-100/70 transition hover:-translate-y-0.5 hover:border-gray-300 hover:shadow-md hover:shadow-gray-200/70 dark:border-gray-800 dark:bg-gray-900 dark:shadow-none dark:hover:border-gray-700 sm:p-5"
-              >
-                <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-emerald-50/90 to-transparent dark:from-emerald-950/20" />
-                <div className="relative z-10 flex items-start justify-between gap-3">
-                  <p className="text-xs font-medium uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-300">
-                    <span className="lang-en">{displayTypeEn}</span>
-                    <span className="lang-ko">{displayType}</span>
-                  </p>
-                  <span className="rounded-full border border-gray-200 bg-white/90 px-2.5 py-1 text-[11px] font-medium text-gray-500 backdrop-blur dark:border-gray-700 dark:bg-gray-900/90 dark:text-gray-400">
-                    <span className="lang-en">Details</span>
-                    <span className="lang-ko">상세</span>
-                  </span>
-                </div>
-                {distanceLabel ? (
-                  <div className="relative z-10 mt-3 flex items-center gap-2">
-                    <p className="text-sm font-medium text-emerald-700 dark:text-emerald-300">
-                      <span className="lang-en">{distanceLabel} away</span>
-                      <span className="lang-ko">{distanceLabel} 거리</span>
-                    </p>
-                    {place.lat && place.lng ? (
-                      <a
-                        href={`https://map.kakao.com/link/to/${encodeURIComponent(place.name || place.nameEn || "목적지")},${place.lat},${place.lng}`}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700 transition hover:bg-emerald-100 dark:border-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 dark:hover:bg-emerald-900/50"
-                        title="Open transit directions in Kakao Map"
-                      >
-                        🚌
-                        <span className="lang-en">Directions</span>
-                        <span className="lang-ko">길찾기</span>
-                      </a>
-                    ) : null}
-                  </div>
-                ) : null}
-                <h2 className="relative z-10 mt-3 line-clamp-2 text-lg font-semibold leading-snug tracking-tight text-gray-900 dark:text-white sm:text-xl">
-                  <span className="lang-en">{primaryNameEn}</span>
-                  <span className="lang-ko">{primaryNameKo}</span>
-                </h2>
-                {secondaryNameEn || secondaryNameKo ? (
-                  <h3 className="relative z-10 mt-1 line-clamp-2 text-sm font-medium text-gray-500 dark:text-gray-400">
-                    <span className="lang-en">{secondaryNameEn || primaryNameEn}</span>
-                    <span className="lang-ko">{secondaryNameKo || primaryNameKo}</span>
-                  </h3>
-                ) : null}
-                <p className="relative z-10 mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-                  <span className="lang-en">{place.location || place.address || "Location coming soon"}</span>
-                  <span className="lang-ko">{place.address || place.location || "위치 정보 준비중"}</span>
-                </p>
-                {noteEn || noteKo ? (
-                  <p className="relative z-10 mt-3 line-clamp-3 text-xs leading-relaxed text-gray-500 dark:text-gray-400">
-                    <span className="lang-en">{noteEn}</span>
-                    <span className="lang-ko">{noteKo}</span>
-                  </p>
-                ) : null}
-                <div className="relative z-10 mt-4 flex flex-wrap gap-2">
-                  {sortTags(place.tags).slice(0, 3).map((tag) => (
-                    <span key={tag} className={getTagClass(tag)}>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="relative z-10 mt-auto pt-5">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <Link
-                      href={`/place/${slug}`}
-                      className="inline-flex w-full items-center justify-center rounded-xl bg-gray-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 sm:w-auto"
-                      aria-label={`View details for ${place.nameEn || place.name || slug}`}
-                    >
-                      <span className="lang-en">View details</span>
-                      <span className="lang-ko">상세 보기</span>
-                      <span className="ml-1 inline-block transition group-hover:translate-x-0.5">→</span>
-                    </Link>
-                    {place.naverMapUrl ? (
-                      <a
-                        href={place.naverMapUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex w-full items-center justify-center rounded-xl border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-800 sm:w-auto sm:text-xs"
-                      >
-                        Naver Map
-                      </a>
-                    ) : null}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          {visiblePlaces.map((place) => (
+            <PlaceCard key={place.slug} place={place} />
+          ))}
         </div>
       )}
     </section>
