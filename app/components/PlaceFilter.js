@@ -438,10 +438,25 @@ export default function PlaceFilter({ places }) {
                   </span>
                 </div>
                 {distanceLabel ? (
-                  <p className="relative z-10 mt-3 text-sm font-medium text-emerald-700 dark:text-emerald-300">
-                    <span className="lang-en">{distanceLabel} away</span>
-                    <span className="lang-ko">{distanceLabel} 거리</span>
-                  </p>
+                  <div className="relative z-10 mt-3 flex items-center gap-2">
+                    <p className="text-sm font-medium text-emerald-700 dark:text-emerald-300">
+                      <span className="lang-en">{distanceLabel} away</span>
+                      <span className="lang-ko">{distanceLabel} 거리</span>
+                    </p>
+                    {place.lat && place.lng ? (
+                      <a
+                        href={`https://map.kakao.com/link/to/${encodeURIComponent(place.name || place.nameEn || "목적지")},${place.lat},${place.lng}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700 transition hover:bg-emerald-100 dark:border-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 dark:hover:bg-emerald-900/50"
+                        title="Open transit directions in Kakao Map"
+                      >
+                        🚌
+                        <span className="lang-en">Directions</span>
+                        <span className="lang-ko">길찾기</span>
+                      </a>
+                    ) : null}
+                  </div>
                 ) : null}
                 <h2 className="relative z-10 mt-3 line-clamp-2 text-lg font-semibold leading-snug tracking-tight text-gray-900 dark:text-white sm:text-xl">
                   <span className="lang-en">{primaryNameEn}</span>
