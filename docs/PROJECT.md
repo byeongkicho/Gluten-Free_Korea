@@ -77,12 +77,18 @@ npm run build:places && npm run pages:build && npx wrangler pages deploy .vercel
 - Static-first: all pages must be statically renderable at build time
 - Naver raw export must not be committed — gitignored
 
-## Known Gaps (as of 2026-03-20)
+## Known Gaps (as of 2026-03-21)
 - sitemap.xml URLs show `localhost:3000` until a full clean redeploy (`rm -rf .next` then rebuild/deploy)
 - GitHub auto-deploy is not connected yet (currently manual wrangler deploy)
 - Grain Seoul, Sunny Bread: `addressEn` is district-level only
 - No map view yet
-- Nearby UI is improved, but optional radius filtering is still not implemented
 - No favorites/share flow yet
 - Place detail has separate copy buttons for name, Korean address, and English address; homepage card-level combined copy was intentionally removed
 - No image optimization (no `image` field used in cards yet)
+
+## Recent Changes (2026-03-21)
+- Slugs improved: now derived from `nameEn` (e.g. `/place/cucciolo-seoul` instead of `/place/place-1056359801`)
+- Old slug 301 redirects in `public/_redirects`
+- PlaceCard extracted as standalone component
+- Radius filter added (1km / 3km / 5km / 10km) when nearby sorting is active
+- Transit directions button (🚌 → Kakao Map) next to distance label
