@@ -15,9 +15,11 @@
     "enrich:notes": "node scripts/enrich_notes.mjs"
   },
   "dependencies": {
+    "leaflet": "^1.9.4",
     "next": "15.4.3",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "react-leaflet": "^5.0.0"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.78.0",

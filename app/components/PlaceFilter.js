@@ -1,8 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { TYPE_MAP } from "@/app/lib/places";
 import PlaceCard from "./PlaceCard";
+
+const MapView = dynamic(() => import("./MapView"), {
+  ssr: false,
+  loading: () => (
+    <p className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+      <span className="lang-en">Loading map...</span>
+      <span className="lang-ko">지도 불러오는 중...</span>
+    </p>
+  ),
+});
 
 function getTypeLabel(type) {
   const korean = TYPE_MAP[type] || type;
@@ -81,6 +92,7 @@ export default function PlaceFilter({ places }) {
   const [userLocation, setUserLocation] = useState(null);
   const [locationState, setLocationState] = useState("idle");
   const [radiusKm, setRadiusKm] = useState(null);
+  const [viewMode, setViewMode] = useState("list");
 
   const types = [...new Set(safePlaces.map((place) => place?.type).filter(Boolean))].sort((a, b) =>
     String(a).localeCompare(String(b))
@@ -415,8 +427,30 @@ export default function PlaceFilter({ places }) {
         </div>
       </div>
 
-      {/* Place grid */}
-      {visiblePlaces.length === 0 ? (
+      {/* List / Map toggle */}
+      <div className="mt-6 flex gap-2">
+        <button
+          type="button"
+          onClick={() => setViewMode("list")}
+          className={viewMode === "list" ? pillActive : pillInactive}
+        >
+          <span className="lang-en">List</span>
+          <span className="lang-ko">목록</span>
+        </button>
+        <button
+          type="button"
+          onClick={() => setViewMode("map")}
+          className={viewMode === "map" ? pillActive : pillInactive}
+        >
+          <span className="lang-en">Map</span>
+          <span className="lang-ko">지도</span>
+        </button>
+      </div>
+
+      {/* Place grid or map */}
+      {viewMode === "map" ? (
+        <MapView places={visiblePlaces} />
+      ) : visiblePlaces.length === 0 ? (
         <p className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
           <span className="lang-en">No places match your filters.</span>
           <span className="lang-ko">조건에 맞는 장소가 없습니다.</span>

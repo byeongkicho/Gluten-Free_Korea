@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import CopyButton from "@/app/components/CopyButton";
+import ShareButton from "@/app/components/ShareButton";
 import places from "@/data/places.json";
 import { TYPE_MAP, sortTags } from "@/app/lib/places";
 
@@ -202,8 +203,7 @@ export default async function PlaceDetailPage({ params }) {
           </section>
         ) : null}
 
-        {(place.website || place.naverMapUrl) && (
-          <section className="mt-5 rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-900 sm:p-6">
+        <section className="mt-5 rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-900 sm:p-6">
             <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-900 dark:text-white">
               Links
             </h2>
@@ -228,9 +228,22 @@ export default async function PlaceDetailPage({ params }) {
                   Naver Map
                 </a>
               ) : null}
+              {place.lat && place.lng ? (
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${place.lat},${place.lng}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-lg border border-gray-300 px-3 py-2 text-center text-sm text-gray-800 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
+                >
+                  Google Maps
+                </a>
+              ) : null}
+              <ShareButton
+                url={`${siteUrl}/place/${slug}`}
+                title={place.nameEn || place.name}
+              />
             </div>
           </section>
-        )}
 
         <section className="mt-5 rounded-2xl border border-amber-200 bg-amber-50 p-5 dark:border-amber-800 dark:bg-amber-900/20">
           <p className="text-sm text-amber-900 dark:text-amber-100">
