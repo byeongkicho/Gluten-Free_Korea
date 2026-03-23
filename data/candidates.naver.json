@@ -130,5 +130,65 @@
     "memo": "",
     "useTime": 1773114688000,
     "lastUpdateTime": 1773114688000
+  },
+  {
+    "sid": "1103631091",
+    "name": "Los Dias cafe",
+    "address": "서울 성북구 동소문로22길 67",
+    "mcid": "CAFE",
+    "mcidName": "카페",
+    "px": 127.0188943,
+    "py": 37.5901777,
+    "memo": "",
+    "useTime": 1774231788000,
+    "lastUpdateTime": 1774231788000
+  },
+  {
+    "sid": "1930937320",
+    "name": "시샘달 아뜰리에",
+    "address": "서울 성북구 보문로30길 74-1",
+    "mcid": "CAFE",
+    "mcidName": "카페",
+    "px": 127.01999,
+    "py": 37.5908147,
+    "memo": "",
+    "useTime": 1774231741000,
+    "lastUpdateTime": 1774231741000
+  },
+  {
+    "sid": "2065218107",
+    "name": "앙베어베이크",
+    "address": "서울 마포구 성미산로29길 14",
+    "mcid": "CAFE",
+    "mcidName": "카페",
+    "px": 126.9226625,
+    "py": 37.5647429,
+    "memo": "",
+    "useTime": 1774228486000,
+    "lastUpdateTime": 1774228486000
+  },
+  {
+    "sid": "12782440",
+    "name": "지화자",
+    "address": "Seoul Jongno-gu",
+    "mcid": "DINING",
+    "mcidName": "음식점",
+    "px": 126.9693926,
+    "py": 37.5871066,
+    "memo": "",
+    "useTime": 1774228392000,
+    "lastUpdateTime": 1774228392000
+  },
+  {
+    "sid": "37638632",
+    "name": "6일닭강정",
+    "address": "서울 종로구 지봉로 96",
+    "mcid": "DINING",
+    "mcidName": "음식점",
+    "px": 127.01557,
+    "py": 37.5784751,
+    "memo": "",
+    "useTime": 1774228221000,
+    "lastUpdateTime": 1774228221000
   }
 ]

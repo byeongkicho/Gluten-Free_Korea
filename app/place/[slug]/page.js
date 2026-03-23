@@ -107,19 +107,19 @@ export default async function PlaceDetailPage({ params }) {
       <div className="mx-auto max-w-3xl">
         <Link
           href="/"
-          className="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+          className="text-sm text-muted transition-colors hover:text-fg"
         >
           <span className="lang-en">← Back to list</span>
           <span className="lang-ko">← 목록으로 돌아가기</span>
         </Link>
 
-        <section className="mt-4 rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-900 sm:p-6">
-          <p className="text-xs font-medium uppercase tracking-wide text-emerald-700 dark:text-emerald-300">
+        <section className="mt-4 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
             <span className="lang-en">{displayTypeEn}</span>
             <span className="lang-ko">{displayType}</span>
           </p>
           <div className="mt-2 flex flex-wrap items-start justify-between gap-3">
-            <h1 className="text-2xl font-semibold leading-tight text-gray-900 dark:text-white sm:text-3xl">
+            <h1 className="font-display text-2xl font-semibold leading-tight text-fg sm:text-3xl">
               <span className="lang-en">{place.nameEn || place.name}</span>
               <span className="lang-ko">{place.name}</span>
             </h1>
@@ -132,7 +132,7 @@ export default async function PlaceDetailPage({ params }) {
               />
             ) : null}
           </div>
-          <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
+          <p className="mt-3 text-sm text-muted">
             {place.location || (
               <>
                 <span className="lang-en">Location coming soon</span>
@@ -141,14 +141,14 @@ export default async function PlaceDetailPage({ params }) {
             )}
           </p>
           {place.address || place.addressEn ? (
-            <div className="mt-3 rounded-lg border border-gray-100 bg-gray-50 p-3 dark:border-gray-700 dark:bg-gray-800">
-              <p className="text-xs font-medium text-gray-500 dark:text-gray-400">
+            <div className="mt-3 rounded-lg border border-rim bg-surface-2 p-3">
+              <p className="text-xs font-medium text-muted">
                 <span className="lang-en">Address (show to taxi driver)</span>
                 <span className="lang-ko">주소 (택시 기사님께 보여주세요)</span>
               </p>
               {place.address ? (
                 <div className="mt-2 flex items-start justify-between gap-3">
-                  <p className="min-w-0 text-sm font-medium text-gray-900 dark:text-white">
+                  <p className="min-w-0 text-sm font-medium text-fg">
                     {place.address}
                   </p>
                   <CopyButton
@@ -160,7 +160,7 @@ export default async function PlaceDetailPage({ params }) {
               ) : null}
               {place.addressEn ? (
                 <div className="mt-2 flex items-start justify-between gap-3">
-                  <p className="min-w-0 text-sm text-gray-600 dark:text-gray-300">
+                  <p className="min-w-0 text-sm text-muted">
                     {place.addressEn}
                   </p>
                   <CopyButton
@@ -180,8 +180,8 @@ export default async function PlaceDetailPage({ params }) {
                   key={tag}
                   className={
                     tag === "Dedicated GF"
-                      ? "rounded-full bg-emerald-100 border border-emerald-200 px-2.5 py-1 text-xs font-medium text-emerald-800 dark:bg-emerald-900/30 dark:border-emerald-700 dark:text-emerald-300"
-                      : "rounded-full border border-gray-200 px-2.5 py-1 text-xs text-gray-700 dark:border-gray-700 dark:text-gray-300"
+                      ? "rounded px-2.5 py-1 text-xs font-medium bg-accent-dim text-accent"
+                      : "rounded border border-rim px-2.5 py-1 text-xs text-muted"
                   }
                 >
                   {tag}
@@ -192,19 +192,19 @@ export default async function PlaceDetailPage({ params }) {
         </section>
 
         {noteEn || noteKo ? (
-          <section className="mt-5 rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-900 sm:p-6">
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-900 dark:text-white">
+          <section className="mt-5 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-fg">
               Notes
             </h2>
-            <p className="mt-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+            <p className="mt-3 text-sm leading-relaxed text-muted">
               <span className="lang-en">{noteEn}</span>
               <span className="lang-ko">{noteKo}</span>
             </p>
           </section>
         ) : null}
 
-        <section className="mt-5 rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-900 sm:p-6">
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-900 dark:text-white">
+        <section className="mt-5 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-fg">
               Links
             </h2>
             <div className="mt-3 grid grid-cols-1 gap-2 sm:flex sm:flex-wrap sm:gap-3">
@@ -213,7 +213,7 @@ export default async function PlaceDetailPage({ params }) {
                   href={place.website}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-lg border border-gray-300 px-3 py-2 text-center text-sm text-gray-800 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
+                  className="rounded-lg border border-rim px-3 py-2 text-center text-sm text-fg transition-colors hover:bg-surface-2"
                 >
                   Website
                 </a>
@@ -223,7 +223,7 @@ export default async function PlaceDetailPage({ params }) {
                   href={place.naverMapUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-lg border border-gray-300 px-3 py-2 text-center text-sm text-gray-800 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
+                  className="rounded-lg border border-rim px-3 py-2 text-center text-sm text-fg transition-colors hover:bg-surface-2"
                 >
                   Naver Map
                 </a>
@@ -233,7 +233,7 @@ export default async function PlaceDetailPage({ params }) {
                   href={`https://www.google.com/maps/search/?api=1&query=${place.lat},${place.lng}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-lg border border-gray-300 px-3 py-2 text-center text-sm text-gray-800 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
+                  className="rounded-lg border border-rim px-3 py-2 text-center text-sm text-fg transition-colors hover:bg-surface-2"
                 >
                   Google Maps
                 </a>
@@ -245,8 +245,8 @@ export default async function PlaceDetailPage({ params }) {
             </div>
           </section>
 
-        <section className="mt-5 rounded-2xl border border-amber-200 bg-amber-50 p-5 dark:border-amber-800 dark:bg-amber-900/20">
-          <p className="text-sm text-amber-900 dark:text-amber-100">
+        <section className="mt-5 rounded-2xl border border-amber-rim bg-amber-bg p-5">
+          <p className="text-sm text-amber-fg">
             <span className="lang-en">
               Safety note: always reconfirm ingredients and cross-contamination
               with staff.

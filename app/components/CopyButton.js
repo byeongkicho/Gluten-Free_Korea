@@ -34,7 +34,7 @@ export default function CopyButton({
     <button
       type="button"
       onClick={handleCopy}
-      className={`inline-flex shrink-0 items-center gap-1 rounded-full border border-gray-200 bg-white px-2.5 py-1 text-xs font-medium text-gray-600 transition hover:border-gray-300 hover:text-gray-900 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-white ${className}`.trim()}
+      className={`inline-flex shrink-0 items-center gap-1 rounded border border-rim bg-surface px-2.5 py-1 text-xs font-medium text-muted transition-colors hover:border-rim-strong hover:text-fg ${className}`.trim()}
       aria-label={ariaLabel}
     >
       <svg
@@ -60,8 +60,8 @@ export default function CopyButton({
       </svg>
       {copied ? (
         <>
-          <span className="lang-en text-emerald-700 dark:text-emerald-300">{copiedEn}</span>
-          <span className="lang-ko text-emerald-700 dark:text-emerald-300">{copiedKo}</span>
+          <span className="lang-en text-accent">{copiedEn}</span>
+          <span className="lang-ko text-accent">{copiedKo}</span>
         </>
       ) : (
         <>

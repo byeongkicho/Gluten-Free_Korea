@@ -30,15 +30,15 @@ export default function HomePage() {
         />
       ) : null}
       <div className="mx-auto max-w-6xl">
-        <section className="rounded-2xl border border-gray-200 bg-gradient-to-b from-white to-gray-50 p-5 sm:p-7 dark:border-gray-800 dark:from-gray-950 dark:to-gray-900">
-          <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700 dark:text-emerald-300">
+        <section className="rounded-2xl border border-rim bg-surface p-5 sm:p-7">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
             <span className="lang-en">Gluten-Free Directory</span>
             <span className="lang-ko">글루텐프리 디렉토리</span>
           </p>
-          <h1 className="mt-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-3xl md:text-4xl">
+          <h1 className="mt-2 font-display text-2xl font-semibold tracking-tight text-fg sm:text-3xl md:text-4xl">
             Gluten-Free Korea
           </h1>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted">
             <span className="lang-en">
               A simple directory of gluten-free restaurants, cafes, and bakeries in
               Korea. Always reconfirm ingredients and cross-contamination when you
@@ -49,15 +49,15 @@ export default function HomePage() {
               간단한 목록입니다. 방문 시 재료와 교차오염 여부는 항상 다시 확인하세요.
             </span>
           </p>
-          <p className="mt-4 text-sm font-medium text-gray-700 dark:text-gray-200">
+          <p className="mt-4 text-sm font-medium text-fg">
             <span className="lang-en">Listed places: {safePlaces.length}</span>
             <span className="lang-ko">현재 등록 장소 {safePlaces.length}곳</span>
           </p>
         </section>
 
         {!hasPlaces ? (
-          <div className="mt-8 rounded-2xl border border-dashed border-gray-300 p-8 text-center dark:border-gray-700 sm:p-10">
-            <p className="text-sm text-gray-700 dark:text-gray-300">
+          <div className="mt-8 rounded-2xl border border-dashed border-faint p-8 text-center sm:p-10">
+            <p className="text-sm text-muted">
               <span className="lang-en">No places listed yet.</span>
               <span className="lang-ko">등록된 장소가 아직 없습니다.</span>
             </p>

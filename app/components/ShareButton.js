@@ -16,7 +16,6 @@ export default function ShareButton({ url, title }) {
       return;
     }
 
-    // Fallback: clipboard copy
     if (!navigator?.clipboard?.writeText) return;
     try {
       await navigator.clipboard.writeText(url);
@@ -32,12 +31,12 @@ export default function ShareButton({ url, title }) {
     <button
       type="button"
       onClick={handleShare}
-      className="rounded-lg border border-gray-300 px-3 py-2 text-center text-sm text-gray-800 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
+      className="rounded border border-rim px-3 py-2 text-center text-sm text-muted transition-colors hover:border-rim-strong hover:text-fg"
     >
       {copied ? (
         <>
-          <span className="lang-en text-emerald-700 dark:text-emerald-300">Link copied!</span>
-          <span className="lang-ko text-emerald-700 dark:text-emerald-300">링크 복사됨!</span>
+          <span className="lang-en text-accent">Link copied!</span>
+          <span className="lang-ko text-accent">링크 복사됨!</span>
         </>
       ) : (
         <>

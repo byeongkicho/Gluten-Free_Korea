@@ -131,5 +131,91 @@
       "Cafe",
       "Bakery"
     ]
+  },
+  "1103631091": {
+    "nameEn": "Los Dias Cafe",
+    "slug": "los-dias-cafe",
+    "type": "Bakery",
+    "location": "Seoul, Seongbuk-gu (Sungshin Women's Univ.)",
+    "addressEn": "2F, 67 Dongsomun-ro 22-gil, Seongbuk-gu, Seoul",
+    "note": "Bakery cafe near Sungshin Women's University added from the curated Naver save list. Visit for bakery/dessert options and reconfirm which items are gluten-free and how they handle cross-contact before ordering.",
+    "note_ko": "성신여대 인근의 베이커리 카페로, 큐레이션된 네이버 저장 목록에서 추가된 곳입니다. 방문 시 어떤 메뉴가 글루텐프리인지와 교차오염 방식을 주문 전에 꼭 다시 확인하세요.",
+    "tags": [
+      "Bakery",
+      "Dessert"
+    ],
+    "sources": [
+      "User curated Naver save list (2026-03-23)",
+      "Naver Place 1103631091"
+    ]
+  },
+  "1930937320": {
+    "nameEn": "Sisemdal Atelier",
+    "slug": "sisemdal-atelier",
+    "type": "Cafe",
+    "location": "Seoul, Seongbuk-gu (Sungshin Women's Univ.)",
+    "addressEn": "74-1 Bomun-ro 30-gil, Seongbuk-gu, Seoul",
+    "note": "Hanok dessert cafe near Sungshin Women's University. Naver Place menus explicitly mark multiple items as rice-based GF cakes and granola; still reconfirm daily menu availability and handling before ordering.",
+    "note_ko": "성신여대 인근 한옥 디저트 카페. 네이버 플레이스 메뉴에 여러 케이크와 그래놀라가 [쌀, GF]로 표기되어 있지만, 당일 판매 메뉴와 교차오염 여부는 주문 전에 다시 확인하세요.",
+    "tags": [
+      "Cafe",
+      "Dessert",
+      "Dedicated GF"
+    ],
+    "sources": [
+      "User curated Naver save list (2026-03-23)",
+      "Naver Place 1930937320"
+    ]
+  },
+  "2065218107": {
+    "nameEn": "Ang Bear Bake",
+    "slug": "ang-bear-bake",
+    "type": "Cafe",
+    "location": "Seoul, Mapo-gu (Yeonnam)",
+    "addressEn": "2F, 14 Seongmisan-ro 29-gil, Mapo-gu, Seoul",
+    "note": "Yeonnam dessert cafe added from the curated Naver save list. Treat as a gluten-free-friendly candidate and confirm which baked goods are gluten-free plus current handling practices before ordering.",
+    "note_ko": "연남동 디저트 카페로, 큐레이션된 네이버 저장 목록에서 추가된 후보입니다. 어떤 베이킹 메뉴가 글루텐프리인지와 현재 조리/보관 방식은 주문 전에 꼭 확인하세요.",
+    "tags": [
+      "Cafe",
+      "Dessert"
+    ],
+    "sources": [
+      "User curated Naver save list (2026-03-23)",
+      "Naver Place 2065218107"
+    ]
+  },
+  "12782440": {
+    "nameEn": "Jihwaja",
+    "slug": "jihwaja",
+    "type": "Restaurant",
+    "location": "Seoul, Jongno-gu (Cheongun-dong)",
+    "addressEn": "125 Jahamun-ro, Jongno-gu, Seoul",
+    "note": "Traditional Korean restaurant added from the curated Naver save list. Korean set meals can still contain wheat through soy sauce, jeon batter, or side dishes, so verify ingredients and cross-contact carefully with staff.",
+    "note_ko": "큐레이션된 네이버 저장 목록에서 추가된 한정식 식당입니다. 한식 코스는 간장, 전류 반죽, 밑반찬 등을 통해 밀 성분이 들어갈 수 있으니 재료와 교차오염 여부를 직원에게 꼼꼼히 확인하세요.",
+    "tags": [
+      "Restaurant",
+      "Korean"
+    ],
+    "sources": [
+      "User curated Naver save list (2026-03-23)",
+      "Naver Place 12782440"
+    ]
+  },
+  "37638632": {
+    "nameEn": "6Day Chicken",
+    "slug": "6day-chicken",
+    "type": "Restaurant",
+    "location": "Seoul, Jongno-gu (Changsin)",
+    "addressEn": "1F, 96 Jibong-ro, Jongno-gu, Seoul",
+    "note": "Fried chicken shop in Changsin. Naver Place explicitly mentions “Gluten-free 6Day-chicken”; still reconfirm which menu items, powders, and sauces are gluten-free and whether frying oil is shared.",
+    "note_ko": "창신동 닭강정 가게. 네이버 플레이스에 “Gluten-free 6Day-chicken” 문구가 명시되어 있지만, 실제로 어떤 메뉴/가루/소스가 글루텐프리인지와 기름 공유 여부는 주문 전에 다시 확인하세요.",
+    "tags": [
+      "Restaurant",
+      "Fried Chicken"
+    ],
+    "sources": [
+      "User curated Naver save list (2026-03-23)",
+      "Naver Place 37638632"
+    ]
   }
 }

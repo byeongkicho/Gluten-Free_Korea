@@ -1,57 +1,80 @@
 @import "tailwindcss";
 @variant dark (&:where(.dark, .dark *));
 
+/* ── Warm editorial palette ── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --border: rgba(0, 0, 0, 0.1);
+  color-scheme: light;
+  --bg:          #f7f3ec;
+  --surface:     #fffdfa;
+  --surface-2:   #f1ebe2;
+  --fg:          #221d18;
+  --muted:       #5f554b;
+  --faint:       #8d8072;
+  --accent:      #4d5f2d;
+  --accent-dim:  #e7eddc;
+  --rim:         rgba(46, 35, 22, 0.12);
+  --rim-strong:  rgba(46, 35, 22, 0.22);
+  --amber-bg:    #fbf1dc;
+  --amber-rim:   rgba(161, 111, 30, 0.24);
+  --amber-fg:    #6c4510;
+}
+
+html.dark {
+  color-scheme: dark;
+  --bg:          #181613;
+  --surface:     #211d19;
+  --surface-2:   #2a241f;
+  --fg:          #f5efe6;
+  --muted:       #c4b7aa;
+  --faint:       #8d7f72;
+  --accent:      #a7c46b;
+  --accent-dim:  rgba(167, 196, 107, 0.16);
+  --rim:         rgba(245, 239, 230, 0.1);
+  --rim-strong:  rgba(245, 239, 230, 0.2);
+  --amber-bg:    rgba(168, 111, 30, 0.16);
+  --amber-rim:   rgba(210, 155, 71, 0.34);
+  --amber-fg:    #f2c983;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-/* Respect system preference */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --border: rgba(255, 255, 255, 0.15);
-  }
-}
-
-/* Also respond to manual toggle via .dark on html */
-.dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --border: rgba(255, 255, 255, 0.15);
+  --color-bg:         var(--bg);
+  --color-surface:    var(--surface);
+  --color-surface-2:  var(--surface-2);
+  --color-fg:         var(--fg);
+  --color-muted:      var(--muted);
+  --color-faint:      var(--faint);
+  --color-accent:     var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --color-rim:        var(--rim);
+  --color-rim-strong: var(--rim-strong);
+  --color-amber-bg:   var(--amber-bg);
+  --color-amber-rim:  var(--amber-rim);
+  --color-amber-fg:   var(--amber-fg);
+  --font-sans:        var(--font-dm-sans);
+  --font-display:     var(--font-fraunces);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* ── Language visibility ── */
 body .lang-ko {
   display: none;
 }
-
 html.lang-ko .lang-ko {
   display: inline;
 }
-
 html.lang-ko .lang-en {
   display: none;
 }
-
 html.lang-en .lang-en {
   display: inline;
 }
-
 html.lang-en .lang-ko {
   display: none;
 }

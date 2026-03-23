@@ -2,20 +2,29 @@
 
 import { useEffect, useState } from "react";
 
+function applyTheme(isDark) {
+  document.documentElement.classList.toggle("dark", isDark);
+}
+
 export default function ThemeToggle() {
   const [dark, setDark] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const isDark = saved ? saved === "dark" : prefersDark;
-    setDark(isDark);
+    try {
+      const saved = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const isDark = saved ? saved === "dark" : prefersDark;
+      setDark(isDark);
+      applyTheme(isDark);
+    } catch (_e) {}
+    setMounted(true);
   }, []);
 
   function toggle() {
     const next = !dark;
     setDark(next);
-    document.documentElement.classList.toggle("dark", next);
+    applyTheme(next);
     try {
       localStorage.setItem("theme", next ? "dark" : "light");
     } catch (_e) {}
@@ -26,9 +35,10 @@ export default function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label="Toggle dark mode"
-      className="rounded-md border border-gray-300 px-2 py-1 text-xs text-gray-700 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 sm:text-sm"
+      title={mounted ? (dark ? "Switch to light mode" : "Switch to dark mode") : "Toggle dark mode"}
+      className="text-muted transition-colors hover:text-fg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
     >
-      {dark ? "☀︎" : "☾"}
+      {mounted && dark ? "☀︎" : "☾"}
     </button>
   );
 }

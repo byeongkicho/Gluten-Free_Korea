@@ -8,7 +8,7 @@ import PlaceCard from "./PlaceCard";
 const MapView = dynamic(() => import("./MapView"), {
   ssr: false,
   loading: () => (
-    <p className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+    <p className="mt-10 text-center text-sm text-muted">
       <span className="lang-en">Loading map...</span>
       <span className="lang-ko">지도 불러오는 중...</span>
     </p>
@@ -78,10 +78,16 @@ const RADIUS_OPTIONS = [
   { value: 10, labelEn: "≤ 10 km", labelKo: "10km 이내" },
 ];
 
-const pillActive =
-  "rounded-full px-3.5 py-2 text-sm font-medium transition bg-emerald-600 text-white shadow-sm shadow-emerald-600/20 dark:bg-emerald-500";
-const pillInactive =
-  "rounded-full px-3.5 py-2 text-sm font-medium transition border border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-800";
+// Flat, editorial chip styles — no pill shape, intentional hierarchy
+const chipActive =
+  "px-3 py-1.5 text-sm font-medium bg-fg text-bg rounded transition-colors";
+const chipInactive =
+  "px-3 py-1.5 text-sm font-medium text-muted rounded hover:text-fg hover:bg-surface-2 transition-colors";
+
+const chipSmActive =
+  "px-2.5 py-1 text-xs font-medium bg-fg text-bg rounded transition-colors";
+const chipSmInactive =
+  "px-2.5 py-1 text-xs font-medium text-muted rounded border border-rim hover:text-fg hover:bg-surface-2 transition-colors";
 
 export default function PlaceFilter({ places }) {
   const safePlaces = Array.isArray(places) ? places : [];
@@ -135,8 +141,6 @@ export default function PlaceFilter({ places }) {
         })
       : afterRadius;
 
-  const activeDistrictLabel = district === "All" ? "All areas" : district;
-  const activeTypeLabel = active === "All" ? "All types" : active;
   const hasLocation = Boolean(userLocation);
   const canRetryLocation = locationState === "denied" || locationState === "error";
   const showSettingsHint = locationState === "denied";
@@ -177,17 +181,17 @@ export default function PlaceFilter({ places }) {
   function renderLocationStatus() {
     if (locationState === "ready") {
       return (
-        <p className="mt-2 text-sm text-gray-600 dark:text-gray-300" aria-live="polite">
-          <span className="lang-en">Nearby places are now sorted by distance. You can switch back to Recommended anytime.</span>
-          <span className="lang-ko">이제 가까운 순으로 정렬됩니다. 원하면 언제든 추천순으로 다시 바꿀 수 있습니다.</span>
+        <p className="mt-2 text-xs text-muted" aria-live="polite">
+          <span className="lang-en">Sorted by distance. Switch back anytime.</span>
+          <span className="lang-ko">거리순으로 정렬됩니다. 언제든 추천순으로 바꿀 수 있습니다.</span>
         </p>
       );
     }
 
     if (locationState === "loading") {
       return (
-        <p className="mt-2 text-sm text-gray-600 dark:text-gray-300" aria-live="polite">
-          <span className="lang-en">Checking your location now…</span>
+        <p className="mt-2 text-xs text-muted" aria-live="polite">
+          <span className="lang-en">Checking your location…</span>
           <span className="lang-ko">현재 위치를 확인하는 중입니다…</span>
         </p>
       );
@@ -195,7 +199,7 @@ export default function PlaceFilter({ places }) {
 
     if (locationState === "unsupported") {
       return (
-        <p className="mt-2 text-sm text-amber-700 dark:text-amber-300" aria-live="polite">
+        <p className="mt-2 text-xs text-amber-fg" aria-live="polite">
           <span className="lang-en">Location is not supported on this device or browser.</span>
           <span className="lang-ko">이 기기 또는 브라우저에서는 위치 기능을 지원하지 않습니다.</span>
         </p>
@@ -204,14 +208,10 @@ export default function PlaceFilter({ places }) {
 
     if (locationState === "denied") {
       return (
-        <div className="mt-2 space-y-2" aria-live="polite">
-          <p className="text-sm text-amber-700 dark:text-amber-300">
-            <span className="lang-en">Location permission was denied. Nearby sorting stays off until you allow location and try again.</span>
-            <span className="lang-ko">위치 권한이 거부되었습니다. 브라우저에서 위치 권한을 허용한 뒤 다시 시도해야 가까운 순 정렬이 켜집니다.</span>
-          </p>
-          <p className="text-xs text-gray-500 dark:text-gray-400">
-            <span className="lang-en">Tip: if you blocked it earlier, open your browser site settings for this page, allow location, then tap Try again.</span>
-            <span className="lang-ko">팁: 이전에 차단했다면 이 페이지의 브라우저 사이트 설정에서 위치를 허용한 뒤 다시 시도하세요.</span>
+        <div className="mt-2 space-y-1.5" aria-live="polite">
+          <p className="text-xs text-amber-fg">
+            <span className="lang-en">Location permission was denied. Allow location in your browser settings and try again.</span>
+            <span className="lang-ko">위치 권한이 거부되었습니다. 브라우저 설정에서 허용한 뒤 다시 시도하세요.</span>
           </p>
         </div>
       );
@@ -219,81 +219,58 @@ export default function PlaceFilter({ places }) {
 
     if (locationState === "error") {
       return (
-        <p className="mt-2 text-sm text-amber-700 dark:text-amber-300" aria-live="polite">
-          <span className="lang-en">We couldn&apos;t get your location. Please try again in a moment.</span>
-          <span className="lang-ko">현재 위치를 가져오지 못했습니다. 잠시 후 다시 시도해주세요.</span>
+        <p className="mt-2 text-xs text-amber-fg" aria-live="polite">
+          <span className="lang-en">We couldn&apos;t get your location. Please try again.</span>
+          <span className="lang-ko">현재 위치를 가져오지 못했습니다. 다시 시도해주세요.</span>
         </p>
       );
     }
 
     return (
-      <p className="mt-2 text-sm text-gray-600 dark:text-gray-300" aria-live="polite">
-        <span className="lang-en">Turn on location to sort places by distance and show how far each one is.</span>
-        <span className="lang-ko">위치를 켜면 가까운 순으로 정렬되고 각 장소까지의 거리가 표시됩니다.</span>
+      <p className="mt-2 text-xs text-muted" aria-live="polite">
+        <span className="lang-en">Enable location to sort places by distance.</span>
+        <span className="lang-ko">위치를 켜면 가까운 순으로 정렬됩니다.</span>
       </p>
     );
   }
 
   return (
-    <section className="mt-8">
-      <div className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm shadow-gray-100/60 dark:border-gray-800 dark:bg-gray-900 dark:shadow-none sm:p-5">
-        {/* Header */}
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-300">
-              <span className="lang-en">Find a place</span>
-              <span className="lang-ko">장소 찾기</span>
-            </p>
-            <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
-              <span className="lang-en">{visiblePlaces.length} places shown</span>
-              <span className="lang-ko">{visiblePlaces.length}곳 표시 중</span>
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-2 text-xs text-gray-500 dark:text-gray-400">
-            <span className="rounded-full bg-gray-100 px-3 py-1 dark:bg-gray-800">
-              <span className="lang-en">{activeDistrictLabel}</span>
-              <span className="lang-ko">{district === "All" ? "전체 지역" : district}</span>
-            </span>
-            <span className="rounded-full bg-gray-100 px-3 py-1 dark:bg-gray-800">
-              <span className="lang-en">{activeTypeLabel}</span>
-              <span className="lang-ko">{active === "All" ? "전체 유형" : TYPE_MAP[active] || active}</span>
-            </span>
-          </div>
-        </div>
+    <section>
+      {/* Search */}
+      <label className="relative block">
+        <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-faint">
+          <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" className="h-4 w-4">
+            <path
+              d="M14.167 14.167 17.5 17.5M16.667 9.167a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
+        <input
+          type="search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search places…"
+          className="w-full rounded-lg border border-rim bg-surface py-3 pl-11 pr-4 text-sm text-fg placeholder-faint outline-none transition focus:border-accent focus:ring-1 focus:ring-accent"
+        />
+      </label>
 
-        {/* Search */}
-        <label className="relative mt-4 block">
-          <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500">
-            <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" className="h-4 w-4">
-              <path
-                d="M14.167 14.167 17.5 17.5M16.667 9.167a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </span>
-          <input
-            type="search"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search places…"
-            className="w-full rounded-xl border border-gray-200 bg-gray-50 py-3 pl-11 pr-4 text-sm text-gray-900 placeholder-gray-400 outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 dark:border-gray-700 dark:bg-gray-950 dark:text-white dark:placeholder-gray-500 dark:focus:border-emerald-500 dark:focus:ring-emerald-900/30"
-          />
-        </label>
-
-        {/* Nearby controls */}
-        <div className="mt-4">
-          <p className="mb-2 text-xs font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400">
+      {/* Filter groups */}
+      <div className="mt-6 space-y-5">
+        {/* Nearby */}
+        <div>
+          <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-faint">
             <span className="lang-en">Nearby</span>
             <span className="lang-ko">내 주변</span>
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1.5">
             <button
               type="button"
               onClick={resetNearby}
-              className={sortMode === "default" ? pillActive : pillInactive}
+              className={sortMode === "default" ? chipActive : chipInactive}
             >
               <span className="lang-en">Recommended</span>
               <span className="lang-ko">추천순</span>
@@ -302,7 +279,7 @@ export default function PlaceFilter({ places }) {
               <button
                 type="button"
                 onClick={() => setSortMode("nearest")}
-                className={sortMode === "nearest" ? pillActive : pillInactive}
+                className={sortMode === "nearest" ? chipActive : chipInactive}
               >
                 <span className="lang-en">Nearest</span>
                 <span className="lang-ko">가까운 순</span>
@@ -311,20 +288,20 @@ export default function PlaceFilter({ places }) {
             <button
               type="button"
               onClick={requestLocation}
-              className={pillInactive}
+              className={chipInactive}
             >
               <span className="lang-en">
                 {locationState === "loading"
-                  ? "Checking location..."
+                  ? "Checking…"
                   : canRetryLocation
                     ? "Try again"
                     : hasLocation
-                      ? "Update my location"
-                      : "Turn on location"}
+                      ? "Update location"
+                      : "Use my location"}
               </span>
               <span className="lang-ko">
                 {locationState === "loading"
-                  ? "위치 확인 중..."
+                  ? "위치 확인 중…"
                   : canRetryLocation
                     ? "다시 시도"
                     : hasLocation
@@ -334,11 +311,11 @@ export default function PlaceFilter({ places }) {
             </button>
           </div>
 
-          {/* Radius filter — only shown when location is available */}
+          {/* Radius filter */}
           {hasLocation && sortMode === "nearest" ? (
             <div className="mt-3">
-              <p className="mb-1.5 text-xs font-medium text-gray-500 dark:text-gray-400">
-                <span className="lang-en">Distance</span>
+              <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-faint">
+                <span className="lang-en">Radius</span>
                 <span className="lang-ko">거리 범위</span>
               </p>
               <div className="flex flex-wrap gap-1.5">
@@ -347,11 +324,7 @@ export default function PlaceFilter({ places }) {
                     key={opt.labelEn}
                     type="button"
                     onClick={() => setRadiusKm(opt.value)}
-                    className={
-                      radiusKm === opt.value
-                        ? "rounded-full bg-emerald-100 border border-emerald-300 px-2.5 py-1 text-xs font-medium text-emerald-800 dark:bg-emerald-900/40 dark:border-emerald-700 dark:text-emerald-300"
-                        : "rounded-full border border-gray-200 px-2.5 py-1 text-xs text-gray-600 hover:border-gray-300 dark:border-gray-700 dark:text-gray-400 dark:hover:border-gray-600"
-                    }
+                    className={radiusKm === opt.value ? chipSmActive : chipSmInactive}
                   >
                     <span className="lang-en">{opt.labelEn}</span>
                     <span className="lang-ko">{opt.labelKo}</span>
@@ -363,11 +336,11 @@ export default function PlaceFilter({ places }) {
 
           {renderLocationStatus()}
           {showSettingsHint ? (
-            <div className="mt-3 flex flex-wrap gap-2">
+            <div className="mt-2">
               <button
                 type="button"
                 onClick={requestLocation}
-                className="rounded-full border border-amber-300 bg-amber-50 px-3 py-1.5 text-xs font-medium text-amber-800 transition hover:bg-amber-100 dark:border-amber-700 dark:bg-amber-900/20 dark:text-amber-200 dark:hover:bg-amber-900/30"
+                className={chipSmInactive}
               >
                 <span className="lang-en">Try location again</span>
                 <span className="lang-ko">위치 다시 시도</span>
@@ -376,19 +349,19 @@ export default function PlaceFilter({ places }) {
           ) : null}
         </div>
 
-        {/* Area filter */}
-        <div className="mt-4">
-          <p className="mb-2 text-xs font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400">
+        {/* Area */}
+        <div>
+          <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-faint">
             <span className="lang-en">Area</span>
             <span className="lang-ko">지역</span>
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1.5">
             {["All", ...districts].map((d) => (
               <button
                 key={d}
                 type="button"
                 onClick={() => setDistrict(d)}
-                className={district === d ? pillActive : pillInactive}
+                className={district === d ? chipActive : chipInactive}
               >
                 {d === "All" ? (
                   <>
@@ -406,19 +379,19 @@ export default function PlaceFilter({ places }) {
           </div>
         </div>
 
-        {/* Type filter */}
-        <div className="mt-4">
-          <p className="mb-2 text-xs font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400">
+        {/* Type */}
+        <div>
+          <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-faint">
             <span className="lang-en">Type</span>
             <span className="lang-ko">유형</span>
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1.5">
             {["All", ...types].map((type) => (
               <button
                 key={type}
                 type="button"
                 onClick={() => setActive(type)}
-                className={active === type ? pillActive : pillInactive}
+                className={active === type ? chipActive : chipInactive}
               >
                 {getTypeLabel(type)}
               </button>
@@ -427,36 +400,42 @@ export default function PlaceFilter({ places }) {
         </div>
       </div>
 
-      {/* List / Map toggle */}
-      <div className="mt-6 flex gap-2">
-        <button
-          type="button"
-          onClick={() => setViewMode("list")}
-          className={viewMode === "list" ? pillActive : pillInactive}
-        >
-          <span className="lang-en">List</span>
-          <span className="lang-ko">목록</span>
-        </button>
-        <button
-          type="button"
-          onClick={() => setViewMode("map")}
-          className={viewMode === "map" ? pillActive : pillInactive}
-        >
-          <span className="lang-en">Map</span>
-          <span className="lang-ko">지도</span>
-        </button>
+      {/* Results bar */}
+      <div className="mt-8 flex items-center justify-between border-b border-rim pb-3">
+        <p className="text-xs text-muted">
+          <span className="lang-en">{visiblePlaces.length} places</span>
+          <span className="lang-ko">{visiblePlaces.length}곳</span>
+        </p>
+        <div className="flex gap-1">
+          <button
+            type="button"
+            onClick={() => setViewMode("list")}
+            className={viewMode === "list" ? chipSmActive : chipSmInactive}
+          >
+            <span className="lang-en">List</span>
+            <span className="lang-ko">목록</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => setViewMode("map")}
+            className={viewMode === "map" ? chipSmActive : chipSmInactive}
+          >
+            <span className="lang-en">Map</span>
+            <span className="lang-ko">지도</span>
+          </button>
+        </div>
       </div>
 
       {/* Place grid or map */}
       {viewMode === "map" ? (
         <MapView places={visiblePlaces} />
       ) : visiblePlaces.length === 0 ? (
-        <p className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
+        <p className="mt-10 text-center text-sm text-muted">
           <span className="lang-en">No places match your filters.</span>
           <span className="lang-ko">조건에 맞는 장소가 없습니다.</span>
         </p>
       ) : (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 [&>div:last-child:nth-child(odd)]:sm:col-span-2 [&>div:last-child:nth-child(odd)]:sm:w-full [&>div:last-child:nth-child(odd)]:lg:col-span-1">
+        <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
           {visiblePlaces.map((place) => (
             <PlaceCard key={place.slug} place={place} />
           ))}

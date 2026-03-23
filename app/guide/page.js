@@ -8,12 +8,12 @@ export default function GuidePage() {
   return (
     <main className="min-h-screen px-4 py-8 sm:px-6 sm:py-10 md:py-14">
       <div className="mx-auto max-w-3xl">
-        <h1 className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
+        <h1 className="font-display text-2xl font-semibold tracking-tight text-fg sm:text-3xl">
           <span className="lang-en">Safety Guide</span>
           <span className="lang-ko">안전 가이드</span>
         </h1>
-        <div className="mt-6 rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-900 sm:p-6">
-          <ul className="space-y-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+        <div className="mt-6 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
+          <ul className="space-y-3 text-sm leading-relaxed text-muted">
             <li>
               <span className="lang-en">
                 Clearly ask whether wheat, barley, or rye is included.
@@ -38,12 +38,12 @@ export default function GuidePage() {
             </li>
           </ul>
         </div>
-        <section className="mt-5 rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-900 sm:p-6">
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+        <section className="mt-5 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
+          <h2 className="text-lg font-semibold text-fg">
             <span className="lang-en">Hidden Gluten in Korean Food</span>
             <span className="lang-ko">한국 음식 속 숨겨진 글루텐</span>
           </h2>
-          <ul className="mt-4 space-y-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+          <ul className="mt-4 space-y-3 text-sm leading-relaxed text-muted">
             <li>
               <span className="lang-en">Soy sauce, gochujang, doenjang — most contain wheat</span>
               <span className="lang-ko">간장, 고추장, 된장 — 대부분 밀 함유</span>
@@ -66,12 +66,12 @@ export default function GuidePage() {
             </li>
           </ul>
         </section>
-        <section className="mt-5 rounded-2xl border border-amber-200 bg-amber-50 p-5 dark:border-amber-800 dark:bg-amber-900/20 sm:p-6">
-          <h2 className="text-lg font-semibold text-amber-900 dark:text-amber-100">
+        <section className="mt-5 rounded-2xl border border-amber-rim bg-amber-bg p-5 sm:p-6">
+          <h2 className="text-lg font-semibold text-amber-fg">
             <span className="lang-en">⚠️ Rice Bread ≠ Gluten-Free</span>
             <span className="lang-ko">⚠️ 쌀빵 = 글루텐프리가 아닙니다</span>
           </h2>
-          <p className="mt-3 text-sm leading-relaxed text-amber-900 dark:text-amber-200">
+          <p className="mt-3 text-sm leading-relaxed text-amber-fg">
             <span className="lang-en">
               In Korea, products sold as &apos;rice bread&apos; (쌀빵) are not always gluten-free.
               Some use a mix of rice flour and wheat flour (e.g. 90% rice, 10% wheat).
@@ -84,44 +84,44 @@ export default function GuidePage() {
             </span>
           </p>
         </section>
-        <section className="mt-5 rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-900 sm:p-6">
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+        <section className="mt-5 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
+          <h2 className="text-lg font-semibold text-fg">
             <span className="lang-en">Useful Korean Phrases</span>
             <span className="lang-ko">유용한 한국어 표현</span>
           </h2>
           <ul className="mt-4 space-y-4">
             <li>
-              <p className="font-medium text-gray-900 dark:text-white">밀가루 들어가나요?</p>
-              <p className="text-xs text-gray-500 dark:text-gray-400">
+              <p className="font-medium text-fg">밀가루 들어가나요?</p>
+              <p className="text-xs text-muted">
                 Does this contain wheat flour?
               </p>
             </li>
             <li>
-              <p className="font-medium text-gray-900 dark:text-white">글루텐프리 메뉴 있나요?</p>
-              <p className="text-xs text-gray-500 dark:text-gray-400">
+              <p className="font-medium text-fg">글루텐프리 메뉴 있나요?</p>
+              <p className="text-xs text-muted">
                 Do you have a gluten-free menu?
               </p>
             </li>
             <li>
-              <p className="font-medium text-gray-900 dark:text-white">
+              <p className="font-medium text-fg">
                 밀, 보리, 호밀 없이 만들 수 있나요?
               </p>
-              <p className="text-xs text-gray-500 dark:text-gray-400">
+              <p className="text-xs text-muted">
                 Can you make it without wheat, barley, or rye?
               </p>
             </li>
             <li>
-              <p className="font-medium text-gray-900 dark:text-white">
+              <p className="font-medium text-fg">
                 조리도구를 따로 써주실 수 있나요?
               </p>
-              <p className="text-xs text-gray-500 dark:text-gray-400">
+              <p className="text-xs text-muted">
                 Can you use separate utensils?
               </p>
             </li>
           </ul>
         </section>
-        <section className="mt-5 rounded-2xl border border-amber-200 bg-amber-50 p-5 dark:border-amber-800 dark:bg-amber-900/20">
-          <p className="text-sm text-amber-900 dark:text-amber-100">
+        <section className="mt-5 rounded-2xl border border-amber-rim bg-amber-bg p-5">
+          <p className="text-sm text-amber-fg">
             <span className="lang-en">
               This guide is for general reference only. Menus and preparation methods
               change — always verify with restaurant staff on the day of your visit.
