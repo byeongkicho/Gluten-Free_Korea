@@ -2,7 +2,7 @@ import places from "@/data/places.json";
 import PlaceFilter from "@/app/components/PlaceFilter";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://noglutenkorea.com";
-const homeTitle = "Gluten-Free Korea | Gluten-Free Restaurants, Cafes & Guide in Korea";
+const homeTitle = "No Gluten Korea | Gluten-Free Restaurants, Cafes & Guide in Korea";
 const homeDescription = "Find gluten-free restaurants, cafes, bakeries, and travel tips in Korea. Bilingual Korean/English guide with place details, maps, and safety notes.";
 
 export const metadata = {
@@ -24,7 +24,7 @@ export const metadata = {
     url: "/",
     title: homeTitle,
     description: homeDescription,
-    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "Gluten-Free Korea" }],
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "No Gluten Korea" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -40,7 +40,7 @@ export default function HomePage() {
   const websiteJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Gluten-Free Korea",
+    name: "No Gluten Korea",
     url: siteUrl,
     inLanguage: ["en", "ko"],
     description: homeDescription,
@@ -77,7 +77,7 @@ export default function HomePage() {
             <span className="lang-ko">글루텐프리 디렉토리</span>
           </p>
           <h1 className="mt-2 font-display text-2xl font-semibold tracking-tight text-fg sm:text-3xl md:text-4xl">
-            Gluten-Free Korea
+            No Gluten Korea
           </h1>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted">
             <span className="lang-en">

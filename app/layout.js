@@ -42,8 +42,9 @@ const dmSans = DM_Sans({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-const defaultTitle = "GF Korea";
-const defaultDescription = "A guide to gluten-free living and safe eats in Korea.";
+const defaultTitle = "No Gluten Korea | 한국 글루텐프리 레스토랑 & 카페 가이드";
+const defaultDescription =
+  "Find gluten-free restaurants, cafes, and bakeries across Korea. Verified places with safety notes, maps, and Korean phrases for celiac and gluten-sensitive travelers.";
 const defaultOgImage = "/og-default.png";
 
 export const metadata = {
@@ -61,7 +62,7 @@ export const metadata = {
         url: defaultOgImage,
         width: 1200,
         height: 630,
-        alt: "GF Korea",
+        alt: "No Gluten Korea – Gluten-Free Restaurant Guide",
       },
     ],
   },

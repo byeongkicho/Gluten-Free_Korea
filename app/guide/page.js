@@ -1,4 +1,4 @@
-const guideTitle = "Gluten-Free Safety Guide for Korea | Gluten-Free Korea";
+const guideTitle = "Gluten-Free Safety Guide for Korea | No Gluten Korea";
 const guideDescription = "Learn essential gluten-free survival tips for Korea: hidden gluten in Korean food, key Korean phrases, and safer grocery product suggestions.";
 
 export const metadata = {
@@ -38,7 +38,7 @@ export default function GuidePage() {
     url: "https://noglutenkorea.com/guide",
     author: {
       "@type": "Organization",
-      name: "Gluten-Free Korea",
+      name: "No Gluten Korea",
     },
   };
 

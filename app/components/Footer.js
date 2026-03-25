@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-rim py-8 text-center text-sm text-muted">
       <p>
-        <span className="lang-en">© 2026 Gluten-Free Korea</span>
+        <span className="lang-en">© 2026 No Gluten Korea</span>
         <span className="lang-ko">© 2026 글루텐프리 코리아</span>
       </p>
       <p className="mt-2 text-[11px] text-muted/50">
