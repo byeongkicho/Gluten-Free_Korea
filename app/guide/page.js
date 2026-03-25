@@ -1,12 +1,53 @@
+const guideTitle = "Gluten-Free Safety Guide for Korea | Gluten-Free Korea";
+const guideDescription = "Learn essential gluten-free survival tips for Korea: hidden gluten in Korean food, key Korean phrases, and safer grocery product suggestions.";
+
 export const metadata = {
-  title: "Guide | Gluten-Free Korea",
-  description: "Basic gluten-free safety guide for Korea.",
+  title: guideTitle,
+  description: guideDescription,
+  keywords: [
+    "gluten free korea guide",
+    "korea gluten free guide",
+    "gluten free korean food",
+    "korean gluten free phrases",
+    "글루텐프리 한국 가이드",
+    "한국 글루텐프리 가이드",
+  ],
   alternates: { canonical: "/guide" },
+  openGraph: {
+    type: "article",
+    url: "/guide",
+    title: guideTitle,
+    description: guideDescription,
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "Gluten-Free Korea Guide" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: guideTitle,
+    description: guideDescription,
+    images: ["/og-default.png"],
+  },
 };
 
 export default function GuidePage() {
+  const guideJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: guideTitle,
+    description: guideDescription,
+    inLanguage: ["en", "ko"],
+    url: "https://noglutenkorea.com/guide",
+    author: {
+      "@type": "Organization",
+      name: "Gluten-Free Korea",
+    },
+  };
+
   return (
     <main className="min-h-screen px-4 py-8 sm:px-6 sm:py-10 md:py-14">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(guideJsonLd) }}
+      />
       <div className="mx-auto max-w-3xl">
         <h1 className="font-display text-2xl font-semibold tracking-tight text-fg sm:text-3xl">
           <span className="lang-en">Safety Guide</span>
@@ -120,6 +161,93 @@ export default function GuidePage() {
             </li>
           </ul>
         </section>
+        <section className="mt-5 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
+          <h2 className="text-lg font-semibold text-fg">
+            <span className="lang-en">🛒 Recommended Products (Ad)</span>
+            <span className="lang-ko">🛒 추천 제품 (광고)</span>
+          </h2>
+          <div className="mt-3 rounded-xl border border-amber-rim bg-amber-bg p-3">
+            <p className="text-xs leading-relaxed text-amber-fg">
+              <span className="lang-en">
+                Ad disclosure: This section includes affiliate links from Coupang Partners. We may receive a commission if you purchase through these links. Please re-check ingredients, allergy information, and labeling on the product page before buying.
+              </span>
+              <span className="lang-ko">
+                광고 안내: 이 섹션에는 쿠팡 파트너스 제휴 링크가 포함되어 있으며, 구매가 발생할 경우 일정액의 수수료를 제공받을 수 있습니다. 구매 전 상품 페이지에서 원재료, 알레르기 정보, 표시사항을 다시 확인하세요.
+              </span>
+            </p>
+          </div>
+          <ul className="mt-4 space-y-4 text-sm leading-relaxed">
+            <li>
+              <a
+                href="https://link.coupang.com/a/eaen1b"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-accent underline underline-offset-2 hover:opacity-80"
+              >
+                <span className="lang-en">[Ad] Gochujang product link</span>
+                <span className="lang-ko">[광고] 고추장 상품 링크</span>
+              </a>
+              <p className="text-xs text-muted">
+                <span className="lang-en">Suggested keyword/category: gluten-free gochujang</span>
+                <span className="lang-ko">추천 키워드/카테고리: 글루텐프리 고추장</span>
+              </p>
+            </li>
+            <li>
+              <a
+                href="https://link.coupang.com/a/eaer76"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-accent underline underline-offset-2 hover:opacity-80"
+              >
+                <span className="lang-en">[Ad] Soy sauce (tamari) product link</span>
+                <span className="lang-ko">[광고] 간장(타마리) 상품 링크</span>
+              </a>
+              <p className="text-xs text-muted">
+                <span className="lang-en">Suggested keyword/category: gluten-free soy sauce / tamari</span>
+                <span className="lang-ko">추천 키워드/카테고리: 글루텐프리 간장 / 타마리</span>
+              </p>
+            </li>
+            <li>
+              <a
+                href="https://link.coupang.com/a/eaeybC"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-accent underline underline-offset-2 hover:opacity-80"
+              >
+                <span className="lang-en">[Ad] Ssamjang product link</span>
+                <span className="lang-ko">[광고] 쌈장 상품 링크</span>
+              </a>
+              <p className="text-xs text-muted">
+                <span className="lang-en">Suggested keyword/category: ssamjang for Korean BBQ meals</span>
+                <span className="lang-ko">추천 키워드/카테고리: 한국 바비큐 식사용 쌈장</span>
+              </p>
+            </li>
+            <li>
+              <a
+                href="https://link.coupang.com/a/eaes9G"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-accent underline underline-offset-2 hover:opacity-80"
+              >
+                <span className="lang-en">[Ad] Penne pasta product link</span>
+                <span className="lang-ko">[광고] 펜네 파스타 상품 링크</span>
+              </a>
+              <p className="text-xs text-muted">
+                <span className="lang-en">Suggested keyword/category: gluten-free penne pasta</span>
+                <span className="lang-ko">추천 키워드/카테고리: 글루텐프리 펜네 파스타</span>
+              </p>
+            </li>
+          </ul>
+          <p className="mt-4 text-[11px] leading-relaxed text-muted/70">
+            <span className="lang-en">
+              Product suitability may vary by ingredients and manufacturing process. Always verify the latest product details yourself.
+            </span>
+            <span className="lang-ko">
+              제품 적합성은 원재료와 제조 공정에 따라 달라질 수 있으므로, 최신 상품 상세 정보를 직접 확인하세요.
+            </span>
+          </p>
+        </section>
+
         <section className="mt-5 rounded-2xl border border-amber-rim bg-amber-bg p-5">
           <p className="text-sm text-amber-fg">
             <span className="lang-en">

@@ -1,6 +1,6 @@
 import placesData from "@/data/places.json";
 
-const base = process.env.NEXT_PUBLIC_SITE_URL || "https://gluten-free-korea.pages.dev";
+const base = process.env.NEXT_PUBLIC_SITE_URL || "https://noglutenkorea.com";
 
 export default function sitemap() {
   const places = Array.isArray(placesData) ? placesData.filter((p) => p?.slug) : [];

@@ -1,0 +1,263 @@
+{
+  "12782440": {
+    "website": "http://www.jihwajafood.co.kr/",
+    "instagram": "https://www.instagram.com/jihwaja.korea/",
+    "linkConfidence": {
+      "website": "high",
+      "instagram": "high"
+    },
+    "linkSources": {
+      "website": [
+        "naver-place-homepage"
+      ],
+      "instagram": [
+        "naver-place-instagram"
+      ]
+    },
+    "sources": [
+      "naver-place-homepage",
+      "naver-place-instagram"
+    ]
+  },
+  "33489623": {
+    "website": "https://smartstore.naver.com/toujoursbakery",
+    "instagram": "https://www.instagram.com/toujours_village",
+    "linkConfidence": {
+      "website": "high",
+      "instagram": "high"
+    },
+    "linkSources": {
+      "website": [
+        "naver-place-homepage"
+      ],
+      "instagram": [
+        "naver-place-instagram"
+      ]
+    },
+    "naverBlog": "https://blog.naver.com/toujours_bakery_1992",
+    "sources": [
+      "naver-place-homepage",
+      "naver-place-instagram",
+      "naver-place-blog"
+    ]
+  },
+  "37638632": {
+    "naverBlog": "https://blog.naver.com/akida1237",
+    "sources": [
+      "naver-place-blog"
+    ]
+  },
+  "1056359801": {
+    "website": "https://app.catchtable.co.kr/ct/shop/cucciolo_seoul",
+    "linkConfidence": {
+      "website": "high"
+    },
+    "linkSources": {
+      "website": [
+        "naver-place-homepage"
+      ]
+    },
+    "sources": [
+      "naver-place-homepage"
+    ]
+  },
+  "1103631091": {
+    "website": "http://pf.kakao.com/_cDqxixj",
+    "instagram": "http://www.instagram.com/cafe_losdias",
+    "linkConfidence": {
+      "website": "high",
+      "instagram": "high"
+    },
+    "linkSources": {
+      "website": [
+        "naver-place-homepage"
+      ],
+      "instagram": [
+        "naver-place-instagram"
+      ]
+    },
+    "sources": [
+      "naver-place-homepage",
+      "naver-place-instagram"
+    ]
+  },
+  "1128289843": {
+    "website": "https://smartstore.naver.com/cafe_glunic",
+    "instagram": "https://www.instagram.com/cafe_glunic/",
+    "linkConfidence": {
+      "website": "high",
+      "instagram": "high"
+    },
+    "linkSources": {
+      "website": [
+        "naver-place-homepage"
+      ],
+      "instagram": [
+        "naver-place-instagram"
+      ]
+    },
+    "sources": [
+      "naver-place-homepage",
+      "naver-place-instagram"
+    ]
+  },
+  "1142091847": {
+    "instagram": "https://www.instagram.com/sunnyhousekr",
+    "linkConfidence": {
+      "instagram": "high"
+    },
+    "linkSources": {
+      "instagram": [
+        "naver-place-instagram"
+      ]
+    },
+    "sources": [
+      "naver-place-instagram"
+    ]
+  },
+  "1218176536": {
+    "website": "https://bit.ly/43hacL1",
+    "instagram": "https://www.instagram.com/minimize_seoul",
+    "linkConfidence": {
+      "website": "high",
+      "instagram": "high"
+    },
+    "linkSources": {
+      "website": [
+        "naver-place-homepage"
+      ],
+      "instagram": [
+        "naver-place-instagram"
+      ]
+    },
+    "sources": [
+      "naver-place-homepage",
+      "naver-place-instagram"
+    ]
+  },
+  "1312707678": {
+    "instagram": "http://instagram.com/cafe_rebirth",
+    "linkConfidence": {
+      "instagram": "high"
+    },
+    "linkSources": {
+      "instagram": [
+        "naver-place-instagram"
+      ]
+    },
+    "sources": [
+      "naver-place-instagram"
+    ]
+  },
+  "1413655852": {
+    "website": "https://www.notion.so/GRAIN-SEOUL-Menu-Guide-76ad61bdf4334f449d1f814e071ae9ac?pvs=4",
+    "instagram": "https://www.instagram.com/grain_seoul",
+    "linkConfidence": {
+      "website": "high",
+      "instagram": "high"
+    },
+    "linkSources": {
+      "website": [
+        "naver-place-homepage"
+      ],
+      "instagram": [
+        "naver-place-instagram"
+      ]
+    },
+    "sources": [
+      "naver-place-homepage",
+      "naver-place-instagram"
+    ]
+  },
+  "1434476104": {
+    "website": "http://ssaltongdak.com/",
+    "instagram": "https://www.instagram.com/ssaltongdak_official/",
+    "linkConfidence": {
+      "website": "high",
+      "instagram": "high"
+    },
+    "linkSources": {
+      "website": [
+        "naver-place-homepage"
+      ],
+      "instagram": [
+        "naver-place-instagram"
+      ]
+    },
+    "sources": [
+      "naver-place-homepage",
+      "naver-place-instagram"
+    ]
+  },
+  "1650174352": {
+    "instagram": "https://www.instagram.com/monil2_house",
+    "linkConfidence": {
+      "instagram": "high"
+    },
+    "linkSources": {
+      "instagram": [
+        "naver-place-instagram"
+      ]
+    },
+    "naverBlog": "https://blog.naver.com/monil2_house",
+    "sources": [
+      "naver-place-homepage",
+      "naver-place-instagram",
+      "naver-place-blog"
+    ]
+  },
+  "1907181273": {
+    "website": "https://app.catchtable.co.kr/ct/shop/Cafe_pepper?from=share&type=PICKUP",
+    "instagram": "https://www.instagram.com/cafe_pepper_/",
+    "linkConfidence": {
+      "website": "high",
+      "instagram": "high"
+    },
+    "linkSources": {
+      "website": [
+        "naver-place-homepage"
+      ],
+      "instagram": [
+        "naver-place-instagram"
+      ]
+    },
+    "sources": [
+      "naver-place-homepage",
+      "naver-place-instagram"
+    ]
+  },
+  "1930937320": {
+    "website": "https://link.inpock.co.kr/sisemdal_atelier",
+    "instagram": "https://www.instagram.com/sisemdal_atelier/",
+    "linkConfidence": {
+      "website": "high",
+      "instagram": "high"
+    },
+    "linkSources": {
+      "website": [
+        "naver-place-homepage"
+      ],
+      "instagram": [
+        "naver-place-instagram"
+      ]
+    },
+    "sources": [
+      "naver-place-homepage",
+      "naver-place-instagram"
+    ]
+  },
+  "2065218107": {
+    "instagram": "https://www.instagram.com/angbear.bake?igsh=MTlqN2tudG9rY3pldg==",
+    "linkConfidence": {
+      "instagram": "high"
+    },
+    "linkSources": {
+      "instagram": [
+        "naver-place-instagram"
+      ]
+    },
+    "sources": [
+      "naver-place-instagram"
+    ]
+  }
+}

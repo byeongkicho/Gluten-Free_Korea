@@ -7,6 +7,7 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 
 const candidatesPath = path.join(rootDir, "data", "candidates.naver.json");
+const generatedOverridesPath = path.join(rootDir, "data", "overrides.generated.json");
 const overridesPath = path.join(rootDir, "data", "overrides.json");
 const outputPath = path.join(rootDir, "data", "places.json");
 
@@ -87,22 +88,49 @@ function sanitizeOverridesBySid(overridesRaw) {
   return Object.fromEntries(entries);
 }
 
-async function readJson(filePath) {
-  const raw = await fs.readFile(filePath, "utf8");
+function mergeOverrideLayers(base = {}, generated = {}, manual = {}) {
+  const merged = { ...base, ...generated, ...manual };
+
+  for (const key of ["linkConfidence", "linkSources"]) {
+    merged[key] = {
+      ...(generated?.[key] && typeof generated[key] === "object" ? generated[key] : {}),
+      ...(manual?.[key] && typeof manual[key] === "object" ? manual[key] : {}),
+    };
+    if (Object.keys(merged[key]).length === 0) delete merged[key];
+  }
+
+  for (const key of ["tags", "sources"]) {
+    if (Array.isArray(manual?.[key])) {
+      merged[key] = manual[key];
+    } else if (Array.isArray(generated?.[key])) {
+      merged[key] = generated[key];
+    }
+  }
+
+  return merged;
+}
+
+async function readJson(filePath, fallback = undefined) {
   try {
+    const raw = await fs.readFile(filePath, "utf8");
     return JSON.parse(raw);
   } catch (error) {
+    if (error.code === "ENOENT" && fallback !== undefined) {
+      return fallback;
+    }
     throw new Error(`Failed to parse JSON at ${filePath}: ${error.message}`);
   }
 }
 
 async function main() {
   const todayIso = new Date().toISOString().slice(0, 10);
-  const [candidatesRaw, overridesRaw] = await Promise.all([
+  const [candidatesRaw, generatedOverridesRaw, overridesRaw] = await Promise.all([
     readJson(candidatesPath),
+    readJson(generatedOverridesPath, {}),
     readJson(overridesPath),
   ]);
 
+  const generatedOverridesBySid = sanitizeOverridesBySid(generatedOverridesRaw);
   const overridesBySid = sanitizeOverridesBySid(overridesRaw);
   const sanitizedCandidates = toArray(candidatesRaw).map(sanitizeCandidate);
 
@@ -120,15 +148,16 @@ async function main() {
   for (const candidate of dedupedCandidatesBySid.values()) {
     const sid = candidate.sid;
 
+    const generatedOverrides = generatedOverridesBySid[sid] || {};
     const overrides = overridesBySid[sid] || {};
+    const layeredOverrides = mergeOverrideLayers({}, generatedOverrides, overrides);
     const baseName = typeof candidate.name === "string" ? candidate.name.trim() : "";
 
-    // Use explicit slug from overrides, or derive from nameEn, then name, then fallback
     let slug;
-    if (overrides.slug && typeof overrides.slug === "string") {
-      slug = ensureUniqueSlug(overrides.slug.trim(), usedSlugs);
+    if (layeredOverrides.slug && typeof layeredOverrides.slug === "string") {
+      slug = ensureUniqueSlug(layeredOverrides.slug.trim(), usedSlugs);
     } else {
-      const nameForSlug = overrides.nameEn || baseName;
+      const nameForSlug = layeredOverrides.nameEn || baseName;
       const slugRoot = asciiSlug(nameForSlug) || "place";
       slug = ensureUniqueSlug(slugRoot, usedSlugs);
     }
@@ -143,16 +172,14 @@ async function main() {
       rating: null,
       naverMapUrl: `https://map.naver.com/p/entry/place/${sid}`,
       website: "",
+      instagram: "",
       sources: [],
       naverPlaceId: sid,
       lat: parseNumber(candidate.py),
       lng: parseNumber(candidate.px),
     };
 
-    const merged = {
-      ...basePlace,
-      ...overrides,
-    };
+    const merged = mergeOverrideLayers(basePlace, generatedOverrides, overrides);
 
     merged.type = normalizeType(merged.type);
 

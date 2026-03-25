@@ -12,7 +12,8 @@
     "lint": "next lint",
     "import:naver": "node scripts/import_naver.mjs",
     "publish:local": "npm run import:naver && npm run build:places && npm run validate:places",
-    "enrich:notes": "node scripts/enrich_notes.mjs"
+    "enrich:notes": "node scripts/enrich_notes.mjs",
+    "enrich:links": "node scripts/enrich_links.mjs"
   },
   "dependencies": {
     "leaflet": "^1.9.4",

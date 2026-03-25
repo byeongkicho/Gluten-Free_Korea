@@ -51,9 +51,16 @@ export async function generateMetadata({ params }) {
   return {
     title,
     description,
+    keywords: [
+      `${place?.name || slug}`,
+      `${place?.name || slug} gluten free`,
+      `${place?.location || "Korea"} gluten free`,
+      "gluten free korea",
+      "글루텐프리 코리아",
+    ],
     alternates: { canonical: place ? `/place/${place.slug}` : `/place/${slug}` },
     openGraph: {
-      type: "article",
+      type: "website",
       url: path,
       title,
       description,
@@ -86,6 +93,18 @@ export default async function PlaceDetailPage({ params }) {
   const displayType = TYPE_MAP[place.type] || place.type || "장소";
   const noteEn = place.note || place.note_ko;
   const noteKo = place.note_ko || place.note;
+  const normalizedWebsite = place.website?.trim() || "";
+  const normalizedInstagram = place.instagram?.trim() || "";
+  const normalizedNaverBlog = place.naverBlog?.trim() || "";
+  const websiteLabel = normalizedWebsite.includes("catchtable")
+    ? "Reservation"
+    : normalizedWebsite.includes("smartstore.naver.com")
+      ? "Store"
+      : normalizedWebsite.includes("pf.kakao.com")
+        ? "Kakao Channel"
+        : normalizedWebsite.includes("link.inpock.co.kr")
+          ? "Link Hub"
+          : "Website";
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Restaurant",
@@ -208,14 +227,34 @@ export default async function PlaceDetailPage({ params }) {
               Links
             </h2>
             <div className="mt-3 grid grid-cols-1 gap-2 sm:flex sm:flex-wrap sm:gap-3">
-              {place.website ? (
+              {normalizedWebsite ? (
                 <a
-                  href={place.website}
+                  href={normalizedWebsite}
                   target="_blank"
                   rel="noreferrer"
                   className="rounded-lg border border-rim px-3 py-2 text-center text-sm text-fg transition-colors hover:bg-surface-2"
                 >
-                  Website
+                  {websiteLabel}
+                </a>
+              ) : null}
+              {normalizedInstagram && normalizedInstagram !== normalizedWebsite ? (
+                <a
+                  href={normalizedInstagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-lg border border-rim px-3 py-2 text-center text-sm text-fg transition-colors hover:bg-surface-2"
+                >
+                  Instagram
+                </a>
+              ) : null}
+              {normalizedNaverBlog ? (
+                <a
+                  href={normalizedNaverBlog}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-lg border border-rim px-3 py-2 text-center text-sm text-fg transition-colors hover:bg-surface-2"
+                >
+                  Naver Blog
                 </a>
               ) : null}
               {place.naverMapUrl ? (

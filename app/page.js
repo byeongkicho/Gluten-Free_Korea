@@ -1,18 +1,55 @@
 import places from "@/data/places.json";
 import PlaceFilter from "@/app/components/PlaceFilter";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://noglutenkorea.com";
+const homeTitle = "Gluten-Free Korea | Gluten-Free Restaurants, Cafes & Guide in Korea";
+const homeDescription = "Find gluten-free restaurants, cafes, bakeries, and travel tips in Korea. Bilingual Korean/English guide with place details, maps, and safety notes.";
+
 export const metadata = {
-  title: "Gluten-Free Korea",
-  description: "A simple guide to gluten-free friendly places in Korea.",
+  title: homeTitle,
+  description: homeDescription,
+  keywords: [
+    "gluten free korea",
+    "gluten-free korea",
+    "korea gluten free",
+    "gluten free seoul",
+    "gluten free restaurants korea",
+    "글루텐프리 코리아",
+    "글루텐프리 서울",
+    "한국 글루텐프리",
+  ],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: "/",
+    title: homeTitle,
+    description: homeDescription,
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "Gluten-Free Korea" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: homeTitle,
+    description: homeDescription,
+    images: ["/og-default.png"],
+  },
 };
 
 export default function HomePage() {
   const safePlaces = Array.isArray(places) ? places.filter((p) => p?.slug) : [];
   const hasPlaces = safePlaces.length > 0;
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Gluten-Free Korea",
+    url: siteUrl,
+    inLanguage: ["en", "ko"],
+    description: homeDescription,
+  };
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
+    name: "Gluten-Free Korea Directory",
+    numberOfItems: safePlaces.length,
     itemListElement: safePlaces.map((place, index) => ({
       "@type": "ListItem",
       position: index + 1,
@@ -23,6 +60,10 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen px-4 py-8 sm:px-6 sm:py-10 md:py-14">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
       {hasPlaces ? (
         <script
           type="application/ld+json"
