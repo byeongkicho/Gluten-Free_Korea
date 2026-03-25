@@ -1,9 +1,21 @@
 import Link from "next/link";
 import { TYPE_MAP, sortTags } from "@/app/lib/places";
 
+function getCardGradient(tags, type) {
+  const isDedicatedGF = tags?.includes("Dedicated GF");
+  const isPizza = tags?.includes("Pizza") || type === "Pizza";
+  const isCafe = type === "Cafe" || type === "Bakery" || tags?.includes("Bakery");
+
+  if (isDedicatedGF) return { bg: "from-emerald-500/20 via-green-400/15 to-teal-500/10", emoji: "✨" };
+  if (isPizza) return { bg: "from-red-500/20 via-orange-400/15 to-amber-500/10", emoji: "🍕" };
+  if (isCafe) return { bg: "from-pink-400/20 via-rose-300/15 to-fuchsia-400/10", emoji: "☕" };
+  if (type === "Restaurant") return { bg: "from-amber-500/20 via-orange-400/15 to-yellow-500/10", emoji: "🍽️" };
+  return { bg: "from-slate-400/15 via-gray-300/10 to-zinc-400/10", emoji: "📍" };
+}
+
 function getTagClass(tag) {
   if (tag === "Dedicated GF") {
-    return "rounded px-2 py-0.5 text-[11px] font-medium bg-accent-dim text-accent";
+    return "rounded px-2 py-0.5 text-[11px] font-semibold bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300 ring-1 ring-emerald-300/50 dark:ring-emerald-600/40";
   }
   return "rounded px-2 py-0.5 text-[11px] border border-rim text-muted";
 }
@@ -26,8 +38,20 @@ export default function PlaceCard({ place }) {
   const secondaryNameKo = place.nameEn && place.nameEn !== primaryNameKo ? place.nameEn : null;
   const distanceLabel = formatDistance(place.distanceKm);
 
+  const gradient = getCardGradient(place.tags, place.type);
+
   return (
     <div className="group flex flex-col overflow-hidden rounded-xl border border-rim bg-surface transition-all hover:border-rim-strong hover:shadow-sm">
+      {/* Visual header */}
+      <div className={`relative flex h-24 items-center justify-center bg-gradient-to-br ${gradient.bg}`}>
+        <span className="text-4xl opacity-60 transition-transform group-hover:scale-110">{gradient.emoji}</span>
+        {place.tags?.includes("Dedicated GF") && (
+          <span className="absolute right-3 top-3 rounded-full bg-emerald-500 px-2 py-0.5 text-[10px] font-bold text-white shadow-sm">
+            <span className="lang-en">✨ Dedicated GF</span>
+            <span className="lang-ko">✨ 전문점</span>
+          </span>
+        )}
+      </div>
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         {/* Type + distance row */}
         <div className="flex items-center justify-between gap-2">

@@ -199,7 +199,7 @@ export default async function PlaceDetailPage({ params }) {
                   key={tag}
                   className={
                     tag === "Dedicated GF"
-                      ? "rounded px-2.5 py-1 text-xs font-medium bg-accent-dim text-accent"
+                      ? "rounded px-2.5 py-1 text-xs font-semibold bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300 ring-1 ring-emerald-300/50 dark:ring-emerald-600/40"
                       : "rounded border border-rim px-2.5 py-1 text-xs text-muted"
                   }
                 >
@@ -283,6 +283,52 @@ export default async function PlaceDetailPage({ params }) {
               />
             </div>
           </section>
+
+        {/* Tips section based on tags */}
+        {place.tags?.length > 0 && (
+          <section className="mt-5 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-fg">
+              <span className="lang-en">💡 Tips</span>
+              <span className="lang-ko">💡 방문 팁</span>
+            </h2>
+            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted">
+              {place.tags.includes("Dedicated GF") && (
+                <li>
+                  <span className="lang-en">✨ This is a dedicated gluten-free establishment — safer for celiac visitors.</span>
+                  <span className="lang-ko">✨ 글루텐프리 전문점으로, 셀리악병 환자에게 더 안전합니다.</span>
+                </li>
+              )}
+              {place.tags.includes("Pizza") && (
+                <li>
+                  <span className="lang-en">🍕 Ask about gluten-free crust options and whether a separate oven is used.</span>
+                  <span className="lang-ko">🍕 글루텐프리 크러스트 옵션과 별도 오븐 사용 여부를 확인하세요.</span>
+                </li>
+              )}
+              {place.tags.includes("Italian") && (
+                <li>
+                  <span className="lang-en">🍝 Italian restaurants may offer GF pasta — ask if they have rice or corn-based noodles.</span>
+                  <span className="lang-ko">🍝 글루텐프리 파스타(쌀면/옥수수면)가 있는지 문의해보세요.</span>
+                </li>
+              )}
+              {place.tags.includes("Bakery") && (
+                <li>
+                  <span className="lang-en">🍞 Check if products are baked in a shared oven with wheat items.</span>
+                  <span className="lang-ko">🍞 밀가루 제품과 같은 오븐을 사용하는지 확인하세요.</span>
+                </li>
+              )}
+              {place.tags.includes("Restaurant") && !place.tags.includes("Dedicated GF") && (
+                <li>
+                  <span className="lang-en">🍽️ Ask staff about shared fryers, oils, and cooking utensils.</span>
+                  <span className="lang-ko">🍽️ 튀김기/기름/조리도구 공유 여부를 직원에게 확인하세요.</span>
+                </li>
+              )}
+              <li>
+                <span className="lang-en">📱 Show this phrase to staff: &ldquo;밀가루, 보리, 호밀이 들어가나요?&rdquo; (Does this contain wheat, barley, or rye?)</span>
+                <span className="lang-ko">📱 직원에게 &ldquo;밀가루, 보리, 호밀이 들어가나요?&rdquo;라고 물어보세요.</span>
+              </li>
+            </ul>
+          </section>
+        )}
 
         <section className="mt-5 rounded-2xl border border-amber-rim bg-amber-bg p-5">
           <p className="text-sm text-amber-fg">
