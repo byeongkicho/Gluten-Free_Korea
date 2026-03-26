@@ -57,3 +57,6 @@ data/note_drafts.json
 
 # local screenshots
 screenshot*.png
+
+# Original photos (large, edit locally, commit only optimized webp)
+public/images/NoGlutenSeoul_Assets/

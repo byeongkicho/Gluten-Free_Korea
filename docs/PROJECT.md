@@ -1,65 +1,162 @@
 # PROJECT.md (SSOT)
 
+> Single Source of Truth for the Gluten-Free Korea project.
+> Last updated: 2026-03-26
+
 ## Project
-- Name: Gluten-Free Korea
+- Name: Gluten-Free Korea (No Gluten Korea)
 - Stack: Next.js 15 App Router, React 19, Tailwind CSS 4
 - Deployment: Cloudflare Pages via `@cloudflare/next-on-pages`
-- **Live URL:** https://gluten-free-korea.pages.dev
+- **Live URL:** https://noglutenkorea.com
+- **Instagram:** https://www.instagram.com/noglutenkorea/
+- **Contact:** contact@noglutenkorea.com (CF Email Routing)
+- **Places:** 18 verified locations
 
-## Routes (current)
-- `/` home place directory with text search, district/type filters, optional nearby sorting via browser geolocation, and clearer permission recovery messaging
-- `/guide` static gluten-free safety guide
-- `/place/[slug]` place detail route backed by `data/places.json`
+## Routes
+- `/` — Home: place directory with search, district/type filters, nearby sorting (geolocation), radius filter
+- `/guide` — Static gluten-free safety guide
+- `/place/[slug]` — Place detail with images, gallery, notes, tips, maps
 
-## Data Pipeline (automation-friendly)
-- Raw import source (local, gitignored): `data/naver_raw.json`
-- Import script: `scripts/import_naver.mjs` → `data/candidates.naver.json`
-- Manual overrides: `data/overrides.json` (map `sid → overrides`; also supports manual-only entries)
-- Build script: `scripts/build_places.mjs` → `data/places.json`
-- Validation script: `scripts/validate_places.mjs`
-- Generated output: `data/places.json` (do not edit manually)
-- Bilingual note fields: `note` (EN) + optional `note_ko` (KO) may be provided in overrides and passed through to runtime data
+## Architecture Principles
+- **Static-first:** all pages statically rendered at build time
+- **No DB / no API fetch:** `data/places.json` is the sole runtime data source
+- **Cloudflare Pages free tier:** no external servers
+- **Bilingual:** EN/KO toggle (`lang-en`/`lang-ko` CSS classes)
+- **Dark mode:** `.dark` class on `<html>`, persisted to localStorage
 
-### Pipeline flow
-```
-naver_raw.json (gitignored)
-  → import:naver
-  → candidates.naver.json + overrides.json
-  → build:places
-  → places.json
-  → pages:build
-  → wrangler pages deploy
-```
+---
 
-## Source of Truth
-- Runtime SSOT for pages: `data/places.json`
-- Authoring inputs: `candidates.naver.json` + `overrides.json`
+## Data Pipeline
 
-## Commands
+### Sources
+| File | Purpose |
+|---|---|
+| `data/naver_raw.json` | Raw Naver export (gitignored, never commit) |
+| `data/candidates.naver.json` | Sanitized candidates |
+| `data/overrides.json` | Per-SID overrides + manual-only entries |
+| `data/places.json` | **Generated output** (do not edit manually) |
+
+### Override-only entries
+Places not in Naver (e.g., `manual_francois`) use string SIDs in `overrides.json`.
+`build_places.mjs` processes these as standalone entries.
+
+### coverImage field
+Set `"coverImage": "03.webp"` in overrides to pick which optimized image becomes the card thumbnail.
+`build_places.mjs` moves it to the front of the `images` array. Omit to default to `01.webp`.
+
+### Pipeline commands
 ```bash
-npm run dev             # local dev server → http://localhost:3000
-npm run import:naver    # sanitize naver_raw.json → candidates.naver.json
-npm run build:places    # generate places.json from candidates + overrides
-npm run validate:places # validate generated places data
-npm run build           # Next.js production build
-npm run pages:build     # Cloudflare Pages build (runs build:places first)
-```
+# Full pipeline
+npm run import:naver        # naver_raw.json → candidates.naver.json
+npm run optimize:images     # original photos → webp (places/ dir)
+npm run build:places        # candidates + overrides + image scan → places.json
+npm run pages:build         # Next.js build for CF Pages
+npx wrangler pages deploy .vercel/output/static --project-name gluten-free-korea
 
-### Deploy (manual)
-```bash
-# Full clean deploy
-rm -rf .next && npm run pages:build && npx wrangler pages deploy .vercel/output/static --project-name gluten-free-korea
-
-# After data-only change
+# After data-only change (no new photos)
 npm run build:places && npm run pages:build && npx wrangler pages deploy .vercel/output/static --project-name gluten-free-korea
+
+# After photo change
+npm run optimize:images && npm run build:places && npm run pages:build && npx wrangler pages deploy .vercel/output/static --project-name gluten-free-korea
 ```
 
-## Cloudflare Pages Configuration
-- Project name: `gluten-free-korea`
+---
+
+## Image System
+
+### Directory structure
+```
+public/images/
+  NoGlutenSeoul_Assets/     ← ORIGINALS (edit here)
+    237피자/
+      IMG_7043.JPG
+      IMG_8950.JPEG
+    카페 리벌스/
+      IMG_9330.JPEG
+    ...
+  places/                   ← GENERATED (do not edit)
+    237-pizza/
+      01.webp               ← full (1200px max)
+      thumb_01.webp          ← thumbnail (640px max)
+      02.webp
+      thumb_02.webp
+    ...
+```
+
+### Folder name → slug mapping (optimize-images.mjs)
+```
+237피자       → 237-pizza
+6일닭강정      → 6day-chicken
+GrainSeoul   → grain-seoul
+글루닉        → glunic
+다크앤라이트    → dark-and-light
+뚜쥬르        → toujours-dolgama-village
+모닐이네       → monil2-house
+미니마이즈      → minimize-itaewon
+써니하우스      → sunny-bread
+지화자        → jihwaja
+카페 리벌스     → cafe-rebirths
+카페 페퍼      → cafe-pepper
+쿠촐로        → cucciolo-seoul
+프랑스와       → francois
+```
+
+### Photo workflow
+1. Add/delete/rotate photos in `NoGlutenSeoul_Assets/{한국어폴더}/`
+   - macOS Preview: `⌘+R` (rotate CW), `⌘+L` (rotate CCW)
+2. Run `npm run optimize:images` — converts to webp, cleans stale output
+3. Run `npm run build:places` — scans `places/` dir, updates places.json
+4. To change thumbnail: set `"coverImage": "02.webp"` in overrides.json
+
+### Optimization specs
+- Full: max 1200px width, webp quality 80
+- Thumbnail: max 640px width, webp quality 80
+- Typical reduction: 94% (332MB originals → ~6MB webp)
+
+### Future (Phase 2, when 50+ places)
+- Cloudflare R2 for image storage
+- CF Image Resizing (on-the-fly)
+- `next/image` with `srcset` for device-optimal delivery
+
+---
+
+## Frontend Components
+
+### PlaceCard (home)
+- Image: `aspect-[16/9]`, `object-cover`, hover zoom `scale-[1.02]` duration-500
+- No image: gradient + emoji fallback
+- Dedicated GF badge overlays on both
+
+### Place detail page
+- Hero: `aspect-[16/9]`, full width, rounded-2xl
+- Gallery: max 5 images, 3-col square grid, "+N" overlay if more
+- Tips section: auto-generated from tags (Dedicated GF, Pizza, Italian, etc.)
+
+### Footer
+- "GET IN TOUCH / 연락하기" heading
+- SVG icons: ✉️ contact@noglutenkorea.com + 📸 @noglutenkorea
+- Hover effects, Coupang Partners disclosure
+
+---
+
+## npm Scripts
+```bash
+npm run dev               # local dev → http://localhost:3000
+npm run import:naver      # sanitize naver_raw.json → candidates
+npm run optimize:images   # originals → webp (places/ dir)
+npm run build:places      # generate places.json
+npm run validate:places   # validate places data
+npm run build             # Next.js production build
+npm run pages:build       # CF Pages build (runs build:places first)
+```
+
+## Cloudflare Configuration
+- Project: `gluten-free-korea`
 - Build output: `.vercel/output/static`
-- Config file: `wrangler.toml`
-- Compatibility flag: `nodejs_compat` (required for next-on-pages)
-- Env vars: managed via `wrangler.toml [vars]` (dashboard blocked for non-secrets)
+- Config: `wrangler.toml`
+- Compatibility: `nodejs_compat`
+- Email: CF Email Routing → contact@noglutenkorea.com
+- Domain: noglutenkorea.com (custom domain on CF Pages)
 
 ## Environment Variables
 | Variable | File | Purpose |
@@ -67,28 +164,13 @@ npm run build:places && npm run pages:build && npx wrangler pages deploy .vercel
 | `NEXT_PUBLIC_SITE_URL` | `.env.local` + `wrangler.toml` | Metadata base URL |
 | `SITE_URL` | `wrangler.toml` | sitemap.js runtime fallback |
 
-## Language & Theme System
-- **EN/KO toggle:** `lang-en` / `lang-ko` CSS classes on `<html>`; persisted to `localStorage["lang"]`
-- **Dark mode:** `.dark` class on `<html>`; persisted to `localStorage["theme"]`
-- InitScript in `layout.js` applies both before hydration to prevent flicker
+---
 
-## Build/Deploy Requirements
-- No DB / API / client-side fetch for places
-- Static-first: all pages must be statically renderable at build time
-- Naver raw export must not be committed — gitignored
-
-## Known Gaps (as of 2026-03-21)
-- sitemap.xml URLs show `localhost:3000` until a full clean redeploy (`rm -rf .next` then rebuild/deploy)
-- GitHub auto-deploy is not connected yet (currently manual wrangler deploy)
+## Known Gaps
+- No GitHub Actions CI/CD (manual wrangler deploy)
+- No map view
+- No favorites/share flow
+- 5 places without photos (쌀통닭, Los Dias, 시샘달, 앙베어, 써니하우스)
 - Grain Seoul, Sunny Bread: `addressEn` is district-level only
-- No map view yet
-- No favorites/share flow yet
-- Place detail has separate copy buttons for name, Korean address, and English address; homepage card-level combined copy was intentionally removed
-- No image optimization (no `image` field used in cards yet)
-
-## Recent Changes (2026-03-21)
-- Slugs improved: now derived from `nameEn` (e.g. `/place/cucciolo-seoul` instead of `/place/place-1056359801`)
-- Old slug 301 redirects in `public/_redirects`
-- PlaceCard extracted as standalone component
-- Radius filter added (1km / 3km / 5km / 10km) when nearby sorting is active
-- Transit directions button (🚌 → Kakao Map) next to distance label
+- "+N" gallery doesn't expand yet (future: lightbox)
+- Instagram automation not implemented (Graph API requires business account)

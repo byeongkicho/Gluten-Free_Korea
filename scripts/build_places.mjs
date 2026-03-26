@@ -191,8 +191,83 @@ async function main() {
     places.push(merged);
   }
 
+  // Process override-only entries (manual places not in candidates)
+  const processedSids = new Set(dedupedCandidatesBySid.keys());
+  for (const [sid, overrides] of Object.entries(overridesBySid)) {
+    if (processedSids.has(sid)) continue;
+
+    const layeredOverrides = mergeOverrideLayers({}, generatedOverridesBySid[sid] || {}, overrides);
+    const baseName = layeredOverrides.name || "";
+
+    let slug;
+    if (layeredOverrides.slug && typeof layeredOverrides.slug === "string") {
+      slug = ensureUniqueSlug(layeredOverrides.slug.trim(), usedSlugs);
+    } else {
+      const nameForSlug = layeredOverrides.nameEn || baseName;
+      const slugRoot = asciiSlug(nameForSlug) || "place";
+      slug = ensureUniqueSlug(slugRoot, usedSlugs);
+    }
+
+    const basePlace = {
+      slug,
+      name: baseName || `Place ${sid}`,
+      type: "Place",
+      address: "",
+      note: "",
+      tags: [],
+      rating: null,
+      naverMapUrl: "",
+      website: "",
+      instagram: "",
+      sources: [],
+      naverPlaceId: sid,
+      lat: null,
+      lng: null,
+    };
+
+    const merged = mergeOverrideLayers(basePlace, generatedOverridesBySid[sid] || {}, overrides);
+    merged.type = normalizeType(merged.type);
+    if (!Array.isArray(merged.tags)) merged.tags = [];
+    if (!Array.isArray(merged.sources)) merged.sources = [];
+    if (merged.rating === undefined) merged.rating = null;
+    merged.updatedAt = todayIso;
+
+    places.push(merged);
+  }
+
+  // Scan for place images in public/images/places/{slug}/
+  const imagesBaseDir = path.join(rootDir, "public", "images", "places");
+  const imageExtensions = new Set([".webp", ".jpg", ".jpeg", ".png"]);
+  let imagesFound = 0;
+
+  for (const place of places) {
+    const placeImgDir = path.join(imagesBaseDir, place.slug);
+    try {
+      const files = await fs.readdir(placeImgDir);
+      const imageFiles = files
+        .filter((f) => imageExtensions.has(path.extname(f).toLowerCase()) && !f.startsWith("thumb_"))
+        .sort();
+      if (imageFiles.length > 0) {
+        // If coverImage is set, move it to the front of the array
+        if (place.coverImage) {
+          const coverIdx = imageFiles.indexOf(place.coverImage);
+          if (coverIdx > 0) {
+            imageFiles.splice(coverIdx, 1);
+            imageFiles.unshift(place.coverImage);
+          }
+        }
+        place.images = imageFiles.map((f) => `/images/places/${place.slug}/${f}`);
+        imagesFound += imageFiles.length;
+      }
+    } catch {
+      // No image folder for this place — skip
+    }
+    // Remove coverImage from output (internal-only field)
+    delete place.coverImage;
+  }
+
   await fs.writeFile(outputPath, `${JSON.stringify(places, null, 2)}\n`, "utf8");
-  console.log(`Generated ${places.length} place(s) -> data/places.json`);
+  console.log(`Generated ${places.length} place(s) -> data/places.json (${imagesFound} image(s) linked)`);
 }
 
 main().catch((error) => {

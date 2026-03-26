@@ -68,3 +68,24 @@ Rule: never edit old entries; add a new entry to supersede prior decisions.
 - Status: accepted
 - Decision: Place overrides may include `note_ko` alongside English `note`, and `build_places.mjs` passes both through into `data/places.json`.
 - Rationale: The UI now renders practical safety notes in both English and Korean without introducing a second runtime data source.
+
+## 2026-03-26 — Image optimization pipeline (optimize-images.mjs)
+- Status: accepted
+- Decision: Original photos in `public/images/NoGlutenSeoul_Assets/{한국어폴더}/` are converted to webp via sharp (1200px full + 640px thumb) into `public/images/places/{slug}/`. Output dir is cleaned before each run.
+- Rationale: Reduces 332MB originals to ~6MB; keeps static build; avoids external image services.
+
+## 2026-03-26 — coverImage field in overrides
+- Status: accepted
+- Decision: `overrides.json` supports `"coverImage": "05.webp"` to select card thumbnail. `build_places.mjs` moves it to front of images array. Omit for default (01.webp).
+- Rationale: Decouples thumbnail selection from file naming; no file renaming needed.
+
+## 2026-03-26 — Manual-only place entries
+- Status: accepted
+- Supersedes: "Dual data entry paths" (manual.json path)
+- Decision: Manual places use string SIDs (e.g., `manual_francois`) directly in `overrides.json`. `build_places.mjs` processes override-only entries not found in candidates.
+- Rationale: Simpler than a separate `manual.json`; single file to manage all overrides.
+
+## 2026-03-26 — Unified documentation in PROJECT.md
+- Status: accepted
+- Decision: `docs/PROJECT.md` is the sole comprehensive reference. `CLAUDE.md` and `AGENTS.md` point to it. Includes image system, pipeline commands, component specs, and known gaps.
+- Rationale: Eliminates need for agents to scan multiple files on every session start.

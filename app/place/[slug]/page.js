@@ -132,6 +132,46 @@ export default async function PlaceDetailPage({ params }) {
           <span className="lang-ko">← 목록으로 돌아가기</span>
         </Link>
 
+        {place.images?.length > 0 && (() => {
+          const MAX_GALLERY = 5;
+          const galleryImages = place.images.slice(1, MAX_GALLERY + 1);
+          const remaining = Math.max(0, place.images.length - 1 - MAX_GALLERY);
+          return (
+            <div className="mt-4 space-y-2">
+              {/* Hero image */}
+              <div className="overflow-hidden rounded-2xl">
+                <img
+                  src={place.images[0]}
+                  alt={`${place.nameEn || place.name || "Place"} — main photo`}
+                  className="aspect-[16/9] w-full object-cover"
+                  loading="eager"
+                />
+              </div>
+              {/* Gallery grid */}
+              {galleryImages.length > 0 && (
+                <div className="grid grid-cols-3 gap-2">
+                  {galleryImages.map((src, i) => (
+                    <div key={src} className="relative overflow-hidden rounded-lg">
+                      <img
+                        src={src}
+                        alt={`${place.nameEn || place.name || "Place"} photo ${i + 2}`}
+                        className="aspect-square w-full object-cover transition-opacity hover:opacity-90"
+                        loading="lazy"
+                      />
+                      {/* Show "+N" overlay on last visible image if more exist */}
+                      {i === galleryImages.length - 1 && remaining > 0 && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/40 text-lg font-semibold text-white">
+                          +{remaining}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })()}
+
         <section className="mt-4 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
           <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
             <span className="lang-en">{displayTypeEn}</span>

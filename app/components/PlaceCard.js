@@ -39,19 +39,36 @@ export default function PlaceCard({ place }) {
   const distanceLabel = formatDistance(place.distanceKm);
 
   const gradient = getCardGradient(place.tags, place.type);
+  const hasImage = place.images?.length > 0;
+
+  const gfBadge = place.tags?.includes("Dedicated GF") ? (
+    <span className="absolute right-3 top-3 z-10 rounded-full bg-emerald-500 px-2 py-0.5 text-[10px] font-bold text-white shadow-sm">
+      <span className="lang-en">✨ Dedicated GF</span>
+      <span className="lang-ko">✨ 전문점</span>
+    </span>
+  ) : null;
 
   return (
     <div className="group flex flex-col overflow-hidden rounded-xl border border-rim bg-surface transition-all hover:border-rim-strong hover:shadow-sm">
       {/* Visual header */}
-      <div className={`relative flex h-24 items-center justify-center bg-gradient-to-br ${gradient.bg}`}>
-        <span className="text-4xl opacity-60 transition-transform group-hover:scale-110">{gradient.emoji}</span>
-        {place.tags?.includes("Dedicated GF") && (
-          <span className="absolute right-3 top-3 rounded-full bg-emerald-500 px-2 py-0.5 text-[10px] font-bold text-white shadow-sm">
-            <span className="lang-en">✨ Dedicated GF</span>
-            <span className="lang-ko">✨ 전문점</span>
-          </span>
-        )}
-      </div>
+      {hasImage ? (
+        <div className="relative aspect-[16/9] overflow-hidden">
+          <img
+            src={place.images[0]}
+            alt={place.nameEn || place.name || "Place photo"}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            loading="lazy"
+          />
+          {/* Bottom gradient for readability */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/20 to-transparent" />
+          {gfBadge}
+        </div>
+      ) : (
+        <div className={`relative flex h-24 items-center justify-center bg-gradient-to-br ${gradient.bg}`}>
+          <span className="text-4xl opacity-60 transition-transform group-hover:scale-110">{gradient.emoji}</span>
+          {gfBadge}
+        </div>
+      )}
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         {/* Type + distance row */}
         <div className="flex items-center justify-between gap-2">

@@ -13,7 +13,8 @@
     "import:naver": "node scripts/import_naver.mjs",
     "publish:local": "npm run import:naver && npm run build:places && npm run validate:places",
     "enrich:notes": "node scripts/enrich_notes.mjs",
-    "enrich:links": "node scripts/enrich_links.mjs"
+    "enrich:links": "node scripts/enrich_links.mjs",
+    "optimize:images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "leaflet": "^1.9.4",
@@ -31,6 +32,7 @@
     "@types/react": "19.2.14",
     "eslint": "^9",
     "eslint-config-next": "15.4.3",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4"
   }
 }
