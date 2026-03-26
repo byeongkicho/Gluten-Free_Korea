@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import CopyButton from "@/app/components/CopyButton";
 import ShareButton from "@/app/components/ShareButton";
+import ImageLightbox from "@/app/components/ImageLightbox";
 import places from "@/data/places.json";
 import { TYPE_MAP, sortTags } from "@/app/lib/places";
 
@@ -134,34 +135,11 @@ export default async function PlaceDetailPage({ params }) {
         </Link>
 
         {place.images?.length > 0 && (() => {
-          const galleryImages = place.images.slice(1);
           return (
-            <div className="mt-4 space-y-2">
-              {/* Hero image */}
-              <div className="overflow-hidden rounded-2xl">
-                <img
-                  src={place.images[0]}
-                  alt={`${place.nameEn || place.name || "Place"} — main photo`}
-                  className="w-full rounded-2xl object-contain max-h-[500px]"
-                  loading="eager"
-                />
-              </div>
-              {/* Gallery grid */}
-              {galleryImages.length > 0 && (
-                <div className="grid grid-cols-3 gap-2">
-                  {galleryImages.map((src, i) => (
-                    <div key={src} className="relative overflow-hidden rounded-lg">
-                      <img
-                        src={src}
-                        alt={`${place.nameEn || place.name || "Place"} photo ${i + 2}`}
-                        className="aspect-square w-full object-cover transition-opacity hover:opacity-90"
-                        loading={i < 2 ? "eager" : "lazy"}
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+            <ImageLightbox
+              images={place.images}
+              alt={place.nameEn || place.name || "Place"}
+            />
           );
         })()}
 
