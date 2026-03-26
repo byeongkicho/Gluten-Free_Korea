@@ -51,13 +51,13 @@ npm run import:naver        # naver_raw.json → candidates.naver.json
 npm run optimize:images     # original photos → webp (places/ dir)
 npm run build:places        # candidates + overrides + image scan → places.json
 npm run pages:build         # Next.js build for CF Pages
-npx wrangler pages deploy .vercel/output/static --project-name gluten-free-korea
+npx wrangler pages deploy .vercel/output/static --project-name noglutenkorea
 
 # After data-only change (no new photos)
-npm run build:places && npm run pages:build && npx wrangler pages deploy .vercel/output/static --project-name gluten-free-korea
+npm run build:places && npm run pages:build && npx wrangler pages deploy .vercel/output/static --project-name noglutenkorea
 
 # After photo change
-npm run optimize:images && npm run build:places && npm run pages:build && npx wrangler pages deploy .vercel/output/static --project-name gluten-free-korea
+npm run optimize:images && npm run build:places && npm run pages:build && npx wrangler pages deploy .vercel/output/static --project-name noglutenkorea
 ```
 
 ---
@@ -151,7 +151,7 @@ npm run pages:build       # CF Pages build (runs build:places first)
 ```
 
 ## Cloudflare Configuration
-- Project: `gluten-free-korea`
+- Project: `noglutenkorea`
 - Build output: `.vercel/output/static`
 - Config: `wrangler.toml`
 - Compatibility: `nodejs_compat`
