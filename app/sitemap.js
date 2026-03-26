@@ -27,5 +27,12 @@ export default function sitemap() {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...placeRoutes];
+  const areaRoutes = ["seoul", "gyeonggi", "cheonan"].map((area) => ({
+    url: `${base}/area/${area}`,
+    lastModified: new Date("2026-03-26"),
+    changeFrequency: "weekly",
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...areaRoutes, ...placeRoutes];
 }

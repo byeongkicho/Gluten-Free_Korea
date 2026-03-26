@@ -28,6 +28,8 @@ export const metadata = {
   },
 };
 
+import CopyButton from "@/app/components/CopyButton";
+
 export default function GuidePage() {
   const guideJsonLd = {
     "@context": "https://schema.org",
@@ -53,7 +55,23 @@ export default function GuidePage() {
           <span className="lang-en">Safety Guide</span>
           <span className="lang-ko">안전 가이드</span>
         </h1>
-        <div className="mt-6 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
+
+        {/* Table of contents */}
+        <nav className="mt-5 rounded-2xl border border-rim bg-surface p-4 sm:p-5" aria-label="Table of contents">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-faint">
+            <span className="lang-en">On this page</span>
+            <span className="lang-ko">목차</span>
+          </p>
+          <ol className="mt-2.5 space-y-1.5 text-sm">
+            <li><a href="#checklist" className="text-muted transition-colors hover:text-fg"><span className="lang-en">Safety Checklist</span><span className="lang-ko">안전 체크리스트</span></a></li>
+            <li><a href="#hidden-gluten" className="text-muted transition-colors hover:text-fg"><span className="lang-en">Hidden Gluten</span><span className="lang-ko">숨겨진 글루텐</span></a></li>
+            <li><a href="#rice-bread" className="text-muted transition-colors hover:text-fg"><span className="lang-en">Rice Bread Warning</span><span className="lang-ko">쌀빵 주의</span></a></li>
+            <li><a href="#phrases" className="text-muted transition-colors hover:text-fg"><span className="lang-en">Korean Phrases</span><span className="lang-ko">한국어 표현</span></a></li>
+            <li><a href="#products" className="text-muted transition-colors hover:text-fg"><span className="lang-en">Recommended Products</span><span className="lang-ko">추천 제품</span></a></li>
+          </ol>
+        </nav>
+
+        <div id="checklist" className="mt-6 scroll-mt-20 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
           <ul className="space-y-3 text-sm leading-relaxed text-muted">
             <li>
               <span className="lang-en">
@@ -79,7 +97,7 @@ export default function GuidePage() {
             </li>
           </ul>
         </div>
-        <section className="mt-5 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
+        <section id="hidden-gluten" className="mt-5 scroll-mt-20 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
           <h2 className="text-lg font-semibold text-fg">
             <span className="lang-en">Hidden Gluten in Korean Food</span>
             <span className="lang-ko">한국 음식 속 숨겨진 글루텐</span>
@@ -107,7 +125,7 @@ export default function GuidePage() {
             </li>
           </ul>
         </section>
-        <section className="mt-5 rounded-2xl border border-amber-rim bg-amber-bg p-5 sm:p-6">
+        <section id="rice-bread" className="mt-5 scroll-mt-20 rounded-2xl border border-amber-rim bg-amber-bg p-5 sm:p-6">
           <h2 className="text-lg font-semibold text-amber-fg">
             <span className="lang-en">⚠️ Rice Bread ≠ Gluten-Free</span>
             <span className="lang-ko">⚠️ 쌀빵 = 글루텐프리가 아닙니다</span>
@@ -125,43 +143,43 @@ export default function GuidePage() {
             </span>
           </p>
         </section>
-        <section className="mt-5 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
+        <section id="phrases" className="mt-5 scroll-mt-20 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
           <h2 className="text-lg font-semibold text-fg">
             <span className="lang-en">Useful Korean Phrases</span>
             <span className="lang-ko">유용한 한국어 표현</span>
           </h2>
           <ul className="mt-4 space-y-4">
-            <li>
-              <p className="font-medium text-fg">밀가루 들어가나요?</p>
-              <p className="text-xs text-muted">
-                Does this contain wheat flour?
-              </p>
+            <li className="flex items-start justify-between gap-3">
+              <div>
+                <p className="font-medium text-fg">밀가루 들어가나요?</p>
+                <p className="text-xs text-muted">Does this contain wheat flour?</p>
+              </div>
+              <CopyButton text="밀가루 들어가나요?" ariaLabel="Copy phrase" className="mt-0.5" />
             </li>
-            <li>
-              <p className="font-medium text-fg">글루텐프리 메뉴 있나요?</p>
-              <p className="text-xs text-muted">
-                Do you have a gluten-free menu?
-              </p>
+            <li className="flex items-start justify-between gap-3">
+              <div>
+                <p className="font-medium text-fg">글루텐프리 메뉴 있나요?</p>
+                <p className="text-xs text-muted">Do you have a gluten-free menu?</p>
+              </div>
+              <CopyButton text="글루텐프리 메뉴 있나요?" ariaLabel="Copy phrase" className="mt-0.5" />
             </li>
-            <li>
-              <p className="font-medium text-fg">
-                밀, 보리, 호밀 없이 만들 수 있나요?
-              </p>
-              <p className="text-xs text-muted">
-                Can you make it without wheat, barley, or rye?
-              </p>
+            <li className="flex items-start justify-between gap-3">
+              <div>
+                <p className="font-medium text-fg">밀, 보리, 호밀 없이 만들 수 있나요?</p>
+                <p className="text-xs text-muted">Can you make it without wheat, barley, or rye?</p>
+              </div>
+              <CopyButton text="밀, 보리, 호밀 없이 만들 수 있나요?" ariaLabel="Copy phrase" className="mt-0.5" />
             </li>
-            <li>
-              <p className="font-medium text-fg">
-                조리도구를 따로 써주실 수 있나요?
-              </p>
-              <p className="text-xs text-muted">
-                Can you use separate utensils?
-              </p>
+            <li className="flex items-start justify-between gap-3">
+              <div>
+                <p className="font-medium text-fg">조리도구를 따로 써주실 수 있나요?</p>
+                <p className="text-xs text-muted">Can you use separate utensils?</p>
+              </div>
+              <CopyButton text="조리도구를 따로 써주실 수 있나요?" ariaLabel="Copy phrase" className="mt-0.5" />
             </li>
           </ul>
         </section>
-        <section className="mt-5 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
+        <section id="products" className="mt-5 scroll-mt-20 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
           <h2 className="text-lg font-semibold text-fg">
             <span className="lang-en">🛒 Recommended Products (Ad)</span>
             <span className="lang-ko">🛒 추천 제품 (광고)</span>
@@ -184,12 +202,12 @@ export default function GuidePage() {
                 rel="noopener noreferrer"
                 className="font-medium text-accent underline underline-offset-2 hover:opacity-80"
               >
-                <span className="lang-en">[Ad] Gochujang product link</span>
-                <span className="lang-ko">[광고] 고추장 상품 링크</span>
+                <span className="lang-en">[Ad] Gluten-Free Gochujang (Red Pepper Paste)</span>
+                <span className="lang-ko">[광고] 글루텐프리 고추장</span>
               </a>
-              <p className="text-xs text-muted">
-                <span className="lang-en">Suggested keyword/category: gluten-free gochujang</span>
-                <span className="lang-ko">추천 키워드/카테고리: 글루텐프리 고추장</span>
+              <p className="mt-0.5 text-xs text-muted">
+                <span className="lang-en">Essential Korean condiment — look for wheat-free versions made with rice</span>
+                <span className="lang-ko">쌀로 만든 밀가루 무첨가 고추장</span>
               </p>
             </li>
             <li>
@@ -199,12 +217,12 @@ export default function GuidePage() {
                 rel="noopener noreferrer"
                 className="font-medium text-accent underline underline-offset-2 hover:opacity-80"
               >
-                <span className="lang-en">[Ad] Soy sauce (tamari) product link</span>
-                <span className="lang-ko">[광고] 간장(타마리) 상품 링크</span>
+                <span className="lang-en">[Ad] Gluten-Free Soy Sauce / Tamari</span>
+                <span className="lang-ko">[광고] 글루텐프리 간장 (타마리)</span>
               </a>
-              <p className="text-xs text-muted">
-                <span className="lang-en">Suggested keyword/category: gluten-free soy sauce / tamari</span>
-                <span className="lang-ko">추천 키워드/카테고리: 글루텐프리 간장 / 타마리</span>
+              <p className="mt-0.5 text-xs text-muted">
+                <span className="lang-en">Tamari-style soy sauce brewed without wheat — safe for most GF diets</span>
+                <span className="lang-ko">밀 없이 양조된 타마리 간장 — 대부분의 글루텐프리 식단에 적합</span>
               </p>
             </li>
             <li>
@@ -214,12 +232,12 @@ export default function GuidePage() {
                 rel="noopener noreferrer"
                 className="font-medium text-accent underline underline-offset-2 hover:opacity-80"
               >
-                <span className="lang-en">[Ad] Ssamjang product link</span>
-                <span className="lang-ko">[광고] 쌈장 상품 링크</span>
+                <span className="lang-en">[Ad] Gluten-Free Ssamjang (BBQ Dipping Sauce)</span>
+                <span className="lang-ko">[광고] 글루텐프리 쌈장</span>
               </a>
-              <p className="text-xs text-muted">
-                <span className="lang-en">Suggested keyword/category: ssamjang for Korean BBQ meals</span>
-                <span className="lang-ko">추천 키워드/카테고리: 한국 바비큐 식사용 쌈장</span>
+              <p className="mt-0.5 text-xs text-muted">
+                <span className="lang-en">Dipping sauce for Korean BBQ wraps — check label for wheat-free certification</span>
+                <span className="lang-ko">한국 바비큐 쌈용 소스 — 밀가루 무첨가 인증 확인</span>
               </p>
             </li>
             <li>
@@ -229,12 +247,12 @@ export default function GuidePage() {
                 rel="noopener noreferrer"
                 className="font-medium text-accent underline underline-offset-2 hover:opacity-80"
               >
-                <span className="lang-en">[Ad] Penne pasta product link</span>
-                <span className="lang-ko">[광고] 펜네 파스타 상품 링크</span>
+                <span className="lang-en">[Ad] Gluten-Free Penne Pasta (Rice/Corn)</span>
+                <span className="lang-ko">[광고] 글루텐프리 펜네 파스타 (쌀/옥수수)</span>
               </a>
-              <p className="text-xs text-muted">
-                <span className="lang-en">Suggested keyword/category: gluten-free penne pasta</span>
-                <span className="lang-ko">추천 키워드/카테고리: 글루텐프리 펜네 파스타</span>
+              <p className="mt-0.5 text-xs text-muted">
+                <span className="lang-en">Rice or corn-based pasta — great for cooking GF Italian dishes at home</span>
+                <span className="lang-ko">쌀 또는 옥수수 원료 파스타 — 집에서 글루텐프리 이탈리안 요리에 적합</span>
               </p>
             </li>
           </ul>

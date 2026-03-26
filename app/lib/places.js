@@ -14,6 +14,19 @@ export const TAG_PRIORITY = [
   "Dessert",
 ];
 
+export const TAG_MAP = {
+  "Dedicated GF": "전문점",
+  Restaurant: "음식점",
+  Cafe: "카페",
+  Bakery: "베이커리",
+  Pizza: "피자",
+  Bread: "빵",
+  Dessert: "디저트",
+  Italian: "이탈리안",
+  Korean: "한식",
+  "Fried Chicken": "치킨",
+};
+
 export function sortTags(tags) {
   if (!Array.isArray(tags)) return [];
   const priority = new Map(TAG_PRIORITY.map((tag, index) => [tag, index]));

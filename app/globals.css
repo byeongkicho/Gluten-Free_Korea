@@ -78,3 +78,9 @@ html.lang-en .lang-en {
 html.lang-en .lang-ko {
   display: none;
 }
+
+/* ── Bilingual placeholder ── */
+html.lang-ko .lang-placeholder::placeholder {
+  /* overridden by JS — see InitScript */
+  color: var(--faint);
+}

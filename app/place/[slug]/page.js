@@ -105,9 +105,10 @@ export default async function PlaceDetailPage({ params }) {
         : normalizedWebsite.includes("link.inpock.co.kr")
           ? "Link Hub"
           : "Website";
+  const schemaType = place.type === "Cafe" ? "CafeOrCoffeeShop" : place.type === "Bakery" ? "Bakery" : "Restaurant";
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Restaurant",
+    "@type": schemaType,
     name: place.name,
     description: place.note || undefined,
     address: place.address
@@ -126,16 +127,14 @@ export default async function PlaceDetailPage({ params }) {
       <div className="mx-auto max-w-3xl">
         <Link
           href="/"
-          className="text-sm text-muted transition-colors hover:text-fg"
+          className="inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm text-muted transition-colors hover:bg-surface-2 hover:text-fg"
         >
           <span className="lang-en">← Back to list</span>
           <span className="lang-ko">← 목록으로 돌아가기</span>
         </Link>
 
         {place.images?.length > 0 && (() => {
-          const MAX_GALLERY = 5;
-          const galleryImages = place.images.slice(1, MAX_GALLERY + 1);
-          const remaining = Math.max(0, place.images.length - 1 - MAX_GALLERY);
+          const galleryImages = place.images.slice(1);
           return (
             <div className="mt-4 space-y-2">
               {/* Hero image */}
@@ -156,14 +155,8 @@ export default async function PlaceDetailPage({ params }) {
                         src={src}
                         alt={`${place.nameEn || place.name || "Place"} photo ${i + 2}`}
                         className="aspect-square w-full object-cover transition-opacity hover:opacity-90"
-                        loading="lazy"
+                        loading={i < 2 ? "eager" : "lazy"}
                       />
-                      {/* Show "+N" overlay on last visible image if more exist */}
-                      {i === galleryImages.length - 1 && remaining > 0 && (
-                        <div className="absolute inset-0 flex items-center justify-center bg-black/40 text-lg font-semibold text-white">
-                          +{remaining}
-                        </div>
-                      )}
                     </div>
                   ))}
                 </div>
@@ -253,7 +246,8 @@ export default async function PlaceDetailPage({ params }) {
         {noteEn || noteKo ? (
           <section className="mt-5 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
             <h2 className="text-sm font-semibold uppercase tracking-wide text-fg">
-              Notes
+              <span className="lang-en">Notes</span>
+              <span className="lang-ko">메모</span>
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-muted">
               <span className="lang-en">{noteEn}</span>
@@ -262,9 +256,11 @@ export default async function PlaceDetailPage({ params }) {
           </section>
         ) : null}
 
+        {(normalizedWebsite || normalizedInstagram || normalizedNaverBlog || place.naverMapUrl || (place.lat && place.lng)) ? (
         <section className="mt-5 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
             <h2 className="text-sm font-semibold uppercase tracking-wide text-fg">
-              Links
+              <span className="lang-en">Links</span>
+              <span className="lang-ko">링크</span>
             </h2>
             <div className="mt-3 grid grid-cols-1 gap-2 sm:flex sm:flex-wrap sm:gap-3">
               {normalizedWebsite ? (
@@ -272,8 +268,9 @@ export default async function PlaceDetailPage({ params }) {
                   href={normalizedWebsite}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-lg border border-rim px-3 py-2 text-center text-sm text-fg transition-colors hover:bg-surface-2"
+                  className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-rim px-3 py-2 text-sm text-fg transition-colors hover:bg-surface-2"
                 >
+                  <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" className="h-4 w-4 shrink-0"><path d="M10 17.5a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15Z" stroke="currentColor" strokeWidth="1.3" /><path d="M2.5 10h15M10 2.5a11.5 11.5 0 0 1 3 7.5 11.5 11.5 0 0 1-3 7.5A11.5 11.5 0 0 1 7 10a11.5 11.5 0 0 1 3-7.5Z" stroke="currentColor" strokeWidth="1.3" /></svg>
                   {websiteLabel}
                 </a>
               ) : null}
@@ -282,8 +279,9 @@ export default async function PlaceDetailPage({ params }) {
                   href={normalizedInstagram}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-lg border border-rim px-3 py-2 text-center text-sm text-fg transition-colors hover:bg-surface-2"
+                  className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-rim px-3 py-2 text-sm text-fg transition-colors hover:bg-surface-2"
                 >
+                  <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" className="h-4 w-4 shrink-0"><rect x="2" y="2" width="16" height="16" rx="4" stroke="currentColor" strokeWidth="1.3" /><circle cx="10" cy="10" r="4" stroke="currentColor" strokeWidth="1.3" /><circle cx="14.5" cy="5.5" r="1" fill="currentColor" /></svg>
                   Instagram
                 </a>
               ) : null}
@@ -292,8 +290,9 @@ export default async function PlaceDetailPage({ params }) {
                   href={normalizedNaverBlog}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-lg border border-rim px-3 py-2 text-center text-sm text-fg transition-colors hover:bg-surface-2"
+                  className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-rim px-3 py-2 text-sm text-fg transition-colors hover:bg-surface-2"
                 >
+                  <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" className="h-4 w-4 shrink-0"><path d="M4 3h12v14H4z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" /><path d="M7 7h6M7 10h6M7 13h4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" /></svg>
                   Naver Blog
                 </a>
               ) : null}
@@ -302,8 +301,9 @@ export default async function PlaceDetailPage({ params }) {
                   href={place.naverMapUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-lg border border-rim px-3 py-2 text-center text-sm text-fg transition-colors hover:bg-surface-2"
+                  className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-rim px-3 py-2 text-sm text-fg transition-colors hover:bg-surface-2"
                 >
+                  <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" className="h-4 w-4 shrink-0"><path d="M10 17.5S3.5 12 3.5 8a6.5 6.5 0 0 1 13 0c0 4-6.5 9.5-6.5 9.5Z" stroke="currentColor" strokeWidth="1.3" /><circle cx="10" cy="8" r="2" stroke="currentColor" strokeWidth="1.3" /></svg>
                   Naver Map
                 </a>
               ) : null}
@@ -312,8 +312,9 @@ export default async function PlaceDetailPage({ params }) {
                   href={`https://www.google.com/maps/search/?api=1&query=${place.lat},${place.lng}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-lg border border-rim px-3 py-2 text-center text-sm text-fg transition-colors hover:bg-surface-2"
+                  className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-rim px-3 py-2 text-sm text-fg transition-colors hover:bg-surface-2"
                 >
+                  <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" className="h-4 w-4 shrink-0"><path d="M10 17.5S3.5 12 3.5 8a6.5 6.5 0 0 1 13 0c0 4-6.5 9.5-6.5 9.5Z" stroke="currentColor" strokeWidth="1.3" /><circle cx="10" cy="8" r="2" stroke="currentColor" strokeWidth="1.3" /></svg>
                   Google Maps
                 </a>
               ) : null}
@@ -323,6 +324,7 @@ export default async function PlaceDetailPage({ params }) {
               />
             </div>
           </section>
+        ) : null}
 
         {/* Tips section based on tags */}
         {place.tags?.length > 0 && (

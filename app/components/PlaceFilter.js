@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { TYPE_MAP } from "@/app/lib/places";
 import PlaceCard from "./PlaceCard";
@@ -8,10 +8,15 @@ import PlaceCard from "./PlaceCard";
 const MapView = dynamic(() => import("./MapView"), {
   ssr: false,
   loading: () => (
-    <p className="mt-10 text-center text-sm text-muted">
-      <span className="lang-en">Loading map...</span>
-      <span className="lang-ko">지도 불러오는 중...</span>
-    </p>
+    <div className="mt-6 flex h-[400px] items-center justify-center rounded-2xl border border-rim bg-surface-2 animate-pulse">
+      <div className="text-center">
+        <svg className="mx-auto h-8 w-8 text-muted animate-spin" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" /></svg>
+        <p className="mt-3 text-sm text-muted">
+          <span className="lang-en">Loading map...</span>
+          <span className="lang-ko">지도 불러오는 중...</span>
+        </p>
+      </div>
+    </div>
   ),
 });
 
@@ -99,6 +104,11 @@ export default function PlaceFilter({ places }) {
   const [locationState, setLocationState] = useState("idle");
   const [radiusKm, setRadiusKm] = useState(null);
   const [viewMode, setViewMode] = useState("list");
+  const [filtersOpen, setFiltersOpen] = useState(() => {
+    if (typeof window !== "undefined") return window.innerWidth >= 768;
+    return false;
+  });
+  const filterRef = useRef(null);
 
   const types = [...new Set(safePlaces.map((place) => place?.type).filter(Boolean))].sort((a, b) =>
     String(a).localeCompare(String(b))
@@ -234,10 +244,20 @@ export default function PlaceFilter({ places }) {
     );
   }
 
+  const isFiltered = active !== "All" || district !== "All" || q || (radiusKm && userLocation);
+
+  function clearAllFilters() {
+    setActive("All");
+    setDistrict("All");
+    setQuery("");
+    setRadiusKm(null);
+    setSortMode("default");
+  }
+
   return (
     <section>
       {/* Search */}
-      <label className="relative block">
+      <label className="relative mt-8 block">
         <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-faint">
           <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" className="h-4 w-4">
             <path
@@ -253,13 +273,47 @@ export default function PlaceFilter({ places }) {
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
+          data-lang-placeholder-en="Search places…"
+          data-lang-placeholder-ko="장소 검색…"
           placeholder="Search places…"
-          className="w-full rounded-lg border border-rim bg-surface py-3 pl-11 pr-4 text-sm text-fg placeholder-faint outline-none transition focus:border-accent focus:ring-1 focus:ring-accent"
+          className="lang-placeholder w-full rounded-lg border border-rim bg-surface py-3 pl-11 pr-4 text-sm text-fg placeholder-faint outline-none transition focus:border-accent focus:ring-1 focus:ring-accent"
         />
       </label>
 
+      {/* Filter toggle (mobile-friendly) */}
+      <div className="mt-4 flex items-center gap-3">
+        <button
+          type="button"
+          onClick={() => setFiltersOpen(!filtersOpen)}
+          className="flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-fg"
+          aria-expanded={filtersOpen}
+        >
+          <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" className="h-4 w-4">
+            <path d="M3 5h14M5 10h10M7 15h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+          </svg>
+          <span className="lang-en">Filters</span>
+          <span className="lang-ko">필터</span>
+          <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" className={`h-3.5 w-3.5 transition-transform ${filtersOpen ? "rotate-180" : ""}`}>
+            <path d="M5 7.5 10 12.5 15 7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+        {isFiltered ? (
+          <button
+            type="button"
+            onClick={clearAllFilters}
+            className="text-xs text-accent transition-opacity hover:opacity-70"
+          >
+            <span className="lang-en">Clear all</span>
+            <span className="lang-ko">초기화</span>
+          </button>
+        ) : null}
+      </div>
+
       {/* Filter groups */}
-      <div className="mt-6 space-y-5">
+      <div
+        ref={filterRef}
+        className={`mt-4 space-y-5 overflow-hidden transition-all duration-300 ${filtersOpen ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0"}`}
+      >
         {/* Nearby */}
         <div>
           <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-faint">
@@ -430,10 +484,22 @@ export default function PlaceFilter({ places }) {
       {viewMode === "map" ? (
         <MapView places={visiblePlaces} />
       ) : visiblePlaces.length === 0 ? (
-        <p className="mt-10 text-center text-sm text-muted">
-          <span className="lang-en">No places match your filters.</span>
-          <span className="lang-ko">조건에 맞는 장소가 없습니다.</span>
-        </p>
+        <div className="mt-10 text-center">
+          <p className="text-sm text-muted">
+            <span className="lang-en">No places match your filters.</span>
+            <span className="lang-ko">조건에 맞는 장소가 없습니다.</span>
+          </p>
+          {isFiltered ? (
+            <button
+              type="button"
+              onClick={clearAllFilters}
+              className="mt-3 rounded-lg border border-rim px-4 py-2 text-sm font-medium text-fg transition-colors hover:bg-surface-2"
+            >
+              <span className="lang-en">Clear all filters</span>
+              <span className="lang-ko">필터 초기화</span>
+            </button>
+          ) : null}
+        </div>
       ) : (
         <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
           {visiblePlaces.map((place) => (

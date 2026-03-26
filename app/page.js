@@ -1,3 +1,4 @@
+import Link from "next/link";
 import places from "@/data/places.json";
 import PlaceFilter from "@/app/components/PlaceFilter";
 
@@ -90,10 +91,17 @@ export default function HomePage() {
               간단한 목록입니다. 방문 시 재료와 교차오염 여부는 항상 다시 확인하세요.
             </span>
           </p>
-          <p className="mt-4 text-sm font-medium text-fg">
-            <span className="lang-en">Listed places: {safePlaces.length}</span>
-            <span className="lang-ko">현재 등록 장소 {safePlaces.length}곳</span>
-          </p>
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <p className="text-sm font-medium text-fg">
+              <span className="lang-en">{safePlaces.length} verified places</span>
+              <span className="lang-ko">검증된 장소 {safePlaces.length}곳</span>
+            </p>
+            <span className="hidden text-rim sm:inline">|</span>
+            <Link href="/guide" className="text-sm font-medium text-accent transition-opacity hover:opacity-70">
+              <span className="lang-en">Read safety guide →</span>
+              <span className="lang-ko">안전 가이드 보기 →</span>
+            </Link>
+          </div>
         </section>
 
         {!hasPlaces ? (

@@ -1,5 +1,12 @@
 import Link from "next/link";
-import { TYPE_MAP, sortTags } from "@/app/lib/places";
+import { TYPE_MAP, TAG_MAP, sortTags } from "@/app/lib/places";
+
+function getThumbSrc(src) {
+  if (!src) return src;
+  const lastSlash = src.lastIndexOf("/");
+  if (lastSlash === -1) return src;
+  return src.slice(0, lastSlash + 1) + "thumb_" + src.slice(lastSlash + 1);
+}
 
 function getCardGradient(tags, type) {
   const isDedicatedGF = tags?.includes("Dedicated GF");
@@ -49,23 +56,27 @@ export default function PlaceCard({ place }) {
   ) : null;
 
   return (
-    <div className="group flex flex-col overflow-hidden rounded-xl border border-rim bg-surface transition-all hover:border-rim-strong hover:shadow-sm">
+    <Link
+      href={`/place/${slug}`}
+      className="group flex flex-col overflow-hidden rounded-xl border border-rim bg-surface transition-all duration-200 hover:-translate-y-1 hover:border-rim-strong hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+      aria-label={`${place.nameEn || place.name || slug} — view details`}
+    >
       {/* Visual header */}
       {hasImage ? (
         <div className="relative aspect-[16/9] overflow-hidden">
           <img
-            src={place.images[0]}
+            src={getThumbSrc(place.images[0])}
             alt={place.nameEn || place.name || "Place photo"}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
             loading="lazy"
           />
           {/* Bottom gradient for readability */}
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/20 to-transparent" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/20 to-transparent dark:from-black/40" />
           {gfBadge}
         </div>
       ) : (
-        <div className={`relative flex h-24 items-center justify-center bg-gradient-to-br ${gradient.bg}`}>
-          <span className="text-4xl opacity-60 transition-transform group-hover:scale-110">{gradient.emoji}</span>
+        <div className={`relative flex aspect-[16/9] items-center justify-center bg-gradient-to-br ${gradient.bg}`}>
+          <span className="text-5xl opacity-50 transition-transform group-hover:scale-110">{gradient.emoji}</span>
           {gfBadge}
         </div>
       )}
@@ -87,7 +98,8 @@ export default function PlaceCard({ place }) {
                   href={`https://map.kakao.com/link/to/${encodeURIComponent(place.name || place.nameEn || "목적지")},${place.lat},${place.lng}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-xs text-accent underline underline-offset-2 transition-opacity hover:opacity-70"
+                  onClick={(e) => e.stopPropagation()}
+                  className="relative z-10 text-xs text-accent underline underline-offset-2 transition-opacity hover:opacity-70"
                   title="Open transit directions in Kakao Map"
                 >
                   <span className="lang-en">Directions</span>
@@ -120,7 +132,7 @@ export default function PlaceCard({ place }) {
 
         {/* Note */}
         {noteEn || noteKo ? (
-          <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-muted">
+          <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-muted">
             <span className="lang-en">{noteEn}</span>
             <span className="lang-ko">{noteKo}</span>
           </p>
@@ -130,7 +142,8 @@ export default function PlaceCard({ place }) {
         <div className="mt-4 flex flex-wrap gap-1.5">
           {sortTags(place.tags).slice(0, 3).map((tag) => (
             <span key={tag} className={getTagClass(tag)}>
-              {tag}
+              <span className="lang-en">{tag}</span>
+              <span className="lang-ko">{TAG_MAP[tag] || tag}</span>
             </span>
           ))}
         </div>
@@ -138,28 +151,25 @@ export default function PlaceCard({ place }) {
 
       {/* Card footer */}
       <div className="border-t border-rim px-5 py-3 sm:px-6">
-        <div className="flex flex-wrap items-center gap-4">
-          <Link
-            href={`/place/${slug}`}
-            className="text-sm font-medium text-fg transition-opacity hover:opacity-60"
-            aria-label={`View details for ${place.nameEn || place.name || slug}`}
-          >
+        <div className="flex flex-wrap items-center justify-between">
+          <span className="text-sm font-medium text-fg transition-opacity group-hover:opacity-70">
             <span className="lang-en">View details</span>
             <span className="lang-ko">상세 보기</span>
             <span className="ml-1 inline-block transition-transform group-hover:translate-x-0.5">→</span>
-          </Link>
+          </span>
           {place.naverMapUrl ? (
             <a
               href={place.naverMapUrl}
               target="_blank"
               rel="noreferrer"
-              className="text-xs text-muted underline underline-offset-2 transition-colors hover:text-fg"
+              onClick={(e) => e.stopPropagation()}
+              className="relative z-10 text-xs text-muted underline underline-offset-2 transition-colors hover:text-fg"
             >
               Naver Map
             </a>
           ) : null}
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

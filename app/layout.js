@@ -22,6 +22,10 @@ function InitScript() {
     document.documentElement.classList.remove('lang-en', 'lang-ko');
     document.documentElement.classList.add(lang === 'ko' ? 'lang-ko' : 'lang-en');
     document.documentElement.setAttribute('lang', lang === 'ko' ? 'ko' : 'en');
+    document.querySelectorAll('.lang-placeholder').forEach(function(el) {
+      var key = lang === 'ko' ? 'langPlaceholderKo' : 'langPlaceholderEn';
+      if (el.dataset[key]) el.placeholder = el.dataset[key];
+    });
   } catch (e) {}
 })();`,
       }}

@@ -7,6 +7,10 @@ function applyLanguage(nextLang) {
   root.classList.remove("lang-en", "lang-ko");
   root.classList.add(nextLang === "ko" ? "lang-ko" : "lang-en");
   root.setAttribute("lang", nextLang === "ko" ? "ko" : "en");
+  document.querySelectorAll(".lang-placeholder").forEach((el) => {
+    const key = nextLang === "ko" ? "langPlaceholderKo" : "langPlaceholderEn";
+    if (el.dataset[key]) el.placeholder = el.dataset[key];
+  });
 }
 
 export default function LanguageToggle() {

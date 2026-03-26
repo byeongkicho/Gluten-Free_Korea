@@ -8,7 +8,7 @@ export default function Footer() {
           <span className="lang-ko">연락하기</span>
         </p>
 
-        <div className="mt-5 flex items-center justify-center gap-6">
+        <div className="mt-5 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
           {/* Email */}
           <a
             href="mailto:contact@noglutenkorea.com"
