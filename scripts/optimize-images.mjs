@@ -35,7 +35,7 @@ const MAPPING = {
 const IMAGE_EXTS = new Set([".jpg", ".jpeg", ".png"]);
 
 async function processImage(inputPath, outputPath, maxWidth) {
-  const img = sharp(inputPath);
+  const img = sharp(inputPath).rotate(); // auto-rotate based on EXIF orientation
   const meta = await img.metadata();
   const width = meta.width > maxWidth ? maxWidth : undefined;
 

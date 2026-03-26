@@ -184,10 +184,7 @@
     "location": "Seoul, Yongsan-gu (Noksapyeong)",
     "addressEn": "21 Noksapyeong-daero 32-gil, Yongsan-gu, Seoul",
     "note_ko": "이태원 2층 카페 (엘리베이터 없음). 글루텐프리와 일반 제품을 함께 판매하므로 주문 전 어떤 제품이 GF인지 직원에게 확인하세요. 추천 메뉴: 말차 케이크. 주차 불가.",
-    "updatedAt": "2026-03-26",
-    "images": [
-      "/images/places/minimize-itaewon/01.webp"
-    ]
+    "updatedAt": "2026-03-26"
   },
   {
     "slug": "glunic",
@@ -226,10 +223,7 @@
     "location": "Seoul, Seongdong-gu (Seoul Forest)",
     "addressEn": "16-12 Seoulsup 2-gil, Seongdong-gu, Seoul",
     "note_ko": "서울숲 인근 카페로 공개된 글루텐프리 정보가 제한적입니다. 방문 시 현재 메뉴와 교차오염 정책을 직원에게 직접 확인하세요.",
-    "updatedAt": "2026-03-26",
-    "images": [
-      "/images/places/glunic/01.webp"
-    ]
+    "updatedAt": "2026-03-26"
   },
   {
     "slug": "monil2-house",
@@ -265,7 +259,7 @@
     "nameEn": "Monil2 House Gluten-Free Cafe",
     "location": "Seoul, Mapo-gu (Yeonnam)",
     "addressEn": "9 Sungmisan-ro 26-gil, Mapo-gu, Seoul",
-    "note_ko": "연남동에 위치한 셀리악 친화적 베이커리 카페. 글루텐프리 빵과 디저트로 유명하며, 방문 전 당일 재고와 조리 방식을 직원에게 꼭 확인하세요.",
+    "note_ko": "연남동에 위치한 셀리악 친화적 베이커리 카페. 전 메뉴 글루텐프리 빵과 디저트로 유명하고 내부에서  .",
     "updatedAt": "2026-03-26",
     "images": [
       "/images/places/monil2-house/01.webp",
@@ -316,10 +310,7 @@
     "location": "Cheonan, South Chungcheong (Dongnam-gu)",
     "addressEn": "706 Pungse-ro, Dongnam-gu, Cheonan, Chungcheongnam-do",
     "note_ko": "천안에 위치한 대형 돌가마 베이커리 단지. 대중교통으로 접근이 어려울 수 있으니 사전에 길을 확인하세요. 쌀 기반 글루텐프리 케이크를 판매하는 별도 매장이 있으며, 구매 전 GF 품목을 확인하세요. 케이크 구입 후 메인 구역에서 커피와 함께 즐길 수 있습니다. 주차 가능.",
-    "updatedAt": "2026-03-26",
-    "images": [
-      "/images/places/toujours-dolgama-village/01.webp"
-    ]
+    "updatedAt": "2026-03-26"
   },
   {
     "slug": "cafe-pepper",
@@ -358,10 +349,7 @@
     "location": "Seoul, Songpa-gu (Songridangil)",
     "addressEn": "12 Baekjegobun-ro 45-gil, Songpa-gu, Seoul",
     "note_ko": "송리단길(롯데월드 인근)의 글루텐프리 카페로 쌀가루 기반 케이크를 판매합니다. 주말·공휴일 대기 가능성이 있고 2층이며 엘리베이터는 없습니다. 방문 시 현재 메뉴, 교차오염 여부, 재고를 직원에게 확인하세요.",
-    "updatedAt": "2026-03-26",
-    "images": [
-      "/images/places/cafe-pepper/01.webp"
-    ]
+    "updatedAt": "2026-03-26"
   },
   {
     "slug": "grain-seoul",
