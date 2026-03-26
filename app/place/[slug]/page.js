@@ -142,7 +142,7 @@ export default async function PlaceDetailPage({ params }) {
                 <img
                   src={place.images[0]}
                   alt={`${place.nameEn || place.name || "Place"} — main photo`}
-                  className="aspect-[16/9] w-full object-cover"
+                  className="w-full rounded-2xl object-contain max-h-[500px]"
                   loading="eager"
                 />
               </div>
