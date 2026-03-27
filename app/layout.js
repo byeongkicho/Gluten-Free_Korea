@@ -1,4 +1,5 @@
 import { Fraunces, DM_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -37,6 +38,7 @@ const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
   display: "swap",
+  preload: false,
 });
 
 const dmSans = DM_Sans({
@@ -46,6 +48,7 @@ const dmSans = DM_Sans({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+const gaId = "G-YGVMPT7719";
 const defaultTitle = "No Gluten Korea | 한국 글루텐프리 레스토랑 & 카페 가이드";
 const defaultDescription =
   "Find gluten-free restaurants, cafes, and bakeries across Korea. Verified places with safety notes, maps, and Korean phrases for celiac and gluten-sensitive travelers.";
@@ -86,6 +89,19 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning
       >
         <InitScript />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', '${gaId}');
+          `}
+        </Script>
         <MetadataLocaleSync />
         <Navbar />
         {children}

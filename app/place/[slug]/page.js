@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import CopyButton from "@/app/components/CopyButton";
 import ShareButton from "@/app/components/ShareButton";
 import ImageLightbox from "@/app/components/ImageLightbox";
+import TrackedExternalLink from "@/app/components/TrackedExternalLink";
 import places from "@/data/places.json";
 import { TYPE_MAP, sortTags } from "@/app/lib/places";
 
@@ -143,7 +144,7 @@ export default async function PlaceDetailPage({ params }) {
           );
         })()}
 
-        <section className="mt-4 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
+        <section className="mt-4 min-h-[240px] rounded-2xl border border-rim bg-surface p-5 sm:min-h-[260px] sm:p-6">
           <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
             <span className="lang-en">{displayTypeEn}</span>
             <span className="lang-ko">{displayType}</span>
@@ -242,59 +243,59 @@ export default async function PlaceDetailPage({ params }) {
             </h2>
             <div className="mt-3 grid grid-cols-1 gap-2 sm:flex sm:flex-wrap sm:gap-3">
               {normalizedWebsite ? (
-                <a
+                <TrackedExternalLink
                   href={normalizedWebsite}
-                  target="_blank"
-                  rel="noreferrer"
+                  place={place}
+                  linkType="website"
                   className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-rim px-3 py-2 text-sm text-fg transition-colors hover:bg-surface-2"
                 >
                   <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" className="h-4 w-4 shrink-0"><path d="M10 17.5a7.5 7.5 0 1 0 0-15 7.5 7.5 0 0 0 0 15Z" stroke="currentColor" strokeWidth="1.3" /><path d="M2.5 10h15M10 2.5a11.5 11.5 0 0 1 3 7.5 11.5 11.5 0 0 1-3 7.5A11.5 11.5 0 0 1 7 10a11.5 11.5 0 0 1 3-7.5Z" stroke="currentColor" strokeWidth="1.3" /></svg>
                   {websiteLabel}
-                </a>
+                </TrackedExternalLink>
               ) : null}
               {normalizedInstagram && normalizedInstagram !== normalizedWebsite ? (
-                <a
+                <TrackedExternalLink
                   href={normalizedInstagram}
-                  target="_blank"
-                  rel="noreferrer"
+                  place={place}
+                  linkType="instagram"
                   className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-rim px-3 py-2 text-sm text-fg transition-colors hover:bg-surface-2"
                 >
                   <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" className="h-4 w-4 shrink-0"><rect x="2" y="2" width="16" height="16" rx="4" stroke="currentColor" strokeWidth="1.3" /><circle cx="10" cy="10" r="4" stroke="currentColor" strokeWidth="1.3" /><circle cx="14.5" cy="5.5" r="1" fill="currentColor" /></svg>
                   Instagram
-                </a>
+                </TrackedExternalLink>
               ) : null}
               {normalizedNaverBlog ? (
-                <a
+                <TrackedExternalLink
                   href={normalizedNaverBlog}
-                  target="_blank"
-                  rel="noreferrer"
+                  place={place}
+                  linkType="naver_blog"
                   className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-rim px-3 py-2 text-sm text-fg transition-colors hover:bg-surface-2"
                 >
                   <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" className="h-4 w-4 shrink-0"><path d="M4 3h12v14H4z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" /><path d="M7 7h6M7 10h6M7 13h4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" /></svg>
                   Naver Blog
-                </a>
+                </TrackedExternalLink>
               ) : null}
               {place.naverMapUrl ? (
-                <a
+                <TrackedExternalLink
                   href={place.naverMapUrl}
-                  target="_blank"
-                  rel="noreferrer"
+                  place={place}
+                  linkType="naver_map"
                   className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-rim px-3 py-2 text-sm text-fg transition-colors hover:bg-surface-2"
                 >
                   <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" className="h-4 w-4 shrink-0"><path d="M10 17.5S3.5 12 3.5 8a6.5 6.5 0 0 1 13 0c0 4-6.5 9.5-6.5 9.5Z" stroke="currentColor" strokeWidth="1.3" /><circle cx="10" cy="8" r="2" stroke="currentColor" strokeWidth="1.3" /></svg>
                   Naver Map
-                </a>
+                </TrackedExternalLink>
               ) : null}
               {place.lat && place.lng ? (
-                <a
+                <TrackedExternalLink
                   href={`https://www.google.com/maps/search/?api=1&query=${place.lat},${place.lng}`}
-                  target="_blank"
-                  rel="noreferrer"
+                  place={place}
+                  linkType="google_maps"
                   className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-rim px-3 py-2 text-sm text-fg transition-colors hover:bg-surface-2"
                 >
                   <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" className="h-4 w-4 shrink-0"><path d="M10 17.5S3.5 12 3.5 8a6.5 6.5 0 0 1 13 0c0 4-6.5 9.5-6.5 9.5Z" stroke="currentColor" strokeWidth="1.3" /><circle cx="10" cy="8" r="2" stroke="currentColor" strokeWidth="1.3" /></svg>
                   Google Maps
-                </a>
+                </TrackedExternalLink>
               ) : null}
               <ShareButton
                 url={`${siteUrl}/place/${slug}`}

@@ -1,10 +1,20 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
+
+function getDisplaySrc(src) {
+  if (!src) return src;
+  const parts = src.split("/");
+  const fileName = parts.pop();
+  if (!fileName || fileName.startsWith("thumb_")) return src;
+  return [...parts, `thumb_${fileName}`].join("/");
+}
 
 export default function ImageLightbox({ images, alt }) {
   const [open, setOpen] = useState(false);
   const [idx, setIdx] = useState(0);
+  const [heroSrc, setHeroSrc] = useState(() => getDisplaySrc(images?.[0]));
 
   const close = useCallback(() => setOpen(false), []);
   const prev = useCallback(() => setIdx((i) => (i - 1 + images.length) % images.length), [images.length]);
@@ -35,24 +45,32 @@ export default function ImageLightbox({ images, alt }) {
       {/* Clickable thumbnails — render as children replacement */}
       <div className="mt-4 space-y-2">
         {/* Hero */}
-        <div className="overflow-hidden rounded-2xl">
-          <img
-            src={images[0]}
+        <div className="relative aspect-[16/10] min-h-[220px] overflow-hidden rounded-2xl bg-surface-2 sm:min-h-[320px]">
+          <Image
+            src={heroSrc || images[0]}
             alt={`${alt} — main photo`}
-            className="w-full cursor-zoom-in rounded-2xl object-contain max-h-[500px] transition-transform hover:scale-[1.01]"
-            loading="eager"
+            fill
+            sizes="(max-width: 768px) 100vw, 768px"
+            className="cursor-zoom-in rounded-2xl object-cover transition-transform hover:scale-[1.01]"
+            priority
+            fetchPriority="high"
             onClick={() => openAt(0)}
+            onError={() => {
+              if (heroSrc !== images[0]) setHeroSrc(images[0]);
+            }}
           />
         </div>
         {/* Gallery grid */}
         {images.length > 1 && (
-          <div className="grid grid-cols-3 gap-2">
+          <div className="min-h-[88px] grid grid-cols-3 gap-2 sm:min-h-[140px]">
             {images.slice(1).map((src, i) => (
-              <div key={src} className="relative overflow-hidden rounded-lg">
-                <img
+              <div key={src} className="relative aspect-square overflow-hidden rounded-lg">
+                <Image
                   src={src}
                   alt={`${alt} photo ${i + 2}`}
-                  className="aspect-square w-full cursor-zoom-in object-cover transition-all hover:opacity-90 hover:scale-[1.02]"
+                  fill
+                  sizes="(max-width: 768px) 33vw, 200px"
+                  className="cursor-zoom-in object-cover transition-all hover:opacity-90 hover:scale-[1.02]"
                   loading={i < 2 ? "eager" : "lazy"}
                   onClick={() => openAt(i + 1)}
                 />
@@ -100,12 +118,18 @@ export default function ImageLightbox({ images, alt }) {
           )}
 
           {/* Image */}
-          <img
-            src={images[idx]}
-            alt={`${alt} photo ${idx + 1}`}
-            className="max-h-[90vh] max-w-[90vw] rounded-lg object-contain"
+          <div
+            className="relative h-[90vh] w-[90vw]"
             onClick={(e) => e.stopPropagation()}
-          />
+          >
+            <Image
+              src={images[idx]}
+              alt={`${alt} photo ${idx + 1}`}
+              fill
+              sizes="90vw"
+              className="rounded-lg object-contain"
+            />
+          </div>
 
           {/* Next */}
           {images.length > 1 && (

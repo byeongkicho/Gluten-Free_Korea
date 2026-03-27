@@ -51,7 +51,7 @@ export default function HomePage() {
     "@type": "ItemList",
     name: "Gluten-Free Korea Directory",
     numberOfItems: safePlaces.length,
-    itemListElement: safePlaces.map((place, index) => ({
+    itemListElement: safePlaces.slice(0, 8).map((place, index) => ({
       "@type": "ListItem",
       position: index + 1,
       url: `${siteUrl}/place/${place.slug}`,

@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import { trackEvent } from "@/app/lib/analytics";
 import { TYPE_MAP, TAG_MAP, sortTags } from "@/app/lib/places";
 
 function getThumbSrc(src) {
@@ -33,7 +35,7 @@ function formatDistance(distanceKm) {
   return `${distanceKm.toFixed(distanceKm < 10 ? 1 : 0)}km`;
 }
 
-export default function PlaceCard({ place }) {
+export default function PlaceCard({ place, priority = false }) {
   const slug = place.slug;
   const displayTypeEn = place.type || "Place";
   const displayType = TYPE_MAP[place.type] || place.type || "장소";
@@ -60,15 +62,25 @@ export default function PlaceCard({ place }) {
       href={`/place/${slug}`}
       className="group flex flex-col overflow-hidden rounded-xl border border-rim bg-surface transition-all duration-200 hover:-translate-y-1 hover:border-rim-strong hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
       aria-label={`${place.nameEn || place.name || slug} — view details`}
+      onClick={() =>
+        trackEvent("view_place_detail", {
+          place_slug: slug,
+          place_name: place.nameEn || place.name || slug,
+          place_type: place.type || "unknown",
+        })
+      }
     >
       {/* Visual header */}
       {hasImage ? (
         <div className="relative aspect-[16/9] overflow-hidden">
-          <img
+          <Image
             src={getThumbSrc(place.images[0])}
             alt={place.nameEn || place.name || "Place photo"}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-            loading="lazy"
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            loading={priority ? undefined : "lazy"}
+            priority={priority}
           />
           {/* Bottom gradient for readability */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/20 to-transparent dark:from-black/40" />
@@ -98,7 +110,14 @@ export default function PlaceCard({ place }) {
                   href={`https://map.kakao.com/link/to/${encodeURIComponent(place.name || place.nameEn || "목적지")},${place.lat},${place.lng}`}
                   target="_blank"
                   rel="noreferrer"
-                  onClick={(e) => e.stopPropagation()}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    trackEvent("click_external_link", {
+                      link_type: "kakao_map_directions",
+                      place_slug: slug,
+                      place_name: place.nameEn || place.name || slug,
+                    });
+                  }}
                   className="relative z-10 text-xs text-accent underline underline-offset-2 transition-opacity hover:opacity-70"
                   title="Open transit directions in Kakao Map"
                 >
@@ -162,7 +181,14 @@ export default function PlaceCard({ place }) {
               href={place.naverMapUrl}
               target="_blank"
               rel="noreferrer"
-              onClick={(e) => e.stopPropagation()}
+              onClick={(e) => {
+                e.stopPropagation();
+                trackEvent("click_external_link", {
+                  link_type: "naver_map",
+                  place_slug: slug,
+                  place_name: place.nameEn || place.name || slug,
+                });
+              }}
               className="relative z-10 text-xs text-muted underline underline-offset-2 transition-colors hover:text-fg"
             >
               Naver Map

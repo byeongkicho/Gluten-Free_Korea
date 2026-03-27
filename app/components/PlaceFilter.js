@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { TYPE_MAP } from "@/app/lib/places";
+import { trackEvent } from "@/app/lib/analytics";
 import PlaceCard from "./PlaceCard";
 
 const MapView = dynamic(() => import("./MapView"), {
@@ -94,6 +95,9 @@ const chipSmActive =
 const chipSmInactive =
   "px-2.5 py-1 text-xs font-medium text-muted rounded border border-rim hover:text-fg hover:bg-surface-2 transition-colors";
 
+const INITIAL_VISIBLE_COUNT = 6;
+const LOAD_MORE_COUNT = 6;
+
 export default function PlaceFilter({ places }) {
   const safePlaces = Array.isArray(places) ? places : [];
   const [active, setActive] = useState("All");
@@ -104,11 +108,10 @@ export default function PlaceFilter({ places }) {
   const [locationState, setLocationState] = useState("idle");
   const [radiusKm, setRadiusKm] = useState(null);
   const [viewMode, setViewMode] = useState("list");
-  const [filtersOpen, setFiltersOpen] = useState(() => {
-    if (typeof window !== "undefined") return window.innerWidth >= 768;
-    return false;
-  });
+  const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_COUNT);
+  const [filtersOpen, setFiltersOpen] = useState(false);
   const filterRef = useRef(null);
+  const searchDebounceRef = useRef(null);
 
   const types = [...new Set(safePlaces.map((place) => place?.type).filter(Boolean))].sort((a, b) =>
     String(a).localeCompare(String(b))
@@ -154,8 +157,15 @@ export default function PlaceFilter({ places }) {
   const hasLocation = Boolean(userLocation);
   const canRetryLocation = locationState === "denied" || locationState === "error";
   const showSettingsHint = locationState === "denied";
+  const displayedPlaces = visiblePlaces.slice(0, visibleCount);
+  const hasMorePlaces = viewMode === "list" && visiblePlaces.length > visibleCount;
 
   function requestLocation() {
+    trackEvent("filter_places", {
+      filter_kind: "location_request",
+      filter_value: hasLocation ? "update_location" : "use_my_location",
+    });
+
     if (!navigator.geolocation) {
       setLocationState("unsupported");
       return;
@@ -186,6 +196,10 @@ export default function PlaceFilter({ places }) {
   function resetNearby() {
     setSortMode("default");
     setRadiusKm(null);
+    trackEvent("filter_places", {
+      filter_kind: "sort_mode",
+      filter_value: "default",
+    });
   }
 
   function renderLocationStatus() {
@@ -246,12 +260,81 @@ export default function PlaceFilter({ places }) {
 
   const isFiltered = active !== "All" || district !== "All" || q || (radiusKm && userLocation);
 
+  useEffect(() => {
+    if (!q) return undefined;
+
+    if (searchDebounceRef.current) {
+      clearTimeout(searchDebounceRef.current);
+    }
+
+    searchDebounceRef.current = setTimeout(() => {
+      trackEvent("search_places", {
+        search_term: q,
+        results_count: visiblePlaces.length,
+      });
+    }, 700);
+
+    return () => {
+      if (searchDebounceRef.current) clearTimeout(searchDebounceRef.current);
+    };
+  }, [q, visiblePlaces.length]);
+
+  useEffect(() => {
+    setVisibleCount(INITIAL_VISIBLE_COUNT);
+  }, [q, active, district, sortMode, radiusKm, userLocation, viewMode]);
+
   function clearAllFilters() {
     setActive("All");
     setDistrict("All");
     setQuery("");
     setRadiusKm(null);
     setSortMode("default");
+    trackEvent("clear_filters", {
+      had_search: Boolean(q),
+      had_district: district !== "All",
+      had_type: active !== "All",
+      had_radius: Boolean(radiusKm && userLocation),
+    });
+  }
+
+  function handleTypeChange(type) {
+    setActive(type);
+    trackEvent("filter_places", {
+      filter_kind: "type",
+      filter_value: type,
+    });
+  }
+
+  function handleDistrictChange(value) {
+    setDistrict(value);
+    trackEvent("filter_places", {
+      filter_kind: "district",
+      filter_value: value,
+    });
+  }
+
+  function handleRadiusChange(value) {
+    setRadiusKm(value);
+    trackEvent("filter_places", {
+      filter_kind: "radius_km",
+      filter_value: value ?? "all",
+    });
+  }
+
+  function handleViewModeChange(nextMode) {
+    setViewMode(nextMode);
+    trackEvent("filter_places", {
+      filter_kind: "view_mode",
+      filter_value: nextMode,
+    });
+  }
+
+  function handleLoadMore() {
+    setVisibleCount((count) => count + LOAD_MORE_COUNT);
+    trackEvent("view_more_places", {
+      previous_count: displayedPlaces.length,
+      total_results: visiblePlaces.length,
+    });
   }
 
   return (
@@ -332,7 +415,13 @@ export default function PlaceFilter({ places }) {
             {hasLocation ? (
               <button
                 type="button"
-                onClick={() => setSortMode("nearest")}
+                onClick={() => {
+                  setSortMode("nearest");
+                  trackEvent("filter_places", {
+                    filter_kind: "sort_mode",
+                    filter_value: "nearest",
+                  });
+                }}
                 className={sortMode === "nearest" ? chipActive : chipInactive}
               >
                 <span className="lang-en">Nearest</span>
@@ -377,7 +466,7 @@ export default function PlaceFilter({ places }) {
                   <button
                     key={opt.labelEn}
                     type="button"
-                    onClick={() => setRadiusKm(opt.value)}
+                    onClick={() => handleRadiusChange(opt.value)}
                     className={radiusKm === opt.value ? chipSmActive : chipSmInactive}
                   >
                     <span className="lang-en">{opt.labelEn}</span>
@@ -414,7 +503,7 @@ export default function PlaceFilter({ places }) {
               <button
                 key={d}
                 type="button"
-                onClick={() => setDistrict(d)}
+                onClick={() => handleDistrictChange(d)}
                 className={district === d ? chipActive : chipInactive}
               >
                 {d === "All" ? (
@@ -444,7 +533,7 @@ export default function PlaceFilter({ places }) {
               <button
                 key={type}
                 type="button"
-                onClick={() => setActive(type)}
+                onClick={() => handleTypeChange(type)}
                 className={active === type ? chipActive : chipInactive}
               >
                 {getTypeLabel(type)}
@@ -463,7 +552,7 @@ export default function PlaceFilter({ places }) {
         <div className="flex gap-1">
           <button
             type="button"
-            onClick={() => setViewMode("list")}
+            onClick={() => handleViewModeChange("list")}
             className={viewMode === "list" ? chipSmActive : chipSmInactive}
           >
             <span className="lang-en">List</span>
@@ -471,7 +560,7 @@ export default function PlaceFilter({ places }) {
           </button>
           <button
             type="button"
-            onClick={() => setViewMode("map")}
+            onClick={() => handleViewModeChange("map")}
             className={viewMode === "map" ? chipSmActive : chipSmInactive}
           >
             <span className="lang-en">Map</span>
@@ -501,11 +590,25 @@ export default function PlaceFilter({ places }) {
           ) : null}
         </div>
       ) : (
-        <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
-          {visiblePlaces.map((place) => (
-            <PlaceCard key={place.slug} place={place} />
-          ))}
-        </div>
+        <>
+          <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
+            {displayedPlaces.map((place, index) => (
+              <PlaceCard key={place.slug} place={place} priority={index < 2} />
+            ))}
+          </div>
+          {hasMorePlaces ? (
+            <div className="mt-6 flex justify-center">
+              <button
+                type="button"
+                onClick={handleLoadMore}
+                className="rounded-lg border border-rim px-4 py-2 text-sm font-medium text-fg transition-colors hover:bg-surface-2"
+              >
+                <span className="lang-en">Show 6 more</span>
+                <span className="lang-ko">6개 더 보기</span>
+              </button>
+            </div>
+          ) : null}
+        </>
       )}
     </section>
   );
