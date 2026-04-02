@@ -247,6 +247,11 @@
     "tags": [
       "Cafe",
       "Bakery"
+    ],
+    "images": [
+      "places/rami-scone/01",
+      "places/rami-scone/02",
+      "places/rami-scone/03"
     ]
   },
   "1073951222": {
@@ -259,6 +264,16 @@
     "note_ko": "충무로/을지로 지역의 바. 칵테일은 대체로 글루텐프리이나 보리 기반 증류주를 사용할 수 있으니, 음료 재료와 교차오염 여부를 주문 전에 직원에게 확인하세요.",
     "tags": [
       "Bar"
+    ],
+    "images": [
+      "places/blu-seoul/01",
+      "places/blu-seoul/02",
+      "places/blu-seoul/03",
+      "places/blu-seoul/04",
+      "places/blu-seoul/05",
+      "places/blu-seoul/06",
+      "places/blu-seoul/07",
+      "places/blu-seoul/08"
     ]
   },
   "1812117530": {
@@ -271,6 +286,11 @@
     "note_ko": "마곡역 인근 마곡 사이언스타 빌딩 2층 카페. 어떤 메뉴가 글루텐프리인지와 교차오염 여부를 주문 전에 직원에게 확인하세요.",
     "tags": [
       "Cafe"
+    ],
+    "images": [
+      "places/benir/01",
+      "places/benir/02",
+      "places/benir/03"
     ]
   },
   "37638632": {

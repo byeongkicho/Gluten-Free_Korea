@@ -21,12 +21,12 @@
     "location": "Seoul, Jongno-gu (Ikseon-dong)",
     "addressEn": "25 Donhwamun-ro 11na-gil, Jongno-gu, Seoul",
     "note_ko": "익선동의 스콘 카페로 비건 브라우니와 치즈 수플레로 알려져 있습니다. 일부 메뉴가 글루텐프리일 수 있으니, 어떤 스콘/베이킹이 GF인지와 교차오염 여부를 주문 전에 직원에게 확인하세요.",
-    "updatedAt": "2026-04-02",
     "images": [
       "places/rami-scone/01",
       "places/rami-scone/02",
       "places/rami-scone/03"
-    ]
+    ],
+    "updatedAt": "2026-04-02"
   },
   {
     "slug": "blu-seoul",
@@ -49,7 +49,6 @@
     "location": "Seoul, Jung-gu (Chungmuro)",
     "addressEn": "21 Chungmuro 4-gil, Jung-gu, Seoul",
     "note_ko": "충무로/을지로 지역의 바. 칵테일은 대체로 글루텐프리이나 보리 기반 증류주를 사용할 수 있으니, 음료 재료와 교차오염 여부를 주문 전에 직원에게 확인하세요.",
-    "updatedAt": "2026-04-02",
     "images": [
       "places/blu-seoul/01",
       "places/blu-seoul/02",
@@ -59,7 +58,8 @@
       "places/blu-seoul/06",
       "places/blu-seoul/07",
       "places/blu-seoul/08"
-    ]
+    ],
+    "updatedAt": "2026-04-02"
   },
   {
     "slug": "benir",
@@ -82,12 +82,12 @@
     "location": "Seoul, Gangseo-gu (Magok)",
     "addressEn": "2F, 42 Magokjungang 6-ro, Gangseo-gu, Seoul",
     "note_ko": "마곡역 인근 마곡 사이언스타 빌딩 2층 카페. 어떤 메뉴가 글루텐프리인지와 교차오염 여부를 주문 전에 직원에게 확인하세요.",
-    "updatedAt": "2026-04-02",
     "images": [
       "places/benir/01",
       "places/benir/02",
       "places/benir/03"
-    ]
+    ],
+    "updatedAt": "2026-04-02"
   },
   {
     "slug": "francois",
