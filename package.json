@@ -14,9 +14,13 @@
     "publish:local": "npm run import:naver && npm run build:places && npm run validate:places",
     "enrich:notes": "node scripts/enrich_notes.mjs",
     "enrich:links": "node scripts/enrich_links.mjs",
-    "optimize:images": "node scripts/optimize-images.mjs"
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "upload:cloudinary": "node scripts/upload-cloudinary.mjs",
+    "sync:naver": "node scripts/sync-naver.mjs",
+    "fetch:naver-images": "node scripts/fetch-naver-images.mjs"
   },
   "dependencies": {
+    "cloudinary": "^2.7.0",
     "leaflet": "^1.9.4",
     "next": "15.4.3",
     "react": "19.1.0",

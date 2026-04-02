@@ -1,0 +1,20 @@
+{
+  "id": "deploy-001",
+  "name": "배포 스모크 테스트",
+  "description": "프로덕션 사이트가 정상 응답하는지 검증",
+  "steps": [
+    {
+      "command": "curl -so /tmp/eval-deploy-status.txt -w '%{http_code}' https://noglutenkorea.com && grep -q '200' /tmp/eval-deploy-status.txt",
+      "check": "exit_code_zero",
+      "desc": "사이트 200 OK"
+    },
+    {
+      "command": "curl -s https://noglutenkorea.com -o /tmp/eval-deploy-body.html && grep -qio 'gluten' /tmp/eval-deploy-body.html",
+      "check": "exit_code_zero",
+      "desc": "페이지 콘텐츠에 Gluten 키워드 포함"
+    }
+  ],
+  "threshold": 0.9,
+  "category": "배포 검증",
+  "weight": "high"
+}

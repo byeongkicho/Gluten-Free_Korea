@@ -1,14 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { trackEvent } from "@/app/lib/analytics";
+import { cloudinaryUrl } from "@/app/lib/cloudinary";
 import { TYPE_MAP, TAG_MAP, sortTags } from "@/app/lib/places";
-
-function getThumbSrc(src) {
-  if (!src) return src;
-  const lastSlash = src.lastIndexOf("/");
-  if (lastSlash === -1) return src;
-  return src.slice(0, lastSlash + 1) + "thumb_" + src.slice(lastSlash + 1);
-}
 
 function getCardGradient(tags, type) {
   const isDedicatedGF = tags?.includes("Dedicated GF");
@@ -74,7 +68,7 @@ export default function PlaceCard({ place, priority = false }) {
       {hasImage ? (
         <div className="relative aspect-[16/9] overflow-hidden">
           <Image
-            src={getThumbSrc(place.images[0])}
+            src={cloudinaryUrl(place.images[0], 'webThumb')}
             alt={place.nameEn || place.name || "Place photo"}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

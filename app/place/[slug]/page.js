@@ -4,6 +4,7 @@ import CopyButton from "@/app/components/CopyButton";
 import ShareButton from "@/app/components/ShareButton";
 import ImageLightbox from "@/app/components/ImageLightbox";
 import TrackedExternalLink from "@/app/components/TrackedExternalLink";
+import { cloudinaryUrl } from "@/app/lib/cloudinary";
 import places from "@/data/places.json";
 import { TYPE_MAP, sortTags } from "@/app/lib/places";
 
@@ -48,7 +49,9 @@ export async function generateMetadata({ params }) {
   ].filter(Boolean);
   const description = place?.note || fallbackParts.join(" · ") || "Gluten-free place detail";
   const path = `/place/${slug}`;
-  const image = "/og-default.png";
+  const image = place?.images?.length > 0
+    ? cloudinaryUrl(place.images[0], 'ogImage')
+    : "/og-default.png";
 
   return {
     title,

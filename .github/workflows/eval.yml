@@ -1,0 +1,38 @@
+name: Harness Eval
+
+on:
+  pull_request:
+    paths:
+      - 'CLAUDE.md'
+      - 'AGENTS.md'
+      - 'eval/**'
+      - 'scripts/**'
+      - 'data/overrides.json'
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Eval Pipeline
+        run: bash eval/eval-runner.sh
+
+      - name: Check for Regressions
+        run: bash eval/check-regression.sh --threshold 5.0
+
+      - name: Upload Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-results-${{ github.run_number }}
+          path: eval/results/

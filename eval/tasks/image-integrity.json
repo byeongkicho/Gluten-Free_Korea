@@ -1,0 +1,15 @@
+{
+  "id": "img-001",
+  "name": "이미지 파이프라인 무결성",
+  "description": "places.json에서 이미지가 있는 항목의 파일이 실제 존재하는지 검증",
+  "steps": [
+    {
+      "command": "node -e \"const fs=require('fs'); const d=require('./data/places.json'); let missing=0; let checked=0; d.forEach(p=>{(p.images||[]).forEach(img=>{checked++; let f; if(img.startsWith('/'))f='public'+img; else f='public/images/'+img; if(!f.match(/\\\\.[a-z]+$/))f+='.webp'; if(!fs.existsSync(f)){console.error('Missing:',f);missing++}})}); console.log('Checked:',checked,'Missing:',missing); if(missing>0)process.exit(1)\"",
+      "check": "exit_code_zero",
+      "desc": "참조된 이미지 파일 모두 존재"
+    }
+  ],
+  "threshold": 0.8,
+  "category": "이미지 파이프라인",
+  "weight": "medium"
+}

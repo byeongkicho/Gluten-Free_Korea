@@ -1,0 +1,25 @@
+{
+  "id": "data-001",
+  "name": "places.json 데이터 무결성",
+  "description": "places.json의 모든 항목이 필수 필드를 갖추고 있는지 검증",
+  "steps": [
+    {
+      "command": "npm run validate:places",
+      "check": "exit_code_zero",
+      "desc": "validate:places 스크립트 통과"
+    },
+    {
+      "command": "node -e \"const d=require('./data/places.json'); const missing=d.filter(p=>!p.slug||!p.name||!p.lat||!p.lng); if(missing.length){console.error('Missing fields:',missing.map(p=>p.slug||'unknown'));process.exit(1)} console.log('All',d.length,'places have required fields')\"",
+      "check": "exit_code_zero",
+      "desc": "필수 필드 (slug, name, lat, lng) 존재"
+    },
+    {
+      "command": "node -e \"const d=require('./data/places.json'); const prev=21; if(d.length<prev){console.error('Place count decreased:',d.length,'<',prev);process.exit(1)} console.log('Place count OK:',d.length)\"",
+      "check": "exit_code_zero",
+      "desc": "가게 수 감소 감지"
+    }
+  ],
+  "threshold": 1.0,
+  "category": "데이터 무결성",
+  "weight": "high"
+}

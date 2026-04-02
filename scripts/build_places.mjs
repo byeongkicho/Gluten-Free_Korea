@@ -256,7 +256,11 @@ async function main() {
             imageFiles.unshift(place.coverImage);
           }
         }
-        place.images = imageFiles.map((f) => `/images/places/${place.slug}/${f}`);
+        // Store Cloudinary public_ids (no extension, no leading slash)
+        place.images = imageFiles.map((f) => {
+          const nameNoExt = f.replace(/\.[^.]+$/, "");
+          return `places/${place.slug}/${nameNoExt}`;
+        });
         imagesFound += imageFiles.length;
       }
     } catch {

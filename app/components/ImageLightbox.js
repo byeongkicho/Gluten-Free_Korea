@@ -2,19 +2,12 @@
 
 import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
-
-function getDisplaySrc(src) {
-  if (!src) return src;
-  const parts = src.split("/");
-  const fileName = parts.pop();
-  if (!fileName || fileName.startsWith("thumb_")) return src;
-  return [...parts, `thumb_${fileName}`].join("/");
-}
+import { cloudinaryUrl } from "@/app/lib/cloudinary";
 
 export default function ImageLightbox({ images, alt }) {
   const [open, setOpen] = useState(false);
   const [idx, setIdx] = useState(0);
-  const [heroSrc, setHeroSrc] = useState(() => getDisplaySrc(images?.[0]));
+  const [heroSrc, setHeroSrc] = useState(() => images?.[0] ? cloudinaryUrl(images[0], 'webThumb') : null);
 
   const close = useCallback(() => setOpen(false), []);
   const prev = useCallback(() => setIdx((i) => (i - 1 + images.length) % images.length), [images.length]);
@@ -47,7 +40,7 @@ export default function ImageLightbox({ images, alt }) {
         {/* Hero */}
         <div className="relative aspect-[16/10] min-h-[220px] overflow-hidden rounded-2xl bg-surface-2 sm:min-h-[320px]">
           <Image
-            src={heroSrc || images[0]}
+            src={heroSrc || cloudinaryUrl(images[0], 'webFull')}
             alt={`${alt} — main photo`}
             fill
             sizes="(max-width: 768px) 100vw, 768px"
@@ -56,7 +49,8 @@ export default function ImageLightbox({ images, alt }) {
             fetchPriority="high"
             onClick={() => openAt(0)}
             onError={() => {
-              if (heroSrc !== images[0]) setHeroSrc(images[0]);
+              const fullSrc = cloudinaryUrl(images[0], 'webFull');
+              if (heroSrc !== fullSrc) setHeroSrc(fullSrc);
             }}
           />
         </div>
@@ -66,7 +60,7 @@ export default function ImageLightbox({ images, alt }) {
             {images.slice(1).map((src, i) => (
               <div key={src} className="relative aspect-square overflow-hidden rounded-lg">
                 <Image
-                  src={src}
+                  src={cloudinaryUrl(src, 'webThumb')}
                   alt={`${alt} photo ${i + 2}`}
                   fill
                   sizes="(max-width: 768px) 33vw, 200px"
@@ -123,7 +117,7 @@ export default function ImageLightbox({ images, alt }) {
             onClick={(e) => e.stopPropagation()}
           >
             <Image
-              src={images[idx]}
+              src={cloudinaryUrl(images[idx], 'webFull')}
               alt={`${alt} photo ${idx + 1}`}
               fill
               sizes="90vw"

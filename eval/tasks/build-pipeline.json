@@ -1,0 +1,25 @@
+{
+  "id": "build-001",
+  "name": "데이터 파이프라인 빌드 검증",
+  "description": "places.json 생성부터 Next.js 빌드까지 전체 파이프라인이 정상 동작하는지 검증",
+  "steps": [
+    {
+      "command": "npm run build:places",
+      "check": "exit_code_zero",
+      "desc": "places.json 생성 성공"
+    },
+    {
+      "command": "npm run validate:places",
+      "check": "exit_code_zero",
+      "desc": "places.json 유효성 검증 통과"
+    },
+    {
+      "command": "npm run build",
+      "check": "exit_code_zero",
+      "desc": "Next.js 빌드 성공"
+    }
+  ],
+  "threshold": 0.9,
+  "category": "빌드 안정성",
+  "weight": "high"
+}

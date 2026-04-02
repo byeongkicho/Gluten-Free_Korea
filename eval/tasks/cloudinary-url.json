@@ -1,0 +1,15 @@
+{
+  "id": "cdn-001",
+  "name": "Cloudinary URL 유효성",
+  "description": "Cloudinary instaFeed 프리셋으로 생성한 URL이 실제로 접근 가능한지 검증",
+  "steps": [
+    {
+      "command": "node -e \"const {cloudinaryUrl}=require('./app/lib/cloudinary.js'); const url=cloudinaryUrl('places/cafe-rebirths/01','instaFeed'); console.log('URL:',url); if(!url.includes('res.cloudinary.com')){process.exit(1)}\"",
+      "check": "exit_code_zero",
+      "desc": "Cloudinary URL 형식 정상"
+    }
+  ],
+  "threshold": 0.8,
+  "category": "인스타 게시",
+  "weight": "medium"
+}

@@ -60,3 +60,9 @@ screenshot*.png
 
 # Original photos (large, edit locally, commit only optimized webp)
 public/images/NoGlutenSeoul_Assets/
+
+# Naver Place photo downloads (review before selection)
+data/naver-images/
+
+# Eval results
+eval/results/
