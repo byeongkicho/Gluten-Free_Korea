@@ -93,7 +93,7 @@ export default async function PlaceDetailPage({ params }) {
 
   if (!place) notFound();
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://noglutenkorea.com";
   const displayTypeEn = place.type || "Place";
   const displayType = TYPE_MAP[place.type] || place.type || "장소";
   const noteEn = place.note || place.note_ko;

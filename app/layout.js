@@ -47,7 +47,7 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://noglutenkorea.com";
 const gaId = "G-YGVMPT7719";
 const defaultTitle = "No Gluten Korea | 한국 글루텐프리 레스토랑 & 카페 가이드";
 const defaultDescription =
