@@ -1,7 +1,7 @@
 # PROJECT.md (SSOT)
 
 > Single Source of Truth for the Gluten-Free Korea project.
-> Last updated: 2026-03-26
+> Last updated: 2026-04-06
 
 ## Project
 - Name: Gluten-Free Korea (No Gluten Korea)
@@ -10,7 +10,7 @@
 - **Live URL:** https://noglutenkorea.com
 - **Instagram:** https://www.instagram.com/noglutenkorea/
 - **Contact:** contact@noglutenkorea.com (CF Email Routing)
-- **Places:** 18 verified locations
+- **Places:** 21 verified locations
 
 ## Routes
 - `/` — Home: place directory with search, district/type filters, nearby sorting (geolocation), radius filter
@@ -170,7 +170,7 @@ npm run pages:build       # CF Pages build (runs build:places first)
 - No GitHub Actions CI/CD (manual wrangler deploy)
 - No map view
 - No favorites/share flow
-- 5 places without photos (쌀통닭, Los Dias, 시샘달, 앙베어, 써니하우스)
-- Grain Seoul, Sunny Bread: `addressEn` is district-level only
+- 10 places with only 1 photo (los-dias-cafe, sisemdal-atelier, ang-bear-bake, jihwaja, ssal-tongdak, minimize-itaewon, glunic, toujours, cafe-pepper, sunny-bread)
+- Grain Seoul, Sunny Bread: `addressEn` missing (empty string)
 - "+N" gallery doesn't expand yet (future: lightbox)
 - Instagram automation not implemented (Graph API requires business account)

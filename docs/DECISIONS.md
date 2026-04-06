@@ -89,3 +89,14 @@ Rule: never edit old entries; add a new entry to supersede prior decisions.
 - Status: accepted
 - Decision: `docs/PROJECT.md` is the sole comprehensive reference. `CLAUDE.md` and `AGENTS.md` point to it. Includes image system, pipeline commands, component specs, and known gaps.
 - Rationale: Eliminates need for agents to scan multiple files on every session start.
+
+## 2026-04-06 — LLM Wiki vault (NoGlutenKorea/)
+- Status: accepted
+- Decision: An Obsidian vault at `NoGlutenKorea/` serves as an LLM Wiki following Karpathy's pattern: raw sources → wiki markdown → schema (CLAUDE.md). Separate git repo.
+- Rationale: Structured knowledge base for LLM-assisted site operation and gluten-free domain knowledge.
+
+## 2026-04-06 — Place count correction (18 → 21)
+- Status: accepted
+- Supersedes: "All 11 places" count in 2026-03-10 bilingual entry
+- Decision: `data/places.json` now contains 21 verified places. All 21 have at least 1 image. 4 places tagged Dedicated GF (sisemdal-atelier, 237-pizza, cafe-rebirths, monil2-house).
+- Rationale: Documentation audit found PROJECT.md stated 18, actual data has 21. Previous "5 places without photos" gap is resolved.
