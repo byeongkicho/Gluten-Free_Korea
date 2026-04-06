@@ -1,0 +1,35 @@
+{
+  "id": "review-001",
+  "name": "코드 리뷰 자동 체크",
+  "description": "HARNESS.md Evaluator 체크리스트 중 자동화 가능한 항목을 검증",
+  "steps": [
+    {
+      "command": "! grep -rn --include='*.js' --include='*.mjs' -E \"require\\(['\\\"]fs['\\\"]\\)|require\\(['\\\"]path['\\\"]\\)|from ['\\\"]fs['\\\"]|from ['\\\"]path['\\\"]\" app/",
+      "check": "exit_code_zero",
+      "desc": "app/ 내 Node.js server API (fs, path) 미사용 확인"
+    },
+    {
+      "command": "grep -q 'X-Frame-Options' next.config.mjs",
+      "check": "exit_code_zero",
+      "desc": "보안 헤더 (X-Frame-Options) 설정 존재"
+    },
+    {
+      "command": "grep -q 'X-Content-Type-Options' next.config.mjs",
+      "check": "exit_code_zero",
+      "desc": "보안 헤더 (X-Content-Type-Options) 설정 존재"
+    },
+    {
+      "command": "node -e \"const d=require('./data/places.json'); const noSlug=d.filter(p=>!p.slug); if(noSlug.length){console.error('Places without slug:',noSlug.length);process.exit(1)} const dupes=d.map(p=>p.slug).filter((s,i,a)=>a.indexOf(s)!==i); if(dupes.length){console.error('Duplicate slugs:',dupes);process.exit(1)} console.log('All',d.length,'slugs unique')\"",
+      "check": "exit_code_zero",
+      "desc": "slug 고유성 검증 (중복 없음)"
+    },
+    {
+      "command": "grep -q 'alternates' app/layout.js && grep -q 'canonical' app/layout.js",
+      "check": "exit_code_zero",
+      "desc": "canonical URL 메타데이터 존재"
+    }
+  ],
+  "threshold": 1.0,
+  "category": "코드 리뷰",
+  "weight": "high"
+}

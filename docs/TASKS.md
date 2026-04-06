@@ -67,7 +67,7 @@
 ## 신규 작업 (하네스 구축 후 식별)
 
 ### TASK-14: eval/ 파이프라인에 Evaluator 코드 리뷰 태스크 추가
-- **상태:** [ ]
+- **상태:** [x]
 - **우선순위:** P2
 - **변경 파일:** `eval/tasks/code-review.json`, `eval/eval-runner.sh`
 - **Plan:** 현재 eval/은 빌드/데이터/이미지만 검증. diff를 받아 HARNESS.md의 7개 체크리스트를 자동 실행하는 eval 태스크 추가.
