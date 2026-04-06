@@ -100,3 +100,16 @@ Rule: never edit old entries; add a new entry to supersede prior decisions.
 - Supersedes: "All 11 places" count in 2026-03-10 bilingual entry
 - Decision: `data/places.json` now contains 21 verified places. All 21 have at least 1 image. 4 places tagged Dedicated GF (sisemdal-atelier, 237-pizza, cafe-rebirths, monil2-house).
 - Rationale: Documentation audit found PROJECT.md stated 18, actual data has 21. Previous "5 places without photos" gap is resolved.
+
+## 2026-04-06 — 3-Agent Harness 아키텍처 도입
+- Status: accepted
+- Supersedes: MULTI_AGENT.md, OPERATING_MODEL.md (이력 보존, SUPERSEDED 표시)
+- Decision: 모든 비자명한 작업은 Planner→Generator→Evaluator 3단계 루프를 거침. `docs/HARNESS.md`가 아키텍처 정의, `docs/HANDOFF.md`가 세션 간 컨텍스트 전달.
+- Subagent 가드레일: 파일 4개/agent, 1000줄/파일, 병렬 3개, 같은 파일 동시 수정 금지.
+- Rationale: 에이전트 자체 평가 부재로 품질 불안정 + 세션 간 컨텍스트 소실 문제 해결.
+
+## 2026-04-06 — CODEX_RUN.md → HARNESS 체계 마이그레이션
+- Status: accepted
+- Supersedes: CODEX_RUN.md (이력 보존, SUPERSEDED 표시)
+- Decision: CODEX_RUN.md의 14개 태스크 시스템을 `docs/TASKS.md` (HARNESS 포맷)으로 이관. 13/14 완료 아카이브, TASK-12(CopyButton 통합)만 미완으로 이관. 각 태스크에 Evaluator 체크리스트 추가.
+- Rationale: CODEX_RUN.md는 Codex 전용이었으나, HARNESS 체계는 Claude Code/Codex 모두 사용 가능하며 Evaluator 단계가 추가되어 품질 게이트가 강화됨.

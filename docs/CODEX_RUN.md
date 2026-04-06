@@ -1,37 +1,26 @@
-# CODEX_RUN.md — Master Orchestration Prompt
+# CODEX_RUN.md — Master Orchestration Prompt (SUPERSEDED)
 
-Paste the entire contents of this file into Codex as your starting prompt.
-Codex will work through all tasks in TASKS.md sequentially with pre/post checks.
+> **⚠️ 이 문서는 `docs/HARNESS.md` + `docs/TASKS.md`로 대체되었습니다.**
+> - 3-agent 루프 (Planner→Generator→Evaluator): `docs/HARNESS.md`
+> - 작업 백로그 + 실행 순서: `docs/TASKS.md`
+> - 아래 pre/post-flight 체크는 이력 참조용으로 보존합니다.
+> - 14개 태스크 중 13개 완료. TASK-12만 미완 → TASKS.md로 이관됨.
 
 ---
 
-## Your role
-
-You are a careful, methodical engineer working on the Gluten-Free Korea codebase.
-Your job is to execute the improvement tasks in `docs/TASKS.md` one at a time,
-in the exact execution order listed at the bottom of that file.
-
-## Non-negotiable rules
+## [ARCHIVE] Original orchestration rules
 
 1. **Read before touch.** Before modifying any file, read it completely.
 2. **Pre-flight before execute.** Run every pre-flight check for a task before changing anything.
-   If ANY pre-flight check fails → STOP the entire run, report which check failed and why, do not proceed.
 3. **Post-flight before commit.** Verify every "Done when" criterion before committing.
-   If ANY post-flight check fails → STOP, report, do not commit, do not proceed to next task.
-4. **One commit per task.** Commit after each task completes. Never batch multiple tasks in one commit.
-5. **Mark done in TASKS.md.** After each commit, change `[ ]` to `[x]` for that task in TASKS.md, then commit that change separately with message `chore: mark TASK-XX complete`.
-6. **Never skip a failing task.** If a task fails its checks, stop the entire run. Do not continue to the next task.
-7. **Minimal diff.** Only change what each task explicitly specifies. No bonus improvements.
+4. **One commit per task.** Never batch multiple tasks in one commit.
+5. **Minimal diff.** Only change what each task explicitly specifies.
 
-## Execution order
-
-Process tasks in this exact order (matches `docs/TASKS.md`):
+## [ARCHIVE] Execution order (all completed except TASK-12)
 
 ```
-TASK-00 → TASK-02 → TASK-03 → TASK-01 → TASK-05 → TASK-04 → TASK-06 → TASK-07 → TASK-08 → TASK-09 → TASK-10 → TASK-11 → TASK-12 → TASK-13
+TASK-00 ✓ → TASK-02 ✓ → TASK-03 ✓ → TASK-01 ✓ → TASK-05 ✓ → TASK-04 ✓ → TASK-06 ✓ → TASK-07 ✓ → TASK-08 ✓ → TASK-09 ✓ → TASK-10 ✓ → TASK-11 ✓ → TASK-12 ✗ → TASK-13 ✓
 ```
-
-Skip any task already marked `[x]` in TASKS.md.
 
 ---
 

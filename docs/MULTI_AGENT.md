@@ -1,4 +1,7 @@
-# MULTI_AGENT.md — 에이전트 오케스트레이션
+# MULTI_AGENT.md — 에이전트 오케스트레이션 (SUPERSEDED)
+
+> **⚠️ 이 문서는 `docs/HARNESS.md`로 대체되었습니다. 새 작업은 HARNESS.md를 참조하세요.**
+> 아래 내용은 이력 보존 목적으로 유지합니다.
 
 > GF Korea 프로젝트의 멀티 에이전트 역할 분담과 핸드오프 규칙.
 

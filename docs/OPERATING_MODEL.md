@@ -1,4 +1,6 @@
-# OPERATING_MODEL.md
+# OPERATING_MODEL.md (SUPERSEDED)
+
+> **⚠️ 이 문서는 `docs/HARNESS.md`로 대체되었습니다. 새 작업은 HARNESS.md를 참조하세요.**
 
 ## Purpose
 Lock a simple operating model: plan with Claude, implement with Codex, and keep one factual source of truth.

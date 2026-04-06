@@ -3,6 +3,8 @@
 ## Read First
 → `docs/PROJECT.md` (SSOT for architecture, routes, data pipeline)
 → `docs/DECISIONS.md` (append-only, never edit old entries)
+→ `docs/HARNESS.md` (3-agent 루프, handoff, subagent 규칙)
+→ `docs/HANDOFF.md` (현재 진행 상태 — 세션 시작 시 필수 확인)
 
 ## Stack
 - Next.js 15 App Router + React 19 + Tailwind CSS 4
@@ -15,8 +17,9 @@
 app/           → pages + components + lib
 data/          → places.json (generated), overrides.json (manual), candidates.naver.json
 scripts/       → build_places, import_naver, optimize-images, upload-cloudinary, etc.
-docs/          → PROJECT.md, DECISIONS.md, RUNBOOK.md, MULTI_AGENT.md
+docs/          → PROJECT.md, DECISIONS.md, HARNESS.md, HANDOFF.md, RUNBOOK.md
 public/images/ → NoGlutenSeoul_Assets/ (originals) + places/ (generated webp)
+NoGlutenKorea/ → LLM Wiki (별도 git repo, 자체 CLAUDE.md 하네스). 이 하네스에서 수정 안 함.
 ```
 
 ## Build & Verify
@@ -47,6 +50,22 @@ public/images/ → NoGlutenSeoul_Assets/ (originals) + places/ (generated webp)
 - `coverImage` 필드: `overrides.json`에서 설정 → `build_places`가 images 배열 재정렬.
 - 이미지 최적화 없이 places 빌드하면 이미지 경로 깨짐.
 - Override-only entries (manual_*): string SID 사용, Naver SID와 충돌 없음.
+
+## Harness (3-Agent 루프)
+- 비자명한 작업: Planner → Generator → Evaluator 순환
+- Evaluator REJECT → 구체적 사유와 함께 Planner로 반환
+- 상세: `docs/HARNESS.md`
+
+## Subagent 제한
+- 변경 파일: ≤ 4개/agent
+- 파일 읽기: ≤ 1000줄/파일 (offset/limit 사용)
+- 병렬 agent: ≤ 3개 동시
+- 같은 파일 동시 수정: 금지
+
+## 세션 프로토콜
+- 시작: `docs/HANDOFF.md` 읽기 → 미완료 작업 확인
+- 종료: `docs/HANDOFF.md` 업데이트 (필수)
+- 컨텍스트 70%+ → HANDOFF.md 갱신 후 새 세션 권장
 
 ## Error Recovery
 - 빌드 실패: 에러 메시지 읽고 해당 파일만 수정. 전체 리라이트 금지.
