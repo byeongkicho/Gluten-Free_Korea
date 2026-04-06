@@ -26,7 +26,7 @@
       "places/rami-scone/02",
       "places/rami-scone/03"
     ],
-    "updatedAt": "2026-04-02"
+    "updatedAt": "2026-04-06"
   },
   {
     "slug": "blu-seoul",
@@ -59,7 +59,7 @@
       "places/blu-seoul/07",
       "places/blu-seoul/08"
     ],
-    "updatedAt": "2026-04-02"
+    "updatedAt": "2026-04-06"
   },
   {
     "slug": "benir",
@@ -87,7 +87,7 @@
       "places/benir/02",
       "places/benir/03"
     ],
-    "updatedAt": "2026-04-02"
+    "updatedAt": "2026-04-06"
   },
   {
     "slug": "francois",
@@ -111,7 +111,7 @@
     "location": "Seoul, Songpa-gu (Seokchon)",
     "addressEn": "2F, 52-1 Seokchon-dong, Songpa-gu, Seoul",
     "note_ko": "송파구의 프랑스 레스토랑. 방문 시 글루텐프리 옵션과 교차오염 여부를 직원에게 확인하세요.",
-    "updatedAt": "2026-04-02",
+    "updatedAt": "2026-04-06",
     "images": [
       "places/francois/05",
       "places/francois/01",
@@ -142,7 +142,7 @@
     "location": "Gyeonggi, Seongnam (Geumto)",
     "addressEn": "51-1 Geumto-dong, Sujeong-gu, Seongnam, Gyeonggi-do",
     "note_ko": "1층 로비, 2층 다이닝 홀이 있는 양식 레스토랑. 방문 시 글루텐프리 옵션을 직원에게 확인하세요.",
-    "updatedAt": "2026-04-02",
+    "updatedAt": "2026-04-06",
     "images": [
       "places/dark-and-light/04",
       "places/dark-and-light/01",
@@ -189,7 +189,7 @@
     "location": "Seoul, Seongbuk-gu (Sungshin Women's Univ.)",
     "addressEn": "2F, 67 Dongsomun-ro 22-gil, Seongbuk-gu, Seoul",
     "note_ko": "성신여대 인근의 베이커리 카페로, 큐레이션된 네이버 저장 목록에서 추가된 곳입니다. 방문 시 어떤 메뉴가 글루텐프리인지와 교차오염 방식을 주문 전에 꼭 다시 확인하세요.",
-    "updatedAt": "2026-04-02",
+    "updatedAt": "2026-04-06",
     "images": [
       "places/los-dias-cafe/01"
     ]
@@ -232,7 +232,7 @@
     "location": "Seoul, Seongbuk-gu (Sungshin Women's Univ.)",
     "addressEn": "74-1 Bomun-ro 30-gil, Seongbuk-gu, Seoul",
     "note_ko": "성신여대 인근 한옥 디저트 카페. 네이버 플레이스 메뉴에 여러 케이크와 그래놀라가 [쌀, GF]로 표기되어 있지만, 당일 판매 메뉴와 교차오염 여부는 주문 전에 다시 확인하세요.",
-    "updatedAt": "2026-04-02",
+    "updatedAt": "2026-04-06",
     "images": [
       "places/sisemdal-atelier/01"
     ]
@@ -270,7 +270,7 @@
     "location": "Seoul, Mapo-gu (Yeonnam)",
     "addressEn": "2F, 14 Seongmisan-ro 29-gil, Mapo-gu, Seoul",
     "note_ko": "연남동 디저트 카페로, 큐레이션된 네이버 저장 목록에서 추가된 후보입니다. 어떤 베이킹 메뉴가 글루텐프리인지와 현재 조리/보관 방식은 주문 전에 꼭 확인하세요.",
-    "updatedAt": "2026-04-02",
+    "updatedAt": "2026-04-06",
     "images": [
       "places/ang-bear-bake/01"
     ]
@@ -312,7 +312,7 @@
     "location": "Seoul, Jongno-gu (Cheongun-dong)",
     "addressEn": "125 Jahamun-ro, Jongno-gu, Seoul",
     "note_ko": "큐레이션된 네이버 저장 목록에서 추가된 한정식 식당입니다. 한식 코스는 간장, 전류 반죽, 밑반찬 등을 통해 밀 성분이 들어갈 수 있으니 재료와 교차오염 여부를 직원에게 꼼꼼히 확인하세요.",
-    "updatedAt": "2026-04-02",
+    "updatedAt": "2026-04-06",
     "images": [
       "places/jihwaja/01"
     ]
@@ -343,7 +343,7 @@
     "location": "Seoul, Jongno-gu (Changsin)",
     "addressEn": "1F, 96 Jibong-ro, Jongno-gu, Seoul",
     "note_ko": "창신동 닭강정 가게. 네이버 플레이스에 “Gluten-free 6Day-chicken” 문구가 명시되어 있지만, 실제로 어떤 메뉴/가루/소스가 글루텐프리인지와 기름 공유 여부는 주문 전에 다시 확인하세요.",
-    "updatedAt": "2026-04-02",
+    "updatedAt": "2026-04-06",
     "images": [
       "places/6day-chicken/01",
       "places/6day-chicken/02"
@@ -381,7 +381,7 @@
     "location": "Seoul, Yongsan-gu (Samgakji)",
     "addressEn": "100 Hangang-daero, Yongsan-gu, Seoul",
     "note_ko": "아모레퍼시픽 빌딩 내 쿠초로 그룹의 이탈리안 레스토랑. 방문 시 글루텐프리 옵션과 주방 처리 방식을 직원에게 직접 확인하세요.",
-    "updatedAt": "2026-04-02",
+    "updatedAt": "2026-04-06",
     "images": [
       "places/cucciolo-seoul/01",
       "places/cucciolo-seoul/02"
@@ -413,7 +413,7 @@
     "location": "Seoul, Yongsan-gu (Hannam)",
     "addressEn": "237 Itaewon-ro, Yongsan-gu, Seoul",
     "note_ko": "한남동 지하 1층에 위치한 글루텐프리 피자 전문점. 주문 즉시 만들어주며, 방문 전 대기 시간과 조리 세부 사항을 직원에게 확인하세요.",
-    "updatedAt": "2026-04-02",
+    "updatedAt": "2026-04-06",
     "images": [
       "places/237-pizza/01",
       "places/237-pizza/02",
@@ -457,7 +457,7 @@
     "location": "Seoul, Yeongdeungpo-gu (Dangsan)",
     "addressEn": "1 Dangsan-ro 45-gil, Yeongdeungpo-gu, Seoul",
     "note_ko": "쌀가루 기반 프라이드치킨 프랜차이즈로 여러 지점 운영. 일부 지점은 배달 전용일 수 있으니 방문 전 확인하세요. 일반 후라이드는 보통 글루텐프리이나, 간장·고추장·데리야키 등 소스는 글루텐이 포함될 수 있으니 주문 전 재료와 교차오염 여부를 직원에게 확인하세요.",
-    "updatedAt": "2026-04-02",
+    "updatedAt": "2026-04-06",
     "images": [
       "places/ssal-tongdak-rice-fried-chicken-dangsan/01"
     ]
@@ -494,7 +494,7 @@
     "location": "Gyeonggi, Pyeongtaek (Godeok)",
     "addressEn": "41 Godeok-yeoyeom 4-ro, Pyeongtaek, Gyeonggi-do",
     "note_ko": "경기 평택 고덕 지역의 완전 글루텐프리 카페. 추천 메뉴: 계절 과일 케이크. 주차 가능. 시즌별 메뉴 변경 및 교차오염 여부는 방문 시 직원에게 확인하세요.",
-    "updatedAt": "2026-04-02",
+    "updatedAt": "2026-04-06",
     "images": [
       "places/cafe-rebirths/03",
       "places/cafe-rebirths/01",
@@ -537,7 +537,7 @@
     "location": "Seoul, Yongsan-gu (Noksapyeong)",
     "addressEn": "21 Noksapyeong-daero 32-gil, Yongsan-gu, Seoul",
     "note_ko": "이태원 2층 카페 (엘리베이터 없음). 글루텐프리와 일반 제품을 함께 판매하므로 주문 전 어떤 제품이 GF인지 직원에게 확인하세요. 추천 메뉴: 말차 케이크. 주차 불가.",
-    "updatedAt": "2026-04-02",
+    "updatedAt": "2026-04-06",
     "images": [
       "places/minimize-itaewon/01"
     ]
@@ -579,7 +579,7 @@
     "location": "Seoul, Seongdong-gu (Seoul Forest)",
     "addressEn": "16-12 Seoulsup 2-gil, Seongdong-gu, Seoul",
     "note_ko": "서울숲 인근 카페로 공개된 글루텐프리 정보가 제한적입니다. 방문 시 현재 메뉴와 교차오염 정책을 직원에게 직접 확인하세요.",
-    "updatedAt": "2026-04-02",
+    "updatedAt": "2026-04-06",
     "images": [
       "places/glunic/01"
     ]
@@ -619,7 +619,7 @@
     "location": "Seoul, Mapo-gu (Yeonnam)",
     "addressEn": "9 Sungmisan-ro 26-gil, Mapo-gu, Seoul",
     "note_ko": "연남동에 위치한 셀리악 친화적 베이커리 카페. 전 메뉴 글루텐프리 빵과 디저트로 유명하고 내부에서  .",
-    "updatedAt": "2026-04-02",
+    "updatedAt": "2026-04-06",
     "images": [
       "places/monil2-house/01",
       "places/monil2-house/02",
@@ -669,7 +669,7 @@
     "location": "Cheonan, South Chungcheong (Dongnam-gu)",
     "addressEn": "706 Pungse-ro, Dongnam-gu, Cheonan, Chungcheongnam-do",
     "note_ko": "천안에 위치한 대형 돌가마 베이커리 단지. 대중교통으로 접근이 어려울 수 있으니 사전에 길을 확인하세요. 쌀 기반 글루텐프리 케이크를 판매하는 별도 매장이 있으며, 구매 전 GF 품목을 확인하세요. 케이크 구입 후 메인 구역에서 커피와 함께 즐길 수 있습니다. 주차 가능.",
-    "updatedAt": "2026-04-02",
+    "updatedAt": "2026-04-06",
     "images": [
       "places/toujours-dolgama-village/01"
     ]
@@ -711,7 +711,7 @@
     "location": "Seoul, Songpa-gu (Songridangil)",
     "addressEn": "12 Baekjegobun-ro 45-gil, Songpa-gu, Seoul",
     "note_ko": "송리단길(롯데월드 인근)의 글루텐프리 카페로 쌀가루 기반 케이크를 판매합니다. 주말·공휴일 대기 가능성이 있고 2층이며 엘리베이터는 없습니다. 방문 시 현재 메뉴, 교차오염 여부, 재고를 직원에게 확인하세요.",
-    "updatedAt": "2026-04-02",
+    "updatedAt": "2026-04-06",
     "images": [
       "places/cafe-pepper/01"
     ]
@@ -751,7 +751,7 @@
     "nameEn": "Grain Seoul",
     "location": "Seoul, Seodaemun-gu (Sinchon)",
     "note_ko": "신촌 인근 레스토랑으로 팬케이크 포함 글루텐프리 브런치 옵션 제공. 알레르기에 대해 직원이 친절하게 응대하지만, 방문 시 구체적인 메뉴 항목과 교차오염 여부를 꼭 확인하세요. 2층이며 엘리베이터 없음.",
-    "updatedAt": "2026-04-02",
+    "updatedAt": "2026-04-06",
     "images": [
       "places/grain-seoul/02",
       "places/grain-seoul/01",
@@ -790,7 +790,7 @@
     "nameEn": "Sunny Bread",
     "location": "Seoul, Yongsan-gu",
     "note_ko": "용산구 카페로 글루텐프리 세부 정보가 완전히 확인되지 않은 매장입니다. 방문 시 재료와 교차오염 예방 조치를 직원에게 직접 확인하세요.",
-    "updatedAt": "2026-04-02",
+    "updatedAt": "2026-04-06",
     "images": [
       "places/sunny-bread/01"
     ]

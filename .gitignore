@@ -66,4 +66,11 @@ data/naver-images/
 
 # Eval results
 eval/results/
+
+# Generated captions & discovered places
+data/captions/
+data/discovered-places.json
+
+# Temp files
+.tmp-naver-images/
 NoGlutenKorea/

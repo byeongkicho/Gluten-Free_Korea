@@ -17,7 +17,12 @@
     "optimize:images": "node scripts/optimize-images.mjs",
     "upload:cloudinary": "node scripts/upload-cloudinary.mjs",
     "sync:naver": "node scripts/sync-naver.mjs",
-    "fetch:naver-images": "node scripts/fetch-naver-images.mjs"
+    "fetch:naver-images": "node scripts/fetch-naver-images.mjs",
+    "integrate:naver-images": "node scripts/integrate-naver-images.mjs",
+    "add:place": "node scripts/add-place.mjs",
+    "discover:places": "node scripts/discover-places.mjs",
+    "generate:caption": "node scripts/generate-caption.mjs",
+    "weekly": "bash scripts/weekly-publish.sh"
   },
   "dependencies": {
     "cloudinary": "^2.7.0",

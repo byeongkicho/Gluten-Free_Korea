@@ -1,4 +1,213 @@
 {
+  "12782440": {
+    "nameEn": "Jihwaja",
+    "slug": "jihwaja",
+    "type": "Restaurant",
+    "location": "Seoul, Jongno-gu (Cheongun-dong)",
+    "addressEn": "125 Jahamun-ro, Jongno-gu, Seoul",
+    "note": "Traditional Korean restaurant added from the curated Naver save list. Korean set meals can still contain wheat through soy sauce, jeon batter, or side dishes, so verify ingredients and cross-contact carefully with staff.",
+    "note_ko": "큐레이션된 네이버 저장 목록에서 추가된 한정식 식당입니다. 한식 코스는 간장, 전류 반죽, 밑반찬 등을 통해 밀 성분이 들어갈 수 있으니 재료와 교차오염 여부를 직원에게 꼼꼼히 확인하세요.",
+    "tags": [
+      "Restaurant",
+      "Korean"
+    ],
+    "sources": [
+      "User curated Naver save list (2026-03-23)",
+      "Naver Place 12782440"
+    ]
+  },
+  "33489623": {
+    "nameEn": "Toujours Dolgama Village",
+    "location": "Cheonan, South Chungcheong (Dongnam-gu)",
+    "addressEn": "706 Pungse-ro, Dongnam-gu, Cheonan, Chungcheongnam-do",
+    "note": "Toujours Dolgama is a village-style stone-kiln bakery complex in Cheonan (large site). It may be difficult to reach by public transport, so check directions in advance. There is a separate shop selling rice-based gluten-free cakes—confirm which items are GF before purchasing. You can buy the cake and then order coffee to enjoy it inside the main area. Ample parking available.",
+    "note_ko": "천안에 위치한 대형 돌가마 베이커리 단지. 대중교통으로 접근이 어려울 수 있으니 사전에 길을 확인하세요. 쌀 기반 글루텐프리 케이크를 판매하는 별도 매장이 있으며, 구매 전 GF 품목을 확인하세요. 케이크 구입 후 메인 구역에서 커피와 함께 즐길 수 있습니다. 주차 가능.",
+    "tags": [
+      "Bakery",
+      "Dessert"
+    ]
+  },
+  "37638632": {
+    "nameEn": "6Day Chicken",
+    "slug": "6day-chicken",
+    "type": "Restaurant",
+    "location": "Seoul, Jongno-gu (Changsin)",
+    "addressEn": "1F, 96 Jibong-ro, Jongno-gu, Seoul",
+    "note": "Fried chicken shop in Changsin. Naver Place explicitly mentions “Gluten-free 6Day-chicken”; still reconfirm which menu items, powders, and sauces are gluten-free and whether frying oil is shared.",
+    "note_ko": "창신동 닭강정 가게. 네이버 플레이스에 “Gluten-free 6Day-chicken” 문구가 명시되어 있지만, 실제로 어떤 메뉴/가루/소스가 글루텐프리인지와 기름 공유 여부는 주문 전에 다시 확인하세요.",
+    "tags": [
+      "Restaurant",
+      "Fried Chicken"
+    ],
+    "sources": [
+      "User curated Naver save list (2026-03-23)",
+      "Naver Place 37638632"
+    ]
+  },
+  "1046718902": {
+    "name": "다크앤라이트",
+    "nameEn": "Dark & Light",
+    "slug": "dark-and-light",
+    "coverImage": "04.webp",
+    "type": "Dining",
+    "location": "Gyeonggi, Seongnam (Geumto)",
+    "address": "경기도 성남시 수정구 금토동 51-1 1층 로비, 2층 메인 다이닝 홀",
+    "addressEn": "51-1 Geumto-dong, Sujeong-gu, Seongnam, Gyeonggi-do",
+    "note": "Western restaurant with lobby on 1F and main dining on 2F. Verify GF options with staff.",
+    "note_ko": "1층 로비, 2층 다이닝 홀이 있는 양식 레스토랑. 방문 시 글루텐프리 옵션을 직원에게 확인하세요.",
+    "tags": [
+      "Restaurant",
+      "Western"
+    ]
+  },
+  "1056359801": {
+    "nameEn": "Cucciolo Seoul",
+    "location": "Seoul, Yongsan-gu (Samgakji)",
+    "addressEn": "100 Hangang-daero, Yongsan-gu, Seoul",
+    "note": "Italian restaurant by Cucciolo Group in the Amore Pacific building; verify current gluten-free options and kitchen handling with staff on visit.",
+    "note_ko": "아모레퍼시픽 빌딩 내 쿠초로 그룹의 이탈리안 레스토랑. 방문 시 글루텐프리 옵션과 주방 처리 방식을 직원에게 직접 확인하세요.",
+    "tags": [
+      "Restaurant",
+      "Italian"
+    ]
+  },
+  "1073951222": {
+    "nameEn": "BLU Seoul",
+    "slug": "blu-seoul",
+    "type": "Bar",
+    "location": "Seoul, Jung-gu (Chungmuro)",
+    "addressEn": "21 Chungmuro 4-gil, Jung-gu, Seoul",
+    "note": "Bar in the Chungmuro/Euljiro area. Cocktails are generally gluten-free but some may use barley-based spirits; confirm drink ingredients and any food cross-contact with staff before ordering.",
+    "note_ko": "충무로/을지로 지역의 바. 칵테일은 대체로 글루텐프리이나 보리 기반 증류주를 사용할 수 있으니, 음료 재료와 교차오염 여부를 주문 전에 직원에게 확인하세요.",
+    "tags": [
+      "Bar"
+    ],
+    "images": [
+      "places/blu-seoul/01",
+      "places/blu-seoul/02",
+      "places/blu-seoul/03",
+      "places/blu-seoul/04",
+      "places/blu-seoul/05",
+      "places/blu-seoul/06",
+      "places/blu-seoul/07",
+      "places/blu-seoul/08"
+    ]
+  },
+  "1103631091": {
+    "nameEn": "Los Dias Cafe",
+    "slug": "los-dias-cafe",
+    "type": "Bakery",
+    "location": "Seoul, Seongbuk-gu (Sungshin Women's Univ.)",
+    "addressEn": "2F, 67 Dongsomun-ro 22-gil, Seongbuk-gu, Seoul",
+    "note": "Bakery cafe near Sungshin Women's University added from the curated Naver save list. Visit for bakery/dessert options and reconfirm which items are gluten-free and how they handle cross-contact before ordering.",
+    "note_ko": "성신여대 인근의 베이커리 카페로, 큐레이션된 네이버 저장 목록에서 추가된 곳입니다. 방문 시 어떤 메뉴가 글루텐프리인지와 교차오염 방식을 주문 전에 꼭 다시 확인하세요.",
+    "tags": [
+      "Bakery",
+      "Dessert"
+    ],
+    "sources": [
+      "User curated Naver save list (2026-03-23)",
+      "Naver Place 1103631091"
+    ]
+  },
+  "1128289843": {
+    "nameEn": "Glunic",
+    "location": "Seoul, Seongdong-gu (Seoul Forest)",
+    "addressEn": "16-12 Seoulsup 2-gil, Seongdong-gu, Seoul",
+    "note": "Cafe near Seoul Forest with limited public gluten-free detail; confirm current options and cross-contact policy directly with staff.",
+    "note_ko": "서울숲 인근 카페로 공개된 글루텐프리 정보가 제한적입니다. 방문 시 현재 메뉴와 교차오염 정책을 직원에게 직접 확인하세요.",
+    "tags": [
+      "Cafe",
+      "Dessert"
+    ]
+  },
+  "1142091847": {
+    "nameEn": "Sunny Bread",
+    "location": "Seoul, Yongsan-gu",
+    "note": "Yongsan cafe listing where GF details are not fully confirmed; verify ingredients and cross-contact precautions with staff at visit time.",
+    "note_ko": "용산구 카페로 글루텐프리 세부 정보가 완전히 확인되지 않은 매장입니다. 방문 시 재료와 교차오염 예방 조치를 직원에게 직접 확인하세요.",
+    "tags": [
+      "Cafe",
+      "Bakery"
+    ]
+  },
+  "1218176536": {
+    "nameEn": "Minimize Itaewon",
+    "location": "Seoul, Yongsan-gu (Noksapyeong)",
+    "addressEn": "21 Noksapyeong-daero 32-gil, Yongsan-gu, Seoul",
+    "note": "Itaewon-area cafe on the 2nd floor (no elevator). They sell both gluten-free and non-gluten-free items, so confirm which products are GF before ordering. Recommended: matcha cake. No parking available. Also confirm preparation/cross-contact handling with staff.",
+    "note_ko": "이태원 2층 카페 (엘리베이터 없음). 글루텐프리와 일반 제품을 함께 판매하므로 주문 전 어떤 제품이 GF인지 직원에게 확인하세요. 추천 메뉴: 말차 케이크. 주차 불가.",
+    "tags": [
+      "Cafe"
+    ]
+  },
+  "1277184396": {
+    "nameEn": "Rami Scone",
+    "slug": "rami-scone",
+    "type": "Cafe",
+    "location": "Seoul, Jongno-gu (Ikseon-dong)",
+    "addressEn": "25 Donhwamun-ro 11na-gil, Jongno-gu, Seoul",
+    "note": "Scone cafe in Ikseon-dong known for vegan brownies and cheese soufflés. Some items may be gluten-free friendly; confirm which scones/baked goods are GF and ask about cross-contact handling with staff before ordering.",
+    "note_ko": "익선동의 스콘 카페로 비건 브라우니와 치즈 수플레로 알려져 있습니다. 일부 메뉴가 글루텐프리일 수 있으니, 어떤 스콘/베이킹이 GF인지와 교차오염 여부를 주문 전에 직원에게 확인하세요.",
+    "tags": [
+      "Cafe",
+      "Bakery"
+    ],
+    "images": [
+      "places/rami-scone/01",
+      "places/rami-scone/02",
+      "places/rami-scone/03"
+    ]
+  },
+  "1312707678": {
+    "nameEn": "Cafe Rebirths",
+    "coverImage": "03.webp",
+    "location": "Gyeonggi, Pyeongtaek (Godeok)",
+    "addressEn": "41 Godeok-yeoyeom 4-ro, Pyeongtaek, Gyeonggi-do",
+    "note": "Fully gluten-free cafe in the Pyeongtaek (Godeok) area. Recommended: seasonal fruit cake. Ample parking available. Still confirm any seasonal/menu changes and cross-contact handling with staff on visit.",
+    "note_ko": "경기 평택 고덕 지역의 완전 글루텐프리 카페. 추천 메뉴: 계절 과일 케이크. 주차 가능. 시즌별 메뉴 변경 및 교차오염 여부는 방문 시 직원에게 확인하세요.",
+    "tags": [
+      "Dedicated GF",
+      "Cafe"
+    ]
+  },
+  "1372911437": {
+    "name": "프랑스와",
+    "nameEn": "Francois",
+    "slug": "francois",
+    "coverImage": "05.webp",
+    "type": "Dining",
+    "location": "Seoul, Songpa-gu (Seokchon)",
+    "address": "서울특별시 송파구 석촌동 52-1 2층",
+    "addressEn": "2F, 52-1 Seokchon-dong, Songpa-gu, Seoul",
+    "note": "French restaurant in Songpa-gu. Verify gluten-free options and kitchen handling with staff.",
+    "note_ko": "송파구의 프랑스 레스토랑. 방문 시 글루텐프리 옵션과 교차오염 여부를 직원에게 확인하세요.",
+    "tags": [
+      "Restaurant",
+      "French"
+    ]
+  },
+  "1413655852": {
+    "nameEn": "Grain Seoul",
+    "coverImage": "02.webp",
+    "location": "Seoul, Seodaemun-gu (Sinchon)",
+    "note": "Sinchon-area restaurant with gluten-free brunch options (including pancakes). Staff are attentive to allergies, but confirm specific menu items and kitchen cross-contact handling before ordering. Located on the 2nd floor with no elevator.",
+    "note_ko": "신촌 인근 레스토랑으로 팬케이크 포함 글루텐프리 브런치 옵션 제공. 알레르기에 대해 직원이 친절하게 응대하지만, 방문 시 구체적인 메뉴 항목과 교차오염 여부를 꼭 확인하세요. 2층이며 엘리베이터 없음.",
+    "tags": [
+      "Restaurant"
+    ]
+  },
+  "1434476104": {
+    "nameEn": "Ssal Tongdak (Rice Fried Chicken) Dangsan",
+    "location": "Seoul, Yeongdeungpo-gu (Dangsan)",
+    "addressEn": "1 Dangsan-ro 45-gil, Yeongdeungpo-gu, Seoul",
+    "note": "Rice-based fried chicken franchise with multiple branches. Some locations may be delivery-only, so check availability before visiting. Plain fried chicken is typically gluten-free, but many sauces/seasonings (e.g., soy sauce, gochujang-based, teriyaki-style) may contain gluten—confirm ingredients and cross-contact handling with staff before ordering.",
+    "note_ko": "쌀가루 기반 프라이드치킨 프랜차이즈로 여러 지점 운영. 일부 지점은 배달 전용일 수 있으니 방문 전 확인하세요. 일반 후라이드는 보통 글루텐프리이나, 간장·고추장·데리야키 등 소스는 글루텐이 포함될 수 있으니 주문 전 재료와 교차오염 여부를 직원에게 확인하세요.",
+    "tags": [
+      "Restaurant",
+      "Fried Chicken"
+    ]
+  },
   "1650174352": {
     "nameEn": "Monil2 House Gluten-Free Cafe",
     "slug": "monil2-house",
@@ -38,70 +247,21 @@
       "User photos + review (Telegram, 2026-02-10)"
     ]
   },
-  "1056359801": {
-    "nameEn": "Cucciolo Seoul",
-    "location": "Seoul, Yongsan-gu (Samgakji)",
-    "addressEn": "100 Hangang-daero, Yongsan-gu, Seoul",
-    "note": "Italian restaurant by Cucciolo Group in the Amore Pacific building; verify current gluten-free options and kitchen handling with staff on visit.",
-    "note_ko": "아모레퍼시픽 빌딩 내 쿠초로 그룹의 이탈리안 레스토랑. 방문 시 글루텐프리 옵션과 주방 처리 방식을 직원에게 직접 확인하세요.",
-    "tags": [
-      "Restaurant",
-      "Italian"
-    ]
-  },
-  "1434476104": {
-    "nameEn": "Ssal Tongdak (Rice Fried Chicken) Dangsan",
-    "location": "Seoul, Yeongdeungpo-gu (Dangsan)",
-    "addressEn": "1 Dangsan-ro 45-gil, Yeongdeungpo-gu, Seoul",
-    "note": "Rice-based fried chicken franchise with multiple branches. Some locations may be delivery-only, so check availability before visiting. Plain fried chicken is typically gluten-free, but many sauces/seasonings (e.g., soy sauce, gochujang-based, teriyaki-style) may contain gluten—confirm ingredients and cross-contact handling with staff before ordering.",
-    "note_ko": "쌀가루 기반 프라이드치킨 프랜차이즈로 여러 지점 운영. 일부 지점은 배달 전용일 수 있으니 방문 전 확인하세요. 일반 후라이드는 보통 글루텐프리이나, 간장·고추장·데리야키 등 소스는 글루텐이 포함될 수 있으니 주문 전 재료와 교차오염 여부를 직원에게 확인하세요.",
-    "tags": [
-      "Restaurant",
-      "Fried Chicken"
-    ]
-  },
-  "1312707678": {
-    "nameEn": "Cafe Rebirths",
-    "coverImage": "03.webp",
-    "location": "Gyeonggi, Pyeongtaek (Godeok)",
-    "addressEn": "41 Godeok-yeoyeom 4-ro, Pyeongtaek, Gyeonggi-do",
-    "note": "Fully gluten-free cafe in the Pyeongtaek (Godeok) area. Recommended: seasonal fruit cake. Ample parking available. Still confirm any seasonal/menu changes and cross-contact handling with staff on visit.",
-    "note_ko": "경기 평택 고덕 지역의 완전 글루텐프리 카페. 추천 메뉴: 계절 과일 케이크. 주차 가능. 시즌별 메뉴 변경 및 교차오염 여부는 방문 시 직원에게 확인하세요.",
-    "tags": [
-      "Dedicated GF",
-      "Cafe"
-    ]
-  },
-  "1218176536": {
-    "nameEn": "Minimize Itaewon",
-    "location": "Seoul, Yongsan-gu (Noksapyeong)",
-    "addressEn": "21 Noksapyeong-daero 32-gil, Yongsan-gu, Seoul",
-    "note": "Itaewon-area cafe on the 2nd floor (no elevator). They sell both gluten-free and non-gluten-free items, so confirm which products are GF before ordering. Recommended: matcha cake. No parking available. Also confirm preparation/cross-contact handling with staff.",
-    "note_ko": "이태원 2층 카페 (엘리베이터 없음). 글루텐프리와 일반 제품을 함께 판매하므로 주문 전 어떤 제품이 GF인지 직원에게 확인하세요. 추천 메뉴: 말차 케이크. 주차 불가.",
+  "1812117530": {
+    "nameEn": "Benir",
+    "slug": "benir",
+    "type": "Cafe",
+    "location": "Seoul, Gangseo-gu (Magok)",
+    "addressEn": "2F, 42 Magokjungang 6-ro, Gangseo-gu, Seoul",
+    "note": "Cafe on the 2nd floor of the Magok Sciencestar building near Magok Station. Confirm which menu items are gluten-free and ask about cross-contact handling with staff before ordering.",
+    "note_ko": "마곡역 인근 마곡 사이언스타 빌딩 2층 카페. 어떤 메뉴가 글루텐프리인지와 교차오염 여부를 주문 전에 직원에게 확인하세요.",
     "tags": [
       "Cafe"
-    ]
-  },
-  "1128289843": {
-    "nameEn": "Glunic",
-    "location": "Seoul, Seongdong-gu (Seoul Forest)",
-    "addressEn": "16-12 Seoulsup 2-gil, Seongdong-gu, Seoul",
-    "note": "Cafe near Seoul Forest with limited public gluten-free detail; confirm current options and cross-contact policy directly with staff.",
-    "note_ko": "서울숲 인근 카페로 공개된 글루텐프리 정보가 제한적입니다. 방문 시 현재 메뉴와 교차오염 정책을 직원에게 직접 확인하세요.",
-    "tags": [
-      "Cafe",
-      "Dessert"
-    ]
-  },
-  "33489623": {
-    "nameEn": "Toujours Dolgama Village",
-    "location": "Cheonan, South Chungcheong (Dongnam-gu)",
-    "addressEn": "706 Pungse-ro, Dongnam-gu, Cheonan, Chungcheongnam-do",
-    "note": "Toujours Dolgama is a village-style stone-kiln bakery complex in Cheonan (large site). It may be difficult to reach by public transport, so check directions in advance. There is a separate shop selling rice-based gluten-free cakes—confirm which items are GF before purchasing. You can buy the cake and then order coffee to enjoy it inside the main area. Ample parking available.",
-    "note_ko": "천안에 위치한 대형 돌가마 베이커리 단지. 대중교통으로 접근이 어려울 수 있으니 사전에 길을 확인하세요. 쌀 기반 글루텐프리 케이크를 판매하는 별도 매장이 있으며, 구매 전 GF 품목을 확인하세요. 케이크 구입 후 메인 구역에서 커피와 함께 즐길 수 있습니다. 주차 가능.",
-    "tags": [
-      "Bakery",
-      "Dessert"
+    ],
+    "images": [
+      "places/benir/01",
+      "places/benir/02",
+      "places/benir/03"
     ]
   },
   "1907181273": {
@@ -113,43 +273,6 @@
     "tags": [
       "Cafe",
       "Dessert"
-    ]
-  },
-  "1413655852": {
-    "nameEn": "Grain Seoul",
-    "coverImage": "02.webp",
-    "location": "Seoul, Seodaemun-gu (Sinchon)",
-    "note": "Sinchon-area restaurant with gluten-free brunch options (including pancakes). Staff are attentive to allergies, but confirm specific menu items and kitchen cross-contact handling before ordering. Located on the 2nd floor with no elevator.",
-    "note_ko": "신촌 인근 레스토랑으로 팬케이크 포함 글루텐프리 브런치 옵션 제공. 알레르기에 대해 직원이 친절하게 응대하지만, 방문 시 구체적인 메뉴 항목과 교차오염 여부를 꼭 확인하세요. 2층이며 엘리베이터 없음.",
-    "tags": [
-      "Restaurant"
-    ]
-  },
-  "1142091847": {
-    "nameEn": "Sunny Bread",
-    "location": "Seoul, Yongsan-gu",
-    "note": "Yongsan cafe listing where GF details are not fully confirmed; verify ingredients and cross-contact precautions with staff at visit time.",
-    "note_ko": "용산구 카페로 글루텐프리 세부 정보가 완전히 확인되지 않은 매장입니다. 방문 시 재료와 교차오염 예방 조치를 직원에게 직접 확인하세요.",
-    "tags": [
-      "Cafe",
-      "Bakery"
-    ]
-  },
-  "1103631091": {
-    "nameEn": "Los Dias Cafe",
-    "slug": "los-dias-cafe",
-    "type": "Bakery",
-    "location": "Seoul, Seongbuk-gu (Sungshin Women's Univ.)",
-    "addressEn": "2F, 67 Dongsomun-ro 22-gil, Seongbuk-gu, Seoul",
-    "note": "Bakery cafe near Sungshin Women's University added from the curated Naver save list. Visit for bakery/dessert options and reconfirm which items are gluten-free and how they handle cross-contact before ordering.",
-    "note_ko": "성신여대 인근의 베이커리 카페로, 큐레이션된 네이버 저장 목록에서 추가된 곳입니다. 방문 시 어떤 메뉴가 글루텐프리인지와 교차오염 방식을 주문 전에 꼭 다시 확인하세요.",
-    "tags": [
-      "Bakery",
-      "Dessert"
-    ],
-    "sources": [
-      "User curated Naver save list (2026-03-23)",
-      "Naver Place 1103631091"
     ]
   },
   "1930937320": {
@@ -185,129 +308,6 @@
     "sources": [
       "User curated Naver save list (2026-03-23)",
       "Naver Place 2065218107"
-    ]
-  },
-  "12782440": {
-    "nameEn": "Jihwaja",
-    "slug": "jihwaja",
-    "type": "Restaurant",
-    "location": "Seoul, Jongno-gu (Cheongun-dong)",
-    "addressEn": "125 Jahamun-ro, Jongno-gu, Seoul",
-    "note": "Traditional Korean restaurant added from the curated Naver save list. Korean set meals can still contain wheat through soy sauce, jeon batter, or side dishes, so verify ingredients and cross-contact carefully with staff.",
-    "note_ko": "큐레이션된 네이버 저장 목록에서 추가된 한정식 식당입니다. 한식 코스는 간장, 전류 반죽, 밑반찬 등을 통해 밀 성분이 들어갈 수 있으니 재료와 교차오염 여부를 직원에게 꼼꼼히 확인하세요.",
-    "tags": [
-      "Restaurant",
-      "Korean"
-    ],
-    "sources": [
-      "User curated Naver save list (2026-03-23)",
-      "Naver Place 12782440"
-    ]
-  },
-  "1372911437": {
-    "name": "프랑스와",
-    "nameEn": "Francois",
-    "slug": "francois",
-    "coverImage": "05.webp",
-    "type": "Dining",
-    "location": "Seoul, Songpa-gu (Seokchon)",
-    "address": "서울특별시 송파구 석촌동 52-1 2층",
-    "addressEn": "2F, 52-1 Seokchon-dong, Songpa-gu, Seoul",
-    "note": "French restaurant in Songpa-gu. Verify gluten-free options and kitchen handling with staff.",
-    "note_ko": "송파구의 프랑스 레스토랑. 방문 시 글루텐프리 옵션과 교차오염 여부를 직원에게 확인하세요.",
-    "tags": [
-      "Restaurant",
-      "French"
-    ]
-  },
-  "1046718902": {
-    "name": "다크앤라이트",
-    "nameEn": "Dark & Light",
-    "slug": "dark-and-light",
-    "coverImage": "04.webp",
-    "type": "Dining",
-    "location": "Gyeonggi, Seongnam (Geumto)",
-    "address": "경기도 성남시 수정구 금토동 51-1 1층 로비, 2층 메인 다이닝 홀",
-    "addressEn": "51-1 Geumto-dong, Sujeong-gu, Seongnam, Gyeonggi-do",
-    "note": "Western restaurant with lobby on 1F and main dining on 2F. Verify GF options with staff.",
-    "note_ko": "1층 로비, 2층 다이닝 홀이 있는 양식 레스토랑. 방문 시 글루텐프리 옵션을 직원에게 확인하세요.",
-    "tags": [
-      "Restaurant",
-      "Western"
-    ]
-  },
-  "1277184396": {
-    "nameEn": "Rami Scone",
-    "slug": "rami-scone",
-    "type": "Cafe",
-    "location": "Seoul, Jongno-gu (Ikseon-dong)",
-    "addressEn": "25 Donhwamun-ro 11na-gil, Jongno-gu, Seoul",
-    "note": "Scone cafe in Ikseon-dong known for vegan brownies and cheese soufflés. Some items may be gluten-free friendly; confirm which scones/baked goods are GF and ask about cross-contact handling with staff before ordering.",
-    "note_ko": "익선동의 스콘 카페로 비건 브라우니와 치즈 수플레로 알려져 있습니다. 일부 메뉴가 글루텐프리일 수 있으니, 어떤 스콘/베이킹이 GF인지와 교차오염 여부를 주문 전에 직원에게 확인하세요.",
-    "tags": [
-      "Cafe",
-      "Bakery"
-    ],
-    "images": [
-      "places/rami-scone/01",
-      "places/rami-scone/02",
-      "places/rami-scone/03"
-    ]
-  },
-  "1073951222": {
-    "nameEn": "BLU Seoul",
-    "slug": "blu-seoul",
-    "type": "Bar",
-    "location": "Seoul, Jung-gu (Chungmuro)",
-    "addressEn": "21 Chungmuro 4-gil, Jung-gu, Seoul",
-    "note": "Bar in the Chungmuro/Euljiro area. Cocktails are generally gluten-free but some may use barley-based spirits; confirm drink ingredients and any food cross-contact with staff before ordering.",
-    "note_ko": "충무로/을지로 지역의 바. 칵테일은 대체로 글루텐프리이나 보리 기반 증류주를 사용할 수 있으니, 음료 재료와 교차오염 여부를 주문 전에 직원에게 확인하세요.",
-    "tags": [
-      "Bar"
-    ],
-    "images": [
-      "places/blu-seoul/01",
-      "places/blu-seoul/02",
-      "places/blu-seoul/03",
-      "places/blu-seoul/04",
-      "places/blu-seoul/05",
-      "places/blu-seoul/06",
-      "places/blu-seoul/07",
-      "places/blu-seoul/08"
-    ]
-  },
-  "1812117530": {
-    "nameEn": "Benir",
-    "slug": "benir",
-    "type": "Cafe",
-    "location": "Seoul, Gangseo-gu (Magok)",
-    "addressEn": "2F, 42 Magokjungang 6-ro, Gangseo-gu, Seoul",
-    "note": "Cafe on the 2nd floor of the Magok Sciencestar building near Magok Station. Confirm which menu items are gluten-free and ask about cross-contact handling with staff before ordering.",
-    "note_ko": "마곡역 인근 마곡 사이언스타 빌딩 2층 카페. 어떤 메뉴가 글루텐프리인지와 교차오염 여부를 주문 전에 직원에게 확인하세요.",
-    "tags": [
-      "Cafe"
-    ],
-    "images": [
-      "places/benir/01",
-      "places/benir/02",
-      "places/benir/03"
-    ]
-  },
-  "37638632": {
-    "nameEn": "6Day Chicken",
-    "slug": "6day-chicken",
-    "type": "Restaurant",
-    "location": "Seoul, Jongno-gu (Changsin)",
-    "addressEn": "1F, 96 Jibong-ro, Jongno-gu, Seoul",
-    "note": "Fried chicken shop in Changsin. Naver Place explicitly mentions “Gluten-free 6Day-chicken”; still reconfirm which menu items, powders, and sauces are gluten-free and whether frying oil is shared.",
-    "note_ko": "창신동 닭강정 가게. 네이버 플레이스에 “Gluten-free 6Day-chicken” 문구가 명시되어 있지만, 실제로 어떤 메뉴/가루/소스가 글루텐프리인지와 기름 공유 여부는 주문 전에 다시 확인하세요.",
-    "tags": [
-      "Restaurant",
-      "Fried Chicken"
-    ],
-    "sources": [
-      "User curated Naver save list (2026-03-23)",
-      "Naver Place 37638632"
     ]
   }
 }
