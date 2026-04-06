@@ -83,7 +83,7 @@
 - **Commit message:** `feat: add code-review eval task to eval pipeline`
 
 ### TASK-15: HANDOFF.md 자동 갱신 훅
-- **상태:** [ ]
+- **상태:** [x]
 - **우선순위:** P3
 - **변경 파일:** `.claude/settings.local.json` (또는 hooks 설정)
 - **Plan:** 커밋 시 HANDOFF.md의 "완료된 작업" 섹션을 자동 업데이트하는 메커니즘 탐색. Claude Code hooks 또는 git post-commit hook 활용 가능성 검토.
