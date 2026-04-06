@@ -45,7 +45,7 @@
 ## 미완료 작업
 
 ### TASK-12: CopyButton을 PlaceCard에 통합
-- **상태:** [ ]
+- **상태:** [x]
 - **우선순위:** P2
 - **변경 파일:** `app/components/PlaceCard.js` (또는 PlaceFilter.js 카드 영역)
 - **Plan:** CopyButton 컴포넌트(이미 존재)를 PlaceCard에 import하여 가게 이름+주소 복사 기능 추가. 택시 탑승 시 주소를 빠르게 복사하는 UX.

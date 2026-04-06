@@ -3,6 +3,7 @@ import Link from "next/link";
 import { trackEvent } from "@/app/lib/analytics";
 import { cloudinaryUrl } from "@/app/lib/cloudinary";
 import { TYPE_MAP, TAG_MAP, sortTags } from "@/app/lib/places";
+import CopyButton from "./CopyButton";
 
 function getCardGradient(tags, type) {
   const isDedicatedGF = tags?.includes("Dedicated GF");
@@ -40,6 +41,7 @@ export default function PlaceCard({ place, priority = false }) {
   const secondaryNameEn = place.name && place.name !== primaryNameEn ? place.name : null;
   const secondaryNameKo = place.nameEn && place.nameEn !== primaryNameKo ? place.nameEn : null;
   const distanceLabel = formatDistance(place.distanceKm);
+  const copyText = [place.name || place.nameEn, place.address].filter(Boolean).join("\n");
 
   const gradient = getCardGradient(place.tags, place.type);
   const hasImage = place.images?.length > 0;
@@ -164,30 +166,43 @@ export default function PlaceCard({ place, priority = false }) {
 
       {/* Card footer */}
       <div className="border-t border-rim px-5 py-3 sm:px-6">
-        <div className="flex flex-wrap items-center justify-between">
+        <div className="flex flex-wrap items-center justify-between gap-2">
           <span className="text-sm font-medium text-fg transition-opacity group-hover:opacity-70">
             <span className="lang-en">View details</span>
             <span className="lang-ko">상세 보기</span>
             <span className="ml-1 inline-block transition-transform group-hover:translate-x-0.5">→</span>
           </span>
-          {place.naverMapUrl ? (
-            <a
-              href={place.naverMapUrl}
-              target="_blank"
-              rel="noreferrer"
-              onClick={(e) => {
-                e.stopPropagation();
-                trackEvent("click_external_link", {
-                  link_type: "naver_map",
-                  place_slug: slug,
-                  place_name: place.nameEn || place.name || slug,
-                });
-              }}
-              className="relative z-10 text-xs text-muted underline underline-offset-2 transition-colors hover:text-fg"
-            >
-              Naver Map
-            </a>
-          ) : null}
+          <div className="flex items-center gap-2">
+            {copyText ? (
+              <CopyButton
+                text={copyText}
+                ariaLabel="Copy name and address for taxi"
+                labelEn="Copy for taxi"
+                labelKo="택시용 복사"
+                copiedEn="Copied!"
+                copiedKo="복사됨!"
+                className="relative z-10"
+              />
+            ) : null}
+            {place.naverMapUrl ? (
+              <a
+                href={place.naverMapUrl}
+                target="_blank"
+                rel="noreferrer"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  trackEvent("click_external_link", {
+                    link_type: "naver_map",
+                    place_slug: slug,
+                    place_name: place.nameEn || place.name || slug,
+                  });
+                }}
+                className="relative z-10 text-xs text-muted underline underline-offset-2 transition-colors hover:text-fg"
+              >
+                Naver Map
+              </a>
+            ) : null}
+          </div>
         </div>
       </div>
     </Link>
