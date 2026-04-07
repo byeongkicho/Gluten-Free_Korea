@@ -48,7 +48,7 @@ const dmSans = DM_Sans({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://noglutenkorea.com";
-const gaId = "G-YGVMPT7719";
+const gaId = "G-Z9FQ9CNJJN";
 const defaultTitle = "No Gluten Korea | 한국 글루텐프리 레스토랑 & 카페 가이드";
 const defaultDescription =
   "Find gluten-free restaurants, cafes, and bakeries across Korea. Verified places with safety notes, maps, and Korean phrases for celiac and gluten-sensitive travelers.";
