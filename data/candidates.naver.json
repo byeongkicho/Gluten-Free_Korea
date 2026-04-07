@@ -1,5 +1,41 @@
 [
   {
+    "sid": "229759362",
+    "name": "Vegetus",
+    "address": "서울 용산구 신흥로 59",
+    "mcid": "DINING",
+    "mcidName": "음식점",
+    "px": 126.9873218,
+    "py": 37.5436761,
+    "memo": "",
+    "useTime": 1775460505000,
+    "lastUpdateTime": 1775460505000
+  },
+  {
+    "sid": "1295145460",
+    "name": "FEEKE",
+    "address": "경남 창원시 의창구 도계로4번길 46",
+    "mcid": "CAFE",
+    "mcidName": "카페",
+    "px": 128.6357883,
+    "py": 35.25603,
+    "memo": "",
+    "useTime": 1775460472000,
+    "lastUpdateTime": 1775460472000
+  },
+  {
+    "sid": "1772964057",
+    "name": "X-AKE",
+    "address": "경기 수원시 팔달구 수원천로 316",
+    "mcid": "CAFE",
+    "mcidName": "카페",
+    "px": 127.0185134,
+    "py": 37.2816024,
+    "memo": "",
+    "useTime": 1775445610000,
+    "lastUpdateTime": 1775445610000
+  },
+  {
     "sid": "1277184396",
     "name": "rami-scone (Ik-sun)",
     "address": "서울 종로구 돈화문로11나길 25",

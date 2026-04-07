@@ -44,6 +44,20 @@
       "Naver Place 37638632"
     ]
   },
+  "229759362": {
+    "nameEn": "Vegetus",
+    "slug": "vegetus",
+    "type": "Restaurant",
+    "location": "Seoul, Yongsan-gu (Haebangchon)",
+    "addressEn": "59 Sinheung-ro, Yongsan-gu, Seoul",
+    "note": "100% vegan restaurant in Haebangchon. GF and nut-free dishes are labeled on the menu. GF options include burrito bowl, wraps, pasta, lime pie, carrot cake, and brownies. Not a dedicated GF facility — cross-contamination possible.",
+    "note_ko": "해방촌의 100% 비건 레스토랑. 메뉴에 글루텐프리·견과류프리 표시가 있음. GF 옵션: 부리또볼, 랩, 파스타, 라임파이, 캐럿케이크, 브라우니 등. 전용 GF 시설은 아니므로 교차오염 가능성 있음.",
+    "tags": ["Restaurant", "Vegan"],
+    "website": "https://vegetus.kr/",
+    "instagram": "https://www.instagram.com/vegetuskr/",
+    "lat": 37.5436761,
+    "lng": 126.9873218
+  },
   "1046718902": {
     "name": "다크앤라이트",
     "nameEn": "Dark & Light",
@@ -159,6 +173,20 @@
       "places/rami-scone/03"
     ]
   },
+  "1295145460": {
+    "nameEn": "FEEKE",
+    "slug": "feeke",
+    "type": "Bakery",
+    "location": "Gyeongnam, Changwon (Dogye-dong)",
+    "addressEn": "46 Dogye-ro 4beon-gil, Uichang-gu, Changwon, Gyeongnam",
+    "note": "Dedicated gluten-free rice dessert brand. All products made with 100% domestic Korean rice flour — rice madeleines, mochi rice cookies, rice bread. Has both offline store and online shop.",
+    "note_ko": "글루텐프리 쌀 디저트 전문 브랜드. 100% 국내산 쌀가루로 만든 쌀 마들렌, 모찌쌀쿠키, 쌀빵 등. 오프라인 매장 + 온라인몰 운영.",
+    "tags": ["Dedicated GF", "Bakery", "Dessert"],
+    "website": "https://feeke.co.kr/",
+    "instagram": "https://www.instagram.com/_feeke/",
+    "lat": 35.25603,
+    "lng": 128.6357883
+  },
   "1312707678": {
     "nameEn": "Cafe Rebirths",
     "coverImage": "03.webp",
@@ -246,6 +274,19 @@
       "https://www.237pizza.com/",
       "User photos + review (Telegram, 2026-02-10)"
     ]
+  },
+  "1772964057": {
+    "nameEn": "X-AKE",
+    "slug": "x-ake",
+    "type": "Cafe",
+    "location": "Gyeonggi, Suwon (Paldal-gu)",
+    "addressEn": "316 Suwoncheon-ro, Paldal-gu, Suwon, Gyeonggi",
+    "note": "Dedicated gluten-free cake cafe in Suwon. All cakes are gluten-free.",
+    "note_ko": "수원 팔달구의 글루텐프리 케이크 전문 카페. 전 메뉴 글루텐프리.",
+    "tags": ["Dedicated GF", "Cafe", "Dessert"],
+    "instagram": "https://www.instagram.com/x_.ake/",
+    "lat": 37.2816024,
+    "lng": 127.0185134
   },
   "1812117530": {
     "nameEn": "Benir",
