@@ -59,6 +59,9 @@ export const metadata = {
   alternates: { canonical: "/" },
   title: defaultTitle,
   description: defaultDescription,
+  other: {
+    "google-adsense-account": "ca-pub-7622506717588067",
+  },
   openGraph: {
     type: "website",
     url: "/",
@@ -84,6 +87,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="lang-en" suppressHydrationWarning>
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7622506717588067"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body
         className={`${fraunces.variable} ${dmSans.variable} antialiased`}
         suppressHydrationWarning
@@ -102,12 +112,6 @@ export default function RootLayout({ children }) {
             gtag('config', '${gaId}');
           `}
         </Script>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7622506717588067"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
         <MetadataLocaleSync />
         <Navbar />
         {children}
