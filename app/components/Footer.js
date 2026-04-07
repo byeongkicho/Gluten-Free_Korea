@@ -65,8 +65,25 @@ export default function Footer() {
         <div className="border-t border-rim" />
       </div>
 
+      {/* Links */}
+      <div className="mx-auto max-w-3xl px-4 pt-4 pb-2 flex justify-center gap-4 text-xs text-muted">
+        <a href="/about" className="underline-offset-2 hover:underline hover:text-fg">
+          <span className="lang-en">About</span>
+          <span className="lang-ko">소개</span>
+        </a>
+        <span className="text-muted/30">·</span>
+        <a href="/guide" className="underline-offset-2 hover:underline hover:text-fg">
+          <span className="lang-en">Guide</span>
+          <span className="lang-ko">가이드</span>
+        </a>
+        <span className="text-muted/30">·</span>
+        <a href="/privacy" className="underline-offset-2 hover:underline hover:text-fg">
+          Privacy Policy
+        </a>
+      </div>
+
       {/* Copyright + affiliate */}
-      <div className="mx-auto max-w-3xl px-4 py-6 text-center">
+      <div className="mx-auto max-w-3xl px-4 py-4 text-center">
         <p className="text-xs text-muted">
           <span className="lang-en">© 2026 No Gluten Korea</span>
           <span className="lang-ko">© 2026 글루텐프리 코리아</span>

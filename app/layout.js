@@ -102,6 +102,12 @@ export default function RootLayout({ children }) {
             gtag('config', '${gaId}');
           `}
         </Script>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7622506717588067"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <MetadataLocaleSync />
         <Navbar />
         {children}
