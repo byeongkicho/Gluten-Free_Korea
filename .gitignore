@@ -67,9 +67,13 @@ data/naver-images/
 # Eval results
 eval/results/
 
-# Generated captions & discovered places
+# Generated captions, discovered places & reports
 data/captions/
 data/discovered-places.json
+data/ga4-report.json
+
+# Credentials
+ga4-credentials.json
 
 # Temp files
 .tmp-naver-images/

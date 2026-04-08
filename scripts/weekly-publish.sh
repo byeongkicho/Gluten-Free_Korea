@@ -2,7 +2,7 @@
 #
 # weekly-publish.sh — Weekly content pipeline
 #
-# Orchestrates: discover → add places → images → build → deploy → instagram
+# Orchestrates: GA4 → discover → add places → images → build → deploy → instagram
 #
 # Usage:
 #   bash scripts/weekly-publish.sh              # full pipeline
@@ -33,6 +33,15 @@ step() { echo -e "\n══ $1 ══\n"; }
 ok()   { echo "  ✓ $1"; }
 skip() { echo "  ⏭ $1"; }
 fail() { echo "  ✗ $1"; exit 1; }
+
+# ── Step 0: GA4 traffic report ────────────────────────────
+
+step "0/7 GA4 traffic report (last 7 days)"
+if npm run ga4 2>&1 | tail -20; then
+  ok "GA4 report saved to data/ga4-report.json"
+else
+  echo "  ⚠ GA4 report failed. Continuing."
+fi
 
 # ── Step 1: Sync Naver bookmarks ───────────────────────────
 

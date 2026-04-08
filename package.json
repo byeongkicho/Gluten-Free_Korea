@@ -22,6 +22,7 @@
     "add:place": "node scripts/add-place.mjs",
     "discover:places": "node scripts/discover-places.mjs",
     "generate:caption": "node scripts/generate-caption.mjs",
+    "ga4": "node --env-file=.env scripts/ga4-report.mjs",
     "weekly": "bash scripts/weekly-publish.sh"
   },
   "dependencies": {
@@ -36,6 +37,7 @@
     "@anthropic-ai/sdk": "^0.78.0",
     "@cloudflare/next-on-pages": "^1.13.16",
     "@eslint/eslintrc": "^3",
+    "@google-analytics/data": "^5.2.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "25.3.5",
     "@types/react": "19.2.14",
