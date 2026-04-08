@@ -87,18 +87,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="lang-en" suppressHydrationWarning>
-      <head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7622506717588067"
-          crossOrigin="anonymous"
-        />
-      </head>
+      <head />
       <body
         className={`${fraunces.variable} ${dmSans.variable} antialiased`}
         suppressHydrationWarning
       >
         <InitScript />
+        <Script
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7622506717588067`}
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+        />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
           strategy="afterInteractive"
