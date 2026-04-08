@@ -70,13 +70,14 @@ def main():
     with open(caption_path) as f:
         caption = f.read().strip()
 
-    # Build image URLs
+    # Build image URLs — cover first if it exists on Cloudinary
     images = place.get("images", [])
     if not images:
         print("No images found for this place")
         return
 
-    urls = [
+    cover_url = f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/c_fill,w_1080,h_1080,q_90/places/{args.slug}/cover"
+    urls = [cover_url] + [
         f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/c_fill,w_1080,h_1080,q_90/{img}"
         for img in images
     ]
