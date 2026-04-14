@@ -601,7 +601,7 @@ export default function PlaceFilter({ places }) {
               <button
                 type="button"
                 onClick={handleLoadMore}
-                className="rounded-lg border border-rim px-4 py-2 text-sm font-medium text-fg transition-colors hover:bg-surface-2"
+                className="rounded-lg border border-rim px-5 py-3 text-sm font-medium text-fg transition-colors hover:bg-surface-2 min-h-[44px]"
               >
                 <span className="lang-en">Show 6 more</span>
                 <span className="lang-ko">6개 더 보기</span>

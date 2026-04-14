@@ -116,10 +116,16 @@ export default async function PlaceDetailPage({ params }) {
     "@type": schemaType,
     name: place.name,
     description: place.note || undefined,
+    image: place.images?.length > 0
+      ? cloudinaryUrl(place.images[0], "ogImage")
+      : undefined,
     address: place.address
       ? { "@type": "PostalAddress", streetAddress: place.address }
       : undefined,
     url: place.website || `${siteUrl}/place/${slug}`,
+    geo: place.lat && place.lng
+      ? { "@type": "GeoCoordinates", latitude: place.lat, longitude: place.lng }
+      : undefined,
     servesCuisine: "Gluten-Free",
   };
 
@@ -143,6 +149,12 @@ export default async function PlaceDetailPage({ params }) {
             <ImageLightbox
               images={place.images}
               alt={place.nameEn || place.name || "Place"}
+              overlay={{
+                name: place.nameEn || place.name,
+                type: displayTypeEn,
+                location: place.location,
+                isDedicatedGF: place.tags?.includes("Dedicated GF"),
+              }}
             />
           );
         })()}

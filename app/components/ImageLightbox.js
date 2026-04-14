@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { cloudinaryUrl } from "@/app/lib/cloudinary";
 
-export default function ImageLightbox({ images, alt }) {
+export default function ImageLightbox({ images, alt, overlay }) {
   const [open, setOpen] = useState(false);
   const [idx, setIdx] = useState(0);
   const [heroSrc, setHeroSrc] = useState(() => images?.[0] ? cloudinaryUrl(images[0], 'webThumb') : null);
@@ -13,15 +13,34 @@ export default function ImageLightbox({ images, alt }) {
   const prev = useCallback(() => setIdx((i) => (i - 1 + images.length) % images.length), [images.length]);
   const next = useCallback(() => setIdx((i) => (i + 1) % images.length), [images.length]);
 
+  const lightboxRef = useRef(null);
+
   useEffect(() => {
     if (!open) return;
     function onKey(e) {
-      if (e.key === "Escape") close();
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
+      if (e.key === "Escape") { e.preventDefault(); close(); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); prev(); }
+      if (e.key === "ArrowRight") { e.preventDefault(); next(); }
+      // Focus trap: keep Tab within lightbox
+      if (e.key === "Tab" && lightboxRef.current) {
+        const focusable = lightboxRef.current.querySelectorAll("button");
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     }
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
+    // Auto-focus close button when lightbox opens
+    const closeBtn = lightboxRef.current?.querySelector("button");
+    closeBtn?.focus();
     return () => {
       document.body.style.overflow = "";
       window.removeEventListener("keydown", onKey);
@@ -53,6 +72,23 @@ export default function ImageLightbox({ images, alt }) {
               if (heroSrc !== fullSrc) setHeroSrc(fullSrc);
             }}
           />
+          {overlay && (
+            <div className="pointer-events-none absolute inset-0 flex flex-col justify-end rounded-2xl bg-gradient-to-t from-black/70 via-black/20 to-transparent p-4 sm:p-6">
+              <div className="flex items-center gap-2">
+                <span className={`rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider ${overlay.isDedicatedGF ? "bg-emerald-500/90 text-white" : "bg-amber-400/90 text-neutral-900"}`}>
+                  {overlay.isDedicatedGF ? "Dedicated Gluten-Free" : "Gluten-Free Friendly"}
+                </span>
+              </div>
+              <h2 className="mt-1.5 font-display text-xl font-semibold leading-tight text-white drop-shadow-lg sm:text-2xl">
+                {overlay.name}
+              </h2>
+              {overlay.location && (
+                <p className="mt-0.5 text-sm text-white/75 drop-shadow">
+                  {overlay.location}
+                </p>
+              )}
+            </div>
+          )}
         </div>
         {/* Gallery grid */}
         {images.length > 1 && (
@@ -77,6 +113,10 @@ export default function ImageLightbox({ images, alt }) {
       {/* Lightbox overlay */}
       {open && (
         <div
+          ref={lightboxRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image viewer"
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 backdrop-blur-sm"
           onClick={close}
         >

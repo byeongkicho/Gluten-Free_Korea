@@ -21,7 +21,7 @@ export default function MapView({ places }) {
   );
 
   return (
-    <div className="mt-4 h-[70vh] overflow-hidden rounded-2xl md:h-[80vh]">
+    <div className="mt-4 h-[50vh] overflow-hidden rounded-2xl sm:h-[60vh] md:h-[70vh] lg:h-[80vh]">
       <MapContainer
         center={[37.5665, 126.978]}
         zoom={11}

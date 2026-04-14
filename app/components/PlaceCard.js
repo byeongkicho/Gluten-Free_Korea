@@ -166,13 +166,13 @@ export default function PlaceCard({ place, priority = false }) {
 
       {/* Card footer */}
       <div className="border-t border-rim px-5 py-3 sm:px-6">
-        <div className="flex flex-wrap items-center justify-between gap-2">
+        <div className="flex flex-wrap items-center justify-between gap-3">
           <span className="text-sm font-medium text-fg transition-opacity group-hover:opacity-70">
             <span className="lang-en">View details</span>
             <span className="lang-ko">상세 보기</span>
             <span className="ml-1 inline-block transition-transform group-hover:translate-x-0.5">→</span>
           </span>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             {copyText ? (
               <CopyButton
                 text={copyText}
