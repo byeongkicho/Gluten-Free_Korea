@@ -41,10 +41,10 @@ function escapeXml(str) {
 }
 
 function createOverlaySvg(place) {
-  // Strip common suffixes for cleaner cover text
+  // Strip trailing type words only (preserve leading brand names like "Cafe Pepper")
   const rawName = place.nameEn || place.name;
   const name = escapeXml(
-    rawName.replace(/\s*(Gluten[- ]?Free|GF|Cafe|Restaurant|Bakery|Bar)\b/gi, "").trim()
+    rawName.replace(/\s+(Gluten[- ]?Free|GF|Cafe|Restaurant|Bakery|Bar)$/gi, "").trim()
     || rawName
   );
   const cx = SIZE / 2; // center x

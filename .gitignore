@@ -75,6 +75,19 @@ data/ga4-report.json
 # Credentials
 ga4-credentials.json
 
+# Instagram cover images (generated, large)
+data/instagram-covers/
+
+# Health check reports (generated)
+data/healthcheck.json
+
+# Source photos (keep only optimized webp)
+public/images/places/**/*.jpg
+public/images/places/**/*.jpeg
+public/images/places/**/*.JPEG
+public/images/places/**/*.png
+public/images/places/**/*_old*.webp
+
 # Temp files
 .tmp-naver-images/
 NoGlutenKorea/

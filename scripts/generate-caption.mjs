@@ -49,6 +49,7 @@ await loadEnvFile(path.join(ROOT, '.env.local'));
 const args = process.argv.slice(2);
 const forceTemplate = args.includes('--template');
 const koOnly = args.includes('--ko');
+const fromWiki = args.includes('--from-wiki');
 const slug = args.find(a => !a.startsWith('--'));
 
 if (!slug) {
@@ -66,6 +67,27 @@ if (!place) {
   console.error('Available slugs:');
   for (const p of places) console.error(`  ${p.slug} — ${p.name}`);
   process.exit(1);
+}
+
+// ── Wiki caption ─────────────────────────────────────────
+
+const WIKI_DIR = path.join(ROOT, 'NoGlutenKorea', 'entities');
+
+async function extractWikiCaption(slug, placeName) {
+  // Try multiple filename patterns: slug, name, nameEn
+  const candidates = [placeName, slug];
+  for (const name of candidates) {
+    const filePath = path.join(WIKI_DIR, `${name}.md`);
+    try {
+      const content = await fs.readFile(filePath, 'utf8');
+      // Extract text between "## 인스타 캡션" and the next "##" or "→ 관련:"
+      const match = content.match(/## 인스타 캡션\s*\n+```\n([\s\S]*?)\n```/);
+      if (match) return match[1].trim();
+    } catch (e) {
+      if (e.code !== 'ENOENT') throw e;
+    }
+  }
+  return null;
 }
 
 // ── Template caption ──────────────────────────────────────
@@ -153,18 +175,28 @@ async function main() {
   console.log(`Generating caption for: ${place.name} (${slug})\n`);
 
   let caption;
-  const useApi = !forceTemplate && process.env.ANTHROPIC_API_KEY;
 
-  if (useApi) {
-    console.log('Mode: LLM (Anthropic API)\n');
-    caption = await generateWithLLM(place);
-  } else {
-    if (!forceTemplate && !process.env.ANTHROPIC_API_KEY) {
-      console.log('Mode: Template (set ANTHROPIC_API_KEY for LLM generation)\n');
-    } else {
-      console.log('Mode: Template\n');
+  if (fromWiki) {
+    console.log('Mode: Wiki (reading from NoGlutenKorea/entities/)\n');
+    caption = await extractWikiCaption(slug, place.name);
+    if (!caption) {
+      console.error(`No wiki caption found for "${slug}". Checked entities/${place.name}.md and entities/${slug}.md`);
+      console.error('Write a caption in the ## 인스타 캡션 section of the entity page first.');
+      process.exit(1);
     }
-    caption = generateTemplate(place);
+  } else {
+    const useApi = !forceTemplate && process.env.ANTHROPIC_API_KEY;
+    if (useApi) {
+      console.log('Mode: LLM (Anthropic API)\n');
+      caption = await generateWithLLM(place);
+    } else {
+      if (!forceTemplate && !process.env.ANTHROPIC_API_KEY) {
+        console.log('Mode: Template (set ANTHROPIC_API_KEY for LLM generation)\n');
+      } else {
+        console.log('Mode: Template\n');
+      }
+      caption = generateTemplate(place);
+    }
   }
 
   console.log('════════════════════════════════════════');

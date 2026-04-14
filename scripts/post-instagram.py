@@ -76,7 +76,10 @@ def main():
         print("No images found for this place")
         return
 
-    cover_url = f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/c_fill,w_1080,h_1080,q_90/places/{args.slug}/cover"
+    # Add cache-busting timestamp to cover URL to avoid CDN serving stale images
+    import time as _time
+    cache_bust = int(_time.time())
+    cover_url = f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/c_fill,w_1080,h_1080,q_90/v{cache_bust}/places/{args.slug}/cover"
     urls = [cover_url] + [
         f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/c_fill,w_1080,h_1080,q_90/{img}"
         for img in images
