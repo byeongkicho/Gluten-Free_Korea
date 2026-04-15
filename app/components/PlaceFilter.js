@@ -101,6 +101,7 @@ const LOAD_MORE_COUNT = 6;
 export default function PlaceFilter({ places }) {
   const safePlaces = Array.isArray(places) ? places : [];
   const [active, setActive] = useState("All");
+  const [gfLevel, setGfLevel] = useState("All");
   const [query, setQuery] = useState("");
   const [district, setDistrict] = useState("All");
   const [sortMode, setSortMode] = useState("default");
@@ -131,10 +132,16 @@ export default function PlaceFilter({ places }) {
     district === "All"
       ? afterSearch
       : afterSearch.filter((p) => extractDistrict(p.location) === district);
+  const afterGfLevel =
+    gfLevel === "All"
+      ? afterDistrict
+      : gfLevel === "Dedicated GF"
+        ? afterDistrict.filter((p) => p.tags?.includes("Dedicated GF"))
+        : afterDistrict.filter((p) => !p.tags?.includes("Dedicated GF"));
   const afterType =
     active === "All"
-      ? afterDistrict
-      : afterDistrict.filter((place) => place?.type === active);
+      ? afterGfLevel
+      : afterGfLevel.filter((place) => place?.type === active);
   const withDistance = afterType.map((place) => ({
     ...place,
     distanceKm: getDistanceKm(userLocation, place),
@@ -258,7 +265,7 @@ export default function PlaceFilter({ places }) {
     );
   }
 
-  const isFiltered = active !== "All" || district !== "All" || q || (radiusKm && userLocation);
+  const isFiltered = active !== "All" || gfLevel !== "All" || district !== "All" || q || (radiusKm && userLocation);
 
   useEffect(() => {
     if (!q) return undefined;
@@ -281,10 +288,11 @@ export default function PlaceFilter({ places }) {
 
   useEffect(() => {
     setVisibleCount(INITIAL_VISIBLE_COUNT);
-  }, [q, active, district, sortMode, radiusKm, userLocation, viewMode]);
+  }, [q, active, gfLevel, district, sortMode, radiusKm, userLocation, viewMode]);
 
   function clearAllFilters() {
     setActive("All");
+    setGfLevel("All");
     setDistrict("All");
     setQuery("");
     setRadiusKm(null);
@@ -517,6 +525,35 @@ export default function PlaceFilter({ places }) {
                     <span className="lang-ko">{d}</span>
                   </>
                 )}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* GF Level */}
+        <div>
+          <p className="mb-2.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-faint">
+            <span className="lang-en">Gluten-Free Level</span>
+            <span className="lang-ko">글루텐프리 수준</span>
+          </p>
+          <div className="flex flex-wrap gap-1.5">
+            {[
+              { value: "All", en: "All", ko: "전체" },
+              { value: "Dedicated GF", en: "Dedicated GF", ko: "전용 GF" },
+              { value: "GF Friendly", en: "GF-Friendly", ko: "GF 메뉴 있음" },
+            ].map((opt) => (
+              <button
+                key={opt.value}
+                type="button"
+                onClick={() => {
+                  setGfLevel(opt.value);
+                  setVisibleCount(INITIAL_VISIBLE_COUNT);
+                  trackEvent("filter_places", { filter_kind: "gf_level", filter_value: opt.value });
+                }}
+                className={gfLevel === opt.value ? chipActive : chipInactive}
+              >
+                <span className="lang-en">{opt.en}</span>
+                <span className="lang-ko">{opt.ko}</span>
               </button>
             ))}
           </div>

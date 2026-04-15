@@ -91,12 +91,10 @@ function createOverlaySvg(place) {
 
 // Slugs that should always show "DEDICATED GLUTEN-FREE"
 const DEDICATED_SLUGS = new Set([
-  "sisemdal-atelier",
   "237-pizza",
   "cafe-rebirths",
   "monil2-house",
-  "feeke",
-  "x-ake",
+  // feeke, sisemdal-atelier, x-ake: 미방문 미확인 → 확인 후 추가
 ]);
 
 async function generateCover(place) {

@@ -37,7 +37,6 @@
     "address": "경남 창원시 의창구 도계로4번길 46",
     "note": "Dedicated gluten-free rice dessert brand. All products made with 100% domestic Korean rice flour — rice madeleines, mochi rice cookies, rice bread. Has both offline store and online shop.",
     "tags": [
-      "Dedicated GF",
       "Bakery",
       "Dessert"
     ],
@@ -53,7 +52,7 @@
     "location": "Gyeongnam, Changwon (Dogye-dong)",
     "addressEn": "46 Dogye-ro 4beon-gil, Uichang-gu, Changwon, Gyeongnam",
     "note_ko": "글루텐프리 쌀 디저트 전문 브랜드. 100% 국내산 쌀가루로 만든 쌀 마들렌, 모찌쌀쿠키, 쌀빵 등. 오프라인 매장 + 온라인몰 운영.",
-    "updatedAt": "2026-04-08",
+    "updatedAt": "2026-04-15",
     "images": [
       "places/feeke/01",
       "places/feeke/02",
@@ -69,7 +68,6 @@
     "address": "경기 수원시 팔달구 수원천로 316",
     "note": "Dedicated gluten-free cake cafe in Suwon. All cakes are gluten-free.",
     "tags": [
-      "Dedicated GF",
       "Cafe",
       "Dessert"
     ],
@@ -85,7 +83,7 @@
     "location": "Gyeonggi, Suwon (Paldal-gu)",
     "addressEn": "316 Suwoncheon-ro, Paldal-gu, Suwon, Gyeonggi",
     "note_ko": "수원 팔달구의 글루텐프리 케이크 전문 카페. 전 메뉴 글루텐프리.",
-    "updatedAt": "2026-04-08",
+    "updatedAt": "2026-04-15",
     "images": [
       "places/x-ake/01",
       "places/x-ake/02",
@@ -168,7 +166,7 @@
     "rating": null,
     "naverMapUrl": "https://map.naver.com/p/entry/place/1812117530",
     "website": "",
-    "instagram": "",
+    "instagram": "https://www.instagram.com/cafe_benir/",
     "sources": [],
     "naverPlaceId": "1812117530",
     "lat": 37.5601077,
@@ -180,9 +178,13 @@
     "images": [
       "places/benir/01",
       "places/benir/02",
-      "places/benir/03"
+      "places/benir/03",
+      "places/benir/04",
+      "places/benir/05",
+      "places/benir/06",
+      "places/benir/07"
     ],
-    "updatedAt": "2026-04-08"
+    "updatedAt": "2026-04-15"
   },
   {
     "slug": "francois",
@@ -297,8 +299,7 @@
     "note": "Hanok dessert cafe near Sungshin Women's University. Naver Place menus explicitly mark multiple items as rice-based GF cakes and granola; still reconfirm daily menu availability and handling before ordering.",
     "tags": [
       "Cafe",
-      "Dessert",
-      "Dedicated GF"
+      "Dessert"
     ],
     "rating": null,
     "naverMapUrl": "https://map.naver.com/p/entry/place/1930937320",
@@ -327,7 +328,7 @@
     "location": "Seoul, Seongbuk-gu (Sungshin Women's Univ.)",
     "addressEn": "74-1 Bomun-ro 30-gil, Seongbuk-gu, Seoul",
     "note_ko": "성신여대 인근 한옥 디저트 카페. 네이버 플레이스 메뉴에 여러 케이크와 그래놀라가 [쌀, GF]로 표기되어 있지만, 당일 판매 메뉴와 교차오염 여부는 주문 전에 다시 확인하세요.",
-    "updatedAt": "2026-04-08",
+    "updatedAt": "2026-04-15",
     "images": [
       "places/sisemdal-atelier/01"
     ]
