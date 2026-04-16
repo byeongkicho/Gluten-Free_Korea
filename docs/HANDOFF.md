@@ -41,7 +41,10 @@
 
 ## 컨텍스트 노트
 
-- 매장 24개, 위키 34페이지, 인스타 8건
+- 매장 24개, 위키 35페이지, 인스타 8건
+- HACCP API 키 발급 완료 (.env), 스크립트 작성됨 (미커밋, 보류)
+- CU API 탐색: 성분표 미제공으로 보류
+- 밀가루 없는 과자 리스트 ingest 완료 (sources/)
 - Dedicated GF 확인: 3곳 (237-pizza, cafe-rebirths, monil2-house)
 - Visited 17곳 / Unverified 7곳
 - 네이버맵 위시리스트 ~84곳 (미등록)
