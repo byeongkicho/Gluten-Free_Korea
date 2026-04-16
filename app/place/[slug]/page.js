@@ -160,10 +160,24 @@ export default async function PlaceDetailPage({ params }) {
         })()}
 
         <section className="mt-4 min-h-[240px] rounded-2xl border border-rim bg-surface p-5 sm:min-h-[260px] sm:p-6">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
-            <span className="lang-en">{displayTypeEn}</span>
-            <span className="lang-ko">{displayType}</span>
-          </p>
+          <div className="flex items-center gap-2">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
+              <span className="lang-en">{displayTypeEn}</span>
+              <span className="lang-ko">{displayType}</span>
+            </p>
+            {place.verified === "visited" && (
+              <span className="rounded-full bg-emerald-100 dark:bg-emerald-900/40 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:text-emerald-300">
+                <span className="lang-en">Visited</span>
+                <span className="lang-ko">방문확인</span>
+              </span>
+            )}
+            {place.verified === "called" && (
+              <span className="rounded-full bg-blue-100 dark:bg-blue-900/40 px-2 py-0.5 text-[10px] font-semibold text-blue-700 dark:text-blue-300">
+                <span className="lang-en">Confirmed</span>
+                <span className="lang-ko">전화확인</span>
+              </span>
+            )}
+          </div>
           <div className="mt-2 flex flex-wrap items-start justify-between gap-3">
             <h1 className="font-display text-2xl font-semibold leading-tight text-fg sm:text-3xl">
               <span className="lang-en">{place.nameEn || place.name}</span>

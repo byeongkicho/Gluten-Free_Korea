@@ -28,6 +28,7 @@ export const metadata = {
   },
 };
 
+import Image from "next/image";
 import CopyButton from "@/app/components/CopyButton";
 
 export default function GuidePage() {
@@ -67,6 +68,7 @@ export default function GuidePage() {
             <li><a href="#hidden-gluten" className="text-muted transition-colors hover:text-fg"><span className="lang-en">Hidden Gluten</span><span className="lang-ko">숨겨진 글루텐</span></a></li>
             <li><a href="#rice-bread" className="text-muted transition-colors hover:text-fg"><span className="lang-en">Rice Bread Warning</span><span className="lang-ko">쌀빵 주의</span></a></li>
             <li><a href="#phrases" className="text-muted transition-colors hover:text-fg"><span className="lang-en">Korean Phrases</span><span className="lang-ko">한국어 표현</span></a></li>
+            <li><a href="#shopping" className="text-muted transition-colors hover:text-fg"><span className="lang-en">Shopping Guide</span><span className="lang-ko">쇼핑 가이드</span></a></li>
             <li><a href="#products" className="text-muted transition-colors hover:text-fg"><span className="lang-en">Recommended Products</span><span className="lang-ko">추천 제품</span></a></li>
           </ol>
         </nav>
@@ -179,6 +181,166 @@ export default function GuidePage() {
             </li>
           </ul>
         </section>
+        <section id="shopping" className="mt-5 scroll-mt-20 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
+          <h2 className="text-lg font-semibold text-fg">
+            <span className="lang-en">Shopping Guide: Reading Korean Labels</span>
+            <span className="lang-ko">쇼핑 가이드: 한국 식품 라벨 읽기</span>
+          </h2>
+          <p className="mt-3 text-sm leading-relaxed text-muted">
+            <span className="lang-en">
+              Korean food labels list allergens at the end of the ingredients. Look for the allergen box — it says which of the major allergens are included.
+            </span>
+            <span className="lang-ko">
+              한국 식품 라벨은 성분표 하단에 알레르기 유발물질을 표기합니다. 주요 알레르겐 포함 여부를 확인하세요.
+            </span>
+          </p>
+
+          {/* Key words to find */}
+          <div className="mt-4 rounded-xl border border-amber-rim bg-amber-bg p-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-amber-fg">
+              <span className="lang-en">Look for these words on the label</span>
+              <span className="lang-ko">라벨에서 이 단어를 찾으세요</span>
+            </p>
+            <div className="mt-3 space-y-2">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-base font-bold text-amber-fg">밀 포함</p>
+                  <p className="text-xs text-amber-fg/80">Contains wheat — AVOID</p>
+                </div>
+                <CopyButton text="밀 포함" ariaLabel="Copy" className="mt-0.5" />
+              </div>
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-base font-bold text-amber-fg">밀</p>
+                  <p className="text-xs text-amber-fg/80">Wheat</p>
+                </div>
+                <CopyButton text="밀" ariaLabel="Copy" className="mt-0.5" />
+              </div>
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-base font-bold text-amber-fg">보리</p>
+                  <p className="text-xs text-amber-fg/80">Barley</p>
+                </div>
+                <CopyButton text="보리" ariaLabel="Copy" className="mt-0.5" />
+              </div>
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-base font-bold text-amber-fg">호밀</p>
+                  <p className="text-xs text-amber-fg/80">Rye</p>
+                </div>
+                <CopyButton text="호밀" ariaLabel="Copy" className="mt-0.5" />
+              </div>
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-base font-bold text-amber-fg">밀가루</p>
+                  <p className="text-xs text-amber-fg/80">Wheat flour</p>
+                </div>
+                <CopyButton text="밀가루" ariaLabel="Copy" className="mt-0.5" />
+              </div>
+            </div>
+          </div>
+
+          {/* Label illustration */}
+          <div className="mt-4 overflow-hidden rounded-xl border border-rim">
+            <Image
+              src="/images/guide/label-guide.png"
+              alt="Korean food label allergen guide — look for 밀 (wheat) in the allergen section"
+              width={800}
+              height={520}
+              className="w-full"
+            />
+          </div>
+
+          {/* How to read the label */}
+          <div className="mt-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-faint">
+              <span className="lang-en">How to check a product</span>
+              <span className="lang-ko">제품 확인 방법</span>
+            </p>
+            <ol className="mt-2.5 space-y-2 text-sm leading-relaxed text-muted">
+              <li>
+                <span className="lang-en">1. Flip the product — find the ingredients panel on the back or bottom</span>
+                <span className="lang-ko">1. 제품을 뒤집어서 뒷면 또는 하단의 성분표를 찾으세요</span>
+              </li>
+              <li>
+                <span className="lang-en">2. Look for the allergen line — usually at the end, starting with <strong className="text-fg">알레르기 유발물질</strong> or just listing allergens in a box</span>
+                <span className="lang-ko">2. 성분표 마지막에 <strong className="text-fg">알레르기 유발물질</strong> 항목을 찾으세요</span>
+              </li>
+              <li>
+                <span className="lang-en">3. Search for <strong className="text-fg">밀</strong> (wheat) — if you see it, the product contains gluten</span>
+                <span className="lang-ko">3. <strong className="text-fg">밀</strong> 이라는 글자가 있으면 글루텐 포함입니다</span>
+              </li>
+              <li>
+                <span className="lang-en">4. Watch out for <strong className="text-fg">이 제품은 밀을 사용한 제품과 같은 시설에서 제조</strong> — means cross-contamination risk</span>
+                <span className="lang-ko">4. <strong className="text-fg">이 제품은 밀을 사용한 제품과 같은 시설에서 제조</strong> — 교차오염 위험을 의미합니다</span>
+              </li>
+            </ol>
+          </div>
+
+          {/* Shopping illustration */}
+          <div className="mt-5 overflow-hidden rounded-xl border border-rim">
+            <Image
+              src="/images/guide/shopping-guide.png"
+              alt="Convenience store guide — safe vs avoid items for gluten-free"
+              width={800}
+              height={480}
+              className="w-full"
+            />
+          </div>
+
+          {/* Convenience store safe picks */}
+          <div className="mt-5">
+            <p className="text-xs font-semibold uppercase tracking-wider text-faint">
+              <span className="lang-en">Convenience store — generally safer picks</span>
+              <span className="lang-ko">편의점 — 비교적 안전한 선택지</span>
+            </p>
+            <ul className="mt-2.5 space-y-2 text-sm leading-relaxed text-muted">
+              <li>
+                <span className="lang-en"><strong className="text-fg">Plain rice (삼각김밥 with just rice + seaweed)</strong> — but check filling ingredients, many contain soy sauce</span>
+                <span className="lang-ko"><strong className="text-fg">삼각김밥 (밥 + 김)</strong> — 단, 속재료에 간장이 들어가는 경우가 많으니 성분 확인</span>
+              </li>
+              <li>
+                <span className="lang-en"><strong className="text-fg">Eggs, bananas, nuts, plain yogurt</strong> — naturally GF</span>
+                <span className="lang-ko"><strong className="text-fg">삶은 계란, 바나나, 견과류, 플레인 요거트</strong> — 자연식품으로 안전</span>
+              </li>
+              <li>
+                <span className="lang-en"><strong className="text-fg">Rice cakes (떡)</strong> — usually safe, but always check the label</span>
+                <span className="lang-ko"><strong className="text-fg">떡</strong> — 보통 안전하지만 라벨 확인 필수</span>
+              </li>
+              <li>
+                <span className="lang-en"><strong className="text-fg">Corn chips (옥수수칩)</strong> — check label, some are GF</span>
+                <span className="lang-ko"><strong className="text-fg">옥수수칩</strong> — 라벨 확인, 일부 글루텐프리</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Things to avoid */}
+          <div className="mt-5">
+            <p className="text-xs font-semibold uppercase tracking-wider text-faint">
+              <span className="lang-en">Common traps — avoid unless label-checked</span>
+              <span className="lang-ko">자주 걸리는 함정 — 라벨 확인 전 피하세요</span>
+            </p>
+            <ul className="mt-2.5 space-y-2 text-sm leading-relaxed text-muted">
+              <li>
+                <span className="lang-en"><strong className="text-fg">Cup noodles, ramyeon</strong> — almost always contain wheat</span>
+                <span className="lang-ko"><strong className="text-fg">컵라면, 라면</strong> — 거의 대부분 밀 함유</span>
+              </li>
+              <li>
+                <span className="lang-en"><strong className="text-fg">Bread, sandwiches, pastries</strong> — wheat-based</span>
+                <span className="lang-ko"><strong className="text-fg">빵, 샌드위치, 페이스트리</strong> — 밀가루 기반</span>
+              </li>
+              <li>
+                <span className="lang-en"><strong className="text-fg">Soy sauce based meals (도시락)</strong> — most lunchboxes use regular soy sauce</span>
+                <span className="lang-ko"><strong className="text-fg">간장 양념 도시락</strong> — 대부분 일반 간장(밀 함유) 사용</span>
+              </li>
+              <li>
+                <span className="lang-en"><strong className="text-fg">Flavored snacks</strong> — many contain wheat starch or soy sauce powder</span>
+                <span className="lang-ko"><strong className="text-fg">맛 첨가 과자</strong> — 밀전분이나 간장분말 함유가 많음</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
         <section id="products" className="mt-5 scroll-mt-20 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
           <h2 className="text-lg font-semibold text-fg">
             <span className="lang-en">🛒 Recommended Products (Ad)</span>

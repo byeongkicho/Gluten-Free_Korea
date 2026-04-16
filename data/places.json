@@ -28,7 +28,8 @@
       "places/vegetus/03",
       "places/vegetus/04",
       "places/vegetus/05"
-    ]
+    ],
+    "verified": "unverified"
   },
   {
     "slug": "feeke",
@@ -59,7 +60,8 @@
       "places/feeke/03",
       "places/feeke/04",
       "places/feeke/05"
-    ]
+    ],
+    "verified": "unverified"
   },
   {
     "slug": "x-ake",
@@ -90,7 +92,8 @@
       "places/x-ake/03",
       "places/x-ake/04",
       "places/x-ake/05"
-    ]
+    ],
+    "verified": "unverified"
   },
   {
     "slug": "rami-scone",
@@ -119,7 +122,8 @@
       "places/rami-scone/02",
       "places/rami-scone/03"
     ],
-    "updatedAt": "2026-04-08"
+    "updatedAt": "2026-04-08",
+    "verified": "visited"
   },
   {
     "slug": "blu-seoul",
@@ -152,7 +156,8 @@
       "places/blu-seoul/07",
       "places/blu-seoul/08"
     ],
-    "updatedAt": "2026-04-08"
+    "updatedAt": "2026-04-08",
+    "verified": "visited"
   },
   {
     "slug": "benir",
@@ -184,7 +189,8 @@
       "places/benir/06",
       "places/benir/07"
     ],
-    "updatedAt": "2026-04-15"
+    "updatedAt": "2026-04-15",
+    "verified": "visited"
   },
   {
     "slug": "francois",
@@ -215,7 +221,8 @@
       "places/francois/02",
       "places/francois/03",
       "places/francois/04"
-    ]
+    ],
+    "verified": "visited"
   },
   {
     "slug": "dark-and-light",
@@ -247,7 +254,8 @@
       "places/dark-and-light/03",
       "places/dark-and-light/05",
       "places/dark-and-light/06"
-    ]
+    ],
+    "verified": "visited"
   },
   {
     "slug": "los-dias-cafe",
@@ -289,7 +297,8 @@
     "updatedAt": "2026-04-08",
     "images": [
       "places/los-dias-cafe/01"
-    ]
+    ],
+    "verified": "unverified"
   },
   {
     "slug": "sisemdal-atelier",
@@ -331,7 +340,8 @@
     "updatedAt": "2026-04-15",
     "images": [
       "places/sisemdal-atelier/01"
-    ]
+    ],
+    "verified": "unverified"
   },
   {
     "slug": "ang-bear-bake",
@@ -369,7 +379,8 @@
     "updatedAt": "2026-04-08",
     "images": [
       "places/ang-bear-bake/01"
-    ]
+    ],
+    "verified": "unverified"
   },
   {
     "slug": "jihwaja",
@@ -411,7 +422,8 @@
     "updatedAt": "2026-04-08",
     "images": [
       "places/jihwaja/01"
-    ]
+    ],
+    "verified": "unverified"
   },
   {
     "slug": "6day-chicken",
@@ -443,7 +455,8 @@
     "images": [
       "places/6day-chicken/01",
       "places/6day-chicken/02"
-    ]
+    ],
+    "verified": "visited"
   },
   {
     "slug": "cucciolo-seoul",
@@ -481,7 +494,8 @@
     "images": [
       "places/cucciolo-seoul/01",
       "places/cucciolo-seoul/02"
-    ]
+    ],
+    "verified": "visited"
   },
   {
     "slug": "237-pizza",
@@ -514,7 +528,8 @@
       "places/237-pizza/01",
       "places/237-pizza/02",
       "places/237-pizza/03"
-    ]
+    ],
+    "verified": "visited"
   },
   {
     "slug": "ssal-tongdak-rice-fried-chicken-dangsan",
@@ -556,7 +571,8 @@
     "updatedAt": "2026-04-08",
     "images": [
       "places/ssal-tongdak-rice-fried-chicken-dangsan/01"
-    ]
+    ],
+    "verified": "visited"
   },
   {
     "slug": "cafe-rebirths",
@@ -595,7 +611,8 @@
       "places/cafe-rebirths/03",
       "places/cafe-rebirths/01",
       "places/cafe-rebirths/02"
-    ]
+    ],
+    "verified": "visited"
   },
   {
     "slug": "minimize-itaewon",
@@ -636,7 +653,8 @@
     "updatedAt": "2026-04-08",
     "images": [
       "places/minimize-itaewon/01"
-    ]
+    ],
+    "verified": "visited"
   },
   {
     "slug": "glunic",
@@ -678,7 +696,8 @@
     "updatedAt": "2026-04-08",
     "images": [
       "places/glunic/01"
-    ]
+    ],
+    "verified": "visited"
   },
   {
     "slug": "monil2-house",
@@ -724,7 +743,8 @@
       "places/monil2-house/05",
       "places/monil2-house/06",
       "places/monil2-house/07"
-    ]
+    ],
+    "verified": "visited"
   },
   {
     "slug": "toujours-dolgama-village",
@@ -768,7 +788,8 @@
     "updatedAt": "2026-04-08",
     "images": [
       "places/toujours-dolgama-village/01"
-    ]
+    ],
+    "verified": "visited"
   },
   {
     "slug": "cafe-pepper",
@@ -813,7 +834,8 @@
       "places/cafe-pepper/02",
       "places/cafe-pepper/03",
       "places/cafe-pepper/04"
-    ]
+    ],
+    "verified": "visited"
   },
   {
     "slug": "grain-seoul",
@@ -856,7 +878,8 @@
       "places/grain-seoul/01",
       "places/grain-seoul/03",
       "places/grain-seoul/04"
-    ]
+    ],
+    "verified": "visited"
   },
   {
     "slug": "sunny-bread",
@@ -892,6 +915,7 @@
     "updatedAt": "2026-04-08",
     "images": [
       "places/sunny-bread/01"
-    ]
+    ],
+    "verified": "visited"
   }
 ]

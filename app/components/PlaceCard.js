@@ -48,8 +48,20 @@ export default function PlaceCard({ place, priority = false }) {
 
   const gfBadge = place.tags?.includes("Dedicated GF") ? (
     <span className="absolute right-3 top-3 z-10 rounded-full bg-emerald-500 px-2 py-0.5 text-[10px] font-bold text-white shadow-sm">
-      <span className="lang-en">✨ Dedicated GF</span>
-      <span className="lang-ko">✨ 전문점</span>
+      <span className="lang-en">Dedicated GF</span>
+      <span className="lang-ko">전문점</span>
+    </span>
+  ) : null;
+
+  const verifiedBadge = place.verified === "visited" ? (
+    <span className="absolute left-3 top-3 z-10 rounded-full bg-white/90 dark:bg-black/70 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:text-emerald-400 shadow-sm">
+      <span className="lang-en">Visited</span>
+      <span className="lang-ko">방문확인</span>
+    </span>
+  ) : place.verified === "called" ? (
+    <span className="absolute left-3 top-3 z-10 rounded-full bg-white/90 dark:bg-black/70 px-2 py-0.5 text-[10px] font-semibold text-blue-700 dark:text-blue-400 shadow-sm">
+      <span className="lang-en">Confirmed</span>
+      <span className="lang-ko">전화확인</span>
     </span>
   ) : null;
 
@@ -81,11 +93,13 @@ export default function PlaceCard({ place, priority = false }) {
           {/* Bottom gradient for readability */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/20 to-transparent dark:from-black/40" />
           {gfBadge}
+          {verifiedBadge}
         </div>
       ) : (
         <div className={`relative flex aspect-[16/9] items-center justify-center bg-gradient-to-br ${gradient.bg}`}>
           <span className="text-5xl opacity-50 transition-transform group-hover:scale-110">{gradient.emoji}</span>
           {gfBadge}
+          {verifiedBadge}
         </div>
       )}
       <div className="flex flex-1 flex-col p-5 sm:p-6">
