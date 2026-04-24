@@ -15,6 +15,28 @@ export default function AboutPage() {
       <div className="mt-8 space-y-6 text-sm leading-relaxed text-fg/80">
         {/* English */}
         <div className="lang-en space-y-4">
+          <p>Hi, I&apos;m Ki.</p>
+
+          <p>
+            I live in Korea with my wife, who has non-celiac gluten sensitivity.
+            We started No Gluten Korea in 2026 after several years of figuring out
+            how to eat together — first in the UK where she was diagnosed, then in
+            the US, and now back home in Korea.
+          </p>
+
+          <p>
+            Learning to cook gluten-free Korean food from scratch took a long time.
+            Finding ingredients we could actually use took longer. Finding restaurants
+            and cafes where she could safely order — that&apos;s an ongoing project,
+            and it&apos;s basically what this site is.
+          </p>
+
+          <p>
+            Every place listed here is one we&apos;ve been to ourselves. I write about
+            what we ate, what we asked the staff, and what they confirmed. When
+            I&apos;m not sure, I say so.
+          </p>
+
           <p>
             <strong className="text-fg">No Gluten Korea</strong> is a community-driven guide
             to gluten-free dining in Korea. We help people with celiac disease,

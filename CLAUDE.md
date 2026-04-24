@@ -19,7 +19,7 @@ data/          → places.json (generated), overrides.json (manual), candidates.
 scripts/       → build_places, import_naver, optimize-images, upload-cloudinary, etc.
 docs/          → PROJECT.md, DECISIONS.md, HARNESS.md, HANDOFF.md, RUNBOOK.md
 public/images/ → NoGlutenSeoul_Assets/ (originals) + places/ (generated webp)
-NoGlutenKorea/ → LLM Wiki (별도 git repo, 자체 CLAUDE.md 하네스). 이 하네스에서 수정 안 함.
+NoGlutenKorea/ → LLM Wiki (별도 git repo, 자체 CLAUDE.md 하네스). 블로그·콘텐츠 교차 작업 시 상위에서 수정 가능, 위키 단독 lint/ingest는 위키 세션 권장.
 ```
 
 ## Build & Verify
