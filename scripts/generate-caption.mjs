@@ -136,29 +136,28 @@ function generateTemplate(place) {
 
 // ── LLM caption ───────────────────────────────────────────
 
+// Load prompt template from external file with {{var}} placeholder substitution.
+// Externalized 2026-05-12 to enable versioned prompt management without code changes.
+async function loadCaptionPrompt(place) {
+  const templatePath = path.join(ROOT, 'prompts', 'caption.md');
+  const template = await fs.readFile(templatePath, 'utf-8');
+  const vars = {
+    name: place.name,
+    nameEn: place.nameEn || '',
+    type: place.type,
+    location: place.location || place.address,
+    note_ko: place.note_ko || '',
+    note: place.note || '',
+    tags: (place.tags || []).join(', '),
+  };
+  return template.replace(/\{\{(\w+)\}\}/g, (_, key) => vars[key] ?? '');
+}
+
 async function generateWithLLM(place) {
   const Anthropic = (await import('@anthropic-ai/sdk')).default;
   const client = new Anthropic();
 
-  const prompt = `Generate an Instagram caption for this gluten-free restaurant/cafe in Seoul, Korea.
-
-Place data:
-- Name: ${place.name} (${place.nameEn || ''})
-- Type: ${place.type}
-- Location: ${place.location || place.address}
-- Note (KO): ${place.note_ko || ''}
-- Note (EN): ${place.note || ''}
-- Tags: ${(place.tags || []).join(', ')}
-
-Requirements:
-- Bilingual: English first, then Korean (target audience is foreigners in Korea)
-- English section: 2-3 lines, informative and helpful for expats/tourists
-- Korean section: 2-3 lines, warm and inviting tone
-- Include relevant emojis (not excessive)
-- End with hashtags: #glutenfree #glutenfreekorea #글루텐프리 #셀리악 #noglutenkorea + relevant tags
-- Keep total under 2200 characters (Instagram limit)
-- Do NOT include image descriptions
-- Do NOT use markdown formatting`;
+  const prompt = await loadCaptionPrompt(place);
 
   const response = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
