@@ -80,10 +80,13 @@ def main():
     import time as _time
     cache_bust = int(_time.time())
     cover_url = f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/c_fill,w_1080,h_1080,q_90/v{cache_bust}/places/{args.slug}/cover"
-    urls = [cover_url] + [
-        f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/c_fill,w_1080,h_1080,q_90/{img}"
-        for img in images
-    ]
+    urls = [cover_url]
+    for img in images:
+        # Menu images (pre-padded to 1080x1080) — no crop transformation
+        if "menu" in img:
+            urls.append(f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/w_1080,h_1080,q_90/{img}")
+        else:
+            urls.append(f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/c_fill,w_1080,h_1080,q_90/{img}")
 
     print(f"Place: {place['name']} ({args.slug})")
     print(f"Images: {len(urls)}")
