@@ -81,6 +81,9 @@ data/instagram-covers/
 # Health check reports (generated)
 data/healthcheck.json
 
+# HACCP national GF-product dump (11MB, regenerate via scripts/fetch-gf-products.mjs)
+data/gf-products.json
+
 # Source photos (keep only optimized webp)
 public/images/places/**/*.jpg
 public/images/places/**/*.jpeg

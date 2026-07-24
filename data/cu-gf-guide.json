@@ -1,0 +1,2122 @@
+{
+  "fetchedAt": "2026-04-16T10:14:55.735Z",
+  "total": 211,
+  "stats": {
+    "possible": 16,
+    "check": 75,
+    "risky": 39,
+    "gluten": 81
+  },
+  "products": [
+    {
+      "name": "샐)오리지널닭가슴살샐러",
+      "price": "4,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809148599009.jpg",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "샐)허니리코타치즈샐러드",
+      "price": "4,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809148599016.png",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "샐)뉴에그가먼저닭샐러드",
+      "price": "3,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068916737.jpg",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "샐)뉴치킨찹찹샐러드",
+      "price": "3,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068916720.jpg",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "주)주먹왕뉴참치마요",
+      "price": "2,200",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809453268157.png",
+      "cat": "onigiri",
+      "catKo": "주먹밥",
+      "catEn": "Rice Ball",
+      "gfLevel": "possible",
+      "reason": "참치마요"
+    },
+    {
+      "name": "샐)골든텐더치킨보울",
+      "price": "6,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068403374.jpg",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "김)불고기김밥",
+      "price": "3,400",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771031567.png",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "risky",
+      "reason": "불고기"
+    },
+    {
+      "name": "김)제육김밥",
+      "price": "3,400",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271900144.png",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "risky",
+      "reason": "제육"
+    },
+    {
+      "name": "햄)A1빅모짜불고기버거",
+      "price": "3,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068927337.PNG",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "샌)파마산치킨햄샌드",
+      "price": "3,000",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068927498.jpg",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "주)전주비빔주먹볼",
+      "price": "2,300",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800275320733.jpg",
+      "cat": "onigiri",
+      "catKo": "주먹밥",
+      "catEn": "Rice Ball",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "샌)크래프트치즈딸기샌드",
+      "price": "2,700",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068930764.jpg",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "샌)뉴햄에그치즈샌드",
+      "price": "3,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800279673217.png",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "샐)뉴닭가슴살단호박",
+      "price": "4,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809954750977.jpg",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "샐)블랙페퍼닭가슴살",
+      "price": "4,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809954751011.jpg",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "샐)크리미맛살샐러드",
+      "price": "4,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809954751028.jpg",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "햄)더블불고기치즈버거",
+      "price": "3,000",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068932003.jpg",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "삼)치즈닭갈비볶음맛",
+      "price": "1,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271902513.png",
+      "cat": "triangle",
+      "catKo": "삼각김밥",
+      "catEn": "Triangle Kimbap",
+      "gfLevel": "risky",
+      "reason": "갈비"
+    },
+    {
+      "name": "햄)3단맥스숯불바베큐",
+      "price": "3,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068933475.jpg",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "샐)훈제닭가슴살샐러드",
+      "price": "4,100",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809954751363.jpg",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "햄)3단맥스숯불갈릭",
+      "price": "3,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068933697.jpg",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "샌)아삭햄감자맛살",
+      "price": "3,000",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800279678199.jpg",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "도)한끼만족뉴함박치킨",
+      "price": "5,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771034438.png",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "도)백종원완전한판정식",
+      "price": "5,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800279678298.png",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "도)뉴백종원스페셜한판",
+      "price": "5,200",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800279678335.png",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "도)한끼만족뉴7첩한상",
+      "price": "5,700",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800279678571.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "도)백종원뉴고기3배한판",
+      "price": "5,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800279678687.png",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "도)급식대가뉴정석도시락",
+      "price": "5,700",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771034643.png",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "샌)무화과크림치즈샌드",
+      "price": "3,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800279678960.jpg",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "도)압도적뉴한돈김치제육",
+      "price": "5,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800279679004.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "risky",
+      "reason": "제육"
+    },
+    {
+      "name": "도)압도적뉴한돈간장불백",
+      "price": "5,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771034766.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "risky",
+      "reason": "간장"
+    },
+    {
+      "name": "김)명작김치참치유부",
+      "price": "4,300",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336390040.png",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "도)한끼만족뉴최애11첩",
+      "price": "6,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809196620373.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "도)리얼모짜치즈돈까스",
+      "price": "7,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809655892303_1.png",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "gluten",
+      "reason": "돈까스"
+    },
+    {
+      "name": "주)하와이안스팸무스비",
+      "price": "2,000",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336391597.jpg",
+      "cat": "onigiri",
+      "catKo": "주먹밥",
+      "catEn": "Rice Ball",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "삼)참치전주비빔더블",
+      "price": "2,200",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336391979.png",
+      "cat": "triangle",
+      "catKo": "삼각김밥",
+      "catEn": "Triangle Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "빅삼)김치볶음밥참치",
+      "price": "1,700",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336392099.jpg",
+      "cat": "triangle",
+      "catKo": "빅삼각김밥",
+      "catEn": "Big Triangle Kimbap",
+      "gfLevel": "risky",
+      "reason": "볶음밥"
+    },
+    {
+      "name": "빅삼)베이컨참치마요",
+      "price": "1,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336392136.png",
+      "cat": "triangle",
+      "catKo": "빅삼각김밥",
+      "catEn": "Big Triangle Kimbap",
+      "gfLevel": "possible",
+      "reason": "참치마요"
+    },
+    {
+      "name": "주)뉴통리챔참치마요밥바",
+      "price": "2,100",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336392259.png",
+      "cat": "onigiri",
+      "catKo": "주먹밥",
+      "catEn": "Rice Ball",
+      "gfLevel": "possible",
+      "reason": "참치마요"
+    },
+    {
+      "name": "삼)치킨마요삼각",
+      "price": "1,400",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771035527.png",
+      "cat": "triangle",
+      "catKo": "삼각김밥",
+      "catEn": "Triangle Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "삼)리챔마요김치볶음밥",
+      "price": "1,400",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771035602.png",
+      "cat": "triangle",
+      "catKo": "삼각김밥",
+      "catEn": "Triangle Kimbap",
+      "gfLevel": "risky",
+      "reason": "볶음밥"
+    },
+    {
+      "name": "삼)김치볶음밥참치마요",
+      "price": "1,400",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271904432_1.png",
+      "cat": "triangle",
+      "catKo": "삼각김밥",
+      "catEn": "Triangle Kimbap",
+      "gfLevel": "risky",
+      "reason": "볶음밥"
+    },
+    {
+      "name": "면)정성치즈크림파스타",
+      "price": "5,200",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336392594.jpg",
+      "cat": "noodle",
+      "catKo": "면류",
+      "catEn": "Noodles",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "도)한돈제육정식",
+      "price": "5,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809196620533.png",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "risky",
+      "reason": "제육"
+    },
+    {
+      "name": "도)한돈불백정식",
+      "price": "5,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271904715.png",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "김)참치김치볶음김밥",
+      "price": "3,300",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336392495.png",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "김)뉴전주비빔불고기김밥",
+      "price": "3,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771304012.jpg",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "risky",
+      "reason": "불고기"
+    },
+    {
+      "name": "도)오늘의9첩한상",
+      "price": "5,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336392778.png",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "도)분식한상만두김말이",
+      "price": "5,000",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336392990.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "gluten",
+      "reason": "만두"
+    },
+    {
+      "name": "샐)시그니처콥샐러드",
+      "price": "6,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068923827.jpg",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "도)치즈폭탄직화불닭",
+      "price": "6,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771035763.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "도)베어스망곰닭강정파티",
+      "price": "7,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336393539.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "샌)스스스우유샌드",
+      "price": "3,700",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809895793620.png",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "햄)더블불고기데리야끼",
+      "price": "3,000",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068936155.jpg",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "샌)뀨뀨커스타드샌드",
+      "price": "3,700",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809895793514.jpg",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "샐)매콤치킨참치마요",
+      "price": "3,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068938142.jpg",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "possible",
+      "reason": "참치마요"
+    },
+    {
+      "name": "겟모닝)스팸청양꼬마김밥",
+      "price": "2,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336393898.png",
+      "cat": "morning",
+      "catKo": "겟모닝",
+      "catEn": "Get Morning",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "샐)강낭콩훈제오리온샐",
+      "price": "6,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800247190364.jpg",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "겟모닝)통스팸꼬마김밥",
+      "price": "2,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771304173.png",
+      "cat": "morning",
+      "catKo": "겟모닝",
+      "catEn": "Get Morning",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "겟모닝)햄에그머핀",
+      "price": "2,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068939101.jpg",
+      "cat": "morning",
+      "catKo": "겟모닝",
+      "catEn": "Get Morning",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "도)스누피떠먹는페퍼로니",
+      "price": "4,700",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271905071.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "샐)귀리보리쉬림프온샐",
+      "price": "6,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800247190449.jpg",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "겟모닝)리코타치즈햄샌드",
+      "price": "2,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809895793026.jpg",
+      "cat": "morning",
+      "catKo": "겟모닝",
+      "catEn": "Get Morning",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "삼)참치소고기고추장더블",
+      "price": "2,300",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271903473.jpg",
+      "cat": "triangle",
+      "catKo": "삼각김밥",
+      "catEn": "Triangle Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "삼)참치김치볶음삼각",
+      "price": "1,300",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809453269505.jpg",
+      "cat": "triangle",
+      "catKo": "삼각김밥",
+      "catEn": "Triangle Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "빅삼)참치마요삼각",
+      "price": "1,700",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800279675723_1.png",
+      "cat": "triangle",
+      "catKo": "빅삼각김밥",
+      "catEn": "Big Triangle Kimbap",
+      "gfLevel": "possible",
+      "reason": "참치마요"
+    },
+    {
+      "name": "삼)소고기고추장삼각",
+      "price": "1,200",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336391931.png",
+      "cat": "triangle",
+      "catKo": "삼각김밥",
+      "catEn": "Triangle Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "삼)참치마요삼각",
+      "price": "1,200",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800279675761_1.png",
+      "cat": "triangle",
+      "catKo": "삼각김밥",
+      "catEn": "Triangle Kimbap",
+      "gfLevel": "possible",
+      "reason": "참치마요"
+    },
+    {
+      "name": "삼)참치마요닭갈비더블",
+      "price": "2,300",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771034476.jpg",
+      "cat": "triangle",
+      "catKo": "삼각김밥",
+      "catEn": "Triangle Kimbap",
+      "gfLevel": "risky",
+      "reason": "갈비"
+    },
+    {
+      "name": "빅삼)치킨마요삼각",
+      "price": "1,700",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336392051.png",
+      "cat": "triangle",
+      "catKo": "빅삼각김밥",
+      "catEn": "Big Triangle Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "빅삼)바싹제육삼각",
+      "price": "1,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800279676348.png",
+      "cat": "triangle",
+      "catKo": "빅삼각김밥",
+      "catEn": "Big Triangle Kimbap",
+      "gfLevel": "risky",
+      "reason": "제육"
+    },
+    {
+      "name": "빅삼)데리야끼치킨삼각",
+      "price": "1,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800279676904.png",
+      "cat": "triangle",
+      "catKo": "빅삼각김밥",
+      "catEn": "Big Triangle Kimbap",
+      "gfLevel": "risky",
+      "reason": "데리야끼"
+    },
+    {
+      "name": "주)베이컨콘치즈볼주먹밥",
+      "price": "2,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271904951.png",
+      "cat": "onigiri",
+      "catKo": "주먹밥",
+      "catEn": "Rice Ball",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "김)계란초밥김밥",
+      "price": "3,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771303329.png",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "possible",
+      "reason": "계란"
+    },
+    {
+      "name": "김)김밥의기본",
+      "price": "3,300",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800279671893.png",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "김)스팸김치볶음김밥",
+      "price": "3,200",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271904593.png",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "김)김치볶음참치마요김밥",
+      "price": "3,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800279679066.png",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "possible",
+      "reason": "참치마요"
+    },
+    {
+      "name": "빅삼)정통돈까스삼각",
+      "price": "1,700",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336390644.png",
+      "cat": "triangle",
+      "catKo": "빅삼각김밥",
+      "catEn": "Big Triangle Kimbap",
+      "gfLevel": "gluten",
+      "reason": "돈까스"
+    },
+    {
+      "name": "면)알리오올리오스파게티",
+      "price": "4,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800281969773.jpg",
+      "cat": "noodle",
+      "catKo": "면류",
+      "catEn": "Noodles",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "도)밥도둑청양간장불백",
+      "price": "5,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271905156.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "risky",
+      "reason": "간장"
+    },
+    {
+      "name": "샌)햄치즈샌드",
+      "price": "3,700",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271905354.png",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "도)맵달양념닭강정",
+      "price": "5,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800281969919.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "김)밥반찬반계란김밥",
+      "price": "3,200",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336394093.jpg",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "possible",
+      "reason": "계란"
+    },
+    {
+      "name": "김)밥도둑묵은지유부",
+      "price": "4,200",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336394130.jpg",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "빅삼)밥도둑묵은지참치",
+      "price": "1,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336394239.jpg",
+      "cat": "triangle",
+      "catKo": "빅삼각김밥",
+      "catEn": "Big Triangle Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "도)매콤닭강정덮밥",
+      "price": "4,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336394451.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "햄)더블치즈불고기버거",
+      "price": "3,000",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336394567.jpg",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "도)밥반찬반제육볶음",
+      "price": "4,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771036043_1.png",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "risky",
+      "reason": "제육"
+    },
+    {
+      "name": "햄)넓적다리살치킨버거",
+      "price": "4,300",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809692959458.jpg",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "샌)햄치즈토마토샌드",
+      "price": "4,200",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809895793149.png",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "면)토마토치즈스파게티",
+      "price": "4,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800281969810.jpg",
+      "cat": "noodle",
+      "catKo": "면류",
+      "catEn": "Noodles",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "샌)오리지널계란샌드",
+      "price": "2,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336394529.png",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "샐)제주도야지샐러드",
+      "price": "4,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068939026.jpg",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "샐)제주한라봉샐러드",
+      "price": "4,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068939033.jpg",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "빅삼)밥도둑반숙계란장",
+      "price": "1,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771035961.jpg",
+      "cat": "triangle",
+      "catKo": "빅삼각김밥",
+      "catEn": "Big Triangle Kimbap",
+      "gfLevel": "possible",
+      "reason": "계란"
+    },
+    {
+      "name": "샌)대만식연유크림샌드",
+      "price": "3,000",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809895793118.png",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "도)함박스테이크덮밥",
+      "price": "4,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271905118.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "김)밥도둑묵은지참치",
+      "price": "3,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271905231.jpg",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "김)밥도둑명란마요유부",
+      "price": "4,300",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271905279.jpg",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "possible",
+      "reason": "명란"
+    },
+    {
+      "name": "샌)이건가요샌드",
+      "price": "3,000",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271905316.png",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "도)마늘간장닭강정",
+      "price": "5,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800281969933.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "risky",
+      "reason": "간장"
+    },
+    {
+      "name": "삼)전주비빔불고기삼각",
+      "price": "1,400",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336394277.jpg",
+      "cat": "triangle",
+      "catKo": "삼각김밥",
+      "catEn": "Triangle Kimbap",
+      "gfLevel": "risky",
+      "reason": "불고기"
+    },
+    {
+      "name": "빅삼)전주비빔불고기삼각",
+      "price": "1,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336394314.jpg",
+      "cat": "triangle",
+      "catKo": "빅삼각김밥",
+      "catEn": "Big Triangle Kimbap",
+      "gfLevel": "risky",
+      "reason": "불고기"
+    },
+    {
+      "name": "도)밥반찬반돈까스",
+      "price": "5,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336394352_1.png",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "gluten",
+      "reason": "돈까스"
+    },
+    {
+      "name": "빅삼)초밥크랩샐러드삼각",
+      "price": "1,700",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771036005.jpg",
+      "cat": "triangle",
+      "catKo": "빅삼각김밥",
+      "catEn": "Big Triangle Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "햄)케요네즈불고기버거",
+      "price": "3,000",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771304210.jpg",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "햄)트리플3단버거",
+      "price": "4,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809692959632.jpg",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "빅삼)스팸마요삼각",
+      "price": "1,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800279675808.png",
+      "cat": "triangle",
+      "catKo": "빅삼각김밥",
+      "catEn": "Big Triangle Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "샌)급식대가저당치킨샌드",
+      "price": "3,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271905514.jpg",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "면)콘버터야끼소바",
+      "price": "4,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800281969872.jpg",
+      "cat": "noodle",
+      "catKo": "면류",
+      "catEn": "Noodles",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "도)밥도둑낙지젓돼지짜글",
+      "price": "5,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336394680.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "빅삼)밥도둑멸추햄삼각",
+      "price": "1,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771036128.jpg",
+      "cat": "triangle",
+      "catKo": "빅삼각김밥",
+      "catEn": "Big Triangle Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "삼)곱창김갓참치마요",
+      "price": "1,400",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771036166.jpg",
+      "cat": "triangle",
+      "catKo": "삼각김밥",
+      "catEn": "Triangle Kimbap",
+      "gfLevel": "possible",
+      "reason": "참치마요"
+    },
+    {
+      "name": "햄)통모짜치킨버거",
+      "price": "4,300",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771304296.png",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "김)급식대가김치볶음리챔",
+      "price": "3,300",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771304371.jpg",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "도)밥반찬반오징어제육",
+      "price": "5,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809196620854.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "risky",
+      "reason": "제육"
+    },
+    {
+      "name": "햄)아메리칸더블치폴레",
+      "price": "4,400",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809692959687.jpg",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "샌)대만식대파크림샌드",
+      "price": "3,200",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809895793088.jpg",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "빅삼)청양참치마요삼각",
+      "price": "1,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336394789.jpg",
+      "cat": "triangle",
+      "catKo": "빅삼각김밥",
+      "catEn": "Big Triangle Kimbap",
+      "gfLevel": "possible",
+      "reason": "참치마요"
+    },
+    {
+      "name": "샌)계란참치샐러드반반",
+      "price": "2,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336395342.jpg",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "샐)치아바타크랜베리샐",
+      "price": "4,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068939453.jpg",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "주)밥반찬반떡갈비햄밥바",
+      "price": "3,200",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771036203.jpg",
+      "cat": "onigiri",
+      "catKo": "주먹밥",
+      "catEn": "Rice Ball",
+      "gfLevel": "risky",
+      "reason": "갈비"
+    },
+    {
+      "name": "김)밥도둑청양멸치김밥",
+      "price": "3,300",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771304258.jpg",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "도)햄청양덮밥득템",
+      "price": "3,300",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809196620892.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "김)밥도둑묵은지불고기",
+      "price": "3,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271905392.png",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "risky",
+      "reason": "불고기"
+    },
+    {
+      "name": "샌)호밀BLT샌드",
+      "price": "3,700",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271905552.jpg",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "면)베이컨크림스파게티",
+      "price": "4,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800281969957.jpg",
+      "cat": "noodle",
+      "catKo": "면류",
+      "catEn": "Noodles",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "햄)오리지널비프버거",
+      "price": "3,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800361440147.jpg",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "도)치킨가라아게덮밥",
+      "price": "4,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771036081.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "도)밥반찬반함박스테이크",
+      "price": "5,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771036326_1.png",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "햄)더블치즈함박버거",
+      "price": "4,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771304333.jpg",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "빅삼)급식대가햄김치볶음",
+      "price": "1,700",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336394826.png",
+      "cat": "triangle",
+      "catKo": "빅삼각김밥",
+      "catEn": "Big Triangle Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "샐)오일파스타샐러드",
+      "price": "5,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800247190456.jpg",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "gluten",
+      "reason": "파스타"
+    },
+    {
+      "name": "샐)참깨메밀면샐러드",
+      "price": "5,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800247190463.jpg",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "샌)치폴레치킨치즈샌드",
+      "price": "4,000",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271905590.jpg",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "도)밥도둑계란장김치제육",
+      "price": "5,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271905675.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "risky",
+      "reason": "제육"
+    },
+    {
+      "name": "김)참치김밥",
+      "price": "3,100",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336395403.jpg",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "김)참치마요유부초밥",
+      "price": "4,200",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336395663.jpg",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "possible",
+      "reason": "참치마요"
+    },
+    {
+      "name": "빅삼)밥도둑명란마요삼각",
+      "price": "1,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771036241.jpg",
+      "cat": "triangle",
+      "catKo": "빅삼각김밥",
+      "catEn": "Big Triangle Kimbap",
+      "gfLevel": "possible",
+      "reason": "명란"
+    },
+    {
+      "name": "삼)매콤간장어묵삼각득템",
+      "price": "1,100",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771036289.jpg",
+      "cat": "triangle",
+      "catKo": "삼각김밥",
+      "catEn": "Triangle Kimbap",
+      "gfLevel": "risky",
+      "reason": "간장"
+    },
+    {
+      "name": "도)밥반찬반간장불백",
+      "price": "4,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771036401.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "risky",
+      "reason": "간장"
+    },
+    {
+      "name": "햄)어니언베이컨버거",
+      "price": "3,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771304418.jpg",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "빅삼)밥도둑고들빼기낙지",
+      "price": "1,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271905477.jpg",
+      "cat": "triangle",
+      "catKo": "빅삼각김밥",
+      "catEn": "Big Triangle Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "도)마늘간장닭강정덮밥",
+      "price": "4,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271905637.png",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "risky",
+      "reason": "간장"
+    },
+    {
+      "name": "삼)곱창김닭갈비삼각",
+      "price": "1,400",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336394949.jpg",
+      "cat": "triangle",
+      "catKo": "삼각김밥",
+      "catEn": "Triangle Kimbap",
+      "gfLevel": "risky",
+      "reason": "갈비"
+    },
+    {
+      "name": "샌)호밀햄반숙란샌드",
+      "price": "4,000",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336395502.jpg",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "도)불고기나물비빔밥",
+      "price": "5,000",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336395762.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "risky",
+      "reason": "불고기"
+    },
+    {
+      "name": "김)전주비빔밥불고기김밥",
+      "price": "3,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809196620977.jpg",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "risky",
+      "reason": "불고기"
+    },
+    {
+      "name": "삼)고추장삼겹삼각",
+      "price": "1,400",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336394864.jpg",
+      "cat": "triangle",
+      "catKo": "삼각김밥",
+      "catEn": "Triangle Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "빅삼)고추참치삼각",
+      "price": "1,700",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336394901.jpg",
+      "cat": "triangle",
+      "catKo": "빅삼각김밥",
+      "catEn": "Big Triangle Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "김)닭강정유부세트",
+      "price": "6,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336395465.jpg",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "샌)계란딸기잼샌드",
+      "price": "3,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336395540.jpg",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "햄)통새우치즈버거",
+      "price": "4,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336395588.jpg",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "도)밥반찬반치킨스테이크",
+      "price": "5,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336395809.png",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "도)마늘닭가슴살구이덮밥",
+      "price": "4,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771036449.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "김)밥도둑묵은지제육",
+      "price": "3,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809196620939.jpg",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "risky",
+      "reason": "제육"
+    },
+    {
+      "name": "샌)대만식딸기크림샌드",
+      "price": "3,200",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809895793057.jpg",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "샌)계란딸기잼햄치즈반반",
+      "price": "3,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271905712.png",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "빅삼)간장우삼겹삼각",
+      "price": "1,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336396028.jpg",
+      "cat": "triangle",
+      "catKo": "빅삼각김밥",
+      "catEn": "Big Triangle Kimbap",
+      "gfLevel": "risky",
+      "reason": "간장"
+    },
+    {
+      "name": "면)텔레토비뽀모도로",
+      "price": "5,300",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771036364.jpg",
+      "cat": "noodle",
+      "catKo": "면류",
+      "catEn": "Noodles",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "햄)아메리칸클래식버거",
+      "price": "3,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771304456.jpg",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "도)텔레토비4색정식",
+      "price": "5,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809196620779.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "김)소불고기마요듬뿍",
+      "price": "3,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809196621035.jpg",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "risky",
+      "reason": "불고기"
+    },
+    {
+      "name": "핫)트리플핫도그팩",
+      "price": "9,300",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809692959786.jpg",
+      "cat": "other",
+      "catKo": "기타",
+      "catEn": "Other",
+      "gfLevel": "gluten",
+      "reason": "핫도그"
+    },
+    {
+      "name": "샌)호밀햄치즈샌드",
+      "price": "3,300",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336395847.jpg",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "핫)K케요네즈핫도그",
+      "price": "3,700",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336395885.jpg",
+      "cat": "other",
+      "catKo": "기타",
+      "catEn": "Other",
+      "gfLevel": "gluten",
+      "reason": "핫도그"
+    },
+    {
+      "name": "김)오리지널김밥득템",
+      "price": "2,200",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271905194.jpg",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "햄)스모키포크새우버거",
+      "price": "4,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336395922.jpg",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "샌)계란블루베리잼샌드",
+      "price": "3,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336395984.jpg",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "도)탕수육멘보샤",
+      "price": "4,990",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809655892402.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "gluten",
+      "reason": "멘보샤"
+    },
+    {
+      "name": "도)윙봉멘보샤",
+      "price": "5,990",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809655892426.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "gluten",
+      "reason": "멘보샤"
+    },
+    {
+      "name": "김)통돈까스김밥",
+      "price": "3,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336396189.jpg",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "gluten",
+      "reason": "돈까스"
+    },
+    {
+      "name": "핫)K치즈제육핫도그",
+      "price": "4,300",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336396271.jpg",
+      "cat": "other",
+      "catKo": "기타",
+      "catEn": "Other",
+      "gfLevel": "gluten",
+      "reason": "핫도그"
+    },
+    {
+      "name": "삼)떡갈비전주비빔삼각",
+      "price": "1,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336396332.jpg",
+      "cat": "triangle",
+      "catKo": "삼각김밥",
+      "catEn": "Triangle Kimbap",
+      "gfLevel": "risky",
+      "reason": "갈비"
+    },
+    {
+      "name": "면)나폴리탄스파게티",
+      "price": "4,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800348940332.jpg",
+      "cat": "noodle",
+      "catKo": "면류",
+      "catEn": "Noodles",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "샌)스스스모찌샌드",
+      "price": "4,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809895792876.jpg",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "김)크랩마요유부초밥",
+      "price": "4,200",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336396233.jpg",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "핫)아메리칸클래식핫도그",
+      "price": "3,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068940350.jpg",
+      "cat": "other",
+      "catKo": "기타",
+      "catEn": "Other",
+      "gfLevel": "gluten",
+      "reason": "핫도그"
+    },
+    {
+      "name": "햄)빅더블불고기클래식",
+      "price": "3,000",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068940374.jpg",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "도)쌈추비빔밥",
+      "price": "4,400",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771036487.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "김)치즈참치김밥",
+      "price": "3,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771304517.jpg",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "샐)포크두부면샐러드",
+      "price": "6,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800247190500.jpg",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "겟모닝)가쓰오어묵꼬마",
+      "price": "3,300",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336396462.jpg",
+      "cat": "morning",
+      "catKo": "겟모닝",
+      "catEn": "Get Morning",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "면)투움바파스타",
+      "price": "4,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800348940455.jpg",
+      "cat": "noodle",
+      "catKo": "면류",
+      "catEn": "Noodles",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "겟모닝)베이컨머핀",
+      "price": "3,000",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068939088.jpg",
+      "cat": "morning",
+      "catKo": "겟모닝",
+      "catEn": "Get Morning",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "김)크랩초밥김밥",
+      "price": "3,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771304630.jpg",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "삼)장조림계란삼각",
+      "price": "1,400",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336396608.jpg",
+      "cat": "triangle",
+      "catKo": "삼각김밥",
+      "catEn": "Triangle Kimbap",
+      "gfLevel": "risky",
+      "reason": "장조림"
+    },
+    {
+      "name": "빅삼)떡갈비전주비빔빅",
+      "price": "1,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336396677.jpg",
+      "cat": "triangle",
+      "catKo": "빅삼각김밥",
+      "catEn": "Big Triangle Kimbap",
+      "gfLevel": "risky",
+      "reason": "갈비"
+    },
+    {
+      "name": "햄)타르타르새우버거",
+      "price": "4,400",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771304555.jpg",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "겟모닝)햄청양한입꼬마",
+      "price": "3,300",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771304593.jpg",
+      "cat": "morning",
+      "catKo": "겟모닝",
+      "catEn": "Get Morning",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "도)LA갈비특선도시락",
+      "price": "8,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809196621172.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "risky",
+      "reason": "갈비"
+    },
+    {
+      "name": "샌)스스스바나나크림샌드",
+      "price": "4,200",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809895792838.jpg",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "샌)햄감자샐러드샌드",
+      "price": "2,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336396523.jpg",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "삼)게장마요삼각",
+      "price": "1,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336396721.jpg",
+      "cat": "triangle",
+      "catKo": "삼각김밥",
+      "catEn": "Triangle Kimbap",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "샌)스크램블햄에그샌드",
+      "price": "2,700",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068940619.jpg",
+      "cat": "sandwich",
+      "catKo": "샌드위치",
+      "catEn": "Sandwich",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "샐)상하더블치즈바질치킨",
+      "price": "4,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068940770.jpg",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "샐)상하맥앤치즈치킨텐더",
+      "price": "4,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068940787.jpg",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "도)고독한블랙정식짜장밥",
+      "price": "5,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771036555.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "risky",
+      "reason": "짜장"
+    },
+    {
+      "name": "김)간장치킨김밥",
+      "price": "3,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8809196621226.jpg",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "risky",
+      "reason": "간장"
+    },
+    {
+      "name": "햄)어니언불고기버거",
+      "price": "3,400",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336396561.jpg",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "샐)토마토파스타샐러드",
+      "price": "5,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800247190548.jpg",
+      "cat": "salad",
+      "catKo": "샐러드",
+      "catEn": "Salad",
+      "gfLevel": "gluten",
+      "reason": "파스타"
+    },
+    {
+      "name": "삼)김치제육삼각",
+      "price": "1,400",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336396776.jpg",
+      "cat": "triangle",
+      "catKo": "삼각김밥",
+      "catEn": "Triangle Kimbap",
+      "gfLevel": "risky",
+      "reason": "제육"
+    },
+    {
+      "name": "빅삼)매콤돈까스빅삼각",
+      "price": "1,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336396820.jpg",
+      "cat": "triangle",
+      "catKo": "빅삼각김밥",
+      "catEn": "Big Triangle Kimbap",
+      "gfLevel": "gluten",
+      "reason": "돈까스"
+    },
+    {
+      "name": "도)제육&간장불백더블",
+      "price": "5,700",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336397414.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "risky",
+      "reason": "제육"
+    },
+    {
+      "name": "햄)A1빅모짜직화버거",
+      "price": "3,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801068940633.jpg",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "겟모닝)충무꼬마김밥",
+      "price": "3,600",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8801771304678.jpg",
+      "cat": "morning",
+      "catKo": "겟모닝",
+      "catEn": "Get Morning",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "도)함박&닭강정더블정식",
+      "price": "5,800",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800271905859.jpg",
+      "cat": "dosirak",
+      "catKo": "도시락",
+      "catEn": "Lunch Box",
+      "gfLevel": "check",
+      "reason": "unknown"
+    },
+    {
+      "name": "삼)카레햄마요삼각",
+      "price": "1,400",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336396875.jpg",
+      "cat": "triangle",
+      "catKo": "삼각김밥",
+      "catEn": "Triangle Kimbap",
+      "gfLevel": "gluten",
+      "reason": "카레"
+    },
+    {
+      "name": "김)한입쏙스팸계란김밥",
+      "price": "3,300",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336397100.jpg",
+      "cat": "kimbap",
+      "catKo": "김밥",
+      "catEn": "Kimbap",
+      "gfLevel": "possible",
+      "reason": "계란"
+    },
+    {
+      "name": "면)얼큰해장파스타",
+      "price": "4,900",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800348941117.jpg",
+      "cat": "noodle",
+      "catKo": "면류",
+      "catEn": "Noodles",
+      "gfLevel": "gluten",
+      "reason": "category"
+    },
+    {
+      "name": "햄)치즈비프버거",
+      "price": "3,500",
+      "image": "https://tqklhszfkvzk6518638.edge.naverncp.com/product/8800336397223.jpg",
+      "cat": "burger",
+      "catKo": "햄버거",
+      "catEn": "Burger",
+      "gfLevel": "gluten",
+      "reason": "category"
+    }
+  ]
+}
