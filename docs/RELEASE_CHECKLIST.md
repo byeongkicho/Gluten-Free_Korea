@@ -29,4 +29,5 @@ Quick pre-deploy checks for Gluten-Free Korea.
 
 ## Deploy Notes
 - Full clean redeploy when sitemap/base URL looks stale:
-  - `rm -rf .next && npm run pages:build && npx wrangler pages deploy .vercel/output/static --project-name gluten-free-korea`
+  - `rm -rf .next && npm run pages:build && npx wrangler pages deploy .vercel/output/static --project-name noglutenkorea`
+  - Note: normal deploys are automatic — push to `main` triggers `.github/workflows/deploy.yml`.

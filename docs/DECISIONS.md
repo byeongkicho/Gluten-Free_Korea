@@ -113,3 +113,32 @@ Rule: never edit old entries; add a new entry to supersede prior decisions.
 - Supersedes: CODEX_RUN.md (이력 보존, SUPERSEDED 표시)
 - Decision: CODEX_RUN.md의 14개 태스크 시스템을 `docs/TASKS.md` (HARNESS 포맷)으로 이관. 13/14 완료 아카이브, TASK-12(CopyButton 통합)만 미완으로 이관. 각 태스크에 Evaluator 체크리스트 추가.
 - Rationale: CODEX_RUN.md는 Codex 전용이었으나, HARNESS 체계는 Claude Code/Codex 모두 사용 가능하며 Evaluator 단계가 추가되어 품질 게이트가 강화됨.
+
+## 2026-07-24 — Domain migrated to noglutenkorea.com
+- Status: accepted
+- Supersedes: all earlier `gluten-free-korea.pages.dev` references (incl. 2026-03-10 SITE_URL fallback entry)
+- Decision: Canonical domain is now `noglutenkorea.com` (custom domain on CF Pages). The `gluten-free-korea.pages.dev` URL is obsolete.
+- Rationale: Branded custom domain for SEO and E-E-A-T; matches @noglutenkorea Instagram and contact@noglutenkorea.com email.
+
+## 2026-07-24 — Cloudflare Pages project renamed to noglutenkorea
+- Status: accepted
+- Supersedes: "Project name: `gluten-free-korea`" (2026-03-10 wrangler CLI entry)
+- Decision: CF Pages project name is now `noglutenkorea`. Deploy target: `npx wrangler pages deploy .vercel/output/static --project-name noglutenkorea`.
+- Rationale: Aligns project name with the canonical domain and brand.
+
+## 2026-07-24 — Place count correction (21 → 24); Dedicated GF = 3
+- Status: accepted
+- Supersedes: "Place count correction (18 → 21)" (2026-04-06) and all earlier 11-place counts
+- Decision: `data/places.json` now contains 24 verified places. Dedicated GF places = 3: `237-pizza`, `cafe-rebirths`, `monil2-house` (previously stated as 4).
+- Rationale: Documentation audit against current `data/places.json` found stale count (21) and stale Dedicated GF list (4).
+
+## 2026-07-24 — CI/CD now exists (GitHub Actions)
+- Status: accepted
+- Supersedes: "No GitHub Actions CI/CD (manual wrangler deploy)" known gap in PROJECT.md
+- Decision: `.github/workflows/deploy.yml` auto-deploys to Cloudflare Pages on push to `main`. Manual `npx wrangler pages deploy` is now a fallback, not the primary path.
+- Rationale: CI/CD target from the 2026-03-12 TASKS backlog is now implemented; removes manual-deploy toil.
+
+## 2026-07-24 — SSOT reorganization: operations vault vs. docs/
+- Status: accepted
+- Decision: `NoGlutenKorea/operations/` is the operating SSOT (planning, content, run state); `docs/` is technical reference. `docs/CODEX_RUN.md`, `docs/MULTI_AGENT.md`, `docs/OPERATING_MODEL.md`, and `docs/TASKS.md` are archived under `docs/archive/` (SUPERSEDED / complete). The blog system and the (parked) GF product-search feature were committed 2026-07-24.
+- Rationale: Separates live operating state from stable technical reference; retires superseded planning docs while preserving history.
