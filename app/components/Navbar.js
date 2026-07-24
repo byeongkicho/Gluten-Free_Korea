@@ -9,6 +9,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const isGuide = pathname === "/guide";
+  const isBlog = pathname === "/blog" || pathname.startsWith("/blog/");
 
   return (
     <nav className="sticky top-0 z-20 w-full border-b border-rim bg-bg/90 backdrop-blur">
@@ -26,6 +27,10 @@ export default function Navbar() {
           <Link href="/guide" className={`transition-colors hover:text-fg ${isGuide ? "font-medium text-fg" : "text-muted"}`}>
             <span className="lang-en">Guide</span>
             <span className="lang-ko">가이드</span>
+          </Link>
+          <Link href="/blog" className={`transition-colors hover:text-fg ${isBlog ? "font-medium text-fg" : "text-muted"}`}>
+            <span className="lang-en">Blog</span>
+            <span className="lang-ko">블로그</span>
           </Link>
           <ThemeToggle />
           <LanguageToggle />
