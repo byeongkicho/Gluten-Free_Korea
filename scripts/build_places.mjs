@@ -241,6 +241,14 @@ async function main() {
   let imagesFound = 0;
 
   for (const place of places) {
+    // Explicit `images` override (curated Cloudinary public IDs) wins over the
+    // directory scan. Use it when local filenames don't match the uploaded IDs
+    // (e.g. hand-curated semantic names), so the build can't clobber live images.
+    if (Array.isArray(place.images) && place.images.length > 0) {
+      imagesFound += place.images.length;
+      delete place.coverImage;
+      continue;
+    }
     const placeImgDir = path.join(imagesBaseDir, place.slug);
     try {
       const files = await fs.readdir(placeImgDir);

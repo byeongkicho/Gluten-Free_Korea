@@ -83,6 +83,14 @@
     "tags": [
       "Restaurant",
       "Italian"
+    ],
+    "images": [
+      "places/cucciolo-seoul/pasta",
+      "places/cucciolo-seoul/fish",
+      "places/cucciolo-seoul/menu-page1",
+      "places/cucciolo-seoul/menu-page2",
+      "places/cucciolo-seoul/wine-cellar",
+      "places/cucciolo-seoul/private-room"
     ]
   },
   "1073951222": {
@@ -234,6 +242,9 @@
     "tags": [
       "Restaurant",
       "Fried Chicken"
+    ],
+    "images": [
+      "places/ssal-tongdak-rice-fried-chicken-dangsan/01"
     ]
   },
   "1650174352": {
