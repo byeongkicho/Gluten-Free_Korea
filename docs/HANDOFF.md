@@ -6,9 +6,9 @@
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-07-24
+- **마지막 업데이트:** 2026-07-28 15:31
 - **작업자:** Claude Code
-- **브랜치:** main (origin 동기화됨, push=자동 배포)
+- **브랜치:** main
 - **점수 진단(2026-07-24, 별도 전문가 평가):** 웹 5.3/10, PM 4.3/10 — "자산 품질은 7, 운영 규율은 3.5". 갭은 대부분 *이미 시작한 것의 완성*.
 
 ## 완료된 작업 (2026-07-24 재개 세션 — P0 안정화)
@@ -23,17 +23,23 @@
 | 6 | 11MB `data/gf-products.json` gitignore (재생성 가능) | ✅ |
 | 7 | 문서 SSOT 재정리: PROJECT/DECISIONS 정정, SUPERSEDED 3종 아카이브, operations=SSOT | ✅ |
 
-## 미완료 / 다음에 할 작업 (P1 — SEO 콘텐츠 루프)
+## 🔀 방향 전환 (2026-07-28) — 요리+식재료 co-primary
+
+운영자 실제 경험이 외식→**집밥 GF 요리+식재료 소싱**으로 이동(237 폐업/이전, 이후 집밥). 전체 계획: `~/.claude/plans/noble-discovering-aho.md` v2. 요약: 요리·식재료를 co-primary(외식 디렉터리 유지·보조), 콘텐츠·`/shop` 도구를 이 방향으로 우선.
+
+- ✅ **hidden-gluten-korean-food 발행** (피벗 앵커, 1,170단어, `073b5a9`) — 조미료 속 숨은 글루텐 → 집밥이 통제 열쇠.
+
+## 미완료 / 다음에 할 작업 (P1 리밸런싱 — 요리·식재료 우선)
 
 목표 운영 모델: **주 4~6시간, 주 1회 90분 세션 = 배포된 1개 산출물.** 절대 커밋/push 없이 세션 종료 금지.
 
 | 우선순위 | 작업 | 비고 |
 |----------|------|------|
-| 1 | **블로그 스텁 8편 완성 — 주 1편, 편당 1,200~1,500단어** | 3,000단어 배치 폐기. 순서: restaurants-seoul → phrases → hidden-gluten → bbq → 나머지 4편 |
-| 2 | 각 편 배포 후 GSC 인덱싱 요청, published 전환 시 자동 sitemap 등재 | |
-| 3 | IG 토큰 갱신(~05-30 만료 추정) 후 백로그만 게시 (프랑스와/6DAYCHICKEN/지화자/cucciolo) | `scripts/healthcheck.mjs`로 토큰 확인 |
-| 4 | 블로그 3편+ 인덱싱 후 커뮤니티 시딩 (Reddit/FB, `operations/커뮤니티 포스팅 초안.md`) | |
-| 5 | 이중언어 hreflang 결정 / area 페이지 데이터화 | P1 후반 |
+| 1 | **#2 레스토랑 초안 재프레이밍 발행** ("personally tested" 제거 → curated/티어) + **237 폐업/이전 확인 후 데이터 정리** | 초안은 `content/blog/gluten-free-restaurants-seoul.md`(현 upcoming) |
+| 2 | 요리/식재료 스텁 완성 (주 1편): reading-korean-food-labels → convenience-store-snacks → gochujang(레시피 확보 후) | 위키 `concepts/`로 write-ready |
+| 3 | **`/shop` 도구 연결** (P2→승격, 반나절): CU 가이드 플래그십 + HACCP 보조, disclaimer 전면, 이미지 hotlink 처리 | 컴포넌트 이미 완성 |
+| 4 | **이모님 수제 고추장 레시피 캡처** (운영자 net-new 입력 — 유일한 blocking 갭, 경쟁 전무 시그니처) | #9 |
+| 5 | 포지셔닝 재구성(홈/About/nav 3축), IG 토큰 갱신+백로그, 커뮤니티 시딩 | 콘텐츠 쌓인 뒤 |
 
 ## P2 (트래픽 100 PV/day 도달 후 — park)
 
