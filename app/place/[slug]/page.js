@@ -137,11 +137,11 @@ export default async function PlaceDetailPage({ params }) {
       />
       <div className="mx-auto max-w-3xl">
         <Link
-          href="/"
+          href="/places"
           className="inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm text-muted transition-colors hover:bg-surface-2 hover:text-fg"
         >
-          <span className="lang-en">← Back to list</span>
-          <span className="lang-ko">← 목록으로 돌아가기</span>
+          <span className="lang-en">← Back to restaurants</span>
+          <span className="lang-ko">← 식당 목록으로</span>
         </Link>
 
         {place.images?.length > 0 && (() => {

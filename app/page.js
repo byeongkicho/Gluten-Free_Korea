@@ -1,10 +1,13 @@
 import Link from "next/link";
 import places from "@/data/places.json";
-import PlaceFilter from "@/app/components/PlaceFilter";
+import { getPublishedPosts } from "@/app/lib/blog";
+import FeaturedPlaces from "@/app/components/FeaturedPlaces";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://noglutenkorea.com";
-const homeTitle = "No Gluten Korea | Gluten-Free Restaurants, Cafes & Guide in Korea";
-const homeDescription = "Find gluten-free restaurants, cafes, bakeries, and travel tips in Korea. Bilingual Korean/English guide with place details, maps, and safety notes.";
+const homeTitle =
+  "No Gluten Korea | Gluten-Free Living in Korea — Cooking, Ingredients & Dining";
+const homeDescription =
+  "How to live gluten-free in Korea: home cooking, ingredient sourcing, label-reading, and a directory of gluten-free restaurants. Bilingual Korean/English guides and kitchen notes.";
 
 export const metadata = {
   title: homeTitle,
@@ -14,7 +17,8 @@ export const metadata = {
     "gluten-free korea",
     "korea gluten free",
     "gluten free seoul",
-    "gluten free restaurants korea",
+    "gluten free korean food",
+    "gluten free cooking korea",
     "글루텐프리 코리아",
     "글루텐프리 서울",
     "한국 글루텐프리",
@@ -35,9 +39,29 @@ export const metadata = {
   },
 };
 
+function fmtDate(d) {
+  if (!d) return "";
+  return new Date(d).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
 export default function HomePage() {
   const safePlaces = Array.isArray(places) ? places.filter((p) => p?.slug) : [];
-  const hasPlaces = safePlaces.length > 0;
+  const posts = getPublishedPosts().slice(0, 6);
+
+  // Featured restaurants: lead with Dedicated GF spots (the most differentiated),
+  // then fill with the rest, up to 6. Full directory lives at /places.
+  const dedicated = safePlaces.filter(
+    (p) => Array.isArray(p.tags) && p.tags.includes("Dedicated GF")
+  );
+  const featured = [
+    ...dedicated,
+    ...safePlaces.filter((p) => !dedicated.includes(p)),
+  ].slice(0, 6);
+
   const websiteJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -46,18 +70,6 @@ export default function HomePage() {
     inLanguage: ["en", "ko"],
     description: homeDescription,
   };
-  const itemListJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "Gluten-Free Korea Directory",
-    numberOfItems: safePlaces.length,
-    itemListElement: safePlaces.slice(0, 8).map((place, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      url: `${siteUrl}/place/${place.slug}`,
-      name: place.name || place.slug,
-    })),
-  };
 
   return (
     <main className="min-h-screen px-4 py-8 sm:px-6 sm:py-10 md:py-14">
@@ -65,54 +77,91 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
       />
-      {hasPlaces ? (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
-        />
-      ) : null}
       <div className="mx-auto max-w-6xl">
+        {/* Hero — positioning: cook · source · dine */}
         <section className="rounded-2xl border border-rim bg-surface p-5 sm:p-7">
           <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">
-            <span className="lang-en">Gluten-Free Directory</span>
-            <span className="lang-ko">글루텐프리 디렉토리</span>
+            <span className="lang-en">Cook · Source · Dine</span>
+            <span className="lang-ko">요리 · 식재료 · 외식</span>
           </p>
           <h1 className="mt-2 font-display text-2xl font-semibold tracking-tight text-fg sm:text-3xl md:text-4xl">
-            No Gluten Korea
+            <span className="lang-en">Gluten-Free Living in Korea</span>
+            <span className="lang-ko">한국에서 글루텐프리로 살기</span>
           </h1>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted">
             <span className="lang-en">
-              A simple directory of gluten-free restaurants, cafes, and bakeries in
-              Korea. Always reconfirm ingredients and cross-contamination when you
-              visit.
+              Practical, first-hand guides to eating gluten-free in Korea —
+              cooking at home, sourcing safe ingredients, reading labels, and
+              finding restaurants you can trust.
             </span>
             <span className="lang-ko">
-              한국에서 글루텐프리 식당, 카페, 베이커리를 한 곳에서 찾을 수 있는
-              간단한 목록입니다. 방문 시 재료와 교차오염 여부는 항상 다시 확인하세요.
+              한국에서 글루텐프리로 먹고사는 법을 직접 경험으로 정리합니다 —
+              집밥 요리, 안전한 식재료 소싱, 라벨 읽기, 믿을 만한 식당 찾기까지.
             </span>
           </p>
           <div className="mt-4 flex flex-wrap items-center gap-3">
-            <p className="text-sm font-medium text-fg">
-              <span className="lang-en">{safePlaces.length} verified places</span>
-              <span className="lang-ko">검증된 장소 {safePlaces.length}곳</span>
-            </p>
-            <span className="hidden text-rim sm:inline">|</span>
             <Link href="/guide" className="text-sm font-medium text-accent transition-opacity hover:opacity-70">
-              <span className="lang-en">Read safety guide →</span>
+              <span className="lang-en">Read the safety guide →</span>
               <span className="lang-ko">안전 가이드 보기 →</span>
+            </Link>
+            <span className="hidden text-rim sm:inline">|</span>
+            <Link href="/blog" className="text-sm font-medium text-accent transition-opacity hover:opacity-70">
+              <span className="lang-en">Latest guides &amp; kitchen notes →</span>
+              <span className="lang-ko">최신 가이드·요리 노트 →</span>
             </Link>
           </div>
         </section>
 
-        {!hasPlaces ? (
-          <div className="mt-8 rounded-2xl border border-dashed border-faint p-8 text-center sm:p-10">
-            <p className="text-sm text-muted">
-              <span className="lang-en">No places listed yet.</span>
-              <span className="lang-ko">등록된 장소가 아직 없습니다.</span>
-            </p>
-          </div>
-        ) : (
-          <PlaceFilter places={safePlaces} />
+        {/* Section 1 — Latest from the blog (text cards, no images: fast) */}
+        {posts.length > 0 && (
+          <section className="mt-10">
+            <div className="flex items-baseline justify-between gap-3">
+              <h2 className="font-display text-lg font-semibold tracking-tight text-fg sm:text-xl">
+                <span className="lang-en">Latest from the blog</span>
+                <span className="lang-ko">최신 블로그</span>
+              </h2>
+              <Link href="/blog" className="text-sm font-medium text-accent transition-opacity hover:opacity-70">
+                <span className="lang-en">View all →</span>
+                <span className="lang-ko">전체 보기 →</span>
+              </Link>
+            </div>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {posts.map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="group rounded-2xl border border-rim bg-surface p-5 transition-colors hover:border-accent/50"
+                >
+                  <h3 className="font-semibold leading-snug text-fg group-hover:text-accent">
+                    {post.title}
+                  </h3>
+                  {post.description ? (
+                    <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted">
+                      {post.description}
+                    </p>
+                  ) : null}
+                  <p className="mt-3 text-xs text-faint">{fmtDate(post.date)}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Section 2 — Browse restaurants (featured; full grid at /places) */}
+        {featured.length > 0 && (
+          <section className="mt-12">
+            <div className="flex items-baseline justify-between gap-3">
+              <h2 className="font-display text-lg font-semibold tracking-tight text-fg sm:text-xl">
+                <span className="lang-en">Browse restaurants</span>
+                <span className="lang-ko">식당 둘러보기</span>
+              </h2>
+              <Link href="/places" className="text-sm font-medium text-accent transition-opacity hover:opacity-70">
+                <span className="lang-en">All {safePlaces.length} places →</span>
+                <span className="lang-ko">전체 {safePlaces.length}곳 →</span>
+              </Link>
+            </div>
+            <FeaturedPlaces places={featured} />
+          </section>
         )}
       </div>
     </main>

@@ -21,6 +21,12 @@ export default function sitemap() {
       priority: 1,
     },
     {
+      url: `${base}/places`,
+      lastModified: buildDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${base}/guide`,
       lastModified: buildDate,
       changeFrequency: "monthly",
