@@ -6,7 +6,7 @@
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-07-29 10:31
+- **마지막 업데이트:** 2026-07-29 11:25
 - **작업자:** Claude Code
 - **브랜치:** main
 - **점수 진단(2026-07-24, 별도 전문가 평가):** 웹 5.3/10, PM 4.3/10 — "자산 품질은 7, 운영 규율은 3.5". 갭은 대부분 *이미 시작한 것의 완성*.
@@ -29,6 +29,7 @@
 
 - ✅ **hidden-gluten-korean-food 발행** (피벗 앵커, 1,170단어, `073b5a9`) — 조미료 속 숨은 글루텐 → 집밥이 통제 열쇠.
 - ✅ **gluten-free-butter-tteok 발행** (요리 저널 #1, 07-29) — 버터떡 트렌드 → GF 확인(찹쌀≠글루텐) → 가격 → 집에서 제작 → No Brand 프리믹스. 정성적 레시피(배합비 미지어냄), FAQPage, 링크 3개(펄러·hidden-gluten·monil2-house). **사진 대기중**(운영자 제공 예정 → `<!-- IMG -->` 슬롯에 삽입 후 재커밋 = P1-0b-2).
+- ✅ **홈페이지 콘텐츠 우선 허브 전환** (07-29) — 홈=매장 그리드 → hero(`Gluten-Free Living in Korea`, cook·source·dine 3축) + "Latest from the blog"(텍스트 카드) + "Browse restaurants"(featured 6). 매장 디렉터리는 **`/places` 신설**로 이관(PlaceFilter+ItemList+디렉터리 키워드 승계, 24 매장 내부링크 보존). Navbar: Home·Blog·Restaurants(/places)·Guide. 매장 breadcrumb→/places, sitemap에 /places(0.9). 홈 ItemList 제거·WebSite만. **부수효과: 홈 LCP(9.4s 주범=매장 이미지 그리드) 개선 기대 → 배포 후 PSI 재측정 권장.**
 
 ## 미완료 / 다음에 할 작업 (P1 리밸런싱 — 요리·식재료 우선)
 
@@ -40,7 +41,8 @@
 | 2 | 요리/식재료 스텁 완성 (주 1편): reading-korean-food-labels → convenience-store-snacks → gochujang(레시피 확보 후) | 위키 `concepts/`로 write-ready |
 | 3 | **`/shop` 도구 연결** (P2→승격, 반나절): CU 가이드 플래그십 + HACCP 보조, disclaimer 전면, 이미지 hotlink 처리 | 컴포넌트 이미 완성 |
 | 4 | **이모님 수제 고추장 레시피 캡처** (운영자 net-new 입력 — 유일한 blocking 갭, 경쟁 전무 시그니처) | #9 |
-| 5 | 포지셔닝 재구성(홈/About/nav 3축), IG 토큰 갱신+백로그, 커뮤니티 시딩 | 콘텐츠 쌓인 뒤 |
+| 5 | 포지셔닝 재구성 — 홈/nav ✅완료(07-29). **잔여: About 카피 3축 리프레이밍**, IG 토큰 갱신+백로그, 커뮤니티 시딩 | 콘텐츠 쌓인 뒤 |
+| 6 | **배포 후 PSI 모바일 재측정** — 홈 허브 전환으로 LCP 개선 확인 (직전 9.4s, 주범=매장 이미지 그리드 제거됨) | AdSense 재심사 창 방어에도 도움 |
 
 ## P2 (트래픽 100 PV/day 도달 후 — park)
 
