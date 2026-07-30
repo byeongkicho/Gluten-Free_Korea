@@ -361,7 +361,7 @@ export default function GuidePage() {
               <a
                 href="https://link.coupang.com/a/eaen1b"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="sponsored noopener noreferrer"
                 className="font-medium text-accent underline underline-offset-2 hover:opacity-80"
               >
                 <span className="lang-en">[Ad] Gluten-Free Gochujang (Red Pepper Paste)</span>
@@ -376,7 +376,7 @@ export default function GuidePage() {
               <a
                 href="https://link.coupang.com/a/eaer76"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="sponsored noopener noreferrer"
                 className="font-medium text-accent underline underline-offset-2 hover:opacity-80"
               >
                 <span className="lang-en">[Ad] Gluten-Free Soy Sauce / Tamari</span>
@@ -391,7 +391,7 @@ export default function GuidePage() {
               <a
                 href="https://link.coupang.com/a/eaeybC"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="sponsored noopener noreferrer"
                 className="font-medium text-accent underline underline-offset-2 hover:opacity-80"
               >
                 <span className="lang-en">[Ad] Gluten-Free Ssamjang (BBQ Dipping Sauce)</span>
@@ -406,7 +406,7 @@ export default function GuidePage() {
               <a
                 href="https://link.coupang.com/a/eaes9G"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="sponsored noopener noreferrer"
                 className="font-medium text-accent underline underline-offset-2 hover:opacity-80"
               >
                 <span className="lang-en">[Ad] Gluten-Free Penne Pasta (Rice/Corn)</span>
