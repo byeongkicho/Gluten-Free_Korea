@@ -135,6 +135,22 @@ export default async function BlogPostPage({ params }) {
         >
           {post.content}
         </ReactMarkdown>
+
+        {/* FAQPage markup requires the same content to be visible on the page.
+            Skip posts that already write their FAQ into the body. */}
+        {faqSchema && !/^##\s+FAQ/m.test(post.content) && (
+          <section id="faq">
+            <h2>FAQ</h2>
+            {post.faq.map((item) => (
+              <div key={item.q}>
+                <p>
+                  <strong>{item.q}</strong>
+                </p>
+                <p>{item.a}</p>
+              </div>
+            ))}
+          </section>
+        )}
       </article>
     </main>
   );

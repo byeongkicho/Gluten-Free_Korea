@@ -83,7 +83,7 @@ Once the flip-and-scan is automatic, you'll find a reliable core of convenience-
 - **Chicken breast packs** — *without* the soy-sauce marinade (soy sauce is wheat; see the [hidden-gluten guide](/blog/hidden-gluten-korean-food))
 - **Rice crackers (쌀과자)** — but only *after* you scan, because of the wheat-starch trap above
 
-What fails is most of what you'd grab on autopilot: cup noodles, some triangle-kimbap fillings, most breads and pastries, battered snacks.
+What fails is most of what you'd grab on autopilot: cup noodles, some triangle-kimbap fillings, most breads and pastries, battered snacks. Full breakdown by brand and flavor in the [convenience-store snack guide](/blog/korean-convenience-store-gf-snacks).
 
 ## The two-second habit
 

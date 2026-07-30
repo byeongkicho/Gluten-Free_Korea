@@ -218,11 +218,11 @@ Here's what reliably works across chains:
 - **Plain yogurt** — check flavored versions; some have wheat-based thickeners.
 - **Packaged grilled chicken breast** (닭가슴살) — skip anything marinated in soy sauce; plain is usually safe.
 - **Some rice snacks** — Chamsal Seolbyeong (참쌀설병) in the **pink** package is safe. The green package contains wheat.
-- **A handful of confirmed-safe chips** — Poca Chip Original (NOT onion flavor), Doritos cheese (NOT other flavors), Banana Kick, Yegam (all flavors), plain corn chips. Always re-verify on the actual packet.
+- **A handful of chips that usually pass** — Poca Chip Original (NOT onion flavor), Doritos cheese (NOT other flavors), Banana Kick, Yegam (all flavors), plain corn chips. Always re-verify on the actual packet.
 
 What we skip entirely: triangle kimbap (too many variants with soy sauce), dosirak lunch boxes (wheat somewhere in most), instant ramen cups, frozen dumplings, most sausages.
 
-Full snack list with package photos and flavor-specific warnings in our [Korean convenience store GF snacks post](/blog/korean-convenience-store-gf-snacks).
+Full snack list with flavor-specific warnings in our [Korean convenience store GF snacks post](/blog/korean-convenience-store-gf-snacks).
 
 ---
 
