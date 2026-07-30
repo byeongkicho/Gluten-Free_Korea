@@ -6,7 +6,7 @@
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-07-30 16:42
+- **마지막 업데이트:** 2026-07-30 23:45
 - **작업자:** Claude Code
 - **브랜치:** main
 - **점수 진단(2026-07-24, 별도 전문가 평가):** 웹 5.3/10, PM 4.3/10 — "자산 품질은 7, 운영 규율은 3.5". 갭은 대부분 *이미 시작한 것의 완성*.
@@ -22,6 +22,12 @@
 | 5 | 이미지 드리프트 수정: build_places가 override `images` 우선. cucciolo(6)·ssal(01)를 라이브 Cloudinary ID로 고정 | ✅ 전부 200, validate 24 |
 | 6 | 11MB `data/gf-products.json` gitignore (재생성 가능) | ✅ |
 | 7 | 문서 SSOT 재정리: PROJECT/DECISIONS 정정, SUPERSEDED 3종 아카이브, operations=SSOT | ✅ |
+
+## 🎯 북극성 목표 (2026-07-30 설정) — 월 $100+ (6개월 내)
+
+프로젝트 goal = **2027-01-30 내 월 $100+ 수익.** 여행자·집밥 균형. **병목=트래픽**(~10 PV/day, 100+ 필요). AdSense 단독 비현실(RPM $2~6→월 2만PV) → **제휴 중심**(여행 건당 $5~20). 로드맵 전체: `~/.claude/plans/noble-discovering-aho.md` "💰 목표: 월 $100" 섹션. 메모리: `project_goal_100_month`.
+- ✅ **쿠팡 4개 링크 `rel="sponsored"` 추가** (07-30, M1 위생) — 구글 정책 준수(affiliate 링크 필수). `app/guide/page.js`.
+- **수익화 다음:** Airalo(eSIM) 가입 → 펄러에 여행 essentials 블록 / Amazon Associates 가입 → 요리 글에 제품 링크 / 재사용 `AffiliateBox` 컴포넌트. **단, 최우선은 여전히 콘텐츠(트래픽).**
 
 ## 🔀 방향 전환 (2026-07-28) — 요리+식재료 co-primary
 
