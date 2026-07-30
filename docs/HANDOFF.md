@@ -25,9 +25,10 @@
 
 ## 🎯 북극성 목표 (2026-07-30 설정) — 월 $100+ (6개월 내)
 
-프로젝트 goal = **2027-01-30 내 월 $100+ 수익.** 여행자·집밥 균형. **병목=트래픽**(~10 PV/day, 100+ 필요). AdSense 단독 비현실(RPM $2~6→월 2만PV) → **제휴 중심**(여행 건당 $5~20). 로드맵 전체: `~/.claude/plans/noble-discovering-aho.md` "💰 목표: 월 $100" 섹션. 메모리: `project_goal_100_month`.
-- ✅ **쿠팡 4개 링크 `rel="sponsored"` 추가** (07-30, M1 위생) — 구글 정책 준수(affiliate 링크 필수). `app/guide/page.js`.
-- **수익화 다음:** Airalo(eSIM) 가입 → 펄러에 여행 essentials 블록 / Amazon Associates 가입 → 요리 글에 제품 링크 / 재사용 `AffiliateBox` 컴포넌트. **단, 최우선은 여전히 콘텐츠(트래픽).**
+프로젝트 goal = **월 $100+ 수익** (목표 유지, ETA 정직하게 6~9개월). 여행자·집밥 균형. **병목=트래픽**(~10 PV/day). **로드맵 v2 = 3-에이전트 평가(전략·PM·적대적 회의론)로 6.5~7.0→전원 9.5/10까지 개선.** 전체: `~/.claude/plans/noble-discovering-aho.md` "💰 목표: 월 $100" 섹션. 메모리: `project_goal_100_month`.
+- **핵심 전략(v2):** ① $100은 **stretch(P25~P35)**, 6개월 성공=P50 $40~70+수익 증명(이탈 방지 재정의). ② **AdSense 분리**(재반려 가정, upside only). ③ 여행 **보험(SafetyWing/Genki) 리드 채널**($10~25, 셀리악 fit) > 호텔 > eSIM. ④ 제품은 **iHerb(5~10%)+쿠팡**, **Amazon 보류**(180일 3판매 종료 규칙). ⑤ **M3 결정 게이트**(오가닉 ≥50/day·인덱싱 ≥8·클릭볼륨 → Plan B 분기). ⑥ **비-SEO 헤지**(Pinterest·이메일·IG, 콘텐츠 세션에 얹어 무추가 시간). ⑦ 커머셜 인텐트 글(best eSIM·pantry kit·GF hotels).
+- ✅ **쿠팡 4개 링크 `rel="sponsored"` 추가** (07-30, M1 위생) — `app/guide/page.js`.
+- **수익화 다음(제가 가능):** `AffiliateBox` 컴포넌트 + 이메일 opt-in(M1) → 기발행 글 소급 삽입. **운영자 필요:** SafetyWing/Airalo 가입. **최우선은 여전히 콘텐츠(트래픽).**
 
 ## 🔀 방향 전환 (2026-07-28) — 요리+식재료 co-primary
 
