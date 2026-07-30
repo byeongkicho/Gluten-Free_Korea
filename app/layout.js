@@ -87,7 +87,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="lang-en" suppressHydrationWarning>
-      <head />
+      <head>
+        {/* Warm up connections to third-party origins that otherwise compete
+            on the critical path (ads, analytics, Cloudflare beacon) and delay
+            the hero-text LCP on throttled mobile. */}
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+        <link rel="dns-prefetch" href="https://static.cloudflareinsights.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+      </head>
       <body
         className={`${fraunces.variable} ${dmSans.variable} antialiased`}
         suppressHydrationWarning
@@ -100,9 +109,9 @@ export default function RootLayout({ children }) {
         />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
