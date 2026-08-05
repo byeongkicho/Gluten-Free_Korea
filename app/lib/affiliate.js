@@ -56,3 +56,70 @@ export const COUPANG_FOOTNOTE = {
   en: "Product suitability may vary by ingredients and manufacturing process. Always verify the latest product details yourself.",
   ko: "제품 적합성은 원재료와 제조 공정에 따라 달라질 수 있으므로, 최신 상품 상세 정보를 직접 확인하세요.",
 };
+
+// Blog posts get a stronger footnote than /guide: a post titled "what to buy"
+// implies the author vouches for these products, and we have not bought them.
+export const COUPANG_FOOTNOTE_UNTESTED = {
+  en: "I have not bought or eaten these specific products. They are shopping starting points for the categories described above, not recommendations I can vouch for. Read the 원재료명 and allergen line on the listing itself before buying, and treat any front-of-pack \"gluten-free\" claim as unverified.",
+  ko: "이 제품들은 제가 직접 구매·취식한 것이 아닙니다. 위에서 설명한 카테고리의 구매 출발점일 뿐, 제가 보증할 수 있는 추천이 아닙니다. 구매 전 상품 페이지의 원재료명과 알레르기 표시를 직접 확인하시고, 포장 앞면의 \"글루텐프리\" 표기는 검증되지 않은 것으로 간주하세요.",
+};
+
+export const COUPANG_HEADING_UNTESTED = {
+  en: "🛒 Where to buy (Ad — not personally tested)",
+  ko: "🛒 구매처 (광고 — 직접 사용해보지 않은 제품)",
+};
+
+const COUPANG_BY_ID = Object.fromEntries(
+  COUPANG_PRODUCTS.map((it) => [it.href.split("/a/")[1], it]),
+);
+
+// Friendly ids for frontmatter, so posts don't hardcode short-link codes.
+const COUPANG_ALIASES = {
+  gochujang: "eaen1b",
+  tamari: "eaer76",
+  ssamjang: "eaeybC",
+  "gf-pasta": "eaes9G",
+};
+
+// Coupang short links carry the partner id inside the code, but they also
+// forward a ?subId= through the 302 — which is how a click gets attributed to
+// the post that produced it rather than being pooled with /guide.
+function withSubId(href, subId) {
+  if (!subId) return href;
+  return `${href}${href.includes("?") ? "&" : "?"}subId=${encodeURIComponent(subId)}`;
+}
+
+// Resolves a post's `affiliate:` frontmatter into AffiliateBox props.
+// Throws on anything unrecognized: a silent drop here means the box vanishes
+// from a published page while the build stays green.
+export function resolveAffiliate(spec, slug) {
+  if (!spec || typeof spec !== "object") {
+    throw new Error(`[affiliate] ${slug}: "affiliate" must be an object`);
+  }
+  if (spec.program !== "coupang") {
+    throw new Error(`[affiliate] ${slug}: unknown program "${spec.program}"`);
+  }
+  if (!Array.isArray(spec.items) || spec.items.length === 0) {
+    throw new Error(`[affiliate] ${slug}: "items" must be a non-empty array`);
+  }
+
+  // Default the sub-id to the slug so attribution follows the post even if the
+  // slug changes during drafting.
+  const subId = spec.subId || slug;
+
+  const items = spec.items.map((id) => {
+    const item = COUPANG_BY_ID[COUPANG_ALIASES[id] ?? id];
+    if (!item) {
+      const known = Object.keys(COUPANG_ALIASES).join(", ");
+      throw new Error(`[affiliate] ${slug}: unknown item "${id}". Known: ${known}`);
+    }
+    return { ...item, href: withSubId(item.href, subId) };
+  });
+
+  return {
+    items,
+    heading: COUPANG_HEADING_UNTESTED,
+    disclosure: COUPANG_DISCLOSURE,
+    footnote: COUPANG_FOOTNOTE_UNTESTED,
+  };
+}

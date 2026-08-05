@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
+import AffiliateBox from "@/app/components/AffiliateBox";
+import { resolveAffiliate } from "@/app/lib/affiliate";
 import { getAllPosts, getPostBySlug } from "@/app/lib/blog";
 
 const SITE_URL =
@@ -135,23 +137,34 @@ export default async function BlogPostPage({ params }) {
         >
           {post.content}
         </ReactMarkdown>
-
-        {/* FAQPage markup requires the same content to be visible on the page.
-            Skip posts that already write their FAQ into the body. */}
-        {faqSchema && !/^##\s+FAQ/m.test(post.content) && (
-          <section id="faq">
-            <h2>FAQ</h2>
-            {post.faq.map((item) => (
-              <div key={item.q}>
-                <p>
-                  <strong>{item.q}</strong>
-                </p>
-                <p>{item.a}</p>
-              </div>
-            ))}
-          </section>
-        )}
       </article>
+
+      {/* Outside .blog-prose on purpose: its descendant rules (a, ul, h2) beat
+          the card's utility classes, which would render affiliate links in body
+          text color — invisible as links, and this box exists to be clicked. */}
+      {post.affiliate && (
+        <AffiliateBox
+          id="shop"
+          placement={`blog:${post.slug}`}
+          {...resolveAffiliate(post.affiliate, post.slug)}
+        />
+      )}
+
+      {/* FAQPage markup requires the same content to be visible on the page.
+          Skip posts that already write their FAQ into the body. */}
+      {faqSchema && !/^##\s+FAQ/m.test(post.content) && (
+        <section id="faq" className="blog-prose mt-8 text-fg/90">
+          <h2>FAQ</h2>
+          {post.faq.map((item) => (
+            <div key={item.q}>
+              <p>
+                <strong>{item.q}</strong>
+              </p>
+              <p>{item.a}</p>
+            </div>
+          ))}
+        </section>
+      )}
     </main>
   );
 }

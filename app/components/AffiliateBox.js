@@ -13,6 +13,7 @@ export default function AffiliateBox({
   disclosure,
   footnote,
   items,
+  placement,
   className,
 }) {
   const list = Array.isArray(items) ? items.filter((it) => it?.href) : [];
@@ -55,6 +56,10 @@ export default function AffiliateBox({
                   link_type: "affiliate",
                   affiliate_program: it.program,
                   affiliate_item: it.title?.en || it.href,
+                  // Which page produced the click. click_external_link is
+                  // shared with place cards, so reports filter on link_type
+                  // first, then split by placement.
+                  affiliate_placement: placement || "unknown",
                 })
               }
             >

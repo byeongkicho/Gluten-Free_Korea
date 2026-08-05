@@ -354,6 +354,7 @@ export default function GuidePage() {
           disclosure={COUPANG_DISCLOSURE}
           footnote={COUPANG_FOOTNOTE}
           items={COUPANG_PRODUCTS}
+          placement="guide"
         />
 
         <section className="mt-5 rounded-2xl border border-amber-rim bg-amber-bg p-5">
