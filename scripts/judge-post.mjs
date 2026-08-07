@@ -65,16 +65,35 @@ async function loadEnv(file) {
   }
 }
 
-// An unset ANTHROPIC_API_KEY does not mean there are no credentials. The SDK
-// resolves, in order: ANTHROPIC_API_KEY, ANTHROPIC_AUTH_TOKEN, then an OAuth
-// profile written by `ant auth login` — which authenticates against a Claude
-// subscription with no API key at all. Gating on the env var alone would refuse
-// to run for anyone using that path.
+// An unset ANTHROPIC_API_KEY does not mean there are no credentials: `ant auth
+// login` writes an OAuth profile that also authenticates the API. Newer SDKs
+// read that profile from a zero-arg client, but 0.78.0 does not — it throws
+// "Could not resolve authentication method" — so the short-lived token is
+// fetched here and handed over as ANTHROPIC_AUTH_TOKEN.
+//
+// Worth knowing before going down this road: an OAuth profile grants the
+// `user:inference` scope, which is permission, not balance. A Claude
+// subscription pays for claude.ai and Claude Code; Messages API calls draw on
+// the organisation's separate API credit. With none, this authenticates
+// successfully and then returns 400 "credit balance is too low".
 function hasCredentials() {
   if (process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_AUTH_TOKEN) return true;
+
   const dir = path.join(homedir(), ".config", "anthropic", "credentials");
   try {
-    return readdirSync(dir).some((f) => f.endsWith(".json"));
+    if (!readdirSync(dir).some((f) => f.endsWith(".json"))) return false;
+  } catch {
+    return false;
+  }
+
+  try {
+    const token = execFileSync("ant", ["auth", "print-credentials", "--access-token"], {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim();
+    if (!token) return false;
+    process.env.ANTHROPIC_AUTH_TOKEN = token;
+    return true;
   } catch {
     return false;
   }
