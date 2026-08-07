@@ -1,13 +1,37 @@
 name: Harness Eval
 
 on:
+  # main is pushed to directly (no PR flow), so a pull_request-only trigger
+  # meant this workflow never ran. Keep both, plus a manual handle.
+  # NOTE: GitHub Actions does not support YAML anchors, so the path list is
+  # duplicated below. Keep the two copies in sync.
+  push:
+    branches: [main]
+    paths:
+      - 'CLAUDE.md'
+      - 'AGENTS.md'
+      - 'docs/**'
+      # HANDOFF is rewritten every session; it carries no harness contract.
+      - '!docs/HANDOFF.md'
+      - 'eval/**'
+      - 'prompts/**'
+      - 'scripts/**'
+      - 'content/blog/**'
+      - 'data/overrides.json'
+      - 'package.json'
   pull_request:
     paths:
       - 'CLAUDE.md'
       - 'AGENTS.md'
+      - 'docs/**'
+      - '!docs/HANDOFF.md'
       - 'eval/**'
+      - 'prompts/**'
       - 'scripts/**'
+      - 'content/blog/**'
       - 'data/overrides.json'
+      - 'package.json'
+  workflow_dispatch:
 
 jobs:
   eval:
