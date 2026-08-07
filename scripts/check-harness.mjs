@@ -18,6 +18,7 @@
 
 import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 
 // Files that state binding rules. These must describe the current repo.
 const HARNESS_FILES = ["CLAUDE.md", "AGENTS.md", "docs/HARNESS.md"];
@@ -175,12 +176,74 @@ function checkForbidden() {
   pass(`no forbidden data files are tracked (${mustNotBeTracked.length} checked)`);
 }
 
+// ── judgments ─────────────────────────────────────────────────────────────
+// The dual-judge gate is non-deterministic and costs money, so it does not run
+// in CI. What runs in CI is this: proof that the gate was run, against these
+// exact bytes, under the current rubric. Editing a post after it was judged
+// breaks the hash and fails here — which is what makes a recorded score a gate
+// rather than a souvenir.
+function checkJudgments() {
+  const dir = "eval/judgments";
+  if (!existsSync(dir)) {
+    fail("no judgments recorded", [
+      "run: node scripts/judge-post.mjs --all",
+      "(requires ANTHROPIC_API_KEY; see prompts/README.md)",
+    ]);
+  }
+
+  const rubricVersions = Object.fromEntries(
+    readdirSync("prompts")
+      .filter((f) => f.endsWith(".rubric.json"))
+      .map((f) => {
+        const r = JSON.parse(read(`prompts/${f}`));
+        return [r.id, r.version];
+      }),
+  );
+
+  const problems = [];
+  const published = readdirSync("content/blog")
+    .filter((f) => f.endsWith(".md"))
+    .filter((f) => /^status:\s*published\s*$/m.test(read(`content/blog/${f}`)))
+    .map((f) => f.replace(/\.md$/, ""));
+
+  for (const slug of published) {
+    const recordPath = `${dir}/${slug}.json`;
+    if (!existsSync(recordPath)) {
+      problems.push(`${slug}: published but never judged`);
+      continue;
+    }
+    const record = JSON.parse(read(recordPath));
+
+    const actual = createHash("sha256")
+      .update(read(`content/blog/${slug}.md`), "utf8")
+      .digest("hex");
+    if (record.content_sha256 !== actual) {
+      problems.push(`${slug}: edited since it was judged — re-run the judge`);
+    }
+    for (const axis of Object.values(record.axes ?? {})) {
+      const current = rubricVersions[axis.rubric_id];
+      if (current !== undefined && axis.rubric_version !== current) {
+        problems.push(
+          `${slug}: judged under ${axis.rubric_id} v${axis.rubric_version}, current is v${current}`,
+        );
+      }
+    }
+    if (record.provenance !== "runner") {
+      problems.push(`${slug}: provenance is "${record.provenance}", not "runner"`);
+    }
+  }
+
+  if (problems.length) fail(`${problems.length} judgment integrity problem(s)`, problems);
+  pass(`all ${published.length} published post(s) have a current judgment`);
+}
+
 const CHECKS = {
   refs: checkRefs,
   commands: checkCommands,
   freshness: checkFreshness,
   "eval-docs": checkEvalDocs,
   forbidden: checkForbidden,
+  judgments: checkJudgments,
 };
 
 const name = process.argv[2];
