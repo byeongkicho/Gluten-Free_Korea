@@ -1,0 +1,35 @@
+{
+  "id": "harness-001",
+  "name": "하네스 준수 검사",
+  "description": "규칙 문서(CLAUDE.md·AGENTS.md·HARNESS.md·eval/README.md)가 저장소의 현재 상태를 정확히 가리키는지 검증. 깨진 참조는 빌드를 깨지 않고 규칙만 조용히 무효화하므로 별도 게이트가 필요하다.",
+  "steps": [
+    {
+      "command": "node scripts/check-harness.mjs refs",
+      "check": "exit_code_zero",
+      "desc": "하네스가 인용한 파일 경로가 전부 실존"
+    },
+    {
+      "command": "node scripts/check-harness.mjs commands",
+      "check": "exit_code_zero",
+      "desc": "하네스가 지시한 npm 명령이 전부 실행 가능"
+    },
+    {
+      "command": "node scripts/check-harness.mjs freshness",
+      "check": "exit_code_zero",
+      "desc": "기준선이 채점 대상 하네스보다 최신"
+    },
+    {
+      "command": "node scripts/check-harness.mjs eval-docs",
+      "check": "exit_code_zero",
+      "desc": "eval/README.md가 실제 eval 구성과 일치"
+    },
+    {
+      "command": "node scripts/check-harness.mjs forbidden",
+      "check": "exit_code_zero",
+      "desc": "커밋 금지 데이터 파일이 tracked 아님"
+    }
+  ],
+  "threshold": 1.0,
+  "category": "하네스 무결성",
+  "weight": "high"
+}
