@@ -2,6 +2,14 @@
 # post-commit.sh — HANDOFF.md 자동 갱신
 # Claude Code PostToolUse 훅에서 호출됨 (모든 Bash 호출 후)
 # git commit이 아닌 경우 즉시 종료. Non-blocking.
+#
+# 이 훅은 실행 상태(방금 만든 커밋)를 업무 상태(HANDOFF.md)에 즉시 반영해,
+# 세션이 끊겨도 인수인계 문서가 뒤처지지 않게 한다.
+#
+# 이전 버전은 "## 진행 중인 작업" 헤딩 앞에 표 행을 삽입했는데, HANDOFF.md가
+# 개편되며 그 헤딩이 사라졌다. 훅은 계속 exit 0을 반환했고 아무 경고도 없어서
+# 삽입 분기가 죽은 것을 아무도 몰랐다. 그래서 지금은 (1) 문서 구조가 아니라
+# 고정 앵커 라인만 갱신하고 (2) 앵커를 못 찾으면 stderr로 알린다.
 
 # stdin에서 훅 이벤트 JSON 읽기
 INPUT=$(cat)
@@ -29,27 +37,37 @@ except Exception:
     sys.exit(0)
 
 date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
-new_row = f"| — | {msg} | `{h}` | {date} |"
 
-with open(handoff, "r") as f:
+# 앵커 → 교체될 전체 라인. 문서 구조가 바뀌어도 이 라인들만 있으면 동작한다.
+fields = {
+    "- **마지막 업데이트:**": f"- **마지막 업데이트:** {date}",
+    "- **브랜치:**": f"- **브랜치:** {branch}",
+    "- **마지막 커밋:**": f"- **마지막 커밋:** `{h}` {msg}",
+}
+
+with open(handoff) as f:
     lines = f.readlines()
 
+seen = set()
 out = []
 for line in lines:
-    # "## 진행 중인 작업" 앞에 커밋 기록 삽입
-    if line.startswith("## 진행 중인 작업"):
-        out.append(new_row + "\n")
-        out.append("\n")
-    # 마지막 업데이트 날짜 교체
-    if line.startswith("- **마지막 업데이트:**"):
-        out.append(f"- **마지막 업데이트:** {date}\n")
-        continue
-    # 브랜치 교체
-    if line.startswith("- **브랜치:**"):
-        out.append(f"- **브랜치:** {branch}\n")
-        continue
-    out.append(line)
+    for anchor, replacement in fields.items():
+        if line.startswith(anchor):
+            out.append(replacement + "\n")
+            seen.add(anchor)
+            break
+    else:
+        out.append(line)
 
-with open(handoff, "w") as f:
-    f.writelines(out)
+missing = sorted(set(fields) - seen)
+if missing:
+    # 조용히 넘어가면 인수인계가 stale해진 것을 아무도 모른다.
+    print(
+        f"[post-commit] {handoff}에 앵커가 없어 갱신 못 함: {', '.join(missing)}",
+        file=sys.stderr,
+    )
+
+if seen:
+    with open(handoff, "w") as f:
+        f.writelines(out)
 PYEOF
