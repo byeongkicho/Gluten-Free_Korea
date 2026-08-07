@@ -237,7 +237,12 @@ async function main() {
 
   // Scan for place images in public/images/places/{slug}/
   const imagesBaseDir = path.join(rootDir, "public", "images", "places");
-  const imageExtensions = new Set([".webp", ".jpg", ".jpeg", ".png"]);
+  // This scan mints Cloudinary public IDs, and only .webp is ever uploaded —
+  // optimize-images generates it, upload-cloudinary pushes it. Accepting source
+  // formats here invents IDs for assets that were never uploaded: four stray
+  // originals left in cafe-pepper/ became four 404s on the live site, and the
+  // eval that would have caught it had not run in four months.
+  const imageExtensions = new Set([".webp"]);
   let imagesFound = 0;
 
   for (const place of places) {
