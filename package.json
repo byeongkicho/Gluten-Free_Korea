@@ -22,6 +22,8 @@
     "add:place": "node scripts/add-place.mjs",
     "discover:places": "node scripts/discover-places.mjs",
     "generate:caption": "node scripts/generate-caption.mjs",
+    "judge": "node scripts/judge-post.mjs",
+    "check:harness": "node scripts/check-harness.mjs",
     "ga4": "node --env-file=.env scripts/ga4-report.mjs",
     "weekly": "bash scripts/weekly-publish.sh"
   },
