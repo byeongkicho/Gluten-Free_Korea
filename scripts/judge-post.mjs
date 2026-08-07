@@ -31,6 +31,8 @@
 // Exit codes: 0 gate passed · 1 gate failed · 2 runtime error · 78 no API key.
 
 import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readdirSync } from "node:fs";
+import { homedir } from "node:os";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import path from "node:path";
@@ -60,6 +62,21 @@ async function loadEnv(file) {
     }
   } catch (err) {
     if (err.code !== "ENOENT") throw err;
+  }
+}
+
+// An unset ANTHROPIC_API_KEY does not mean there are no credentials. The SDK
+// resolves, in order: ANTHROPIC_API_KEY, ANTHROPIC_AUTH_TOKEN, then an OAuth
+// profile written by `ant auth login` — which authenticates against a Claude
+// subscription with no API key at all. Gating on the env var alone would refuse
+// to run for anyone using that path.
+function hasCredentials() {
+  if (process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_AUTH_TOKEN) return true;
+  const dir = path.join(homedir(), ".config", "anthropic", "credentials");
+  try {
+    return readdirSync(dir).some((f) => f.endsWith(".json"));
+  } catch {
+    return false;
   }
 }
 
@@ -347,12 +364,19 @@ async function main() {
     process.exit(0);
   }
 
-  if (!process.env.ANTHROPIC_API_KEY) {
+  if (!hasCredentials()) {
     if (flag("skip-without-key")) {
-      console.log("skipped (no ANTHROPIC_API_KEY)");
+      console.log("skipped (no credentials)");
       process.exit(0);
     }
-    console.error("ANTHROPIC_API_KEY is not set. Use --dry-run to render without calling the API.");
+    console.error(
+      [
+        "No Anthropic credentials found. Either:",
+        "  export ANTHROPIC_API_KEY=…   (or put it in .env.local)",
+        "  ant auth login               (uses a Claude subscription, no API key)",
+        "Use --dry-run to render the prompt and schema without calling the API.",
+      ].join("\n"),
+    );
     process.exit(78);
   }
 
