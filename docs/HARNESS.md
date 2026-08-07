@@ -3,7 +3,8 @@
 > 이 프로젝트의 모든 비자명한 작업은 3단계 루프를 거칩니다.
 > 결과물이 아닌, 결과물을 만드는 장치입니다.
 >
-> **작업 백로그:** `docs/TASKS.md` — 각 태스크에 Pre-flight, Done-when, Evaluator 체크 포함
+> **작업 지시:** `docs/HANDOFF.md` — 다음 세션 시작점 + 미완료 작업
+> (구 백로그 파일 `docs/archive/TASKS.md`는 2026-07-24 아카이브됨)
 
 ## 3-Agent 루프
 
