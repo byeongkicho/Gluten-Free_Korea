@@ -21,7 +21,10 @@ import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 
 // Files that state binding rules. These must describe the current repo.
-const HARNESS_FILES = ["CLAUDE.md", "AGENTS.md", "docs/HARNESS.md"];
+// README.md is here because it is the first thing a reader sees, and a stale
+// claim on the front page misleads a human the same way a stale path misleads
+// an agent — it carried two dead doc links until this check started covering it.
+const HARNESS_FILES = ["CLAUDE.md", "AGENTS.md", "docs/HARNESS.md", "README.md"];
 
 const fail = (msg, details = []) => {
   console.error(`FAIL: ${msg}`);
@@ -67,6 +70,8 @@ function checkRefs() {
     const cited = read(file).match(/`[^`\s]+\/[^`\s]+\.[a-z]{2,5}`/g) ?? [];
     for (const raw of new Set(cited)) {
       const p = raw.slice(1, -1);
+      // Globs (`prompts/*.md`) name a set, not a file — nothing to resolve.
+      if (p.includes("*")) continue;
       if (!existsSync(p) && !isGitIgnored(p)) broken.push(`${file} → ${p}`);
     }
   }

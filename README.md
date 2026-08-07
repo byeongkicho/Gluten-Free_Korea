@@ -1,139 +1,155 @@
 # Gluten-Free Korea
 
-> 한국 글루텐프리 식당·카페·베이커리 디렉토리  
+> Gluten-free restaurants, cafés, and bakeries in Korea — plus the label-reading
+> knowledge you need to shop here.
 > **Live:** [noglutenkorea.com](https://noglutenkorea.com) · **Instagram:** [@noglutenkorea](https://instagram.com/noglutenkorea)
 
-## Tech Stack
+A static Next.js site, but the part worth reading is how it is operated: the
+agent rules are files in this repository, and CI checks that those files still
+describe reality.
 
-- Next.js 15 App Router + React 19 + Tailwind CSS 4
-- Cloudflare Pages via `@cloudflare/next-on-pages`
-- Static-first: `data/places.json`이 유일한 런타임 데이터 소스
-- Cloudinary (Instagram 이미지 호스팅)
+## How this repo is run
 
-## Routes
+Every non-trivial change goes through a Planner → Generator → Evaluator loop
+(`docs/HARNESS.md`), and the rules those agents follow live in version control
+next to the code they govern.
 
-| Route | Description |
+| File | Runtime | Role |
+|---|---|---|
+| `CLAUDE.md` | Claude Code | Coding rules, forbidden operations, known pitfalls, error recovery |
+| `AGENTS.md` | Codex | Imports CLAUDE.md, adds one-commit-per-task execution rules |
+| `docs/HARNESS.md` | both | The 3-agent loop and subagent guardrails |
+| `docs/DECISIONS.md` | — | Append-only architecture decisions; superseding, never editing |
+| `docs/HANDOFF.md` | — | Session state — where work stopped and what is next |
+| `prompts/*.md` | scripts | Prompts as reviewable files, not string literals |
+
+Four things hold it together:
+
+| | |
 |---|---|
-| `/` | Place directory (search, filters, nearby, map) |
-| `/place/[slug]` | Place detail (images, notes, tips, map) |
-| `/guide` | Gluten-free safety guide |
+| **Constrain** | Forbidden section, subagent limits (≤4 files, ≤1000 lines, ≤3 parallel), human approval for irreversible work |
+| **Inform** | `docs/PROJECT.md` as SSOT, `docs/RUNBOOK.md` for operations, decisions recorded with their rationale |
+| **Verify** | The eval suite below, build-time schema guards, dual LLM judges before publishing |
+| **Correct** | Error-recovery rules (3 failures → change approach, 5 → stop and report), decisions that supersede rather than overwrite |
 
-## Quick Start
+Earlier generations of this harness are kept under `docs/archive/` rather than
+deleted, so the reasoning behind each change stays readable.
+
+## Verification
+
+```bash
+bash eval/eval-runner.sh                    # the whole suite
+bash eval/check-regression.sh --threshold 5.0
+npm run check:harness refs                  # one check on its own
+```
+
+Seven tasks run on every push to `main` and on pull requests
+(`.github/workflows/eval.yml`), gated on the paths that can affect them —
+including `prompts/**` and `CLAUDE.md`, so a prompt change is a tested change.
+
+| Task | What it protects |
+|---|---|
+| `data-001` | Required fields, slug uniqueness, place-count regressions |
+| `build-001` | The `build:places → validate:places → build` chain |
+| `img-001` | Every referenced Cloudinary id actually resolves |
+| `cdn-001` | The URL builder honours all presets and rejects unknown ones |
+| `deploy-001` | Production responds and serves the expected content |
+| `review-001` | Edge-runtime compatibility, security headers, canonical metadata |
+| `harness-001` | **The rule documents still describe this repository** |
+
+That last one is the unusual one. It verifies that paths cited in `CLAUDE.md`,
+`AGENTS.md`, `docs/HARNESS.md`, and this README exist, that every `npm run`
+they instruct an agent to use is defined, that the baseline is not older than
+the harness it grades, that `eval/README.md` matches the actual suite, and that
+files marked un-committable are in fact untracked.
+
+The failure it prevents is quiet: when a rule document cites a path that has
+moved, an agent reading it skips the instruction. The build stays green, the
+deploy succeeds, and the rule silently stops existing. It found three such
+defects the first time it ran.
+
+## Publishing gate
+
+Blog posts are graded by two independent LLM judges — one for search
+performance and E-E-A-T, one for factual accuracy and reader safety — and
+publish only at **9.5/10 on both** with no blocking finding. Readers here
+include people with celiac disease, for whom a wrong claim about food is a
+health event.
+
+```bash
+npm run judge -- <slug> --dry-run   # render prompt and schema, no API key
+npm run judge -- --all              # judge every published post
+```
+
+The judges never see each other's output; that is two API calls, not a promise
+inside a prompt. The model returns integer points per criterion and never a
+total — the score, the threshold, and the pass/fail are computed in JS, because
+a model asked for "a score out of 10" picks the number first and reasons
+backwards. Each run records the article's SHA-256 and the rubric version, so
+editing a post after it was judged breaks the hash and fails CI. See
+[`prompts/README.md`](prompts/README.md) and
+[`eval/judgments/PROVENANCE.md`](eval/judgments/PROVENANCE.md) — the latter
+separates reproducible scores from ones that only exist in session notes, and
+refuses to blend them.
+
+## Stack
+
+Next.js 15 App Router · React 19 · Tailwind CSS 4 · Cloudflare Pages via
+`@cloudflare/next-on-pages` · Cloudinary for images. Static-first:
+`data/places.json` is the only runtime data source, and it is generated.
+
+LLM calls appear in exactly two places in the content pipeline — caption
+drafting and note enrichment — plus the judges above. Collection, merging,
+validation, and deployment are deterministic on purpose: a hallucination in the
+data path is much more expensive than one in a caption draft.
+
+## Quick start
 
 ```bash
 npm install
-npm run dev          # http://localhost:3000
+npm run dev                     # http://localhost:3000
+npm run build && npm run validate:places   # required before any commit
 ```
 
-## Build & Deploy
-
-```bash
-# Full pipeline (데이터 + 빌드)
-npm run publish:local           # import:naver → build:places → validate:places
-npm run pages:build             # Next.js build for CF Pages
-
-# Deploy
-npx wrangler pages deploy .vercel/output/static --project-name noglutenkorea
-
-# After data-only change (no new photos)
-npm run build:places && npm run pages:build
-
-# After photo change
-npm run optimize:images && npm run build:places && npm run pages:build
-```
-
-## Data Pipeline
+## Data pipeline
 
 ```
 data/naver_raw.json (gitignored)
   → npm run import:naver
     → data/candidates.naver.json
-      + data/overrides.json (manual edits)
+      + data/overrides.json (manual)
         → npm run build:places
-          → data/places.json (generated, never edit directly)
+          → data/places.json  (generated — never edit by hand)
 ```
 
-## Harness Engineering (4기둥)
-
-이 프로젝트는 **하네스 엔지니어링** 원칙을 적용합니다: `Agent = Model + Harness`
-
-### 에이전트 하네스 파일
-
-| 파일 | 대상 | 역할 |
-|---|---|---|
-| `CLAUDE.md` | Claude Code | 코딩 규칙, 금지 사항, 알려진 함정, 에러 복구 |
-| `AGENTS.md` | Codex | CLAUDE.md 참조 + Codex 전용 규칙 |
-| `~/.openclaw/workspace-gfkorea/AGENTS.md` | OpenClaw | 운영 하네스 (Instagram, Cloudinary, 데이터 관리) |
-
-### 4개의 기둥
-
-| 기둥 | 구현 |
-|---|---|
-| **Constrain** (제한) | Forbidden 섹션, 파일 경로 제한, 핸드오프 규칙 |
-| **Inform** (정보 제공) | AGENTS.md, PROJECT.md, MULTI_AGENT.md, RUNBOOK.md |
-| **Verify** (검증) | Eval 파이프라인 (`eval/`), `validate:places`, CI/CD 자동화 |
-| **Correct** (수정) | Error Recovery 규칙, Past Failures 로그, Human-in-the-loop |
-
-### 멀티 에이전트 아키텍처
-
-```
-OpenClaw (gfkorea) = 오케스트레이터
-├── Claude Code    = 코드 계획 + 소규모 수정
-├── Codex          = 대규모 구현 (CODEX_RUN.md)
-└── OpenClaw (general) = 개인 업무 (별도)
-```
-
-자세한 역할 분담: [`docs/MULTI_AGENT.md`](docs/MULTI_AGENT.md)
-
-## Eval Pipeline
-
-자동화된 품질 검증 파이프라인 (EDD — Eval-Driven Development):
+Images follow the same shape: originals live outside the generated tree,
+`npm run optimize:images` produces `.webp`, and `npm run upload:cloudinary`
+publishes them. Only `.webp` is uploaded, so only `.webp` is scanned.
 
 ```bash
-# 전체 Eval 실행
-bash eval/eval-runner.sh
-
-# 기준선 대비 퇴행 체크
-bash eval/check-regression.sh --threshold 5.0
+npm run publish:local           # import → build → validate
+npm run pages:build             # build for Cloudflare Pages
 ```
 
-### Eval 카테고리 & 기준선
+Pushing to `main` deploys (`.github/workflows/deploy.yml`).
 
-| 카테고리 | 테스트 | 기준선 |
-|---|---|---|
-| 빌드 안정성 | `build:places` → `validate:places` → `build` | ✅ 3/3 |
-| Cloudinary URL | URL 형식 검증 | ✅ 1/1 |
-| 배포 검증 | 사이트 200 OK + 콘텐츠 확인 | ✅ 2/2 |
-| 이미지 무결성 | places.json 참조 이미지 존재 확인 | ✅ 1/1 |
-| 데이터 무결성 | 필수 필드 + 가게 수 감소 감지 | ✅ 3/3 |
+## Routes
 
-PR에서 하네스 파일 변경 시 GitHub Actions가 자동으로 Eval 실행 (`.github/workflows/eval.yml`).
-
-### 반복 개선 원칙
-
-> "실패 1건 = 방지책 1줄" — Mitchell Hashimoto
-
-에이전트가 실수할 때마다 `CLAUDE.md`의 Failure Log에 1줄 추가.
+| Route | |
+|---|---|
+| `/` | Home — latest posts and featured places |
+| `/places` | Directory with search, filters, map |
+| `/place/[slug]` | Place detail |
+| `/blog/[slug]` | Posts |
+| `/guide` | Gluten-free safety guide |
 
 ## Docs
 
-| 문서 | 역할 |
+| | |
 |---|---|
-| [`docs/PROJECT.md`](docs/PROJECT.md) | SSOT (Single Source of Truth) |
-| [`docs/DECISIONS.md`](docs/DECISIONS.md) | 아키텍처 결정 (append-only) |
-| [`docs/OPERATING_MODEL.md`](docs/OPERATING_MODEL.md) | 에이전트 역할 분리 |
-| [`docs/RUNBOOK.md`](docs/RUNBOOK.md) | 일일 운영 절차 |
-| [`docs/MULTI_AGENT.md`](docs/MULTI_AGENT.md) | 멀티 에이전트 오케스트레이션 |
-| [`eval/README.md`](eval/README.md) | Eval 파이프라인 사용법 |
-
-## Places Data Schema
-
-### Required fields
-- `slug` (unique, URL-safe)
-- `name`
-- `type`
-
-### Optional fields
-- `location`, `address`, `note`, `tags[]`, `rating`
-- `website`, `naverMapUrl`, `instagram`, `sources[]`
-- `images[]`, `lat`, `lng`, `nameEn`, `note_ko`
+| [`docs/PROJECT.md`](docs/PROJECT.md) | Architecture, routes, data pipeline (SSOT) |
+| [`docs/DECISIONS.md`](docs/DECISIONS.md) | Why things are the way they are (append-only) |
+| [`docs/HARNESS.md`](docs/HARNESS.md) | The 3-agent loop |
+| [`docs/RUNBOOK.md`](docs/RUNBOOK.md) | Operating procedures |
+| [`eval/README.md`](eval/README.md) | Eval suite |
+| [`prompts/README.md`](prompts/README.md) | Prompt and rubric contracts |
