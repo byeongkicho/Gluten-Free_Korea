@@ -11,7 +11,7 @@ eval/
 ├── eval-runner.sh      # 전체 Eval 실행기
 ├── check-regression.sh # 기준선 대비 퇴행 감지
 ├── baseline.csv        # 기준선 측정 결과
-└── results/            # 실행 결과
+└── results/            # 실행 결과 (gitignored)
 ```
 
 ## 사용법
