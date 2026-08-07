@@ -1,0 +1,63 @@
+{
+  "id": "seo-eeat",
+  "version": 1,
+  "axis_label": "SEO / E-E-A-T",
+  "max_points": 20,
+  "pass_at": 9.5,
+  "criteria": [
+    {
+      "id": "search_intent",
+      "max": 3,
+      "label": "Search intent satisfied",
+      "guidance": "3 = answers the intent behind the frontmatter `keyword` within the first 200 words. 2 = answers it, but late or by a detour. 1 = addresses an adjacent question. 0 = does not match the intent."
+    },
+    {
+      "id": "title_meta",
+      "max": 2,
+      "label": "Title and description",
+      "guidance": "2 = keyword present, title <= 60 chars, description <= 155 chars, no duplicated phrasing between them. 1 = one of those violated. 0 = two or more. Note: layout.js appends ' | Gluten-Free Korea' at render time — count it."
+    },
+    {
+      "id": "structure",
+      "max": 2,
+      "label": "Heading structure and scannability",
+      "guidance": "2 = headings describe content rather than label it, and a reader skimming only the headings gets the argument. 1 = structured but generic headings. 0 = wall of text or misleading headings."
+    },
+    {
+      "id": "internal_links",
+      "max": 2,
+      "label": "Internal links",
+      "guidance": "2 = at least 3 contextually earned internal links. 1 = 1-2. 0 = none. Links stuffed where they do not help the reader score as 0 regardless of count."
+    },
+    {
+      "id": "faq_alignment",
+      "max": 2,
+      "label": "FAQ / structured-data alignment",
+      "guidance": "2 = every frontmatter `faq` Q/A is supported by the body and stands alone if shown as a rich result. 1 = partially. 0 = an answer asserts something the body never establishes. Google requires markup to match visible content."
+    },
+    {
+      "id": "experience",
+      "max": 3,
+      "label": "Experience (first-hand)",
+      "guidance": "3 = specific observed facts: dates, places, quantities, things that went wrong. 2 = concrete but thin. 1 = general advice anyone could write. 0 = no signal of first-hand experience."
+    },
+    {
+      "id": "expertise",
+      "max": 2,
+      "label": "Expertise (specificity)",
+      "guidance": "2 = product names, Korean terms with romanisation, and figures stated precisely enough that a reader could check them. 1 = partially specific. 0 = vague throughout."
+    },
+    {
+      "id": "authoritativeness",
+      "max": 2,
+      "label": "Authoritativeness (sourcing)",
+      "guidance": "2 = primary sources linked with their publication dates. 1 = sources present but undated. 0 = claims with no attribution."
+    },
+    {
+      "id": "trust",
+      "max": 2,
+      "label": "Trust (limits and disclosure)",
+      "guidance": "2 = the piece states what its method cannot establish, and any affiliate link is disclosed. 1 = one of those missing. 0 = overclaims, or an undisclosed commercial link."
+    }
+  ]
+}

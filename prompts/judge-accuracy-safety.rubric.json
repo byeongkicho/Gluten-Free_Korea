@@ -1,0 +1,52 @@
+{
+  "id": "accuracy-safety",
+  "version": 1,
+  "axis_label": "Accuracy / Safety",
+  "max_points": 20,
+  "pass_at": 9.5,
+  "blocking_allowed": true,
+  "criteria": [
+    {
+      "id": "claim_verifiability",
+      "max": 4,
+      "label": "Claims are verifiable",
+      "guidance": "4 = every factual claim is either sourced or explicitly marked as the author's own observation. 3 = one unsourced claim that does not affect a safety decision. 2 = several. 1 = the central claim is unsupported. 0 = unsupported claims a reader would act on."
+    },
+    {
+      "id": "no_fabrication",
+      "max": 3,
+      "label": "No fabricated specifics",
+      "guidance": "3 = product names, figures, and dates are all checkable and internally consistent. 2 = a minor inconsistency. 0 = an invented product, statistic, or date. This is the criterion for hallucinated detail — judge it strictly."
+    },
+    {
+      "id": "method_transparency",
+      "max": 3,
+      "label": "Method and its limits disclosed",
+      "guidance": "3 = the piece says how it knows what it knows and what that method cannot establish. A keyword match over product names must not be described as ingredient analysis or classification. 2 = method stated, limits vague. 1 = method implied only. 0 = the method is overstated."
+    },
+    {
+      "id": "celiac_safety_framing",
+      "max": 4,
+      "label": "Celiac safety framing",
+      "guidance": "4 = no absolute safety guarantees, cross-contamination addressed where relevant, and celiac risk never understated relative to gluten sensitivity. 2 = one lapse. 0 = language that could lead a celiac reader to eat something unsafe. Understating celiac risk is a blocking finding."
+    },
+    {
+      "id": "source_recency",
+      "max": 2,
+      "label": "Source recency",
+      "guidance": "2 = source dates are correct and elapsed time is stated where it matters. 1 = dated but the staleness is not flagged. 0 = a date is wrong, or old data is presented as current. Korean food manufacturers reformulate without notice."
+    },
+    {
+      "id": "korean_accuracy",
+      "max": 2,
+      "label": "Korean-context accuracy",
+      "guidance": "2 = Korean terms, labelling law, and product categories are described correctly. Note the load-bearing fact: Korea's mandatory allergen labelling covers wheat only — barley and rye are not mandatory. 1 = minor imprecision. 0 = a claim about Korean labelling that is wrong."
+    },
+    {
+      "id": "reader_verification",
+      "max": 2,
+      "label": "Reader can verify independently",
+      "guidance": "2 = the reader is given a concrete way to check for themselves rather than trusting the piece. 1 = partial. 0 = the reader must take the author's word for a safety-relevant claim."
+    }
+  ]
+}
