@@ -1,15 +1,15 @@
 {
   "id": "img-001",
   "name": "이미지 파이프라인 무결성",
-  "description": "places.json에서 이미지가 있는 항목의 파일이 실제 존재하는지 검증",
+  "description": "places.json이 참조하는 모든 Cloudinary public_id가 실제로 응답하는지 검증. 로컬 .webp 존재는 배포 상태를 증명하지 못한다 — 큐레이션된 images 오버라이드는 로컬 대응 파일이 아예 없고, 반대로 로컬에 파일이 있어도 업로드됐다는 보장이 없다.",
   "steps": [
     {
-      "command": "node -e \"const fs=require('fs'); const d=require('./data/places.json'); let missing=0; let checked=0; d.forEach(p=>{(p.images||[]).forEach(img=>{checked++; let f; if(img.startsWith('/'))f='public'+img; else f='public/images/'+img; if(!f.match(/\\\\.[a-z]+$/))f+='.webp'; if(!fs.existsSync(f)){console.error('Missing:',f);missing++}})}); console.log('Checked:',checked,'Missing:',missing); if(missing>0)process.exit(1)\"",
+      "command": "node scripts/check-images.mjs live",
       "check": "exit_code_zero",
-      "desc": "참조된 이미지 파일 모두 존재"
+      "desc": "참조된 이미지가 전부 Cloudinary에서 응답"
     }
   ],
-  "threshold": 0.8,
+  "threshold": 1.0,
   "category": "이미지 파이프라인",
   "weight": "medium"
 }
