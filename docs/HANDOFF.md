@@ -62,10 +62,10 @@
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-08-08 14:24
+- **마지막 업데이트:** 2026-08-08 14:26
 - **작업자:** Claude Code
 - **브랜치:** main
-- **마지막 커밋:** `99d88f2` docs(handoff): 2026-08-07 session — 12-factor diagnosis carried out
+- **마지막 커밋:** `7db77ce` chore(eval): refresh baseline after adding README to the harness set
 - **점수 진단(2026-07-24, 별도 전문가 평가):** 웹 5.3/10, PM 4.3/10 — "자산 품질은 7, 운영 규율은 3.5". 갭은 대부분 *이미 시작한 것의 완성*.
 
 ## 완료된 작업 (2026-07-24 재개 세션 — P0 안정화)
