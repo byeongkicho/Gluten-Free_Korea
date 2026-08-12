@@ -18,7 +18,23 @@
 
 **보류된 원래 작업:** 커머셜 인텐트 글 #1(`~/.claude/plans/1-frolicking-starlight.md`). 키워드 게이트에서 멈춰 있고, 리서치 결과 계획서의 두 후보가 모두 SERP상 부적합했다(`where to buy…`는 확립 도메인 지배, `gluten free soy sauce korea`는 상위 10 중 8개가 상품 페이지). 제3 후보 `gluten free korean pantry`가 유망 — 상위가 전부 "해외 H마트" 관점이라 **한국 현지·한국어 라벨 각도가 비어 있다.** 단, 신규 발행은 이제 게이트를 실제로 통과해야 한다.
 
-## 완료 (2026-08-12) — 판사 실채점: claude CLI 백엔드 + 첫 실기록 + 게이트 배선
+## 완료 (2026-08-12 오후) — 관측성 파이프라인 가동 (career 트랙 A 인수)
+
+career 세션(`observability-slo-proof`)이 시작한 "경력 연수 대신 내밀 증거" 트랙 A를 이 세션이 **동의 하에 인수**해 완결. 원계획 `~/.claude/plans/https-careers-microsoft-com-v2-global-en-zany-stream.md`, **8/17 게이트(대시보드+알림 2개)를 8/12에 조기 달성.**
+
+```
+GitHub Actions (매시간) → healthcheck 16지표 → Grafana Cloud 도쿄(influx push)
+                        → 23:50 KST 하루 1행 다운샘플링 → data/daily-summary.csv 자동커밋 [skip ci]
+```
+
+- **대시보드**: `https://bronzedeck1580.grafana.net/d/ngk-health` · **공개 링크(로그인 불필요, 면접용)**: `/public-dashboards/4567f98922b2487da8f3d8bdd3be9781` — 무료 티어 공개 대시보드 **가능 확인됨**(career 세션의 미확인 항목 해소)
+- **알림 2개 가동**: SSL<30일(Normal, 68일) · IG 데이터접근<7일(**🔴 Alerting — 실제 -44일 방치를 잡음**, 메일→byeongkicho@gmail.com). 알림 라우팅 기본값이 `"empty"`(무전송)였던 것도 수정
+- **핵심 함정 (재발 주의)**: 지표가 시간당인데 instant 쿼리 lookback은 5분 → stat 패널·알림이 매시간 55분간 "NoData". **모든 최신값 읽기는 `last_over_time(…[창])`으로** (`058814b`). 알림 range 쿼리도 같은 이유로 instant로 전환
+- 커밋: `037bf09`(인수분: 지표화·다운샘플링·워크플로 — pipefail이 6주 침묵 실패를 드러냄) → `f6ca385`(influx push, 크리덴셜 없으면 skip) → `3465423`·`058814b`(대시보드·알림 as code, `monitoring/`)
+- **봇이 main에 커밋한다**: 일일 요약이 `github-actions[bot]`으로 push됨 → **세션에서 push 전 `git pull --rebase --autostash` 습관화**
+- **남은 것**: ① `INSTAGRAM_*` 3종 GitHub 시크릿 등록(로컬 `~/.instagram-creds`에 있음, 등록해야 CI에서도 IG 지표 나옴 — 사용자 승인 대기) ② **IG 재인증**(알림이 잡은 실제 액션) ③ 내일 24h 지표 연속성 확인 ④ SLO 문서+장애회고 = career 9/14 게이트 ⑤ daily-summary 최종형은 Grafana 24h 집계 질의로 전환(career 세션 설계 의도)
+
+## 완료 (2026-08-12 오전) — 판사 실채점: claude CLI 백엔드 + 첫 실기록 + 게이트 배선
 
 크레딧 병목의 해소가 세션의 절반이었다. **구독 ≠ API 크레딧** 문제를 `judge-post.mjs`에 `--backend claude-cli`(Claude Code `claude -p` 헤드리스, 구독 과금)를 추가해 풀었다 — `--json-schema`로 스키마 강제, `--effort high` 고정, `--tools ""` 격리라서 API 경로와 거의 계약 동등. 못 고정하는 것(CLI 버전)은 레코드에 `claude_version`으로 기록. PROVENANCE는 A1(runner)/A2(claude-cli)로 분리, 손으로 쓴 점수는 여전히 표현 불가.
 
@@ -81,7 +97,7 @@
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-08-12 13:31
+- **마지막 업데이트:** 2026-08-12 15:19
 - **작업자:** Claude Code
 - **브랜치:** main
 - **CI:** 🔴 content-001 (의도된 빨강 — 위 백로그 해소 시까지)
