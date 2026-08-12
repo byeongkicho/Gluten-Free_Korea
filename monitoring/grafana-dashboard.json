@@ -55,7 +55,7 @@
       "title": "SSL 잔여일",
       "gridPos": { "h": 6, "w": 4, "x": 5, "y": 0 },
       "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
-      "targets": [{ "refId": "A", "expr": "ngk_ssl_expiry_days", "instant": true }],
+      "targets": [{ "refId": "A", "expr": "last_over_time(ngk_ssl_expiry_days[2h])", "instant": true }],
       "fieldConfig": {
         "defaults": {
           "unit": "d",
@@ -79,7 +79,7 @@
       "description": "음수 = 이미 만료(재인증 필요). 토큰 자체는 무기한(expires_at=0)이라 별도 지표가 없다.",
       "gridPos": { "h": 6, "w": 5, "x": 9, "y": 0 },
       "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
-      "targets": [{ "refId": "A", "expr": "ngk_instagram_data_access_expiry_days", "instant": true }],
+      "targets": [{ "refId": "A", "expr": "last_over_time(ngk_instagram_data_access_expiry_days[7d])", "instant": true }],
       "fieldConfig": {
         "defaults": {
           "unit": "d",
@@ -103,7 +103,7 @@
       "description": "ngk_instagram_api_up — 페이지 토큰으로 실제 IG 계정 조회 성공 여부.",
       "gridPos": { "h": 6, "w": 4, "x": 14, "y": 0 },
       "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
-      "targets": [{ "refId": "A", "expr": "ngk_instagram_api_up", "instant": true }],
+      "targets": [{ "refId": "A", "expr": "last_over_time(ngk_instagram_api_up[7d])", "instant": true }],
       "fieldConfig": {
         "defaults": {
           "mappings": [
@@ -122,7 +122,7 @@
       "description": "places.json 총 항목 수.",
       "gridPos": { "h": 6, "w": 3, "x": 18, "y": 0 },
       "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
-      "targets": [{ "refId": "A", "expr": "ngk_places_total", "instant": true }],
+      "targets": [{ "refId": "A", "expr": "last_over_time(ngk_places_total[2h])", "instant": true }],
       "fieldConfig": {
         "defaults": { "thresholds": { "mode": "absolute", "steps": [{ "color": "blue", "value": null }] } },
         "overrides": []

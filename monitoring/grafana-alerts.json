@@ -1,0 +1,171 @@
+{
+  "_comment": "Grafana Cloud alert rules, provisioned via API 2026-08-12. Source of truth is the instance; this copy is for reproducibility \u2014 POST each to /api/v1/provisioning/alert-rules.",
+  "rules": [
+    {
+      "uid": "ngk-ssl-expiry",
+      "orgID": 1,
+      "folderUID": "ngk-monitoring",
+      "ruleGroup": "ngk-expiry",
+      "title": "SSL certificate expires in <30 days",
+      "condition": "C",
+      "data": [
+        {
+          "refId": "A",
+          "queryType": "",
+          "relativeTimeRange": {
+            "from": 600,
+            "to": 0
+          },
+          "datasourceUid": "grafanacloud-prom",
+          "model": {
+            "expr": "last_over_time(ngk_ssl_expiry_days[24h])",
+            "instant": true,
+            "intervalMs": 1000,
+            "maxDataPoints": 43200,
+            "range": false,
+            "refId": "A"
+          }
+        },
+        {
+          "refId": "B",
+          "queryType": "",
+          "relativeTimeRange": {
+            "from": 0,
+            "to": 0
+          },
+          "datasourceUid": "__expr__",
+          "model": {
+            "expression": "A",
+            "intervalMs": 1000,
+            "maxDataPoints": 43200,
+            "reducer": "last",
+            "refId": "B",
+            "type": "reduce"
+          }
+        },
+        {
+          "refId": "C",
+          "queryType": "",
+          "relativeTimeRange": {
+            "from": 0,
+            "to": 0
+          },
+          "datasourceUid": "__expr__",
+          "model": {
+            "conditions": [
+              {
+                "evaluator": {
+                  "params": [
+                    30
+                  ],
+                  "type": "lt"
+                }
+              }
+            ],
+            "expression": "B",
+            "intervalMs": 1000,
+            "maxDataPoints": 43200,
+            "refId": "C",
+            "type": "threshold"
+          }
+        }
+      ],
+      "noDataState": "OK",
+      "execErrState": "OK",
+      "for": "0s",
+      "keep_firing_for": "0s",
+      "annotations": {
+        "summary": "noglutenkorea.com TLS cert has {{ $values.B }} days left \u2014 Cloudflare should auto-renew; if this fires, it has not."
+      },
+      "labels": {
+        "service": "noglutenkorea"
+      },
+      "isPaused": false,
+      "notification_settings": null,
+      "record": null
+    },
+    {
+      "uid": "ngk-ig-data-access",
+      "orgID": 1,
+      "folderUID": "ngk-monitoring",
+      "ruleGroup": "ngk-expiry",
+      "title": "Instagram data access expires in <7 days",
+      "condition": "C",
+      "data": [
+        {
+          "refId": "A",
+          "queryType": "",
+          "relativeTimeRange": {
+            "from": 600,
+            "to": 0
+          },
+          "datasourceUid": "grafanacloud-prom",
+          "model": {
+            "expr": "last_over_time(ngk_instagram_data_access_expiry_days[7d])",
+            "instant": true,
+            "intervalMs": 1000,
+            "maxDataPoints": 43200,
+            "range": false,
+            "refId": "A"
+          }
+        },
+        {
+          "refId": "B",
+          "queryType": "",
+          "relativeTimeRange": {
+            "from": 0,
+            "to": 0
+          },
+          "datasourceUid": "__expr__",
+          "model": {
+            "expression": "A",
+            "intervalMs": 1000,
+            "maxDataPoints": 43200,
+            "reducer": "last",
+            "refId": "B",
+            "type": "reduce"
+          }
+        },
+        {
+          "refId": "C",
+          "queryType": "",
+          "relativeTimeRange": {
+            "from": 0,
+            "to": 0
+          },
+          "datasourceUid": "__expr__",
+          "model": {
+            "conditions": [
+              {
+                "evaluator": {
+                  "params": [
+                    7
+                  ],
+                  "type": "lt"
+                }
+              }
+            ],
+            "expression": "B",
+            "intervalMs": 1000,
+            "maxDataPoints": 43200,
+            "refId": "C",
+            "type": "threshold"
+          }
+        }
+      ],
+      "noDataState": "OK",
+      "execErrState": "OK",
+      "for": "0s",
+      "keep_firing_for": "0s",
+      "annotations": {
+        "summary": "Instagram data access window: {{ $values.B }} days (negative = already lapsed). Re-authenticate the Facebook app."
+      },
+      "labels": {
+        "service": "noglutenkorea"
+      },
+      "isPaused": false,
+      "notification_settings": null,
+      "record": null
+    }
+  ]
+}
