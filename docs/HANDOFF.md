@@ -32,7 +32,8 @@ GitHub Actions (매시간) → healthcheck 16지표 → Grafana Cloud 도쿄(inf
 - **핵심 함정 (재발 주의)**: 지표가 시간당인데 instant 쿼리 lookback은 5분 → stat 패널·알림이 매시간 55분간 "NoData". **모든 최신값 읽기는 `last_over_time(…[창])`으로** (`058814b`). 알림 range 쿼리도 같은 이유로 instant로 전환
 - 커밋: `037bf09`(인수분: 지표화·다운샘플링·워크플로 — pipefail이 6주 침묵 실패를 드러냄) → `f6ca385`(influx push, 크리덴셜 없으면 skip) → `3465423`·`058814b`(대시보드·알림 as code, `monitoring/`)
 - **봇이 main에 커밋한다**: 일일 요약이 `github-actions[bot]`으로 push됨 → **세션에서 push 전 `git pull --rebase --autostash` 습관화**
-- **남은 것**: ① `INSTAGRAM_*` 3종 GitHub 시크릿 등록(로컬 `~/.instagram-creds`에 있음, 등록해야 CI에서도 IG 지표 나옴 — 사용자 승인 대기) ② **IG 재인증**(알림이 잡은 실제 액션) ③ 내일 24h 지표 연속성 확인 ④ SLO 문서+장애회고 = career 9/14 게이트 ⑤ daily-summary 최종형은 Grafana 24h 집계 질의로 전환(career 세션 설계 의도)
+- **✅ 풀 사이클 실증 (16:10 종결)**: 경보 발화(IG -44일) → 사용자 재인증(Graph API Explorer, 데이터접근 **+89일**로 갱신, 2026-11-10까지) → 지표 push → **경보 자동 해제(Normal)**. `INSTAGRAM_*` 3종 시크릿 등록(사용자 승인) → CI에서도 IG 관측(31→34 샘플). 44일 방치 문제를 파이프라인 가동 당일 발견·해결한 실사례 — SLO 문서의 첫 장애회고 소재.
+- **남은 것**: ① 내일 24h 지표 연속성 확인 ② SLO 문서+장애회고 = career 9/14 게이트(위 사례로 시작) ③ daily-summary 최종형은 Grafana 24h 집계 질의로 전환(career 세션 설계 의도) ④ IG 데이터접근은 90일 주기 — **11월 초 재인증 필요**(이제 알림이 7일 전에 알려줌)
 
 ## 완료 (2026-08-12 오전) — 판사 실채점: claude CLI 백엔드 + 첫 실기록 + 게이트 배선
 
