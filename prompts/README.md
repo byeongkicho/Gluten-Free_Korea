@@ -46,15 +46,25 @@ breaks CI**, which is the sense in which these prompts are under test.
 ## Running it
 
 ```bash
-node scripts/judge-post.mjs <slug> --dry-run   # render prompt + schema, no API key needed
+node scripts/judge-post.mjs <slug> --dry-run   # render prompt + schema, no model call
 node scripts/judge-post.mjs <slug>             # judge, record to eval/judgments/
 node scripts/judge-post.mjs --all              # every published post
 node scripts/judge-post.mjs <slug> --repeat 3  # median and spread across runs
 node scripts/judge-post.mjs <slug> --ref <sha> # judge a past revision
 ```
 
-Needs `ANTHROPIC_API_KEY` in the environment or in `.env` / `.env.local`.
-Exit codes: `0` passed · `1` gate failed · `2` runtime error · `78` no API key.
+Two backends reach a model; `--backend auto` (the default) picks in this order:
+
+- **api** — needs `ANTHROPIC_API_KEY` (or API credit behind an `ant auth login`
+  profile). The fully pinned path: schema and effort are enforced by the API
+  contract. Records carry `provenance: "runner"`.
+- **claude-cli** — shells out to `claude -p`, billed to a Claude subscription,
+  no API credit needed. Same rubric, same schema (via `--json-schema`), same
+  tally; what it cannot pin is the Claude Code version in the middle. Records
+  carry `provenance: "claude-cli"` plus the CLI version.
+
+Exit codes: `0` passed · `1` gate failed · `2` runtime error · `78` no
+credentials and no claude CLI.
 
 Judging is non-deterministic. `--repeat N` reports the median, min, and max per
 axis so the spread is a measured number rather than an assumption; run it when

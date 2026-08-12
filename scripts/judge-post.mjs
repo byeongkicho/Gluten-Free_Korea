@@ -27,14 +27,17 @@
 //   node scripts/judge-post.mjs <slug> --repeat 3   measure run-to-run spread
 //   node scripts/judge-post.mjs <slug> --dry-run    render prompt + schema, no API
 //   node scripts/judge-post.mjs <slug> --no-write   print, don't record
+//   --backend auto|api|claude-cli                   auto: api if credentialed,
+//                                                   else Claude Code in print mode
 //
-// Exit codes: 0 gate passed · 1 gate failed · 2 runtime error · 78 no API key.
+// Exit codes: 0 gate passed · 1 gate failed · 2 runtime error · 78 no way to
+// reach a model (no API credentials and no claude CLI on PATH).
 
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { readdirSync } from "node:fs";
 import { homedir } from "node:os";
 import { createHash } from "node:crypto";
-import { execFileSync } from "node:child_process";
+import { execFileSync, spawn } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import matter from "gray-matter";
@@ -97,6 +100,76 @@ function hasCredentials() {
   } catch {
     return false;
   }
+}
+
+// The other way to a model: Claude Code itself, in print mode. This bills the
+// Claude subscription instead of API credit — the constraint that kept bucket A
+// empty for a week (see PROVENANCE.md). `--json-schema` gives the same
+// structured-output enforcement as the API's format parameter, `--effort` pins
+// the effort level, and `--tools ""` leaves the model nothing to do but judge.
+// What it cannot pin: the claude-code version in the middle, which is why these
+// records carry provenance "claude-cli" and the CLI version, not "runner".
+function claudeCliVersion() {
+  try {
+    const v = execFileSync("claude", ["--version"], {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim();
+    return v || null;
+  } catch {
+    return null;
+  }
+}
+
+function runClaude(args, input) {
+  return new Promise((resolve, reject) => {
+    const child = spawn("claude", args, { stdio: ["pipe", "pipe", "pipe"] });
+    let out = "";
+    let err = "";
+    child.stdout.on("data", (d) => (out += d));
+    child.stderr.on("data", (d) => (err += d));
+    child.on("error", reject);
+    child.on("close", (code) => {
+      if (code === 0) resolve(out);
+      else reject(new Error(err.trim() || `claude exited ${code}`));
+    });
+    child.stdin.end(input);
+  });
+}
+
+async function callClaudeCli({ axis, system, schema, payload, model, effort }) {
+  let lastErr;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    let wrapper;
+    try {
+      const out = await runClaude(
+        [
+          "-p",
+          "--model", model,
+          "--effort", effort,
+          "--tools", "",
+          "--system-prompt", system,
+          "--output-format", "json",
+          "--json-schema", JSON.stringify(schema),
+        ],
+        payload,
+      );
+      wrapper = JSON.parse(out);
+    } catch (err) {
+      lastErr = new Error(`[${axis}] claude CLI attempt ${attempt}: ${err.message}`);
+      continue;
+    }
+    if (wrapper.is_error || !wrapper.structured_output) {
+      lastErr = new Error(
+        `[${axis}] claude CLI attempt ${attempt}: ${
+          wrapper.is_error ? "returned an error" : "no structured output"
+        } (subtype: ${wrapper.subtype ?? "?"})`,
+      );
+      continue;
+    }
+    return { output: wrapper.structured_output, usage: wrapper.usage };
+  }
+  throw lastErr;
 }
 
 // ── pure ──────────────────────────────────────────────────────────────────
@@ -274,19 +347,16 @@ async function loadPost(slug, ref) {
   return { post: { ...data, slug, content }, raw, source_ref: ref };
 }
 
-async function judgeAxis(client, axis, post, { effort, model }) {
-  const [rubric, template] = await Promise.all([loadRubric(axis), loadTemplate(axis)]);
-  const system = renderPrompt(template, { rubric: rubricToMarkdown(rubric), post: "" });
-
+async function callApi({ client, axis, system, schema, payload, model, effort }) {
   const res = await client.messages.parse({
     model,
     max_tokens: 16000,
     system,
-    messages: [{ role: "user", content: postToPayload(post) }],
+    messages: [{ role: "user", content: payload }],
     // The schema is passed as-is rather than through jsonSchemaOutputFormat():
     // that helper rewrites `enum` into a `description` string, which would turn
     // the per-criterion point ranges from a constraint into a suggestion.
-    output_config: { effort, format: { type: "json_schema", schema: rubricToSchema(rubric) } },
+    output_config: { effort, format: { type: "json_schema", schema } },
   });
 
   if (res.stop_reason === "refusal") {
@@ -299,12 +369,29 @@ async function judgeAxis(client, axis, post, { effort, model }) {
     throw new Error(`[${axis}] no parsed output (stop_reason: ${res.stop_reason})`);
   }
 
-  return { ...tallyAxis(rubric, res.parsed_output), usage: res.usage };
+  return { output: res.parsed_output, usage: res.usage };
 }
 
-async function judgeOnce(client, post, opts) {
+async function judgeAxis(backend, axis, post, { effort, model }) {
+  const [rubric, template] = await Promise.all([loadRubric(axis), loadTemplate(axis)]);
+  const call = {
+    axis,
+    system: renderPrompt(template, { rubric: rubricToMarkdown(rubric), post: "" }),
+    schema: rubricToSchema(rubric),
+    payload: postToPayload(post),
+    model,
+    effort,
+  };
+  const res =
+    backend.kind === "api"
+      ? await callApi({ client: backend.client, ...call })
+      : await callClaudeCli(call);
+  return { ...tallyAxis(rubric, res.output), usage: res.usage };
+}
+
+async function judgeOnce(backend, post, opts) {
   const settled = await Promise.allSettled(
-    AXES.map((axis) => judgeAxis(client, axis, post, opts)),
+    AXES.map((axis) => judgeAxis(backend, axis, post, opts)),
   );
   const failed = settled.filter((s) => s.status === "rejected");
   // A half-finished judgement must not be recorded: one axis passing tells you
@@ -351,8 +438,9 @@ async function main() {
   const repeat = Number(value("repeat", 1));
   const dryRun = flag("dry-run");
   const write = !flag("no-write");
+  const backendFlag = value("backend", "auto");
 
-  const VALUED = new Set(["ref", "repeat", "effort"]);
+  const VALUED = new Set(["ref", "repeat", "effort", "backend"]);
   const positional = [];
   for (let i = 0; i < argv.length; i++) {
     if (argv[i].startsWith("--")) {
@@ -383,31 +471,58 @@ async function main() {
     process.exit(0);
   }
 
-  if (!hasCredentials()) {
+  // Backend resolution. `auto` prefers the API — its records are the ones the
+  // pinned contract fully backs — and falls back to the claude CLI, which a
+  // Claude subscription covers without API credit.
+  let backend = null;
+  if (backendFlag === "api" || backendFlag === "auto") {
+    if (hasCredentials()) {
+      const Anthropic = (await import("@anthropic-ai/sdk")).default;
+      backend = { kind: "api", client: new Anthropic() };
+    } else if (backendFlag === "api") {
+      console.error(
+        [
+          "No Anthropic credentials found. Either:",
+          "  export ANTHROPIC_API_KEY=…   (or put it in .env.local)",
+          "  ant auth login               (authenticates, but needs API credit)",
+          "  --backend claude-cli         (bills the Claude subscription instead)",
+          "Use --dry-run to render the prompt and schema without calling a model.",
+        ].join("\n"),
+      );
+      process.exit(78);
+    }
+  }
+  if (!backend && backendFlag !== "api") {
+    if (backendFlag !== "auto" && backendFlag !== "claude-cli") {
+      console.error(`unknown --backend "${backendFlag}" (auto|api|claude-cli)`);
+      process.exit(2);
+    }
+    const version = claudeCliVersion();
+    if (version) backend = { kind: "claude-cli", version };
+  }
+  if (!backend) {
     if (flag("skip-without-key")) {
-      console.log("skipped (no credentials)");
+      console.log("skipped (no credentials, no claude CLI)");
       process.exit(0);
     }
     console.error(
       [
-        "No Anthropic credentials found. Either:",
+        "No way to reach a model. Either:",
         "  export ANTHROPIC_API_KEY=…   (or put it in .env.local)",
-        "  ant auth login               (uses a Claude subscription, no API key)",
-        "Use --dry-run to render the prompt and schema without calling the API.",
+        "  install the claude CLI       (a Claude subscription covers it)",
+        "Use --dry-run to render the prompt and schema without calling a model.",
       ].join("\n"),
     );
     process.exit(78);
   }
 
-  const Anthropic = (await import("@anthropic-ai/sdk")).default;
-  const client = new Anthropic();
   const stamp = new Date().toISOString().replace(/[:.]/g, "-");
   let failures = 0;
 
   for (const slug of slugs) {
     const { post, raw, source_ref } = await loadPost(slug, ref);
     const runs = [];
-    for (let i = 0; i < repeat; i++) runs.push(await judgeOnce(client, post, opts));
+    for (let i = 0; i < repeat; i++) runs.push(await judgeOnce(backend, post, opts));
 
     const axes = runs[0];
     const gate = gateFrom(axes);
@@ -429,9 +544,12 @@ async function main() {
       judged_at: new Date().toISOString(),
       model: opts.model,
       effort: opts.effort,
-      // Enum of one, deliberately: there is no representable way to put a
-      // hand-written score into this format. See eval/judgments/PROVENANCE.md.
-      provenance: "runner",
+      // One value per machine path, and no third: both are written only by this
+      // script, so a hand-written score has no representable provenance. The
+      // difference between the two is what stays pinned — see
+      // eval/judgments/PROVENANCE.md.
+      provenance: backend.kind === "api" ? "runner" : "claude-cli",
+      ...(backend.kind === "claude-cli" ? { claude_version: backend.version } : {}),
       runs: repeat,
       axes,
       spread,
