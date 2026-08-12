@@ -9,10 +9,10 @@
 **판사 실채점 완료 — 발행 5편 전원 FAIL, CI가 빨간 것은 사고가 아니라 의도된 상태다.** 사용자 결정으로 점수를 그대로 기록하고 게이트를 빨간 채 커밋했다. ⚠️ **루브릭을 낮추지 말 것** — 출구는 글 수정→재채점뿐이다.
 
 **▶ 다음 세션 첫 할 일 — 글 수정 백로그 (우선순위순):**
-1. **blocking 5건 응급 (독자 안전 직결):** butter-tteok 3건(무조건 안전 단정·"무증상=무글루텐" 추론·교차오염 무경고) + celiac-guide FAQ 2건(삼겹살 안전 단정 — 공유 그릴·집게, 밀-only 알레르기줄 스캔을 완전한 검사로 제시)
-2. **snacks — 가장 가까운 1녹색 (SEO 8→9.5만 남음, 정확성은 9.5 통과):** 제목 77자 SERP 잘림, 첫 200단어에 답 전진배치, 규정 주장 1차 출처
+1. ~~blocking 5건 응급~~ ✅ **완료 (08-12 오후)** — butter-tteok 3건 + celiac-guide 2건 제거, 재채점으로 blocking 0 확인. 같은 계열 절대 단정 4건(타마리 "GF substitute"·TL;DR 고기 안전·Monil2 "vet 불요"·결론 "naturally safe")도 함께 제거. 정확성 점수: butter-tteok 3.5→**7**, celiac-guide 6→**7**
+2. **snacks — 가장 가까운 1녹색 (SEO 8→9.5만 남음, 정확성은 9.5 통과):** 제목 77자 SERP 잘림, 첫 200단어에 답 전진배치, 규정 주장 1차 출처. +celiac-guide의 참쌀설병 "pink package is safe" 절대 단정(판사: blocking 직전) 함께 처리
 3. **사이트 전역 `<title>` 접미사** (`app/layout.js` ` | Gluten-Free Korea`) — 5편 전부 title_meta 감점의 공통 원인. 기존 "알려진 이슈"를 판사가 독립 재발견
-4. **출처·정확성 보강:** MFDS 라벨링 규정 링크(밀-only 의무표시 주장의 근거), labels의 엿기름 오역(malted barley이지 malt syrup 아님), hidden-gluten의 실존하지 않는 "Korea GF" 인증 삭제·"10~30% 밀 배합" 무출처 수치, celiac-guide의 알레르기 의무표시 개수(22로 썼으나 통상 19)
+4. **출처·정확성 보강:** MFDS 라벨링 규정 링크(밀-only 의무표시 주장의 근거), labels의 엿기름 오역(malted barley이지 malt syrup 아님), hidden-gluten의 실존하지 않는 "Korea GF" 인증 삭제·"10~30% 밀 배합" 무출처 수치, celiac-guide의 알레르기 의무표시 개수(22로 썼으나 통상 19), FAQ frontmatter-본문 문구 불일치(celiac-guide Q3·Q5 — 리치결과 자격 리스크)
 
 수정 후 재채점: `npm run judge -- <slug>` — 크레딧 없으면 **자동으로 claude CLI 백엔드**(구독 과금, `--backend` 플래그 참조). 글을 고치면 해시 불일치로 content-001이 알아서 빨개지므로 재채점 전까지 게이트가 거짓말하지 않는다.
 
