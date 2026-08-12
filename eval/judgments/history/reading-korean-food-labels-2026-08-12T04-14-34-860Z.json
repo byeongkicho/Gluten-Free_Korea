@@ -1,0 +1,300 @@
+{
+  "schema": 1,
+  "slug": "reading-korean-food-labels",
+  "source_ref": "working-tree",
+  "content_sha256": "4bd6a617713de387fde15d8f71dcd3c6e6aeb5a5723446c41b4d9726c5b75d10",
+  "judged_at": "2026-08-12T04:18:31.711Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.228 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 16,
+      "max_points": 20,
+      "score": 8,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "The core answer — flip the package and scan the back for 밀 — lands in the first paragraph, well inside 200 words, with the 4-step routine previewed immediately after.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 2,
+          "max": 2,
+          "note": "Keyword present in both, description at 154 chars, no duplicated phrasing — but the title exceeds 60 chars once the rendered site suffix is counted.",
+          "evidence_quote": "How to Read Korean Food Labels for Gluten (2026)"
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings carry the argument on their own — the wheat/barley asymmetry, the four steps named by what each does, the traps, and what passes.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Five contextual links to hidden-gluten, convenience-store snacks, the pillar guide and butter tteok, each placed where the reader would actually want the next step.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All three FAQ answers are established in the body (원재료명 step, the trap section on 쌀로 만든, the Hangul table) and each reads standalone as a rich result.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 2,
+          "max": 3,
+          "note": "One genuine failure is recounted and it is the article's best moment, but it carries no date, store, brand or product name — concrete but thin.",
+          "evidence_quote": "The snack that broke me of trusting the allergen line alone was a \"rice\" cracker: allergen line clean, but 밀 전분 sitting a few items up in the ingredients."
+        },
+        {
+          "id": "expertise",
+          "points": 1,
+          "max": 2,
+          "note": "Korean label terms are precise and usefully disambiguated, but there is no romanisation anywhere and no product or brand names a reader could check.",
+          "evidence_quote": "**Memorize four words:** 밀, 소맥, 보리, 호밀 — wheat (both names), barley, and rye. (Barley also hides as 맥아, malt.)"
+        },
+        {
+          "id": "authoritativeness",
+          "points": 0,
+          "max": 2,
+          "note": "The regulatory claim the whole method rests on is asserted with no source, link or date; no external references appear anywhere in the piece.",
+          "evidence_quote": "Korean law helps — but only halfway. Processed foods must declare major allergens, and **wheat is one of them**, so wheat almost always turns up in a predictable spot."
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "It explicitly marks the boundary of what label-reading can settle and points to the manufacturer for certainty; there are no commercial links requiring disclosure.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "authoritativeness",
+          "severity": "major",
+          "quote": "**only wheat (밀) is a mandatory allergen. Barley (보리) and rye (호밀) are not.**",
+          "why": "This asymmetry is the article's central claim and the stated justification for a four-step method instead of one — yet it is offered with no citation, no link to the MFDS allergen labelling standard, and no date. A reader (or a quality rater) has no way to verify the one fact everything else depends on, and Korean labelling rules are revised periodically, so an undated assertion silently decays.",
+          "fix": "Link the MFDS/식품의약품안전처 allergen labelling notice (식품등의 표시기준) directly at this sentence, with its publication or last-revision date inline, e.g. 'as of the 2024 revision'. Do the same for the 원재료명 mandatory-printing claim in Step 1 and for the GFCO comparison."
+        },
+        {
+          "criterion": "expertise",
+          "severity": "minor",
+          "quote": "| 소맥 | wheat | **same as 밀, different name — the classic trap** |",
+          "why": "The Hangul table is the most useful asset on the page, but no term is romanised anywhere in the article. A reader who cannot yet read Hangul — precisely the audience for a 'how to read labels' guide — cannot say, search, or ask a clerk about these words, and cannot cross-check them against other sources.",
+          "fix": "Add a romanisation column to the table (mil, milgaru, somaek, somaekbun, bori, daemaek, homil, mil jeonbun) and romanise the panel names on first use: 원재료명 (wonjaeryomyeong), 알레르기 유발물질 (allereugi yubalmuljil)."
+        },
+        {
+          "criterion": "experience",
+          "severity": "minor",
+          "quote": "But it took months of getting it wrong to make it automatic, and it's the single most useful habit we built while learning to eat gluten-free in Korea.",
+          "why": "The first-hand framing is asserted rather than shown. Apart from the unnamed 'rice' cracker, there are no dated incidents, named products, specific stores or counts, so most of the guidance reads as advice anyone could assemble without having stood in a Korean convenience store.",
+          "fix": "Name the rice cracker (brand and flavour) and roughly when it was bought, and add one or two more checked examples with the exact ingredient-line wording — e.g. a specific chicken-breast pack whose marinated version fails and whose plain version passes."
+        },
+        {
+          "criterion": "title_meta",
+          "severity": "minor",
+          "quote": "How to Read Korean Food Labels for Gluten (2026)",
+          "why": "At 48 characters the title is fine alone, but layout.js appends ' | Gluten-Free Korea' at render, pushing it to roughly 68 characters — past the ~60-char SERP display limit, so the tail will truncate.",
+          "fix": "Shorten to something like 'Read Korean Food Labels for Gluten (2026)' (41 chars, ~61 with suffix) or 'Korean Food Labels: Spot Gluten (2026)' to keep the full title visible with the site suffix attached."
+        },
+        {
+          "criterion": "trust",
+          "severity": "minor",
+          "quote": "If none of those appear and the shared-facility line is clean, the product is very likely gluten-free.",
+          "why": "The FAQ answer is the one place the piece leans past what its method can establish — the body itself concedes trace contamination is invisible on the package and that only the manufacturer can confirm. Shown alone as a rich result, this sentence loses that surrounding caveat.",
+          "fix": "Add the limit into the FAQ answer itself so it survives extraction, e.g. '...the product is very likely gluten-free for NCGS. For celiac, label reading cannot rule out trace contamination — confirm with the manufacturer.'"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 14026,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 5844,
+        "output_tokens_details": {
+          "thinking_tokens": 3160
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 14026,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 5844,
+            "cache_read_input_tokens": 0,
+            "cache_creation_input_tokens": 14026,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 14026
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 11,
+      "max_points": 20,
+      "score": 5.5,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 1,
+          "max": 4,
+          "note": "The load-bearing regulatory claim that the whole 4-step method rests on — wheat is a mandatory Korean allergen, barley and rye are not — is stated flatly with no citation, no regulation name, and no link, and the same is true of the 'gluten-free is voluntary in Korea' claim; only the anecdotal parts are explicitly marked as the author's own observation.",
+          "evidence_quote": "Korean law helps — but only halfway. Processed foods must declare major allergens, and **wheat is one of them**, so wheat almost always turns up in a predictable spot."
+        },
+        {
+          "id": "no_fabrication",
+          "points": 3,
+          "max": 3,
+          "note": "No invented products, statistics, or dates; the Hangul terms, panel names (원재료명, 알레르기 유발물질, 영양성분) and the internal logic of the four steps are all checkable and mutually consistent.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "method_transparency",
+          "points": 2,
+          "max": 3,
+          "note": "The reading method itself is stated clearly and its main limit is disclosed (the allergen line cannot clear barley or rye, and no label can establish trace-level safety), but the article never says how it established the legal claims it hangs everything on — whether from the MFDS labelling standard, a secondary source, or personal inference.",
+          "evidence_quote": "Korea requires major allergens to be declared here — wheat among them — so if a product contains wheat, it almost always appears on this line as **밀**."
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 2,
+          "max": 4,
+          "note": "Celiac is correctly separated from NCGS and given the stricter rule, no absolute 'safe' language appears, and shared-facility lines are addressed — but the piece never tells the reader that Korean may-contain/shared-facility statements are voluntary, so a missing warning is treated as a clean signal.",
+          "evidence_quote": "If none of those appear and the shared-facility line is clean, the product is very likely gluten-free."
+        },
+        {
+          "id": "source_recency",
+          "points": 1,
+          "max": 2,
+          "note": "The piece is dated 2026 and describes current Korean labelling rules, but gives no as-of date for when those rules were checked and never warns that manufacturers reformulate, so a reader in 2027 has no way to gauge staleness.",
+          "evidence_quote": "By law, processed foods have to print it."
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 1,
+          "max": 2,
+          "note": "The load-bearing fact — mandatory allergen coverage is wheat only, not barley or rye — is stated correctly and repeatedly, and 소맥/소맥분/대맥/밀 전분 are handled well, but one gloss in the reference table is wrong.",
+          "evidence_quote": "엿기름 (malt syrup)"
+        },
+        {
+          "id": "reader_verification",
+          "points": 1,
+          "max": 2,
+          "note": "The reader is taught to verify each product independently at the shelf, which is real self-verification, but is given no way to check the article's legal claims and no concrete route to the manufacturer.",
+          "evidence_quote": "When you need certainty, contacting the manufacturer is the only real answer."
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "major",
+          "quote": "If none of those appear and the shared-facility line is clean, the product is very likely gluten-free.",
+          "why": "Korean shared-facility and 'may contain' statements are advisory, not mandatory. The FAQ treats a clean or absent shared-facility line as evidence of low risk, so a celiac reader could reasonably clear a product that is in fact run on wheat lines but carries no voluntary warning. The body's celiac rule only covers the case where a warning is present.",
+          "fix": "Add one clause: the shared-facility line is voluntary in Korea, so its absence does not mean the product was made on a dedicated line. Restate the celiac position as 'a clean ingredient list establishes no declared wheat, barley, or rye — it does not establish absence of trace gluten.'"
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "major",
+          "quote": "Korean law helps — but only halfway. Processed foods must declare major allergens, and **wheat is one of them**, so wheat almost always turns up in a predictable spot.",
+          "why": "This is the claim the entire 4-step method depends on, and the one readers will act on at the shelf. It is accurate, but nothing in the article lets a reader confirm it — no regulation named, no agency, no link. The parallel claim that Korean 'gluten-free' labelling is self-declared is likewise uncited.",
+          "fix": "Cite the MFDS food labelling standard (식품등의 표시·광고에 관한 법률 / 식품등의 표시기준) by name for the mandatory allergen list, with a link and the date checked, and do the same for the voluntary status of gluten-free claims."
+        },
+        {
+          "criterion": "method_transparency",
+          "severity": "minor",
+          "quote": "Korea requires major allergens to be declared here — wheat among them — so if a product contains wheat, it almost always appears on this line as **밀**.",
+          "why": "The article discloses what label reading cannot establish, but not how it knows the labelling law. Personal shelf experience is disclosed as such; the regulatory basis is asserted with no method behind it, which makes the strongest claims the least traceable ones.",
+          "fix": "Add a short method line stating what the regulatory claims are based on (regulation text, agency guidance, or manufacturer confirmation), when it was checked, and that in-store observations are the author's own."
+        },
+        {
+          "criterion": "source_recency",
+          "severity": "minor",
+          "quote": "By law, processed foods have to print it.",
+          "why": "Regulatory and product claims are presented as current with no verification date, and the article never flags that Korean manufacturers reformulate without notice — the exact failure mode that turns a previously cleared snack into a gluten exposure.",
+          "fix": "Add a 'rules and formulations verified as of [date]' note and a one-line warning that a product that cleared the scan last month must be re-scanned, because recipes change without packaging redesign."
+        },
+        {
+          "criterion": "korean_accuracy",
+          "severity": "minor",
+          "quote": "엿기름 (malt syrup)",
+          "why": "엿기름 is malted barley (the malted grain or its powder, used for 식혜 and as a saccharifying agent). Malt syrup is 조청 or 물엿. In a reference table readers are told to memorise, a wrong gloss on a barley-derived term weakens trust in the rest of the table.",
+          "fix": "Change to '엿기름 (malted barley)' and, if malt syrup is worth listing, add 조청/물엿 separately with a note that 물엿 is usually corn-derived but worth checking."
+        },
+        {
+          "criterion": "reader_verification",
+          "severity": "minor",
+          "quote": "When you need certainty, contacting the manufacturer is the only real answer.",
+          "why": "The advice is correct but not actionable for the target reader. A traveller or non-Korean speaker is told to contact the manufacturer with no indication that packages carry a 소비자상담실 number, no sample Korean phrasing, and no pointer to a public product database.",
+          "fix": "Point to the 소비자상담실 / 고객센터 number printed on Korean packaging, give one copy-paste Korean sentence asking about wheat, barley, rye, and shared lines, and link the 식품안전나라 product lookup."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 10617,
+        "cache_read_input_tokens": 28151,
+        "output_tokens": 8751,
+        "output_tokens_details": {
+          "thinking_tokens": 6245
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 10617,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 8751,
+            "cache_read_input_tokens": 28151,
+            "cache_creation_input_tokens": 10617,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 10617
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: seo-eeat 8/9.5, accuracy-safety 5.5/9.5"
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "schema": 1,
+  "slug": "korean-convenience-store-gf-snacks",
+  "source_ref": "2ed35c2",
+  "content_sha256": "89c4b214caa20ae813228532dd1a21454074d4373eb3c61111177ac5d1a2c083",
+  "judged_at": "2026-08-12T04:24:20.369Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.228 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 6,
+      "max_points": 20,
+      "score": 3,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 0,
+          "max": 3,
+          "note": "The body never answers 'korean snacks gluten free' at all — it announces future coverage instead of naming a single safe snack.",
+          "evidence_quote": "This post is part of the [Gluten-Free Korea series](/blog/celiac-travel-korea-guide). Publishing soon."
+        },
+        {
+          "id": "title_meta",
+          "points": 1,
+          "max": 2,
+          "note": "Keyword is present and the description is within length, but the title runs to roughly 70 characters once the rendered ' | Gluten-Free Korea' suffix is counted.",
+          "evidence_quote": "Korean Convenience Store Gluten-Free Snacks (2026)"
+        },
+        {
+          "id": "structure",
+          "points": 1,
+          "max": 2,
+          "note": "Headings are present and honest but purely label-like; skimming them yields an announcement, not an argument.",
+          "evidence_quote": "### What this post will cover"
+        },
+        {
+          "id": "internal_links",
+          "points": 1,
+          "max": 2,
+          "note": "Only one internal destination, repeated twice, which counts as 1-2 contextually earned links.",
+          "evidence_quote": "← Back to [The Real Gluten-Free Guide to Korea](/blog/celiac-travel-korea-guide)."
+        },
+        {
+          "id": "faq_alignment",
+          "points": 1,
+          "max": 2,
+          "note": "No frontmatter FAQ exists, so nothing conflicts with the body, but the page also forfeits any structured-data eligibility on a query type that is heavily FAQ-driven.",
+          "evidence_quote": "- Flavor-specific warnings (NOT all flavors of one brand are safe)"
+        },
+        {
+          "id": "experience",
+          "points": 0,
+          "max": 3,
+          "note": "There is no observed fact anywhere — no store visit, date, package, or price, only a promise of future observation.",
+          "evidence_quote": "- 12+ confirmed gluten-free snacks with package photos"
+        },
+        {
+          "id": "expertise",
+          "points": 1,
+          "max": 2,
+          "note": "The four convenience-store chains are named precisely, but no product names, Korean terms with romanisation, or checkable figures appear.",
+          "evidence_quote": "Coming soon — confirmed-safe snacks from CU, GS25, 7-Eleven, and Emart24, with package photos and flavor warnings."
+        },
+        {
+          "id": "authoritativeness",
+          "points": 0,
+          "max": 2,
+          "note": "No sources, manufacturer statements, or labelling references are cited anywhere.",
+          "evidence_quote": "- The \"flip-and-scan\" routine — 4 steps for any package"
+        },
+        {
+          "id": "trust",
+          "points": 1,
+          "max": 2,
+          "note": "No affiliate links to disclose and the 'coming soon' status is stated openly, but nothing describes what the eventual method can and cannot establish, while 'confirmed-safe' is already asserted.",
+          "evidence_quote": "Coming soon — confirmed-safe snacks from CU, GS25, 7-Eleven, and Emart24, with package photos and flavor warnings."
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "search_intent",
+          "severity": "major",
+          "quote": "## Coming Soon",
+          "why": "A stub is indexable at a keyword-targeted URL. Searchers for 'korean snacks gluten free' land on zero answers, which produces a pogo-stick bounce and teaches Google the page is low quality — damage that persists after the real content ships.",
+          "fix": "Either noindex this route until the real post exists, or replace the stub with a minimum viable answer now: three named products with their chain, the exact Korean ingredient strings to check, and the date each was verified."
+        },
+        {
+          "criterion": "experience",
+          "severity": "major",
+          "quote": "- 12+ confirmed gluten-free snacks with package photos",
+          "why": "Everything first-hand is deferred to the future tense, so the page carries no experience signal at all on a topic where readers are making a medical-risk decision from a shelf.",
+          "fix": "Publish even one store visit in full: date, branch, product name with romanisation, the label text you read, and one item you expected to be safe that was not."
+        },
+        {
+          "criterion": "authoritativeness",
+          "severity": "major",
+          "quote": "- The \"flip-and-scan\" routine — 4 steps for any package",
+          "why": "The page promises a labelling method with no reference to Korean food-labelling rules or any manufacturer statement, so nothing on it is checkable.",
+          "fix": "Link the MFDS allergen-labelling notice and any manufacturer allergen pages, each with its publication or last-updated date, when the post is written."
+        },
+        {
+          "criterion": "title_meta",
+          "severity": "minor",
+          "quote": "Korean Convenience Store Gluten-Free Snacks (2026)",
+          "why": "With the ' | Gluten-Free Korea' suffix appended at render time the title is about 70 characters and will be truncated in SERPs, cutting the '(2026)' freshness cue.",
+          "fix": "Shorten to something like 'Gluten-Free Korean Convenience Store Snacks 2026' (47 chars) so it survives the suffix under 60."
+        },
+        {
+          "criterion": "trust",
+          "severity": "minor",
+          "quote": "Coming soon — confirmed-safe snacks from CU, GS25, 7-Eleven, and Emart24, with package photos and flavor warnings.",
+          "why": "'confirmed-safe' is the strongest possible claim for a coeliac audience and it appears in the snippet Google shows, while nothing behind it establishes how confirmation was done or its limits (shared lines, recipe changes, regional SKUs).",
+          "fix": "Soften the description to what the method supports (e.g. 'label-checked snacks') and add a standing limits line stating that recipes and flavour variants change without notice and labels must be re-read on every purchase."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 7648,
+        "cache_read_input_tokens": 3409,
+        "output_tokens": 3918,
+        "output_tokens_details": {
+          "thinking_tokens": 1969
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 7648,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 3918,
+            "cache_read_input_tokens": 3409,
+            "cache_creation_input_tokens": 7648,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 7648
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 7,
+      "max_points": 20,
+      "score": 3.5,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 1,
+          "max": 4,
+          "note": "The page's central claim — that specific convenience-store snacks are confirmed safe — is asserted twice with no supporting evidence, no products, and no sourcing of any kind.",
+          "evidence_quote": "Coming soon — confirmed-safe snacks from CU, GS25, 7-Eleven, and Emart24, with package photos and flavor warnings."
+        },
+        {
+          "id": "no_fabrication",
+          "points": 2,
+          "max": 3,
+          "note": "Store names are real and the title year matches the post date, but a precise count is asserted for a dataset that does not exist on the page.",
+          "evidence_quote": "12+ confirmed gluten-free snacks with package photos"
+        },
+        {
+          "id": "method_transparency",
+          "points": 1,
+          "max": 3,
+          "note": "A method is implied by the scan routine but never described, and the page states no limits on what package-reading can establish.",
+          "evidence_quote": "The \"flip-and-scan\" routine — 4 steps for any package"
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 2,
+          "max": 4,
+          "note": "Absolute safety language (\"confirmed-safe\", \"confirmed gluten-free\") is used with no cross-contamination caveat, though no named product makes it actionable yet.",
+          "evidence_quote": "12+ confirmed gluten-free snacks with package photos"
+        },
+        {
+          "id": "source_recency",
+          "points": 0,
+          "max": 2,
+          "note": "No source or check dates exist anywhere, while the title asserts 2026 currency for products that reformulate without notice.",
+          "evidence_quote": "Korean Convenience Store Gluten-Free Snacks (2026)"
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 1,
+          "max": 2,
+          "note": "Convenience store chains are named correctly, but framing package scanning as sufficient to confirm gluten-free status misrepresents Korean labelling, which mandates wheat only.",
+          "evidence_quote": "The \"flip-and-scan\" routine — 4 steps for any package"
+        },
+        {
+          "id": "reader_verification",
+          "points": 0,
+          "max": 2,
+          "note": "The reader is given a mailing list and an Instagram handle, not any means of checking the safety claim independently.",
+          "evidence_quote": "Email **contact@noglutenkorea.com** or follow **[@noglutenkorea](https://instagram.com/noglutenkorea)** to know when this lands."
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "major",
+          "quote": "Coming soon — confirmed-safe snacks from CU, GS25, 7-Eleven, and Emart24, with package photos and flavor warnings.",
+          "why": "\"Confirmed-safe\" is an absolute guarantee. Nothing established by reading a Korean package can confirm safety for celiac disease: mandatory allergen labelling covers wheat only, barley and rye are not mandatory, and shared-line cross-contamination is never disclosed on-label. This sets a reader expectation that the eventual post cannot honour.",
+          "fix": "Replace with a claim the method can support, e.g. \"snacks whose labels list no wheat, with the limits of Korean labelling explained\". Reserve \"safe\" for products with manufacturer confirmation or third-party GF certification, and say which is which."
+        },
+        {
+          "criterion": "method_transparency",
+          "severity": "major",
+          "quote": "The \"flip-and-scan\" routine — 4 steps for any package",
+          "why": "A package-scanning routine is presented as the engine that yields \"confirmed gluten-free\" results. That is the method-versus-claim gap: label scanning establishes what is declared, not what is present. The page states no limits at all.",
+          "fix": "State the method plainly and bound it: what scanning a label can show (declared wheat), what it cannot (barley, rye, malt, soy sauce derivatives, shared equipment), and what additional step — manufacturer contact or certification — was used for any product called safe."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "major",
+          "quote": "12+ confirmed gluten-free snacks with package photos",
+          "why": "The page's load-bearing claim is stated as settled fact with zero supporting detail — no products, no ingredient text, no source, no check date. A reader has only the author's word for a safety-relevant assertion.",
+          "fix": "Either remove the count and the word \"confirmed\" until the list is published, or publish the list with per-product ingredient text, the date each label was read, and the store and region where it was bought."
+        },
+        {
+          "criterion": "source_recency",
+          "severity": "major",
+          "quote": "Korean Convenience Store Gluten-Free Snacks (2026)",
+          "why": "The title asserts current-year authority for a page dated 4 May 2026 that is still empty on 12 August 2026, and no check dates are attached to any claim. Korean manufacturers reformulate silently, so an undated snack list ages into a hazard.",
+          "fix": "Add a visible \"last verified\" date to every product entry when published, and add a standing note that formulations change and readers must re-read the label at purchase."
+        },
+        {
+          "criterion": "reader_verification",
+          "severity": "major",
+          "quote": "Email **contact@noglutenkorea.com** or follow **[@noglutenkorea](https://instagram.com/noglutenkorea)** to know when this lands.",
+          "why": "The only reader action offered is subscribing. There is no Korean ingredient vocabulary, no photograph of a label, and no manufacturer contact route, so the reader cannot independently check any safety claim the page makes.",
+          "fix": "Give the reader the Korean terms to look for (밀, 소맥분, 보리, 맥아, 호밀, 간장) plus manufacturer customer-service contact details, so verification does not depend on trusting the author."
+        },
+        {
+          "criterion": "korean_accuracy",
+          "severity": "minor",
+          "quote": "Flavor-specific warnings (NOT all flavors of one brand are safe)",
+          "why": "The flavour-variation point is correct and useful, but it is framed as a brand quirk rather than as a consequence of Korean labelling and seasoning practice, and the page never states the load-bearing fact that only wheat is a mandatory allergen declaration.",
+          "fix": "Anchor the warning in the labelling regime: explain that wheat must be declared but barley, rye and malt need not be, which is why flavour seasonings differ in risk within one brand."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 7648,
+        "cache_read_input_tokens": 28151,
+        "output_tokens": 5518,
+        "output_tokens_details": {
+          "thinking_tokens": 2800
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 7648,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 5518,
+            "cache_read_input_tokens": 28151,
+            "cache_creation_input_tokens": 7648,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 7648
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: seo-eeat 3/9.5, accuracy-safety 3.5/9.5"
+  }
+}

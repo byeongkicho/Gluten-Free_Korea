@@ -1,0 +1,293 @@
+{
+  "schema": 1,
+  "slug": "celiac-travel-korea-guide",
+  "source_ref": "working-tree",
+  "content_sha256": "8cd40678e79ba7e02527ffcc0f95c38e3db82bbd9b412c7820f8927f57a6f458",
+  "judged_at": "2026-08-12T04:22:17.796Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.228 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 16,
+      "max_points": 20,
+      "score": 8,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 2,
+          "max": 3,
+          "note": "The TL;DR delivers actionable Korea-travel answers immediately, but the piece explicitly steps back from the celiac intent behind the keyword and repositions itself as an NCGS guide.",
+          "evidence_quote": "My wife has non-celiac gluten sensitivity (not celiac). Celiac travelers: apply stricter standards than we do."
+        },
+        {
+          "id": "title_meta",
+          "points": 1,
+          "max": 2,
+          "note": "Description is within length and carries the keyword, but the title runs roughly 76 characters before the rendered ' | Gluten-Free Korea' suffix pushes it near 96, and it contains neither 'celiac' nor 'travel'.",
+          "evidence_quote": "The Real Gluten-Free Guide to Korea: A Couple's Field-Tested Handbook (2026)"
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings describe the argument rather than label sections, and the tier subheads let a skimmer reconstruct the whole method from headings alone.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Six or more internal links are placed exactly where a reader would want to go deeper (phrases, labels, BBQ, snacks, restaurant list), not stuffed.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 1,
+          "max": 2,
+          "note": "Three of five FAQ answers are fully backed by the body, but the soy sauce and BBQ answers introduce retail locations and a safety verdict the body never develops.",
+          "evidence_quote": "Imported Japanese tamari is the easiest GF substitute in Seoul (Lotte Mart, larger Emart, Kim's Club)."
+        },
+        {
+          "id": "experience",
+          "points": 3,
+          "max": 3,
+          "note": "Dense with observed specifics: the 90/10 flour admission from a bakery owner, a product quietly renamed a week after purchase, a direct call to a franchise HQ, and pink-vs-green packaging on a named snack.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "Korean terms are given with hangul plus romanisation, brands and menu items are named precisely (Goraesa, Chamsal Seolbyeong, Quattro Funghi), and ratios are checkable.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 1,
+          "max": 2,
+          "note": "Provenance is asserted first-hand (phone call to headquarters, personal visits) but no external primary source — GFCO's registry, the Korean allergen labelling regulation — is linked or dated.",
+          "evidence_quote": "The only GFCO-certified gluten-free pizza in Korea, as far as we've been able to confirm."
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "The piece repeatedly states what its method cannot establish (NCGS vs celiac, staff turnover, unverified rice-flour pizza, branch-level cross-contamination) and carries no undisclosed commercial links.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "title_meta",
+          "severity": "major",
+          "quote": "The Real Gluten-Free Guide to Korea: A Couple's Field-Tested Handbook (2026)",
+          "why": "At ~76 characters before layout.js appends ' | Gluten-Free Korea' (~96 total), the title will be truncated in SERPs, and the truncated remainder still contains neither 'celiac' nor 'travel' from the target keyword.",
+          "fix": "Retitle to something like 'Celiac Travel in Korea: A Field-Tested Guide' (43 chars, 63 with the suffix) and let the 'couple's handbook' framing live in the description or H1 subhead."
+        },
+        {
+          "criterion": "faq_alignment",
+          "severity": "major",
+          "quote": "Imported Japanese tamari is the easiest GF substitute in Seoul (Lotte Mart, larger Emart, Kim's Club).",
+          "why": "If this FAQ is emitted as structured data, the rich result asserts specific retail availability that the article body never establishes — the body mentions tamari only once, as 'GF tamari in the bag'. The BBQ answer has the same problem with '양념 안 한 고기 있나요?' and salt-grilled samgyeopsal, neither of which appears in the body's phrase or restaurant sections.",
+          "fix": "Add two or three sentences in the label/shopping section naming where you have actually bought tamari and when, and give Korean BBQ a short in-body subsection covering the unseasoned-meat phrase and salt-grilled samgyeopsal, so every FAQ answer is visibly supported."
+        },
+        {
+          "criterion": "authoritativeness",
+          "severity": "major",
+          "quote": "The only GFCO-certified gluten-free pizza in Korea, as far as we've been able to confirm.",
+          "why": "The strongest trust claim in the piece — third-party certification — rests entirely on the author's say-so. The same applies to the regulatory claim about the mandated allergen list. No external source is linked or dated anywhere in the article.",
+          "fix": "Link the GFCO certified-product directory entry with the date you checked it, and link the MFDS allergen-labelling notice (with its revision date) beside the allergen-line explanation."
+        },
+        {
+          "criterion": "expertise",
+          "severity": "minor",
+          "quote": "lists the major 22 flagged allergens for that product",
+          "why": "Factual accuracy is the other judge's axis, but the count of Korea's mandatory allergen-labelling items is commonly cited as 19, not 22, and an unsourced precise number weakens an otherwise checkable section.",
+          "fix": "Verify the current count against the MFDS labelling standard and cite it with the effective date, or drop the number and say 'the mandated allergen list'."
+        },
+        {
+          "criterion": "internal_links",
+          "severity": "minor",
+          "quote": "The rest of this series, as each post lands:",
+          "why": "The closing list links eight posts that by the author's own framing may not exist yet; crawlers hitting 404s from a flagship page dilutes the internal-link equity the in-body links earn.",
+          "fix": "Render only the published posts as links and leave the unpublished ones as plain text until they ship."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 15494,
+        "cache_read_input_tokens": 28192,
+        "output_tokens": 6910,
+        "output_tokens_details": {
+          "thinking_tokens": 4860
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 15494,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 6910,
+            "cache_read_input_tokens": 28192,
+            "cache_creation_input_tokens": 15494,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 15494
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 12,
+      "max_points": 20,
+      "score": 6,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 2,
+          "max": 4,
+          "note": "Place-level claims are properly marked as the authors' own visits, but several safety-relevant packaged-food claims (specific flavours, package colours, brand exceptions) carry no source, date, or label evidence.",
+          "evidence_quote": "The green package contains wheat."
+        },
+        {
+          "id": "no_fabrication",
+          "points": 2,
+          "max": 3,
+          "note": "Product names, neighbourhoods and dates are checkable and mutually consistent, but Cafe Rebirth is presented as a bread source in the FAQ while the body describes it only as a cake-led cafe.",
+          "evidence_quote": "Only commit to dedicated GF bakeries like monil2 house, Cafe Rebirth, and similar."
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "The piece states how it knows (personal visits, a named HQ phone call, repeated label reading) and names its limits explicitly, including what it has not verified and that staff turnover erodes Tier 2 reliability.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 1,
+          "max": 4,
+          "note": "Strong NCGS-vs-celiac disclosure and repeated stricter-standard advice are undercut by an absolute safety verdict on shared-grill Korean BBQ and a label routine that omits the cross-contamination-relevant gap for celiacs.",
+          "evidence_quote": "Plain salt-grilled samgyeopsal is reliably safe."
+        },
+        {
+          "id": "source_recency",
+          "points": 1,
+          "max": 2,
+          "note": "The piece is dated and tells readers to re-verify packets, but none of the load-bearing confirmations (the HQ call, the GFCO certification, the flavour-level snack list) carry a date or an elapsed-time flag.",
+          "evidence_quote": "Last updated: April 2026."
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 1,
+          "max": 2,
+          "note": "Korean terms, sauces and phrases are rendered correctly, but the labelling description implies barley and rye appear in the mandatory allergen declaration when Korean law mandates wheat only.",
+          "evidence_quote": "which lists the major 22 flagged allergens for that product"
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "The reader gets exact Korean phrases, a reconfirmation script, specific words to scan on packaging, a checkable certification name, branch-level confirmation advice, and a correction channel.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "blocking",
+          "quote": "Plain salt-grilled samgyeopsal is reliably safe.",
+          "why": "This is an absolute safety verdict delivered about the single highest cross-contamination setting in Korean dining: a grill and tongs shared with soy-marinated meat, communal banchan, and a ssamjang bowl. The answer sits in the frontmatter FAQ, so it can surface on its own, detached from the NCGS caveat in the body. A celiac reader acting on it eats gluten.",
+          "fix": "Replace with a conditional: \"Plain salt-grilled samgyeopsal is the safest order, but for celiacs ask for a fresh grill plate and clean tongs, skip ssamjang and sauced banchan, and treat a grill previously used for marinated meat as contaminated.\""
+        },
+        {
+          "criterion": "korean_accuracy",
+          "severity": "blocking",
+          "quote": "search for 밀 in the allergen line, return or keep. That's the entire operation.",
+          "why": "Korea's mandatory allergen labelling covers wheat only. Barley (보리) and rye (호밀) are not mandatory allergen declarations, so they routinely will not appear in the 알레르기 유발물질 line even when present as ingredients. Presenting an allergen-line scan for 밀 as the complete check will pass barley-malt and barley-containing products as clean for a celiac reader.",
+          "fix": "State plainly that Korea's mandatory allergen line covers wheat only, that 보리 and 호밀 must be hunted in the full ingredient list rather than the allergen line, and that celiac readers cannot stop at the allergen declaration."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "major",
+          "quote": "The green package contains wheat.",
+          "why": "Package-colour and flavour-level verdicts across a snack list are claims a celiac reader will act on in a store aisle, yet none is tied to a label photo, an ingredient quotation, a manufacturer confirmation, or a date checked. The blanket \"re-verify on the actual packet\" hedge does not make the individual verdicts checkable.",
+          "fix": "For each snack, add the date the label was read and the specific ingredient-line wording observed, or move the list to a separately maintained page with per-item check dates."
+        },
+        {
+          "criterion": "source_recency",
+          "severity": "major",
+          "quote": "I called the franchise headquarters directly to confirm",
+          "why": "Korean manufacturers and franchises reformulate without notice. An undated phone confirmation reads as current to a reader four months after publication, with no way to judge whether the answer still holds.",
+          "fix": "Add the month the call was made and a line noting that franchise recipes change, so readers should re-confirm with HQ or the branch before ordering."
+        },
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "major",
+          "quote": "A brunch spot with oatmeal pancakes and sandwiches that can be modified with GF bread swaps.",
+          "why": "A bread swap in a shared non-dedicated brunch kitchen carries board, toaster and prep-surface contamination risk that the entry never raises, and oats add a further celiac-specific caveat. The generic \"still ask every visit\" line does not cover the mechanism.",
+          "fix": "Add a Tier 2 cross-contamination note: swapped GF bread in a shared kitchen is a low-gluten, not gluten-free, outcome, and celiac readers should ask about a separate toaster and prep surface."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 18862,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 10355,
+        "output_tokens_details": {
+          "thinking_tokens": 7820
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 18862,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 10355,
+            "cache_read_input_tokens": 0,
+            "cache_creation_input_tokens": 18862,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 18862
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: seo-eeat 8/9.5, accuracy-safety 6/9.5"
+  }
+}

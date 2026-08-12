@@ -1,0 +1,307 @@
+{
+  "schema": 1,
+  "slug": "hidden-gluten-korean-food",
+  "source_ref": "working-tree",
+  "content_sha256": "db1344d3ce0ac868455dc2d0bedbcda8c59a95ca06a57bdec2ee57d0d142db9b",
+  "judged_at": "2026-08-12T04:16:32.370Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.228 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 15,
+      "max_points": 20,
+      "score": 7.5,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "The opening sentence directly answers \"where does gluten live in Korean food\" (the condiments), and the condiment table with the specific wheat-bearing items lands well inside the first 200 words.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 1,
+          "max": 2,
+          "note": "Keyword is present and well placed, but the title is 64 characters before the render-time suffix and 84 with it, far past the 60-character limit.",
+          "evidence_quote": "The Hidden Gluten in Korean Food: Where It Actually Lives (2026)"
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings carry the argument rather than label sections — a skim of \"The fermented condiment problem\" → \"Second-tier hidden sources\" → \"Noodles: mostly wheat, with two bright spots\" → \"The '10% wheat flour' trick\" → \"control the condiments, reclaim the cuisine\" reproduces the thesis.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Three distinct internal destinations appear where a reader would actually want them — the label guide at the \"learn to scan the label\" step, the restaurant list at the \"when you do eat out\" step, and the pillar guide as an explicit \"start here.\"",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All three FAQ answers are each restated in the body (condiment table, tteokbokki bullet, dangmyeon paragraph) and each reads as a complete standalone answer if surfaced as a rich result.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 2,
+          "max": 3,
+          "note": "Concrete first-hand signals exist (wife's NCGS, 237 Pizza closing for remodel, the phrase learned at restaurants, the relabelled loaf) but the incidents carry no dates, no shop names, and no quantities beyond a single hedged range.",
+          "evidence_quote": "I once ordered a loaf advertised as \"gluten-free\" online; a week later the product name had been quietly changed to \"rice bread\" — no asterisk, no notice."
+        },
+        {
+          "id": "expertise",
+          "points": 1,
+          "max": 2,
+          "note": "Korean terms are used precisely and mostly glossed, but several appear untransliterated, only one brand is ever named, no actual gluten-free soy sauce or gochujang product is identified despite being called the key unlock, and the one numeric claim is unverifiable as written.",
+          "evidence_quote": "A handful of brands (e.g. Goraesa) make wheat-free versions, but assume standard fish cake is out until the label proves otherwise."
+        },
+        {
+          "id": "authoritativeness",
+          "points": 0,
+          "max": 2,
+          "note": "The piece contains no external citations at all — no ingredient standards, no regulator or labelling authority, no certification body page — so every categorical claim about what Korean condiments contain rests on the author's assertion alone.",
+          "evidence_quote": "\"쌀빵 (rice bread)\" shops have exploded, but many blend **10–30% wheat flour** into a dough they still market as rice-based."
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "The article explicitly bounds its own method to NCGS, tells celiac readers to apply a stricter standard, and carries no affiliate or commercial link requiring disclosure.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "title_meta",
+          "severity": "major",
+          "quote": "The Hidden Gluten in Korean Food: Where It Actually Lives (2026)",
+          "why": "64 characters on its own, and 84 once layout.js appends ' | Gluten-Free Korea' — the SERP will truncate somewhere around 'Where It...', cutting off the differentiating half of the title. The description is also right at 156 characters, one over the safe limit.",
+          "fix": "Shorten to something like 'Where Gluten Hides in Korean Food (2026)' (39 chars, 59 with suffix), and trim the description by dropping 'systematic' and one clause to land near 145 characters."
+        },
+        {
+          "criterion": "authoritativeness",
+          "severity": "major",
+          "quote": "Korea's \"gluten-free\" boom is mostly diet-and-wellness marketing, not celiac awareness — and the labeling reflects that.",
+          "why": "This and every other categorical claim in the piece (brewed soy sauce composition, fish cake binders, the 10–30% wheat blend in rice-bread shops, what '저글루텐' legally means) is stated without a single linked source or date. On a health-adjacent YMYL topic, zero attribution is the largest single gap in the article.",
+          "fix": "Link at least three primary sources with their publication dates — the MFDS/식약처 allergen labelling notice for the 밀 declaration rule, a manufacturer ingredient page for one named 양조간장 and one 고추장 to anchor the condiment table, and the GFCO certification page — and cite the origin of the 10–30% figure or restate it as an observation from specific shops."
+        },
+        {
+          "criterion": "expertise",
+          "severity": "minor",
+          "quote": "The single biggest unlock for us was a supply of genuinely wheat-free soy sauce and gochujang — more on sourcing those in a coming post.",
+          "why": "The article names the solution but withholds every checkable detail — no brand, no product name, no where-to-buy — which weakens specificity exactly where a reader is most motivated to act, and defers to a post that does not yet exist.",
+          "fix": "Name the two or three products actually in use with their Korean product names and retailer, even briefly, and keep the deeper sourcing post as an addition rather than a substitute."
+        },
+        {
+          "criterion": "experience",
+          "severity": "minor",
+          "quote": "Then 237 Pizza, our anchor spot, went dark for a remodel, and we found ourselves cooking at home more and more.",
+          "why": "This is the article's strongest experiential anchor but it carries no timeframe, and the other incidents (the relabelled loaf, restaurant staff responding to '밀가루 알러지') are similarly undated and unlocated, so the first-hand signal reads as recollection rather than record.",
+          "fix": "Add month/year to the 237 Pizza closure and the relabelled-loaf incident, and name the district or online retailer involved — even 'a Naver Smart Store seller, March 2026' converts an anecdote into evidence."
+        },
+        {
+          "criterion": "faq_alignment",
+          "severity": "minor",
+          "quote": "Gochujang and doenjang most often contain wheat or barley too.",
+          "why": "Flagging for the accuracy axis, not deducting here: the body's table hedges these as 'Usually', but traditionally made doenjang is typically soybeans, salt and water with no wheat, so an FAQ answer surfaced as a standalone rich result may overstate the risk for that one item.",
+          "fix": "Have the other judge verify; if it holds, split the FAQ answer so soy sauce is stated as near-certain and doenjang/gochujang as brand-dependent, matching the table's 'Usually' hedge."
+        }
+      ],
+      "usage": {
+        "input_tokens": 1,
+        "cache_creation_input_tokens": 10535,
+        "cache_read_input_tokens": 28192,
+        "output_tokens": 6285,
+        "output_tokens_details": {
+          "thinking_tokens": 3919
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 10535,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 1,
+            "output_tokens": 6285,
+            "cache_read_input_tokens": 28192,
+            "cache_creation_input_tokens": 10535,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 10535
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 11,
+      "max_points": 20,
+      "score": 5.5,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 2,
+          "max": 4,
+          "note": "The centerpiece condiment table and several safety-relevant specifics (brand exception, blend percentage, fish-cake binder) carry no source and are not marked as the author's own label observations.",
+          "evidence_quote": "A handful of brands (e.g. Goraesa) make wheat-free versions, but assume standard fish cake is out until the label proves otherwise."
+        },
+        {
+          "id": "no_fabrication",
+          "points": 2,
+          "max": 3,
+          "note": "No clearly invented product or date, but a precise-looking percentage range and a certification name are presented as checkable fact without any way to check them.",
+          "evidence_quote": "many blend **10–30% wheat flour** into a dough they still market as rice-based."
+        },
+        {
+          "id": "method_transparency",
+          "points": 1,
+          "max": 3,
+          "note": "Method is only implied through anecdote — no statement of which products were checked, when, or what reading a back label cannot establish.",
+          "evidence_quote": "Once you're the one holding the soy sauce bottle and reading the back label, you finally see where gluten actually lives in this cuisine."
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 2,
+          "max": 4,
+          "note": "The body's celiac section is genuinely good on cross-contamination and trace amounts, but the FAQ — a standalone surface — declares a dish safe on the strength of one substitution with no celiac or shared-equipment caveat.",
+          "evidence_quote": "Made with a gluten-free soy sauce, japchae is one of the easiest Korean dishes to eat safely."
+        },
+        {
+          "id": "source_recency",
+          "points": 1,
+          "max": 2,
+          "note": "The piece is dated and one anecdote acknowledges a silent product change, but no ingredient claim carries a check date and the reformulation risk is never flagged against the condiment table.",
+          "evidence_quote": "| 된장 (soybean paste) | **Usually** | Wheat often in the ingredient list |"
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 1,
+          "max": 2,
+          "note": "Korean terms and categories are handled well, but the reader is told to scan for barley and rye without being told Korea's mandatory allergen labelling covers wheat only, so those two appear only if listed in the ingredient list.",
+          "evidence_quote": "for 밀 / 소맥 / 소맥분 (wheat), 보리 (barley), 호밀 (rye)"
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "Concrete, actionable verification: specific Korean label terms to scan for, a link to a dedicated label-reading guide, and a phrase to use with restaurant staff.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "major",
+          "quote": "Made with a gluten-free soy sauce, japchae is one of the easiest Korean dishes to eat safely.",
+          "why": "The FAQ is frequently read in isolation (search snippets, rich results) and never reaches the body's celiac/cross-contamination section. As written it tells a celiac reader that a single soy-sauce swap makes the dish safe, omitting shared woks and utensils and the fact that some commercial dangmyeon is a mixed-starch product.",
+          "fix": "Qualify inside the FAQ answer itself: state that this applies to japchae you cook yourself with a verified GF soy sauce and single-ingredient sweet potato dangmyeon, and that restaurant japchae carries shared-pan and shared-utensil risk that matters for celiac disease."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "major",
+          "quote": "A handful of brands (e.g. Goraesa) make wheat-free versions",
+          "why": "This is a permissive claim — it points a reader toward a named brand as an exception — and it is unsourced, undated, and not attributed to a specific product or label the author read. Wrong-direction errors on named brands are the kind a reader eats.",
+          "fix": "Either name the exact product and the date its label was read, or drop the brand name and keep only the conservative instruction to treat all fish cake as wheat-containing until the label says otherwise."
+        },
+        {
+          "criterion": "no_fabrication",
+          "severity": "major",
+          "quote": "many blend **10–30% wheat flour** into a dough they still market as rice-based.",
+          "why": "A specific numeric range presented as an industry fact with no survey, sample, or source behind it. A reader cannot check it, and it lends false precision to the surrounding argument.",
+          "fix": "Replace with what is actually known — e.g. 'rice breads we checked listed wheat flour among the top ingredients' — or cite the products and dates that produced the range."
+        },
+        {
+          "criterion": "method_transparency",
+          "severity": "major",
+          "quote": "Once you're the one holding the soy sauce bottle and reading the back label, you finally see where gluten actually lives in this cuisine.",
+          "why": "The article's authority rests entirely on unspecified home label-reading. It never says which brands were checked, when, how many, or — critically — that reading an ingredient list establishes only what was declared, not that a product is safe for celiac disease.",
+          "fix": "Add a short method note: which products/brands were inspected and when, and an explicit limits line stating that label reading cannot establish absence of cross-contamination or below-threshold gluten."
+        },
+        {
+          "criterion": "korean_accuracy",
+          "severity": "major",
+          "quote": "for 밀 / 소맥 / 소맥분 (wheat), 보리 (barley), 호밀 (rye)",
+          "why": "Korea's mandatory allergen labelling covers wheat only; barley and rye are not mandatory allergen declarations. A celiac reader who checks the allergen box and sees no 밀 may conclude a barley-containing product is fine. The article does not warn about this gap.",
+          "fix": "State explicitly that only 밀 is a mandatory allergen declaration in Korea, that 보리 and 호밀 appear only if listed in the full ingredient list (원재료명), and that the allergen box alone is insufficient."
+        },
+        {
+          "criterion": "no_fabrication",
+          "severity": "minor",
+          "quote": "a real certification (GFCO / Korea GF)",
+          "why": "GFCO is a real, checkable certifier; 'Korea GF' is not an identifiable certification scheme and a reader cannot look for a mark by that name. Naming it alongside a genuine certifier lends it unearned credibility.",
+          "fix": "Name the actual Korean scheme and its issuing body with a link, or cut it and reference GFCO plus the MFDS 무글루텐 claim threshold instead."
+        },
+        {
+          "criterion": "source_recency",
+          "severity": "minor",
+          "quote": "| 고추장 (chili paste) | **Usually** | Made with wheat flour or barley |",
+          "why": "The condiment table is the load-bearing content and carries no indication of when these formulations were observed. Korean manufacturers reformulate without notice, and the article's own bread anecdote demonstrates exactly that risk without applying the lesson to its own table.",
+          "fix": "Add a 'last checked' date to the table and a one-line note that formulations change without notice, so the table is a starting point for label checks rather than a standing reference."
+        }
+      ],
+      "usage": {
+        "input_tokens": 1,
+        "cache_creation_input_tokens": 10535,
+        "cache_read_input_tokens": 28151,
+        "output_tokens": 8820,
+        "output_tokens_details": {
+          "thinking_tokens": 6397
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 10535,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 1,
+            "output_tokens": 8820,
+            "cache_read_input_tokens": 28151,
+            "cache_creation_input_tokens": 10535,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 10535
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: seo-eeat 7.5/9.5, accuracy-safety 5.5/9.5"
+  }
+}

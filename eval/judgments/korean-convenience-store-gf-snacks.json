@@ -1,0 +1,272 @@
+{
+  "schema": 1,
+  "slug": "korean-convenience-store-gf-snacks",
+  "source_ref": "working-tree",
+  "content_sha256": "d4322404af11053acf9cdf42f338eaf0f33474c4b066c92742e4cb45dc59ae1c",
+  "judged_at": "2026-08-12T04:19:54.123Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.228 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 16,
+      "max_points": 20,
+      "score": 8,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 2,
+          "max": 3,
+          "note": "The piece answers the intent, but the first ~200 words are an anecdote plus the 'fridge is a lost cause' failure list; the actual gluten-free snack shortlist arrives well after that detour.",
+          "evidence_quote": "## Start with the bad news: the fridge is a lost cause"
+        },
+        {
+          "id": "title_meta",
+          "points": 0,
+          "max": 2,
+          "note": "With the rendered ' | Gluten-Free Korea' suffix the title runs ~77 characters, the description runs ~158 characters, and 'Gluten-Free' plus 'Korean ... convenience store' phrasing repeats across title, suffix and description.",
+          "evidence_quote": "Which Korean convenience-store snacks are made without wheat, why one flavor of a brand passes and another doesn't, and why the fresh-food fridge is hopeless."
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings carry the argument rather than label sections — a skimmer gets fridge-bad, snacks-good, flavor trap, non-snack traps, celiac caveat, action list.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Four distinct internal links, each placed where the reader would actually want the next step (label scan, hidden gluten, pillar guide, tteok alternative).",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All three FAQ answers — snack categories, the Pocachip flavor split, and the celiac caveats — are each explicitly established in the body and read standalone as rich results.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 3,
+          "max": 3,
+          "note": "Dated first-hand audit (April 2026, CU catalog, 211 items, 81/39/75/16 breakdown) plus an admitted failure — the missed 반숙계란장 — and a stated household routine.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "Product names with Hangul plus romanisation throughout, precise distinctions (pink vs green 참쌀설병, 카라멜 메이플콘 vs 카라멜콘땅콩), and checkable figures.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 1,
+          "max": 2,
+          "note": "Only one external source is linked (a secondary blogger roundup, correctly dated); the regulatory and manufacturing claims that carry the most weight are asserted without attribution.",
+          "evidence_quote": "Barley and rye are not mandatory allergens in Korea."
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "The method's limits are stated repeatedly and prominently, the source's age is flagged, and no commercial or affiliate links appear.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "title_meta",
+          "severity": "major",
+          "quote": "Gluten-Free Korean Snacks: Convenience Store Guide (2026)",
+          "fix": "Shorten to fit the appended site name — e.g. 'GF Korean Snacks: Convenience Store Guide' (~42 + 20 = 62, still tight) or drop the year and the redundant 'Gluten-Free' since the suffix already carries it. Trim the description to ≤155 chars, e.g. 'Which Korean convenience-store snacks skip wheat, why one flavor passes and another doesn't, and why the fresh-food fridge is a lost cause.'",
+          "why": "Rendered as 'Gluten-Free Korean Snacks: Convenience Store Guide (2026) | Gluten-Free Korea' the title is ~77 characters and truncates in SERPs, and 'Gluten-Free' appears twice in the visible title."
+        },
+        {
+          "criterion": "search_intent",
+          "severity": "minor",
+          "quote": "So we settled into a routine: pick something up, flip it over, scan for **밀**, put most of it back. Here's what tends to survive that — and, just as usefully, what doesn't.",
+          "fix": "Add a 2–3 line answer box immediately after this paragraph naming the passing categories (potato: 포카칩 오리지널, 예감; corn: 콘초, 브이콘, 바나나킥; rice: 참쌀설병 pink) with the 'check the specific package' caveat, before the fridge section.",
+          "why": "A searcher for 'korean snacks gluten free' wants the passing snack names; the first 200 words deliver only an anecdote and the categories that fail, so the query's core answer is deferred past the fold."
+        },
+        {
+          "criterion": "authoritativeness",
+          "severity": "minor",
+          "quote": "**Barley and rye are not mandatory allergens in Korea.** The bolded 알레르기 유발물질 line reliably flags 밀 (wheat) only.",
+          "fix": "Link the MFDS 식품등의 표시기준 allergen list (with its notice number and effective date) here, and cite manufacturer allergen pages for at least the anchor products (포카칩, 참쌀설병) rather than relying solely on the 2023 blogger roundup.",
+          "why": "The load-bearing regulatory claim — the reason celiacs cannot trust the allergen line — has no primary source, leaving a dated secondary blog post as the article's only linked evidence."
+        },
+        {
+          "criterion": "expertise",
+          "severity": "minor",
+          "quote": "포카칩 오리지널 (Pocachip Original) — around 90% potato",
+          "fix": "State the potato percentage as printed on the current package with a retrieval date, or drop the figure and keep the qualitative 'potato-based' claim.",
+          "why": "Flagging for the accuracy judge only: 'around 90%' is presented as a checkable spec but is sourced from a 2023 third-party roundup the article itself calls unverified."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 11434,
+        "cache_read_input_tokens": 28192,
+        "output_tokens": 4058,
+        "output_tokens_details": {
+          "thinking_tokens": 2145
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 11434,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 4058,
+            "cache_read_input_tokens": 28192,
+            "cache_creation_input_tokens": 11434,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 11434
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 19,
+      "max_points": 20,
+      "score": 9.5,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "Nearly everything is either attributed to the named roundup, marked as the author's own catalog pass, or hedged with 'reported'; one unsourced quantitative figure remains, and it does not drive a safety decision.",
+          "evidence_quote": "포카칩 오리지널 (Pocachip Original) — around 90% potato"
+        },
+        {
+          "id": "no_fabrication",
+          "points": 3,
+          "max": 3,
+          "note": "Product names, the 211-item breakdown (81+39+75+16=211), the October 2023 publication and April 2026 retrieval dates are all checkable and internally consistent with the July 2026 publication date.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "The piece names its method as a keyword pass over product names, states outright that it cannot clear anything, and discloses a concrete failure case plus single-chain and single-season scope limits.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 4,
+          "max": 4,
+          "note": "No absolute safety claims, cross-contamination named as an explicit reason, and the author's NCGS standard is distinguished from celiac rather than conflated with it.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "The source is dated to October 2023, retrieval to April 2026, and the elapsed gap is explicitly flagged as material in a silently reformulating market.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 2,
+          "max": 2,
+          "note": "The mandatory-allergen fact is stated correctly (알레르기 유발물질 line flags 밀 only; barley and rye not mandatory), and 원재료명, 양조간장, 엿기름, 소맥 are all used correctly.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "The reader gets the source URL, the four-term scan (밀/소맥/보리/호밀), and an explicit instruction to read the full 원재료명 rather than the allergen line.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "포카칩 오리지널 (Pocachip Original) — around 90% potato",
+          "why": "A specific quantitative figure presented without a source and without the 'reported' hedge used elsewhere in the same list. It does not affect a gluten decision — potato content does not establish wheat-free status — but it reads as manufacturer-grade precision the piece has not earned.",
+          "fix": "Either cite the source for the 90% figure (manufacturer page or the roundup) or drop the number and write 'potato-based', which is all the claim needs to do."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "소주 is generally fine (check additives)",
+          "why": "This is an unsourced claim a reader could act on directly at the cooler. The parenthetical hedge limits the damage, but 'generally fine' is doing safety work with no attribution behind it, unlike the snack list which is explicitly sourced.",
+          "fix": "Attribute it or narrow it to what is verifiable on the package — e.g. 'distilled soju is not made from barley, but flavored and blended products vary; read the 원재료명'."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "도리토스 치즈맛 (Doritos, cheese flavor)",
+          "why": "This entry is inherited from a 2023 third-party roundup for a heavily seasoned product whose Korean seasoning formulation is exactly the case the article elsewhere warns about. The warning appears two paragraphs later rather than on the entry itself, so a reader skimming the list may not connect them.",
+          "fix": "Mark the seasoned entries inline (e.g. an asterisk on 도리토스 / 사또밥 / 카라멜 메이플콘 pointing to the seasoning-powder caveat) so the caveat travels with the item."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 11434,
+        "cache_read_input_tokens": 28151,
+        "output_tokens": 5862,
+        "output_tokens_details": {
+          "thinking_tokens": 4168
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 11434,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 5862,
+            "cache_read_input_tokens": 28151,
+            "cache_creation_input_tokens": 11434,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 11434
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: seo-eeat 8/9.5"
+  }
+}
