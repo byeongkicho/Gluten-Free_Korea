@@ -1,2 +1,2 @@
 date,runs,availability_pct,resp_ms_avg,resp_ms_max,ssl_days,ig_data_access_days,ig_api_up,places_total,places_missing_address_en,ga4_age_days,checks_failed,checks_warned
-2026-08-12,5,100,231.8,776,68,-44,1,24,2,125,0,15
+2026-08-12,6,100,224.6,776,68,-44,1,24,2,125,0,18
