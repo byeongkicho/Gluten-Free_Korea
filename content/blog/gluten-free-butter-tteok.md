@@ -14,7 +14,7 @@ faq:
   - q: "Is glutinous rice flour gluten-free?"
     a: "Yes. Glutinous rice flour (찹쌀가루) is milled from sticky short-grain rice and contains no gluten at all, despite the confusing name. 'Glutinous' describes how sticky it gets when cooked. It's one of the most useful gluten-free baking flours in a Korean kitchen — the base of tteok, and of desserts like butter tteok and butter mochi."
   - q: "Is butter tteok gluten-free?"
-    a: "Its core ingredients are: glutinous rice flour, tapioca starch, butter, and condensed milk — all naturally gluten-free. We ordered it several times and had no reaction. That said, not every shop's recipe is guaranteed, so if you're celiac, confirm no wheat-based additives were used. Making it at home is the surest way to know exactly what's in it."
+    a: "Its core ingredients — glutinous rice flour, tapioca starch, butter, and condensed milk — contain no gluten. That is not the same as any shop's butter tteok being safe for celiac disease: recipes vary, cafes that sell it usually also handle wheat pastries on shared equipment, and rice flours can be milled in facilities that process wheat. If you're celiac, ask about the recipe and the kitchen, or make it at home from flours you've checked — that's the only version where you control every input."
 ---
 
 Korea's food trends turn over fast — one month it's a Dubai-chocolate everything, the next it's a dessert nobody had heard of. So when I started seeing **butter tteok (버터떡)** pop up everywhere, my first reaction wasn't "I want that." It was the reflex every gluten-free person in Korea develops eventually: *tteok is rice… so maybe there's no gluten in this?*
@@ -34,13 +34,19 @@ Butter tteok is built on exactly that. The core of it is just:
 - **butter**
 - **condensed milk**
 
-Every one of those is naturally gluten-free. So unlike most Korean street food — where the danger is [hidden in the sauce or the batter](/blog/hidden-gluten-korean-food) — butter tteok is safe by default. The usual caveat still applies: a specific shop could always add something unexpected, so if you're celiac, it's worth a quick check for wheat-based additives. But the dessert itself isn't hiding gluten the way a bowl of tteokbokki is.
+None of those four ingredients contains gluten. So unlike most Korean street food — where the danger is [hidden in the sauce or the batter](/blog/hidden-gluten-korean-food) — the *recipe* of butter tteok has nothing to hide. But an ingredient list with no gluten is not the same as a finished dessert that's safe for celiac disease, and it's worth being precise about the gap:
+
+- **The shop's version isn't the recipe.** A specific cafe can add a wheat-based additive, dust a surface with wheat flour, or change suppliers without telling anyone.
+- **The kitchen matters as much as the batter.** Most places selling butter tteok also bake wheat pastries, on the same counters and trays. That's a real cross-contamination path, not a technicality.
+- **The flour's own history matters.** Glutinous rice flour and tapioca starch can be milled in facilities that also process wheat — check the bag for a shared-facility (같은 제조시설) statement.
+
+For someone with gluten sensitivity, the four-ingredient base makes butter tteok a far better bet than tteokbokki. For celiac disease, treat any shop-bought piece as unverified until you've asked about the recipe and the kitchen.
 
 ## Why this mattered: dessert is the hard part
 
 If you eat gluten-free in Korea, you already know the real gap isn't finding a meal — it's finding **dessert.** Cafes are wall-to-wall with wheat: cakes, cookies, croissants, and the ever-present "쌀빵 (rice bread)" that so often turns out to be [only partly rice](/blog/hidden-gluten-korean-food). Ordering a sweet you can actually eat usually means interrogating an ingredient list.
 
-So a trendy dessert that's gluten-free *by its very nature* — not a special-order, not a substitution, just what it is — felt like a small gift. We ordered it a few times, no reaction, and it quietly became a regular treat.
+So a trendy dessert built on a gluten-free base — not a special-order, not a substitution, just what it is — felt like a small gift. We ordered it a few times and it quietly became a regular treat. (For the record: my wife has non-celiac gluten sensitivity, not celiac disease, and "she felt fine" is an anecdote, not evidence — much celiac damage happens without symptoms, so no reaction after eating something is never proof it was gluten-free.)
 
 ## The moment the math stopped working
 
@@ -58,17 +64,17 @@ I'm not going to hand you exact gram-by-gram ratios, because I worked mostly by 
 
 <!-- IMG: 01.webp — homemade butter tteok, first batch, top-down on a plate. Caption: "Our first home batch — not bad at all." -->
 
-**If you'd rather buy than bake**, [Monil2 House](/place/monil2-house) in Yeonnam is a dedicated gluten-free bakery-and-cafe where you don't have to vet a single ingredient — a good option when you want the treat without the kitchen.
+**If you'd rather buy than bake**, [Monil2 House](/place/monil2-house) in Yeonnam runs as a dedicated gluten-free bakery-and-cafe — the lowest-risk way we know to buy this kind of treat. (Celiac readers: "dedicated" is the operator's claim, and suppliers change — it still deserves your usual questions.)
 
 ## The even-lazier shortcut
 
-Here's the part that makes this genuinely low-effort now: you don't even have to buy the two flours separately anymore. As of recently, **E-Mart's No Brand line and various online grocery malls sell a pre-mixed blend of glutinous rice flour and tapioca starch.** Grab one bag, add butter and condensed milk, and you've skipped the only real "sourcing" step. That's about as close to instant gluten-free dessert as Korea gets.
+Here's the part that makes this genuinely low-effort now: you don't even have to buy the two flours separately anymore. As of recently, **E-Mart's No Brand line and various online grocery malls sell a pre-mixed blend of glutinous rice flour and tapioca starch.** Grab one bag, add butter and condensed milk, and you've skipped the only real "sourcing" step. That's about as close to instant gluten-free dessert as Korea gets. Same caveat as any flour, though: if you're celiac, check the bag for a shared-facility statement before treating the shortcut as safe.
 
 ## The bigger point
 
 This is a small story, but it's the whole thesis of how our gluten-free life in Korea changed. We stopped treating dessert as something we had to *find* — a rare safe item on someone else's menu — and started treating it as something we could just *make*, cheaply, with two bags of flour and a mold.
 
-If you're hunting for gluten-free dessert in Korea, butter tteok is worth trying: naturally safe, easy to make, and cheaper by the batch than by the piece. Start with the pre-mix if you want the shortest path. Once you realize how little stands between you and a good gluten-free treat, a lot of Korean sweets stop feeling off-limits.
+If you're hunting for gluten-free dessert in Korea, butter tteok is worth trying: a gluten-free recipe at its core, easy to make, and cheaper by the batch than by the piece — with the home version being the one where you actually control what's in it. Start with the pre-mix if you want the shortest path. Once you realize how little stands between you and a good gluten-free treat, a lot of Korean sweets stop feeling off-limits.
 
 ## Related guides
 

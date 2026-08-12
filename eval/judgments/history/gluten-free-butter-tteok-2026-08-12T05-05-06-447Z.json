@@ -1,0 +1,300 @@
+{
+  "schema": 1,
+  "slug": "gluten-free-butter-tteok",
+  "source_ref": "working-tree",
+  "content_sha256": "4808620e265a5939ec2be2633acef6996a58244182509684b0bed38f192e5ffe",
+  "judged_at": "2026-08-12T05:06:46.311Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.228 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 12,
+      "max_points": 20,
+      "score": 6,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 2,
+          "max": 3,
+          "note": "The 'rice cake has no gluten' answer does land early, but the piece answers a narrower question (is butter tteok gluten-free / how to make it) than the head keyword 'gluten free tteok', which implies the broader tteok category.",
+          "evidence_quote": "So when I started seeing **butter tteok (버터떡)** pop up everywhere, my first reaction wasn't \"I want that.\""
+        },
+        {
+          "id": "title_meta",
+          "points": 0,
+          "max": 2,
+          "note": "Title is roughly 95 characters before the appended site suffix and the description runs about 178 characters, so two of the three requirements fail, and the opening clause is near-duplicated across both.",
+          "evidence_quote": "Butter Tteok: Korea's Trendy Dessert That's Accidentally Gluten-Free — and Easy to Make at Home"
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings carry the narrative argument — confusion, why dessert is the gap, the price shock, the home fix, the shortcut — so a skimmer gets the whole case.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Four distinct internal destinations, each placed where a reader would actually want the next step (hidden gluten, a vetted bakery, the pillar guide).",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 1,
+          "max": 2,
+          "note": "FAQ 2 and 3 are fully carried by the body, but FAQ 1 names specific contaminants the visible content never establishes.",
+          "evidence_quote": "What makes many tteok dishes unsafe is what's added around it: soy sauce, gochujang, or a wheat-flour coating."
+        },
+        {
+          "id": "experience",
+          "points": 2,
+          "max": 3,
+          "note": "Real receipt figures and a first-batch account give concrete first-hand signal, but there is no date, no shop named, and no record of what went wrong.",
+          "evidence_quote": "I'm not going to hand you exact gram-by-gram ratios, because I worked mostly by feel and I'd rather not invent precision I didn't measure."
+        },
+        {
+          "id": "expertise",
+          "points": 1,
+          "max": 2,
+          "note": "Prices, a named retailer line and Korean script are present, but the key Korean terms are given without romanisation and no quantities or ratios are stated anywhere.",
+          "evidence_quote": "- **glutinous rice flour (찹쌀가루)**\n- **tapioca starch (타피오카 전분)** — for that stretchy, mochi-like chew"
+        },
+        {
+          "id": "authoritativeness",
+          "points": 0,
+          "max": 2,
+          "note": "No external or primary source is cited anywhere; every factual claim rests on the author's assertion alone.",
+          "evidence_quote": "much celiac damage happens without symptoms, so no reaction after eating something is never proof it was gluten-free"
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "The piece repeatedly marks the boundary of what it can establish and carries no commercial links requiring disclosure.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "title_meta",
+          "severity": "major",
+          "quote": "Butter Tteok: Korea's Trendy Dessert That's Accidentally Gluten-Free — and Easy to Make at Home",
+          "why": "At ~95 characters before layout.js appends ' | Gluten-Free Korea' (~115 total), the title will be truncated in SERPs well before the 'Easy to Make at Home' hook, and the exact keyword 'gluten free tteok' never appears as a phrase. The description also exceeds 155 characters and repeats the title's 'Butter tteok ... gluten-free' framing.",
+          "fix": "Rewrite the title to <=40 chars so the suffix fits, e.g. 'Is Tteok Gluten-Free? Butter Tteok at Home'. Trim the description to <=155 chars and drop the repeated opening clause, e.g. 'Glutinous rice has no gluten. What that means for butter tteok, when a shop version still isn't safe, and how to make it at home for less.'"
+        },
+        {
+          "criterion": "authoritativeness",
+          "severity": "major",
+          "quote": "As of recently, **E-Mart's No Brand line and various online grocery malls sell a pre-mixed blend of glutinous rice flour and tapioca starch.**",
+          "why": "Every checkable claim in the piece — the No Brand pre-mix, the shared-facility labelling convention, the asymptomatic-damage point about celiac disease — is asserted without a single linked or dated source, which is the weakest possible signal on a YMYL health topic.",
+          "fix": "Link at least two primary sources with publication dates: the No Brand/E-Mart product page for the pre-mix blend, and a celiac organisation or journal page for the asymptomatic-damage claim. Add the date accessed for the product listing since stock changes."
+        },
+        {
+          "criterion": "faq_alignment",
+          "severity": "minor",
+          "quote": "What makes many tteok dishes unsafe is what's added around it: soy sauce, gochujang, or a wheat-flour coating.",
+          "why": "This rich-result answer names three specific contaminants that the visible body never states — the body only says danger is 'hidden in the sauce or the batter'. Google requires structured-data answers to match visible page content.",
+          "fix": "Add one sentence to the 'glutinous rice has no gluten' section naming soy sauce, gochujang and wheat-flour dusting as the actual failure points for tteok dishes, so the FAQ answer is mirrored on-page."
+        },
+        {
+          "criterion": "expertise",
+          "severity": "minor",
+          "quote": "- **tapioca starch (타피오카 전분)** — for that stretchy, mochi-like chew",
+          "why": "Korean terms appear in Hangul only, so a reader who cannot read Hangul cannot say the term aloud to a shop assistant or search for it — which is exactly the use case this article sets up.",
+          "fix": "Add romanisation on first use: 찹쌀가루 (chapssal-garu), 타피오카 전분 (tapioka jeonbun), 같은 제조시설 (gateun jejosiseol). Also give an approximate flour ratio range even if hedged, so the recipe claim is checkable."
+        },
+        {
+          "criterion": "search_intent",
+          "severity": "minor",
+          "quote": "Butter tteok is built on exactly that. The core of it is just:",
+          "why": "The keyword 'gluten free tteok' spans the whole rice-cake category, but after the opening section the article narrows entirely to one trendy dessert, leaving common queries (injeolmi, garaetteok, packaged tteok, tteokguk) unaddressed.",
+          "fix": "Add a short section listing which common tteok types are safe as-is versus which carry sauce or coating risk, and link it to the hidden-gluten pillar — this captures the broader query without diluting the butter tteok story."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 10263,
+        "cache_read_input_tokens": 3409,
+        "output_tokens": 4876,
+        "output_tokens_details": {
+          "thinking_tokens": 2534
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 10263,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 4876,
+            "cache_read_input_tokens": 3409,
+            "cache_creation_input_tokens": 10263,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 10263
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 12,
+      "max_points": 20,
+      "score": 6,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 2,
+          "max": 4,
+          "note": "The central 'glutinous rice has no gluten' claim is sound and personal observations are honestly flagged, but several load-bearing product and venue claims carry no source or stated basis.",
+          "evidence_quote": "in Yeonnam is a dedicated gluten-free bakery-and-cafe where you don't have to vet a single ingredient"
+        },
+        {
+          "id": "no_fabrication",
+          "points": 2,
+          "max": 3,
+          "note": "Nothing reads as invented outright, but the retail claim names a brand with no product name, no link, and only 'as of recently' in place of a date, so it cannot be checked.",
+          "evidence_quote": "As of recently, **E-Mart's No Brand line and various online grocery malls sell a pre-mixed blend of glutinous rice flour and tapioca starch.**"
+        },
+        {
+          "id": "method_transparency",
+          "points": 2,
+          "max": 3,
+          "note": "Excellent disclosure for the core topic — the author refuses to invent ratios and states plainly that an ingredient list is not a safety verdict — but the venue and retail claims have no stated basis at all.",
+          "evidence_quote": "where you don't have to vet a single ingredient"
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 2,
+          "max": 4,
+          "note": "The celiac vs. NCGS distinction and the cross-contamination section are genuinely strong, but the closing line collapses all of it into an absolute the article itself has already refuted.",
+          "evidence_quote": "butter tteok is worth trying: naturally safe, easy to make, and cheaper by the batch than by the piece"
+        },
+        {
+          "id": "source_recency",
+          "points": 1,
+          "max": 2,
+          "note": "No source carries a date; the price and the retail-availability claim are presented as current with no elapsed-time flag, in a market the article itself says changes without notice.",
+          "evidence_quote": "Around **6,000 won for three pieces, plus another 500 won to add condensed milk.**"
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 1,
+          "max": 2,
+          "note": "Korean terms (찹쌀가루, 타피오카 전분, 같은 제조시설) are rendered correctly, but the advice to rely on a bag's shared-facility statement omits that this statement is voluntary in Korea and that mandatory allergen labelling covers wheat only.",
+          "evidence_quote": "check the bag for a shared-facility (같은 제조시설) statement"
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "The reader is given concrete, actionable checks — ask about the recipe and the kitchen, read the bag for a shared-facility line, or make it at home from flours they have inspected.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "major",
+          "quote": "butter tteok is worth trying: naturally safe, easy to make, and cheaper by the batch than by the piece",
+          "why": "The take-home line states an absolute the article's own body disproves: shop-bought butter tteok is explicitly described earlier as unverified for celiac readers because of shared equipment and shared milling facilities. A reader who skims to the conclusion gets the opposite of the careful message.",
+          "fix": "Change to 'made from a naturally gluten-free base' or 'safe when you make it yourself from flours you've checked' — reserve any unqualified 'safe' for the home-made version only."
+        },
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "major",
+          "quote": "in Yeonnam is a dedicated gluten-free bakery-and-cafe where you don't have to vet a single ingredient",
+          "why": "This instructs a celiac reader to stop verifying at a specific named venue. Even a genuinely dedicated facility can change suppliers or add a wheat-handling product, and the article gives no basis or date for the 'dedicated' status it is asking readers to trust.",
+          "fix": "State how and when the dedicated status was confirmed (visit date, operator confirmation), and soften to 'a dedicated gluten-free bakery — still worth confirming on the day, as with any venue'."
+        },
+        {
+          "criterion": "no_fabrication",
+          "severity": "major",
+          "quote": "As of recently, **E-Mart's No Brand line and various online grocery malls sell a pre-mixed blend of glutinous rice flour and tapioca starch.**",
+          "why": "A specific retailer and product line are named with no product name, no link, and no purchase date, so no reader can confirm the product exists or is still stocked. 'Various online grocery malls' compounds the uncheckability. This is exactly where hallucinated retail detail hides.",
+          "fix": "Name the exact product as printed on the bag, state where and when it was bought, and link the listing — or drop the brand and say only that pre-mixed blends have started appearing."
+        },
+        {
+          "criterion": "korean_accuracy",
+          "severity": "minor",
+          "quote": "check the bag for a shared-facility (같은 제조시설) statement",
+          "why": "In Korea the shared-facility line is a voluntary advisory, not a mandated disclosure, and mandatory allergen labelling covers wheat only — not barley or rye. A reader who finds no such statement may wrongly conclude the flour was milled cleanly.",
+          "fix": "Add one sentence: Korea mandates wheat on allergen labels but not barley or rye, and the shared-facility line is voluntary — its absence is not evidence of a clean facility. Contact the manufacturer if it matters."
+        },
+        {
+          "criterion": "source_recency",
+          "severity": "minor",
+          "quote": "Around **6,000 won for three pieces, plus another 500 won to add condensed milk.**",
+          "why": "The price anchors the article's central argument that home-making is cheaper, but it has no shop, no city, and no date attached, so a reader cannot tell whether it still holds or ever applied to their neighbourhood.",
+          "fix": "Attach the vendor type, area, and month of purchase, e.g. 'a Seongsu cafe, July 2026' — and note that trend-dessert pricing moves fast."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "Plain rice cake, and simple desserts like butter tteok, are naturally gluten-free.",
+          "why": "FAQ 1 ends on an unqualified statement while FAQ 3 supplies the necessary caveats. FAQ entries are frequently surfaced in isolation by search results, so the caveat does not reliably travel with this answer.",
+          "fix": "Append the cross-contamination clause to FAQ 1 as well: '...naturally gluten-free as recipes, though shop versions share kitchens with wheat — see below.'"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 10263,
+        "cache_read_input_tokens": 28151,
+        "output_tokens": 7541,
+        "output_tokens_details": {
+          "thinking_tokens": 5291
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 10263,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 7541,
+            "cache_read_input_tokens": 28151,
+            "cache_creation_input_tokens": 10263,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 10263
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: seo-eeat 6/9.5, accuracy-safety 6/9.5"
+  }
+}

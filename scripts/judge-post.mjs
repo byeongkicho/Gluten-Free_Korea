@@ -474,8 +474,14 @@ async function main() {
   // Backend resolution. `auto` prefers the API — its records are the ones the
   // pinned contract fully backs — and falls back to the claude CLI, which a
   // Claude subscription covers without API credit.
+  //
+  // In auto mode an ant OAuth profile alone is not enough to pick the API: the
+  // profile proves scope, not balance, and a zero-credit org authenticates and
+  // then 400s on every call. So auto requires an explicitly provided key or
+  // token; the profile-only route stays reachable via --backend api.
   let backend = null;
-  if (backendFlag === "api" || backendFlag === "auto") {
+  const explicitKey = Boolean(process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_AUTH_TOKEN);
+  if (backendFlag === "api" || (backendFlag === "auto" && explicitKey)) {
     if (hasCredentials()) {
       const Anthropic = (await import("@anthropic-ai/sdk")).default;
       backend = { kind: "api", client: new Anthropic() };
