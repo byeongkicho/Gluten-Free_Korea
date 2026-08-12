@@ -4,19 +4,38 @@
 > 이 문서는 세션 시작 시 "지금 어디까지 됐고 다음이 뭔지"만 빠르게 전달한다.
 > 재개 전략 전체: `~/.claude/plans/noble-discovering-aho.md` (2026-07-24 승인).
 
-## ▶ 다음 세션 시작점 (2026-08-07 종료 시점)
+## ▶ 다음 세션 시작점 (2026-08-12 종료 시점)
 
-**목적이 한 번 바뀌었다.** 08-05까지는 "커머셜 인텐트 글 #1 발행"이었으나, 08-07 세션에서 사용자가 **이력서(AI/에이전트 직무)용 증거 보강**으로 방향을 틀었다. 저장소가 PUBLIC이라 면접관이 직접 연다는 게 전제. 계획: `~/.claude/plans/nogf-fluttering-sloth.md`
+**판사 실채점 완료 — 발행 5편 전원 FAIL, CI가 빨간 것은 사고가 아니라 의도된 상태다.** 사용자 결정으로 점수를 그대로 기록하고 게이트를 빨간 채 커밋했다. ⚠️ **루브릭을 낮추지 말 것** — 출구는 글 수정→재채점뿐이다.
 
-**▶ 다음 세션 첫 할 일 — 판사 실채점.** 코드는 완성됐고 **점수만 0건**이다. 둘 중 하나:
-1. `console.anthropic.com`에서 크레딧 충전(발행 5편 $1 안팎) → `npm run judge -- --all`
-2. Claude Code 서브에이전트를 판사로(구독으로 커버, 크레딧 불필요) — 단 재현 불가하므로 `eval/judgments/`의 runner 기록과 **섞지 말고 별도 버킷**으로
+**▶ 다음 세션 첫 할 일 — 글 수정 백로그 (우선순위순):**
+1. **blocking 5건 응급 (독자 안전 직결):** butter-tteok 3건(무조건 안전 단정·"무증상=무글루텐" 추론·교차오염 무경고) + celiac-guide FAQ 2건(삼겹살 안전 단정 — 공유 그릴·집게, 밀-only 알레르기줄 스캔을 완전한 검사로 제시)
+2. **snacks — 가장 가까운 1녹색 (SEO 8→9.5만 남음, 정확성은 9.5 통과):** 제목 77자 SERP 잘림, 첫 200단어에 답 전진배치, 규정 주장 1차 출처
+3. **사이트 전역 `<title>` 접미사** (`app/layout.js` ` | Gluten-Free Korea`) — 5편 전부 title_meta 감점의 공통 원인. 기존 "알려진 이슈"를 판사가 독립 재발견
+4. **출처·정확성 보강:** MFDS 라벨링 규정 링크(밀-only 의무표시 주장의 근거), labels의 엿기름 오역(malted barley이지 malt syrup 아님), hidden-gluten의 실존하지 않는 "Korea GF" 인증 삭제·"10~30% 밀 배합" 무출처 수치, celiac-guide의 알레르기 의무표시 개수(22로 썼으나 통상 19)
 
-채점 후: `--ref 2ed35c2`로 스텁 vs 발행본 보정 → `eval/tasks/content-gate.json` 배선(지금은 일부러 미배선 — 기록이 0건이라 CI가 무관한 이유로 빨개진다).
+수정 후 재채점: `npm run judge -- <slug>` — 크레딧 없으면 **자동으로 claude CLI 백엔드**(구독 과금, `--backend` 플래그 참조). 글을 고치면 해시 불일치로 content-001이 알아서 빨개지므로 재채점 전까지 게이트가 거짓말하지 않는다.
 
-> ⚠️ 점수가 9.5 미만으로 나와도 **루브릭을 낮추지 말 것.** 글을 고치거나, 점수를 그대로 기록하고 게이트를 빨간 채 두거나 — 둘 중 하나다.
+**보류된 원래 작업:** 커머셜 인텐트 글 #1(`~/.claude/plans/1-frolicking-starlight.md`). 키워드 게이트에서 멈춰 있고, 리서치 결과 계획서의 두 후보가 모두 SERP상 부적합했다(`where to buy…`는 확립 도메인 지배, `gluten free soy sauce korea`는 상위 10 중 8개가 상품 페이지). 제3 후보 `gluten free korean pantry`가 유망 — 상위가 전부 "해외 H마트" 관점이라 **한국 현지·한국어 라벨 각도가 비어 있다.** 단, 신규 발행은 이제 게이트를 실제로 통과해야 한다.
 
-**보류된 원래 작업:** 커머셜 인텐트 글 #1(`~/.claude/plans/1-frolicking-starlight.md`). 키워드 게이트에서 멈춰 있고, 리서치 결과 계획서의 두 후보가 모두 SERP상 부적합했다(`where to buy…`는 확립 도메인 지배, `gluten free soy sauce korea`는 상위 10 중 8개가 상품 페이지). 제3 후보 `gluten free korean pantry`가 유망 — 상위가 전부 "해외 H마트" 관점이라 **한국 현지·한국어 라벨 각도가 비어 있다.**
+## 완료 (2026-08-12) — 판사 실채점: claude CLI 백엔드 + 첫 실기록 + 게이트 배선
+
+크레딧 병목의 해소가 세션의 절반이었다. **구독 ≠ API 크레딧** 문제를 `judge-post.mjs`에 `--backend claude-cli`(Claude Code `claude -p` 헤드리스, 구독 과금)를 추가해 풀었다 — `--json-schema`로 스키마 강제, `--effort high` 고정, `--tools ""` 격리라서 API 경로와 거의 계약 동등. 못 고정하는 것(CLI 버전)은 레코드에 `claude_version`으로 기록. PROVENANCE는 A1(runner)/A2(claude-cli)로 분리, 손으로 쓴 점수는 여전히 표현 불가.
+
+**점수 (2026-08-12, Opus effort high, 루브릭 v1):**
+
+| 글 | SEO/E-E-A-T | 정확성/안전성 | 게이트 |
+|---|---|---|---|
+| celiac-travel-korea-guide | 8 | 6 (blocking 2) | FAIL |
+| korean-convenience-store-gf-snacks | 8 | **9.5 통과** | FAIL (SEO만) |
+| reading-korean-food-labels | 8 | 5.5 | FAIL |
+| hidden-gluten-korean-food | 7.5 | 5.5 | FAIL |
+| gluten-free-butter-tteok | 6.5 | 3.5 (blocking 3) | FAIL |
+| *(보정) snacks 스텁 @2ed35c2* | *3* | *3.5* | *변별력 증명* |
+
+읽는 법: ① 판사는 변별한다(스텁 3 vs 발행본 8) — "늘 9.5 주는 판사" 아님. ② 7월 평가 루프를 거친 글(labels·snacks)이 상위, 루프 이전 글(butter-tteok)이 최하 — 루프가 실제로 품질을 올렸다. ③ 그러나 7월 자가보고 "9.5/9.5"는 재현 가능한 판사 앞에서 유지되지 않았다(labels 8/5.5) — PROVENANCE bucket C의 한계가 실측으로 확인됨. ④ snacks 정확성 9.5는 기준이 도달 가능함을 증명.
+
+**게이트 배선:** `eval/tasks/content-gate.json`(content-001) 신설 — `check-harness judgments`가 발행글마다 기록 존재·해시 일치·루브릭 버전·**gate PASS**까지 검사. baseline은 7/8 빨간 상태 그대로 정직하게 기록(`content-001,0,1`). eval-runner exit 1 → push마다 CI 빨강 = 게이트가 물고 있다는 뜻.
 
 ## 완료 (2026-08-07) — 12-factor 진단 이행, 14커밋 전부 push
 
@@ -62,10 +81,10 @@
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-08-08 14:26
+- **마지막 업데이트:** 2026-08-12 13:31
 - **작업자:** Claude Code
 - **브랜치:** main
-- **마지막 커밋:** `7db77ce` chore(eval): refresh baseline after adding README to the harness set
+- **CI:** 🔴 content-001 (의도된 빨강 — 위 백로그 해소 시까지)
 - **점수 진단(2026-07-24, 별도 전문가 평가):** 웹 5.3/10, PM 4.3/10 — "자산 품질은 7, 운영 규율은 3.5". 갭은 대부분 *이미 시작한 것의 완성*.
 
 ## 완료된 작업 (2026-07-24 재개 세션 — P0 안정화)
