@@ -1,0 +1,15 @@
+{
+  "id": "content-001",
+  "name": "콘텐츠 판사 게이트",
+  "description": "발행된 모든 글에 현행 루브릭·현재 파일 바이트와 일치하는 판사 기록이 존재하고 그 기록의 게이트가 PASS인지 검증. 판사 자체는 비결정적이라 CI에서 돌리지 않는다 — CI가 검증하는 건 '이 정확한 바이트가, 이 루브릭 버전으로, 게이트를 통과했다'는 기록이다. 글을 고치면 해시가 깨져 재채점 전까지 빨간불이 되는 것이 기록을 기념품이 아닌 게이트로 만든다.",
+  "steps": [
+    {
+      "command": "node scripts/check-harness.mjs judgments",
+      "check": "exit_code_zero",
+      "desc": "발행글 전부에 현행 루브릭·현재 해시·PASS 게이트의 판사 기록 존재"
+    }
+  ],
+  "threshold": 1.0,
+  "category": "콘텐츠 게이트",
+  "weight": "high"
+}

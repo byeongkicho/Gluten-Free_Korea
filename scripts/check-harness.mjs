@@ -192,7 +192,7 @@ function checkJudgments() {
   if (!existsSync(dir)) {
     fail("no judgments recorded", [
       "run: node scripts/judge-post.mjs --all",
-      "(requires ANTHROPIC_API_KEY; see prompts/README.md)",
+      "(needs an API key, or a claude CLI via --backend claude-cli; see prompts/README.md)",
     ]);
   }
 
@@ -233,8 +233,16 @@ function checkJudgments() {
         );
       }
     }
-    if (record.provenance !== "runner") {
-      problems.push(`${slug}: provenance is "${record.provenance}", not "runner"`);
+    // Both values are written only by judge-post.mjs — "runner" through the
+    // pinned API contract, "claude-cli" through Claude Code in print mode. A
+    // hand-written score has no valid provenance either way.
+    if (record.provenance !== "runner" && record.provenance !== "claude-cli") {
+      problems.push(`${slug}: provenance is "${record.provenance}", not runner/claude-cli`);
+    }
+    // A recorded FAIL is not a passing gate. The two honest exits are fixing
+    // the post (and re-judging) or leaving this red — never editing the rubric.
+    if (record.gate?.passed !== true) {
+      problems.push(`${slug}: recorded gate is FAIL — ${record.gate?.reason ?? "no gate field"}`);
     }
   }
 

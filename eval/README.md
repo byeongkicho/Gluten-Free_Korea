@@ -35,6 +35,7 @@ bash eval/check-regression.sh --threshold 5.0
 | 인스타 게시 | URL 빌더가 프리셋 계약을 지킴 | 중간 |
 | 코드 리뷰 | Edge 호환·보안 헤더·slug 고유성·canonical | 높음 |
 | 하네스 무결성 | 규칙 문서가 저장소의 현재 상태를 가리킴 | 높음 |
+| 콘텐츠 게이트 | 발행글마다 현행 루브릭·현재 해시·PASS 판사 기록 존재 | 높음 |
 
 > 카테고리 표는 `eval/tasks/*.json`의 `category`와 일치해야 한다.
 > `check-harness.mjs eval-docs`가 이 정합을 검사한다.

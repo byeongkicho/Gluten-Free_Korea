@@ -81,8 +81,9 @@ npm run judge -- <slug> --dry-run   # render prompt and schema, no API key
 npm run judge -- --all              # judge every published post
 ```
 
-The judges never see each other's output; that is two API calls, not a promise
-inside a prompt. The model returns integer points per criterion and never a
+The judges never see each other's output; that is two isolated model calls —
+through the Messages API, or through `claude -p` when there is no API credit —
+not a promise inside a prompt. The model returns integer points per criterion and never a
 total — the score, the threshold, and the pass/fail are computed in JS, because
 a model asked for "a score out of 10" picks the number first and reasons
 backwards. Each run records the article's SHA-256 and the rubric version, so
@@ -91,6 +92,11 @@ editing a post after it was judged breaks the hash and fails CI. See
 [`eval/judgments/PROVENANCE.md`](eval/judgments/PROVENANCE.md) — the latter
 separates reproducible scores from ones that only exist in session notes, and
 refuses to blend them.
+
+The gate's first full run (August 2026) failed **all five** published posts,
+including two that had reported 9.5/10 from ad-hoc session evaluations in July.
+The scores are recorded as they fell, and CI stays red until each post is
+repaired and re-judged: the rubric does not bend to the essay.
 
 ## Stack
 
