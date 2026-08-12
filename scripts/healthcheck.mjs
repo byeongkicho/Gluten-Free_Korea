@@ -46,9 +46,60 @@ function warn(check, detail) {
   console.log(`  ⚠️ ${check} — ${detail}`);
 }
 
+// ── Metrics ──────────────────────────────────────────────
+// 체크 결과를 숫자로도 모은다. 콘솔 출력(✅/❌)은 사람이 읽는 용도고,
+// 이쪽은 시계열로 쌓아 추세를 보기 위한 것이다.
+// 측정하지 못한 값은 아예 기록하지 않는다 (0이나 -1로 채우면 그래프가 거짓말을 한다).
+
+const metrics = [];
+
+function metric(name, value, labels = {}) {
+  if (typeof value !== 'number' || !Number.isFinite(value)) return;
+  metrics.push({ name, value, labels });
+}
+
+const METRIC_HELP = {
+  ngk_http_up: 'Endpoint reachable and returning a 2xx/3xx status (1) or not (0)',
+  ngk_http_response_seconds: 'Wall-clock time to complete the request',
+  ngk_http_status_code: 'HTTP status code returned by the endpoint',
+  ngk_ssl_expiry_days: 'Days until the TLS certificate expires',
+  ngk_instagram_token_valid: 'Long-lived Instagram token still authenticates (1) or not (0)',
+  ngk_instagram_token_expiry_days: 'Days until the long-lived Instagram token expires (absent when it never expires)',
+  ngk_instagram_data_access_expiry_days: 'Days until Facebook data access expires; negative means already lapsed',
+  ngk_instagram_api_up: 'Instagram publishing target is reachable with the page token (1) or not (0)',
+  ngk_places_total: 'Number of places in places.json',
+  ngk_places_missing: 'Places missing a given field',
+  ngk_ga4_report_age_days: 'Age of the most recent GA4 report',
+  ngk_check_total: 'Checks executed in this run',
+  ngk_check_failed: 'Checks that failed in this run',
+  ngk_check_warned: 'Checks that raised a warning in this run',
+  ngk_healthcheck_timestamp_seconds: 'Unix timestamp of this run',
+};
+
+function renderPrometheus() {
+  const byName = new Map();
+  for (const m of metrics) {
+    if (!byName.has(m.name)) byName.set(m.name, []);
+    byName.get(m.name).push(m);
+  }
+
+  const lines = [];
+  for (const [name, group] of byName) {
+    if (METRIC_HELP[name]) lines.push(`# HELP ${name} ${METRIC_HELP[name]}`);
+    lines.push(`# TYPE ${name} gauge`);
+    for (const m of group) {
+      const labels = Object.entries(m.labels)
+        .map(([k, v]) => `${k}="${String(v).replace(/(["\\])/g, '\\$1')}"`)
+        .join(',');
+      lines.push(labels ? `${name}{${labels}} ${m.value}` : `${name} ${m.value}`);
+    }
+  }
+  return lines.join('\n') + '\n';
+}
+
 // ── 1. HTTP checks ───────────────────────────────────────
 
-async function checkUrl(url, label) {
+async function checkUrl(url, label, target) {
   const start = Date.now();
   try {
     const res = await fetch(url, { redirect: 'follow' });
@@ -58,9 +109,14 @@ async function checkUrl(url, label) {
     } else {
       fail(label, `HTTP ${res.status} (${elapsed}ms)`);
     }
+    metric('ngk_http_up', res.ok ? 1 : 0, { target });
+    metric('ngk_http_status_code', res.status, { target });
+    metric('ngk_http_response_seconds', elapsed / 1000, { target });
     return { status: res.status, elapsed };
   } catch (e) {
     fail(label, `UNREACHABLE — ${e.message}`);
+    // 도달 자체가 안 됐으므로 up=0만 남긴다. 응답시간·상태코드는 존재하지 않는 값이다.
+    metric('ngk_http_up', 0, { target });
     return { status: 0, elapsed: 0 };
   }
 }
@@ -74,6 +130,7 @@ function checkSSL() {
       if (cert && cert.valid_to) {
         const expiry = new Date(cert.valid_to);
         const daysLeft = Math.floor((expiry - Date.now()) / (1000 * 60 * 60 * 24));
+        metric('ngk_ssl_expiry_days', daysLeft);
         if (daysLeft > 30) {
           pass('SSL Certificate', `Expires ${cert.valid_to} (${daysLeft} days left)`);
         } else if (daysLeft > 0) {
@@ -94,26 +151,90 @@ function checkSSL() {
 
 // ── 3. Instagram token ──────────────────────────────────
 
+async function readInstagramCreds() {
+  // CI에는 ~/.instagram-creds가 없다. 환경변수로도 받을 수 있어야
+  // 로컬과 GitHub Actions가 같은 점검을 한다.
+  const fromEnv = {
+    LONG_LIVED_TOKEN: process.env.INSTAGRAM_LONG_LIVED_TOKEN,
+    PAGE_TOKEN: process.env.INSTAGRAM_PAGE_TOKEN,
+    IG_ACCOUNT_ID: process.env.INSTAGRAM_IG_ACCOUNT_ID,
+  };
+  if (fromEnv.LONG_LIVED_TOKEN) return fromEnv;
+
+  const credsPath = path.join(process.env.HOME, '.instagram-creds');
+  const raw = await fs.readFile(credsPath, 'utf8');
+  const creds = {};
+  raw.split('\n').forEach(l => {
+    const [k, ...v] = l.split('=');
+    if (k && !k.startsWith('#')) creds[k.trim()] = v.join('=').trim();
+  });
+  return creds;
+}
+
 async function checkInstagramToken() {
   try {
-    const credsPath = path.join(process.env.HOME, '.instagram-creds');
-    const raw = await fs.readFile(credsPath, 'utf8');
-    const creds = {};
-    raw.split('\n').forEach(l => {
-      const [k, ...v] = l.split('=');
-      if (k && !k.startsWith('#')) creds[k.trim()] = v.join('=').trim();
-    });
+    const creds = await readInstagramCreds();
 
     const token = creds.LONG_LIVED_TOKEN;
     if (!token) { warn('Instagram Token', 'No token found'); return; }
 
     const res = await fetch(`https://graph.facebook.com/v21.0/me?fields=id,name&access_token=${token}`);
-    if (res.ok) {
-      // Token works — estimate expiry (~60 days from last refresh)
-      pass('Instagram Token', 'Valid (API responded OK)');
-    } else {
+    if (!res.ok) {
       const body = await res.json();
       fail('Instagram Token', `Invalid — ${body.error?.message || res.status}`);
+      metric('ngk_instagram_token_valid', 0);
+      return;
+    }
+    metric('ngk_instagram_token_valid', 1);
+
+    // 토큰 유효성만으로는 부족하다. debug_token이 두 개의 다른 만료를 알려준다:
+    //   expires_at            — 토큰 자체의 만료 (0이면 만료 없음)
+    //   data_access_expires_at — 데이터 접근 권한 만료 (90일 주기, 별개로 흐른다)
+    // 2026-08-12 실측: 이 토큰은 expires_at=0(무기한)인데 data_access는 이미 지나 있었고,
+    // 그런데도 API는 정상 응답했다. 즉 두 값 다 "발행 가능"을 보장하지 않는다.
+    const dbg = await fetch(
+      `https://graph.facebook.com/debug_token?input_token=${token}&access_token=${token}`
+    );
+    if (dbg.ok) {
+      const { data } = await dbg.json();
+      const day = 1000 * 60 * 60 * 24;
+
+      if (data?.expires_at) {
+        const daysLeft = Math.floor((data.expires_at * 1000 - Date.now()) / day);
+        metric('ngk_instagram_token_expiry_days', daysLeft);
+        if (daysLeft <= 7) warn('Instagram Token', `Expires in ${daysLeft} days — refresh needed`);
+      }
+
+      if (data?.data_access_expires_at) {
+        const daysLeft = Math.floor((data.data_access_expires_at * 1000 - Date.now()) / day);
+        metric('ngk_instagram_data_access_expiry_days', daysLeft);
+        if (daysLeft <= 0) {
+          warn('Instagram Data Access', `Expired ${-daysLeft} days ago — re-auth required to restore full scope`);
+        } else if (daysLeft <= 14) {
+          warn('Instagram Data Access', `Expires in ${daysLeft} days`);
+        }
+      }
+    }
+
+    // 진짜 물어야 할 것 — 지금 이 순간 실제로 발행할 수 있는 상태인가.
+    // 토큰 메타데이터가 아니라 실제 대상 계정을 조회해서 판정한다.
+    const pageToken = creds.PAGE_TOKEN;
+    const igAccountId = creds.IG_ACCOUNT_ID;
+    if (pageToken && igAccountId) {
+      const probe = await fetch(
+        `https://graph.facebook.com/v21.0/${igAccountId}?fields=username&access_token=${pageToken}`
+      );
+      if (probe.ok) {
+        const { username } = await probe.json();
+        metric('ngk_instagram_api_up', 1);
+        pass('Instagram API', `Publishing target reachable (@${username})`);
+      } else {
+        const body = await probe.json().catch(() => ({}));
+        metric('ngk_instagram_api_up', 0);
+        fail('Instagram API', `Cannot reach publishing target — ${body.error?.message || probe.status}`);
+      }
+    } else {
+      warn('Instagram API', 'PAGE_TOKEN / IG_ACCOUNT_ID missing — cannot verify publishing');
     }
   } catch (e) {
     warn('Instagram Token', `Cannot check — ${e.message}`);
@@ -130,6 +251,12 @@ async function checkPlacesData() {
     const noNote = places.filter(p => !p.note).length;
     const noLocation = places.filter(p => !p.location).length;
     const noAddressEn = places.filter(p => !p.addressEn).length;
+
+    metric('ngk_places_total', total);
+    metric('ngk_places_missing', noImages, { field: 'images' });
+    metric('ngk_places_missing', noNote, { field: 'note' });
+    metric('ngk_places_missing', noLocation, { field: 'location' });
+    metric('ngk_places_missing', noAddressEn, { field: 'address_en' });
 
     pass('places.json', `${total} places loaded`);
     if (noImages > 0) warn('Data: images', `${noImages} places without images`);
@@ -148,6 +275,7 @@ async function checkGA4() {
     const stat = await fs.stat(reportPath);
     const ageHours = (Date.now() - stat.mtimeMs) / (1000 * 60 * 60);
     const ageDays = Math.floor(ageHours / 24);
+    metric('ngk_ga4_report_age_days', ageDays);
 
     if (ageDays > 7) {
       warn('GA4 Report', `Last updated ${ageDays} days ago — run \`npm run ga4\``);
@@ -169,15 +297,15 @@ async function main() {
 
   // HTTP checks (always run)
   console.log('── HTTP ──');
-  await checkUrl(SITE, 'Homepage');
-  await checkUrl(`${SITE}/sitemap.xml`, 'Sitemap');
-  await checkUrl(`${SITE}/robots.txt`, 'robots.txt');
-  await checkUrl(`${SITE}/ads.txt`, 'ads.txt');
+  await checkUrl(SITE, 'Homepage', 'homepage');
+  await checkUrl(`${SITE}/sitemap.xml`, 'Sitemap', 'sitemap');
+  await checkUrl(`${SITE}/robots.txt`, 'robots.txt', 'robots_txt');
+  await checkUrl(`${SITE}/ads.txt`, 'ads.txt', 'ads_txt');
 
   // Sample place pages
   const slugs = ['237-pizza', 'monil2-house', 'cafe-pepper'];
   for (const slug of slugs) {
-    await checkUrl(`${SITE}/place/${slug}`, `Place: ${slug}`);
+    await checkUrl(`${SITE}/place/${slug}`, `Place: ${slug}`, `place_${slug}`);
   }
 
   if (!quick) {
@@ -202,6 +330,12 @@ async function main() {
   console.log(`  Failed: ${failures}`);
   console.log(`  Status: ${failures === 0 ? '🟢 HEALTHY' : '🔴 ISSUES FOUND'}\n`);
 
+  const warnings = results.filter(r => r.status === '⚠️').length;
+  metric('ngk_check_total', results.length);
+  metric('ngk_check_failed', failures);
+  metric('ngk_check_warned', warnings);
+  metric('ngk_healthcheck_timestamp_seconds', Math.floor(Date.now() / 1000));
+
   // Save report
   const reportPath = path.join(ROOT, 'data', 'healthcheck.json');
   await fs.writeFile(reportPath, JSON.stringify({
@@ -211,11 +345,17 @@ async function main() {
     summary: {
       total: results.length,
       passed: results.filter(r => r.status === '✅').length,
-      warnings: results.filter(r => r.status === '⚠️').length,
+      warnings,
       failed: failures,
     },
+    metrics,
   }, null, 2) + '\n');
   console.log(`Report saved: data/healthcheck.json`);
+
+  // Prometheus 텍스트 형식 — 시계열 백엔드로 보내기 위한 출력
+  const metricsPath = path.join(ROOT, 'data', 'metrics.prom');
+  await fs.writeFile(metricsPath, renderPrometheus());
+  console.log(`Metrics saved: data/metrics.prom (${metrics.length} samples)`);
 
   process.exit(failures > 0 ? 1 : 0);
 }

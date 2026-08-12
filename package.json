@@ -24,6 +24,8 @@
     "generate:caption": "node scripts/generate-caption.mjs",
     "judge": "node scripts/judge-post.mjs",
     "check:harness": "node scripts/check-harness.mjs",
+    "health": "node scripts/healthcheck.mjs",
+    "health:summary": "node scripts/daily-summary.mjs",
     "ga4": "node --env-file=.env scripts/ga4-report.mjs",
     "weekly": "bash scripts/weekly-publish.sh"
   },
