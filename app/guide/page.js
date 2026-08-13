@@ -5,7 +5,7 @@ import {
   COUPANG_PRODUCTS,
 } from "@/app/lib/affiliate";
 
-const guideTitle = "Gluten-Free Safety Guide for Korea | No Gluten Korea";
+const guideTitle = "Gluten-Free Safety Guide for Korea";
 const guideDescription = "Learn essential gluten-free survival tips for Korea: hidden gluten in Korean food, key Korean phrases, and safer grocery product suggestions.";
 
 export const metadata = {

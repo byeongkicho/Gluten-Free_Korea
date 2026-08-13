@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Privacy Policy | No Gluten Korea",
+  title: "Privacy Policy",
   description: "Privacy policy for noglutenkorea.com — how we collect, use, and protect your data.",
   alternates: { canonical: "/privacy" },
 };

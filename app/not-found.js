@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Not Found | Gluten-Free Korea",
+  title: "Not Found",
 };
 
 export default function NotFound() {

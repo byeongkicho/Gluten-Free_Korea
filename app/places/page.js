@@ -3,7 +3,7 @@ import places from "@/data/places.json";
 import PlaceFilter from "@/app/components/PlaceFilter";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://noglutenkorea.com";
-const pageTitle = "Gluten-Free Restaurants & Cafes in Korea | No Gluten Korea";
+const pageTitle = "Gluten-Free Restaurants & Cafes in Korea";
 const pageDescription =
   "A directory of gluten-free restaurants, cafes, and bakeries in Korea. Filter by area and type, with maps, addresses, and safety notes. Always reconfirm ingredients when you visit.";
 

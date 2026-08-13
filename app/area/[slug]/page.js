@@ -48,7 +48,7 @@ export async function generateMetadata({ params }) {
 
   const count = getAreaPlaces(slug).length;
   return {
-    title: `Gluten-Free ${area.nameEn} — ${count} Places | Gluten-Free Korea`,
+    title: `Gluten-Free ${area.nameEn} — ${count} Places`,
     description: area.descEn,
     alternates: { canonical: `/area/${slug}` },
     openGraph: {

@@ -3,14 +3,16 @@ import places from "@/data/places.json";
 import { getPublishedPosts } from "@/app/lib/blog";
 import FeaturedPlaces from "@/app/components/FeaturedPlaces";
 
+import { SITE_NAME } from "@/app/lib/site";
+
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://noglutenkorea.com";
-const homeTitle =
-  "No Gluten Korea | Gluten-Free Living in Korea — Cooking, Ingredients & Dining";
+const homeTitle = `${SITE_NAME} | Gluten-Free Living in Korea — Cooking, Ingredients & Dining`;
 const homeDescription =
   "How to live gluten-free in Korea: home cooking, ingredient sourcing, label-reading, and a directory of gluten-free restaurants. Bilingual Korean/English guides and kitchen notes.";
 
 export const metadata = {
-  title: homeTitle,
+  // 홈만 브랜드-선행 형식이라 layout의 template(`%s | ...`)을 타지 않는다.
+  title: { absolute: homeTitle },
   description: homeDescription,
   keywords: [
     "gluten free korea",

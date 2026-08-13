@@ -40,7 +40,7 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const place = getPlaceBySlug(slug);
   const title = place
-    ? `${place.name} – Gluten-Free Options in Korea | Gluten-Free Korea`
+    ? `${place.name} – Gluten-Free Options in Korea`
     : "Place Not Found";
   const fallbackParts = [
     place?.type,

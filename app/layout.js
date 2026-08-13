@@ -3,7 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import MetadataLocaleSync from "./components/MetadataLocaleSync";
+import { SITE_NAME } from "./lib/site";
 
 // Set theme and language classes before hydration to avoid UI flicker.
 function InitScript() {
@@ -49,7 +49,7 @@ const dmSans = DM_Sans({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://noglutenkorea.com";
 const gaId = "G-Z9FQ9CNJJN";
-const defaultTitle = "No Gluten Korea | 한국 글루텐프리 레스토랑 & 카페 가이드";
+const defaultTitle = `${SITE_NAME} | 한국 글루텐프리 레스토랑 & 카페 가이드`;
 const defaultDescription =
   "Find gluten-free restaurants, cafes, and bakeries across Korea. Verified places with safety notes, maps, and Korean phrases for celiac and gluten-sensitive travelers.";
 const defaultOgImage = "/og-default.png";
@@ -57,7 +57,10 @@ const defaultOgImage = "/og-default.png";
 export const metadata = {
   metadataBase: new URL(siteUrl),
   alternates: { canonical: "/" },
-  title: defaultTitle,
+  title: {
+    default: defaultTitle,
+    template: `%s | ${SITE_NAME}`,
+  },
   description: defaultDescription,
   other: {
     "google-adsense-account": "ca-pub-7622506717588067",
@@ -76,11 +79,11 @@ export const metadata = {
       },
     ],
   },
+  // title/description/images를 여기 두면 자체 twitter가 없는 모든 페이지(블로그
+  // 글 포함)가 사이트 기본값을 상속한다. card만 남기면 X가 og:*로 폴백해
+  // 페이지별 제목·이미지를 얻는다.
   twitter: {
     card: "summary_large_image",
-    title: defaultTitle,
-    description: defaultDescription,
-    images: [defaultOgImage],
   },
 };
 
@@ -120,7 +123,6 @@ export default function RootLayout({ children }) {
             gtag('config', '${gaId}');
           `}
         </Script>
-        <MetadataLocaleSync />
         <Navbar />
         {children}
         <Footer />

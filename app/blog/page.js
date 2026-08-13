@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getPublishedPosts, getUpcomingPosts } from "@/app/lib/blog";
 
 export const metadata = {
-  title: "Blog | Gluten-Free Korea",
+  title: "Blog",
   description:
     "Personal field notes on gluten-free dining and travel in Korea — restaurants, phrases, label-reading hacks, convenience-store survival.",
   alternates: { canonical: "/blog" },

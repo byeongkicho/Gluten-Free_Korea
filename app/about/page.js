@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "About | No Gluten Korea",
+  title: "About",
   description: "About No Gluten Korea — helping celiac and gluten-sensitive people find safe dining options across Korea.",
   alternates: { canonical: "/about" },
 };

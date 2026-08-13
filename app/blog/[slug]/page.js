@@ -18,13 +18,13 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) {
-    return { title: "Not Found | Gluten-Free Korea" };
+    return { title: "Not Found" };
   }
 
   const ogImage = post.ogImage || "/og-default.png";
   const isPublished = post.status === "published";
   return {
-    title: `${post.title} | Gluten-Free Korea`,
+    title: post.title,
     description: post.description,
     alternates: { canonical: `/blog/${post.slug}` },
     // Keep unfinished "Coming soon" stubs out of the index — thin content
