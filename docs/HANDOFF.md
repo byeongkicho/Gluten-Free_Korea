@@ -4,17 +4,21 @@
 > 이 문서는 세션 시작 시 "지금 어디까지 됐고 다음이 뭔지"만 빠르게 전달한다.
 > 재개 전략 전체: `~/.claude/plans/noble-discovering-aho.md` (2026-07-24 승인).
 
-## ▶ 다음 세션 시작점 (2026-08-13 종료 시점)
+## ▶ 다음 세션 시작점 (2026-08-13 오후 종료 시점)
 
-**첫 녹색 — snacks가 판사 게이트 통과 (seo-eeat 10/9.5 · accuracy-safety 9.5/9.5, `88cf6aa`).** 발행 5편 중 1 PASS / 4 FAIL(의도된 빨강 유지). ⚠️ **루브릭을 낮추지 말 것** — 출구는 글 수정→재채점뿐이다.
+**게이트 2/5 녹색 — snacks(`88cf6aa`)에 이어 celiac-guide(`a53889e`)도 통과 (둘 다 seo 10/9.5 · 정확성 9.5/9.5).** 남은 FAIL 3편: labels(8/5.5)·hidden-gluten(7.5/5.5)·butter-tteok(6/7). ⚠️ **루브릭을 낮추지 말 것** — 출구는 글 수정→재채점뿐이다.
 
-**▶ 남은 글 수정 백로그 (우선순위순):**
-1. ~~blocking 5건~~ ✅(08-12) · ~~snacks 첫 녹색~~ ✅(08-13) — 재채점 2회 필요했음: SEO 8→9.5 도달 순간 **정확성이 9.5→9로 재롤 하락**, minor 6건 전부 수정 후에야 10/9.5·9.5/9.5
-2. **사이트 전역 `<title>` 접미사** (`app/layout.js` ` | Gluten-Free Korea`) — 남은 4편 title_meta 공통 감점. 참고: snacks는 현행 접미사(20자) 하에서 39자 제목으로 통과했고, 판사는 "정확 키워드가 접미사에 의존"을 minor로 지적 — 접미사를 줄이면 이 의존이 깨지므로 **키워드 전략과 함께 결정할 것**
-3. **출처·정확성 보강:** MFDS 1차 출처는 snacks에 확보됨 — `https://www.law.go.kr/행정규칙/식품등의표시기준` (별표 2) — **labels에 재사용.** 나머지: labels 엿기름 오역(malted barley이지 malt syrup 아님), hidden-gluten "Korea GF" 인증 삭제·"10~30% 밀 배합" 무출처, celiac-guide 알레르기 개수(22→19, 별표 2로 확인 가능), FAQ frontmatter-본문 불일치(celiac-guide Q3·Q5). ⚠️ **celiac-guide는 hash mismatch 상태**(참쌀설병 "is safe" 단정 제거, 08-13) — 이 백로그 반영 후 재채점
-4. **snacks 잔여 minor(다음 개정 때, 게이트엔 불요):** 소주=증류주 입장의 출처, pass list 제조사 확인 추가(현재 포카칩 1건 — 오리온처럼 제품 페이지에 맛별 알레르기를 명시하는 브랜드부터), "The honesty section" 헤딩 서술형 전환
+**구조 수정 완료(`b34e42b`, 08-13):** ① 접미사 전역 통일 = **` | No Gluten Korea`**(사용자 결정, `app/lib/site.js` 상수 1줄로 변경 가능) + layout `title.template` ② **MetadataLocaleSync 삭제** — hydration 후 title을 "GF Korea"로 덮던 실 SEO 버그 ③ layout twitter를 card-only로 → 글별 twitter 메타 자동 파생.
 
-**판사 운영 지식 (08-13 실측):** ① 재채점은 **양 축 모두 재롤** — 통과했던 축도 떨어진다(정확성 9.5→9 실측). minor까지 다 잡고 돌리는 게 싸다. ② **판사 실행 중 글 수정 금지** — 해시가 실행 시점 파일로 기록돼 mismatch가 남는다(중지→최종본으로 재실행). ③ 수정이 새 minor를 만든다: 발행일(7/31) 뒤의 인용 retrieval date(8월)는 **본문 "Updated August 2026" 라인**으로 해소. ④ 제조사 제품 페이지가 맛별 알레르기를 한 페이지에 명시하는 경우가 있다(오리온 포카칩: 오리지널 우유·대두·쇠고기 vs 어니언 밀·우유·대두) — flavor trap 주장의 최상급 출처.
+**▶ 남은 글 수정 백로그 (점수 근접순):**
+1. **labels (8/5.5):** MFDS 별표 2 링크 재사용(`https://www.law.go.kr/행정규칙/식품등의표시기준`), 엿기름 오역(malted barley, not malt syrup), 로마자 컬럼, 실패담 시점, 공유설비 문구=자율 명시, 제목 48자→**40자 이하**
+2. **hidden-gluten (7.5/5.5, major 5건):** "Korea GF" 가짜 인증 삭제, "10~30%" 무출처(celiac에선 10% 실발언으로 축소 완료 — 같은 패턴), 실사용 GF 간장·고추장 제품명(**운영자 입력 필요**), FAQ 잡채 safe 단정
+3. **butter-tteok (6/7):** 제목 95자→40자, No Brand 프리믹스 실제품 링크(**운영자 확인 필요**), 밀떡 누락(떡볶이 떡 상당수가 밀), FAQ 동기화
+4. **다음 개정 때 (게이트 불요):** snacks 소주 출처·오리온 URL 트림(`?goodsno=26`형, celiac에서 검증됨), celiac 잔여 advisory(집간장 용어 본문 미등장, 오프너 4개 과다, FAQ-본문 중복 텍스트, 237 오너 셀리악=대화 근거 마킹)
+
+**판사 운영 지식 (08-13 실측, celiac 4라운드로 확장):** ① **양 축 모두 재롤** — celiac은 SEO 9→10 오르는 동안 정확성 9.5→9→8.5 시소. minor까지 다 잡고 돌려도 새 눈이 새 걸 잡는다 — 4라운드까지는 정상 범위. ② **수정이 major를 만들 수 있다** — SEO 보호용으로 넣은 Tier 1 "nothing to interrogate" 문장이 정확성 major(절대 안전 보증)로 돌아옴. **안전 프레이밍 문장은 항상 "관찰한 것+관찰자+한계" 형태로.** ③ **판사 실행 중 글 수정 금지**(해시 기록). ④ 발행일 이후 인용 날짜는 "Updated August 2026" 본문 라인으로 해소. ⑤ 오리온처럼 제조사 페이지가 맛별 알레르기를 한 페이지에 명시하면 flavor trap 최상급 출처. ⑥ ⚠️ **루브릭 스테일**: `prompts/judge-seo-eeat.rubric.json:18`이 옛 접미사 ` | Gluten-Free Korea`(+20자)를 하드코딩 — 실제는 +18자. 고치려면 버전 bump가 필요하고 그러면 기존 PASS 기록 2건이 "v1로 채점됨" 빨강이 됨 → **당분간 제목을 40자 이하로 잡으면 양쪽 다 만족**(스테일 가정이 보수적 마진일 뿐). 다음 루브릭 개정 사유가 생기면 그때 배치로 정정+전체 재채점.
+
+**운영자 액션 (다음 방문·확인 때):** ① **237 Pizza GFCO 인증** — 웹 재검증 실패로 글에서 주장 철회함(철회 사실도 글에 투명 기록). 매장에서 인증서 실물 확인되면 사진 찍어 복원 가능. ② hidden-gluten용 **실사용 GF 간장·고추장 제품명**, butter-tteok용 **No Brand 프리믹스** 확인. ③ Cafe Lab 통화(2025 여름, 해외판 GF·한국판 미확인)는 아직 어느 글에도 안 실림 — 쓸 곳 생기면 사용.
 
 수정 후 재채점: `npm run judge -- <slug>` — 크레딧 없으면 **자동으로 claude CLI 백엔드**(구독 과금, `--backend` 플래그 참조). 글을 고치면 해시 불일치로 content-001이 알아서 빨개지므로 재채점 전까지 게이트가 거짓말하지 않는다.
 
@@ -106,10 +110,11 @@ GitHub Actions (매시간) → healthcheck 16지표 → Grafana Cloud 도쿄(inf
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-08-13 11:05
+- **마지막 업데이트:** 2026-08-13 14:35
 - **작업자:** Claude Code
 - **브랜치:** main
-- **CI:** 🔴 content-001 (의도된 빨강 — snacks 1편 PASS, 4편 FAIL + celiac-guide hash mismatch)
+- **CI:** 🔴 content-001 (의도된 빨강 — 2편 PASS(snacks·celiac), 3편 FAIL(labels·hidden-gluten·butter-tteok))
+- **참고:** CLAUDE.md의 "next-on-pages 빌드 시 `output: 'export'` 필요" 노트는 현행 next.config.mjs와 불일치(스테일) — 실제 config엔 없음, pages:build 정상 동작 확인됨(08-13)
 - **점수 진단(2026-07-24, 별도 전문가 평가):** 웹 5.3/10, PM 4.3/10 — "자산 품질은 7, 운영 규율은 3.5". 갭은 대부분 *이미 시작한 것의 완성*.
 
 ## 완료된 작업 (2026-07-24 재개 세션 — P0 안정화)
