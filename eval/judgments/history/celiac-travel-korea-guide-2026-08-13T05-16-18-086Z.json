@@ -1,0 +1,279 @@
+{
+  "schema": 1,
+  "slug": "celiac-travel-korea-guide",
+  "source_ref": "working-tree",
+  "content_sha256": "3308ae9e8978e947006d4fdd6ed6d0cec501b3e572021b181ec31d20c6f21afc",
+  "judged_at": "2026-08-13T05:18:17.105Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.229 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 20,
+      "max_points": 20,
+      "score": 10,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "The TL;DR and the 'If You're Celiac, Start Here' block deliver the trip-planning answer (what's unsafe, three dedicated venues, the allergy phrase, store baseline) inside the first ~200 words, with the NCGS caveat stated up front rather than buried.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 2,
+          "max": 2,
+          "note": "Title is 35 chars plus the 20-char site suffix (55 total), description is 146 chars, keyword present in both, and the shared words are keyword usage rather than repeated phrasing.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings are argumentative rather than labelling ('What Korean Food Actually Looks Like, From a Gluten Angle', 'The One Phrase That Actually Works', 'Reading Korean Labels: Four Words That Matter'), and a heading-only skim reconstructs the whole method.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Six distinct in-body links (restaurants, bakeries, phrases, BBQ, labels, snacks) each sit where a reader would want the deeper dive, plus /about in the contact context.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All five frontmatter Q/As are reproduced verbatim as visible content, each stands alone as a rich result, and the substance (tamari, three Tier 1 venues, 10% wheat bakery, allergen realities) is carried by the body.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 3,
+          "max": 3,
+          "note": "Dense first-hand specifics: the summer-2025 franchise call, the bakery owner's '90% rice flour, 10% wheat flour' answer, the pink-vs-green Chamsal Seolbyeong packets, the online loaf quietly renamed, named dishes ordered at each venue.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "Korean terms romanised (ganjang, milgaru, ppeongttwigi), named products (Goraesa, Poca Chip Original vs Onion, Chamsal Seolbyeong), and checkable figures (19-item declaration list, 10% wheat ratio).",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "Primary sources are linked with retrieval or publication dates — the MFDS 식품등의 표시기준 with an 'as of August 2026' framing, Orion's own product page 'retrieved August 2026', and the blogger roundup 'published October 2023'.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "The piece states repeatedly what its NCGS-standard method cannot establish, retracts an unverifiable GFCO claim, ages its own franchise call, and carries no affiliate or undisclosed commercial links.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "faq_alignment",
+          "severity": "minor",
+          "quote": "Ask for unseasoned meat (\"양념 안 한 고기 있나요?\"), bring GF soy sauce, and skip sauced banchan sides.",
+          "why": "This is the one FAQ whose operational detail (the unseasoned-meat phrase, fresh grill plate, clean tongs) appears nowhere in the body outside the FAQ block itself, so the rich-result answer is thinner on page support than the other four.",
+          "fix": "Add one or two sentences in the phrase section giving 양념 안 한 고기 있나요? with romanisation and the grill-plate/tongs request, so the BBQ FAQ is corroborated by body copy as well as by the FAQ block."
+        },
+        {
+          "criterion": "internal_links",
+          "severity": "minor",
+          "quote": "The rest of this series, as each post lands:",
+          "why": "The closing list links eight URLs while conceding some may not be published yet; unpublished targets return 404s that waste crawl budget and hurt the hub page that points at them.",
+          "fix": "Render only the links to live posts and hold the rest until publication, or mark unpublished entries as plain text without an href."
+        },
+        {
+          "criterion": "search_intent",
+          "severity": "minor",
+          "quote": "Everything below is field-tested at my wife's NCGS standard — your standard is stricter.",
+          "why": "The keyword targets celiac travellers, but every venue verdict rests on an NCGS tolerance; the honesty is a trust asset, yet the page still lacks any celiac-standard verification (dedicated fryer, prep surface, flour-handling answers) for the Tier 1 venues it tells celiacs to anchor on.",
+          "fix": "Add a short line per Tier 1 venue recording what the kitchen said about dedicated equipment and flour handling, dated — that converts the celiac framing from disclaimer into evidence."
+        },
+        {
+          "criterion": "expertise",
+          "severity": "minor",
+          "quote": "19 of them on the list in force as of August 2026",
+          "why": "The count of MFDS mandatory-declaration allergens is a checkable regulatory figure and the linked 별표 2 is amended periodically; a wrong or stale number undercuts the label section that the rest of the guide leans on. Flagged for the accuracy judge, not scored here.",
+          "fix": "Cite the specific amendment number and effective date of the 식품등의 표시기준 revision the count comes from, next to the link."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 17504,
+        "cache_read_input_tokens": 28192,
+        "output_tokens": 6121,
+        "output_tokens_details": {
+          "thinking_tokens": 4294
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 17504,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 6121,
+            "cache_read_input_tokens": 28192,
+            "cache_creation_input_tokens": 17504,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 17504
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 18,
+      "max_points": 20,
+      "score": 9,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "Safety-critical claims (labelling law, allergen count, snack allergens, franchise call) are sourced and dated, but several food-composition claims are stated as fact without a source or an explicit observation marker.",
+          "evidence_quote": "**Doenjang** (된장, soybean paste) often includes wheat."
+        },
+        {
+          "id": "no_fabrication",
+          "points": 2,
+          "max": 3,
+          "note": "Product names, dates and figures are checkable and mutually consistent, but the FAQ frames a Pyeongtaek café as an answer to a Seoul question, and one cited URL carries mismatched internal identifiers.",
+          "evidence_quote": "**Is any restaurant in Seoul truly dedicated gluten-free?**\nYes, but few. 237 Pizza (Hannam), monil2 house (Yeonnam), and Cafe Rebirth (Pyeongtaek) are the three we trust most."
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "The piece states how it knows (visits, a dated phone call, label reading, a cited blogger roundup) and what each method cannot establish, including retracting an unverifiable certification claim.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 4,
+          "max": 4,
+          "note": "No absolute safety guarantees, cross-contamination handled at grill, kitchen and packaging level, and celiac risk is consistently escalated above the author's NCGS baseline rather than merged with it.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "Retrieval dates are given, the 2023 blogger source and the 2025 franchise call have their elapsed time stated, and reformulation risk is flagged as a standing caution.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 2,
+          "max": 2,
+          "note": "Korean terms, phrases and product categories are rendered correctly, and the mandatory-allergen scope (wheat yes, barley and rye no) is stated accurately and given operational consequences.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "The reader gets the exact Korean strings to scan, a primary-law link, a manufacturer product page, and scripts to re-confirm with staff and at their own branch.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "no_fabrication",
+          "severity": "minor",
+          "quote": "**Is any restaurant in Seoul truly dedicated gluten-free?**\nYes, but few. 237 Pizza (Hannam), monil2 house (Yeonnam), and Cafe Rebirth (Pyeongtaek) are the three we trust most.",
+          "why": "The question scopes to Seoul; Cafe Rebirth is described elsewhere in the body as 'about an hour south of Seoul' in Gyeonggi. The parenthetical keeps a reader from being actively misled, but a traveller scanning the FAQ could plan a Seoul day around a place that is a round trip out of the city.",
+          "fix": "Reword the FAQ answer to 'Two in Seoul — 237 Pizza (Hannam) and monil2 house (Yeonnam) — plus Cafe Rebirth, about an hour south in Pyeongtaek.'"
+        },
+        {
+          "criterion": "no_fabrication",
+          "severity": "minor",
+          "quote": "[Orion's own product page](https://www.orionworld.com/goods/view/27?page=1&goodsno=26&category=0102)",
+          "why": "The path segment (view/27) and the query parameter (goodsno=26) disagree, which is the signature of a hand-assembled rather than copied URL. On a page where the citation is doing the work of a safety claim about a specific chip flavour, a link that resolves to the wrong product silently removes the reader's ability to check.",
+          "fix": "Re-open the link, confirm it lands on the Poca Chip Original allergen table, and replace it with the canonical URL; note the retrieval date beside it as you already do elsewhere."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "**Doenjang** (된장, soybean paste) often includes wheat.",
+          "why": "Stated as a bare fact with no source and no observation marker. Traditional doenjang is soybeans, salt and water; wheat appears in some commercial formulations. The claim errs toward avoidance so it is not a safety hazard, but it is the kind of compositional assertion a reader will repeat to a kitchen.",
+          "fix": "Narrow to commercial product and attach evidence, e.g. 'Commercial doenjang sometimes lists wheat (밀) — check 원재료명 on the tub,' with one manufacturer label cited."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "Safe baseline is eggs, fruit, plain yogurt, a few confirmed chips.",
+          "why": "The TL;DR calls the chips 'confirmed', but the body downgrades most of that list to 'leads' traced to a 2023 blogger roundup, with only the Orion entries manufacturer-sourced. A reader who acts on the summary alone inherits a confidence the body withdraws.",
+          "fix": "Change to 'a couple of chips we have manufacturer-label evidence for — see the store section for which, and re-check the packet.'"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 20872,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 8585,
+        "output_tokens_details": {
+          "thinking_tokens": 6312
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 20872,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 8585,
+            "cache_read_input_tokens": 0,
+            "cache_creation_input_tokens": 20872,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 20872
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: accuracy-safety 9/9.5"
+  }
+}

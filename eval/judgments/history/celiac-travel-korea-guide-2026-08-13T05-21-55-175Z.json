@@ -1,0 +1,258 @@
+{
+  "schema": 1,
+  "slug": "celiac-travel-korea-guide",
+  "source_ref": "working-tree",
+  "content_sha256": "0b3dfb24dc2ebfa441b512afd0d180b813e87cd06c5bab8ee7f1c635dbc80c9d",
+  "judged_at": "2026-08-13T05:23:15.013Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.229 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 20,
+      "max_points": 20,
+      "score": 10,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "The TL;DR block in the opening ~150 words answers the 'celiac travel korea' intent directly — feasibility, three dedicated-GF anchors, the allergy phrase, convenience-store baseline — and is immediately followed by an 'If You're Celiac, Start Here' rules block.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 2,
+          "max": 2,
+          "note": "Title is 'Celiac Travel in Korea: Field Guide' (35 chars) plus the appended ' | Gluten-Free Korea' = ~55 chars, keyword present; description is 146 chars and does not repeat the title's phrasing.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings carry the argument rather than label it ('What Korean Food Actually Looks Like, From a Gluten Angle', 'The One Phrase That Actually Works', 'Reading Korean Labels: Four Words That Matter'), so a skim of headings alone reconstructs the thesis.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Six-plus distinct internal destinations (restaurants roundup, bakeries, phrases, BBQ guide, label guide, snacks, /about), each placed where the reader would actually want the deeper page.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All five frontmatter Q/As are established in the body (soy sauce/gochujang wheat, BBQ grill protocol, the three dedicated venues, tamari caveat, 10%-wheat 'rice bread'), and each answer stands alone as a rich result.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 3,
+          "max": 3,
+          "note": "Dense first-hand specifics: a dated franchise phone call, a product renamed from 'gluten-free bread' to 'rice bread' after ordering, pink vs green Chamsal Seolbyeong packets differing, named dishes ordered per venue, and direct photos.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "Korean terms are consistently romanised (간장 ganjang, 어묵 eomuk, 떡볶이 tteokbokki, 쌀통닭 ssaltongdak, 뻥튀기 ppeongttwigi), venue addresses are district-level precise, and the label-scanning vocabulary (밀/소맥/보리/호밀) is exact enough to act on in a store.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "The regulatory claim links the MFDS 식품등의 표시기준 with an in-force date, and the chip allergen claim links Orion's own product page with a re-verification date; the weaker secondary source is labelled as such.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "The piece repeatedly states what its method cannot establish — NCGS standard rather than celiac, a removed certification claim, an unverified menu item — and contains no affiliate or undisclosed commercial links.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "authoritativeness",
+          "severity": "minor",
+          "quote": "The non-Orion entries trace to a Korean blogger's roundup ([seiming.tistory.com](https://seiming.tistory.com/243), published October 2023), so treat them as leads",
+          "why": "A 2023 personal blog is the only sourcing behind several named safe snacks; the hedge is honest but a safety-adjacent list on a celiac-intent page invites manufacturer-page citations the way the Orion entry already does.",
+          "fix": "Replace or supplement each non-Orion snack with its manufacturer's allergen page (Nongshim for Banana Kick, Lotte for Doritos KR, Haitai for Yegam) and carry the same 're-verified <month year>' stamp used for Orion."
+        },
+        {
+          "criterion": "structure",
+          "severity": "minor",
+          "quote": "Most Korean restaurants, ultimately. Grilled meat, plain rice, unseasoned vegetables — possible with the right phrases.",
+          "why": "Tier 3 is announced inside the tier framing but never gets its own heading, so a reader skimming headings sees Tier 1 and Tier 2 and may conclude the third tier was dropped.",
+          "fix": "Add an H3 'Tier 3 — Ordinary Restaurants, Made to Work' that either holds two or three sentences of guidance or explicitly forwards to the phrase section."
+        },
+        {
+          "criterion": "expertise",
+          "severity": "minor",
+          "quote": "one bakery owner cheerfully told us his was 10% wheat",
+          "why": "The single most-repeated figure in the piece (it appears in the body and again in the FAQ) is attached to an unnamed, undated shop, so a reader cannot check the one number the 'don't trust GF signage' argument rests on.",
+          "fix": "Add the neighbourhood and approximate month of the conversation, or note explicitly that the shop is withheld and cite a second, nameable example of a 'rice bread' blend ratio."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 17584,
+        "cache_read_input_tokens": 28192,
+        "output_tokens": 5772,
+        "output_tokens_details": {
+          "thinking_tokens": 4025
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 17584,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 5772,
+            "cache_read_input_tokens": 28192,
+            "cache_creation_input_tokens": 17584,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 17584
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 17,
+      "max_points": 20,
+      "score": 8.5,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "Nearly everything is either cited (MFDS rule, Orion product page, dated blogger roundup) or explicitly marked as the authors' own visit/call/observation, but a few background composition claims about Korean staples are asserted without source or attribution.",
+          "evidence_quote": "is usually made with wheat flour or barley"
+        },
+        {
+          "id": "no_fabrication",
+          "points": 3,
+          "max": 3,
+          "note": "Product names, brands, links, and dates (April 2026 publication, August 2026 update, summer 2025 franchise call, October 2023 blogger post, mid-2026 packet observation) are checkable and internally consistent, with no invented statistics.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "The piece states exactly how each class of claim was obtained — personal visits, staff conversations, a dated phone call, a manufacturer page, a third-party blog flagged as 'leads' — and names what it cannot establish, including retracting a certification claim it could no longer verify.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 2,
+          "max": 4,
+          "note": "The NCGS-versus-celiac distinction, shared grills, shared fryers, and the shared-facility disclaimer are all handled well, but the Tier 1 definition hands celiac readers an absolute, unverified guarantee and explicitly tells them no questioning is needed.",
+          "evidence_quote": "Everything on the menu is gluten-free and the kitchen handles no wheat at all — no shared fryer, no flour dust, nothing to interrogate. That's what makes these anchors for celiac travelers, not just NCGS."
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "Every dated source carries its retrieval or publication date and the staleness is explicitly flagged where it matters (the year-old franchise call, the 2023 blog roundup), plus a standing reformulation caution.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 2,
+          "max": 2,
+          "note": "The load-bearing labelling fact is stated correctly and prominently — mandatory allergen declaration covers 밀 only, with 보리 and 호밀 outside it — and the Korean terms, phrases, and product categories are accurate.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "Readers get the statute link, the four Korean words to scan, the manufacturer page, an explicit instruction to read the packet in hand rather than trust the article, and a script for re-confirming at the branch.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "major",
+          "quote": "Everything on the menu is gluten-free and the kitchen handles no wheat at all — no shared fryer, no flour dust, nothing to interrogate. That's what makes these anchors for celiac travelers, not just NCGS.",
+          "why": "This is an absolute safety guarantee about three named venues, aimed specifically at celiac readers, and it instructs them to stop verifying. The article's own evidence for these venues is personal visits and owner conversation at an NCGS standard — and for 237 Pizza it just retracted the one third-party verification it had. A celiac reader who skips interrogation on the strength of this sentence has no fallback if a venue's practice has changed.",
+          "fix": "Rewrite the tier definition to state what was actually observed and by whom, e.g. 'These operate as dedicated gluten-free kitchens — the owners told us no wheat enters the premises, and that matched what we saw on our visits (most recently [date]). We are not able to audit a kitchen; if you are celiac, confirm dedicated status at the door and ask what changed since our visit.' Delete 'nothing to interrogate.'"
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "is usually made with wheat flour or barley",
+          "why": "A handful of composition claims about staples (gochujang, ganjang, eomuk, Korean fried chicken batter) are stated as general fact with neither a source nor an explicit 'in our experience' marker. They point readers toward caution rather than risk, so no safety decision turns on them, but they are the only claims in the piece not traceable to a stated method.",
+          "fix": "Add a one-clause attribution to each — either a citation, or 'on every commercial tub we have read the 원재료명 on' — so the reader can tell field observation from received wisdom."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 17584,
+        "cache_read_input_tokens": 28151,
+        "output_tokens": 5449,
+        "output_tokens_details": {
+          "thinking_tokens": 3881
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 17584,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 5449,
+            "cache_read_input_tokens": 28151,
+            "cache_creation_input_tokens": 17584,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 17584
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: accuracy-safety 8.5/9.5"
+  }
+}

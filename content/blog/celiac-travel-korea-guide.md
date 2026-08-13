@@ -1,6 +1,6 @@
 ---
 slug: celiac-travel-korea-guide
-title: "The Real Gluten-Free Guide to Korea: A Couple's Field-Tested Handbook (2026)"
+title: "Celiac Travel in Korea: Field Guide"
 description: "Tested gluten-free restaurants in Seoul, allergy phrases that actually work, label reading hacks, and honest limits for celiac travelers in Korea."
 date: 2026-04-27
 author: Ki
@@ -14,30 +14,43 @@ faq:
   - q: "Can I eat Korean BBQ gluten-free?"
     a: "Yes, with prep. Ask for unseasoned meat (\"양념 안 한 고기 있나요?\"), bring GF soy sauce, and skip sauced banchan sides. Plain salt-grilled samgyeopsal is the safest order — but if you're celiac, also ask for a fresh grill plate and clean tongs, skip ssamjang, and treat any grill that's been cooking soy-marinated meat as contaminated."
   - q: "Is any restaurant in Seoul truly dedicated gluten-free?"
-    a: "Yes, but few. 237 Pizza (Hannam), monil2 house (Yeonnam), and Cafe Rebirth (Pyeongtaek) are the three we trust most."
+    a: "Yes, but few: two in Seoul — 237 Pizza (Hannam) and monil2 house (Yeonnam) — plus Cafe Rebirth, about an hour south in Pyeongtaek. Those three are the ones we trust most."
   - q: "Which Korean soy sauce is gluten-free?"
     a: "Commercial Korean soy sauces almost all contain wheat. Imported Japanese tamari is the easiest substitute to find in Seoul (Lotte Mart, larger Emart, Kim's Club) — but check the label: not all tamari is wheat-free, as some brands include a small amount of wheat. For long-term residents, traditional home-brewed soy sauce (집간장) without wheat is the classic option."
   - q: "Can I buy gluten-free bread in Korea?"
-    a: "Yes, but verify. Many \"rice bread\" shops blend 10-30% wheat flour into the dough. Only commit to dedicated GF bakeries like monil2 house and Cafe Rebirth."
+    a: "Yes, but verify. Some \"rice bread\" shops blend wheat flour into the dough — one bakery owner cheerfully told us his was 10% wheat. Only commit to dedicated GF bakeries like monil2 house and Cafe Rebirth."
 ---
+
+*Updated August 2026: added the MFDS labeling-standard and manufacturer citations, dated our franchise call, and removed a certification claim we could no longer verify — the August 2026 retrieval dates below are from that update.*
 
 ## TL;DR
 
 - **Korea is doable gluten-free — with prep.** Soy sauce, gochujang, doenjang, and ramyeon are wheat. Plain rice and unmarinated grilled meat are the safe baseline — celiacs, mind the shared grill (see the BBQ FAQ).
 - **Three dedicated GF places worth the trip:** 237 Pizza (Hannam), monil2 house (Yeonnam), Cafe Rebirth (Pyeongtaek).
 - **One phrase changes everything:** *"제가 밀가루 알러지가 있어서요."* — frame it as an allergy, not a preference, and the kitchen actually checks.
-- **Convenience stores:** flip and scan for **밀** in the allergen line. Safe baseline is eggs, fruit, plain yogurt, a few confirmed chips.
+- **Convenience stores:** flip and scan for **밀** in the allergen line. Safe baseline is eggs, fruit, plain yogurt, plus a couple of chips we have manufacturer-label evidence for — see the store section for which, and re-check the packet.
 - My wife has non-celiac gluten sensitivity (not celiac). Celiac travelers: apply stricter standards than we do.
+
+## If You're Celiac, Start Here
+
+Everything below is field-tested at my wife's NCGS standard — your standard is stricter. The five rules that matter most, in one place:
+
+1. **Anchor your trip on the dedicated-GF places** (Tier 1 below). Treat everything else as needs-interrogation.
+2. **Read the full ingredient list (원재료명), not just the allergen line.** Korea's mandatory allergen labeling flags wheat only — barley and rye can be in the product without a flag (details in the label section).
+3. **Treat "gluten-free" signage as low-gluten until proven otherwise**, and ask about the flour ratio. "Rice bread" is not a promise.
+4. **Assume shared grills, fryers, and facilities** unless the kitchen tells you otherwise, and skip anything with the shared-facility disclaimer on the label.
+5. **Frame every request as a wheat allergy (밀가루 알러지) and reconfirm once.** The phrase section below has the exact script.
 
 ## In This Guide
 
-1. **About my wife** — and why this isn't strictly a celiac guide
-2. **Korean food in gluten terms** — what's hidden where
-3. **Where we actually eat** — three dedicated GF + five GF-friendly
-4. **The one phrase that works** — allergy framing
-5. **Reading Korean labels** — the four words that matter
-6. **Convenience store survival** — what's safe across chains
-7. **FAQ**
+1. **If you're celiac, start here** — the five stricter rules, up front
+2. **About my wife** — and why this isn't strictly a celiac guide
+3. **Korean food in gluten terms** — what's hidden where
+4. **Where we actually eat** — three dedicated GF + five GF-friendly
+5. **The one phrase that works** — allergy framing
+6. **Reading Korean labels** — the four words that matter
+7. **Convenience store survival** — what's safe across chains
+8. **FAQ**
 
 ---
 
@@ -69,22 +82,22 @@ This site — [noglutenkorea.com](https://noglutenkorea.com) — is the director
 
 ## What Korean Food Actually Looks Like, From a Gluten Angle
 
-The short version: almost everything has soy sauce.
+The short version: almost everything has soy sauce. (Everything in this section is the pattern from a year of reading 원재료명 lists and asking kitchens — field notes, not a database. Verify any specific product against its own label.)
 
-**Soy sauce** (간장, *ganjang*) in Korea is brewed from wheat and soybeans. It's the base of most marinades, banchan (side dishes), and cooking liquids. Bulgogi, galbi, japchae, bibimbap sauce, most stew bases — all soy sauce. Skipping soy sauce in Korea is like skipping olive oil in Italy.
+**Soy sauce** (간장, *ganjang*) in Korea is brewed from wheat and soybeans. It's the base of most marinades, banchan (side dishes), and cooking liquids. Bulgogi, galbi, japchae, bibimbap sauce, most stew bases — all soy sauce. Skipping soy sauce in Korea is like skipping olive oil in Italy. Our workaround is imported Japanese tamari — the easiest wheat-free substitute to find in Seoul (Lotte Mart, larger Emart branches, Kim's Club carry it), and the bottle that lives in our bag for BBQ nights — though check the label, since some tamari brands include a small amount of wheat.
 
-**Gochujang** (고추장, red pepper paste) is usually made with wheat flour or barley. **Doenjang** (된장, soybean paste) often includes wheat. **Ssamjang** (쌈장), the classic Korean BBQ dipping sauce, is gochujang and doenjang combined. If it's red or brown, assume wheat until you've checked.
+**Gochujang** (고추장, red pepper paste) is usually made with wheat flour or barley — flip a commercial tub and the 원재료명 nearly always lists one of them. **Doenjang** (된장, soybean paste) is traditionally just soybeans, salt, and water — but commercial tubs sometimes list wheat (밀), so check the 원재료명. **Ssamjang** (쌈장), the classic Korean BBQ dipping sauce, is gochujang and doenjang combined. If it's red or brown, assume wheat until you've checked.
 
 Then there's a second tier of hidden gluten:
 
-- **Eomuk** (어묵, fish cake) is usually wheat starch. A few brands, notably Goraesa (고래사), make wheat-free versions, but the default on a stew or a street stall is wheat.
+- **Eomuk** (어묵, fish cake) is usually wheat starch. A few brands make versions without wheat — Goraesa (고래사) is the name that comes up most, but verify the specific product's 원재료명 — and the default on a stew or a street stall is wheat.
 - **Tteokbokki** (떡볶이, spicy rice cake dish): the rice cakes themselves are GF, but the sauce contains gochujang and the fish cakes mixed in have wheat.
 - **Fried chicken** in Korea is almost always wheat-battered. There are rice-based brands (we'll get to ssaltongdak below) but they're rare.
 - **Ramyeon** is wheat noodles, full stop. Every convenience-store cup, every late-night ramyeon bar. Rice-based Korean ramen exists but is niche.
 
 And then there's the marketing trap.
 
-Korea's gluten-free wave is mostly diet-trend marketing, not celiac awareness. I've asked bakery owners under "Gluten-Free" neon signs about their flour ratio and been told cheerfully: "Oh, 90% rice flour, 10% wheat flour." I once ordered a loaf of "gluten-free bread" online; a week later the product name had been quietly changed to "rice bread" — no asterisk, no apology. Don't trust the label. Trust the ingredient list, or a dedicated GF operator you can talk to.
+Korea's gluten-free wave is mostly diet-trend marketing, not celiac awareness. During our first year back (2025–26), I asked bakery owners under "Gluten-Free" neon signs about their flour ratio and was told cheerfully: "Oh, 90% rice flour, 10% wheat flour." I once ordered a loaf of "gluten-free bread" online; a week later the product name had been quietly changed to "rice bread" — no asterisk, no apology. Don't trust the label. Trust the ingredient list, or a dedicated GF operator you can talk to.
 
 ---
 
@@ -92,7 +105,7 @@ Korea's gluten-free wave is mostly diet-trend marketing, not celiac awareness. I
 
 We think about Seoul's gluten-free scene in three tiers.
 
-**Tier 1: Dedicated GF.** Everything on the menu is gluten-free. These are the places we actually relax in — where we don't need to interrogate staff, just order. There are only a handful in Korea.
+**Tier 1: Dedicated GF.** The entire menu is gluten-free — these operate as dedicated gluten-free kitchens, and that has matched everything we've seen and been told across our visits. Two honest limits: our standard is NCGS, and we can't audit a kitchen. So they're still the right anchors for a celiac traveler — a dedicated operation removes the shared-fryer and flour-dust problem by design — but one confirming question at the counter costs nothing, because practices can change after we visit. These are the places we actually relax in. There are only a handful in Korea.
 
 **Tier 2: GF-Friendly.** Not gluten-free overall, but the kitchen understands the request and has safe menu items we've tested. We still ask every visit; staff turnover is real.
 
@@ -104,11 +117,11 @@ Here's what's at the top.
 
 **237 Pizza** (237피자) — Hannam-dong, Yongsan-gu, B1
 
-The only GFCO-certified gluten-free pizza in Korea, as far as we've been able to confirm. The owner has celiac disease himself, and opened 237 Pizza after years of research — partly out of frustration that no one else in Korea had.
+A fully gluten-free pizzeria — to our knowledge the only one in Korea. The owner has celiac disease himself, and opened 237 Pizza after years of research — partly out of frustration that no one else in Korea had. (An earlier version of this guide called it "GFCO-certified"; we couldn't re-verify that in the GFCO directory as of August 2026, so we've removed the claim until we can confirm it at the shop.)
 
 237 was on our must-visit list the moment we landed in Seoul. I was skeptical at first — "GF pizza" is a phrase that has burned me enough times — but after one slice of their artichoke pizza I gave up skepticism. The crust isn't apologetic. It's a pizza that happens to be gluten-free, not the other way around.
 
-![237 Pizza in Hannam — the only GFCO-certified gluten-free pizza in Korea](/images/places/237-pizza/01.webp)
+![237 Pizza in Hannam — fully gluten-free pizzeria run by a celiac owner](/images/places/237-pizza/01.webp)
 *237 Pizza, Hannam. Direct photo from visit.*
 
 We order the **Quattro Funghi** (mushroom) every visit. If you're there on a weekend evening, expect a wait. The interior is warm, old-pop music plays, and it feels like a place the owner actually wants to sit in. For the full writeup see our [gluten-free restaurants roundup](/blog/gluten-free-restaurants-seoul).
@@ -145,7 +158,7 @@ A brunch spot with oatmeal pancakes and sandwiches that can be modified with GF 
 
 **Cafe Pepper** — Songridan-gil, Songpa-gu, Seoul
 
-A beautiful dessert cafe on Songpa's Songridan-gil. Our standing order is the **matcha pound cake** (confirmed GF). A few other items are labeled "low-gluten" — that is NOT the same as GF, and we skip those. Always confirm directly with staff. Reservations via the CatchTable app, or just walk in. Second floor, no elevator, busy on weekends.
+A beautiful dessert cafe on Songpa's Songridan-gil. Our standing order is the **matcha pound cake** — staff-confirmed wheat-free, in a shared kitchen, and uneventful for us across visits at an NCGS standard. A few other items are labeled "low-gluten" — that is NOT the same as GF, and we skip those. Always confirm directly with staff. Reservations via the CatchTable app, or just walk in. Second floor, no elevator, busy on weekends.
 
 **benir** — Magok, Gangseo-gu, Seoul
 
@@ -153,7 +166,11 @@ A GF cafe with gorgeous cakes — strawberry, chocolate, seasonal fruit — on t
 
 **ssaltongdak** (쌀통닭) — Dangsan, Yeongdeungpo-gu, Seoul
 
-Rice-flour fried chicken. The **plain fried chicken** and the puffed rice crackers (*ppeongttwigi*) that come with it are GF-safe. I called the franchise headquarters directly to confirm: only the plain fried is gluten-free; anything sauced (*yangnyeom*, *ganjang*, teriyaki-style) contains gluten. Individual branches may have cross-contamination depending on kitchen setup, so confirm at your location. A rice-flour pizza is also on their menu — we haven't personally verified it.
+Rice-flour fried chicken. When I called the franchise headquarters in the summer of 2025, they told me the **plain fried chicken** is made without wheat — and that anything sauced (*yangnyeom*, *ganjang*, teriyaki-style) contains gluten. The puffed rice crackers (*ppeongttwigi*) served alongside have been fine at our NCGS standard. A year has passed since that call — recipes and suppliers change, and individual branches may have cross-contamination depending on kitchen setup, so confirm at your location. A rice-flour pizza is also on their menu — we haven't personally verified it.
+
+### Tier 3 — Everywhere Else
+
+Most Korean restaurants, ultimately. Grilled meat, plain rice, unseasoned vegetables — workable with the allergy phrase and the reconfirmation script in the next section. This tier is where the phrases do the heavy lifting, so read on.
 
 For in-depth reviews of each of the above (plus others), see the [full Seoul GF restaurants list](/blog/gluten-free-restaurants-seoul) and our [GF bakeries & cafes guide](/blog/gluten-free-bakeries-cafes-seoul).
 
@@ -177,7 +194,7 @@ Two practical notes:
 
 **Reconfirm once.** If the first answer is a breezy "안 들어가요~" ("no, doesn't contain it"), follow up: *"제가 알러지가 있어서요, 한 번만 더 확인해주실 수 있나요?"* ("I have an allergy — could you double-check?"). That's when the server actually walks to the kitchen. When in doubt, remind them of the hidden sources — soy sauce (간장), gochujang (고추장), doenjang (된장). A lot of Korean cooks think of these as "seasoning," not "wheat."
 
-Full phrase list with romanization, screenshot templates, and reconfirmation scripts in our [Korean GF phrases post](/blog/korean-gluten-free-phrases). Korean BBQ gets its own playbook in the [Korean BBQ GF survival guide](/blog/korean-bbq-gluten-free-guide).
+At Korean BBQ specifically, the ask is: unseasoned meat — *"양념 안 한 고기 있나요?"* — and if you're celiac, also a fresh grill plate and clean tongs, no ssamjang, and treat any grill that's been cooking soy-marinated meat as contaminated. Full phrase list with romanization, screenshot templates, and reconfirmation scripts in our [Korean GF phrases post](/blog/korean-gluten-free-phrases). Korean BBQ gets its own playbook in the [Korean BBQ GF survival guide](/blog/korean-bbq-gluten-free-guide).
 
 ---
 
@@ -185,7 +202,7 @@ Full phrase list with romanization, screenshot templates, and reconfirmation scr
 
 At the convenience store and the mart, the product label is your most honest friend.
 
-Ingredient lists in Korea are printed on the back or bottom of the packaging. The format is consistent: raw ingredients in descending order, then a dedicated line for **알레르기 유발물질** ("allergens") which lists the major 22 flagged allergens for that product.
+Ingredient lists in Korea are printed on the back or bottom of the packaging. The format is consistent: raw ingredients in descending order, then a dedicated line for **알레르기 유발물질** ("allergens") flagging the substances on Korea's mandatory-declaration list, set by the MFDS labeling standard [식품등의 표시기준](https://www.law.go.kr/행정규칙/식품등의표시기준) (별표 2 — text in force as of August 2026).
 
 These are the words to scan for:
 
@@ -203,7 +220,7 @@ For NCGS we make case-by-case calls on these. For celiac travelers, avoid entire
 
 One trap: "**쌀로 만든**" ("made with rice") does NOT mean gluten-free. Rice-labeled products often contain wheat starch as a binder. Check the ingredient list, not the packaging headline.
 
-My wife's scan-and-flip routine is roughly two seconds per item now: pick up, flip, search for 밀 in the allergen line, return or keep. That's the whole move *for her NCGS* — but note carefully what it does and doesn't cover. **Korea's mandatory allergen labelling covers wheat only. Barley (보리) and rye (호밀) are not mandatory allergen declarations**, so they routinely won't appear in the allergen line even when they're in the product — and barley shows up constantly in Korean drinks and syrups. A celiac reader cannot stop at the allergen line: scan the full ingredient list for 보리 and 호밀 too. The full method, including the barley problem, is in our [Korean food label guide](/blog/reading-korean-food-labels).
+My wife's scan-and-flip routine is roughly two seconds per item now: pick up, flip, search for 밀 in the allergen line, return or keep. That's the whole move *for her NCGS* — but note carefully what it does and doesn't cover. **Korea's mandatory allergen labelling covers wheat only. Barley (보리) and rye (호밀) are not on the [mandatory declaration list](https://www.law.go.kr/행정규칙/식품등의표시기준)**, so they routinely won't appear in the allergen line even when they're in the product — and barley shows up constantly in Korean drinks and syrups. A celiac reader cannot stop at the allergen line: scan the full ingredient list for 보리 and 호밀 too. And a standing caution: Korean manufacturers reformulate without notice, so a package that passed last month can fail this month — the label in your hand is the only answer that counts. The full method, including the barley problem, is in our [Korean food label guide](/blog/reading-korean-food-labels).
 
 ---
 
@@ -217,8 +234,8 @@ Here's what reliably works across chains:
 - **Bananas and fresh fruit** — the food of the GF traveler.
 - **Plain yogurt** — check flavored versions; some have wheat-based thickeners.
 - **Packaged grilled chicken breast** (닭가슴살) — skip anything marinated in soy sauce; plain is usually safe.
-- **Some rice snacks** — Chamsal Seolbyeong (참쌀설병): the **pink** package is the one without wheat on its label; the **green** package declares wheat. Same brand, opposite answer — read the packet you're holding, and remember a wheat-free label is not a celiac guarantee (shared lines, barley, rye).
-- **A handful of chips that usually pass** — Poca Chip Original (NOT onion flavor), Doritos cheese (NOT other flavors), Banana Kick, Yegam (all flavors), plain corn chips. Always re-verify on the actual packet.
+- **Some rice snacks** — Chamsal Seolbyeong (참쌀설병): on the packets we've been buying (as of mid-2026), the **pink** package had no wheat on its label while the **green** one declared it. Same brand, opposite answer — read the packet you're holding, and remember a wheat-free label is not a celiac guarantee (shared lines, barley, rye).
+- **A handful of chips that usually pass** — Poca Chip Original but not Onion ([Orion's own product page](https://www.orionworld.com/goods/view/27?goodsno=26) lists Original's allergens as milk·soy·beef and Onion's as wheat, both flavors on the one page — re-verified August 2026), Doritos cheese but not other flavors, Banana Kick, Yegam, plain corn chips. The non-Orion entries trace to a Korean blogger's roundup ([seiming.tistory.com](https://seiming.tistory.com/243), published October 2023), so treat them as leads — the sourced, flavor-by-flavor list is in our snacks post below. Always re-verify on the actual packet.
 
 What we skip entirely: triangle kimbap (too many variants with soy sauce), dosirak lunch boxes (wheat somewhere in most), instant ramen cups, frozen dumplings, most sausages.
 
@@ -235,13 +252,13 @@ No. It looks rice-based, but soy sauce, gochujang, doenjang, and wheat-based noo
 Yes, with prep. Ask for unseasoned meat ("양념 안 한 고기 있나요?"), bring GF soy sauce, and skip sauced banchan sides. Plain salt-grilled samgyeopsal is the safest order — but if you're celiac, also ask for a fresh grill plate and clean tongs, skip ssamjang, and treat any grill that's been cooking soy-marinated meat as contaminated.
 
 **Is any restaurant in Seoul truly dedicated gluten-free?**
-Yes, but few. 237 Pizza (Hannam), monil2 house (Yeonnam), and Cafe Rebirth (Pyeongtaek) are the three we trust most. See our [restaurants list](/blog/gluten-free-restaurants-seoul) and [bakeries list](/blog/gluten-free-bakeries-cafes-seoul) for the full vetted set.
+Yes, but few: two in Seoul — 237 Pizza (Hannam) and monil2 house (Yeonnam) — plus Cafe Rebirth, about an hour south in Pyeongtaek. Those three are the ones we trust most.
 
 **Which Korean soy sauce is gluten-free?**
-Commercial Korean soy sauces almost all contain wheat. Imported Japanese tamari is the easiest substitute to find in Seoul (available at Lotte Mart, larger Emart, Kim's Club) — but check the label: not all tamari is wheat-free, as some brands include a small amount of wheat. For long-term residents, traditional home-brewed soy sauce (집간장) without wheat is the classic option.
+Commercial Korean soy sauces almost all contain wheat. Imported Japanese tamari is the easiest substitute to find in Seoul (Lotte Mart, larger Emart, Kim's Club) — but check the label: not all tamari is wheat-free, as some brands include a small amount of wheat. For long-term residents, traditional home-brewed soy sauce (집간장) without wheat is the classic option.
 
 **Can I buy gluten-free bread in Korea?**
-Yes, but verify. Many "rice bread" shops blend 10-30% wheat flour into the dough. Only commit to dedicated GF bakeries like monil2 house, Cafe Rebirth, and similar. Full list in our [GF bakeries & cafes guide](/blog/gluten-free-bakeries-cafes-seoul).
+Yes, but verify. Some "rice bread" shops blend wheat flour into the dough — one bakery owner cheerfully told us his was 10% wheat. Only commit to dedicated GF bakeries like monil2 house and Cafe Rebirth.
 
 ---
 
@@ -257,17 +274,13 @@ If you find a GF-friendly place we don't cover, or if we get something wrong, pl
 
 Reach us on **[Instagram @noglutenkorea](https://instagram.com/noglutenkorea)** or at **contact@noglutenkorea.com**. More about me and why we built this: **[About](/about)**.
 
-The rest of this series, as each post lands:
+More from this series:
 
-- [Gluten-Free Restaurants in Seoul (Full List)](/blog/gluten-free-restaurants-seoul)
-- [Gluten-Free Bakeries & Cafes in Seoul](/blog/gluten-free-bakeries-cafes-seoul)
 - [Korean Convenience Store GF Snacks](/blog/korean-convenience-store-gf-snacks)
-- [Korean BBQ: Gluten-Free Survival Guide](/blog/korean-bbq-gluten-free-guide)
-- [Korean Phrases for Gluten-Free Dining](/blog/korean-gluten-free-phrases)
 - [Reading Korean Food Labels](/blog/reading-korean-food-labels)
 - [The Hidden Gluten in Korean Food](/blog/hidden-gluten-korean-food)
-- [Homemade GF Gochujang & Soy Sauce](/blog/gluten-free-gochujang-homemade)
+- [Butter Tteok: An Accidentally Gluten-Free Korean Dessert](/blog/gluten-free-butter-tteok)
 
 ---
 
-*Last updated: April 2026. Every restaurant listed has been personally visited by me and my wife. Full directory at [noglutenkorea.com](https://noglutenkorea.com).*
+*First published April 2026 · last updated August 2026. Every restaurant listed has been personally visited by me and my wife. Full directory at [noglutenkorea.com](https://noglutenkorea.com).*
