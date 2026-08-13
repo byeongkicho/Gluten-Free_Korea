@@ -4,19 +4,27 @@
 > 이 문서는 세션 시작 시 "지금 어디까지 됐고 다음이 뭔지"만 빠르게 전달한다.
 > 재개 전략 전체: `~/.claude/plans/noble-discovering-aho.md` (2026-07-24 승인).
 
-## ▶ 다음 세션 시작점 (2026-08-12 종료 시점)
+## ▶ 다음 세션 시작점 (2026-08-13 종료 시점)
 
-**판사 실채점 완료 — 발행 5편 전원 FAIL, CI가 빨간 것은 사고가 아니라 의도된 상태다.** 사용자 결정으로 점수를 그대로 기록하고 게이트를 빨간 채 커밋했다. ⚠️ **루브릭을 낮추지 말 것** — 출구는 글 수정→재채점뿐이다.
+**첫 녹색 — snacks가 판사 게이트 통과 (seo-eeat 10/9.5 · accuracy-safety 9.5/9.5, `88cf6aa`).** 발행 5편 중 1 PASS / 4 FAIL(의도된 빨강 유지). ⚠️ **루브릭을 낮추지 말 것** — 출구는 글 수정→재채점뿐이다.
 
-**▶ 다음 세션 첫 할 일 — 글 수정 백로그 (우선순위순):**
-1. ~~blocking 5건 응급~~ ✅ **완료 (08-12 오후)** — butter-tteok 3건 + celiac-guide 2건 제거, 재채점으로 blocking 0 확인. 같은 계열 절대 단정 4건(타마리 "GF substitute"·TL;DR 고기 안전·Monil2 "vet 불요"·결론 "naturally safe")도 함께 제거. 정확성 점수: butter-tteok 3.5→**7**, celiac-guide 6→**7**
-2. **snacks — 가장 가까운 1녹색 (SEO 8→9.5만 남음, 정확성은 9.5 통과):** 제목 77자 SERP 잘림, 첫 200단어에 답 전진배치, 규정 주장 1차 출처. +celiac-guide의 참쌀설병 "pink package is safe" 절대 단정(판사: blocking 직전) 함께 처리
-3. **사이트 전역 `<title>` 접미사** (`app/layout.js` ` | Gluten-Free Korea`) — 5편 전부 title_meta 감점의 공통 원인. 기존 "알려진 이슈"를 판사가 독립 재발견
-4. **출처·정확성 보강:** MFDS 라벨링 규정 링크(밀-only 의무표시 주장의 근거), labels의 엿기름 오역(malted barley이지 malt syrup 아님), hidden-gluten의 실존하지 않는 "Korea GF" 인증 삭제·"10~30% 밀 배합" 무출처 수치, celiac-guide의 알레르기 의무표시 개수(22로 썼으나 통상 19), FAQ frontmatter-본문 문구 불일치(celiac-guide Q3·Q5 — 리치결과 자격 리스크)
+**▶ 남은 글 수정 백로그 (우선순위순):**
+1. ~~blocking 5건~~ ✅(08-12) · ~~snacks 첫 녹색~~ ✅(08-13) — 재채점 2회 필요했음: SEO 8→9.5 도달 순간 **정확성이 9.5→9로 재롤 하락**, minor 6건 전부 수정 후에야 10/9.5·9.5/9.5
+2. **사이트 전역 `<title>` 접미사** (`app/layout.js` ` | Gluten-Free Korea`) — 남은 4편 title_meta 공통 감점. 참고: snacks는 현행 접미사(20자) 하에서 39자 제목으로 통과했고, 판사는 "정확 키워드가 접미사에 의존"을 minor로 지적 — 접미사를 줄이면 이 의존이 깨지므로 **키워드 전략과 함께 결정할 것**
+3. **출처·정확성 보강:** MFDS 1차 출처는 snacks에 확보됨 — `https://www.law.go.kr/행정규칙/식품등의표시기준` (별표 2) — **labels에 재사용.** 나머지: labels 엿기름 오역(malted barley이지 malt syrup 아님), hidden-gluten "Korea GF" 인증 삭제·"10~30% 밀 배합" 무출처, celiac-guide 알레르기 개수(22→19, 별표 2로 확인 가능), FAQ frontmatter-본문 불일치(celiac-guide Q3·Q5). ⚠️ **celiac-guide는 hash mismatch 상태**(참쌀설병 "is safe" 단정 제거, 08-13) — 이 백로그 반영 후 재채점
+4. **snacks 잔여 minor(다음 개정 때, 게이트엔 불요):** 소주=증류주 입장의 출처, pass list 제조사 확인 추가(현재 포카칩 1건 — 오리온처럼 제품 페이지에 맛별 알레르기를 명시하는 브랜드부터), "The honesty section" 헤딩 서술형 전환
+
+**판사 운영 지식 (08-13 실측):** ① 재채점은 **양 축 모두 재롤** — 통과했던 축도 떨어진다(정확성 9.5→9 실측). minor까지 다 잡고 돌리는 게 싸다. ② **판사 실행 중 글 수정 금지** — 해시가 실행 시점 파일로 기록돼 mismatch가 남는다(중지→최종본으로 재실행). ③ 수정이 새 minor를 만든다: 발행일(7/31) 뒤의 인용 retrieval date(8월)는 **본문 "Updated August 2026" 라인**으로 해소. ④ 제조사 제품 페이지가 맛별 알레르기를 한 페이지에 명시하는 경우가 있다(오리온 포카칩: 오리지널 우유·대두·쇠고기 vs 어니언 밀·우유·대두) — flavor trap 주장의 최상급 출처.
 
 수정 후 재채점: `npm run judge -- <slug>` — 크레딧 없으면 **자동으로 claude CLI 백엔드**(구독 과금, `--backend` 플래그 참조). 글을 고치면 해시 불일치로 content-001이 알아서 빨개지므로 재채점 전까지 게이트가 거짓말하지 않는다.
 
 **보류된 원래 작업:** 커머셜 인텐트 글 #1(`~/.claude/plans/1-frolicking-starlight.md`). 키워드 게이트에서 멈춰 있고, 리서치 결과 계획서의 두 후보가 모두 SERP상 부적합했다(`where to buy…`는 확립 도메인 지배, `gluten free soy sauce korea`는 상위 10 중 8개가 상품 페이지). 제3 후보 `gluten free korean pantry`가 유망 — 상위가 전부 "해외 H마트" 관점이라 **한국 현지·한국어 라벨 각도가 비어 있다.** 단, 신규 발행은 이제 게이트를 실제로 통과해야 한다.
+
+## 완료 (2026-08-13) — 관측성 24h 확인 + 다운샘플 날짜 경계 버그 수정
+
+- **24h 연속성 ✅**: 매시간 healthcheck 야간 무중단(전부 success — GitHub cron 지연으로 새벽 1회 스킵은 정상 범위), Grafana push 34 샘플 정상.
+- **버그 발견·수정(`9a07936`)**: 23:50 KST 다운샘플 cron이 50분 밀려 00:40 KST에 실행 → "지금 기준 오늘"로 날짜를 정하던 로직이 8/12 요약을 8/13 행으로 흘림. 행 날짜를 **report.timestamp − 6h의 KST 날짜**로 변경(00~06시 관측 = 전날 밤 지연분 → 전날 귀속). CSV 복구: 조기 8/13 행을 fold 규칙 그대로 8/12에 병합(runs 7→8).
+- 다음: SLO 문서+장애회고(career 9/14 게이트 — IG -44일 사례 + 이 경계 버그가 둘 다 소재), daily-summary의 Grafana 24h 집계 전환, **11월 초 IG 재인증**.
 
 ## 완료 (2026-08-12 오후) — 관측성 파이프라인 가동 (career 트랙 A 인수)
 
@@ -98,10 +106,10 @@ GitHub Actions (매시간) → healthcheck 16지표 → Grafana Cloud 도쿄(inf
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-08-12 15:19
+- **마지막 업데이트:** 2026-08-13 11:05
 - **작업자:** Claude Code
 - **브랜치:** main
-- **CI:** 🔴 content-001 (의도된 빨강 — 위 백로그 해소 시까지)
+- **CI:** 🔴 content-001 (의도된 빨강 — snacks 1편 PASS, 4편 FAIL + celiac-guide hash mismatch)
 - **점수 진단(2026-07-24, 별도 전문가 평가):** 웹 5.3/10, PM 4.3/10 — "자산 품질은 7, 운영 규율은 3.5". 갭은 대부분 *이미 시작한 것의 완성*.
 
 ## 완료된 작업 (2026-07-24 재개 세션 — P0 안정화)
