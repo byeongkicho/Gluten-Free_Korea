@@ -1,7 +1,7 @@
 ---
 slug: korean-convenience-store-gf-snacks
-title: "Gluten-Free Korean Snacks: Convenience Store Guide (2026)"
-description: "Which Korean convenience-store snacks are made without wheat, why one flavor of a brand passes and another doesn't, and why the fresh-food fridge is hopeless."
+title: "Korean Convenience Store GF Snack Guide"
+description: "Potato, corn and rice snacks that skip wheat, the flavor trap that catches people at the shelf, and why the fresh-food fridge is a lost cause."
 date: 2026-07-31
 author: Ki
 keyword: "korean snacks gluten free"
@@ -10,16 +10,20 @@ pillar: false
 status: published
 faq:
   - q: "Are Korean convenience store snacks gluten-free?"
-    a: "Some are made without wheat flour. Potato-based chips (포카칩 오리지널 Pocachip Original, 예감 Yegam), corn-based snacks (콘초 Koncho, 브이콘 V-Corn, 바나나킥 Banana Kick), and rice snacks (참쌀설병 Chamssal Seolbyeong — the pink package only; the green one contains wheat) are the usual candidates. The fresh food — 삼각김밥, 도시락, sandwiches, cup noodles — is mostly not safe. And 'no wheat flour' is not the same as celiac-safe: scan the allergen line on the specific package yourself."
+    a: "Some are made without wheat. But 'no wheat flour' is not the same as celiac-safe, and Korea's allergen line only flags wheat — so read the full ingredient list (원재료명) on the specific package. The usual survivors: potato chips (포카칩 오리지널, 예감), corn snacks (콘초, 브이콘, 바나나킥), and pink-package 참쌀설병. The fresh-food fridge — 삼각김밥, 도시락, sandwiches, cup noodles — is mostly a loss."
   - q: "Is Pocachip (포카칩) gluten-free?"
-    a: "The Original flavor is potato-based and reported to be made without wheat flour, but the Onion flavor contains wheat. This flavor-by-flavor difference is the biggest trap in Korean snacks: the same brand can be wheat-free in one flavor and wheat-containing in another. Never assume a brand is safe — check the specific bag, since formulations also change over time."
+    a: "Orion's own product page lists the Original flavor's allergens as milk, soy and beef — no wheat — while the Onion flavor's allergen line declares wheat (밀). This flavor-by-flavor difference is the biggest trap in Korean snacks: the same brand can be wheat-free in one flavor and wheat-containing in another. Never assume a brand is safe — check the specific bag, since formulations also change over time."
   - q: "Can celiacs eat Korean convenience store food?"
     a: "With caution and low expectations. Wheat-free snacks exist, but Korean labels don't declare barley or rye as mandatory allergens, shared-facility production is common, and hidden gluten from soy sauce powder or malt extract is rarely obvious on the label. The most reliable convenience-store items are simple ones: boiled eggs, whole fruit, unflavored yogurt, unseasoned chicken breast."
 ---
 
+*Updated August 2026: added Orion's own allergen page for 포카칩 and the MFDS labeling-standard citation — the August 2026 retrieval dates below are from that update.*
+
 I love convenience stores. I worked in one for a long stretch, I'm the kind of person who goes out of their way for a Japanese conbini, and the Korean 편의점 is one of my favorite things about living here. Which made it genuinely deflating to work out how little of one my wife could actually eat.
 
 So we settled into a routine: pick something up, flip it over, scan for **밀**, put most of it back. Here's what tends to survive that — and, just as usefully, what doesn't.
+
+**The short answer:** the usual survivors are potato chips (포카칩 오리지널, 예감), corn snacks (콘초, 브이콘, 바나나킥), and the pink-package rice snack 참쌀설병. But flavors of the same brand differ and recipes change without notice — so check the specific package in your hand, every time. The rest of this page is the why and the traps.
 
 ## Start with the bad news: the fridge is a lost cause
 
@@ -45,24 +49,26 @@ Even that last bucket isn't clean. One of the 16 was a **soy-sauce-braised egg**
 
 Snacks are the exception, because many Korean snacks aren't built on flour at all.
 
-**About this list, up front:** it isn't my own lab work. It's compiled from a Korean blogger's wheat-free snack roundup ([seiming.tistory.com](https://seiming.tistory.com/243), CC BY, **published October 2023**, retrieved April 2026), cross-checked against what we actually keep buying. We haven't personally verified every package, none of it is manufacturer-confirmed, and the underlying roundup is now over two years old — which, in a market that reformulates silently, is a long time. Treat it as a shortlist of what's *worth flipping over*, not a list of what's safe.
+**About this list, up front:** it isn't my own lab work. It's compiled from a Korean blogger's wheat-free snack roundup ([seiming.tistory.com](https://seiming.tistory.com/243), CC BY, **published October 2023**, retrieved April 2026), cross-checked against what we actually keep buying. We haven't personally verified every package, only one entry (포카칩, below) is manufacturer-confirmed, and the underlying roundup is now over two years old — which, in a market that reformulates silently, is a long time. Treat it as a shortlist of what's *worth flipping over*, not a list of what's safe.
 
 **Potato-based**
-- 포카칩 오리지널 (Pocachip Original) — around 90% potato
+- 포카칩 오리지널 (Pocachip Original) — potato-based, and the one entry here that's manufacturer-confirmed: [Orion's own product page](https://www.orionworld.com/goods/view/27?page=1&goodsno=26&category=0102) lists Original's allergens as milk, soy and beef — no 밀 (retrieved August 2026)
 - 예감 (Yegam)
 - 무뚝뚝 감자칩 (Muttukttuk potato chip)
 
 **Corn-based**
 - 콘초 (Koncho), 콘치 (Konchi), 콘칩 (Corn Chip), 브이콘 (V-Corn)
 - 바나나킥 (Banana Kick)
-- 카라멜 메이플콘 (Caramel Maple Corn)
-- 도리토스 치즈맛 (Doritos, cheese flavor)
-- 사또밥 옥수수맛 (Sattobap, corn flavor)
+- 카라멜 메이플콘 (Caramel Maple Corn)\*
+- 도리토스 치즈맛 (Doritos, cheese flavor)\*
+- 사또밥 옥수수맛 (Sattobap, corn flavor)\*
 
 **Rice-based**
 - 참쌀설병 (Chamssal Seolbyeong) — the pink package
 
-If you remember nothing else: **potato, corn, and rice snacks are worth flipping over; anything biscuit-, cracker-, or pastry-shaped is wheat until proven otherwise.** And note that the heavily seasoned ones here — 도리토스, 사또밥, 카라멜 메이플콘 — are exactly where a flavor powder could hide gluten even when the base is safe.
+\* **Heavily seasoned** — flavor powder is exactly where gluten hides even when the base is safe, so these three earn extra suspicion at the label.
+
+If you remember nothing else: **potato, corn, and rice snacks are worth flipping over; anything biscuit-, cracker-, or pastry-shaped is wheat until proven otherwise.**
 
 ## The flavor trap (the part that catches people)
 
@@ -76,6 +82,8 @@ This is the most important thing on this page, and the reason a brand name is ne
 | 무뚝뚝 Muttukttuk | **potato chip** | **sweet potato chip** |
 | 참쌀설병 | **pink package** | **green package** |
 
+The 포카칩 row isn't second-hand: [Orion's product page](https://www.orionworld.com/goods/view/27?page=1&goodsno=26&category=0102) itself declares Original's allergens as 우유·대두·쇠고기 and Onion's as **밀**·우유·대두 (retrieved August 2026) — the flavor trap, printed by the manufacturer on one page. The other rows are from the 2023 roundup above; treat them as leads, not verdicts.
+
 Same shelf, same logo, different answer. Korean snack lines routinely add a wheat-based seasoning or coating to one flavor and not another — so "I ate this brand last month" tells you nothing about the bag in your hand.
 
 Near-miss *names* count too: 카라멜 메이플콘 (Caramel Maple Corn) is corn-based, but the similarly named 카라멜콘땅콩 is a different product entirely — don't grab it by pattern-matching the word 카라멜.
@@ -86,19 +94,19 @@ Flavor lineups rotate and recipes get reformulated without announcement, so **ch
 
 Three categories catch people who've already learned the chip rules:
 
-- **보리차 (barley tea)** — it's in every cooler, it's the default "just water" drink, and it is *literally barley*. 옥수수수염차 (corn silk tea) is the usual swap — but check that one too, since some brands blend in roasted barley. Watch 식혜 as well, which is made with 엿기름 (malt).
-- **Beer** — barley, obviously, but worth saying because 소주 is generally fine (check additives) and people assume the cooler is uniform.
+- **보리차 (barley tea)** — it's in every cooler, it's the default "just water" drink, and it is *literally barley*. 옥수수수염차 (corn silk tea) is the usual swap — but flip that bottle too: the 원재료명 tells you whether it's pure corn silk or a roasted-grain blend. Watch 식혜 as well, which is made with 엿기름 (malt).
+- **Beer** — barley, obviously, but worth saying because people assume the cooler is uniform. Standard green-bottle 소주 is a distilled spirit; flavored sojus and everything else in that door are blended products, so the 원재료명 applies there like everywhere else.
 - **Ice cream with a cone or wafer** — the ice cream is often fine; the cone, biscuit, or sandwich shell is wheat. 죠스바-style ice bars and cup ice creams are the safer shapes.
 
 ## Beyond snacks: the boring staples
 
-Chips are not a food plan. What actually holds the routine together is simple food with short ingredient lists — eggs (구운/삶은 계란), whole fruit, unflavored yogurt, plain 닭가슴살 chicken breast (*not* the soy-sauce-marinated versions), and milk or 두유 soy milk (some soy milks are blended with barley or oats, so scan those too). Same reasoning as the [label guide's convenience-store baseline](/blog/reading-korean-food-labels): the fewer the ingredients, the less room for hidden wheat.
+Chips are not a food plan. What actually holds the routine together is simple food with short ingredient lists — eggs (구운/삶은 계란), whole fruit, unflavored yogurt, plain 닭가슴살 chicken breast (*not* the soy-sauce-marinated versions), and milk or 두유 soy milk (곡물 multi-grain and flavored cartons are their own category — scan their 원재료명 like everything else's). Same reasoning as the [label guide's convenience-store baseline](/blog/reading-korean-food-labels): the fewer the ingredients, the less room for hidden wheat.
 
 ## The honesty section: "no wheat flour" ≠ celiac-safe
 
 Everything above reflects the standard we live by — my wife has non-celiac gluten sensitivity, so our bar is "no wheat as an ingredient." If you're **celiac**, treat this page as a shortlist of what to *pick up*, not a list of what's *safe*, for three specific reasons:
 
-1. **Barley and rye are not mandatory allergens in Korea.** The bolded 알레르기 유발물질 line reliably flags 밀 (wheat) only. Malt (맥아) and barley can sit in a seasoning without appearing there — you have to read the full 원재료명 list.
+1. **Barley and rye are not mandatory allergens in Korea.** The list of substances the 알레르기 유발물질 line must declare is set by the MFDS labeling standard, [식품등의 표시기준](https://www.law.go.kr/행정규칙/식품등의표시기준) (별표 2, 소비자 안전을 위한 표시사항 — current text as retrieved August 2026; the rule is amended regularly, so re-check it): 밀 (wheat) is on it, barley and rye are not. So the bolded allergen line reliably flags wheat only — malt (맥아) and barley can sit in a seasoning without appearing there, and you have to read the full 원재료명 list.
 2. **Shared facilities are common and often undisclosed.** A snack with no wheat ingredients can still run on a line that also runs wheat products.
 3. **Seasoning powders are opaque.** Soy sauce powder and flavor bases are where trace gluten hides, and they're rarely broken out on the label. (Standard Korean brewed soy sauce, 양조간장, is made with wheat — see [the hidden-gluten guide](/blog/hidden-gluten-korean-food).)
 

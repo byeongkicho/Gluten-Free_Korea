@@ -1,0 +1,265 @@
+{
+  "schema": 1,
+  "slug": "korean-convenience-store-gf-snacks",
+  "source_ref": "working-tree",
+  "content_sha256": "2aca8b67afc92170398d3275e4433a58b9dac1bbf9eac2eded55e40da01b5395",
+  "judged_at": "2026-08-13T01:51:54.390Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.229 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 19,
+      "max_points": 20,
+      "score": 9.5,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "The bolded \"The short answer:\" block lands at roughly word 100-155 and names the passing snack categories plus the check-every-package caveat, directly answering the intent behind \"korean snacks gluten free\".",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 1,
+          "max": 2,
+          "note": "Rendered title is 59 chars including the appended suffix and the description is 139 chars, but the description reopens with near-verbatim title phrasing.",
+          "evidence_quote": "Which Korean convenience-store snacks skip wheat"
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings carry the argument on their own — bad news first, what passes, the flavor trap, adjacent traps, staples, limits, action list.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Four distinct internal targets, each placed where the reader would actually want them (label scan, hidden gluten in soy sauce, hub guide, tteok alternative).",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All three FAQ answers are traceable to body passages — the snack list, the Orion Original-vs-Onion allergen comparison, and the barley/rye + shared-facility + seasoning reasoning with the same staple list.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 3,
+          "max": 3,
+          "note": "First-hand detail is dated and specific: an April 2026 pass over 211 CU items with a bucket-by-bucket breakdown, plus a self-reported miss on 반숙계란장.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "Korean terms are given with romanisation and English gloss throughout, products are named at flavor level, and the allergen claims cite exact declared substances.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "Orion's manufacturer page and the MFDS labeling standard are linked, and the third-party roundup carries both publication (Oct 2023) and retrieval (Apr 2026) dates.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "The piece repeatedly states what its method cannot establish and discloses the author's non-celiac standard; no commercial or affiliate links appear.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "title_meta",
+          "severity": "minor",
+          "quote": "Which Korean convenience-store snacks skip wheat, why one flavor passes and another doesn't, and why the fresh-food fridge is a lost cause.",
+          "why": "The description's opening clause restates the title almost word for word (\"Korean convenience-store snacks\" vs \"Korean Convenience Store GF Snack Guide\"), wasting SERP real estate that could carry a second hook. The title also abbreviates the target keyword to \"GF\", so the exact phrase only survives via the appended \" | Gluten-Free Korea\".",
+          "fix": "Rewrite the description to open on the differentiator rather than the category, e.g. \"Potato, corn and rice snacks usually pass; the fridge almost never does. Flavor-by-flavor allergen checks, with the traps that catch people.\" Consider spelling out \"Gluten-Free\" in the title (\"Korean Gluten-Free Convenience Store Snacks\" = 43 chars + suffix)."
+        },
+        {
+          "criterion": "authoritativeness",
+          "severity": "minor",
+          "quote": "[식품등의 표시기준](https://www.law.go.kr/행정규칙/식품등의표시기준)",
+          "why": "This is the load-bearing citation for the celiac-critical claim that barley and rye are not mandatory allergens, but unlike every other source on the page it carries no version, amendment number, or retrieval date. Korean administrative rules are amended frequently, so an undated link cannot be re-verified against the version the author read.",
+          "fix": "Add the notice number and effective date (e.g. \"식품의약품안전처 고시 제20XX-XX호, retrieved August 2026\") next to the link, matching the dating discipline applied to the Orion and tistory sources."
+        },
+        {
+          "criterion": "faq_alignment",
+          "severity": "minor",
+          "quote": "Some are made without wheat flour. Potato-based chips (포카칩 오리지널 Pocachip Original, 예감 Yegam), corn-based snacks (콘초 Koncho, 브이콘 V-Corn, 바나나킥 Banana Kick), and rice snacks (참쌀설병 Chamssal Seolbyeong — the pink package only; the green one contains wheat) are the usual candidates.",
+          "why": "The answer is fully supported by the body, but at roughly 90 words with heavy parenthetical romanisation it will be truncated in an FAQ rich result, and the truncation point falls before the crucial \"'no wheat flour' is not the same as celiac-safe\" caveat — leaving a snippet that reads more permissive than the article intends.",
+          "fix": "Front-load the caveat: lead with \"No brand is safe by name — check each package,\" then give the potato/corn/rice shortlist, and trim the romanisations to two or three examples per category."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 40424,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 4580,
+        "output_tokens_details": {
+          "thinking_tokens": 2752
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 40424,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 4580,
+            "cache_read_input_tokens": 0,
+            "cache_creation_input_tokens": 40424,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 40424
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 18,
+      "max_points": 20,
+      "score": 9,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "Nearly every load-bearing claim is either sourced (Orion product page, MFDS labeling standard, the dated 2023 roundup) or explicitly marked as the author's own catalog pass; a handful of generic assertions are unsourced but all point in the conservative avoid direction.",
+          "evidence_quote": "almost always bound with wheat starch"
+        },
+        {
+          "id": "no_fabrication",
+          "points": 2,
+          "max": 3,
+          "note": "Product names are real and the CU counts are internally consistent (81+39+75+16=211), but two citations are dated 'retrieved August 2026' on a piece whose frontmatter date is 31 July 2026, with no update note.",
+          "evidence_quote": "(retrieved August 2026)"
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "The keyword pass is named as a keyword pass over product names and categories, is explicitly said to be unable to clear anything, and the article volunteers its own false-negative (반숙계란장) and single-chain, single-season scope.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 4,
+          "max": 4,
+          "note": "No absolute safety claims, celiac is explicitly separated from the author's household NCGS standard, and shared-facility contamination plus opaque seasoning bases are addressed head-on.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "Every source carries a date and the two-year staleness of the underlying roundup is flagged in the same breath as the reformulation risk.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 2,
+          "max": 2,
+          "note": "The load-bearing labelling fact is stated correctly — 밀 is a mandatory allergen, barley and rye are not — with the governing standard cited, and Korean product/category terms are used correctly.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "The reader gets direct manufacturer and statute links, a concrete four-character scan (밀/소맥/보리/호밀), and an instruction to read the full 원재료명 rather than trust the page.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "no_fabrication",
+          "severity": "minor",
+          "quote": "(retrieved August 2026)",
+          "why": "The frontmatter publication date is 31 July 2026, so a source retrieved in August 2026 cannot have been consulted before publication. A reader checking the citation chain sees a date that cannot be true as presented, which undercuts trust in the one manufacturer-confirmed entry on the page.",
+          "fix": "Add an explicit 'Updated: 2026-08-12' line to the frontmatter and a one-line update note where the Orion citation appears, so the August retrieval date is accounted for."
+        },
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "minor",
+          "quote": "And 'no wheat flour' is not the same as celiac-safe: scan the allergen line on the specific package yourself.",
+          "why": "FAQ answers are surfaced standalone in search results, and this one tells the reader to scan the allergen line immediately after raising celiac safety — while the body correctly states the allergen line flags wheat only and that celiacs must read the full 원재료명. A celiac reading the FAQ alone could clear a product containing 맥아 or barley.",
+          "fix": "Change the FAQ 1 closing to match the body's own step 5: 'read the full 원재료명 ingredient list, not just the allergen line — barley and malt are not declared there.'"
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "almost always bound with wheat starch",
+          "why": "This and a few similar assertions (soy milks blended with barley or oats, 옥수수수염차 brands blending roasted barley) are neither sourced nor marked as the author's own observation. They push readers toward avoidance so no one gets glutened by them, but they are the kind of unattributed specifics the rest of the page is careful to avoid.",
+          "fix": "Either cite one representative 어묵 product's 원재료명 or reframe as observation: 'every 어묵 package we have flipped over has listed 밀 or 밀전분.'"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 15600,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 6641,
+        "output_tokens_details": {
+          "thinking_tokens": 5169
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 15600,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 6641,
+            "cache_read_input_tokens": 0,
+            "cache_creation_input_tokens": 15600,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 15600
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: accuracy-safety 9/9.5"
+  }
+}

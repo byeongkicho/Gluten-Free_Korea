@@ -217,7 +217,7 @@ Here's what reliably works across chains:
 - **Bananas and fresh fruit** — the food of the GF traveler.
 - **Plain yogurt** — check flavored versions; some have wheat-based thickeners.
 - **Packaged grilled chicken breast** (닭가슴살) — skip anything marinated in soy sauce; plain is usually safe.
-- **Some rice snacks** — Chamsal Seolbyeong (참쌀설병) in the **pink** package is safe. The green package contains wheat.
+- **Some rice snacks** — Chamsal Seolbyeong (참쌀설병): the **pink** package is the one without wheat on its label; the **green** package declares wheat. Same brand, opposite answer — read the packet you're holding, and remember a wheat-free label is not a celiac guarantee (shared lines, barley, rye).
 - **A handful of chips that usually pass** — Poca Chip Original (NOT onion flavor), Doritos cheese (NOT other flavors), Banana Kick, Yegam (all flavors), plain corn chips. Always re-verify on the actual packet.
 
 What we skip entirely: triangle kimbap (too many variants with soy sauce), dosirak lunch boxes (wheat somewhere in most), instant ramen cups, frozen dumplings, most sausages.
