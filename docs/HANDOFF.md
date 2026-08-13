@@ -29,6 +29,7 @@
 - **24h 연속성 ✅**: 매시간 healthcheck 야간 무중단(전부 success — GitHub cron 지연으로 새벽 1회 스킵은 정상 범위), Grafana push 34 샘플 정상.
 - **버그 발견·수정(`9a07936`)**: 23:50 KST 다운샘플 cron이 50분 밀려 00:40 KST에 실행 → "지금 기준 오늘"로 날짜를 정하던 로직이 8/12 요약을 8/13 행으로 흘림. 행 날짜를 **report.timestamp − 6h의 KST 날짜**로 변경(00~06시 관측 = 전날 밤 지연분 → 전날 귀속). CSV 복구: 조기 8/13 행을 fold 규칙 그대로 8/12에 병합(runs 7→8).
 - 다음: SLO 문서+장애회고(career 9/14 게이트 — IG -44일 사례 + 이 경계 버그가 둘 다 소재), daily-summary의 Grafana 24h 집계 전환, **11월 초 IG 재인증**.
+- **🆕 Grafana 직접 조회 가능 (08-13 오후, `4005ca2`)**: `node scripts/grafana-query.mjs status|continuity|slo|--expr` — Viewer service account 토큰(`.env.local`의 `GRAFANA_QUERY_TOKEN`, gitignored). 연속성 확인이 gh run list 추정에서 실측으로 바뀜(첫 실측: 24h 샘플 20/24, cron 지연 탓·가용률 100%). slo 프리셋이 9/14 SLO 문서의 데이터 소스. ⚠️ 토큰 role 기본값 "No basic role" 함정 — Viewer 명시 선택. 무료 플랜 전제 유지(트라이얼 Pro 기능 위에 아무것도 안 만듦).
 
 ## 완료 (2026-08-12 오후) — 관측성 파이프라인 가동 (career 트랙 A 인수)
 
