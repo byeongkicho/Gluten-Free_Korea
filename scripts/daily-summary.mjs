@@ -28,7 +28,17 @@ const CSV = path.join(ROOT, 'data', 'daily-summary.csv');
 
 // 행의 날짜는 KST 기준. 사이트도 사용자도 한국에 있으므로 UTC로 자르면
 // 하루가 9시간 어긋나 "어제 장애"가 오늘 행에 섞인다.
-const today = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Seoul' }).format(new Date());
+//
+// 기준은 "지금"이 아니라 관측 시각(report.timestamp)에서 6시간을 뺀 값이다.
+// 23:50 KST cron은 GitHub 부하로 수십 분 밀리는 일이 흔해서(2026-08-12 실측
+// 50분 지연) 자정을 넘겨 실행되면 "그날 마지막 관측"이 다음날 행으로 샌다.
+// 00:00~06:00 KST의 관측은 전날 밤 cron의 지연 실행뿐이므로 직전 날에 귀속한다.
+function rowDate(observedAt) {
+  const shifted = new Date(observedAt.getTime() - 6 * 60 * 60 * 1000);
+  return new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Seoul' }).format(shifted);
+}
+
+let today; // main()에서 report.timestamp 기준으로 설정된다.
 
 const COLUMNS = [
   'date',
@@ -145,6 +155,8 @@ async function main() {
     console.error('Report has no metrics — is healthcheck.mjs up to date?');
     process.exit(1);
   }
+
+  today = rowDate(report.timestamp ? new Date(report.timestamp) : new Date());
 
   const sample = readSample(report);
   const rows = await readCsv();
