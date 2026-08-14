@@ -1,0 +1,251 @@
+{
+  "schema": 1,
+  "slug": "hidden-gluten-korean-food",
+  "source_ref": "working-tree",
+  "content_sha256": "d1b39601216460689e51608adec61d1888496f6bf47c32036779171001415275",
+  "judged_at": "2026-08-14T15:03:22.121Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.232 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 20,
+      "max_points": 20,
+      "score": 10,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "The core answer to \"gluten in korean food\" — that the risk sits in fermented condiments rather than the visible dish — lands roughly 60 words in, well inside the first 200 words, and the condiment table follows immediately.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 2,
+          "max": 2,
+          "note": "Title is 35 chars (55 with the rendered ' | Gluten-Free Korea' suffix), description is ~148 chars, the keyword appears in both, and the description adds three distinct hooks rather than restating the title.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings carry the argument rather than label sections — a skimmer moving from \"The fermented condiment problem\" to \"The allergen line only covers wheat\" to \"The 'rice bread' trap\" to \"control the condiments, reclaim the cuisine\" gets the full thesis.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Three distinct internal destinations, each placed where the reader would actually want them: the label guide at the allergen-line gap, the restaurant list at the eating-out step, and the pillar guide as the entry point.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All three FAQ answers are traceable to body claims (Sempio 501 wheat listing, fish cake wheat starch, dangmyeon sweet potato starch plus mixed-starch caveat) and each reads as a complete standalone answer in a rich result.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 3,
+          "max": 3,
+          "note": "Named specifics and things that went wrong: a named anchor restaurant closing for remodel, a loaf whose \"gluten-free\" label was quietly renamed a week later, a named Yeonnam shop selling travel packets, and named chains stocking tamari.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "Consistent hangul-plus-romanisation throughout, a specific product line (Sempio 양조간장 501), the specific regulatory instrument (식품등의 표시기준 별표 2), and the three distinct label routes wheat takes into gochujang — all checkable by a reader holding a package.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "The two load-bearing claims are anchored to primary sources — the manufacturer's own product page and the MFDS labeling standard — each with a retrieval date and a note that the standard is amended regularly.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "An explicit scope-and-limits paragraph states what label-reading cannot establish, the Goraesa lead is flagged as unverified, and there are no affiliate or commercial links requiring disclosure.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "expertise",
+          "severity": "minor",
+          "quote": "**Soy sauce → imported Japanese tamari.** The easiest wheat-free substitute to find in Seoul",
+          "why": "The article's strongest practical section — the actual replacement condiments — drops to category level exactly where a reader most needs a product name, while the rest of the piece names things precisely (Sempio 양조간장 501, monil2 house). A reader in a Lotte Mart aisle cannot act on \"imported Japanese tamari\" the way they can act on the rest of the guide.",
+          "fix": "Name the specific tamari brand and the specific gluten-free gochujang currently in the kitchen, with the 원재료명 line that clears each, and add a retrieved-date so a later reformulation is visible as such."
+        },
+        {
+          "criterion": "authoritativeness",
+          "severity": "minor",
+          "quote": "We have not found a Korean equivalent of [GFCO](https://gfco.org)",
+          "why": "This is a negative claim about the whole Korean certification landscape, and it carries real weight in the argument that a front-of-package claim is unaudited here. The GFCO link documents what GFCO is, not that no Korean counterpart exists, so the sentence rests on absence of evidence with no method attached.",
+          "fix": "State how the absence was checked and when — for example which MFDS certification registries or industry association lists were searched, with a retrieval date — or soften to a scoped claim about what the MFDS standard does and does not require of a voluntary gluten-free claim."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 13847,
+        "cache_read_input_tokens": 30216,
+        "output_tokens": 7346,
+        "output_tokens_details": {
+          "thinking_tokens": 5830
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 13847,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 7346,
+            "cache_read_input_tokens": 30216,
+            "cache_creation_input_tokens": 13847,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 13847
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 17,
+      "max_points": 20,
+      "score": 8.5,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "Load-bearing claims are anchored to manufacturer and regulatory sources or explicitly marked as the authors' own observation; one concrete third-party product claim is asserted without source or link.",
+          "evidence_quote": "in Yeonnam sells travel-sized packets of gluten-free gochujang and soy sauce"
+        },
+        {
+          "id": "no_fabrication",
+          "points": 3,
+          "max": 3,
+          "note": "Product names (Sempio 양조간장 501, 고래사, 237 Pizza, GFCO) are real and checkable, no statistics are asserted, and the July date plus the August update note are internally consistent.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "The piece states exactly how it knows what it knows and names three things the method cannot establish — brand-level coverage, reformulation, and trace gluten from shared equipment.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 2,
+          "max": 4,
+          "note": "Cross-contamination is addressed repeatedly and celiac risk is correctly escalated above NCGS, but one categorical composition claim about 떡 is stated without the caveat given to the comparable dangmyeon case.",
+          "evidence_quote": "떡 (*tteok*, rice cake) itself is gluten-free."
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "Both external sources carry August 2026 retrieval dates, the MFDS standard is flagged as amended regularly, and manufacturer reformulation is named as a live risk.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 2,
+          "max": 2,
+          "note": "The mandatory-allergen scope is stated correctly — wheat declared, barley and rye not — and the Korean terms, romanizations and 밀쌀/소맥분 distinctions are right.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "The reader gets the exact Korean strings to scan, a direct link to the manufacturer page and the MFDS standard, and a linked four-step label method rather than being asked to trust the piece.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "blocking",
+          "quote": "떡 (*tteok*, rice cake) itself is gluten-free.",
+          "why": "밀떡 — tteokbokki rice cake made with wheat flour — is a mainstream Korean product sold in supermarkets and used at street stalls, so 떡 is not a category that can be cleared wholesale. The article gives dangmyeon an explicit mixed-starch warning but gives 떡 none, and it recommends the home version of tteokbokki as the safe path, which sends a celiac reader to buy tteok under a categorical assurance. A reader acting reasonably on this sentence can buy 밀떡 and eat wheat.",
+          "fix": "Qualify both instances the way dangmyeon is qualified: state that 떡 made from rice is gluten-free but that 밀떡 (wheat-flour rice cake) is common in tteokbokki, and that the 원재료명 must be checked for 밀/소맥분 on any tteok bought for home cooking."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "major",
+          "quote": "in Yeonnam sells travel-sized packets of gluten-free gochujang and soy sauce",
+          "why": "This is a concrete third-party claim that a named business sells gluten-free versions of the two condiments the article has just identified as the biggest hidden-gluten source. It carries no link, no product name, no retrieval date, and no marker that it is the authors' own observation — and it is exactly the kind of front-of-package gluten-free claim the article elsewhere teaches readers to distrust. A reader will act on it.",
+          "fix": "Either link the shop and name the specific products with a retrieval date, or mark it as an unverified first-hand observation and repeat the article's own standing rule — that a gluten-free claim on the packet is where checking starts, not where it finishes, and that the 원재료명 still has to be read."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 17215,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 7847,
+        "output_tokens_details": {
+          "thinking_tokens": 6012
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 17215,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 7847,
+            "cache_read_input_tokens": 0,
+            "cache_creation_input_tokens": 17215,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 17215
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: accuracy-safety 8.5/9.5"
+  }
+}

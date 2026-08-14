@@ -1,0 +1,272 @@
+{
+  "schema": 1,
+  "slug": "hidden-gluten-korean-food",
+  "source_ref": "working-tree",
+  "content_sha256": "d8aacd489c702313ea8812729e1e0f077db1d5a5dd03ffdecebb380441bac4a2",
+  "judged_at": "2026-08-14T15:08:06.537Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.232 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 18,
+      "max_points": 20,
+      "score": 9,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "The thesis answering 'gluten in korean food' — that the risk lives in the fermented condiments, not the visible dish — lands well inside the first 200 words.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 1,
+          "max": 2,
+          "note": "Keyword present and both lengths pass (title 55 chars with the appended suffix, description 147), but the description's opening clause duplicates the title's phrasing.",
+          "evidence_quote": "Where gluten hides in Korean food"
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings carry the argument on their own: condiment problem → allergen line only covers wheat → second-tier sources → noodles → rice-bread trap → celiac vs NCGS → control the condiments.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Four distinct internal destinations, each placed where a reader would actually want the next step (label guide at the allergen gap, restaurant list at the eating-out step, pillar guide as the entry point).",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All three FAQ answers are fully supported by body sections (condiment table, 밀떡 correction, dangmyeon bright spot) and each stands alone as a rich result.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 2,
+          "max": 3,
+          "note": "Concrete places and failures (237 Pizza in Hannam, monil2 house in Yeonnam, the aunt's 집간장, the relabelled loaf) but almost no dates, prices or counts to anchor them.",
+          "evidence_quote": "I once ordered a loaf advertised as \"gluten-free\" online; a week later the product name had been quietly changed to \"rice bread\" — no asterisk, no notice."
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "Korean terms are consistently romanised, a named product (Sempio 양조간장 501) and a named regulation (별표 2) are given, and label targets 밀/소맥분/보리/호밀 are spelled out checkably.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "Primary sources — Sempio's own product page and the MFDS 식품등의 표시기준 별표 2 — are linked with explicit retrieval dates and a note that the standard is amended.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "A dedicated methodology paragraph states what label-reading cannot establish, the GFCO absence is framed as a failed search rather than proof, and the monil2 mention is explicitly flagged as unverified with no commercial link.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "title_meta",
+          "severity": "minor",
+          "quote": "Where gluten hides in Korean food",
+          "why": "The description opens by restating the title's core phrase ('Hidden Gluten in Korean Food' → 'Where gluten hides in Korean food'), spending SERP real estate on information the title already delivers.",
+          "fix": "Rewrite the description opener to add rather than echo, e.g. 'Soy sauce, gochujang, fish cake and mil-tteok all carry wheat by default — what to check on the 원재료명 before you cook or order.'"
+        },
+        {
+          "criterion": "experience",
+          "severity": "minor",
+          "quote": "I once ordered a loaf advertised as \"gluten-free\" online; a week later the product name had been quietly changed to \"rice bread\" — no asterisk, no notice.",
+          "why": "The strongest first-hand anecdotes are unanchored in time and have no vendor, price or quantity, which weakens the verifiability signal Google's quality raters look for in experience.",
+          "fix": "Add month/year and, where safe to name, the platform or shop plus what the loaf cost — e.g. 'ordered in March 2026 from a Naver Smart Store, ₩9,500 a loaf'."
+        },
+        {
+          "criterion": "faq_alignment",
+          "severity": "minor",
+          "quote": "Restaurant japchae is a different question for celiac disease — shared woks and shared utensils are not addressed by swapping the sauce.",
+          "why": "The body's cross-contact discussion names 'shared fryers and shared surfaces' and 'the same cloth as the wheat-battered chicken' but never mentions woks, so the FAQ markup introduces a detail not visible on the page — Google requires FAQ answers to match visible content.",
+          "fix": "Change 'shared woks' to 'shared pans and surfaces' to mirror the body wording, or add the wok example to the Celiac vs. NCGS section."
+        },
+        {
+          "criterion": "faq_alignment",
+          "severity": "minor",
+          "quote": "Usually not, and the rice cakes are only part of the answer. Tteokbokki tteok comes as 쌀떡 (rice) or 밀떡 (mil-tteok), which is made with wheat flour and is entirely mainstream",
+          "why": "Each FAQ answer runs well past the ~300 characters Google typically renders, so the payoff sentences (home-version workaround, celiac caveat) risk truncation in a rich result.",
+          "fix": "Front-load a one-sentence verdict and trim each answer toward 250–300 characters, leaving the detail to the body."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 14371,
+        "cache_read_input_tokens": 30216,
+        "output_tokens": 5887,
+        "output_tokens_details": {
+          "thinking_tokens": 4067
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 14371,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 5887,
+            "cache_read_input_tokens": 30216,
+            "cache_creation_input_tokens": 14371,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 14371
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 19,
+      "max_points": 20,
+      "score": 9.5,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "Every safety-relevant claim (soy sauce, allergen law, 밀떡, GFCO absence) is sourced or explicitly marked as observation, but a cluster of second-tier category claims and the tamari retail-availability claim are asserted without source or observation marker.",
+          "evidence_quote": "wheat is a common filler/binder"
+        },
+        {
+          "id": "no_fabrication",
+          "points": 3,
+          "max": 3,
+          "note": "Product names (Sempio 양조간장 501, 고래사, GFCO, 237 Pizza, monil2 house), the law citation, and the July 2026 publication with an August 2026 update note are all checkable and internally consistent, and the piece states it removed an unsourceable percentage figure.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "A dedicated block states the method (reading 원재료명 on products they cook with plus linked manufacturer/regulatory sources) and names three limits: not a brand survey, formulations vary within a brand, and label reading cannot establish absence of trace gluten from shared equipment.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 4,
+          "max": 4,
+          "note": "No absolute safety guarantees anywhere, cross-contamination is raised in the method box, both relevant FAQs and a dedicated celiac section, and celiac risk is explicitly escalated above the authors' NCGS baseline rather than equated with it.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "Both external sources carry August 2026 retrieval dates, the MFDS standard is flagged as amended regularly, and reformulation-without-notice is stated as a standing limit of the piece.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 2,
+          "max": 2,
+          "note": "Korean terms and romanisations are correct, 밀쌀 and 밀떡 are described accurately, and the mandatory-allergen scope is stated correctly — wheat listed, barley and rye not.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "The reader is given the exact hangul strings to scan for, told not to stop at the bolded allergen box, linked to the primary manufacturer page and the law text, and invited to correct the GFCO-equivalent claim.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "wheat is a common filler/binder",
+          "why": "The second-tier list (fish cake wheat starch, curry roux, sausage binder, dressing thickeners) states category defaults with no source and no observation marker, unlike the condiment table which links a manufacturer page. The claims are risk-conservative so no reader eats gluten because of them, but they are not verifiable as written.",
+          "fix": "Either link one representative ingredient listing per category, or mark the list explicitly as 'what we assume by default and check anyway' so the epistemic status matches the condiment table."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "The easiest wheat-free substitute to find in Seoul; Lotte Mart, the larger Emart branches and Kim's Club carry it.",
+          "why": "A specific retail-availability claim about three named chains sits in a list otherwise framed as personal practice, but is phrased as general fact rather than as the authors' own shopping observation.",
+          "fix": "Rephrase as an observation with a date, e.g. 'as of August 2026 we have bought it at Lotte Mart, larger Emart branches and Kim's Club'."
+        },
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "minor",
+          "quote": "When you *do* eat out, use the [restaurant list](/blog/gluten-free-restaurants-seoul) and say \"wheat allergy,\" not \"gluten-free.\"",
+          "why": "In the closing action list the phrase is offered without the cross-contamination caveat that appears earlier; a celiac reader skimming the numbered steps could take a successful 'wheat allergy' exchange as clearing shared fryers and surfaces, which it does not. Not blocking, because the celiac section immediately above tells the reader to assume shared fryers and surfaces unless told otherwise.",
+          "fix": "Append a half-sentence to step 4: 'that gets the ingredient checked, not the shared fryer — ask about the pan and the oil separately.'"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 14371,
+        "cache_read_input_tokens": 3368,
+        "output_tokens": 8012,
+        "output_tokens_details": {
+          "thinking_tokens": 6087
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 14371,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 8012,
+            "cache_read_input_tokens": 3368,
+            "cache_creation_input_tokens": 14371,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 14371
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: seo-eeat 9/9.5"
+  }
+}
