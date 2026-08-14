@@ -1,6 +1,11 @@
 #!/usr/bin/env node
 
 /**
+ * ⚠️ SUPERSEDED (2026-08-15) — 정본은 이제 `terraform/` 이다.
+ *
+ * 대시보드 JSON 자체는 여전히 정본이며 Terraform이 file()로 참조한다.
+ * 반영은 `cd terraform && terraform apply` 로 한다. 이 스크립트는 참고용.
+ *
  * provision-dashboard.mjs — monitoring/grafana-dashboard.json을 Grafana Cloud에 반영
  *
  * Usage:

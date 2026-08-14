@@ -1,0 +1,8 @@
+# 상태 파일에는 토큰이 평문으로 들어간다. 절대 커밋하지 않는다.
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+*.tfvars
+generated.tf
+crash.log

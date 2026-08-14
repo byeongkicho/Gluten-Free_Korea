@@ -1,6 +1,12 @@
 #!/usr/bin/env node
 
 /**
+ * ⚠️ SUPERSEDED (2026-08-15) — 정본은 이제 `terraform/` 이다.
+ *
+ * 프로비저닝 경로가 둘이면 그 자체가 드리프트 원인이라, 실제 반영은 Terraform으로만
+ * 한다. 이 스크립트는 참고용으로 남긴다(왜 Terraform으로 옮겼는지는 terraform/README.md).
+ * `--apply` 없이 dry-run으로 돌리면 여전히 파일↔인스턴스 diff는 볼 수 있다.
+ *
  * provision-alerts.mjs — monitoring/grafana-alerts.json을 Grafana Cloud에 반영
  *
  * Usage:
