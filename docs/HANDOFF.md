@@ -24,6 +24,23 @@
 
 **보류된 원래 작업:** 커머셜 인텐트 글 #1(`~/.claude/plans/1-frolicking-starlight.md`). 키워드 게이트에서 멈춰 있고, 리서치 결과 계획서의 두 후보가 모두 SERP상 부적합했다(`where to buy…`는 확립 도메인 지배, `gluten free soy sauce korea`는 상위 10 중 8개가 상품 페이지). 제3 후보 `gluten free korean pantry`가 유망 — 상위가 전부 "해외 H마트" 관점이라 **한국 현지·한국어 라벨 각도가 비어 있다.** 단, 신규 발행은 이제 게이트를 실제로 통과해야 한다.
 
+## 완료 (2026-08-14) — 알림 3룰 추가 · SLO 문서 · 프로비저닝 스크립트화
+
+> ⚠️ 이 작업은 **career 세션**이 했다(엘리스 인프라 직군 지원 준비로 관측성 요건을 채우는 과정). 콘텐츠·판사 게이트 쪽은 건드리지 않았다.
+
+- 🔴 **구멍이었던 것**: 기존 알림 2룰이 **둘 다 "만료 임박"형**(SSL·인스타)이라 **사이트가 죽어도 알림이 오지 않았다.** 관측은 되는데 통보가 없던 상태.
+- **신규 3룰** (`ngk-health` 그룹, 평가주기 300s):
+  - `ngk-http-down` — `ngk_http_up < 1`, 엔드포인트별 개별 인스턴스
+  - `ngk-http-slow` — 응답 > 1s (관측 최대 558ms의 약 2배)
+  - `ngk-healthcheck-stale` — 마지막 수집 후 > 6h. **이 룰만 `noDataState: Alerting`**
+- **설계 원칙**: "서비스가 죽은 것"과 "지표가 안 오는 것"을 다른 룰로 분리. 앞의 둘은 `noDataState: OK`(러너 지연을 장애로 오인하면 오탐만 쌓임), staleness만 Alerting(데이터 없음이 곧 감시 대상). 사이트가 실제로 죽으면 healthcheck가 `ngk_http_up 0`을 **보고**하므로 NoData가 아니라 값 0으로 잡힌다.
+- 🔬 **발화 테스트 완료** — 임계 임시 하향(1→0.01) → 7 엔드포인트 전부 firing → 원복 → 전 룰 inactive 복귀. 메일 수신 경로(`ngk-email`) 정상 확인.
+- 🆕 `docs/SLO.md` — 30일 가용성 **99.5%**(버짓 3h36m). **한계 명시**: 시간당 수집 + 러너 지연으로 24h에 19~20샘플만 도착 → 1시간 미만 장애는 놓치고, 99.9%는 판정 자체가 불가능. 첫 버짓 판정 ≈9/12.
+- 🆕 대시보드 **에러버짓 잔량(30d) 패널** 추가 → version 2.
+- 🆕 **프로비저닝 스크립트 2종** — `scripts/provision-alerts.mjs`, `scripts/provision-dashboard.mjs`. 둘 다 **dry-run이 기본**, `--apply`로 반영. 파일이 정본이고 인스턴스에만 있는 룰·패널은 **자동 삭제하지 않고 경고만** 한다. 임계값 근거는 `grafana-alerts.json`의 `_thresholds` 블록에 함께 기록(숫자만 남으면 6개월 뒤 아무도 이유를 모른다).
+- 🔑 **`.env.local`에 `GRAFANA_PROVISION_TOKEN` 추가됨**(Editor). 기존 `GRAFANA_QUERY_TOKEN`은 Viewer라 쓰기가 403이다. ⚠️ 토큰 생성 시 역할 기본값이 `No basic role`이라 **Editor를 명시 선택**해야 한다.
+- **남은 것**: 로그축(Loki) 미도입 — 현재 메트릭·알림 2축.
+
 ## 완료 (2026-08-13) — 관측성 24h 확인 + 다운샘플 날짜 경계 버그 수정
 
 - **24h 연속성 ✅**: 매시간 healthcheck 야간 무중단(전부 success — GitHub cron 지연으로 새벽 1회 스킵은 정상 범위), Grafana push 34 샘플 정상.
