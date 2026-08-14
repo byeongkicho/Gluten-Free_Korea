@@ -4,17 +4,35 @@
 > 이 문서는 세션 시작 시 "지금 어디까지 됐고 다음이 뭔지"만 빠르게 전달한다.
 > 재개 전략 전체: `~/.claude/plans/noble-discovering-aho.md` (2026-07-24 승인).
 
-## ▶ 다음 세션 시작점 (2026-08-13 오후 종료 시점)
+## ▶ 다음 세션 시작점 (2026-08-15 새벽 종료 시점)
 
-**게이트 2/5 녹색 — snacks(`88cf6aa`)에 이어 celiac-guide(`a53889e`)도 통과 (둘 다 seo 10/9.5 · 정확성 9.5/9.5).** 남은 FAIL 3편: labels(8/5.5)·hidden-gluten(7.5/5.5)·butter-tteok(6/7). ⚠️ **루브릭을 낮추지 말 것** — 출구는 글 수정→재채점뿐이다.
+**🟢 게이트 5/5 전원 녹색 — `check:harness judgments` OK, eval-runner 8/8, baseline `content-001` 0,1 → 1,1 갱신 완료(`c604003`).** 5편 전부 seo·정확성 양축 9.5+ 통과. ⚠️ **루브릭을 낮추지 말 것** — 이번에도 출구는 글 수정→재채점뿐이었다.
 
-**구조 수정 완료(`b34e42b`, 08-13):** ① 접미사 전역 통일 = **` | No Gluten Korea`**(사용자 결정, `app/lib/site.js` 상수 1줄로 변경 가능) + layout `title.template` ② **MetadataLocaleSync 삭제** — hydration 후 title을 "GF Korea"로 덮던 실 SEO 버그 ③ layout twitter를 card-only로 → 글별 twitter 메타 자동 파생.
+| 글 | 전 | 후 | 라운드 |
+|---|---|---|---|
+| labels | 8 / 5.5 | **9.5 / 10** | 3 (중간에 정확성 9→ 재하락 후 복구) |
+| hidden-gluten | 7.5 / 5.5 | **10 / 9.5** | 3 |
+| butter-tteok | 6 / 7 | **9.5 / 9.5** | 3 |
 
-**▶ 남은 글 수정 백로그 (점수 근접순):**
-1. **labels (8/5.5):** MFDS 별표 2 링크 재사용(`https://www.law.go.kr/행정규칙/식품등의표시기준`), 엿기름 오역(malted barley, not malt syrup), 로마자 컬럼, 실패담 시점, 공유설비 문구=자율 명시, 제목 48자→**40자 이하**
-2. **hidden-gluten (7.5/5.5, major 5건):** "Korea GF" 가짜 인증 삭제, "10~30%" 무출처(celiac에선 10% 실발언으로 축소 완료 — 같은 패턴), 실사용 GF 간장·고추장 제품명(**운영자 입력 필요**), FAQ 잡채 safe 단정
-3. **butter-tteok (6/7):** 제목 95자→40자, No Brand 프리믹스 실제품 링크(**운영자 확인 필요**), 밀떡 누락(떡볶이 떡 상당수가 밀), FAQ 동기화
-4. **다음 개정 때 (게이트 불요):** snacks 소주 출처·오리온 URL 트림(`?goodsno=26`형, celiac에서 검증됨), celiac 잔여 advisory(집간장 용어 본문 미등장, 오프너 4개 과다, FAQ-본문 중복 텍스트, 237 오너 셀리악=대화 근거 마킹)
+**▶ 남은 백로그 (게이트 불요, 다음 개정 때):**
+1. **experience 축이 3편 모두 2/3에 묶여 있다 — 유일하게 남은 구조적 갭이고 전부 운영자 입력이 필요하다.** ⓐ labels: "쌀과자" 실패담의 제품명·매장·시점 ⓑ butter-tteok: 6,000원 영수증의 **카페 이름과 시점** + 밀가루 브랜드·몰드 크기·실패담 ⓒ hidden-gluten: 237 폐업 시점, 온라인 빵 재라벨 사건 날짜·판매처
+2. **butter-tteok `<!-- IMG -->` 슬롯 여전히 비어 있음** — 판사가 "시각 트렌드 글에 이미지 0"을 minor로 지적. 사진 오면 삽입
+3. hidden-gluten: 타마리 실제 제품명(운영자), FAQ 답변 길이(80~120단어 → rich result 잘림), 2차 목록(어묵·카레루·소시지) 출처 표시
+4. snacks·celiac: MFDS 고시 번호(제2025-60호)를 이 둘에도 반영하면 일관성 완성. 단 건드리면 재채점 필요 — 지금은 PASS 상태
+5. snacks 소주 출처·오리온 URL 트림, celiac 잔여 advisory(집간장 용어 본문 미등장, 오프너 4개 과다, FAQ-본문 중복)
+
+**🔴 이번에 정정한 실오류 3건 (판사가 잡음 — 전부 배포본에 있던 것):**
+- **`같은 제조시설` 문구를 "자율"이라 쓴 것 = 틀림.** 식품등의 표시기준은 지정 알레르기 유발물질의 불가피한 혼입 가능성이 있으면 주의문구를 **"표시하여야 한다"**(의무). 정정 후가 더 정확하고 유용 — 인쇄된 경고는 의무라 실질 정보, 빈칸이 약한 근거인 이유는 ①의무 대상이 밀뿐(보리·호밀 제외) ②"불가피" 판단이 제조사 몫. labels 3곳 + butter-tteok
+- **밀떡** — hidden-gluten·butter-tteok 둘 다 "떡=쌀=GF"를 전제로 쓰였다. 떡볶이 떡에 밀떡이 있고 슈퍼·노점에서 주류. hidden-gluten은 **blocking** 판정
+- **No Brand 프리믹스 철회** — 웹 재검증 실패(개별 재료·2봉지 세트만 확인). 237 GFCO와 같은 규율로 투명 철회 + 복원 경로 명시
+
+**🆕 이번에 확보한 출처 (재사용할 것):**
+- **MFDS 고시 번호 = 「식품등의 표시기준」 고시 제2025-60호(2025-08-29)**, 공식 페이지 `https://www.mfds.go.kr/brd/m_211/view.do?seq=14917`. 판사는 "조회일"이 아니라 **"어느 버전을 읽었는지"**를 요구한다
+- **샘표 양조간장 501 영문 공식** `https://en.sempio.com/product/soysauce/view/598` — 원재료 wheat + 알레르기 "wheat, soybeans". 양조간장=밀 주장의 최상급 앵커
+- **GIG 찹쌀 FAQ** `https://gluten.org/faq/is-it-safe-to-include-glutinous-rice-in-a-gluten-free-diet-what-exactly-is-it/` — "glutinous rice is gluten-free despite its name"
+- ❌ **못 잡은 것:** ①고추장 제조사 성분 페이지(chungjungone.com `ECONNREFUSED`, CJ더마켓·컬리는 "상세설명 참조") → 단정 대신 "밀 유입 3경로(소맥분·밀쌀·양조간장)를 라벨에서 찾아라"로 우회 ②**한국 무글루텐 표시 기준 20ppm** — 2차 출처 다수 일치하나 법제처가 프레임이라 1차 확인 실패. 잡으면 "저글루텐 vs 무글루텐"을 훨씬 강하게 쓸 수 있는 재료
+
+**판사 운영 지식 (08-15 추가 — 3편 × 3라운드 실측):** ⑦ **시소는 축을 넘나든다.** hidden-gluten은 1R에서 SEO 7.5→10 오르는 동안 정확성이 blocking에 걸렸고, 2R에서 정확성 통과하자 SEO가 10→9로 내려갔다(**1R에서 만점 준 것과 똑같은 description에**). labels도 SEO 9.5 통과 라운드에 정확성이 9.5→9로 떨어졌다. 재롤 노이즈지만 **지적 자체는 대개 타당하므로 고치는 쪽이 이긴다.** ⑧ **판사가 사실관계로 나를 반박하면 웹으로 검증하라** — "같은 제조시설 문구는 의무" 지적이 맞았고, 이미 PASS·배포된 글의 오류였다. ⑨ **정확성을 위한 철회는 SEO expertise를 깎는다**(No Brand 철회 → "소싱 섹션에 제품이 없다" major). 철회할 땐 **검증 가능한 대체 구체성**을 같이 넣을 것. ⑩ 마진 0(19/20)으로 통과한 글은 다음 재롤에서 떨어질 수 있다 — 여유를 만들려면 experience 축이 유일한 남은 레버이고 그건 운영자 입력이다.
 
 **판사 운영 지식 (08-13 실측, celiac 4라운드로 확장):** ① **양 축 모두 재롤** — celiac은 SEO 9→10 오르는 동안 정확성 9.5→9→8.5 시소. minor까지 다 잡고 돌려도 새 눈이 새 걸 잡는다 — 4라운드까지는 정상 범위. ② **수정이 major를 만들 수 있다** — SEO 보호용으로 넣은 Tier 1 "nothing to interrogate" 문장이 정확성 major(절대 안전 보증)로 돌아옴. **안전 프레이밍 문장은 항상 "관찰한 것+관찰자+한계" 형태로.** ③ **판사 실행 중 글 수정 금지**(해시 기록). ④ 발행일 이후 인용 날짜는 "Updated August 2026" 본문 라인으로 해소. ⑤ 오리온처럼 제조사 페이지가 맛별 알레르기를 한 페이지에 명시하면 flavor trap 최상급 출처. ⑥ ⚠️ **루브릭 스테일**: `prompts/judge-seo-eeat.rubric.json:18`이 옛 접미사 ` | Gluten-Free Korea`(+20자)를 하드코딩 — 실제는 +18자. 고치려면 버전 bump가 필요하고 그러면 기존 PASS 기록 2건이 "v1로 채점됨" 빨강이 됨 → **당분간 제목을 40자 이하로 잡으면 양쪽 다 만족**(스테일 가정이 보수적 마진일 뿐). 다음 루브릭 개정 사유가 생기면 그때 배치로 정정+전체 재채점.
 
@@ -128,10 +146,11 @@ GitHub Actions (매시간) → healthcheck 16지표 → Grafana Cloud 도쿄(inf
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-08-13 14:35
+- **마지막 업데이트:** 2026-08-15 00:45
 - **작업자:** Claude Code
 - **브랜치:** main
-- **CI:** 🔴 content-001 (의도된 빨강 — 2편 PASS(snacks·celiac), 3편 FAIL(labels·hidden-gluten·butter-tteok))
+- **CI:** 🟢 **eval-runner 8/8** — content-001 포함 전원 녹색 (5편 PASS). baseline 갱신됨(`content-001,1,1`), 이제부터 회귀 감지가 실제로 작동한다
+- **⚠️ 빌드 노이즈:** `npm run build`가 `data/places.json`의 `updatedAt` 24건을 빌드 시각으로 갱신한다(내용 무변경). 커밋 전 `git checkout data/places.json`으로 걷어낼 것
 - **참고:** CLAUDE.md의 "next-on-pages 빌드 시 `output: 'export'` 필요" 노트는 현행 next.config.mjs와 불일치(스테일) — 실제 config엔 없음, pages:build 정상 동작 확인됨(08-13)
 - **점수 진단(2026-07-24, 별도 전문가 평가):** 웹 5.3/10, PM 4.3/10 — "자산 품질은 7, 운영 규율은 3.5". 갭은 대부분 *이미 시작한 것의 완성*.
 
