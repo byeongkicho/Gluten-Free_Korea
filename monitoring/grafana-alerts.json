@@ -1,6 +1,265 @@
 {
-  "_comment": "Grafana Cloud alert rules, provisioned via API 2026-08-12. Source of truth is the instance; this copy is for reproducibility \u2014 POST each to /api/v1/provisioning/alert-rules.",
+  "_comment": "Grafana Cloud alert rules. Source of truth is the instance; this copy is for reproducibility — apply with `node scripts/provision-alerts.mjs`. ngk-expiry(2) provisioned 2026-08-12, ngk-health(3) added 2026-08-14.",
+  "_thresholds": {
+    "why": "임계값은 실측 기준선에서 유도했다 (2026-08-14 24h 집계: 가용률 100%, 응답 avg 126ms / max 558ms, 실패 0).",
+    "latency_seconds": "1.0 — 관측 최대(558ms)의 약 2배. 정상 변동은 통과시키고 실제 저하만 잡는다.",
+    "staleness_seconds": "21600(6h) — 시간당 수집이지만 무료 GitHub 러너 스케줄 지연으로 24h에 20/24 샘플이 관측된다. 3h면 오탐이 나고, 6h 무소식은 지연이 아니라 파이프라인 고장으로 본다.",
+    "nodata_policy": "가용성·지연은 noDataState=OK — 수집 결손을 서비스 장애로 오인하지 않는다. 그 결손 자체는 staleness 룰이 noDataState=Alerting으로 잡는다. 즉 '서비스가 죽은 것'과 '지표가 안 오는 것'을 다른 룰로 분리했다."
+  },
   "rules": [
+    {
+      "uid": "ngk-http-down",
+      "orgID": 1,
+      "folderUID": "ngk-monitoring",
+      "ruleGroup": "ngk-health",
+      "title": "Endpoint is down",
+      "condition": "C",
+      "data": [
+        {
+          "refId": "A",
+          "queryType": "",
+          "relativeTimeRange": {
+            "from": 10800,
+            "to": 0
+          },
+          "datasourceUid": "grafanacloud-prom",
+          "model": {
+            "expr": "last_over_time(ngk_http_up[3h])",
+            "instant": true,
+            "intervalMs": 1000,
+            "maxDataPoints": 43200,
+            "range": false,
+            "refId": "A"
+          }
+        },
+        {
+          "refId": "B",
+          "queryType": "",
+          "relativeTimeRange": {
+            "from": 0,
+            "to": 0
+          },
+          "datasourceUid": "__expr__",
+          "model": {
+            "expression": "A",
+            "intervalMs": 1000,
+            "maxDataPoints": 43200,
+            "reducer": "last",
+            "refId": "B",
+            "type": "reduce"
+          }
+        },
+        {
+          "refId": "C",
+          "queryType": "",
+          "relativeTimeRange": {
+            "from": 0,
+            "to": 0
+          },
+          "datasourceUid": "__expr__",
+          "model": {
+            "conditions": [
+              {
+                "evaluator": {
+                  "params": [
+                    1
+                  ],
+                  "type": "lt"
+                }
+              }
+            ],
+            "expression": "B",
+            "intervalMs": 1000,
+            "maxDataPoints": 43200,
+            "refId": "C",
+            "type": "threshold"
+          }
+        }
+      ],
+      "noDataState": "OK",
+      "execErrState": "OK",
+      "for": "0s",
+      "keep_firing_for": "0s",
+      "annotations": {
+        "summary": "{{ $labels.target }} is DOWN (ngk_http_up={{ $values.B }}). 헬스체크가 실제로 실패를 보고한 것이므로 수집 결손이 아니다 — 사이트/엔드포인트를 확인할 것."
+      },
+      "labels": {
+        "service": "noglutenkorea",
+        "severity": "critical"
+      },
+      "isPaused": false,
+      "notification_settings": null,
+      "record": null
+    },
+    {
+      "uid": "ngk-http-slow",
+      "orgID": 1,
+      "folderUID": "ngk-monitoring",
+      "ruleGroup": "ngk-health",
+      "title": "Endpoint response time > 1s",
+      "condition": "C",
+      "data": [
+        {
+          "refId": "A",
+          "queryType": "",
+          "relativeTimeRange": {
+            "from": 10800,
+            "to": 0
+          },
+          "datasourceUid": "grafanacloud-prom",
+          "model": {
+            "expr": "last_over_time(ngk_http_response_seconds[3h])",
+            "instant": true,
+            "intervalMs": 1000,
+            "maxDataPoints": 43200,
+            "range": false,
+            "refId": "A"
+          }
+        },
+        {
+          "refId": "B",
+          "queryType": "",
+          "relativeTimeRange": {
+            "from": 0,
+            "to": 0
+          },
+          "datasourceUid": "__expr__",
+          "model": {
+            "expression": "A",
+            "intervalMs": 1000,
+            "maxDataPoints": 43200,
+            "reducer": "last",
+            "refId": "B",
+            "type": "reduce"
+          }
+        },
+        {
+          "refId": "C",
+          "queryType": "",
+          "relativeTimeRange": {
+            "from": 0,
+            "to": 0
+          },
+          "datasourceUid": "__expr__",
+          "model": {
+            "conditions": [
+              {
+                "evaluator": {
+                  "params": [
+                    1
+                  ],
+                  "type": "gt"
+                }
+              }
+            ],
+            "expression": "B",
+            "intervalMs": 1000,
+            "maxDataPoints": 43200,
+            "refId": "C",
+            "type": "threshold"
+          }
+        }
+      ],
+      "noDataState": "OK",
+      "execErrState": "OK",
+      "for": "0s",
+      "keep_firing_for": "0s",
+      "annotations": {
+        "summary": "{{ $labels.target }} 응답 {{ $values.B }}s (임계 1s, 평시 avg 126ms). 캐시 미스·오리진 지연·Cloudflare 이슈 순으로 확인."
+      },
+      "labels": {
+        "service": "noglutenkorea",
+        "severity": "warning"
+      },
+      "isPaused": false,
+      "notification_settings": null,
+      "record": null
+    },
+    {
+      "uid": "ngk-healthcheck-stale",
+      "orgID": 1,
+      "folderUID": "ngk-monitoring",
+      "ruleGroup": "ngk-health",
+      "title": "Healthcheck pipeline stale (>6h)",
+      "condition": "C",
+      "data": [
+        {
+          "refId": "A",
+          "queryType": "",
+          "relativeTimeRange": {
+            "from": 86400,
+            "to": 0
+          },
+          "datasourceUid": "grafanacloud-prom",
+          "model": {
+            "expr": "time() - max(last_over_time(ngk_healthcheck_timestamp_seconds[24h]))",
+            "instant": true,
+            "intervalMs": 1000,
+            "maxDataPoints": 43200,
+            "range": false,
+            "refId": "A"
+          }
+        },
+        {
+          "refId": "B",
+          "queryType": "",
+          "relativeTimeRange": {
+            "from": 0,
+            "to": 0
+          },
+          "datasourceUid": "__expr__",
+          "model": {
+            "expression": "A",
+            "intervalMs": 1000,
+            "maxDataPoints": 43200,
+            "reducer": "last",
+            "refId": "B",
+            "type": "reduce"
+          }
+        },
+        {
+          "refId": "C",
+          "queryType": "",
+          "relativeTimeRange": {
+            "from": 0,
+            "to": 0
+          },
+          "datasourceUid": "__expr__",
+          "model": {
+            "conditions": [
+              {
+                "evaluator": {
+                  "params": [
+                    21600
+                  ],
+                  "type": "gt"
+                }
+              }
+            ],
+            "expression": "B",
+            "intervalMs": 1000,
+            "maxDataPoints": 43200,
+            "refId": "C",
+            "type": "threshold"
+          }
+        }
+      ],
+      "noDataState": "Alerting",
+      "execErrState": "Alerting",
+      "for": "0s",
+      "keep_firing_for": "0s",
+      "annotations": {
+        "summary": "헬스체크 지표가 {{ $values.B }}초째 갱신되지 않았다 (임계 6h). 사이트 장애가 아니라 관측 파이프라인 고장 — GitHub Actions healthcheck 워크플로와 GRAFANA_PUSH_* 시크릿을 확인할 것. 이 룰만 noDataState=Alerting인 이유: '데이터 없음'이 바로 이 룰이 감시하는 대상이다."
+      },
+      "labels": {
+        "service": "noglutenkorea",
+        "severity": "critical",
+        "scope": "pipeline"
+      },
+      "isPaused": false,
+      "notification_settings": null,
+      "record": null
+    },
     {
       "uid": "ngk-ssl-expiry",
       "orgID": 1,
@@ -75,7 +334,7 @@
       "for": "0s",
       "keep_firing_for": "0s",
       "annotations": {
-        "summary": "noglutenkorea.com TLS cert has {{ $values.B }} days left \u2014 Cloudflare should auto-renew; if this fires, it has not."
+        "summary": "noglutenkorea.com TLS cert has {{ $values.B }} days left — Cloudflare should auto-renew; if this fires, it has not."
       },
       "labels": {
         "service": "noglutenkorea"

@@ -130,6 +130,33 @@
       "options": { "colorMode": "value", "graphMode": "none", "reduceOptions": { "calcs": ["lastNotNull"] } }
     },
     {
+      "id": 10,
+      "type": "stat",
+      "title": "에러버짓 잔량 (30d)",
+      "description": "SLO 30일 가용성 99.5% 기준 남은 에러버짓. 100% = 아직 한 번도 안 썼다, 0% = 버짓 소진. 버짓 총량은 30일 중 약 3시간 36분. ⚠️ 시간당 수집이라 1시간 미만 장애는 측정에 안 잡힌다 — 근거와 한계는 docs/SLO.md.",
+      "gridPos": { "h": 6, "w": 3, "x": 21, "y": 0 },
+      "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+      "targets": [{ "refId": "A", "expr": "(1 - (1 - avg(avg_over_time(ngk_http_up[30d]))) / 0.005) * 100", "instant": true }],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "decimals": 1,
+          "min": 0,
+          "max": 100,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "red", "value": null },
+              { "color": "yellow", "value": 25 },
+              { "color": "green", "value": 50 }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": { "colorMode": "value", "graphMode": "none", "reduceOptions": { "calcs": ["lastNotNull"] } }
+    },
+    {
       "id": 6,
       "type": "timeseries",
       "title": "응답 시간 (엔드포인트별)",
