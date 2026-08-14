@@ -10,14 +10,14 @@ pillar: false
 status: published
 faq:
   - q: "How do I know if a Korean packaged food contains gluten?"
-    a: "Flip the package and read the ingredient list (원재료명, wonjaeryomyeong). Korea's mandatory allergen list — set by the MFDS labeling standard 식품등의 표시기준, 별표 2 — includes wheat, so wheat shows up as 밀. Barley and rye are NOT on that list, so you also have to scan the full ingredient list for 소맥 (wheat), 보리 (barley), and 호밀 (rye). A clean list establishes one thing: no declared wheat, barley, or rye. It does not establish the absence of trace gluten, and shared-facility warnings in Korea are voluntary, so a missing warning proves nothing. For NCGS that scan is usually where we stop; for celiac, call the 소비자상담실 number printed on the package. A 'gluten-free' claim on the front is the manufacturer's own statement, not a third-party certification."
+    a: "Flip the package and read the ingredient list (원재료명, wonjaeryomyeong). Korea's mandatory allergen list — set by the MFDS labeling standard 식품등의 표시기준, 별표 2 — includes wheat, so wheat shows up as 밀. Barley and rye are NOT on that list, so you also have to scan the full ingredient list for 소맥 (wheat), 보리 (barley), and 호밀 (rye). A clean list establishes one thing: no declared wheat, barley, or rye. It does not establish the absence of trace gluten. Korea does require a shared-facility caution line where a designated allergen may unavoidably carry over, so a printed warning means something — but 밀 is a designated allergen and 보리 and 호밀 are not, and the maker decides what counts as unavoidable, so a blank space is weak evidence. For NCGS that scan is usually where we stop; for celiac, call the 소비자상담실 number printed on the package. A 'gluten-free' claim on the front is the manufacturer's own statement, not a third-party certification."
   - q: "Does 'made with rice' (쌀) on a Korean label mean it's gluten-free?"
     a: "No. 'Rice bread' and 'rice' snacks frequently blend in wheat flour or wheat starch (밀 전분). Rice on the front of a package tells you nothing until you read the full ingredient list and the allergen line on the back. Treat '쌀로 만든' (made with rice) as marketing, not a safety claim."
   - q: "What Korean words mean wheat, barley, and rye on food labels?"
     a: "Wheat is 밀 (mil) or 밀가루 (milgaru, wheat flour), and also appears as 소맥 / 소맥분 (somaek / somaekbun) — the same thing under a different name, which trips people up. Barley is 보리 (bori), and hides as 엿기름 (yeotgireum, malted barley) and 맥아 (maega, malt). Rye is 호밀 (homil). Wheat starch, common in 'rice' products, is 밀 전분 (mil jeonbun). Seeing any of these means the product contains gluten."
 ---
 
-*Updated August 2026: added the MFDS labeling-standard citation, romanised the label terms, corrected the 엿기름 gloss to malted barley, and added the manufacturer-contact route — the August 2026 retrieval dates below are from that update.*
+*Updated August 2026 — added the MFDS citation, romanised the terms, fixed the 엿기름 gloss (malted barley, not malt syrup), and corrected an error: the shared-facility caution line is **required** for designated allergens, not voluntary as an earlier version said.*
 
 Ask me to do one thing in a Korean convenience store and I'll do it without thinking: pick up a new snack, flip it over, and scan the back for one word — **밀** (wheat). It takes about two seconds now. But it took months of getting it wrong to make it automatic, and it's the single most useful habit we built while learning to eat gluten-free in Korea.
 
@@ -28,9 +28,9 @@ Restaurants are a conversation. Packaged food is a *reading test* — and once y
 Two things make Korean packaging different from what you might be used to:
 
 1. **The ingredient list is in Korean, and so are the allergen words.** You can't rely on spotting "wheat" in English — you have to recognize the Hangul.
-2. **A "gluten-free" claim on the front is the maker's own statement.** We have not found a Korean equivalent of GFCO — a third-party scheme that audits a facility and licenses a seal — so a front-label claim in Korea is not backed by the outside verification a GFCO mark implies. On the shelves we scan, "저글루텐 (jeo-gluten, low-gluten)" is the version we've seen most often, and low-gluten is not gluten-free. (More on that trap in [the hidden-gluten guide](/blog/hidden-gluten-korean-food).)
+2. **A "gluten-free" claim on the front is the maker's own statement.** We have not found a Korean equivalent of GFCO — a third-party scheme that audits a facility and licenses a seal — so a front-label claim in Korea is not backed by the outside verification a GFCO mark implies. On the shelves we scan, "저글루텐" (low-gluten) is the version we've seen most often, and low-gluten is not gluten-free. (More on that trap in [the hidden-gluten guide](/blog/hidden-gluten-korean-food).)
 
-Korean law helps — but only halfway. The substances the allergen line must declare are set by the MFDS labeling standard, [식품등의 표시기준](https://www.law.go.kr/행정규칙/식품등의표시기준) (별표 2, 소비자 안전을 위한 표시사항 — current text as retrieved August 2026; the standard is amended regularly, so re-check it). **밀 (wheat) is on that list.** The catch that trips up even careful people: **barley (보리) and rye (호밀) are not.** Those you have to hunt for yourself. That distinction is the whole reason this routine has four steps instead of one.
+Korean law helps — but only halfway. The substances the allergen line must declare are set by the MFDS labeling standard, [식품등의 표시기준](https://www.law.go.kr/행정규칙/식품등의표시기준) (별표 2, 소비자 안전을 위한 표시사항). The version we read is **[고시 제2025-60호, 29 August 2025](https://www.mfds.go.kr/brd/m_211/view.do?seq=14917)**, retrieved August 2026 — the standard is amended regularly, so check the notice number against the one in force when you read this. **밀 (wheat) is on that list.** The catch that trips up even careful people: **barley (보리) and rye (호밀) are not.** Those you have to hunt for yourself. That distinction is the whole reason this routine has four steps instead of one.
 
 **Where the claims here come from:** the regulatory statements are read off the MFDS standard linked above (retrieved August 2026). Everything about what sits on convenience-store shelves is our own shopping in Seoul — first-hand, but not a survey, and not lab-tested. Where the two disagree, the package in your hand wins.
 
@@ -63,7 +63,7 @@ Don't stop at the allergen line — run your eye up the whole **원재료명** l
 | 대맥 | daemaek | barley | another name for 보리 (rare on labels) |
 | 호밀 | homil | rye | *not* on the allergen line |
 
-One gloss worth getting right, because we had it wrong here until August 2026: 엿기름 is **malted barley**, not malt syrup. The syrups are 물엿 (*mullyeot*) and 조청 (*jocheong*) — 물엿 is usually corn-derived, but 조청 is traditionally saccharified with 엿기름, so it's a check rather than a pass.
+One gloss worth getting right, because we had it wrong here until August 2026: 엿기름 is **malted barley**, not malt syrup. The syrups are 물엿 (*mullyeot*) and 조청 (*jocheong*). 물엿 is commonly described as corn-derived and 조청 as traditionally saccharified with 엿기름, but we haven't verified either per product — so treat both as a check rather than a pass, and read the 원재료명.
 
 The three that catch careful people: **소맥** (a second word for wheat that a "just look for 밀" habit misses), **밀 전분** (wheat starch quietly blended into things sold as rice-based), and **보리** (barley, which won't be on the allergen line at all). The snack that broke me of trusting the allergen line alone was a "rice" cracker: allergen line clean, but 밀 전분 sitting a few items up in the ingredients.
 
@@ -73,9 +73,14 @@ Below the allergens you'll often find a shared-facility warning, phrased like:
 
 > *"이 제품은 밀을 사용한 제품과 **같은 시설에서 제조**"* — made in the same facility as products containing wheat.
 
-For **NCGS**, this is usually a judgment call. For **celiac**, the rule is simpler: treat a shared-facility line — and a bare *"밀 알레르기 유발 가능"* (may contain wheat) — as a reason to skip it, because both signal possible trace gluten the ingredient list won't show.
+For **NCGS**, this is usually a judgment call. For **celiac**, the rule is simpler: treat a shared-facility line — or any may-contain wording naming 밀 — as a reason to skip it, because both signal possible trace gluten the ingredient list won't show.
 
-**And here's the part that matters most for celiac: this line is voluntary.** Unlike the 알레르기 유발물질 line, a shared-facility statement is something a manufacturer may add, not something required of them. So its *presence* is real information, and its *absence* is not — a package with no warning may still have been run on a wheat line. Finishing the four steps establishes exactly one thing: **no declared wheat, barley, or rye.** It does not establish that there is no gluten in the package.
+**And here's the part that matters most for celiac.** The [식품등의 표시기준](https://www.law.go.kr/행정규칙/식품등의표시기준) does require this caution line where a designated allergen may unavoidably carry over from a shared process — so a printed warning is real information, not boilerplate. But two gaps sit underneath it, and both bite here:
+
+1. **The duty covers designated allergens — and 밀 is one, while 보리 and 호밀 are not.** A facility that also runs barley owes you nothing on this line.
+2. **The maker judges what counts as "unavoidable."** That determination happens inside a factory you can't see.
+
+So the asymmetry to carry around is this: a warning that *is* printed tells you something real, and a blank space is much weaker evidence than it looks. Finishing the four steps establishes exactly one thing: **no declared wheat, barley, or rye.** It does not establish that there is no gluten in the package.
 
 ## When the label can't answer
 
@@ -101,8 +106,9 @@ Once the flip-and-scan is automatic, a small core of convenience-store items kee
 - **Boiled or roasted eggs** (구운/삶은 계란)
 - **Whole fruit** — bananas, seasonal fruit
 - **Plain yogurt** — check the add-ins
-- **Chicken breast packs** — *without* the soy-sauce marinade (soy sauce is wheat; see the [hidden-gluten guide](/blog/hidden-gluten-korean-food))
+- **Chicken breast packs** — *without* the soy-sauce marinade. Brewed Korean soy sauce is a wheat product: [Sempio's own page for 양조간장 501](https://en.sempio.com/product/soysauce/view/598) lists wheat in the ingredients and declares wheat as an allergen (retrieved August 2026). More on the condiments in the [hidden-gluten guide](/blog/hidden-gluten-korean-food)
 - **Rice crackers (쌀과자)** — but only *after* you scan, because of the wheat-starch trap above
+- **Potato chips — and here the specifics matter.** [Orion's own product page](https://www.orionworld.com/goods/view/27?page=1&goodsno=26&category=0102) lists 포카칩 오리지널 (*Pocachip Original*) with allergens milk, soy and beef, and no 밀 (retrieved August 2026). The **Onion flavour of the same brand declares 밀.** One bag, two flavours, opposite answers — that pair is this entire article in miniature, and it's why the habit is reading the package rather than remembering a brand. Flavour-by-flavour detail is in the [snack guide](/blog/korean-convenience-store-gf-snacks).
 
 What fails is most of what you'd grab on autopilot: cup noodles, some triangle-kimbap fillings, most breads and pastries, battered snacks. Full breakdown by brand and flavor in the [convenience-store snack guide](/blog/korean-convenience-store-gf-snacks).
 
@@ -115,7 +121,7 @@ It collapses into one reflex: at the shelf, glance at the allergen line for **�
 1. **Memorize four words:** 밀 (mil), 소맥 (somaek), 보리 (bori), 호밀 (homil) — wheat (both names), barley, and rye. (Barley also hides as 맥아 *maega* and 엿기름 *yeotgireum*.)
 2. **Don't trust the allergen line alone.** It reliably flags declared wheat, but barley and rye live only in the full ingredient list.
 3. **Distrust "rice" and "gluten-free" claims** until the ingredients back them up.
-4. **If you're celiac,** remember what a clean scan proves — no *declared* wheat, barley, or rye — and what it doesn't. Shared-facility warnings are voluntary, so call the 소비자상담실 number on the package when the answer has to be certain.
+4. **If you're celiac,** remember what a clean scan proves — no *declared* wheat, barley, or rye — and what it doesn't. A printed shared-facility warning is required and meaningful; a missing one covers neither barley nor rye and rests on the maker's own judgment. Call the 소비자상담실 number on the package when the answer has to be certain.
 
 ## Related guides
 

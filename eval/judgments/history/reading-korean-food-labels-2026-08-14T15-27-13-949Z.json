@@ -1,0 +1,272 @@
+{
+  "schema": 1,
+  "slug": "reading-korean-food-labels",
+  "source_ref": "working-tree",
+  "content_sha256": "52e0d2d20536f9432c417463bbe0c8590ef068e31e51b17a8f90c84c0c1f94e0",
+  "judged_at": "2026-08-14T15:28:32.295Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.232 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 19,
+      "max_points": 20,
+      "score": 9.5,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "Within the opening paragraph the reader is told exactly what to do — flip the package and scan for 밀 — and the section immediately after establishes why Korean labels need their own method, which is precisely the intent behind 'korean food label gluten'.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 2,
+          "max": 2,
+          "note": "Title is 38 chars (58 with the rendered ' | Gluten-Free Korea' suffix), description is 153 chars, the keyword terms appear in both, and the description promises the 4-step method rather than restating the title.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings carry the argument on their own: skimming Step 1 through Step 4 plus 'When the label can't answer' and 'Three Korea-specific gluten-label traps' delivers the method and its limits without reading the body.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Four distinct internal destinations (hidden-gluten, snack guide, pillar guide, butter tteok) are each placed where the reader has just hit the exact gap that link fills, such as the soy-sauce aside and the flavour-by-flavour snack breakdown.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All three FAQ answers are fully established in the body — the MFDS designation of 밀, the exclusion of 보리 and 호밀, the required shared-facility line, the 밀 전분 trap, and the self-declared 'gluten-free' claim — and each is intelligible without the article.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 2,
+          "max": 3,
+          "note": "The first-hand signal is real and honestly scoped, but concrete-yet-thin: the failure anecdotes carry no product names, dates, or specific stores, so they stop short of the observed specifics the top level requires.",
+          "evidence_quote": "Everything about what sits on convenience-store shelves is our own shopping in Seoul — first-hand, but not a survey, and not lab-tested."
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "Korean terms are given in Hangul with consistent romanisation and glosses, the term table distinguishes 소맥/밀 and 엿기름/물엿/조청 precisely, and the product example names both brand and flavour so a reader can verify it.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "The governing regulation is linked as a primary source with its exact notice number and promulgation date (고시 제2025-60호, 29 August 2025) plus a retrieval date, the manufacturer claim links to Orion's own product page with a retrieval date, and the MFDS food database is named and linked.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "The piece explicitly bounds what its method proves ('no declared wheat, barley, or rye. It does not establish that there is no gluten'), separates regulatory sourcing from personal shopping, flags the reformulation risk, and carries no commercial links.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "experience",
+          "severity": "major",
+          "quote": "The snack that broke me of trusting the allergen line alone was a \"rice\" cracker: allergen line clean, but 밀 전분 sitting a few items up in the ingredients.",
+          "why": "This is the article's single strongest first-hand moment, but it names no brand, no store chain, no month, and no package weight — so it reads as an archetype rather than an observed event. The rest of the experience signal is similarly unanchored (\"our own shopping in Seoul\", \"the shelves we scan\"), and the one precisely specified product pair (포카칩 Original vs Onion) is sourced from Orion's website rather than from the author's own shelf.",
+          "fix": "Anchor the rice-cracker story: name the product and maker, the convenience-store chain and district, and roughly when it happened (e.g. \"a 쌀과자 from a CU in Mapo, February 2026\"). Add one or two more failure moments with the same level of detail — a syrup you couldn't trace, a 혼합제제 you called about and what the 소비자상담실 said."
+        },
+        {
+          "criterion": "faq_alignment",
+          "severity": "minor",
+          "quote": "A clean list establishes one thing: no declared wheat, barley, or rye. It does not establish the absence of trace gluten.",
+          "why": "Every claim in the FAQ block is backed by the body, so alignment itself is sound. But FAQ 1 runs well past 1,000 characters; as an FAQPage rich result it will be truncated mid-argument, and the truncation point falls before the celiac guidance and the 'gluten-free is self-declared' caveat — the two parts a searcher most needs.",
+          "fix": "Split FAQ 1 into two entries: one on 'how do I check a Korean packaged food for gluten' (the 원재료명 + 밀/보리/호밀 scan) and one on 'does a clean Korean label mean no gluten' (the trace/shared-facility limit). Keep each answer under ~300 characters so it survives as a standalone snippet."
+        },
+        {
+          "criterion": "title_meta",
+          "severity": "minor",
+          "quote": "Korean Food Labels: Find Gluten (2026)",
+          "why": "The title reads as a keyword-fitting compression rather than natural phrasing — 'Find Gluten' is clipped, and the year parenthetical eats characters that could carry the actual promise (the 4-step method). It clears every hard constraint, so no point is withheld, but it under-sells the click.",
+          "fix": "Test a phrasing that keeps the keyword and spends the remaining budget on the payoff, e.g. 'Reading Korean Food Labels for Gluten' (37 chars + suffix = 57), dropping '(2026)' since the body already carries a visible 'Updated August 2026' line."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 14463,
+        "cache_read_input_tokens": 30216,
+        "output_tokens": 5111,
+        "output_tokens_details": {
+          "thinking_tokens": 3061
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 14463,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 5111,
+            "cache_read_input_tokens": 30216,
+            "cache_creation_input_tokens": 14463,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 14463
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 18,
+      "max_points": 20,
+      "score": 9,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "Regulatory claims are linked to the MFDS standard and shelf claims are explicitly marked as the authors' own shopping, but a couple of ingredient-provenance claims are asserted without a source.",
+          "evidence_quote": "물엿 is usually corn-derived, but 조청 is traditionally saccharified with 엿기름, so it's a check rather than a pass."
+        },
+        {
+          "id": "no_fabrication",
+          "points": 3,
+          "max": 3,
+          "note": "Notice number, publication date, retrieval dates, product names and flavour-level allergen details are all specific, linked, and internally consistent with the July 2026 publish / August 2026 update framing.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "The piece states separately where regulatory claims and shelf claims come from, and says plainly that the shelf side is neither a survey nor lab-tested and that 'clears the scan' is not a safety rating.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 4,
+          "max": 4,
+          "note": "No absolute safety claim survives anywhere: cross-contamination duty and its two gaps are spelled out, celiac is consistently held to a stricter standard than NCGS, and the 'what passes' list is qualified as not a safety rating.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "The MFDS notice is cited by number and date with a retrieval date and an explicit instruction to re-check the notice in force, and reformulation risk is flagged as a standing caution.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 1,
+          "max": 2,
+          "note": "The load-bearing fact — mandatory allergen coverage of 밀 but not 보리/호밀 — is correct throughout, but a quoted 'label phrase' is not standard Korean label wording and one romanisation is a hybrid inconsistent with the rest.",
+          "evidence_quote": "a bare *\"밀 알레르기 유발 가능\"* (may contain wheat)"
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "The reader gets the primary law link, the specific notice, the MFDS product database, and a copy-pasteable Korean question plus where to find the consumer line on the package.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "물엿 is usually corn-derived, but 조청 is traditionally saccharified with 엿기름, so it's a check rather than a pass.",
+          "why": "The 물엿 provenance claim is unsourced and sits on the permissive side — a reader could read '물엿 = corn' as a pass, which is the one direction an unsourced ingredient claim should not lean. The 조청 half is correctly conservative.",
+          "fix": "Either cite a source for corn-derived 물엿 or restate both as unverified: '물엿 is commonly corn-derived, but we have not verified this per-product — treat both syrups as a check, not a pass.'"
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "commercial 양조간장 is brewed with wheat",
+          "why": "Stated as flat fact with no source and no observation marker, unlike the rest of the piece's careful sourcing. It points toward avoidance so it is not a safety risk, but it is the one bare assertion in a heavily sourced article.",
+          "fix": "Add a source, or attach the same hedge used elsewhere ('every 양조간장 label we have read lists 밀') and lean on the hidden-gluten guide link for the evidence."
+        },
+        {
+          "criterion": "korean_accuracy",
+          "severity": "minor",
+          "quote": "a bare *\"밀 알레르기 유발 가능\"* (may contain wheat)",
+          "why": "Presented in quotation marks as wording a reader will see on a package, but Korean packages phrase this as 밀 함유 가능 / 밀 함유 가능성 있음, or as the full 같은 제조시설 sentence. A reader scanning for the quoted string may not match what is actually printed.",
+          "fix": "Replace with the wording that actually appears — e.g. '밀 함유 가능' or '밀 함유 가능성 있음' — or label it as a paraphrase rather than a quoted label line."
+        },
+        {
+          "criterion": "korean_accuracy",
+          "severity": "minor",
+          "quote": "\"저글루텐 (jeo-gluten, low-gluten)\"",
+          "why": "The romanisation mixes Revised Romanisation with the English word, breaking the consistent RR treatment used for every other term in the piece (wonjaeryomyeong, yeotgireum, sobija sangdamsil).",
+          "fix": "Use 'jeo-geullruten' or drop the romanisation for this one term and keep the gloss 'low-gluten'."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 14463,
+        "cache_read_input_tokens": 30175,
+        "output_tokens": 5461,
+        "output_tokens_details": {
+          "thinking_tokens": 3789
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 14463,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 5461,
+            "cache_read_input_tokens": 30175,
+            "cache_creation_input_tokens": 14463,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 14463
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: accuracy-safety 9/9.5"
+  }
+}

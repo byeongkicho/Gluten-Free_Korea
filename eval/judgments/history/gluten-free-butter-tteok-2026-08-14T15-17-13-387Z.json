@@ -1,0 +1,286 @@
+{
+  "schema": 1,
+  "slug": "gluten-free-butter-tteok",
+  "source_ref": "working-tree",
+  "content_sha256": "b99543058f3cb68f78402d0e5529fa084292a5e80e8105ccd4eee26a7144453c",
+  "judged_at": "2026-08-14T15:18:51.039Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.232 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 16,
+      "max_points": 20,
+      "score": 8,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 2,
+          "max": 3,
+          "note": "The keyword's intent is answered, but the answer given inside 200 words is the unqualified version, with the essential 밀떡 correction and the actual which-tteok-is-safe rule arriving only after a narrative detour.",
+          "evidence_quote": "There wasn't. And that small discovery turned into one of the easier wins we've had eating gluten-free in Korea."
+        },
+        {
+          "id": "title_meta",
+          "points": 2,
+          "max": 2,
+          "note": "Title runs 58 characters including the appended \" | Gluten-Free Korea\", description is 154 characters, the keyword appears in both, and the description adds the 밀떡 angle and cost hook rather than restating the title.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings carry the argument rather than label it — \"But not all tteok is rice: 밀떡\", \"The moment the math stopped working\", \"Sourcing the two flours\" — so a heading-only skim reproduces the piece's reasoning from claim to caveat to alternative.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Three distinct internal destinations (hidden-gluten guide, Monil2 House place page, celiac travel guide) each appear at the moment a reader would want them — the wheat-tteok trap, the buy-don't-bake alternative, and the wider guide.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 1,
+          "max": 2,
+          "note": "Two of three FAQ answers are fully mirrored in the body and stand alone as rich results, but the first asserts a soy-sauce/gochujang risk that the body only alludes to via a link rather than establishing on-page.",
+          "evidence_quote": "The other risk is what's added around the tteok — soy sauce or gochujang."
+        },
+        {
+          "id": "experience",
+          "points": 2,
+          "max": 3,
+          "note": "The 6,000-won-plus-500-won receipt, the withdrawn No Brand claim, and the wife's NCGS disclosure are real first-hand signals, but the cafe is unnamed, no purchase date is given, and the home-baking account declines to record any measurement or misstep.",
+          "evidence_quote": "I'm not going to hand you exact gram-by-gram ratios, because I worked mostly by feel and I'd rather not invent precision I didn't measure."
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "Korean terms are consistently given with hangul and romanisation (찹쌀가루/chapssal-garu, 밀떡/mil-tteok, 쌀떡/ssal-tteok, 타피오카 전분/tapioka jeonbun), label-check strings (밀, 소맥분, 원재료명, 같은 제조시설) are exact, and prices and named venues are checkable.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 1,
+          "max": 2,
+          "note": "One genuine primary source is linked but carries only a retrieval date rather than a publication date, and the other load-bearing claims (밀떡 as a mainstream product, the potato-starch substitution) have no attribution at all.",
+          "evidence_quote": "the [Gluten Intolerance Group](https://gluten.org/faq/is-it-safe-to-include-glutinous-rice-in-a-gluten-free-diet-what-exactly-is-it/) answers this one directly"
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "The piece repeatedly names what its method cannot establish — voluntary shared-facility labelling, \"she felt fine\" explicitly rejected as evidence, \"dedicated\" flagged as the operator's claim, and a prior claim publicly withdrawn — and contains no commercial or affiliate links requiring disclosure.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "search_intent",
+          "severity": "minor",
+          "quote": "**떡 is not a category you can clear.**",
+          "why": "The decisive answer for someone searching \"gluten free tteok\" — that wheat tteok exists — arrives in the third section, after the opening has already given the unqualified answer \"There wasn't.\" A skimmer who bounces at 200 words leaves with the wrong rule.",
+          "fix": "Move the 밀떡 caveat into the opening two paragraphs: replace \"There wasn't.\" with something like \"There wasn't — but that answer only holds because butter tteok is rice flour and starch. Plenty of tteok is wheat (밀떡), and that distinction is the whole post.\""
+        },
+        {
+          "criterion": "faq_alignment",
+          "severity": "minor",
+          "quote": "The other risk is what's added around the tteok — soy sauce or gochujang.",
+          "why": "This FAQ answer names soy sauce and gochujang as tteok-specific risks, but the body only gestures at sauces generically via an outbound internal link and never establishes the claim on-page. Google requires FAQ markup to match visible content.",
+          "fix": "Add one sentence to the 밀떡 section naming the sauce risk explicitly (e.g. that tteokbokki sauce is built on gochujang and soy sauce, both routinely wheat-containing), so the rich-result answer is backed by visible text."
+        },
+        {
+          "criterion": "authoritativeness",
+          "severity": "minor",
+          "quote": "Korean recipe writers are consistent that potato starch won't give the same chew or rise",
+          "why": "A substitution claim readers will act on in their own kitchens is attributed to an unnamed collective with no link. It is the only technical assertion in the sourcing section and carries no way to verify it.",
+          "fix": "Link two or three specific Korean recipe posts or a starch-comparison source with their publication dates, or reframe as first-hand: \"when we swapped in potato starch the batch came out dense — here's what happened.\""
+        },
+        {
+          "criterion": "authoritativeness",
+          "severity": "minor",
+          "quote": "**밀떡 (*mil-tteok*), made with wheat flour** — a mainstream supermarket product, standard at many street stalls",
+          "why": "The central corrective claim of the article carries no citation — no product page, retailer listing, or manufacturer ingredient panel — even though the rest of the piece models good sourcing behaviour.",
+          "fix": "Link a specific supermarket product page or manufacturer 원재료명 listing for a 밀떡 SKU, with the date retrieved, the same way the Gluten Intolerance Group link is handled."
+        },
+        {
+          "criterion": "experience",
+          "severity": "minor",
+          "quote": "I'm not going to hand you exact gram-by-gram ratios, because I worked mostly by feel and I'd rather not invent precision I didn't measure.",
+          "why": "Honest, but it removes the most checkable first-hand detail the home-baking section could offer. The cafe is also unnamed and undated, so the 6,000-won receipt cannot be situated.",
+          "fix": "Add whatever was observed rather than measured — the month and neighbourhood of the cafe purchase, the mold size, roughly how many pieces one batch produced, and anything that went wrong (texture, sticking, bake time)."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 12657,
+        "cache_read_input_tokens": 30216,
+        "output_tokens": 7424,
+        "output_tokens_details": {
+          "thinking_tokens": 4704
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 12657,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 7424,
+            "cache_read_input_tokens": 30216,
+            "cache_creation_input_tokens": 12657,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 12657
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 18,
+      "max_points": 20,
+      "score": 9,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "Central claims are either sourced (GIG for glutinous rice) or marked as personal observation (the receipt, the home batch), but the regulatory claim about shared-facility labelling is stated flatly with no source.",
+          "evidence_quote": "Note that this line is voluntary in Korea, so its absence isn't proof of a dedicated line."
+        },
+        {
+          "id": "no_fabrication",
+          "points": 3,
+          "max": 3,
+          "note": "Prices, Korean terms, product categories and dates are checkable and internally consistent, and the piece actively withdrew a No Brand pre-mix claim it could not re-verify rather than leaving invented detail standing.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "The piece states its basis (purchase, home cooking, one cited source, one failed verification attempt) and names what that basis cannot establish, including declining to publish ratios it never measured.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 4,
+          "max": 4,
+          "note": "No absolute guarantee, cross-contamination covered at both shop and flour-milling level, celiac explicitly separated from non-celiac gluten sensitivity, and the asymptomatic-damage caveat blocks the wrong inference from the personal anecdote.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "The one external source carries a retrieval date, the scope of findings is pinned to August 2026, and reformulation drift is flagged as a standing risk.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 1,
+          "max": 2,
+          "note": "Korean terms, romanisations and product categories (찹쌀가루, 밀떡, 쌀떡, 소맥분, 원재료명) are correct, but the sole labelling-law characterisation is imprecise — Korea's labelling standard requires the shared-facility caution where unavoidable cross-contact with a designated allergen exists.",
+          "evidence_quote": "Note that this line is voluntary in Korea, so its absence isn't proof of a dedicated line."
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "The reader gets a linked primary source, the exact Korean strings to look for on a package, the shared-facility phrase to search for, the questions to ask a cafe, and an address to report corrections to.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "korean_accuracy",
+          "severity": "minor",
+          "quote": "Note that this line is voluntary in Korea, so its absence isn't proof of a dedicated line.",
+          "why": "Korea's 식품등의 표시기준 requires the '같은 제조시설에서 제조' caution statement where unavoidable cross-contact with a designated allergen is possible, so 'voluntary' mischaracterises the rule rather than its enforcement. The error runs in the conservative direction, so a reader following it does not eat gluten, but a flat legal assertion about the one labelling system this audience depends on should be correct.",
+          "fix": "Reword to describe practice rather than law, e.g. 'this caution line is inconsistently applied in Korea, so its absence isn't proof of a dedicated line' — and cite the MFDS labelling standard if the legal framing is kept."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "Note that this line is voluntary in Korea, so its absence isn't proof of a dedicated line.",
+          "why": "This is a regulatory claim about the exact mechanism the article tells celiac readers to rely on when checking a flour bag, and it carries no citation while the softer glutinous-rice claim does.",
+          "fix": "Link the MFDS 식품등의 표시기준 provision on 알레르기 유발물질 주의표시, or mark the sentence as the authors' reading of what they have seen on Korean packaging."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "Korean recipe writers are consistent that potato starch won't give the same chew or rise",
+          "why": "An appeal to an unnamed body of sources with no link; it is a texture claim with no safety consequence, but it is the one place the piece borrows authority it does not show.",
+          "fix": "Link two or three of the Korean recipe sources, or restate as the authors' own kitchen result."
+        },
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "minor",
+          "quote": "Which Korean rice cakes are safe, why butter tteok qualifies, and the cost of making it at home.",
+          "why": "The body is careful to separate 'gluten-free recipe' from 'safe for celiac disease', but the description promises which tteok is 'safe' and says butter tteok 'qualifies' without saying qualifies as what — and a description is often all a search reader sees.",
+          "fix": "Rewrite the description to match the body's precision, e.g. 'which Korean rice cakes are made from rice, why butter tteok's recipe contains no gluten, and what still needs checking'."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 12657,
+        "cache_read_input_tokens": 30175,
+        "output_tokens": 7235,
+        "output_tokens_details": {
+          "thinking_tokens": 4755
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 12657,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 7235,
+            "cache_read_input_tokens": 30175,
+            "cache_creation_input_tokens": 12657,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 12657
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: seo-eeat 8/9.5, accuracy-safety 9/9.5"
+  }
+}

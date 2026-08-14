@@ -1,0 +1,265 @@
+{
+  "schema": 1,
+  "slug": "reading-korean-food-labels",
+  "source_ref": "working-tree",
+  "content_sha256": "8d83e15dd49150527b42a0ca96959e484994d3bf3abe8c9b1ebf001f9c35e9ef",
+  "judged_at": "2026-08-14T15:24:54.011Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.232 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 18,
+      "max_points": 20,
+      "score": 9,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "Despite the changelog preamble, the reader gets the core answer — flip the package and scan for 밀 — inside the first 200 words, with the four-step method framed immediately after.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 2,
+          "max": 2,
+          "note": "Title is 38 chars (58 with the appended site suffix), description ~151 chars, keyword terms present in both without repeating the same phrasing.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings carry the argument on their own (allergen line flags wheat, barley and rye do not appear there, what to do when the label can't answer), and the numbered steps plus the Hangul table make it fully skimmable.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Five in-body links to hidden-gluten, convenience-store snacks, the celiac travel guide, and butter tteok, each placed where the reader would actually want the next step (soy sauce, brand-level snack breakdown).",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All three FAQ answers — the MFDS list gap for 보리/호밀, the 쌀 marketing trap, and the full wheat/barley/rye vocabulary — are established in the body, and each answer is self-contained enough to stand as a rich result.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 2,
+          "max": 3,
+          "note": "Real first-hand texture (the failed rice cracker, the self-corrected 엿기름 gloss, \"on the shelves we scan\") but no dates, brands, stores, or counts to anchor it.",
+          "evidence_quote": "The snack that broke me of trusting the allergen line alone was a \"rice\" cracker: allergen line clean, but 밀 전분 sitting a few items up in the ingredients."
+        },
+        {
+          "id": "expertise",
+          "points": 1,
+          "max": 2,
+          "note": "Korean terms are consistently romanised and the regulatory citation is precise, but the article names zero actual products even in the section devoted to what clears the scan.",
+          "evidence_quote": "**Plain yogurt** — check the add-ins"
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "Primary regulatory source (식품등의 표시기준, 별표 2) linked directly to law.go.kr with an explicit retrieval date, plus the MFDS 식품안전나라 database — attribution is specific and checkable.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "Explicitly states what the method cannot establish (\"It does not establish that there is no gluten in the package\"), flags its own non-survey non-lab basis, discloses a corrected prior error, and carries no undisclosed commercial links.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "expertise",
+          "severity": "major",
+          "quote": "**Plain yogurt** — check the add-ins",
+          "why": "The \"What actually passes\" section — the part a shopper is most likely to act on — names only generic categories, never a single brand or product name (no Orion/Lotte/CU/GS25 SKU). Korean terminology and the regulatory citation are precise, but the product layer of specificity is absent, so a reader cannot verify any shelf claim.",
+          "fix": "Name 3–5 actual products with maker and pack size (e.g. \"CU 자체브랜드 구운계란 5입\", a specific 쌀과자 brand that cleared, and the specific 'rice' cracker whose ingredient list contained 밀 전분), each with the date it was scanned."
+        },
+        {
+          "criterion": "experience",
+          "severity": "minor",
+          "quote": "The snack that broke me of trusting the allergen line alone was a \"rice\" cracker: allergen line clean, but 밀 전분 sitting a few items up in the ingredients.",
+          "why": "This is the article's strongest first-hand moment but it is anonymised — no product, no store, no month, no quantity. As written it reads like an illustrative anecdote rather than an observed event, which is the difference between 2 and 3 on Experience.",
+          "fix": "Add the product name, the chain and district where it was bought, and roughly when (e.g. \"a 쌀과자 from a GS25 in Mapo, March 2026\"), plus how many packages were scanned in total to arrive at the baseline list."
+        },
+        {
+          "criterion": "search_intent",
+          "severity": "minor",
+          "quote": "*Updated August 2026: added the MFDS labeling-standard citation, romanised the label terms, corrected the 엿기름 gloss to malted barley, added the manufacturer-contact route, and fixed an error",
+          "why": "A ~60-word editorial changelog sits above the answer. It is good disclosure practice but it consumes a third of the first-200-word budget and is the first thing a snippet-extracting crawler sees.",
+          "fix": "Move the changelog to the bottom of the article (or into a collapsed \"Revision history\" block) and open directly on the flip-and-scan reflex."
+        },
+        {
+          "criterion": "authoritativeness",
+          "severity": "minor",
+          "quote": "current text as retrieved August 2026; the standard is amended regularly, so re-check it",
+          "why": "The retrieval date is given but the standard's amendment number and effective date are not, so a reader who follows the link in 2027 cannot tell whether the version they see is the one the article read.",
+          "fix": "Add the specific amendment identifier and effective date of 식품등의 표시기준 (고시 제____호, 시행 YYYY-MM-DD) alongside the retrieval date."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 26199,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 6373,
+        "output_tokens_details": {
+          "thinking_tokens": 4462
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 26199,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 6373,
+            "cache_read_input_tokens": 0,
+            "cache_creation_input_tokens": 26199,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 26199
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 19,
+      "max_points": 20,
+      "score": 9.5,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "Regulatory claims are linked to the MFDS standard and shelf claims are explicitly flagged as first-hand and non-systematic, but a few compositional food-science claims (syrup derivation, soy sauce composition) carry no source and are not marked as observation.",
+          "evidence_quote": "물엿 is usually corn-derived, but 조청 is traditionally saccharified with 엿기름"
+        },
+        {
+          "id": "no_fabrication",
+          "points": 3,
+          "max": 3,
+          "note": "No invented products, statistics, or dates; the July publish date and the August update note are internally consistent, and every Korean term, agency, database, and URL given is checkable and real.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "The piece names its two evidence sources separately (regulation read off the linked standard; shelf claims from the authors' own Seoul shopping) and states plainly what the method cannot establish.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 4,
+          "max": 4,
+          "note": "No absolute safety guarantee anywhere; cross-contamination gets its own step, celiac and NCGS are handled separately with the stricter rule for celiac, and the 'passes' list is explicitly defined as 'not a safety rating'.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "Retrieval date is stated for the regulatory source, the standard's amendment cadence is flagged, and reformulation risk is given a standing caution.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 2,
+          "max": 2,
+          "note": "The load-bearing fact — wheat mandatory, barley and rye not — is stated correctly and repeated in three places, and the Hangul terms, romanisations, and glosses (소맥, 대맥, 엿기름, 물엿/조청) are accurate.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "Reader gets the primary legal text link, the MFDS product database, and a copy-pasteable Korean question for the manufacturer's help line — three independent ways to check without trusting the author.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "물엿 is usually corn-derived, but 조청 is traditionally saccharified with 엿기름",
+          "why": "This is a compositional claim about two ingredients, not a shelf observation, so the article's blanket provenance statement ('our own shopping in Seoul') does not cover it and no source is given. It errs toward caution, so no reader is put at risk, but it is unverifiable as written.",
+          "fix": "Either cite a source for the typical derivation of 물엿 and 조청, or mark the sentence as the authors' working assumption (e.g. 'we treat 물엿 as corn-derived unless the label says otherwise')."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "soy sauce is wheat",
+          "why": "Stated as a flat fact with only an internal cross-link. It is true of 양조간장/진간장 but not of traditional 한식간장(조선간장), which is soybean-and-salt. The direction of error is safe for celiac readers, but the claim is unsourced and over-general.",
+          "fix": "Qualify to 'most Korean soy sauce is brewed with wheat' and point to the ingredient list, keeping the cross-link for detail."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 14093,
+        "cache_read_input_tokens": 30175,
+        "output_tokens": 5499,
+        "output_tokens_details": {
+          "thinking_tokens": 4281
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 14093,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 5499,
+            "cache_read_input_tokens": 30175,
+            "cache_creation_input_tokens": 14093,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 14093
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: seo-eeat 9/9.5"
+  }
+}
