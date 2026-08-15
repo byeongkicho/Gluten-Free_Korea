@@ -21,6 +21,10 @@
 4. snacks·celiac: MFDS 고시 번호(제2025-60호)를 이 둘에도 반영하면 일관성 완성. 단 건드리면 재채점 필요 — 지금은 PASS 상태
 5. snacks 소주 출처·오리온 URL 트림, celiac 잔여 advisory(집간장 용어 본문 미등장, 오프너 4개 과다, FAQ-본문 중복)
 
+**📸 인스타 115일 만에 재개 + 휴면 감시 신설 (08-15):** Vegetus 캐러셀 5장 게시([`DcD9z3YAGAV`](https://www.instagram.com/p/DcD9z3YAGAV/)) — 04-21 이후 첫 게시. 🔴 **공백이 무증상이었다**: IG 지표 4종이 전부 "발행할 수 있는가"만 물어서, 토큰·데이터접근·API 전부 녹색인 채 4개월 침묵이 아무 데도 안 잡혔다(8/14에 메운 "만료형 알림만 있어 사이트가 죽어도 조용하다"와 같은 계열). → `ngk_instagram_days_since_last_post` + 알림 `ngk-ig-dormant`(>30일, **새 그룹 `ngk-operations`** = 사람이 안 해서 나빠지는 축) 신설, `--apply` 반영(생성 1·갱신 0). 게시 후 115→0일, 경고 해제 실측. **버그 1건 수정(`783bfb5`)**: `post-instagram.py`가 `places/{slug}/cover`를 존재 확인 없이 캐러셀 1번에 넣어 cover 없는 매장은 404로 게시 실패 — `img-001` eval 사각지대(cover는 images 배열 밖). ▶ 다음 후보: feeke·x-ake·francois(각 5장)·rami-scone(3장). 미게시 14곳, 상세 = 위키 `operations/인스타그램 운영.md`.
+
+**📊 GA4 128일 만에 갱신 (08-15):** 최근 7일 = 사용자 17·세션 19·PV 38·체류 85초. 오가닉 10 / 다이렉트 7 / **AI Assistant 2**(신규 유입원). 해외 위주(한국 1명), 모바일 13:데스크톱 4. **M3 게이트(오가닉 ≥50/day)와 갭이 크다.** `npm run ga4`는 `.env` 필요, 리포트는 gitignored.
+
 **🏪 237 Pizza = 영업 상태 미확인 (운영자 확인, 08-15):** 마지막 방문 **2026년 여름**에 리모델링 휴업, 재개 미확인. 공식 사이트 `237pizza.com`도 **HTTP 500 무응답**(08-15 확인), 웹 검색으로도 재개 정보 없음. 조치 = celiac 가이드(매장 섹션 경고 블록·FAQ 2곳·요약 불릿·시제 과거화) + `overrides.json` note/note_ko 경고(매장 상세에 노출) + hidden-gluten 시제. **`website` 필드는 유지**(500이 일시적일 수 있음) — 영구 사망 확인되면 그때 제거. ▶ 다음 방문 때 재개 여부 + GFCO 인증서 실물을 **같이** 확인하면 두 항목이 한 번에 닫힌다.
 
 **🔴 이번에 정정한 실오류 3건 (판사가 잡음 — 전부 배포본에 있던 것):**
@@ -148,11 +152,13 @@ GitHub Actions (매시간) → healthcheck 16지표 → Grafana Cloud 도쿄(inf
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-08-15 11:30
+- **마지막 업데이트:** 2026-08-15 22:20
 - **작업자:** Claude Code
 - **브랜치:** main
 - **CI:** 🟢 **eval-runner 8/8** — content-001 포함 전원 녹색 (5편 PASS). baseline 갱신됨(`content-001,1,1`), 이제부터 회귀 감지가 실제로 작동한다
 - **⚠️ 빌드 노이즈:** `npm run build`가 `data/places.json`의 `updatedAt` 24건을 빌드 시각으로 갱신한다(내용 무변경). 커밋 전 `git checkout data/places.json`으로 걷어낼 것
+- **healthcheck 잔여 경고 1건:** `Data: addressEn — 1 place` = **sunny-bread**. 🔴 이 매장은 주소만 빠진 게 아니라 **상호(우리 데이터 `Sunnyhouse` vs 실제 브랜드 써니브레드)·동네(한남 vs 후암)·영업 상태가 전부 미확인**이다. HappyCow에 `CLOSED: Sunny House`와 `Sunny Bread - Huam`이 별도로 존재 = 이전 정황. 공식 사이트는 네이버 modoo 서비스 종료(2025-06-26)로 소멸, 네이버 플레이스·HappyCow는 봇 차단 → 웹으로는 확정 불가. **237에 이은 두 번째 상태 불명 매장.** 위키에 게시 금지 표시함. ▶ 운영자 확인 필요
+- **🔍 구조적 관찰:** 24개 매장의 **영업 상태를 아무도 검증하지 않는다.** healthcheck는 URL 200만 보고, 매장이 실제로 장사하는지는 안 본다. 한 세션에서 2건(237 휴업·sunny-bread 이전 의심)이 나온 걸 보면 더 있을 가능성이 높다. 24곳 일괄 점검이 필요한 시점
 - **참고:** CLAUDE.md의 "next-on-pages 빌드 시 `output: 'export'` 필요" 노트는 현행 next.config.mjs와 불일치(스테일) — 실제 config엔 없음, pages:build 정상 동작 확인됨(08-13)
 - **점수 진단(2026-07-24, 별도 전문가 평가):** 웹 5.3/10, PM 4.3/10 — "자산 품질은 7, 운영 규율은 3.5". 갭은 대부분 *이미 시작한 것의 완성*.
 
