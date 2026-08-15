@@ -4,7 +4,9 @@
     "why": "임계값은 실측 기준선에서 유도했다 (2026-08-14 24h 집계: 가용률 100%, 응답 avg 126ms / max 558ms, 실패 0).",
     "latency_seconds": "1.0 — 관측 최대(558ms)의 약 2배. 정상 변동은 통과시키고 실제 저하만 잡는다.",
     "staleness_seconds": "21600(6h) — 시간당 수집이지만 무료 GitHub 러너 스케줄 지연으로 24h에 20/24 샘플이 관측된다. 3h면 오탐이 나고, 6h 무소식은 지연이 아니라 파이프라인 고장으로 본다.",
-    "nodata_policy": "가용성·지연은 noDataState=OK — 수집 결손을 서비스 장애로 오인하지 않는다. 그 결손 자체는 staleness 룰이 noDataState=Alerting으로 잡는다. 즉 '서비스가 죽은 것'과 '지표가 안 오는 것'을 다른 룰로 분리했다."
+    "nodata_policy": "가용성·지연은 noDataState=OK — 수집 결손을 서비스 장애로 오인하지 않는다. 그 결손 자체는 staleness 룰이 noDataState=Alerting으로 잡는다. 즉 '서비스가 죽은 것'과 '지표가 안 오는 것'을 다른 룰로 분리했다.",
+    "dormant_days": "30 — 게시 만료가 아니라 운영 정지를 잡는 축. healthcheck는 14일에 경고(주 1회 리듬 2회 결손), 알림은 30일로 더 보수적. noDataState=OK인 이유: 지표가 안 오는 것은 토큰·API 룰이 이미 잡으므로 중복 발화를 피한다.",
+    "why_operations_group": "ngk-expiry는 시간이 흐르면 자동으로 나빠지는 것(SSL·데이터접근), ngk-operations는 사람이 하지 않아서 나빠지는 것. 2026-08-15 실측으로 후자가 무감시였음이 드러났다 — 파이프라인이 멀쩡한 채 115일 침묵."
   },
   "rules": [
     {
@@ -418,6 +420,89 @@
       "keep_firing_for": "0s",
       "annotations": {
         "summary": "Instagram data access window: {{ $values.B }} days (negative = already lapsed). Re-authenticate the Facebook app."
+      },
+      "labels": {
+        "service": "noglutenkorea"
+      },
+      "isPaused": false,
+      "notification_settings": null,
+      "record": null
+    },
+    {
+      "uid": "ngk-ig-dormant",
+      "orgID": 1,
+      "folderUID": "ngk-monitoring",
+      "ruleGroup": "ngk-operations",
+      "title": "Instagram dormant (>30 days since last post)",
+      "condition": "C",
+      "data": [
+        {
+          "refId": "A",
+          "queryType": "",
+          "relativeTimeRange": {
+            "from": 600,
+            "to": 0
+          },
+          "datasourceUid": "grafanacloud-prom",
+          "model": {
+            "expr": "last_over_time(ngk_instagram_days_since_last_post[7d])",
+            "instant": true,
+            "intervalMs": 1000,
+            "maxDataPoints": 43200,
+            "range": false,
+            "refId": "A"
+          }
+        },
+        {
+          "refId": "B",
+          "queryType": "",
+          "relativeTimeRange": {
+            "from": 0,
+            "to": 0
+          },
+          "datasourceUid": "__expr__",
+          "model": {
+            "expression": "A",
+            "intervalMs": 1000,
+            "maxDataPoints": 43200,
+            "reducer": "last",
+            "refId": "B",
+            "type": "reduce"
+          }
+        },
+        {
+          "refId": "C",
+          "queryType": "",
+          "relativeTimeRange": {
+            "from": 0,
+            "to": 0
+          },
+          "datasourceUid": "__expr__",
+          "model": {
+            "conditions": [
+              {
+                "evaluator": {
+                  "params": [
+                    30
+                  ],
+                  "type": "gt"
+                }
+              }
+            ],
+            "expression": "B",
+            "intervalMs": 1000,
+            "maxDataPoints": 43200,
+            "refId": "C",
+            "type": "threshold"
+          }
+        }
+      ],
+      "noDataState": "OK",
+      "execErrState": "OK",
+      "for": "0s",
+      "keep_firing_for": "0s",
+      "annotations": {
+        "summary": "No Instagram post for {{ $values.B }} days. Publishing pipeline is healthy — this is an operating gap, not a technical failure."
       },
       "labels": {
         "service": "noglutenkorea"

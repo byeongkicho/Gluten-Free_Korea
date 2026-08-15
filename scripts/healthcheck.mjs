@@ -67,6 +67,7 @@ const METRIC_HELP = {
   ngk_instagram_token_expiry_days: 'Days until the long-lived Instagram token expires (absent when it never expires)',
   ngk_instagram_data_access_expiry_days: 'Days until Facebook data access expires; negative means already lapsed',
   ngk_instagram_api_up: 'Instagram publishing target is reachable with the page token (1) or not (0)',
+  ngk_instagram_days_since_last_post: 'Days since the most recent Instagram post; rises while the account is dormant',
   ngk_places_total: 'Number of places in places.json',
   ngk_places_missing: 'Places missing a given field',
   ngk_ga4_report_age_days: 'Age of the most recent GA4 report',
@@ -228,6 +229,34 @@ async function checkInstagramToken() {
         const { username } = await probe.json();
         metric('ngk_instagram_api_up', 1);
         pass('Instagram API', `Publishing target reachable (@${username})`);
+
+        // "발행할 수 있다"와 "발행하고 있다"는 다른 질문이다. 만료만 감시하면
+        // 파이프라인이 멀쩡한 채로 몇 달 조용해도 어떤 지표에도 잡히지 않는다
+        // — 2026-08-15 실측: 마지막 게시가 04-21, 116일 침묵이 무증상이었다.
+        const day = 1000 * 60 * 60 * 24;
+        const media = await fetch(
+          `https://graph.facebook.com/v21.0/${igAccountId}/media` +
+          `?fields=timestamp&limit=1&access_token=${pageToken}`
+        );
+        if (media.ok) {
+          const { data: posts } = await media.json();
+          if (posts?.length) {
+            const last = posts[0].timestamp;
+            const days = Math.floor((Date.now() - new Date(last).getTime()) / day);
+            metric('ngk_instagram_days_since_last_post', days);
+            // 주 1회 리듬을 두 번 놓치면 운영이 멈춘 것으로 본다.
+            if (days > 14) {
+              warn('Instagram Posting', `No post for ${days} days (last: ${last.slice(0, 10)})`);
+            } else {
+              pass('Instagram Posting', `Last post ${days} days ago`);
+            }
+          } else {
+            warn('Instagram Posting', 'Account has no posts');
+          }
+        } else {
+          const body = await media.json().catch(() => ({}));
+          warn('Instagram Posting', `Cannot read media — ${body.error?.message || media.status}`);
+        }
       } else {
         const body = await probe.json().catch(() => ({}));
         metric('ngk_instagram_api_up', 0);
