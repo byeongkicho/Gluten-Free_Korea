@@ -14,19 +14,19 @@ faq:
   - q: "Can I eat Korean BBQ gluten-free?"
     a: "Yes, with prep. Ask for unseasoned meat (\"양념 안 한 고기 있나요?\"), bring GF soy sauce, and skip sauced banchan sides. Plain salt-grilled samgyeopsal is the safest order — but if you're celiac, also ask for a fresh grill plate and clean tongs, skip ssamjang, and treat any grill that's been cooking soy-marinated meat as contaminated."
   - q: "Is any restaurant in Seoul truly dedicated gluten-free?"
-    a: "Yes, but few: two in Seoul — 237 Pizza (Hannam) and monil2 house (Yeonnam) — plus Cafe Rebirth, about an hour south in Pyeongtaek. Those three are the ones we trust most."
+    a: "Yes, but few. The ones we trust most are monil2 house (Yeonnam, Seoul) and Cafe Rebirth, about an hour south in Pyeongtaek. 237 Pizza in Hannam is the third — but it was closed for remodelling when we last went in summer 2026, we have not confirmed that it reopened, and its website was not responding in August 2026. Check before you travel to it."
   - q: "Which Korean soy sauce is gluten-free?"
     a: "Commercial Korean soy sauces almost all contain wheat. Imported Japanese tamari is the easiest substitute to find in Seoul (Lotte Mart, larger Emart, Kim's Club) — but check the label: not all tamari is wheat-free, as some brands include a small amount of wheat. For long-term residents, traditional home-brewed soy sauce (집간장) without wheat is the classic option."
   - q: "Can I buy gluten-free bread in Korea?"
     a: "Yes, but verify. Some \"rice bread\" shops blend wheat flour into the dough — one bakery owner cheerfully told us his was 10% wheat. Only commit to dedicated GF bakeries like monil2 house and Cafe Rebirth."
 ---
 
-*Updated August 2026: added the MFDS labeling-standard and manufacturer citations, dated our franchise call, and removed a certification claim we could no longer verify — the August 2026 retrieval dates below are from that update.*
+*Updated August 2026: added the MFDS labeling-standard and manufacturer citations, dated our franchise call, removed a certification claim we could no longer verify, corrected the tteokbokki entry to cover 밀떡 (wheat tteok), and flagged 237 Pizza as unconfirmed — it was closed for remodelling on our last visit. The August 2026 retrieval dates below are from that update.*
 
 ## TL;DR
 
 - **Korea is doable gluten-free — with prep.** Soy sauce, gochujang, doenjang, and ramyeon are wheat. Plain rice and unmarinated grilled meat are the safe baseline — celiacs, mind the shared grill (see the BBQ FAQ).
-- **Three dedicated GF places worth the trip:** 237 Pizza (Hannam), monil2 house (Yeonnam), Cafe Rebirth (Pyeongtaek).
+- **Dedicated GF places worth the trip:** monil2 house (Yeonnam), Cafe Rebirth (Pyeongtaek), and 237 Pizza (Hannam) — **237 was closed for remodelling as of summer 2026 and we have not confirmed it reopened, so confirm before going.**
 - **One phrase changes everything:** *"제가 밀가루 알러지가 있어서요."* — frame it as an allergy, not a preference, and the kitchen actually checks.
 - **Convenience stores:** flip and scan for **밀** in the allergen line. Safe baseline is eggs, fruit, plain yogurt, plus a couple of chips we have manufacturer-label evidence for — see the store section for which, and re-check the packet.
 - My wife has non-celiac gluten sensitivity (not celiac). Celiac travelers: apply stricter standards than we do.
@@ -91,7 +91,7 @@ The short version: almost everything has soy sauce. (Everything in this section 
 Then there's a second tier of hidden gluten:
 
 - **Eomuk** (어묵, fish cake) is usually wheat starch. A few brands make versions without wheat — Goraesa (고래사) is the name that comes up most, but verify the specific product's 원재료명 — and the default on a stew or a street stall is wheat.
-- **Tteokbokki** (떡볶이, spicy rice cake dish): the rice cakes themselves are GF, but the sauce contains gochujang and the fish cakes mixed in have wheat.
+- **Tteokbokki** (떡볶이, spicy rice cake dish): three problems, not one. The tteok itself may be wheat — **밀떡** (*mil-tteok*) is made with wheat flour and is standard at street stalls and in supermarket packets, so "tteok is rice" is not a rule you can rely on. Rice tteok (쌀떡) exists, but the packet has to say so. On top of that, the sauce contains gochujang and the fish cakes mixed in have wheat.
 - **Fried chicken** in Korea is almost always wheat-battered. There are rice-based brands (we'll get to ssaltongdak below) but they're rare.
 - **Ramyeon** is wheat noodles, full stop. Every convenience-store cup, every late-night ramyeon bar. Rice-based Korean ramen exists but is niche.
 
@@ -117,6 +117,8 @@ Here's what's at the top.
 
 **237 Pizza** (237피자) — Hannam-dong, Yongsan-gu, B1
 
+> ⚠️ **Status: unconfirmed. Do not make a trip of this one without checking first.** The last time we went, in **summer 2026**, it was closed for remodelling, and we have not been back to confirm it reopened. Its website (237pizza.com) was returning a server error when we checked in August 2026. Everything below describes our visits while it was open — we're leaving it in the guide because a dedicated GF pizzeria is worth knowing about if it comes back, not because we can tell you it's trading today.
+
 A fully gluten-free pizzeria — to our knowledge the only one in Korea. The owner has celiac disease himself, and opened 237 Pizza after years of research — partly out of frustration that no one else in Korea had. (An earlier version of this guide called it "GFCO-certified"; we couldn't re-verify that in the GFCO directory as of August 2026, so we've removed the claim until we can confirm it at the shop.)
 
 237 was on our must-visit list the moment we landed in Seoul. I was skeptical at first — "GF pizza" is a phrase that has burned me enough times — but after one slice of their artichoke pizza I gave up skepticism. The crust isn't apologetic. It's a pizza that happens to be gluten-free, not the other way around.
@@ -124,7 +126,7 @@ A fully gluten-free pizzeria — to our knowledge the only one in Korea. The own
 ![237 Pizza in Hannam — fully gluten-free pizzeria run by a celiac owner](/images/places/237-pizza/01.webp)
 *237 Pizza, Hannam. Direct photo from visit.*
 
-We order the **Quattro Funghi** (mushroom) every visit. If you're there on a weekend evening, expect a wait. The interior is warm, old-pop music plays, and it feels like a place the owner actually wants to sit in. For the full writeup see our [gluten-free restaurants roundup](/blog/gluten-free-restaurants-seoul).
+We ordered the **Quattro Funghi** (mushroom) every visit. On a weekend evening, expect a wait. The interior is warm, old-pop music plays, and it feels like a place the owner actually wants to sit in. For the full writeup see our [gluten-free restaurants roundup](/blog/gluten-free-restaurants-seoul).
 
 **monil2 house** (모닐2하우스) — Yeonnam-dong, Mapo-gu
 
@@ -252,7 +254,7 @@ No. It looks rice-based, but soy sauce, gochujang, doenjang, and wheat-based noo
 Yes, with prep. Ask for unseasoned meat ("양념 안 한 고기 있나요?"), bring GF soy sauce, and skip sauced banchan sides. Plain salt-grilled samgyeopsal is the safest order — but if you're celiac, also ask for a fresh grill plate and clean tongs, skip ssamjang, and treat any grill that's been cooking soy-marinated meat as contaminated.
 
 **Is any restaurant in Seoul truly dedicated gluten-free?**
-Yes, but few: two in Seoul — 237 Pizza (Hannam) and monil2 house (Yeonnam) — plus Cafe Rebirth, about an hour south in Pyeongtaek. Those three are the ones we trust most.
+Yes, but few. The ones we trust most are monil2 house (Yeonnam, Seoul) and Cafe Rebirth, about an hour south in Pyeongtaek. 237 Pizza in Hannam is the third — but it was closed for remodelling when we last went in summer 2026, we have not confirmed that it reopened, and its website was not responding in August 2026. Check before you travel to it.
 
 **Which Korean soy sauce is gluten-free?**
 Commercial Korean soy sauces almost all contain wheat. Imported Japanese tamari is the easiest substitute to find in Seoul (Lotte Mart, larger Emart, Kim's Club) — but check the label: not all tamari is wheat-free, as some brands include a small amount of wheat. For long-term residents, traditional home-brewed soy sauce (집간장) without wheat is the classic option.
