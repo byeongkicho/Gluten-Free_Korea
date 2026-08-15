@@ -31,6 +31,16 @@ API_BASE = "https://graph.facebook.com/v21.0"
 CLOUD_NAME = "dbbreghct"
 
 
+def url_exists(url, timeout=10):
+    """Cloudinary 리소스가 실제로 응답하는지 확인. 게시 전에 깨진 URL을 걸러낸다."""
+    req = urllib.request.Request(url, method="HEAD")
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return r.status == 200
+    except Exception:
+        return False
+
+
 def api_post(endpoint, data, retries=3):
     data["access_token"] = TOKEN
     encoded = urllib.parse.urlencode(data).encode()
@@ -80,7 +90,15 @@ def main():
     import time as _time
     cache_bust = int(_time.time())
     cover_url = f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/c_fill,w_1080,h_1080,q_90/v{cache_bust}/places/{args.slug}/cover"
-    urls = [cover_url]
+
+    # 이 주석은 원래 "cover first if it exists"였는데 코드는 존재 확인 없이 무조건
+    # 첫 장에 넣고 있었다. cover 리소스가 없는 매장(대부분)은 캐러셀 1번 이미지가
+    # 404가 되고, Graph API는 그 컨테이너 생성 단계에서 실패한다. 실제로 확인한다.
+    urls = []
+    if url_exists(cover_url):
+        urls.append(cover_url)
+    else:
+        print(f"  cover 없음 — 건너뜀 (places/{args.slug}/cover)")
     for img in images:
         # Menu images (pre-padded to 1080x1080) — no crop transformation
         if "menu" in img:
