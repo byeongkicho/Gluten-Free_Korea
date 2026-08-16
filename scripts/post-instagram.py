@@ -91,14 +91,24 @@ def main():
     cache_bust = int(_time.time())
     cover_url = f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/c_fill,w_1080,h_1080,q_90/v{cache_bust}/places/{args.slug}/cover"
 
-    # 이 주석은 원래 "cover first if it exists"였는데 코드는 존재 확인 없이 무조건
-    # 첫 장에 넣고 있었다. cover 리소스가 없는 매장(대부분)은 캐러셀 1번 이미지가
-    # 404가 되고, Graph API는 그 컨테이너 생성 단계에서 실패한다. 실제로 확인한다.
-    urls = []
-    if url_exists(cover_url):
-        urls.append(cover_url)
-    else:
-        print(f"  cover 없음 — 건너뜀 (places/{args.slug}/cover)")
+    # cover는 "있으면 좋은 것"이 아니라 게시 준비가 끝났다는 표시다. 수동으로
+    # 고른 정사각 대표 이미지이고, 자동 생성 경로가 없다. 게시된 9곳 중 8곳이
+    # 보유, 미게시 15곳은 전무 — 즉 cover 유무가 큐레이션 여부를 가른다.
+    #
+    # 2026-08-15 사고: 이 자리에서 cover를 그냥 건너뛰도록 고쳤더니, 큐레이션되지
+    # 않은 vegetus가 게시돼 버렸다. 첫 장이 "Christmas 2024 Special Dinner"
+    # 세로 배너였고 1080 정사각으로 잘려 나갔다(8월에 2년 전 크리스마스 홍보물).
+    # 게시물은 삭제했다. cover가 없으면 건너뛰는 게 아니라 멈춰야 한다.
+    if not url_exists(cover_url):
+        print(f"\n중단: places/{args.slug}/cover 가 Cloudinary에 없습니다.")
+        print("  cover = 수동으로 고른 정사각 대표 이미지 = 게시 준비 완료 표시.")
+        print("  이게 없으면 캐러셀 1번이 무엇이 될지 통제되지 않습니다")
+        print("  (세로 배너·철 지난 프로모션·메뉴판이 첫 장이 될 수 있음).")
+        print(f"\n  해야 할 일: {args.slug}의 대표 사진을 골라 1080x1080으로")
+        print(f"  Cloudinary에 'places/{args.slug}/cover'로 업로드한 뒤 다시 실행하세요.")
+        raise SystemExit(1)
+
+    urls = [cover_url]
     for img in images:
         # Menu images (pre-padded to 1080x1080) — no crop transformation
         if "menu" in img:

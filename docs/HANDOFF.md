@@ -21,7 +21,13 @@
 4. snacks·celiac: MFDS 고시 번호(제2025-60호)를 이 둘에도 반영하면 일관성 완성. 단 건드리면 재채점 필요 — 지금은 PASS 상태
 5. snacks 소주 출처·오리온 URL 트림, celiac 잔여 advisory(집간장 용어 본문 미등장, 오프너 4개 과다, FAQ-본문 중복)
 
-**📸 인스타 115일 만에 재개 + 휴면 감시 신설 (08-15):** Vegetus 캐러셀 5장 게시([`DcD9z3YAGAV`](https://www.instagram.com/p/DcD9z3YAGAV/)) — 04-21 이후 첫 게시. 🔴 **공백이 무증상이었다**: IG 지표 4종이 전부 "발행할 수 있는가"만 물어서, 토큰·데이터접근·API 전부 녹색인 채 4개월 침묵이 아무 데도 안 잡혔다(8/14에 메운 "만료형 알림만 있어 사이트가 죽어도 조용하다"와 같은 계열). → `ngk_instagram_days_since_last_post` + 알림 `ngk-ig-dormant`(>30일, **새 그룹 `ngk-operations`** = 사람이 안 해서 나빠지는 축) 신설, `--apply` 반영(생성 1·갱신 0). 게시 후 115→0일, 경고 해제 실측. **버그 1건 수정(`783bfb5`)**: `post-instagram.py`가 `places/{slug}/cover`를 존재 확인 없이 캐러셀 1번에 넣어 cover 없는 매장은 404로 게시 실패 — `img-001` eval 사각지대(cover는 images 배열 밖). ▶ 다음 후보: feeke·x-ake·francois(각 5장)·rami-scone(3장). 미게시 14곳, 상세 = 위키 `operations/인스타그램 운영.md`.
+**📸 인스타: 휴면 감시 신설(유효) + 🔴 오배포 사고(08-15 게시 → 08-16 삭제):**
+
+- **감시는 유효**: IG 지표 4종이 전부 "발행할 수 있는가"만 물어서, 토큰·데이터접근·API 전부 녹색인 채 4개월 침묵이 아무 데도 안 잡혔다(8/14에 메운 "만료형 알림만 있어 사이트가 죽어도 조용하다"와 같은 계열). → `ngk_instagram_days_since_last_post` + 알림 `ngk-ig-dormant`(>30일, **새 그룹 `ngk-operations`** = 사람이 안 해서 나빠지는 축) 신설, `--apply` 반영.
+- 🔴 **사고**: Vegetus를 게시했다가 삭제했다. 첫 장이 **"Christmas 2024 Special Dinner" 세로 배너**였고 1080 정사각으로 잘려 나갔다 — 8월에 2년 전 크리스마스 홍보물이 썸네일. Graph API `DELETE /{media-id}` 동작함(`success:true`), 계정 04-21로 원복.
+- 🔴 **원인은 "버그 수정"이었다**: `post-instagram.py`가 cover를 존재 확인 없이 첫 장에 넣던 것을 **"없으면 건너뛴다"로 고친 것**. cover 부재는 결손이 아니라 **"게시 큐레이션 미완" 신호**였고, 안전장치를 제거한 셈이 됐다. **방증**: 게시 9곳 중 8곳 cover 보유 / **미게시 15곳 전무**.
+- **교훈**: 이미지 HTTP 200만 보고 **내용을 열어보지 않았다.** 200은 "파일이 있다"이지 "적절한 사진이다"가 아니다. → cover 없으면 **exit 1로 게시 중단**하도록 재수정.
+- ▶ **지금 게시 준비된 매장은 0곳.** 미게시 15곳 전부 cover 없음. 게시하려면 대표 사진을 1080×1080으로 골라 `places/{slug}/cover`로 Cloudinary 업로드가 선행(**자동화 없음, 수동 큐레이션**). 큐레이션 후보 = feeke·x-ake·francois(각 5장)·rami-scone(3장). 상세 = 위키 `operations/인스타그램 운영.md`.
 
 **📊 GA4 128일 만에 갱신 (08-15):** 최근 7일 = 사용자 17·세션 19·PV 38·체류 85초. 오가닉 10 / 다이렉트 7 / **AI Assistant 2**(신규 유입원). 해외 위주(한국 1명), 모바일 13:데스크톱 4. **M3 게이트(오가닉 ≥50/day)와 갭이 크다.** `npm run ga4`는 `.env` 필요, 리포트는 gitignored.
 
@@ -152,7 +158,7 @@ GitHub Actions (매시간) → healthcheck 16지표 → Grafana Cloud 도쿄(inf
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-08-15 22:20
+- **마지막 업데이트:** 2026-08-16 18:30
 - **작업자:** Claude Code
 - **브랜치:** main
 - **CI:** 🟢 **eval-runner 8/8** — content-001 포함 전원 녹색 (5편 PASS). baseline 갱신됨(`content-001,1,1`), 이제부터 회귀 감지가 실제로 작동한다
