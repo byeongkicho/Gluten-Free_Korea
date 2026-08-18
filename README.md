@@ -68,6 +68,42 @@ moved, an agent reading it skips the instruction. The build stays green, the
 deploy succeeds, and the rule silently stops existing. It found three such
 defects the first time it ran.
 
+## Observability
+
+The site is monitored by an exporter in this repository, not by a hosted uptime
+checker. `scripts/healthcheck.mjs` derives metrics — availability, response time
+per endpoint, SSL days remaining, data integrity, check failures — and
+`scripts/push-metrics.mjs` sends them to Grafana Cloud as Influx line protocol
+over plain HTTP, which avoids a remote_write client and keeps the script at zero
+runtime dependencies. GitHub Actions runs it hourly.
+
+What is actually managed as code:
+
+| Artifact | Where |
+|---|---|
+| Dashboard (10 panels, incl. 30d error-budget remaining) | `monitoring/grafana-dashboard.json` |
+| Alert rules | `monitoring/grafana-alerts.json` |
+| SLO definition and its limits | `docs/SLO.md` |
+| Folder, contact point, rule groups, dashboard | `terraform/` |
+
+The SLO is **99.5% availability over 30 days** (error budget 3h36m). It is not
+99.9% because collection runs hourly: an outage shorter than an hour can be
+missed entirely, and at that sampling rate 99.9% is not measurable — the target
+is set to what this pipeline can actually adjudicate. Availability and latency
+rules use `noDataState: OK` and a separate staleness rule alerts when metrics
+stop arriving, so "the site is down" and "the pipeline is down" page differently.
+
+Two things this caught. Instagram data access had been expired for 44 days
+before the pipeline existed; the alert fired on day one, and cleared by itself
+once re-auth restored the metric. And the original two rules were both
+expiry-warning rules — nothing would have paged if the site itself went down —
+which is why the availability, latency and staleness rules exist.
+
+One honest gap: six rules run in production, **five of them under Terraform**.
+The sixth was added through the older provisioning script after the migration,
+so it sits outside the state. Having two provisioning paths is itself the drift
+this repo warns about, and consolidating it is the next task here.
+
 ## Publishing gate
 
 Blog posts are graded by two independent LLM judges — one for search
