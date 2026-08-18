@@ -63,6 +63,9 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--slug", required=True)
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--skip", default="",
+                        help="캐러셀에서 뺄 이미지 번호(쉼표). cover로 쓴 원본이나 "
+                             "음식이 아닌 컷을 제외할 때. 예: --skip 04,05")
     args = parser.parse_args()
 
     # Load places.json to get image count
@@ -109,7 +112,11 @@ def main():
         raise SystemExit(1)
 
     urls = [cover_url]
+    skip = {s.strip() for s in args.skip.split(",") if s.strip()}
     for img in images:
+        if skip and img.rsplit("/", 1)[-1] in skip:
+            print(f"  제외: {img}")
+            continue
         # Menu images (pre-padded to 1080x1080) — no crop transformation
         if "menu" in img:
             urls.append(f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/w_1080,h_1080,q_90/{img}")

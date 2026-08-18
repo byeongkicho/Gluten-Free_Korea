@@ -120,9 +120,21 @@ function generateTemplate(place) {
     '',
   ];
 
+  // 도시 태그는 매장 위치에서 뽑는다. 예전에는 서울이 하드코딩돼 있어서
+  // 창원·평택 매장에도 #glutenfreeseoul 이 붙었다 (2026-08-18 수정).
+  const locEn = place.location || '';
+  const addrKo = place.address || '';
+  const isSeoul = /seoul/i.test(locEn) || /^서울/.test(addrKo);
+  const cityEn = isSeoul
+    ? 'seoul'
+    : ((locEn.split(',')[1] || '').split('(')[0] || '').trim().toLowerCase().replace(/\s+/g, '');
+  const cityKo = isSeoul
+    ? '서울'
+    : ((addrKo.match(/([가-힣]+)시/) || [])[1] || '');
+
   const hashtags = [
-    '#glutenfree #glutenfreekorea #glutenfreeseoul',
-    '#셀리악 #글루텐프리 #글루텐프리서울',
+    `#glutenfree #glutenfreekorea${cityEn ? ` #glutenfree${cityEn}` : ''}`,
+    `#셀리악 #글루텐프리${cityKo ? ` #글루텐프리${cityKo}` : ''}`,
     tags,
     '#noglutenkorea',
   ].filter(Boolean).join('\n');
