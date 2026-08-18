@@ -64,6 +64,12 @@ export async function generateMetadata({ params }) {
       "글루텐프리 코리아",
     ],
     alternates: { canonical: place ? `/place/${place.slug}` : `/place/${slug}` },
+    // 매장 상세는 매장당 고유 텍스트가 Notes 3문장 수준이고 Tips·안전문구·
+    // 이중언어 표기가 24곳에 그대로 반복된다. 색인 대상의 65%가 이 형태여서
+    // AdSense가 사이트 전체를 thin content로 판정했다(2026-08-18 반려).
+    // 색인에서 빼되 follow는 유지 — 페이지 자체는 방문자에게 유효하고
+    // 외부/내부 링크의 가치도 남긴다. 매장별 콘텐츠가 채워지면 되돌린다.
+    robots: { index: false, follow: true },
     openGraph: {
       type: "website",
       url: path,

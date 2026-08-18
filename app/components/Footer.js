@@ -77,8 +77,19 @@ export default function Footer() {
           <span className="lang-ko">가이드</span>
         </a>
         <span className="text-muted/30">·</span>
+        <a href="/contact" className="underline-offset-2 hover:underline hover:text-fg">
+          <span className="lang-en">Contact</span>
+          <span className="lang-ko">문의</span>
+        </a>
+        <span className="text-muted/30">·</span>
+        <a href="/terms" className="underline-offset-2 hover:underline hover:text-fg">
+          <span className="lang-en">Terms</span>
+          <span className="lang-ko">이용약관</span>
+        </a>
+        <span className="text-muted/30">·</span>
         <a href="/privacy" className="underline-offset-2 hover:underline hover:text-fg">
-          Privacy Policy
+          <span className="lang-en">Privacy</span>
+          <span className="lang-ko">개인정보</span>
         </a>
       </div>
 
