@@ -14,9 +14,12 @@
 # stdin에서 훅 이벤트 JSON 읽기
 INPUT=$(cat)
 
-# git commit 명령인지 확인 — 아니면 즉시 종료
+# git commit 명령인지 확인 — 아니면 즉시 종료.
+# `^git commit`으로 앵커했더니 실제로 가장 흔한 `git add … && git commit …`
+# 형태를 통째로 놓쳤다(2026-08-20 발견). 부분 일치로 완화한다 — 오탐의
+# 최대 피해가 HANDOFF 필드 세 줄 갱신이라 비대칭적으로 싸다.
 TOOL_INPUT=$(echo "$INPUT" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('tool_input',{}).get('command',''))" 2>/dev/null || echo "")
-echo "$TOOL_INPUT" | grep -q "^git commit" || exit 0
+echo "$TOOL_INPUT" | grep -q "git commit" || exit 0
 
 HANDOFF="docs/HANDOFF.md"
 
