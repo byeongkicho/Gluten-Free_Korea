@@ -184,9 +184,9 @@ GitHub Actions (매시간) → healthcheck 16지표 → Grafana Cloud 도쿄(inf
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-08-20 11:40
+- **마지막 업데이트:** 2026-08-21 17:02
 - **작업자:** Claude Code
-- **마지막 커밋:** `f21d4fd` chore(handoff): post-commit 훅 자동 갱신 반영
+- **마지막 커밋:** `e8ec9ac` fix(places): 폐업 1곳·미확인 1곳을 목록에서 내리고 상태 필드 도입
 - **브랜치:** main
 - **CI:** 🟢 **eval-runner 8/8** — content-001 포함 전원 녹색 (5편 PASS). baseline 갱신됨(`content-001,1,1`), 이제부터 회귀 감지가 실제로 작동한다
 - **✅ 이미지 79/79 resolve** (`node scripts/check-images.mjs live`, 08-20 확인) — "알려진 이슈"에 남아 있던 **cafe-pepper 404 4건은 08-07 `c53196b`로 이미 해소된 스테일 항목**이었다(원인은 `build_places`가 `.jpg` 원본까지 스캔해 없는 Cloudinary id를 만든 것, 83→79 참조). 목록에서 제거함. "IG 토큰 만료 추정"도 08-12 재인증(2026-11-10까지)으로 해소 → 제거.
