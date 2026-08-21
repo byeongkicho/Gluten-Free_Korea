@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import places from "@/data/places.json";
+import { listablePlaces } from "@/app/lib/places";
 import AreaContent from "./AreaContent";
 
 const AREAS = {
@@ -30,7 +31,7 @@ const AREAS = {
 };
 
 function getAreaPlaces(areaKey) {
-  const safePlaces = Array.isArray(places) ? places : [];
+  const safePlaces = listablePlaces(places);
   return safePlaces.filter((p) => {
     const loc = (p.location || "").toLowerCase();
     return loc.startsWith(areaKey);

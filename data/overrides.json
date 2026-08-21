@@ -146,8 +146,11 @@
   "1142091847": {
     "nameEn": "Sunny Bread",
     "location": "Seoul, Yongsan-gu",
-    "note": "Yongsan cafe listing where GF details are not fully confirmed; verify ingredients and cross-contact precautions with staff at visit time.",
-    "note_ko": "용산구 카페로 글루텐프리 세부 정보가 완전히 확인되지 않은 매장입니다. 방문 시 재료와 교차오염 예방 조치를 직원에게 직접 확인하세요.",
+    "note": "Listing under review — see the notice above. Gluten-free handling was never confirmed for this cafe.",
+    "note_ko": "확인 중인 매장입니다 — 위 안내를 참고하세요. 이 카페의 글루텐프리 취급 여부는 확인된 적이 없습니다.",
+    "status": "unverified",
+    "statusNote": "Removed from the directory on 2026-08-21 pending verification. Three things are unconfirmed: (1) location — our entry points at a Yongsan-gu listing, while the matching Instagram account (@sunnyhousekr) posts a Mapo-gu address (341-17 Sangsu-dong / 8 Wausan-ro 1-gil); (2) whether these are the same business, a branch, or a former location; (3) gluten-free handling — the account's 30 most recent posts mention gluten-free nowhere. Will be restored if a visit or call confirms it.",
+    "statusNote_ko": "2026-08-21 확인 전까지 목록에서 제외했습니다. 미확인 사항 3가지: (1) 위치 — 우리 항목은 용산구 매장을 가리키지만, 같은 상호로 보이는 인스타그램 계정(@sunnyhousekr)은 마포구 상수동 341-17(와우산로1길 8) 주소를 게시하고 있습니다. (2) 두 곳이 같은 매장인지, 지점인지, 이전 전 매장인지 불명. (3) 글루텐프리 취급 여부 — 해당 계정 최근 게시물 30건에 글루텐프리 언급이 전혀 없습니다. 방문·전화로 확인되면 복원합니다.",
     "tags": [
       "Cafe",
       "Bakery"
@@ -157,8 +160,11 @@
     "nameEn": "Minimize Itaewon",
     "location": "Seoul, Yongsan-gu (Noksapyeong)",
     "addressEn": "21 Noksapyeong-daero 32-gil, Yongsan-gu, Seoul",
-    "note": "Itaewon-area cafe on the 2nd floor (no elevator). They sell both gluten-free and non-gluten-free items, so confirm which products are GF before ordering. Recommended: matcha cake. No parking available. Also confirm preparation/cross-contact handling with staff.",
-    "note_ko": "이태원 2층 카페 (엘리베이터 없음). 글루텐프리와 일반 제품을 함께 판매하므로 주문 전 어떤 제품이 GF인지 직원에게 확인하세요. 추천 메뉴: 말차 케이크. 주차 불가.",
+    "note": "PERMANENTLY CLOSED. Formerly an Itaewon-area cafe on the 2nd floor that sold both gluten-free and non-gluten-free items; the matcha cake was the usual recommendation. Kept here for reference only — do not travel to this address.",
+    "note_ko": "폐업한 매장입니다. 이태원 2층 카페로 글루텐프리와 일반 제품을 함께 판매했고 말차 케이크가 대표 메뉴였습니다. 기록 목적으로만 남겨둡니다 — 이 주소로 방문하지 마세요.",
+    "status": "closed",
+    "statusNote": "Permanently closed. Confirmed 2026-08-21 from the shop's own Instagram bio (@minimize_seoul), which states 온/오프라인 영업 종료 — online and offline operations ended. Last post 2026-04-19.",
+    "statusNote_ko": "폐업. 2026-08-21 확인 — 매장 인스타그램(@minimize_seoul) 소개글에 \"온/오프라인 영업 종료\"가 명시돼 있고, 마지막 게시물은 2026-04-19입니다.",
     "tags": [
       "Cafe"
     ]
@@ -191,7 +197,7 @@
     "note_ko": "글루텐프리 쌀 디저트 전문 브랜드. 100% 국내산 쌀가루로 만든 쌀 마들렌, 모찌쌀쿠키, 쌀빵 등. 오프라인 매장 + 온라인몰 운영.",
     "tags": ["Dedicated GF", "Bakery", "Dessert"],
     "website": "https://feeke.co.kr/",
-    "instagram": "https://www.instagram.com/_feeke/",
+    "instagram": "https://www.instagram.com/feeke.coffee.cake/",
     "lat": 35.25603,
     "lng": 128.6357883
   },

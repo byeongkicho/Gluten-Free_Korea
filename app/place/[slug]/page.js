@@ -6,7 +6,7 @@ import ImageLightbox from "@/app/components/ImageLightbox";
 import TrackedExternalLink from "@/app/components/TrackedExternalLink";
 import { cloudinaryUrl } from "@/app/lib/cloudinary";
 import places from "@/data/places.json";
-import { TYPE_MAP, sortTags } from "@/app/lib/places";
+import { TYPE_MAP, sortTags, isClosed, isUnverified } from "@/app/lib/places";
 
 function getValidatedPlaces() {
   const rows = Array.isArray(places) ? places : [];
@@ -135,12 +135,21 @@ export default async function PlaceDetailPage({ params }) {
     servesCuisine: "Gluten-Free",
   };
 
+  const closed = isClosed(place);
+  const unverified = isUnverified(place);
+  const statusNote = place.statusNote;
+  const statusNoteKo = place.statusNote_ko || place.statusNote;
+
   return (
     <main className="min-h-screen px-4 py-8 sm:px-6 sm:py-10 md:py-14">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      {/* 폐업·미확인 매장은 LocalBusiness 스키마를 내보내지 않는다 — 확인된
+          영업 중인 업체라고 검색엔진에 알리는 셈이 된다. */}
+      {!closed && !unverified && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
       <div className="mx-auto max-w-3xl">
         <Link
           href="/places"
@@ -149,6 +158,61 @@ export default async function PlaceDetailPage({ params }) {
           <span className="lang-en">← Back to restaurants</span>
           <span className="lang-ko">← 식당 목록으로</span>
         </Link>
+
+        {(closed || unverified) && (
+          <div
+            className={`mt-4 rounded-2xl border p-4 sm:p-5 ${
+              closed
+                ? "border-red-300 bg-red-50 dark:border-red-800/60 dark:bg-red-950/40"
+                : "border-amber-300 bg-amber-50 dark:border-amber-800/60 dark:bg-amber-950/40"
+            }`}
+          >
+            <p
+              className={`text-sm font-bold ${
+                closed ? "text-red-800 dark:text-red-200" : "text-amber-900 dark:text-amber-200"
+              }`}
+            >
+              {closed ? (
+                <>
+                  <span className="lang-en">⚠️ Permanently closed — do not travel here</span>
+                  <span className="lang-ko">⚠️ 영업 종료 — 방문하지 마세요</span>
+                </>
+              ) : (
+                <>
+                  <span className="lang-en">⚠️ Unverified listing — details are being rechecked</span>
+                  <span className="lang-ko">⚠️ 확인 중인 매장 — 정보를 다시 검증하고 있습니다</span>
+                </>
+              )}
+            </p>
+            <p
+              className={`mt-2 text-sm leading-relaxed ${
+                closed ? "text-red-800/90 dark:text-red-200/90" : "text-amber-900/90 dark:text-amber-200/90"
+              }`}
+            >
+              <span className="lang-en">
+                {statusNote ||
+                  (closed
+                    ? "This place is no longer operating."
+                    : "We could not confirm this listing. Do not rely on it until it is rechecked.")}
+              </span>
+              <span className="lang-ko">
+                {statusNoteKo ||
+                  (closed
+                    ? "이 매장은 더 이상 영업하지 않습니다."
+                    : "이 매장 정보를 확인하지 못했습니다. 재확인 전까지는 신뢰하지 마세요.")}
+              </span>
+            </p>
+            <Link
+              href="/places"
+              className={`mt-3 inline-block text-sm font-semibold underline underline-offset-2 ${
+                closed ? "text-red-800 dark:text-red-200" : "text-amber-900 dark:text-amber-200"
+              }`}
+            >
+              <span className="lang-en">See confirmed places →</span>
+              <span className="lang-ko">확인된 매장 보기 →</span>
+            </Link>
+          </div>
+        )}
 
         {place.images?.length > 0 && (() => {
           return (

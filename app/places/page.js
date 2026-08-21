@@ -1,6 +1,7 @@
 import Link from "next/link";
 import places from "@/data/places.json";
 import PlaceFilter from "@/app/components/PlaceFilter";
+import { listablePlaces } from "@/app/lib/places";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://noglutenkorea.com";
 const pageTitle = "Gluten-Free Restaurants & Cafes in Korea";
@@ -37,7 +38,7 @@ export const metadata = {
 };
 
 export default function PlacesPage() {
-  const safePlaces = Array.isArray(places) ? places.filter((p) => p?.slug) : [];
+  const safePlaces = listablePlaces(places).filter((p) => p?.slug);
   const hasPlaces = safePlaces.length > 0;
   const itemListJsonLd = {
     "@context": "https://schema.org",

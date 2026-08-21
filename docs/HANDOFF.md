@@ -4,6 +4,23 @@
 > 이 문서는 세션 시작 시 "지금 어디까지 됐고 다음이 뭔지"만 빠르게 전달한다.
 > 재개 전략 전체: `~/.claude/plans/noble-discovering-aho.md` (2026-07-24 승인).
 
+## ▶ 매장 상태 점검 착수 (2026-08-21) — 인스타 API로 자동화, 첫 회에 2건 적발
+
+🔑 **네이버는 막혔고(HTML은 캡차 셸, GraphQL은 429), 인스타 Graph API의 `business_discovery`는 된다.** 우리 비즈니스 토큰(`~/.instagram-creds`)으로 **남의 공개 비즈니스 계정의 최근 게시일·소개글**을 조회할 수 있다 → 인스타 보유 16곳 중 13곳 조회 성공. 나머지 8곳은 인스타 자체가 없다.
+
+**적발 2건 (둘 다 배포본에 살아 있던 오류):**
+- 🔴 **minimize-itaewon = 폐업.** 계정 소개글에 `▪️온/오프라인 영업 종료` 명시, 마지막 게시 2026-04-19(123일). 그런데 사이트엔 "말차 케이크 추천"으로 멀쩡히 노출 중이었다. → `status: "closed"`.
+- 🟠 **sunny-bread = 단순 주소 오류가 아니었다.** 계정(@sunnyhousekr)은 **마포구 상수동 341-17**을 매 게시물에 박아두는데 우리 항목의 네이버 ID는 **용산구**다. 게다가 **최근 30개 게시물에 글루텐프리 언급이 0건.** 주소만 마포로 고치면 *GF인지도 모르는 가게를 더 자신 있게 소개하는* 꼴이 된다 → 고치지 않고 `status: "unverified"`로 목록에서 내림. 🔑 **틀린 값을 발견했을 때 "고칠 수 있는 필드"만 보면 더 큰 오류를 지나친다.**
+- ✅ **feeke 인스타 계정 사망 링크 수정**: `_feeke` → `feeke.coffee.cake`(홈페이지에서 추출·검증, 8/20 게시, 소개글 "GLUTEN FREE DESSERTS"). 8/18에 우리가 직접 IG에 올린 매장인데도 링크가 죽어 있었다.
+
+**구현**: `app/lib/places.js`에 `isClosed`/`isUnverified`/`listablePlaces` — 목록·홈·지역에서 제외하되 **상세 페이지는 남긴다**(외부 링크·기존 유입 보존, 7월 스텁·매장 noindex와 같은 규율). 상세 상단에 사유 배너(폐업=빨강 / 확인중=주황, 근거를 `statusNote`에 원문 인용). **폐업·미확인은 LocalBusiness JSON-LD를 내보내지 않는다** — 영업 중인 업체라고 검색엔진에 알리는 셈이라서. 검색 노출은 08-18 조치로 24곳 전부 이미 noindex라 추가 작업 없었다. 목록 24→**22곳**.
+
+**▶ 다음 (남은 11곳):**
+1. **인스타 없는 8곳 = 전화 확인이 최선** — 237-pizza · blu-seoul · benir · francois · dark-and-light · rami-scone · 6day-chicken · cucciolo-seoul. 네이버에 번호 있음. 결과는 기존 `verified: "called"` 배지 필드에 담으면 된다(이미 렌더 구현돼 있음).
+2. **glunic · los-dias-cafe = 조회 실패 3건 중 잔여 2곳.** ⚠️ `Invalid user id`는 **폐업 신호가 아니다** — business_discovery는 비즈니스/크리에이터 계정만 조회된다(개인 계정 전환·핸들 변경이면 실패). 추측으로 데이터를 바꾸지 말 것. glunic 스마트스토어는 429, los-dias 카카오채널은 JS 렌더라 자동 추출 실패.
+3. **감시 자동화**: 매장 인스타 휴면(>60일)을 `ngk-operations` 그룹 알림으로. 이미 있는 `ngk-ig-dormant`(우리 계정용)의 대상만 매장으로 넓히는 형태. **지금 자동 점검은 URL 200만 보고 영업 여부를 안 본다** — 이번 2건이 그 구멍의 증거.
+4. sunny-bread 복원 조건 = 방문·전화로 ①상수/용산 동일 매장 여부 ②GF 취급 확인.
+
 ## ▶ 다음 세션 시작점 (2026-08-18 종료 시점)
 
 **🟢 게이트 5/5 전원 녹색 — `check:harness judgments` OK, eval-runner 8/8, baseline `content-001` 0,1 → 1,1 갱신 완료(`c604003`).** 5편 전부 seo·정확성 양축 9.5+ 통과. ⚠️ **루브릭을 낮추지 말 것** — 이번에도 출구는 글 수정→재채점뿐이었다.
@@ -167,9 +184,9 @@ GitHub Actions (매시간) → healthcheck 16지표 → Grafana Cloud 도쿄(inf
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-08-20 11:22
+- **마지막 업데이트:** 2026-08-20 11:40
 - **작업자:** Claude Code
-- **마지막 커밋:** `f820cf5` fix(hooks): post-commit이 `git add && git commit`을 놓치고 있었다
+- **마지막 커밋:** `f21d4fd` chore(handoff): post-commit 훅 자동 갱신 반영
 - **브랜치:** main
 - **CI:** 🟢 **eval-runner 8/8** — content-001 포함 전원 녹색 (5편 PASS). baseline 갱신됨(`content-001,1,1`), 이제부터 회귀 감지가 실제로 작동한다
 - **✅ 이미지 79/79 resolve** (`node scripts/check-images.mjs live`, 08-20 확인) — "알려진 이슈"에 남아 있던 **cafe-pepper 404 4건은 08-07 `c53196b`로 이미 해소된 스테일 항목**이었다(원인은 `build_places`가 `.jpg` 원본까지 스캔해 없는 Cloudinary id를 만든 것, 83→79 참조). 목록에서 제거함. "IG 토큰 만료 추정"도 08-12 재인증(2026-11-10까지)으로 해소 → 제거.

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import places from "@/data/places.json";
 import { getPublishedPosts } from "@/app/lib/blog";
+import { listablePlaces } from "@/app/lib/places";
 import FeaturedPlaces from "@/app/components/FeaturedPlaces";
 
 import { SITE_NAME } from "@/app/lib/site";
@@ -51,7 +52,7 @@ function fmtDate(d) {
 }
 
 export default function HomePage() {
-  const safePlaces = Array.isArray(places) ? places.filter((p) => p?.slug) : [];
+  const safePlaces = listablePlaces(places).filter((p) => p?.slug);
   const posts = getPublishedPosts().slice(0, 6);
 
   // Featured restaurants: lead with Dedicated GF spots (the most differentiated),
