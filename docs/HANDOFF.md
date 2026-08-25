@@ -4,6 +4,29 @@
 > 이 문서는 세션 시작 시 "지금 어디까지 됐고 다음이 뭔지"만 빠르게 전달한다.
 > 재개 전략 전체: `~/.claude/plans/noble-discovering-aho.md` (2026-07-24 승인).
 
+## ▶ AI 검색 노출 착수 (2026-08-25) — 막고 있던 건 robots.txt였다
+
+목표: 외국인이 **AI로 한국 여행을 계획할 때** 우리 사이트·인스타가 인용되게 하는 것. 콘텐츠 부족보다 앞선 원인이 있었다.
+
+🔑 **`public/robots.txt`가 인용 봇을 차단하고 있었다.** `be65b50`에서 "원본 콘텐츠 보호"로 넣은 8종 일괄 차단인데, **학습 봇과 인용 봇을 구분하지 않았다.** 공식 문서에 *"모델 학습에 쓰지 않는다"*고 명시된 **PerplexityBot**과, 사용자가 물었을 때만 방문하는 **ChatGPT-User**까지 막혀 있었다 — 보호 이득 없이 노출만 잃는 설정. 반대로 `OAI-SearchBot`·`Claude-SearchBot`·`Claude-User`는 목록에 없어 `*`의 Allow로 **이미 허용 상태**였다(GA4 "AI Assistant" 유입 2건의 경로로 추정, 미검증).
+
+**조치(사용자 결정 = 인용 봇만 개방):** 인용·검색 6종 명시 허용(OAI-SearchBot·ChatGPT-User·Claude-SearchBot·Claude-User·PerplexityBot·Perplexity-User) / 학습 6종 차단 유지(GPTBot·ClaudeBot·anthropic-ai·CCBot·Bytespider·Google-Extended). 분류 근거는 각 사업자 공식 문서 URL을 파일 주석에 박아뒀다(2026-08-25 확인). ⚠️ **Google-Extended 차단이 Google AI Overviews 노출에도 영향을 주는지는 1차 문서로 확인 실패** — 크롤러 개요 페이지에 항목 자체가 없고 전용 페이지는 404. 주석에 미확인으로 명시. **Gemini 노출을 목표로 삼으면 이 줄부터 재검토.**
+
+✅ **`korean-gluten-free-phrases` 발행 (스텁 113단어 → 2,045단어), 판사 9.5/9.5 · 9.5/9.5 PASS.** 여행 인텐트 중 이걸 먼저 고른 이유: AI 답변이 통째로 인용하기 쉬운 형태이고, 경쟁 블로그가 번역기 한국어를 싣는 자리라 **원어민 감수가 유일한 해자**이며, 운영자 blocking 입력이 없었다. 🔑 **pillar이 이미 이 URL로 링크를 걸어놓고 스텁이던 상태였다 — 약속이 메워졌다.**
+
+🔴 **1라운드 FAIL(seo 9/9.5)에서 판사가 잡은 실오류 1건:** 스크린샷 블록에 *"간장, 고추장, 된장에도 밀가루가 들어가서요"*라고 썼는데 **틀렸다.** 밀을 쓰는 건 **양조간장**(탈지대두+소맥)이고 **조선간장/한식간장은 메주 기반이라 밀이 없다.** `hidden-gluten`은 이미 이 구분을 정확히 하고 있었는데(`집간장`·"brewed soy sauce"로 한정) **새 글에서 내가 뭉뚱그렸다.** 하필 독자가 주방에 그대로 보여줄 텍스트였다. → 빈도 표현으로 완화 + 본문에 양조/한식 구분 명시. 같이 고친 것: 생고기 절대 표현(염지·연육 가능성 → 확인 문구 추가), 출처 없는 셀리악 유병률 주장 → 우리 관찰로 교체, meta description 199→136자(SERP 잘림).
+
+✅ **pillar 로마자 오타 정정**: `alleogiga` → **`alleojiga`**(알러지가). 전 글 grep해서 1건뿐임을 확인. 재채점 **10/9.5 · 9.5/9.5 PASS**.
+
+**▶ 다음:**
+1. **experience minor가 두 글 모두에 남았다 — 운영자 입력.** 빵집 "10% 밀" 일화에 **상호·동네·월**이 없다(현재 "2025–26 첫 해"까지만). 판사 표현: *"a remembered pattern than a logged observation."*
+2. **양조간장/조선간장 구분에 1차 출처를 못 붙였다.** 식품공전 온라인은 SPA라 딥링크 불가(법제처 프레임과 같은 패턴). 후보 = 샘표 501(양조, 이미 `hidden-gluten`에 있음) + 한식간장 제품 페이지.
+3. **FAQ 1이 본문보다 단정적**(본문은 "우리 패턴, 서베이 아님"으로 hedge하는데 마크업은 일반 규칙처럼 읽힘) — rich result로 단독 노출되는 자리라 다음 개정 때 맞출 것.
+4. 여행 축 스텁 3편이 남아 있다: `korean-bbq-gluten-free-guide`(118w) · `gluten-free-bakeries-cafes-seoul`(126w) · `gluten-free-restaurants-seoul`(1,412w, **237 영업 확인이 blocking**).
+5. **인스타는 우리가 robots를 통제 못 한다** — 경로는 사이트를 허브로 두고 각 글에서 IG를 명시 인용하는 것.
+
+⚠️ **선재 이슈(내 작업 무관): `harness-001` freshness FAIL.** 오늘 아침 `8940207`(README) 커밋이 `eval/baseline.csv` 커밋일(08-15)보다 최신이라 깨졌다 — **HANDOFF의 "게이트 5/5"는 08-21 기록이고 지금은 다르다.** 게다가 판정 기준이 **baseline.csv의 git 커밋 날짜**(`lastCommitDate`)라, baseline 내용이 이미 만점이면 **고칠 내용이 없어 커밋도 못 하는 순환**이 된다. eval은 현재 **7/8**(content-001은 판사 PASS로 복구). 하네스 설계 판단이 필요한 항목.
+
 ## ▶ 매장 상태 점검 착수 (2026-08-21) — 인스타 API로 자동화, 첫 회에 2건 적발
 
 🔑 **네이버는 막혔고(HTML은 캡차 셸, GraphQL은 429), 인스타 Graph API의 `business_discovery`는 된다.** 우리 비즈니스 토큰(`~/.instagram-creds`)으로 **남의 공개 비즈니스 계정의 최근 게시일·소개글**을 조회할 수 있다 → 인스타 보유 16곳 중 13곳 조회 성공. 나머지 8곳은 인스타 자체가 없다.
@@ -184,11 +207,11 @@ GitHub Actions (매시간) → healthcheck 16지표 → Grafana Cloud 도쿄(inf
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-08-21 17:02
+- **마지막 업데이트:** 2026-08-25 15:22
 - **작업자:** Claude Code
-- **마지막 커밋:** `e8ec9ac` fix(places): 폐업 1곳·미확인 1곳을 목록에서 내리고 상태 필드 도입
+- **마지막 커밋:** `a001158` content(phrases): Korean GF 문구집 발행 + pillar 로마자 정정
 - **브랜치:** main
-- **CI:** 🟢 **eval-runner 8/8** — content-001 포함 전원 녹색 (5편 PASS). baseline 갱신됨(`content-001,1,1`), 이제부터 회귀 감지가 실제로 작동한다
+- **CI:** 🟠 **eval-runner 7/8** — content-001은 판사 PASS로 복구, `harness-001` freshness는 위 선재 이슈. 이전 기록 8/8 — content-001 포함 전원 녹색 (5편 PASS). baseline 갱신됨(`content-001,1,1`), 이제부터 회귀 감지가 실제로 작동한다
 - **✅ 이미지 79/79 resolve** (`node scripts/check-images.mjs live`, 08-20 확인) — "알려진 이슈"에 남아 있던 **cafe-pepper 404 4건은 08-07 `c53196b`로 이미 해소된 스테일 항목**이었다(원인은 `build_places`가 `.jpg` 원본까지 스캔해 없는 Cloudinary id를 만든 것, 83→79 참조). 목록에서 제거함. "IG 토큰 만료 추정"도 08-12 재인증(2026-11-10까지)으로 해소 → 제거.
 - **🔧 post-commit 훅이 두 층에서 고장나 있었다 (08-20 수정)** — ①**명령 매칭**: `grep -q "^git commit"`이 **가장 흔한 `git add … && git commit …` 형태를 통째로 놓쳤다.** 08-07 이후 훅은 사실상 거의 돌지 않았다 → 부분 일치로 완화(오탐 최대 피해 = 필드 세 줄 갱신). ②**앵커 결번**: 세 필드 중 `- **마지막 커밋:**` 라인이 문서에 아예 없어 갱신 대상이 없었다 → 라인 신설. **08-07에 "조용히 exit 0 하지 말고 stderr로 알리게" 고친 설계는 제대로 작동했다 — 실패한 건 알림을 읽는 쪽이었고, 그나마도 ①때문에 경고조차 뜨지 않았다.** ⚠️ 이 훅은 커밋 직후 문서를 고치므로 **워킹트리를 항상 한 스텝 dirty하게 남긴다**(다음 커밋에 딸려가는 것이 정상 동작).
 - **⚠️ 빌드 노이즈:** `npm run build`가 `data/places.json`의 `updatedAt` 24건을 빌드 시각으로 갱신한다(내용 무변경). 커밋 전 `git checkout data/places.json`으로 걷어낼 것
