@@ -27,6 +27,17 @@
 
 ⚠️ **선재 이슈(내 작업 무관): `harness-001` freshness FAIL.** 오늘 아침 `8940207`(README) 커밋이 `eval/baseline.csv` 커밋일(08-15)보다 최신이라 깨졌다 — **HANDOFF의 "게이트 5/5"는 08-21 기록이고 지금은 다르다.** 게다가 판정 기준이 **baseline.csv의 git 커밋 날짜**(`lastCommitDate`)라, baseline 내용이 이미 만점이면 **고칠 내용이 없어 커밋도 못 하는 순환**이 된다. eval은 현재 **7/8**(content-001은 판사 PASS로 복구). 하네스 설계 판단이 필요한 항목.
 
+### 📌 보관: 마이노멀 상품 링크 (2026-08-25, 운영자 전달)
+
+원본(단축) `https://naver.me/FbV7I7IW` → 정규화 **`https://brand.naver.com/mynormal/products/13193972781`**
+*(추적 파라미터 `NaPm=…` 제거하고 저장. 단축 URL은 만료될 수 있어 정규 URL을 정본으로 둔다.)*
+
+- **브랜드 = 마이노멀(MyNormal)** — 저당 식품 중심 한국 브랜드, **글루텐프리를 표방**한다. 네이버 브랜드스토어 외에 자체몰 [mynormal.shop](https://mynormal.shop/)도 운영. 확인된 GF 표방 품목 예: 제로칩(유기농 통현미), 저당 굴소스.
+- 🔴 **상품번호 `13193972781`이 어떤 제품인지는 확인하지 못했다** — `brand.naver.com`·`m.brand.naver.com` 모두 **429**(memory `reference_ig_business_discovery`의 네이버 차단 패턴 그대로). 브랜드만 웹 검색으로 확인했고 **품목은 미확인**이다. 추측으로 채우지 말 것 — 운영자에게 물으면 한 줄로 끝난다.
+- ⚠️ **쓰기 전 규율**: 마이노멀의 "글루텐프리"는 **제조사 자기 진술**이다. 한국엔 GFCO 같은 제3자 인증이 없다는 것이 `hidden-gluten`·`labels` 두 글의 중심 논리이므로, 이 브랜드를 콘텐츠에 올릴 때 그 규율을 우리 스스로 지켜야 한다(전면 라벨 주장 → 원재료명 확인 → 표기 근거 인용).
+- **용도 후보**: ⓐ `gluten free korean pantry` 글(AdSense 콘텐츠 절대량 해소용 다음 후보) ⓑ 제휴 — 단 쿠팡/iHerb와 달리 **네이버 브랜드스토어는 제휴 프로그램이 확인되지 않았다**.
+- ▶ **정식 자리는 위키 `entities/`**(브랜드=조직). 품목이 확인되면 노트 생성 + `index.md`·`log.md` 갱신 = ingest 절차.
+
 ### 발음 표기 철거 + 복사 버튼 (2026-08-25, 운영자 피드백)
 
 🔑 **운영자 판정: 로마자 발음 표기는 작동하지 않는다.** "비한국어권이 따라하기도 어렵고, 따라해도 직원이 알아들을지 모르겠다." → 문장 발음 표기를 **전부 제거**하고(표 19행의 Romanisation 열 삭제 → 3열이 2열로, 인용문·FAQ·용어 로마자까지), 대신 **기존 `CopyButton.js`를 재사용**해 한국어마다 복사 버튼을 붙였다. 이 판단 자체를 글의 입장으로 세웠다("Don't try to pronounce it" + FAQ 항목) — 경쟁 블로그가 전부 발음표를 싣는 자리라 **오히려 차별점**이 된다.
@@ -225,9 +236,9 @@ GitHub Actions (매시간) → healthcheck 16지표 → Grafana Cloud 도쿄(inf
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-08-25 15:22
+- **마지막 업데이트:** 2026-08-25 16:10
 - **작업자:** Claude Code
-- **마지막 커밋:** `fdbdabf` docs(handoff): AI 검색 노출 착수 기록 — robots.txt 진단과 문구집 발행
+- **마지막 커밋:** `335ce3b` docs(handoff): 발음 표기 철거·복사 버튼 기록
 - **브랜치:** main
 - **CI:** 🟠 **eval-runner 7/8** — content-001은 판사 PASS로 복구, `harness-001` freshness는 위 선재 이슈. 이전 기록 8/8 — content-001 포함 전원 녹색 (5편 PASS). baseline 갱신됨(`content-001,1,1`), 이제부터 회귀 감지가 실제로 작동한다
 - **✅ 이미지 79/79 resolve** (`node scripts/check-images.mjs live`, 08-20 확인) — "알려진 이슈"에 남아 있던 **cafe-pepper 404 4건은 08-07 `c53196b`로 이미 해소된 스테일 항목**이었다(원인은 `build_places`가 `.jpg` 원본까지 스캔해 없는 Cloudinary id를 만든 것, 83→79 참조). 목록에서 제거함. "IG 토큰 만료 추정"도 08-12 재인증(2026-11-10까지)으로 해소 → 제거.
