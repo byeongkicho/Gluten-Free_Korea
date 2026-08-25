@@ -183,7 +183,6 @@ For in-depth reviews of each of the above (plus others), see the [full Seoul GF 
 If you remember one sentence from this guide, make it this:
 
 > **제가 밀가루 알러지가 있어서요. 밀가루 들어가나요?**
-> *Jega milgaru alleojiga isseoseoyo. Milgaru deureoganayo?*
 > "I have a wheat allergy. Does this contain wheat flour?"
 
 The framing is the whole point. Most Korean restaurant staff don't know "gluten-free" (글루텐프리) — the word exists, but not the concept. But they understand **밀가루** (wheat flour), and they understand **알러지** (allergy). Frame your request as an allergy and the kitchen actually checks. They walk back, ask the chef, come back with a real answer.
@@ -192,7 +191,7 @@ This isn't overstating. In a year of eating out as a couple with one GF person, 
 
 Two practical notes:
 
-**Screenshot the phrase.** Showing Korean text on your phone beats pronunciation. Half the time we just hold up the phone.
+**Show it, don't say it.** Romanised Korean is hard to pronounce, and staff often don't recognise it when a traveller tries — so we stopped trying. Half the time we just hold up the phone. Every Korean line in our [phrases guide](/blog/korean-gluten-free-phrases) has a copy button for this reason.
 
 **Reconfirm once.** If the first answer is a breezy "안 들어가요~" ("no, doesn't contain it"), follow up: *"제가 알러지가 있어서요, 한 번만 더 확인해주실 수 있나요?"* ("I have an allergy — could you double-check?"). That's when the server actually walks to the kitchen. When in doubt, remind them of the hidden sources — soy sauce (간장), gochujang (고추장), doenjang (된장). A lot of Korean cooks think of these as "seasoning," not "wheat."
 

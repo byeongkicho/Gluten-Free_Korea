@@ -1,0 +1,265 @@
+{
+  "schema": 1,
+  "slug": "korean-gluten-free-phrases",
+  "source_ref": "working-tree",
+  "content_sha256": "5765ca9948a2b45b6c6ca1dbfd9104ceb33bff90c4fe2bef0b5a2dd6d9ebf0d4",
+  "judged_at": "2026-08-25T07:05:32.371Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.237 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 19,
+      "max_points": 20,
+      "score": 9.5,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "The headline phrase, its English gloss, and the show-don't-say instruction all land inside the first ~150 words, which is exactly what someone searching \"korean gluten free phrases\" wants.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 2,
+          "max": 2,
+          "note": "Title with the appended suffix is 53 characters, the description is ~136, the keyword is present in both, and the description carries distinct information (allergy framing, copy-and-show, recovery when the first answer is wrong).",
+          "evidence_quote": ""
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings carry the argument on their own — allergy beats gluten-free, phrases by situation, the block to save, what phrases can't do — and the situational subheads map to real dining moments rather than generic labels.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Four distinct internal destinations (/places, hidden-gluten, reading-korean-food-labels, celiac-travel-korea-guide), each placed where a reader would actually want the next step.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All five FAQ answers are established in the body (글루텐프리 framing, the memorised opener, the no-pronunciation stance, 알레르기 유발물질, and the cross-contamination limits) and each reads as a standalone answer.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 2,
+          "max": 3,
+          "note": "Concrete but thin: one named-percentage anecdote and a stated region/time span carry the whole first-hand load, and the piece itself concedes nothing was recorded.",
+          "evidence_quote": "We did not count conversations or record outcomes, so this is a consistent impression, not a measured rate."
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "Precise throughout — 양조간장/조선간장/혼합간장 distinguished, a named product (Sempio 501) with its ingredient declaration, and the MFDS notice number, all checkable by a reader.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "Both external claims link primary sources with dates: the Sempio product page (retrieved August 2026) and the MFDS labelling standard with 고시 제2025-60호, 29 August 2025.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "A dedicated limits section names what the method cannot establish, plus an independent-verification route and a corrections address; no commercial links appear anywhere.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "experience",
+          "severity": "minor",
+          "quote": "one bakery owner told us — cheerfully, without being pressed — that his was 10% wheat.",
+          "why": "This is the single strongest first-hand moment in the piece, but it is unanchored — no neighbourhood, no month, no bakery type. Unanchored anecdotes read as illustrative rather than observed, which is the difference between a 2 and a 3 on experience signal.",
+          "fix": "Add the district and rough month (e.g. \"a rice-bread bakery in Seongnam, spring 2025\") and, if available, what the sign or menu actually claimed versus what the owner said. One extra clause converts an anecdote into a dated observation."
+        },
+        {
+          "criterion": "experience",
+          "severity": "minor",
+          "quote": "It comes from our own eating between 2025 and 2026, as a couple with one gluten-free person, across Seoul, Gyeonggi and Cheonan",
+          "why": "The scope statement is honest but does the work alone — beyond the bakery, there are no specific encounters (a dish, a restaurant category, an answer that turned out wrong on re-ask). The reconfirmation and BBQ sections are written as procedure with no episode behind them.",
+          "fix": "Attach one lived incident to each of the two highest-value sections: a case where the breezy \"안 들어가요~\" was reversed after the kitchen was asked, and a grill-plate or tongs request and how staff responded. Two sentences each is enough."
+        },
+        {
+          "criterion": "search_intent",
+          "severity": "minor",
+          "quote": "You'll notice there is no pronunciation guide anywhere in this post, and that's deliberate",
+          "why": "The editorial decision is well argued, but a large slice of the query cluster around this keyword is pronunciation-shaped (\"how to say gluten free in korean\"). Refusing the format entirely forfeits that traffic instead of capturing it and redirecting it.",
+          "fix": "Keep the stance, but add a short block titled for the query it answers — e.g. \"If you want to say it anyway\" — with romanisation for the one opener plus the existing argument for why showing works better. That captures the search and still steers the reader to the copy button."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 17302,
+        "cache_read_input_tokens": 31320,
+        "output_tokens": 4055,
+        "output_tokens_details": {
+          "thinking_tokens": 2426
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 17302,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 4055,
+            "cache_read_input_tokens": 31320,
+            "cache_creation_input_tokens": 17302,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 17302
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 18,
+      "max_points": 20,
+      "score": 9,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "Attribution is unusually disciplined — experiential claims are explicitly labelled as impressions and the two hard facts (Sempio ingredients, MFDS notice) carry links and retrieval dates — but a small number of generalisations about Korean service and traditional soy sauce composition are asserted without source or observation marking.",
+          "evidence_quote": "Korean service culture is accommodating, and a specific, apologetic ask is usually met well."
+        },
+        {
+          "id": "no_fabrication",
+          "points": 3,
+          "max": 3,
+          "note": "Product name (Sempio 501 brewed soy sauce), the MFDS notice number and date, and all internal timeframes (first published August 2026, eating 2025–26, 'first year back in Korea (2025–26)', retrieved August 2026) are checkable and mutually consistent; the one figure quoted (10% wheat) is explicitly a reported anecdote rather than a statistic.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "The piece states exactly how it knows what it knows (first-hand eating as a couple, Seoul/Gyeonggi/Cheonan, 2025–26, Korean written by a native speaker) and states plainly what that method cannot establish.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 4,
+          "max": 4,
+          "note": "No absolute safety claim anywhere; cross-contamination (shared fryer, grill plate, tongs, prep surface) is addressed in its own phrases and again in the limits section; celiac is explicitly separated from the authors' NCGS and given a stricter, not equivalent, protocol.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "Both external sources carry dates and retrieval dates (고시 제2025-60호, 29 August 2025, retrieved August 2026; Sempio page retrieved August 2026), and the reformulation risk is flagged explicitly rather than left implicit.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 1,
+          "max": 2,
+          "note": "The load-bearing labelling fact is correct (mandatory declaration covers wheat; barley and rye are not on it), 알레르기 유발물질 and the 양조/조선/한식/혼합간장 categories are described correctly, but one supplied phrase asserts wheat *flour* in soy sauce, which the article's own body correctly says is wrong.",
+          "evidence_quote": "간장이랑 고추장에도 밀가루가 들어가는 경우가 많아요."
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "Readers are given a concrete, self-executable check — read 원재료명 yourself via the four-word scan, phone ahead using the same phrases — plus a manufacturer page they can open themselves, so no safety-relevant claim requires trusting the author.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "korean_accuracy",
+          "severity": "minor",
+          "quote": "간장이랑 고추장에도 밀가루가 들어가는 경우가 많아요.",
+          "why": "The article itself establishes two paragraphs later that brewed soy sauce is fermented with wheat the grain, not flour — so a reader who copies only this card transmits the exact imprecision the piece is written to correct. Gochujang commonly does carry 밀가루; 간장 generally does not.",
+          "fix": "Split the line, e.g. 고추장에는 밀가루가, 간장에는 밀이 들어가는 경우가 많아요, or change 밀가루 to 밀 in this card and let the following 밀 card stand as the escalation."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "the meju-based kind used for soups and namul — is soybeans and salt in its classic form",
+          "why": "This is a compositional claim about a product category that a celiac reader could act on, and unlike the 양조간장 claim beside it, it carries no source and no 'in our experience' marker. The hedges around it do most of the safety work, but the claim itself is unattributed.",
+          "fix": "Either cite a manufacturer ingredient list for a specific 조선간장/한식간장 product as was done for Sempio 501, or mark the sentence as the authors' shelf observation."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "Korean service culture is accommodating, and a specific, apologetic ask is usually met well.",
+          "why": "A generalisation stated in the article's own voice with neither a source nor the 'in our experience' framing used consistently elsewhere. It does not drive a safety decision, but it breaks the attribution discipline the rest of the piece maintains.",
+          "fix": "Reframe as observation: 'In our experience a specific, apologetic ask is usually met well.'"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 17302,
+        "cache_read_input_tokens": 31279,
+        "output_tokens": 6312,
+        "output_tokens_details": {
+          "thinking_tokens": 4621
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 17302,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 6312,
+            "cache_read_input_tokens": 31279,
+            "cache_creation_input_tokens": 17302,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 17302
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: accuracy-safety 9/9.5"
+  }
+}

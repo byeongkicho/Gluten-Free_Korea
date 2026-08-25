@@ -1,0 +1,265 @@
+{
+  "schema": 1,
+  "slug": "korean-gluten-free-phrases",
+  "source_ref": "working-tree",
+  "content_sha256": "6639588f6815b81fad032dbf4939a82d2e69d9fb1a9da2897ace000870226987",
+  "judged_at": "2026-08-25T07:02:47.395Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.237 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 19,
+      "max_points": 20,
+      "score": 9.5,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "The single most useful phrase, in Korean with translation and a copy button, appears in the first ~80 words, and the allergy-framing rationale follows immediately — exactly what a searcher for 'korean gluten free phrases' wants.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 2,
+          "max": 2,
+          "note": "Title is 53 chars with the rendered ' | Gluten-Free Korea' suffix, description ~135 chars, keyword present in both, and the description adds angle (reconfirmation, copy-and-show) rather than repeating the title.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings carry the argument — allergy beats gluten-free, reconfirm, name hidden sources, then situational blocks, then an explicit limits section — so a skim reproduces the piece's thesis.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Four contextually earned internal links (hidden gluten, label guide twice at the exact points where reading a label is the fallback, /places, celiac travel guide), each placed where the reader would actually need it.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All five FAQ answers are established in the body — the 밀가루/밀 distinction, the no-pronunciation stance, 알레르기 유발물질 on labels, and the cross-contamination limits — and each stands alone as a rich result.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 2,
+          "max": 3,
+          "note": "Concrete but thin: one dated-ish window (2025–26), one quantified anecdote (10% wheat), and a region (Seoul and Gyeonggi), but no named venue, no specific dates, and the central 'year of asking' claim carries no countable detail.",
+          "evidence_quote": "during our first year back in Korea (2025–26), one bakery owner told us — cheerfully, without being pressed — that his was 10% wheat"
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "Korean terms are glossed and romanised where a reader needs them (간장 soy sauce, 고추장 gochujang, 양조간장 brewed, 혼합간장 blended), and the checkable specifics — Sempio 501, 고시 제2025-60호 — are precise enough to verify.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "Both external claims are anchored to primary sources with dates: the Sempio product page (retrieved August 2026) and the MFDS labelling standard with notice number and 29 August 2025 date.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "A dedicated section states what the method cannot establish ('no sample, no measurement, and no lab test'), the household's NCGS status is disclosed up front, and there are no affiliate links.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "experience",
+          "severity": "major",
+          "quote": "across a year of asking, we did not meet a single server or bakery owner who treated 글루텐프리 as a medical constraint until we changed the word",
+          "why": "The piece's central experiential claim — the one the whole allergy-framing argument rests on — has no countable or datable substance behind it: no approximate number of venues, no districts, no month range, no instance where the framing failed. As written it reads as a generalisation rather than an observation, which is the weakest form of first-hand signal for E-E-A-T.",
+          "fix": "Attach one or two verifiable anchors to that year: roughly how many restaurants/bakeries were asked, over what months, and at least one named or describable venue where 글루텐프리 got a shrug and 알러지 got a kitchen check. Similarly, date and locate the 10% wheat bakery anecdote (district and month at minimum) so it stops reading as an unplaceable story."
+        },
+        {
+          "criterion": "experience",
+          "severity": "minor",
+          "quote": "Two habits that came out of doing this badly first",
+          "why": "The piece gestures at having got things wrong but never shows the failure — a specific misfire (a dish eaten, a reaction, a phrase that backfired) is the highest-value experience signal available and it is being withheld here.",
+          "fix": "Add one sentence describing the actual bad outcome that produced these two habits — what was ordered, what the staff said, and what happened afterwards."
+        },
+        {
+          "criterion": "faq_alignment",
+          "severity": "minor",
+          "quote": "Say whichever you can pronounce.",
+          "why": "This line sits inside a post whose stated method is that you should not pronounce anything, and it directly cuts across FAQ 3 ('Don't — show them instead... this guide gives no pronunciation guide at all'). A reader landing on the FAQ rich result and then the body meets two different instructions in the same document.",
+          "fix": "Reword to the show-don't-say frame, e.g. 'Either is fine to show — 알레르기 if you're copying from a label, 알러지 if you're copying from here.'"
+        },
+        {
+          "criterion": "faq_alignment",
+          "severity": "minor",
+          "quote": "The literal translation is 글루텐프리, and it is the phrase least likely to get you a useful answer.",
+          "why": "FAQ answer 1 runs well past the length a Google FAQ rich result will display, so the parts that matter most to the searcher — show 밀가루 알러지, ask about 간장 separately — sit past the truncation point.",
+          "fix": "Front-load the actionable instruction in the first 150–200 characters of the answer and move the 밀가루-versus-밀 caveat to the tail, or split it into a separate FAQ entry."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 17147,
+        "cache_read_input_tokens": 31320,
+        "output_tokens": 5098,
+        "output_tokens_details": {
+          "thinking_tokens": 3197
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 17147,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 5098,
+            "cache_read_input_tokens": 31320,
+            "cache_creation_input_tokens": 17147,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 17147
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 18,
+      "max_points": 20,
+      "score": 9,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "Nearly every claim is either sourced (Sempio, MFDS) or explicitly flagged as first-hand pattern, but the traditional soy sauce composition claim is neither.",
+          "evidence_quote": "Traditional **조선간장 / 한식간장** — the meju-based kind used for soups and namul — is soybeans and salt in its classic form."
+        },
+        {
+          "id": "no_fabrication",
+          "points": 3,
+          "max": 3,
+          "note": "Product names, notice number, dates and the year-of-observation anecdotes are internally consistent and point to checkable primary pages.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "States exactly how it knows (a year of asking as a couple, one GF person) and names what that cannot establish — no sample, no measurement, no lab test.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 4,
+          "max": 4,
+          "note": "No absolute guarantee anywhere, cross-contamination handled in its own section and in the FAQ, and the household's NCGS reality is explicitly separated from coeliac requirements.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "Both external sources carry retrieval dates and notice dates, and reformulation plus staff turnover are flagged as reasons an old answer expires.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 1,
+          "max": 2,
+          "note": "Labelling law and terminology are right, but the hand-over block asks in 밀가루 terms where the article itself established 밀 is the operative word, and the English gloss hides the mismatch.",
+          "evidence_quote": "밀가루, 보리, 호밀 전부 못 먹어요."
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "Gives a concrete self-check path — read 원재료명 in hand via the label guide, and phone ahead for restaurants — rather than requiring trust in the author.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "korean_accuracy",
+          "severity": "major",
+          "quote": "밀가루, 보리, 호밀 전부 못 먹어요.",
+          "why": "The body establishes that 밀가루 means wheat flour specifically and that brewed soy sauce carries 밀 the grain, so a kitchen can honestly deny 밀가루 while serving wheat. The save-block — presented as the version that gives 'the whole picture at once' — reopens exactly that hole, and repeats it in the soy sauce line ('간장이나 고추장에 밀가루가 들어가는 경우가 많아서요'). The English gloss compounds it by rendering 밀가루 as 'wheat'.",
+          "fix": "Change the block to '밀, 보리, 호밀 전부 못 먹어요' and '간장이나 고추장에 밀이 들어가는 경우가 많아서요' (keeping the 밀가루 allergy opener if desired), and align the English gloss so 밀가루 reads 'wheat flour' and 밀 reads 'wheat'."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "Traditional **조선간장 / 한식간장** — the meju-based kind used for soups and namul — is soybeans and salt in its classic form.",
+          "why": "This is a factual composition claim about a product category that is neither cited nor marked as the authors' own observation, unlike the 양조간장 claim beside it which carries a Sempio source and retrieval date. The following hedge about 혼합간장 keeps it from being decision-driving, but the asymmetry in sourcing is visible.",
+          "fix": "Attach a source for the traditional composition (an MFDS 간장 식품유형 definition or a manufacturer ingredient page), or mark it explicitly as the authors' shelf observation the way the assume-wheat rule is marked."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 17147,
+        "cache_read_input_tokens": 31279,
+        "output_tokens": 4937,
+        "output_tokens_details": {
+          "thinking_tokens": 3207
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 17147,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 4937,
+            "cache_read_input_tokens": 31279,
+            "cache_creation_input_tokens": 17147,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 17147
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: accuracy-safety 9/9.5"
+  }
+}
