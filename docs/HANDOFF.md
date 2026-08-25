@@ -27,6 +27,23 @@
 
 ⚠️ **선재 이슈(내 작업 무관): `harness-001` freshness FAIL.** 오늘 아침 `8940207`(README) 커밋이 `eval/baseline.csv` 커밋일(08-15)보다 최신이라 깨졌다 — **HANDOFF의 "게이트 5/5"는 08-21 기록이고 지금은 다르다.** 게다가 판정 기준이 **baseline.csv의 git 커밋 날짜**(`lastCommitDate`)라, baseline 내용이 이미 만점이면 **고칠 내용이 없어 커밋도 못 하는 순환**이 된다. eval은 현재 **7/8**(content-001은 판사 PASS로 복구). 하네스 설계 판단이 필요한 항목.
 
+### 🚀 배포 완료 (2026-08-25 18:5x, `89cefc4`) — 라이브 실측까지 확인
+
+`8940207..89cefc4` 커밋 9개 push → **Deploy to Cloudflare Pages: success · Harness Eval: success**.
+
+**라이브 실측**(200만 보지 않고 내용을 열어 확인 — 08-16 오배포 교훈):
+- `robots.txt`: **ChatGPT-User·PerplexityBot = Allow**, **GPTBot·ClaudeBot = Disallow**. 의도대로 갈렸다.
+- 문구집: 표 6개 전부 2열 · 복사 버튼 22개 · **발음 표기 잔존 0** · 스크린샷 블록 "밀 알러지" 반영 · 밀가루≠밀 설명 살아 있음 · sitemap 등재.
+- 라벨 글: 19개 해독표(대두·우유·잣·오징어·아황산류) · 무글루텐 20mg/kg · 함유/혼입 구분표 · 법령명 정정 반영.
+
+⚠️ **내 예측이 틀렸다 — `Harness Eval`은 실패하지 않는다.** CI는 `check-regression.sh --threshold 5.0`으로 판정하는데 `harness-001`의 1점 하락(5→4)은 그 임계값에 못 미쳐 통과한다. **로컬 게이트(`check-harness freshness`)는 빨갛고 CI는 초록** — 두 층이 다른 기준으로 본다. freshness 문제 자체는 그대로 남아 있고, CI가 이걸 잡아주지 않는다는 사실이 오히려 중요하다.
+
+**▶ 다음 세션이 이어받을 것 (우선순위 순):**
+1. 🔴 **법령명 오류 4편이 라이브에 있다** — `korean-gluten-free-phrases:123` · `celiac-travel-korea-guide:206` · `hidden-gluten-korean-food:48` · `korean-convenience-store-gf-snacks:109`. 알레르기 목록 근거를 고시로 잘못 지목. 우리 글의 강점이 "1차 출처를 정확히 인용한다"인데 그게 4곳에서 깨져 있다. **정정 = 재채점 4편.** `labels`의 별표 2 링크를 법령 원문으로 올리는 것도 같이 묶을 것 — URL 검증됨(200): `https://www.law.go.kr/법령/식품등의표시·광고에관한법률시행규칙`
+2. 🔴 **experience major — 운영자 입력.** 빵집 "10% 밀" 일화의 **상호·동네·월** + **구체적 실패담 하나**(어떤 문장이 어떻게 빗나갔는지). `labels`·`phrases` 양쪽에서 같은 지적을 받았고, HANDOFF 기준 **세 편째 같은 자리**다.
+3. **AI 노출은 이제 대기.** 크롤러가 오는 데 시간이 걸린다. 검증 방법 = ChatGPT·Perplexity에 *"planning a Korea trip, I have celiac"* 직접 질의 + **GA4 "AI Assistant" 유입**(현 7일 2) 추이.
+4. 운영자 미답: `밀가루 조금이라도 섞나요?` 어감(「섞으시나요」?) · `labels`·`hidden-gluten`의 **용어 로마자**를 걷어낼지(= 발음 기호 전부 제거가 의도였는지, 재채점 2편).
+
 ### ✅ 라벨 글 Step 2 보강 완료 (2026-08-25) — 1차 자료에서 두 가지가 나왔다
 
 운영자 요청("편의점 뒷면의 대두·우유가 뭔지, 밀을 어떻게 피하는지, 글루텐프리를 어떻게 확인하는지") → **A안(기존 `reading-korean-food-labels` 보강)** 채택. 새 글은 카니발라이제이션이고 AdSense 반려 사유(얇은 중복)를 재생산한다. **한 라운드에 PASS (9.5/9.5 · 9.5/9.5)**, 2,467→3,046단어.
@@ -263,11 +280,11 @@ GitHub Actions (매시간) → healthcheck 16지표 → Grafana Cloud 도쿄(inf
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-08-25 18:46
+- **마지막 업데이트:** 2026-08-25 18:55
 - **작업자:** Claude Code
-- **마지막 커밋:** `8bfc752` content(labels): 알레르기 표시줄 전체 해독 + 무글루텐 20mg/kg 1차 확인
+- **마지막 커밋:** `89cefc4` chore(handoff): post-commit 훅 자동 갱신 반영
 - **브랜치:** main
-- **CI:** 🟠 **eval-runner 7/8** — content-001은 판사 PASS로 복구, `harness-001` freshness는 위 선재 이슈. 이전 기록 8/8 — content-001 포함 전원 녹색 (5편 PASS). baseline 갱신됨(`content-001,1,1`), 이제부터 회귀 감지가 실제로 작동한다
+- **CI:** 🟢 **GitHub Actions 전원 success**(`89cefc4`: Deploy·Harness Eval). ⚠️ 단 **로컬 `eval-runner`는 7/8** — `harness-001` freshness가 선재 이슈로 빨갛고, **CI는 임계값 5.0 회귀 판정이라 이걸 잡지 않는다**. 이전 기록 8/8 — content-001 포함 전원 녹색 (5편 PASS). baseline 갱신됨(`content-001,1,1`), 이제부터 회귀 감지가 실제로 작동한다
 - **✅ 이미지 79/79 resolve** (`node scripts/check-images.mjs live`, 08-20 확인) — "알려진 이슈"에 남아 있던 **cafe-pepper 404 4건은 08-07 `c53196b`로 이미 해소된 스테일 항목**이었다(원인은 `build_places`가 `.jpg` 원본까지 스캔해 없는 Cloudinary id를 만든 것, 83→79 참조). 목록에서 제거함. "IG 토큰 만료 추정"도 08-12 재인증(2026-11-10까지)으로 해소 → 제거.
 - **🔧 post-commit 훅이 두 층에서 고장나 있었다 (08-20 수정)** — ①**명령 매칭**: `grep -q "^git commit"`이 **가장 흔한 `git add … && git commit …` 형태를 통째로 놓쳤다.** 08-07 이후 훅은 사실상 거의 돌지 않았다 → 부분 일치로 완화(오탐 최대 피해 = 필드 세 줄 갱신). ②**앵커 결번**: 세 필드 중 `- **마지막 커밋:**` 라인이 문서에 아예 없어 갱신 대상이 없었다 → 라인 신설. **08-07에 "조용히 exit 0 하지 말고 stderr로 알리게" 고친 설계는 제대로 작동했다 — 실패한 건 알림을 읽는 쪽이었고, 그나마도 ①때문에 경고조차 뜨지 않았다.** ⚠️ 이 훅은 커밋 직후 문서를 고치므로 **워킹트리를 항상 한 스텝 dirty하게 남긴다**(다음 커밋에 딸려가는 것이 정상 동작).
 - **⚠️ 빌드 노이즈:** `npm run build`가 `data/places.json`의 `updatedAt` 24건을 빌드 시각으로 갱신한다(내용 무변경). 커밋 전 `git checkout data/places.json`으로 걷어낼 것
