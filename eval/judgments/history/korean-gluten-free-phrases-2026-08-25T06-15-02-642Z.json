@@ -1,0 +1,251 @@
+{
+  "schema": 1,
+  "slug": "korean-gluten-free-phrases",
+  "source_ref": "working-tree",
+  "content_sha256": "81c120f37bc07ba8499274355aace87d4e61d3212415123c749508aefba5e354",
+  "judged_at": "2026-08-25T06:16:03.996Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.237 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 19,
+      "max_points": 20,
+      "score": 9.5,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "The single most useful phrase, with romanisation and gloss, appears in the first ~60 words with an instruction to screenshot it, directly serving the \"korean gluten free phrases\" intent.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 2,
+          "max": 2,
+          "note": "Keyword sits in the title, which is ~50 characters including the appended site suffix, and the ~135-character description adds the angle (allergy framing, reconfirmation) rather than restating the title.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings argue rather than label — \"Why 'allergy' beats 'gluten-free' in Korea\", \"Reconfirming — the part people skip\", \"What these phrases can't do\" — so a skimmer gets the thesis and its limits without reading the body.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Four internal links, each placed where the reader has just hit the limit of this article: hidden gluten after the condiment explanation, the label guide where packaging closes the barley/rye gap, and /places plus the travel guide in the verification close.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All four Q/As are established in the body — the 알레르기 label line, the memorise-one-sentence block, and the coeliac limits section each back their FAQ — and each answer is self-contained as a rich result.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 2,
+          "max": 3,
+          "note": "Concrete and clearly lived — a quantified 10%-wheat bakery admission, a year of asking, a named region, and habits that came from \"doing this badly first\" — but the key encounters are unnamed and undated, so the detail is thinner than the top level requires.",
+          "evidence_quote": "during our first year back in Korea (2025–26), one bakery owner told us — cheerfully, without being pressed — that his was 10% wheat"
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "Every phrase carries Hangul plus romanisation plus gloss, and the 양조간장 / 조선간장 split, 알레르기 유발물질 label line, and 고시 제2025-60호 are all precise enough for a reader to verify independently.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "The central regulatory claim is tied to a named primary source with its notice number and publication date plus a retrieval date, which is the standard the rubric asks for.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "The piece explicitly bounds its own method (\"no sample, no measurement, and no lab test behind any of it\"), separates NCGS from coeliac need, offers an independent verification route, and carries no commercial links to disclose.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "experience",
+          "severity": "minor",
+          "quote": "one bakery owner told us — cheerfully, without being pressed — that his was 10% wheat",
+          "why": "The strongest first-hand anecdote in the piece is anonymised and undated beyond a year range — no bakery name, no neighbourhood, no month — so a reader cannot situate it, and it reads closer to a remembered pattern than a logged observation. The same softness appears in \"across a year of asking\" and \"what has worked for us in Seoul and Gyeonggi\".",
+          "fix": "Anchor at least one encounter: name the bakery (or its district) and the month, e.g. \"a rice-bread bakery in Yeonnam-dong, March 2026\". If the venue can't be named, give the date and district and say why the name is withheld."
+        },
+        {
+          "criterion": "authoritativeness",
+          "severity": "minor",
+          "quote": "that is fermented with wheat, and that is what most restaurant kitchens pour.",
+          "why": "The 양조간장 / 조선간장 distinction is the most checkable technical claim in the article and the one a coeliac reader is most likely to act on, but it carries no citation — unlike the MFDS allergen claim, which is sourced precisely. \"most restaurant kitchens pour\" is also a prevalence assertion with no basis given.",
+          "fix": "Link a KFDA/MFDS soy-sauce classification standard (장류 식품유형) or a manufacturer's ingredient page for a common brand (e.g. Sempio/Chung Jung One 양조간장) with its date, and either soften \"most restaurant kitchens pour\" to an observation or attribute it."
+        },
+        {
+          "criterion": "faq_alignment",
+          "severity": "minor",
+          "quote": "Staff who wave off 'gluten' will walk to the kitchen and ask when they hear 알러지.",
+          "why": "As a standalone rich result this reads as a general rule about Korean restaurant staff, while the body carefully hedges the same claim (\"it's our own pattern from a year of eating out as a couple with one gluten-free person, not a survey\"). The markup is more confident than the visible text it is supposed to mirror.",
+          "fix": "Rewrite the FAQ answer's last line to carry the body's hedge, e.g. \"In our experience, staff who wave off 'gluten' will walk to the kitchen and ask when they hear 알러지 — that is our own pattern, not a survey.\""
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 16885,
+        "cache_read_input_tokens": 31320,
+        "output_tokens": 4449,
+        "output_tokens_details": {
+          "thinking_tokens": 2594
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 16885,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 4449,
+            "cache_read_input_tokens": 31320,
+            "cache_creation_input_tokens": 16885,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 16885
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 19,
+      "max_points": 20,
+      "score": 9.5,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "Nearly every claim is either sourced (MFDS notice) or explicitly flagged as first-hand observation, but the soy sauce composition claim is a safety-relevant assertion carried with neither treatment.",
+          "evidence_quote": "Traditional **조선간장 / 한식간장** (*joseon-ganjang*, the meju-based kind used for soups and namul) is soybeans and salt, without wheat."
+        },
+        {
+          "id": "no_fabrication",
+          "points": 3,
+          "max": 3,
+          "note": "Notice number, notice date, retrieval date, publication date and the '2025–26' anecdote window are mutually consistent, links are concrete and resolvable, and the romanisations match the Korean throughout.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "The piece states exactly how it knows (a year of first-hand asking as a couple, one GF person) and names what that cannot establish — no survey, no sample, no lab test — and declines to produce a prevalence figure it does not have.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 4,
+          "max": 4,
+          "note": "No absolute safety guarantee anywhere, cross-contamination raised in fryer/grill/tongs/pan terms, and the NCGS-versus-coeliac line is drawn explicitly rather than blurred.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "The MFDS notice carries both its own date and a retrieval date, and reformulation and staff turnover are flagged as reasons a past answer expires.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 2,
+          "max": 2,
+          "note": "알레르기 유발물질, 양조간장/조선간장/한식간장, 쌈장 composition and 쌀빵 are all described correctly, and the wheat-only mandatory allergen scope with 보리/호밀 excluded is stated accurately.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "The reader is pointed to the 원재료명 on the package in their own hand and to phoning ahead, explicitly framed as not requiring trust in the author.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "Traditional **조선간장 / 한식간장** (*joseon-ganjang*, the meju-based kind used for soups and namul) is soybeans and salt, without wheat.",
+          "why": "This is a compositional claim about a food a coeliac reader may act on, and it is the one substantive claim in the piece that is neither cited nor marked as the authors' own observation — unlike the labelling claim beside it, which carries a notice number and a retrieval date. The following sentence about not being able to identify the bottle keeps it from being a safety lapse, but the sentence itself still asks for trust the article otherwise avoids asking for.",
+          "fix": "Attach a source (Korean Food Code 식품공전 식품유형 definition of 한식간장) or reframe as observation, and add that a commercial bottle labelled 한식간장 still needs its 원재료명 read, since the label is the only thing that settles it."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 20253,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 4155,
+        "output_tokens_details": {
+          "thinking_tokens": 2492
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 20253,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 4155,
+            "cache_read_input_tokens": 0,
+            "cache_creation_input_tokens": 20253,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 20253
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": true,
+    "reason": null
+  }
+}

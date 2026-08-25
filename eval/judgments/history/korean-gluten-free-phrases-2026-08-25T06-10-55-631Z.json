@@ -1,0 +1,265 @@
+{
+  "schema": 1,
+  "slug": "korean-gluten-free-phrases",
+  "source_ref": "working-tree",
+  "content_sha256": "75fe7c1f7169abb9089a60d4c89ec88a088a833ce10dc98ea3ad64ee50414a34",
+  "judged_at": "2026-08-25T06:12:28.114Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.237 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 18,
+      "max_points": 20,
+      "score": 9,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "The keyword intent — the actual Korean phrases — is served inside the first 100 words with Hangul, romanisation and gloss, before any preamble.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 1,
+          "max": 2,
+          "note": "Title is fine at ~52 chars with the appended suffix and carries the keyword, but the description runs roughly 199 characters, well over the 155 limit.",
+          "evidence_quote": "The Korean phrases that actually get a kitchen to check — why allergy framing works where 'gluten-free' doesn't, with romanisation, screenshot-ready text, and what to say when the first answer is wrong."
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings carry the argument on their own — situation-by-situation phrase blocks bracketed by why allergy framing works and what the phrases cannot do.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Four distinct internal links (hidden gluten, label guide ×2, places, travel guide), each placed where the reader would actually want the next step.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All four FAQ answers restate claims the body establishes — the 글루텐프리 framing, the memorise sentence, the 알러지/알레르기 spelling split, and the limits section — and each reads standalone as a rich result.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 2,
+          "max": 3,
+          "note": "Concrete first-hand texture (the 10%-wheat bakery, the breezy counter answer, NCGS household framing) but no dates, no venue names, and no numbers a reader could pin to an occasion.",
+          "evidence_quote": "one bakery owner told us, cheerfully and without prompting, that his was 10% wheat"
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "Every Korean term is given in Hangul plus romanisation plus gloss, and the regulatory claim is precise down to the notice number and which grains it omits.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "The load-bearing regulatory claim is linked to the primary MFDS standard with its notice number, promulgation date and retrieval date.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "A dedicated section states what the method cannot establish, offers an independent verification route, and there are no commercial links to disclose.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "title_meta",
+          "severity": "major",
+          "quote": "The Korean phrases that actually get a kitchen to check — why allergy framing works where 'gluten-free' doesn't, with romanisation, screenshot-ready text, and what to say when the first answer is wrong.",
+          "why": "At roughly 199 characters the meta description will be truncated in SERPs around 'screenshot-ready text,' — the strongest differentiator (what to say when the first answer is wrong) is cut off, and the em-dash clause is the part most likely lost.",
+          "fix": "Cut to under 155 characters, front-loading the differentiator, e.g. 'Why allergy framing works in Korea where \"gluten-free\" doesn't — the phrases, with romanisation, and what to say when the first answer is wrong.' (≈145 chars)."
+        },
+        {
+          "criterion": "experience",
+          "severity": "minor",
+          "quote": "one bakery owner told us, cheerfully and without prompting, that his was 10% wheat",
+          "why": "This is the single strongest experience signal in the piece, but it floats free of a date, a district, or any identifying detail, so it reads as an anecdote rather than an observation a reader could locate.",
+          "fix": "Anchor it: month and neighbourhood at minimum ('a 쌀빵 bakery in Yeonnam, March 2026'), and if the shop can't be named, say why. Same treatment for the 'a year of eating out' claim — give the start month."
+        },
+        {
+          "criterion": "authoritativeness",
+          "severity": "minor",
+          "quote": "Coeliac disease is rare in Korea and largely unfamiliar outside specialist medicine",
+          "why": "This prevalence claim is the entire load-bearing premise for the allergy-framing advice, yet it is the one substantive assertion in the article with no citation, while a far narrower labelling claim gets a dated primary source.",
+          "fix": "Attach a source with a date — a Korean prevalence or case-series paper, or a KDCA/medical society statement — or downgrade the wording to reflect that it is an inference from staff reactions rather than an epidemiological fact."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 47821,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 3971,
+        "output_tokens_details": {
+          "thinking_tokens": 2354
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 47821,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 3971,
+            "cache_read_input_tokens": 0,
+            "cache_creation_input_tokens": 47821,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 47821
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 19,
+      "max_points": 20,
+      "score": 9.5,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "Observation-based claims are conspicuously well marked ('it's our own pattern from a year of eating out as a couple with one gluten-free person, not a survey'), but the coeliac-prevalence premise is asserted without a source, and 'genuinely wheat-free' is an unsourced absolute; neither drives an unsafe eating decision on its own.",
+          "evidence_quote": "Coeliac disease is rare in Korea and largely unfamiliar outside specialist medicine"
+        },
+        {
+          "id": "no_fabrication",
+          "points": 3,
+          "max": 3,
+          "note": "The single hard citation carries a notice number, an issue date, a notice-page link and a retrieval date that are internally consistent with each other and with the frontmatter publication date; the one anecdote (the 10%-wheat bakery) is unattributed by name but framed as first-hand rather than as data.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "States both how it knows and what that cannot establish, including an explicit negative inventory of the method's limits and a separate section on what phrases structurally cannot do.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 4,
+          "max": 4,
+          "note": "Opens the coeliac FAQ with a flat 'No', gives coeliac disease its own stricter phrase set including separate-fryer and same-pan questions, addresses shared grill plates, tongs and scissors, and never treats NCGS and coeliac as interchangeable — the authors' own NCGS status is disclosed precisely so the reader can discount accordingly.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "The MFDS standard is dated to the day with a retrieval month, and staleness is flagged twice in the right direction for Korean food: staff turnover invalidates a prior confirmation, and manufacturers reformulate without notice.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 2,
+          "max": 2,
+          "note": "The load-bearing labelling fact is stated correctly and unambiguously — wheat is covered, 보리 and 호밀 are not — 알레르기 유발물질 is given as the actual label-line term, the 알러지/알레르기 register distinction is right, and every romanisation I checked (eomneun, seongnayo, Jipgerang, selliakbyeongiraseo) is correct.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "Gives a concrete, self-serve check that explicitly routes around trusting the authors — read the 원재료명 yourself via the four-word scan — plus a second route (phone ahead) for the restaurant case the label method cannot cover.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "Coeliac disease is rare in Korea and largely unfamiliar outside specialist medicine",
+          "why": "This is an epidemiological and professional-awareness claim presented as background fact with no source and no marking as the authors' own observation, unlike the adjacent framing claim which is explicitly flagged as anecdotal. It does not itself drive an eating decision, but it is the premise the whole 'allergy beats gluten-free' strategy rests on.",
+          "fix": "Either cite a prevalence/awareness source, or downgrade to observation with the same honesty used two paragraphs later (e.g. 'in our experience, staff we have asked have not encountered it')."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "unseasoned meat is genuinely wheat-free",
+          "why": "Absolute phrasing about a food category with no source. It is true of plain muscle meat but not of pre-brined, tenderiser-dusted or injected cuts, which a reader ordering 양념 안 한 고기 cannot see. The sentence's contamination caveat covers the grill, not the meat itself.",
+          "fix": "Qualify to 'plain, unmarinated meat contains no wheat in itself' and add one line noting that some cuts arrive pre-brined or dusted, so the 밀가루 question still applies to the meat, not only the sauce."
+        },
+        {
+          "criterion": "korean_accuracy",
+          "severity": "minor",
+          "quote": "간장, 고추장, 된장에도 밀가루가 들어가서요.",
+          "why": "Stated as a blanket property of three condiment categories. Traditional 조선간장/한식간장 is meju-based and wheat-free, and not all doenjang contains wheat flour. The error runs in the safety-conservative direction, so no reader is put at risk, but it is a product-category imprecision in a screenshot block readers will show to kitchens verbatim.",
+          "fix": "Change to '대부분의 간장, 고추장, 된장에는 밀가루가 들어가요' (most contain wheat flour) in the body, and keep the screenshot block conservative as-is with a one-line note in the body explaining why the blunt version is deliberate."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 47780,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 6380,
+        "output_tokens_details": {
+          "thinking_tokens": 4167
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 47780,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 6380,
+            "cache_read_input_tokens": 0,
+            "cache_creation_input_tokens": 47780,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 47780
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: seo-eeat 9/9.5"
+  }
+}

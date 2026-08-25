@@ -183,7 +183,7 @@ For in-depth reviews of each of the above (plus others), see the [full Seoul GF 
 If you remember one sentence from this guide, make it this:
 
 > **제가 밀가루 알러지가 있어서요. 밀가루 들어가나요?**
-> *Jega milgaru alleogiga isseoseoyo. Milgaru deureoganayo?*
+> *Jega milgaru alleojiga isseoseoyo. Milgaru deureoganayo?*
 > "I have a wheat allergy. Does this contain wheat flour?"
 
 The framing is the whole point. Most Korean restaurant staff don't know "gluten-free" (글루텐프리) — the word exists, but not the concept. But they understand **밀가루** (wheat flour), and they understand **알러지** (allergy). Frame your request as an allergy and the kitchen actually checks. They walk back, ask the chef, come back with a real answer.
