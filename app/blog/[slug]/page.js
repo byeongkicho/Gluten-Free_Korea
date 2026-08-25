@@ -4,8 +4,82 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import AffiliateBox from "@/app/components/AffiliateBox";
+import CopyButton from "@/app/components/CopyButton";
 import { resolveAffiliate } from "@/app/lib/affiliate";
 import { getAllPosts, getPostBySlug } from "@/app/lib/blog";
+
+// Korean phrases in these posts are meant to be *shown* to staff, not read
+// aloud: romanisation is hard to pronounce and, per the operator (2026-08-25),
+// staff often don't recognise it when a traveller tries. So any table cell or
+// blockquote carrying Korean gets a copy button.
+//
+// The copy text is assembled fragment by fragment and keeps only the pieces
+// containing Hangul. Blockquotes here put the English gloss in a sibling node,
+// and copying that too would hand a kitchen a sentence with English mixed in.
+const HANGUL = /[가-힣]/;
+// A sentence ending, so single Korean words in glossary tables ("밀 — wheat")
+// don't sprout a button that copies a word nobody needs to show anyone.
+const KOREAN_SENTENCE_END = /[가-힣][다요죠][.?!]$/;
+
+function textFragments(node, out = []) {
+  if (node == null || typeof node === "boolean") return out;
+  if (typeof node === "string" || typeof node === "number") {
+    out.push(String(node));
+    return out;
+  }
+  if (Array.isArray(node)) {
+    for (const child of node) textFragments(child, out);
+    return out;
+  }
+  if (node.props?.children != null) textFragments(node.props.children, out);
+  return out;
+}
+
+function koreanToCopy(children) {
+  return textFragments(children)
+    .filter((fragment) => HANGUL.test(fragment))
+    .map((fragment) => fragment.replace(/[ \t]+/g, " ").trim())
+    .filter(Boolean)
+    .join("\n");
+}
+
+const markdownComponents = {
+  td({ node, children, ...props }) {
+    const korean = koreanToCopy(children);
+    if (!KOREAN_SENTENCE_END.test(korean)) return <td {...props}>{children}</td>;
+    return (
+      <td {...props}>
+        <span className="flex items-start justify-between gap-2">
+          <span>{children}</span>
+          <CopyButton
+            text={korean}
+            ariaLabel={`Copy the Korean phrase: ${korean}`}
+          />
+        </span>
+      </td>
+    );
+  },
+  blockquote({ node, children, ...props }) {
+    // Same sentence test as the table cells, and for the same reason: some
+    // blockquotes carry Korean the reader is meant to *find* (the printed
+    // shared-facility caution on a package), not to show anyone. Those end in
+    // a noun with no terminator and correctly get no button.
+    const korean = koreanToCopy(children);
+    if (!KOREAN_SENTENCE_END.test(korean))
+      return <blockquote {...props}>{children}</blockquote>;
+    return (
+      <blockquote {...props}>
+        {children}
+        <span className="mt-3 flex justify-end not-italic">
+          <CopyButton
+            text={korean}
+            ariaLabel={`Copy the Korean text: ${korean}`}
+          />
+        </span>
+      </blockquote>
+    );
+  },
+};
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://noglutenkorea.com";
@@ -134,6 +208,7 @@ export default async function BlogPostPage({ params }) {
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeSlug]}
+          components={markdownComponents}
         >
           {post.content}
         </ReactMarkdown>
