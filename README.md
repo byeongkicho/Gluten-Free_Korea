@@ -70,7 +70,7 @@ defects the first time it ran.
 
 ## Observability
 
-The site is monitored by an exporter in this repository, not by a hosted uptime
+The site is monitored by a health check in this repository, not by a hosted uptime
 checker. `scripts/healthcheck.mjs` derives metrics — availability, response time
 per endpoint, SSL days remaining, data integrity, check failures — and
 `scripts/push-metrics.mjs` sends them to Grafana Cloud as Influx line protocol
