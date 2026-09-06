@@ -105,7 +105,7 @@ Ssamjang is built on doenjang and gochujang, so it goes. Treat any grill that ha
 | Korean | English |
 |---|---|
 | 이 빵 100% 쌀가루인가요? | Is this bread 100% rice flour? |
-| 밀가루 조금이라도 섞나요? | Is any wheat flour mixed in at all? |
+| 밀가루 조금이라도 들어가나요? | Is there any wheat flour in it at all? |
 
 Ask both. **쌀빵** (rice bread) describes what went into the dough, not what stayed out of it — during our first year back in Korea (2025–26), one bakery owner told us — cheerfully, without being pressed — that his was 10% wheat. He wasn't hiding it; nobody had ever asked. The percentage question is the one that works.
 
@@ -120,7 +120,7 @@ Everything above is written from our household's reality, which is non-coeliac g
 | 튀김기 따로 쓰시나요? | Do you use a separate fryer? |
 | 밀, 보리, 호밀 전부 안 돼요. | No wheat, barley, or rye — none of them. |
 
-That last line matters more in Korea than it might elsewhere. Korea's mandatory allergen declaration, set by the MFDS labelling standard [식품등의 표시기준](https://www.law.go.kr/행정규칙/식품등의표시기준) (고시 제2025-60호, 29 August 2025 — [notice page](https://www.mfds.go.kr/brd/m_211/view.do?seq=14917), retrieved August 2026), **covers wheat. Barley (보리) and rye (호밀) are not on it.** So "no 밀" is a narrower answer here than a coeliac reader will assume. Naming all three closes that gap in conversation; on packaging you have to close it yourself by reading the full ingredient list, which is the method in [our Korean label guide](/blog/reading-korean-food-labels).
+That last line matters more in Korea than it might elsewhere. Korea's mandatory allergen declaration, set by [식품등의 표시·광고에 관한 법률 시행규칙 별표 2](https://www.law.go.kr/LSW/lsBylInfoPLinkR.do?lsiSeq=267855&bylNo=0002&bylBrNo=00&bylCls=BE&bylClsCd=BE) (소비자 안전을 위한 표시사항, under 제5조제1항 — 총리령 제2004호, amended 30 December 2024, in force from 1 January 2026), **covers wheat. Barley (보리) and rye (호밀) are not on it.** So "no 밀" is a narrower answer here than a coeliac reader will assume. Naming all three closes that gap in conversation; on packaging you have to close it yourself by reading the full ingredient list, which is the method in [our Korean label guide](/blog/reading-korean-food-labels).
 
 ## The block to save before you fly
 

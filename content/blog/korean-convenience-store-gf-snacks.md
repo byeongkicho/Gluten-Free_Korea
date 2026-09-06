@@ -17,7 +17,7 @@ faq:
     a: "With caution and low expectations. Wheat-free snacks exist, but Korean labels don't declare barley or rye as mandatory allergens, shared-facility production is common, and hidden gluten from soy sauce powder or malt extract is rarely obvious on the label. The most reliable convenience-store items are simple ones: boiled eggs, whole fruit, unflavored yogurt, unseasoned chicken breast."
 ---
 
-*Updated August 2026: added Orion's own allergen page for 포카칩 and the MFDS labeling-standard citation — the August 2026 retrieval dates below are from that update.*
+*Updated August 2026: added Orion's own allergen page for 포카칩 and corrected the source of the mandatory allergen list (시행규칙 별표 2, not the MFDS labelling standard first cited here) — the August 2026 retrieval dates below are from that update.*
 
 I love convenience stores. I worked in one for a long stretch, I'm the kind of person who goes out of their way for a Japanese conbini, and the Korean 편의점 is one of my favorite things about living here. Which made it genuinely deflating to work out how little of one my wife could actually eat.
 
@@ -106,7 +106,7 @@ Chips are not a food plan. What actually holds the routine together is simple fo
 
 Everything above reflects the standard we live by — my wife has non-celiac gluten sensitivity, so our bar is "no wheat as an ingredient." If you're **celiac**, treat this page as a shortlist of what to *pick up*, not a list of what's *safe*, for three specific reasons:
 
-1. **Barley and rye are not mandatory allergens in Korea.** The list of substances the 알레르기 유발물질 line must declare is set by the MFDS labeling standard, [식품등의 표시기준](https://www.law.go.kr/행정규칙/식품등의표시기준) (별표 2, 소비자 안전을 위한 표시사항 — current text as retrieved August 2026; the rule is amended regularly, so re-check it): 밀 (wheat) is on it, barley and rye are not. So the bolded allergen line reliably flags wheat only — malt (맥아) and barley can sit in a seasoning without appearing there, and you have to read the full 원재료명 list.
+1. **Barley and rye are not mandatory allergens in Korea.** The list of substances the 알레르기 유발물질 line must declare is set by [식품등의 표시·광고에 관한 법률 시행규칙 별표 2](https://www.law.go.kr/LSW/lsBylInfoPLinkR.do?lsiSeq=267855&bylNo=0002&bylBrNo=00&bylCls=BE&bylClsCd=BE) (소비자 안전을 위한 표시사항, under 제5조제1항 — current text as retrieved August 2026; the rule is amended regularly, so re-check it): 밀 (wheat) is on it, barley and rye are not. So the bolded allergen line reliably flags wheat only — malt (맥아) and barley can sit in a seasoning without appearing there, and you have to read the full 원재료명 list.
 2. **Shared facilities are common and often undisclosed.** A snack with no wheat ingredients can still run on a line that also runs wheat products.
 3. **Seasoning powders are opaque.** Soy sauce powder and flavor bases are where trace gluten hides, and they're rarely broken out on the label. (Standard Korean brewed soy sauce, 양조간장, is made with wheat — see [the hidden-gluten guide](/blog/hidden-gluten-korean-food).)
 

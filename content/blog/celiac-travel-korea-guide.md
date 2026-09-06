@@ -21,7 +21,7 @@ faq:
     a: "Yes, but verify. Some \"rice bread\" shops blend wheat flour into the dough — one bakery owner cheerfully told us his was 10% wheat. Only commit to dedicated GF bakeries like monil2 house and Cafe Rebirth."
 ---
 
-*Updated August 2026: added the MFDS labeling-standard and manufacturer citations, dated our franchise call, removed a certification claim we could no longer verify, corrected the tteokbokki entry to cover 밀떡 (wheat tteok), and flagged 237 Pizza as unconfirmed — it was closed for remodelling on our last visit. The August 2026 retrieval dates below are from that update.*
+*Updated August 2026: added the manufacturer citations, corrected the source of the mandatory allergen list (시행규칙 별표 2, not the MFDS labelling standard first cited here), dated our franchise call, removed a certification claim we could no longer verify, corrected the tteokbokki entry to cover 밀떡 (wheat tteok), and flagged 237 Pizza as unconfirmed — it was closed for remodelling on our last visit. The August 2026 retrieval dates below are from that update.*
 
 ## TL;DR
 
@@ -84,14 +84,14 @@ This site — [noglutenkorea.com](https://noglutenkorea.com) — is the director
 
 The short version: almost everything has soy sauce. (Everything in this section is the pattern from a year of reading 원재료명 lists and asking kitchens — field notes, not a database. Verify any specific product against its own label.)
 
-**Soy sauce** (간장, *ganjang*) in Korea is brewed from wheat and soybeans. It's the base of most marinades, banchan (side dishes), and cooking liquids. Bulgogi, galbi, japchae, bibimbap sauce, most stew bases — all soy sauce. Skipping soy sauce in Korea is like skipping olive oil in Italy. Our workaround is imported Japanese tamari — the easiest wheat-free substitute to find in Seoul (Lotte Mart, larger Emart branches, Kim's Club carry it), and the bottle that lives in our bag for BBQ nights — though check the label, since some tamari brands include a small amount of wheat.
+**Soy sauce** (간장) in Korea is brewed from wheat and soybeans. It's the base of most marinades, banchan (side dishes), and cooking liquids. Bulgogi, galbi, japchae, bibimbap sauce, most stew bases — all soy sauce. Skipping soy sauce in Korea is like skipping olive oil in Italy. Our workaround is imported Japanese tamari — the easiest wheat-free substitute to find in Seoul (Lotte Mart, larger Emart branches, Kim's Club carry it), and the bottle that lives in our bag for BBQ nights — though check the label, since some tamari brands include a small amount of wheat.
 
 **Gochujang** (고추장, red pepper paste) is usually made with wheat flour or barley — flip a commercial tub and the 원재료명 nearly always lists one of them. **Doenjang** (된장, soybean paste) is traditionally just soybeans, salt, and water — but commercial tubs sometimes list wheat (밀), so check the 원재료명. **Ssamjang** (쌈장), the classic Korean BBQ dipping sauce, is gochujang and doenjang combined. If it's red or brown, assume wheat until you've checked.
 
 Then there's a second tier of hidden gluten:
 
 - **Eomuk** (어묵, fish cake) is usually wheat starch. A few brands make versions without wheat — Goraesa (고래사) is the name that comes up most, but verify the specific product's 원재료명 — and the default on a stew or a street stall is wheat.
-- **Tteokbokki** (떡볶이, spicy rice cake dish): three problems, not one. The tteok itself may be wheat — **밀떡** (*mil-tteok*) is made with wheat flour and is standard at street stalls and in supermarket packets, so "tteok is rice" is not a rule you can rely on. Rice tteok (쌀떡) exists, but the packet has to say so. On top of that, the sauce contains gochujang and the fish cakes mixed in have wheat.
+- **Tteokbokki** (떡볶이, spicy rice cake dish): three problems, not one. The tteok itself may be wheat — **밀떡** is made with wheat flour and is standard at street stalls and in supermarket packets, so "tteok is rice" is not a rule you can rely on. Rice tteok (쌀떡) exists, but the packet has to say so. On top of that, the sauce contains gochujang and the fish cakes mixed in have wheat.
 - **Fried chicken** in Korea is almost always wheat-battered. There are rice-based brands (we'll get to ssaltongdak below) but they're rare.
 - **Ramyeon** is wheat noodles, full stop. Every convenience-store cup, every late-night ramyeon bar. Rice-based Korean ramen exists but is niche.
 
@@ -168,7 +168,7 @@ A GF cafe with gorgeous cakes — strawberry, chocolate, seasonal fruit — on t
 
 **ssaltongdak** (쌀통닭) — Dangsan, Yeongdeungpo-gu, Seoul
 
-Rice-flour fried chicken. When I called the franchise headquarters in the summer of 2025, they told me the **plain fried chicken** is made without wheat — and that anything sauced (*yangnyeom*, *ganjang*, teriyaki-style) contains gluten. The puffed rice crackers (*ppeongttwigi*) served alongside have been fine at our NCGS standard. A year has passed since that call — recipes and suppliers change, and individual branches may have cross-contamination depending on kitchen setup, so confirm at your location. A rice-flour pizza is also on their menu — we haven't personally verified it.
+Rice-flour fried chicken. When I called the franchise headquarters in the summer of 2025, they told me the **plain fried chicken** is made without wheat — and that anything sauced (양념, 간장, teriyaki-style) contains gluten. The puffed rice crackers (뻥튀기) served alongside have been fine at our NCGS standard. A year has passed since that call — recipes and suppliers change, and individual branches may have cross-contamination depending on kitchen setup, so confirm at your location. A rice-flour pizza is also on their menu — we haven't personally verified it.
 
 ### Tier 3 — Everywhere Else
 
@@ -203,7 +203,7 @@ At Korean BBQ specifically, the ask is: unseasoned meat — *"양념 안 한 고
 
 At the convenience store and the mart, the product label is your most honest friend.
 
-Ingredient lists in Korea are printed on the back or bottom of the packaging. The format is consistent: raw ingredients in descending order, then a dedicated line for **알레르기 유발물질** ("allergens") flagging the substances on Korea's mandatory-declaration list, set by the MFDS labeling standard [식품등의 표시기준](https://www.law.go.kr/행정규칙/식품등의표시기준) (별표 2 — text in force as of August 2026).
+Ingredient lists in Korea are printed on the back or bottom of the packaging. The format is consistent: raw ingredients in descending order, then a dedicated line for **알레르기 유발물질** ("allergens") flagging the substances on Korea's mandatory-declaration list, set by [식품등의 표시·광고에 관한 법률 시행규칙 별표 2](https://www.law.go.kr/LSW/lsBylInfoPLinkR.do?lsiSeq=267855&bylNo=0002&bylBrNo=00&bylCls=BE&bylClsCd=BE) (소비자 안전을 위한 표시사항, under 제5조제1항 — 총리령 제2004호, amended 30 December 2024, in force from 1 January 2026).
 
 These are the words to scan for:
 
@@ -221,7 +221,7 @@ For NCGS we make case-by-case calls on these. For celiac travelers, avoid entire
 
 One trap: "**쌀로 만든**" ("made with rice") does NOT mean gluten-free. Rice-labeled products often contain wheat starch as a binder. Check the ingredient list, not the packaging headline.
 
-My wife's scan-and-flip routine is roughly two seconds per item now: pick up, flip, search for 밀 in the allergen line, return or keep. That's the whole move *for her NCGS* — but note carefully what it does and doesn't cover. **Korea's mandatory allergen labelling covers wheat only. Barley (보리) and rye (호밀) are not on the [mandatory declaration list](https://www.law.go.kr/행정규칙/식품등의표시기준)**, so they routinely won't appear in the allergen line even when they're in the product — and barley shows up constantly in Korean drinks and syrups. A celiac reader cannot stop at the allergen line: scan the full ingredient list for 보리 and 호밀 too. And a standing caution: Korean manufacturers reformulate without notice, so a package that passed last month can fail this month — the label in your hand is the only answer that counts. The full method, including the barley problem, is in our [Korean food label guide](/blog/reading-korean-food-labels).
+My wife's scan-and-flip routine is roughly two seconds per item now: pick up, flip, search for 밀 in the allergen line, return or keep. That's the whole move *for her NCGS* — but note carefully what it does and doesn't cover. **Korea's mandatory allergen labelling covers wheat only. Barley (보리) and rye (호밀) are not on the [mandatory declaration list](https://www.law.go.kr/LSW/lsBylInfoPLinkR.do?lsiSeq=267855&bylNo=0002&bylBrNo=00&bylCls=BE&bylClsCd=BE)**, so they routinely won't appear in the allergen line even when they're in the product — and barley shows up constantly in Korean drinks and syrups. A celiac reader cannot stop at the allergen line: scan the full ingredient list for 보리 and 호밀 too. And a standing caution: Korean manufacturers reformulate without notice, so a package that passed last month can fail this month — the label in your hand is the only answer that counts. The full method, including the barley problem, is in our [Korean food label guide](/blog/reading-korean-food-labels).
 
 ---
 
