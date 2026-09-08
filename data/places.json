@@ -493,7 +493,7 @@
     "name": "237Pizza",
     "type": "Restaurant",
     "address": "서울 용산구 이태원로 237",
-    "note": "⚠️ Status unconfirmed — closed for remodelling as of our last visit in summer 2026, and the shop website was returning a server error in August 2026. Confirm it is trading before making the trip. A dedicated gluten-free pizza shop in Hannam (B1) with made-to-order pies.",
+    "note": "A dedicated gluten-free pizza shop in Hannam (B1) with made-to-order pies. Its in-store menu carries the GFCO certified gluten-free mark alongside Caputo Fioreglut gluten-free flour (photographed on site, June 2025) — as far as we know the only GFCO-certified gluten-free pizza in Korea.",
     "tags": [
       "Dedicated GF",
       "Pizza"
@@ -505,7 +505,8 @@
     "sources": [
       "User submitted (Excel, 2026-02-10)",
       "https://www.237pizza.com/",
-      "User photos + review (Telegram, 2026-02-10)"
+      "User photos + review (Telegram, 2026-02-10)",
+      "Closure confirmed via Korean blog post (2026-09-03) + 237pizza.com HTTP 500 (2026-09-08)"
     ],
     "naverPlaceId": "1741203487",
     "lat": 37.5362354,
@@ -513,7 +514,10 @@
     "nameEn": "237 Pizza",
     "location": "Seoul, Yongsan-gu (Hannam)",
     "addressEn": "237 Itaewon-ro, Yongsan-gu, Seoul",
-    "note_ko": "⚠️ 영업 상태 미확인 — 2026년 여름 마지막 방문 시 리모델링으로 휴업 중이었고, 2026년 8월 기준 공식 사이트가 서버 오류로 응답하지 않습니다. 방문 전 영업 여부를 확인하세요. 한남동 지하 1층의 글루텐프리 전용 피자 전문점.",
+    "note_ko": "한남동 지하 1층의 글루텐프리 전용 피자 전문점. 매장 메뉴판에 GFCO 인증 마크와 카푸토 피오레글루트 글루텐프리 밀가루가 함께 표기돼 있습니다(2025년 6월 현장 촬영). 우리가 아는 한 국내 유일의 GFCO 인증 글루텐프리 피자입니다.",
+    "status": "unverified",
+    "statusNote": "Temporarily closed — confirmed September 2026, not just unconfirmed. A Korean food blogger writing on 3 September 2026 opens by describing the Hannam shop's closure while looking for a replacement, and the official site (237pizza.com) has been returning a server error since August 2026. It was shut for remodelling when we last visited in summer 2026. We have not been able to reach anyone to ask whether it is coming back.\n\nPlease don't make the trip on this listing. If you pass by and find it open, tell us at contact@noglutenkorea.com or @noglutenkorea and we'll restore the entry the same day — this is the only GFCO-certified gluten-free pizza we know of in Korea, and we would rather have it back than right.",
+    "statusNote_ko": "휴업 중 — 2026년 9월 확인. 미확인이 아니라 확인된 휴업입니다. 2026년 9월 3일 작성된 국내 블로그 글이 \"이태원 237 피자의 휴업\"을 전제로 대체 매장을 찾아다닌 내용으로 시작하고, 공식 사이트(237pizza.com)는 2026년 8월부터 서버 오류로 응답하지 않습니다. 2026년 여름 마지막 방문 때도 리모델링 휴업이었습니다. 재개 여부는 연락이 닿지 않아 확인하지 못했습니다.\n\n이 항목만 보고 찾아가지 마세요. 혹시 지나다 문이 열려 있는 걸 보시면 contact@noglutenkorea.com 이나 @noglutenkorea 로 알려주세요. 확인되는 대로 당일에 되살리겠습니다. 국내에서 우리가 아는 유일한 GFCO 인증 글루텐프리 피자라, 맞는 것보다 돌아오는 편이 낫습니다.",
     "updatedAt": "2026-09-08",
     "images": [
       "places/237-pizza/01",
