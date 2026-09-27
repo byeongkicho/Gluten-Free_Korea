@@ -1,0 +1,279 @@
+{
+  "schema": 1,
+  "slug": "hidden-gluten-korean-food",
+  "source_ref": "working-tree",
+  "content_sha256": "36b4a53d0e5b1f83aea6cbd98cb705fbf8c3005c1bd8fafb64b296b946de154d",
+  "judged_at": "2026-08-27T12:32:35.081Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.237 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 19,
+      "max_points": 20,
+      "score": 9.5,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "The keyword intent — where gluten actually hides in Korean food — is answered by the thesis line ('the danger is almost never the dish you're looking at. It's the condiments inside it') well inside the first 200 words, and the condiment table follows immediately.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 2,
+          "max": 2,
+          "note": "Title is 35 chars (55 with the appended ' | Gluten-Free Korea'), description is ~153 chars, keyword present in both, and the description carries genuinely new information (밀떡, barley gap, swaps) rather than restating the title.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings argue rather than label — 'The allergen line only covers wheat', 'Noodles: mostly wheat, with two bright spots', 'The good news: control the condiments, reclaim the cuisine' — and a heading-only skim reproduces the piece's whole case.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Three distinct internal destinations (label-reading guide, restaurant list, pillar travel guide), each placed at the moment the reader would want it — the label guide lands right after the barley-gap gap is named.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All three FAQ answers are fully established in the body (Sempio 501 wheat listing, 밀떡/sauce/fish-cake triple check, dangmyeon sweet-potato starch plus mixed-starch caveat) and each reads as a complete standalone answer.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 2,
+          "max": 3,
+          "note": "Real first-hand signal — named venues with neighbourhoods, a self-corrected past error, specific Seoul retailers — but the anecdotes are thin on the hard specifics the rubric asks for: no dates beyond 'summer 2026', no vendor names on the failure story, no quantities anywhere.",
+          "evidence_quote": "I once ordered a loaf advertised as \"gluten-free\" online; a week later the product name had been quietly changed to \"rice bread\" — no asterisk, no notice."
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "Precise throughout: named product (양조간장 501), named manufacturer lead (고래사), exact label tokens (소맥분, 밀쌀, 원재료명), and a citation down to the clause (제5조제1항, 별표 2) that a reader can independently pull.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "The two load-bearing claims are anchored to primary sources — the manufacturer's own product page and the law.go.kr statutory text — each with an explicit retrieval date and an acknowledgement that the statute is amended.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "The method's limits are stated up front and re-stated at each weak point ('not a brand survey', 'cannot establish that a product is free of trace gluten', 'an absence we searched for rather than a proof that none exists'), and no commercial or affiliate link appears anywhere.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "experience",
+          "severity": "major",
+          "quote": "I once ordered a loaf advertised as \"gluten-free\" online; a week later the product name had been quietly changed to \"rice bread\" — no asterisk, no notice.",
+          "why": "This is the single most valuable first-hand moment in the piece — an observed instance of a GF claim being retracted — but it is stripped of every checkable detail: no shop or platform, no month, no product name. As written it reads as an anecdote a competitor could have invented, which is exactly the failure mode the Experience signal exists to catch.",
+          "fix": "Add the month, the seller (or at minimum 'a Naver Smart Store bakery' vs 'Coupang'), the price paid, and what the 원재료명 said. Same treatment for the 쌀빵 line: 'Rice breads we've picked up have listed wheat flour' should name one bakery and one date."
+        },
+        {
+          "criterion": "experience",
+          "severity": "minor",
+          "quote": "**For a trip → monil2 house** in Yeonnam sells travel-sized packets of gluten-free gochujang and soy sauce",
+          "why": "Named shop and neighbourhood are good, but the visit has no date and the product no price or pack count — so a reader cannot tell whether this is current or three years stale, and the piece elsewhere insists that Korean products change without notice.",
+          "fix": "Add the visit month and the packet price/size, e.g. 'visited May 2026; ~₩3,000 for a 6-packet sleeve'."
+        },
+        {
+          "criterion": "authoritativeness",
+          "severity": "minor",
+          "quote": "**어묵 / 오뎅 (fish cake)** — bound with wheat starch, nearly always.",
+          "why": "The entire 'Second-tier hidden sources' section — fish cake, curry roux, sausages, dressings, fried chicken batter — carries no attribution at all, while the two claims that are sourced sit elsewhere. The strongest section of the article for search traffic is its least evidenced.",
+          "fix": "Anchor at least two of these six bullets to a read label (brand + product + retrieval month), the same way the Sempio claim is anchored. One photographed 원재료명 for a mainstream 어묵 would carry the whole list."
+        },
+        {
+          "criterion": "authoritativeness",
+          "severity": "minor",
+          "quote": "current text as retrieved August 2026; it is amended regularly",
+          "why": "The piece correctly flags that the statute changes, but never states which amendment it read. A reader checking in 2027 has a retrieval date but no version to compare against, which weakens the citation it depends on most.",
+          "fix": "Add the amendment number and effective date from the law.go.kr header (e.g. '총리령 제____호, 시행 2026-__-__') alongside the retrieval date."
+        },
+        {
+          "criterion": "expertise",
+          "severity": "minor",
+          "quote": "Tteokbokki tteok comes in two kinds: 쌀떡 (rice) and **밀떡, made with wheat flour**",
+          "why": "밀떡 is the article's headline discovery and appears in the meta description, yet neither 밀떡 nor 쌀떡 is ever romanised. An English-language reader searching 'gluten in korean food' cannot pronounce, type, or search the term, and cannot say it to a shopkeeper — which blunts the payoff of the piece's best insight.",
+          "fix": "Give the romanisation once at first use (밀떡 mil-tteok / 쌀떡 ssal-tteok), the way 당면 dangmyeon and 고추장 gochujang are already handled, then use hangul thereafter."
+        },
+        {
+          "criterion": "search_intent",
+          "severity": "minor",
+          "quote": "*Updated August 2026: anchored the soy sauce claim to the manufacturer's own ingredient listing, added the mandatory-allergen gap for barley and rye, removed a percentage figure we could not source, named the wheat-free condiments actually in our kitchen*",
+          "why": "This ~95-word changelog occupies the entire above-the-fold position. The answer still lands inside 200 words, but a search visitor's first screen is editorial housekeeping rather than the condiment thesis, which costs dwell time and gives snippet extractors the wrong opening paragraph.",
+          "fix": "Move the changelog below the first section or into a collapsed 'Revision history' block at the foot, and let 'in Korean food, the danger is almost never the dish you're looking at' be the first line on the page."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 52500,
+        "output_tokens": 7589,
+        "output_tokens_details": {
+          "thinking_tokens": 5020
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 7589,
+            "cache_read_input_tokens": 52500,
+            "cache_creation_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 18,
+      "max_points": 20,
+      "score": 9,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 2,
+          "max": 4,
+          "note": "The two load-bearing claims (soy sauce composition, allergen-list scope) are linked to primary sources and the piece marks its own observations, but several supporting factual assertions — fish cake binder, curry roux, dangmyeon composition, tamari retail availability — are asserted without source or observation marker.",
+          "evidence_quote": "**당면 (dangmyeon), the glass noodle in japchae, is sweet potato starch — naturally gluten-free.**"
+        },
+        {
+          "id": "no_fabrication",
+          "points": 3,
+          "max": 3,
+          "note": "Product names (Sempio 양조간장 501, Goraesa, monil2 house, 237 Pizza, GFCO) are checkable and hedged where unverified, dates are internally consistent with the July publication and August update, and the piece explicitly says it removed an unsourceable percentage figure.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "A dedicated paragraph states the method (reading 원재료명 on products they cook with plus linked manufacturer/regulatory sources) and names exactly what it cannot establish — not a brand survey, reformulation risk, and no ability to rule out trace gluten from shared equipment.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 4,
+          "max": 4,
+          "note": "Celiac risk is consistently held to a stricter standard than the author's NCGS reality, cross-contamination is raised at every point where a swap might otherwise read as clearance (tteokbokki stalls, shared woks for japchae, fryers), and 저글루텐 is called unsafe rather than borderline.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "Both sourced claims carry retrieval dates, the law is flagged as amended regularly, the GFCO-equivalent search and the 237 Pizza closure are both time-stamped, and reformulation without notice is named as a live limit.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 2,
+          "max": 2,
+          "note": "The load-bearing labelling fact is correct and correctly attributed to 시행규칙 별표 2 (not the MFDS notice), and the Korean terms — 원재료명, 소맥분, 밀쌀, 밀떡/쌀떡, 집간장, 알레르기 유발물질 — are used accurately.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "The reader gets a direct manufacturer link, a direct statute link, the exact Korean strings to scan for, a linked four-step label method, and an explicit invitation to correct the GFCO-equivalent claim.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "claim_verifiability",
+          "severity": "major",
+          "quote": "**당면 (dangmyeon), the glass noodle in japchae, is sweet potato starch — naturally gluten-free.**",
+          "why": "This is the one unsourced claim that points a reader toward eating rather than avoiding, and it is stated as a composition fact with no citation and no 'in our kitchen' marker. The hedge that follows ('some commercial dangmyeon is a mixed-starch product') limits the damage but does not source the base claim. Several other assertions in the same register — fish cake bound with wheat starch, curry roux thickened with wheat flour, sausage binders — are likewise unsourced.",
+          "fix": "Anchor the dangmyeon claim to one manufacturer's 원재료명 the way the Sempio claim is anchored (product page, retrieval date), or restate it as an observation: 'every bag of dangmyeon we have read lists sweet potato starch alone.' Apply the same treatment to the fish cake and curry roux lines."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "The easiest wheat-free substitute to find in Seoul; Lotte Mart, the larger Emart branches and Kim's Club carry it.",
+          "why": "A named-retailer stocking claim is presented as general fact rather than as the authors' own shopping experience, and retail assortment is exactly the kind of detail that goes stale silently. It does not drive a gluten exposure, since the reader is told to read the bottle regardless.",
+          "fix": "Mark it as observation and date it — 'as of August 2026 we have bought it at Lotte Mart, the larger Emart branches and Kim's Club' — matching the retrieval-date convention used elsewhere in the piece."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 19169,
+        "cache_read_input_tokens": 33290,
+        "output_tokens": 4896,
+        "output_tokens_details": {
+          "thinking_tokens": 3367
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 19169,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 4896,
+            "cache_read_input_tokens": 33290,
+            "cache_creation_input_tokens": 19169,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 19169
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: accuracy-safety 9/9.5"
+  }
+}

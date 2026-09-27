@@ -1,0 +1,272 @@
+{
+  "schema": 1,
+  "slug": "gluten-free-restaurants-seoul",
+  "source_ref": "working-tree",
+  "content_sha256": "17c499948fa64905ef40defdc5454d57e8e6bc8564e13400b6ea41916a84d10f",
+  "judged_at": "2026-09-08T07:52:58.333Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.261 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 19,
+      "max_points": 20,
+      "score": 9.5,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "첫 문장에서 7곳을 실명으로 나열하고 두 번째 문단에서 정렬 기준(증거 강도)까지 밝혀, 200단어 안에 키워드 의도를 우회 없이 충족한다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 2,
+          "max": 2,
+          "note": "제목은 렌더 시 접미사 포함 53자, 설명은 154자로 둘 다 상한 이내이며 키워드가 제목에 있고 두 필드 간 표현 중복이 없다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "헤딩이 라벨이 아니라 주장을 담고 있어(예: '237 Pizza is closed — and this is what it cost us', 'Cluster your day by neighborhood') 헤딩만 훑어도 글의 논지가 그대로 재구성된다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "8개 place 페이지와 4개 blog 가이드가 각각 그 문장에서 독자가 실제로 필요로 하는 지점(주소·라벨 읽기·한국어 문구)에 놓여 있어 링크 남발이 아니다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "FAQ 3건 모두 본문이 뒷받침하며, 특히 '5곳 방문·4곳 월 표기·Ssal Tongdak 무날짜·Vegetus/Jihwaja 미방문' 수치가 본문 표기와 정확히 일치해 리치 결과로 단독 노출돼도 성립한다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 3,
+          "max": 3,
+          "note": "재방문 5회의 월 단위 기록, 2025년 6월 매장 내 메뉴판의 GFCO 인증 마크와 Caputo Fioreglut 봉투 촬영, 'Second floor, no elevator', 2026-09-08 HTTP 500 재확인 등 관찰된 구체 사실과 어긋난 것(폐업)까지 포함한다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "expertise",
+          "points": 1,
+          "max": 2,
+          "note": "제품명(Caputo Fioreglut·GFCO)과 법령 수치(총리령 제2004호, 2026-01-01 시행)는 검증 가능할 만큼 정확하지만, 한국어 용어에 로마자 표기가 전무하고 일부는 뜻풀이조차 없어 세 요소 중 하나가 미충족이다.",
+          "evidence_quote": "ask about 보리 and 맥아 by name"
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "법제처 별표2 직결 링크에 개정·시행일이 붙어 있고, 폐업 근거인 네이버 블로그는 2026-09-03 작성일, 공식 사이트 500은 2026-09-08 확인일까지 명시했다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "'Honest limits' 절이 이 방법론이 셀리악에게 보장을 줄 수 없음을 명시하고, Vegetus에 대해 '메뉴 표기이지 우리 검증이 아니다'라고 선을 그으며, 제휴 링크는 존재하지 않는다.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "expertise",
+          "severity": "minor",
+          "quote": "ask about 보리 and 맥아 by name",
+          "why": "영어권 독자 대상 글에서 핵심 행동 지시에 쓰인 한국어 단어가 로마자 표기도 영어 뜻풀이도 없이 노출된다. 같은 글 안에서 '간장'은 soy sauce (간장), '튀김'은 batter (튀김)로 풀어줬는데 정작 가장 중요한 보리·맥아만 맨몸으로 나온다. 독자가 검증하거나 매장에서 물어볼 수 없다.",
+          "fix": "barley (보리)·malt (맥아) 형태로 영어 뜻을 병기한다. 위 문장 바로 앞 Tier 1 단락에서 'barley, malt or 보리차'라고 이미 영어 단어를 썼으므로, 그 표기를 그대로 재사용하면 일관성도 살아난다. 보리차도 barley tea (보리차)로 통일."
+        },
+        {
+          "criterion": "search_intent",
+          "severity": "minor",
+          "quote": "is a dedicated GF bakery-and-cafe rather than a sit-down restaurant",
+          "why": "키워드가 'gluten free restaurants seoul'이고 제목이 '7 Gluten-Free Restaurants'인데, 유일한 Tier 1이자 글 전체의 앵커가 restaurant이 아니라 베이커리-카페다. 글이 이를 정직하게 밝히는 점은 오히려 신뢰 요소지만, 검색 결과에서 '식당 7곳'을 기대하고 들어온 독자와 첫 화면에서 미세한 어긋남이 생긴다.",
+          "fix": "리드 문단(첫 200단어 안)에 한 줄 추가 — 예: 'One of the seven is a bakery-cafe rather than a sit-down room; we say so where it matters.' 이미 본문에 있는 사실을 앞으로 당기는 것뿐이라 정직성 손실 없이 의도 정합만 올라간다."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 55523,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 5922,
+        "output_tokens_details": {
+          "thinking_tokens": 3614
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 55523,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 5922,
+            "cache_read_input_tokens": 0,
+            "cache_creation_input_tokens": 55523,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 55523
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 14,
+      "max_points": 20,
+      "score": 7,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "대부분의 주장이 방문 월·확인일·법령 링크로 귀속되어 있으나, 주방 운영에 관한 단정 한 건이 근거 없이 서술된다.",
+          "evidence_quote": "the kitchen bakes nothing with wheat"
+        },
+        {
+          "id": "no_fabrication",
+          "points": 2,
+          "max": 3,
+          "note": "상호·날짜·법령 번호는 모두 검증 가능하나 전용 주방 개수 산술이 독자 눈에 맞지 않는다(7−1=6 vs 다섯).",
+          "evidence_quote": "Across the 24 places we track nationwide, seven are dedicated gluten-free kitchens, and one of those — 237 Pizza — is currently closed. Of the five still open in Seoul and Gyeonggi"
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "각 항목이 근거 출처(방문/미방문·확인 시점)로 시작하고 \"reading a menu is not checking an ingredient\"처럼 방법의 한계를 명시한다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 2,
+          "max": 4,
+          "note": "절대 안전 보장 없음·교차오염 상시 언급은 우수하나, NCGS 기반 경험을 셀리악으로 일반화하는 문장 한 건이 lapse에 해당한다.",
+          "evidence_quote": "Most of it works for celiac travelers too, but not always."
+        },
+        {
+          "id": "source_recency",
+          "points": 1,
+          "max": 2,
+          "note": "법령 시행일·사이트 확인일·블로거 글 날짜는 정확하나, Tier 판정을 지탱하는 지화자 메뉴 근거에는 확인 시점이 전혀 없다.",
+          "evidence_quote": "**Not visited — but the menu carries a gluten-free course.**"
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 1,
+          "max": 2,
+          "note": "핵심 사실(의무 표시는 밀만·보리/호밀 제외)과 행정구역·별표2 인용은 모두 정확하나 `튀김` 대역어가 부정확하다.",
+          "evidence_quote": "soy sauce (간장), batter (튀김), and shared fryers"
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "별표2 직결 링크, 폐업 근거 URL, 매장별 페이지와 문구 가이드, 제보 창구까지 독자가 직접 확인할 경로가 구체적이다.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "major",
+          "quote": "Most of it works for celiac travelers too, but not always.",
+          "why": "이 글의 증거 기반은 NCGS 한 사람의 경험이라고 본문이 스스로 밝힌다. 그 경험으로는 셀리악 환자에게 \"대부분 통한다\"는 명제를 세울 수 없다. 뒤에 '더 엄격하게 확인하라'가 붙어 있어 상호교환 취급까지는 아니지만, 셀리악 위험을 글루텐 민감성 대비 낮게 서술한 지점이다.",
+          "fix": "\"Most of it works for celiac travelers too\"를 삭제하고 근거의 한계로 대체: \"Our evidence base is one person with NCGS. It cannot tell you whether any of these are safe with celiac disease — treat every entry as unverified for celiac and confirm shared fryers and prep surfaces yourself.\""
+        },
+        {
+          "criterion": "no_fabrication",
+          "severity": "minor",
+          "quote": "Across the 24 places we track nationwide, seven are dedicated gluten-free kitchens, and one of those — 237 Pizza — is currently closed. Of the five still open in Seoul and Gyeonggi",
+          "why": "7곳 중 1곳 폐업이면 6곳이 남는데 이어지는 문장은 \"five still open\"이다. 나머지 1곳이 수도권 밖이라는 설명이 없어 독자가 검산하면 어긋난다.",
+          "fix": "\"one of the remaining six is outside Seoul and Gyeonggi; of the five in the capital area, most are dessert cafes\"처럼 누락된 1곳의 위치를 명시하거나 숫자를 6으로 맞춘다."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "the kitchen bakes nothing with wheat",
+          "why": "매장 방문 다섯 번으로는 주방이 밀을 전혀 쓰지 않는다는 사실을 확인할 수 없다. 같은 FAQ에서 '보장은 아니다'로 완화하지만, 단정문 자체에는 근거 표기가 없다.",
+          "fix": "\"the shop describes itself as a dedicated gluten-free bakery and we have seen no wheat product on five visits (June 2025 – July 2026)\"처럼 관찰 범위로 한정한다."
+        },
+        {
+          "criterion": "source_recency",
+          "severity": "minor",
+          "quote": "**Not visited — but the menu carries a gluten-free course.**",
+          "why": "Vegetus는 \"checked September 2026\"으로 확인 시점을 밝혔는데 지화자는 확인일도 확인 경로(공식 사이트·네이버·전화)도 없다. 한정식 코스는 계절마다 바뀌므로 언제 본 메뉴인지가 판단을 좌우한다.",
+          "fix": "\"Not visited — gluten-free course listed on the restaurant's own site, checked 8 September 2026\" 형식으로 출처와 확인일을 붙인다."
+        },
+        {
+          "criterion": "korean_accuracy",
+          "severity": "minor",
+          "quote": "soy sauce (간장), batter (튀김), and shared fryers",
+          "why": "`튀김`은 튀긴 음식 자체를 가리키고 반죽옷은 `튀김옷`·`튀김가루`다. 직원에게 보여줄 단어로 제시되는 만큼 대역어가 어긋나면 질문의 초점이 흐려진다.",
+          "fix": "\"batter (튀김옷·튀김가루), fried items (튀김)\"으로 분리 표기한다."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 55482,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 10047,
+        "output_tokens_details": {
+          "thinking_tokens": 7585
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 55482,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 10047,
+            "cache_read_input_tokens": 0,
+            "cache_creation_input_tokens": 55482,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 55482
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: accuracy-safety 7/9.5"
+  }
+}

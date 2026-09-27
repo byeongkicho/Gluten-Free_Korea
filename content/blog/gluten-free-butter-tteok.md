@@ -10,22 +10,20 @@ pillar: false
 status: published
 faq:
   - q: "Is tteok (Korean rice cake) gluten-free?"
-    a: "Usually, but 'tteok' is not a category you can clear. Tteok made from rice is gluten-free — glutinous rice flour (찹쌀가루) contains no gluten, and 'glutinous' describes stickiness, not the protein. But 밀떡, made with wheat flour, is standard in much tteokbokki, so the bag has to be checked for 밀 or 소맥분. The other risk is what's added around the tteok — soy sauce or gochujang. Butter tteok is rice flour and tapioca starch, which is why it qualifies."
+    a: "Usually, but 'tteok' is not a category you can clear. Tteok made from rice is gluten-free — glutinous rice flour (찹쌀가루) contains no gluten, and 'glutinous' describes stickiness, not the protein. But 밀떡, made with wheat flour, is standard in much tteokbokki, so the bag has to be checked for 밀 or 소맥분. The other risk is what's added around the tteok — in tteokbokki, a gochujang sauce (usually wheat) and fish cake (typically bound with wheat starch). Butter tteok is rice flour and tapioca starch, which is why it qualifies."
   - q: "Is glutinous rice flour gluten-free?"
     a: "Yes. Glutinous rice flour (찹쌀가루, chapssal-garu) is milled from sticky short-grain rice and contains no gluten, despite the confusing name — the Gluten Intolerance Group states plainly that glutinous rice is gluten-free and that 'glutinous' here means sticky. The one caveat is milling: rice flour can be processed in facilities that also handle wheat, so celiac readers should check the bag for a shared-facility line."
   - q: "Is butter tteok gluten-free?"
     a: "Its core ingredients — glutinous rice flour, tapioca starch, butter, and condensed milk — contain no gluten. That is not the same as any shop's butter tteok being safe for celiac disease: recipes vary, cafes that sell it usually also handle wheat pastries on shared equipment, and rice flours can be milled in facilities that process wheat. If you're celiac, ask about the recipe and the kitchen, or make it at home from flours you've checked — that's the only version where you control every input."
 ---
 
-*Updated August 2026: sourced the glutinous-rice claim to the Gluten Intolerance Group, added 밀떡 — the wheat tteok this piece originally left out — and withdrew a claim about a No Brand pre-mix we could no longer verify, and corrected the source of the shared-facility caution rule (시행규칙 별표 2, not the MFDS labelling standard first cited here).*
-
 Korea's food trends turn over fast — one month it's a Dubai-chocolate everything, the next it's a dessert nobody had heard of. So when I started seeing **butter tteok (버터떡)** pop up everywhere, my first reaction wasn't "I want that." It was the reflex every gluten-free person in Korea develops eventually: *tteok is rice… so maybe there's no gluten in this?*
 
-There wasn't — in this one. But the rule that gets you there is narrower than "tteok is rice," because **밀떡, tteok made with wheat flour, is a normal supermarket product** and is standard in a lot of tteokbokki. Butter tteok clears because of what it's mixed from, not because it's called tteok. That distinction is the whole post, and it turned into one of the easier wins we've had eating gluten-free in Korea.
+Not in the recipe, at least. But the rule that gets you there is narrower than "tteok is rice," because **밀떡, tteok made with wheat flour, is a normal supermarket product** and is standard in a lot of tteokbokki. Butter tteok clears because of what it's mixed from, not because it's called tteok. That distinction is the whole post, and it turned into one of the easier wins we've had eating gluten-free in Korea.
 
 ## First, the confusing part: "glutinous" rice has no gluten
 
-This trips up almost everyone, so it's worth saying plainly: **glutinous rice flour (찹쌀가루, *chapssal-garu*) contains no gluten.** You don't have to take our word for it — the [Gluten Intolerance Group](https://gluten.org/faq/is-it-safe-to-include-glutinous-rice-in-a-gluten-free-diet-what-exactly-is-it/) answers this one directly: glutinous rice "is gluten-free despite its name," and "glutinous" in this context means sticky (retrieved August 2026).
+This trips up almost everyone, so it's worth saying plainly: **glutinous rice flour (찹쌀가루, *chapssal-garu*) contains no gluten.** You don't have to take our word for it — the [Gluten Intolerance Group](https://gluten.org/faq/is-it-safe-to-include-glutinous-rice-in-a-gluten-free-diet-what-exactly-is-it/) answers this one directly: glutinous rice "is gluten-free despite its name," and "glutinous" in this context means sticky (GIG FAQ page, last updated February 2021; retrieved August 2026).
 
 The name is a false friend. "Glutinous" here describes *texture* — how sticky and chewy the rice gets when cooked — not gluten the protein. It comes from short-grain sticky rice, and there's no wheat, barley, or rye anywhere near it. It's actually one of the most useful gluten-free flours you can keep in a Korean kitchen.
 
@@ -56,7 +54,7 @@ None of those contains gluten, and neither do the usual additions. So unlike mos
 
 - **The shop's version isn't the recipe.** A specific cafe can add a wheat-based additive, dust a surface with wheat flour, or change suppliers without telling anyone.
 - **The kitchen matters as much as the batter.** Every cafe we've bought this from was also a cafe baking wheat pastries — same counters, same trays. We haven't surveyed the category, but a dessert sold in bakeries is a dessert sharing a bakery's surfaces, and that's a real cross-contamination path rather than a technicality.
-- **The flour's own history matters.** Glutinous rice flour and tapioca starch (타피오카 전분, *tapioka jeonbun*) can be milled in facilities that also process wheat — check the bag for a shared-facility (같은 제조시설) statement. Korea's [식품등의 표시·광고에 관한 법률 시행규칙 별표 2](https://www.law.go.kr/LSW/lsBylInfoPLinkR.do?lsiSeq=267855&bylNo=0002&bylBrNo=00&bylCls=BE&bylClsCd=BE) does require that caution line where a designated allergen may unavoidably carry over from a shared process — 소비자 안전을 위한 표시사항, under 제5조제1항, retrieved August 2026 — so its presence is meaningful. Two gaps remain, though: the duty attaches to designated allergens, and **밀 is one while 보리 and 호밀 are not**, and it's the maker who judges whether carry-over is "unavoidable." A blank line is weaker evidence than a printed one.
+- **The flour's own history matters.** Glutinous rice flour and tapioca starch (타피오카 전분, *tapioka jeonbun*) can be milled in facilities that also process wheat — check the bag for a shared-facility (같은 제조시설) statement. Korea's [식품등의 표시·광고에 관한 법률 시행규칙 별표 2](https://www.law.go.kr/LSW/lsBylInfoPLinkR.do?lsiSeq=267855&bylNo=0002&bylBrNo=00&bylCls=BE&bylClsCd=BE) does require that caution line where a designated allergen may unavoidably carry over from a shared process — 소비자 안전을 위한 표시사항, under 제5조제1항; 총리령 제2004호, amended 30 December 2024, in force from 1 January 2026 — so its presence is meaningful. Two gaps remain, though: the duty attaches to designated allergens, and **밀 is one while 보리 and 호밀 are not**, and it's the maker who judges whether carry-over is "unavoidable." A blank line is weaker evidence than a printed one.
 - **Recipes and supply lines move.** Everything here reflects what we found in August 2026. Korean products get reformulated without a packaging redesign, and a cafe's recipe is whatever it is this month — so treat all of this as what to check, not as a standing clearance.
 
 For someone with gluten sensitivity, the four-ingredient base makes butter tteok a far better bet than tteokbokki. For celiac disease, treat any shop-bought piece as unverified until you've asked about the recipe and the kitchen.
@@ -107,3 +105,9 @@ If you're hunting for gluten-free dessert in Korea, butter tteok is worth trying
 ---
 
 ← Back to [The Real Gluten-Free Guide to Korea](/blog/celiac-travel-korea-guide).
+
+---
+
+*Updated August 2026: sourced the glutinous-rice claim to the Gluten Intolerance Group, added 밀떡 — the wheat tteok this piece originally left out — and withdrew a claim about a No Brand pre-mix we could no longer verify, and corrected the source of the shared-facility caution rule (시행규칙 별표 2, not the MFDS labelling standard first cited here).*
+
+*Updated September 2026: dated the regulation (amendment in force) and the Gluten Intolerance Group page, aligned the first FAQ with what the body actually establishes, and narrowed an opening line that overclaimed — the recipe has no gluten ingredient, which is not the same as any shop's batch being gluten-free.*

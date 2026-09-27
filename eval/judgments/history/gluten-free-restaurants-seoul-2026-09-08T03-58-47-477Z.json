@@ -1,0 +1,300 @@
+{
+  "schema": 1,
+  "slug": "gluten-free-restaurants-seoul",
+  "source_ref": "working-tree",
+  "content_sha256": "54cbaee9954ab8fc1f3721a4625282dfbe77a18749843277c535607162dcb7dd",
+  "judged_at": "2026-09-08T04:01:31.154Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.261 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 16,
+      "max_points": 20,
+      "score": 8,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "The opening sentence names all seven restaurants and the second paragraph explains the evidence-based sorting, so the intent behind 'gluten free restaurants seoul' is fully served well inside 200 words.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 0,
+          "max": 2,
+          "note": "Title is 62 characters before the rendered ' | Gluten-Free Korea' suffix (82 total) and the description runs ~170 characters, so two limits are broken; 'Seoul restaurants' and 'evidence' also echo across both.",
+          "evidence_quote": "Gluten-Free Restaurants in Seoul: 7 Places, Ranked by Evidence"
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings carry the argument rather than label it — a skim of 'Tier 1 — Dedicated gluten-free', '237 Pizza is closed — and this is what it cost us', 'Cluster your day by neighborhood' and 'Honest limits' reproduces the whole thesis.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Nine place pages plus three sibling guides are linked exactly where a reader would want the address, phrases or bakery follow-up, well over the three-link bar.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 1,
+          "max": 2,
+          "note": "FAQ 1 and 2 are fully carried by the body, but FAQ 3's claim that all five visits are dated is contradicted by the Ssal Tongdak entry, which records no month.",
+          "evidence_quote": "Five of the seven rest on our own visits, dated in each entry; Vegetus and Jihwaja we have not been to."
+        },
+        {
+          "id": "experience",
+          "points": 3,
+          "max": 3,
+          "note": "Repeat visits with months and years, a photographed GFCO mark next to the Caputo Fioreglut bag, an HTTP 500 rechecked on a named date, and physical details like 'Second floor, no elevator' are all first-hand specifics.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "Hangul with gloss (쌀통닭, 간장, 튀김), named products and certifications (Caputo Fioreglut, GFCO), and the NCGS distinction are stated precisely enough to verify.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 1,
+          "max": 2,
+          "note": "External claims carry dates but the load-bearing closure evidence and the Vegetus menu labelling are never linked to their primary sources.",
+          "evidence_quote": "a Korean blogger writing on 3 September 2026 opens a post by describing the closure while hunting for a replacement"
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "The 'Honest limits' section names exactly what the method cannot establish, the 237 Pizza status is explicitly left unresolved, and no affiliate or commercial link appears anywhere.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "title_meta",
+          "severity": "major",
+          "quote": "Gluten-Free Restaurants in Seoul: 7 Places, Ranked by Evidence",
+          "why": "62 characters before layout.js appends ' | Gluten-Free Korea', making the rendered title 82 characters — Google will truncate it around the colon, cutting off the 'Ranked by Evidence' differentiator that is the article's whole angle.",
+          "fix": "Cut to roughly 40 characters so the suffix still fits, e.g. 'Gluten-Free Restaurants in Seoul: 7 Verified' (44 + 20 = 64) or drop the suffix dependence with 'Seoul Gluten-Free Restaurants, By Evidence' (42)."
+        },
+        {
+          "criterion": "title_meta",
+          "severity": "major",
+          "quote": "Seven Seoul restaurants with a gluten-free path, sorted by how strong the evidence is — what we verified ourselves, what came from the shops, and what still needs asking.",
+          "why": "About 170 characters, so the last clause is dropped in SERP display; it also repeats 'Seoul restaurants' and 'evidence' from the title, wasting the second impression.",
+          "fix": "Trim to under 155 and stop duplicating the title's words, e.g. 'Five we ate at ourselves with dates, two we only checked on paper, and one that closed — plus how to order at each.' (~115)."
+        },
+        {
+          "criterion": "faq_alignment",
+          "severity": "major",
+          "quote": "**Visited, month not recorded.**",
+          "why": "The FAQ answer states 'Five of the seven rest on our own visits, dated in each entry' and the intro repeats 'each of those says which month we were there', but this entry has no month. If the FAQ is emitted as structured data, the markup asserts something the visible page contradicts, which is exactly the mismatch Google penalises.",
+          "fix": "Either recover the month from payment or photo records and date the Ssal Tongdak entry, or reword both the FAQ and the intro to 'four of the five visits are dated; one we can only confirm we made'."
+        },
+        {
+          "criterion": "authoritativeness",
+          "severity": "minor",
+          "quote": "a Korean blogger writing on 3 September 2026 opens a post by describing the closure while hunting for a replacement",
+          "why": "The closure of the single Tier 1 anchor is the article's biggest claim, and the corroborating source is described and dated but never linked, so a reader cannot check it.",
+          "fix": "Link the blog post URL inline, and add a dated link or screenshot reference for the Vegetus menu labelling ('checked September 2026') so both unvisited/secondary claims resolve to a primary source."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 20522,
+        "cache_read_input_tokens": 34262,
+        "output_tokens": 4654,
+        "output_tokens_details": {
+          "thinking_tokens": 2713
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 20522,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 4654,
+            "cache_read_input_tokens": 34262,
+            "cache_creation_input_tokens": 20522,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 20522
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 11,
+      "max_points": 20,
+      "score": 5.5,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 2,
+          "max": 4,
+          "note": "매 항목 방문 월·미방문 여부를 밝힌 규율은 강하나, 안전 판단에 걸리는 무출처 일반화가 여러 건 남아 있다.",
+          "evidence_quote": "Plain fried chicken is typically GF, but the sauced versions (soy, gochujang, teriyaki-style) usually are not."
+        },
+        {
+          "id": "no_fabrication",
+          "points": 2,
+          "max": 3,
+          "note": "제품명(Caputo Fioreglut)·GFCO·날짜·HTTP 500 확인일은 모두 검증 가능하고 상호 일관되나, 방문 건수와 날짜 기재에 사소한 내부 불일치가 있다.",
+          "evidence_quote": "Five of the seven rest on our own visits, dated in each entry"
+        },
+        {
+          "id": "method_transparency",
+          "points": 2,
+          "max": 3,
+          "note": "근거 출처(자체 방문/미방문 목록)는 각 항목 머리에 밝혔으나, 매장 자체 메뉴 라벨 판독을 'Confirmed'로 서술해 방법이 실제보다 강하게 표현됐다.",
+          "evidence_quote": "Confirmed GF options include the burrito bowl, wraps, pasta, lime pie, carrot cake, and brownies."
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 1,
+          "max": 4,
+          "note": "셀리악과 NCGS를 명시적으로 구분하고 재확인을 반복 권고한 점은 강하지만, Tier 1 정의가 '밀 없음=안전'으로 등치되고 '전 메뉴가 안전하다'는 절대 선언이 남아 두 건의 결함이 있다.",
+          "evidence_quote": "The kitchen bakes and cooks nothing with wheat, so the whole menu is in play."
+        },
+        {
+          "id": "source_recency",
+          "points": 1,
+          "max": 2,
+          "note": "날짜는 정확하고 '3월에 안전하던 메뉴가 8월엔 아닐 수 있다'는 일반 경고도 있으나, 한 항목은 날짜 자체가 없고 경과 시간이 명시되지 않았다.",
+          "evidence_quote": "Visited, month not recorded."
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 1,
+          "max": 2,
+          "note": "행정구역·쌀통닭·간장/고추장의 밀 함유 설명은 정확하나, 한국 의무 알레르기 표시가 밀만 대상이라는 핵심 사실이 빠진 채 매장 자체 'gluten-free' 라벨에 기대고 있다.",
+          "evidence_quote": "labels gluten-free (and nut-free) dishes on the menu"
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "장소별 한/영 주소·직원 제시 문구·한국어 문구 가이드·237pizza.com 직접 확인·제보 채널까지 독자가 스스로 검증할 구체 경로를 제공한다.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "blocking",
+          "quote": "The kitchen bakes and cooks nothing with wheat, so the whole menu is in play.",
+          "why": "Tier 1의 정의가 '밀 부재'를 '글루텐 부재'와 등치시킨다. 보리·호밀·맥아(보리차, 맥아 시럽, 조청류)는 한국 카페·베이커리에서 흔하고, 한국의 의무 알레르기 표시는 밀만 대상이라 매장이 보리를 고지할 의무도 없다. 본문의 확인 지침도 간장·튀김·공용 튀김기만 지목해 이 공백을 메우지 못하므로, 셀리악 독자가 이 문장을 근거로 전 메뉴를 주문하다 글루텐을 섭취할 수 있다.",
+          "fix": "Tier 1 정의를 '밀·보리·호밀을 일절 쓰지 않는 주방'으로 고치고, 한국 표시제가 밀만 의무라 보리·맥아는 라벨에 안 나올 수 있음을 명시한 뒤, 주문 확인 항목에 보리(보리차·맥아)를 추가할 것."
+        },
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "major",
+          "quote": "one of the very few kitchens in Seoul where the *entire* menu is safe",
+          "why": "인증·검사·교차오염 프로토콜에 대한 근거 없이(본문이 제시한 근거는 5회 방문뿐) '전 메뉴가 안전하다'는 절대 안전 선언을 한다. FAQ와 'Honest limits'의 유보가 완화하긴 하나, 이 문장 자체는 셀리악 독자가 확인 절차를 생략할 근거가 된다.",
+          "fix": "\"the entire menu is made without wheat — which is not the same as certified safe for celiacs\" 처럼 관찰 가능한 사실로 낮추고, 이 매장에 대해서도 당일 확인 권고를 같은 문단에 붙일 것."
+        },
+        {
+          "criterion": "method_transparency",
+          "severity": "major",
+          "quote": "Confirmed GF options include the burrito bowl, wraps, pasta, lime pie, carrot cake, and brownies.",
+          "why": "미방문 매장의 자체 메뉴 표기를 읽은 것을 'Confirmed'라고 서술했다. 매장 라벨 판독은 성분 확인이 아니며, 같은 항목 머리에서 '미방문'이라 밝힌 것과도 충돌한다.",
+          "fix": "\"The shop's own menu lists these as gluten-free (we have not verified ingredients or handling in person)\" 로 바꿀 것."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "major",
+          "quote": "Plain fried chicken is typically GF, but the sauced versions (soy, gochujang, teriyaki-style) usually are not.",
+          "why": "방문 월조차 기록되지 않은 항목에서 안전 판단에 직접 쓰이는 일반화를 출처 없이 제시한다. 또한 이 항목에는 6Day Chicken 항목에 있는 공용 튀김유 경고가 빠져 있어, 독자가 '기본 후라이드는 안전'으로 읽을 여지가 있다.",
+          "fix": "직원 확인 여부·시점을 밝히거나 '확인되지 않은 일반적 경향'임을 명시하고, 공용 튀김유·염지 양념 확인 문구를 이 항목에도 넣을 것."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "a Korean blogger writing on 3 September 2026 opens a post by describing the closure while hunting for a replacement",
+          "why": "폐업 판단의 두 근거 중 하나인데 링크·블로그명이 없어 독자가 확인할 수 없다. 결론이 보수적(폐업 가정)이라 안전 결정에는 영향이 없다.",
+          "fix": "해당 포스트 URL을 각주로 달거나, 출처를 확인할 수 없는 2차 정보임을 표시할 것."
+        },
+        {
+          "criterion": "no_fabrication",
+          "severity": "minor",
+          "quote": "Five of the seven rest on our own visits, dated in each entry",
+          "why": "FAQ는 방문 5곳 모두 날짜가 있다고 하지만 Ssal Tongdak 항목은 'Visited, month not recorded.'다. 내부 불일치다.",
+          "fix": "FAQ를 '다섯 곳 중 넷은 방문 월을 기재했고 한 곳은 기록이 없다'로 정정할 것."
+        },
+        {
+          "criterion": "source_recency",
+          "severity": "minor",
+          "quote": "Visited, month not recorded.",
+          "why": "날짜 없는 방문은 경과 시간을 독자가 판단할 수 없다. 한국 매장은 예고 없이 레시피·프랜차이즈 정책을 바꾸므로, 이 항목의 신선도가 미상이라는 점이 안전 판단에 걸린다.",
+          "fix": "결제·사진 메타데이터로 방문 시점을 복원해 기재하고, 복원 불가하면 '최소 N개월 이상 경과했을 수 있음'을 명시할 것."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 20522,
+        "cache_read_input_tokens": 34221,
+        "output_tokens": 11689,
+        "output_tokens_details": {
+          "thinking_tokens": 8175
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 20522,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 11689,
+            "cache_read_input_tokens": 34221,
+            "cache_creation_input_tokens": 20522,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 20522
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: seo-eeat 8/9.5, accuracy-safety 5.5/9.5"
+  }
+}

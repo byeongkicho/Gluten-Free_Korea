@@ -1,0 +1,279 @@
+{
+  "schema": 1,
+  "slug": "gluten-free-butter-tteok",
+  "source_ref": "working-tree",
+  "content_sha256": "ad5190433c7f04b001e1eca18c39c213b6b426796eb64086941e875c20547554",
+  "judged_at": "2026-09-27T14:40:45.848Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.283 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 18,
+      "max_points": 20,
+      "score": 9,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 2,
+          "max": 3,
+          "note": "핵심 답은 제시되지만 변경 이력 두 단락(~107단어)을 지나서야 도달해 우회가 있다.",
+          "evidence_quote": "*Updated September 2026: dated the regulation (amendment in force) and the Gluten Intolerance Group page, aligned the first FAQ with what the body actually establishes"
+        },
+        {
+          "id": "title_meta",
+          "points": 2,
+          "max": 2,
+          "note": "제목 34자+' | Gluten-Free Korea' 20자 = 54자로 60자 이내, description 147자로 155자 이내이며 키워드 포함·설명이 새 정보(밀떡·가격)를 추가한다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "'But not all tteok is rice: 밀떡', 'The moment the math stopped working' 등 헤딩만 훑어도 논지(떡≠일괄 안전 → 버터떡은 배합상 통과 → 가격 → 자가제작)가 이어진다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "hidden-gluten guide(문맥상 3회, 각각 다른 맥락)·/place/monil2-house(구매 대안)·celiac-travel-korea-guide 등 독자 동선에 맞는 내부 링크가 3개 이상이다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "세 FAQ 모두 본문이 뒷받침하며(밀떡·고추장·어묵 결착·제조시설 밀링·전용 베이커리 단서), 각 답변이 리치 결과로 단독 노출돼도 성립한다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 2,
+          "max": 3,
+          "note": "영수증 금액·직접 제작·매장 주방 관찰 등 1인칭 신호는 분명하지만 상호·동네·구매 시점·계량값이 없어 구체성이 얇다.",
+          "evidence_quote": "I'm not going to hand you exact gram-by-gram ratios, because I worked mostly by feel and I'd rather not invent precision I didn't measure."
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "찹쌀가루(chapssal-garu)·타피오카 전분(tapioka jeonbun)·밀떡·소맥분·같은 제조시설 등 한국어 용어와 제5조제1항·총리령 제2004호 같은 조문, 6,000원/3개 가격까지 독자가 검증 가능한 수준으로 적혀 있다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "GIG FAQ(2021년 2월 최종수정·2026년 8월 열람)와 법제처 시행규칙 별표 2(총리령 제2004호, 2024-12-30 개정·2026-01-01 시행)를 각각 링크+날짜로 제시해 1차 자료 기준을 충족한다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "'We haven't surveyed the category', 'she felt fine' is an anecdote, 'A blank line is weaker evidence than a printed one'로 방법론의 한계를 명시하고 미검증 주장을 공개 철회했으며, 제휴 링크는 존재하지 않는다.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "search_intent",
+          "severity": "major",
+          "quote": "*Updated August 2026: sourced the glutinous-rice claim to the Gluten Intolerance Group, added 밀떡 — the wheat tteok this piece originally left out — and withdrew a claim about a No Brand pre-mix we could no longer verify",
+          "why": "본문 첫 ~107단어가 두 개의 변경 이력 단락이다. 'gluten free tteok' 검색자가 원하는 답(떡은 쌀이지만 밀떡은 예외)은 그 우회를 지난 뒤 네 번째 단락(~170단어 지점)에서야 나온다. 첫 화면에서 답을 못 받으면 이탈·스니펫 품질 모두 손해다.",
+          "fix": "두 changelog 단락을 글 맨 아래 '수정 이력' 섹션(또는 접이식 블록)으로 내리고, 첫 두 문장을 '떡은 보통 쌀이라 글루텐이 없지만, 밀떡(wheat tteok)은 예외다 — 버터떡이 통과하는 이유는 배합이다' 형태의 직답으로 시작할 것."
+        },
+        {
+          "criterion": "experience",
+          "severity": "minor",
+          "quote": "We ordered it a few times and it quietly became a regular treat.",
+          "why": "가격(6,000원/3개 +500원)과 검증 실패 일화는 구체적이지만, 어느 카페·어느 동네·몇 월에 샀는지가 없어 1인칭 관찰의 검증 가능성이 떨어진다. 교차오염 주장('same counters, same trays')도 매장 식별 없이 서술된다.",
+          "fix": "결제 기록·사진 EXIF에서 확인 가능한 범위만이라도 '연남동 카페 2곳, 2026년 7월' 수준으로 특정하고, 확인 불가한 항목은 '상호는 기록에 없다'고 명시할 것(추정으로 채우지 말 것)."
+        },
+        {
+          "criterion": "experience",
+          "severity": "minor",
+          "quote": "<!-- IMG: 01.webp — homemade butter tteok, first batch, top-down on a plate. Caption: \"Our first home batch — not bad at all.\" -->",
+          "why": "직접 만든 첫 배치 사진이 HTML 주석으로 남아 렌더링되지 않는다. 1인칭 경험의 가장 강한 증거(자가 촬영 이미지)가 독자와 크롤러 모두에게 보이지 않는다.",
+          "fix": "01.webp를 실제 <Image>/마크다운 이미지로 게시하고 alt에 '홈메이드 버터떡 첫 배치'를 넣을 것. 파일이 없으면 주석을 삭제하고 사진 없음을 감수할 것."
+        },
+        {
+          "criterion": "authoritativeness",
+          "severity": "minor",
+          "quote": "published Korean versions add egg, sugar and milk, and shops keep their own ratios",
+          "why": "'published Korean versions'라는 출처 있는 듯한 표현인데 링크·매체·날짜가 없다. 다른 두 핵심 주장(GIG·시행규칙)은 날짜까지 붙어 있어 대비가 두드러진다.",
+          "fix": "참고한 한국어 레시피 1~2건을 URL+게시일과 함께 걸거나, '우리가 본 레시피들'처럼 1인칭 관찰로 표현을 낮출 것."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 19636,
+        "cache_read_input_tokens": 38265,
+        "output_tokens": 7454,
+        "output_tokens_details": {
+          "thinking_tokens": 5004
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 19636,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 7454,
+            "cache_read_input_tokens": 38265,
+            "cache_creation_input_tokens": 19636,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 19636
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 19,
+      "max_points": 20,
+      "score": 9.5,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "대부분의 주장은 출처(GIG·시행규칙) 또는 저자 자신의 확인(\"what we found in August 2026\")으로 표시되지만, 밀떡의 보편성과 어묵·고추장 결합제 같은 안전 관련 배경 주장은 무출처다 — 다만 모두 주의를 강화하는 방향이라 독자가 글루텐을 먹게 되는 방향의 오류는 아니다.",
+          "evidence_quote": "a mainstream supermarket product, standard at many street stalls, and the subject of a running 쌀떡파 vs 밀떡파 argument that tells you how normal it is"
+        },
+        {
+          "id": "no_fabrication",
+          "points": 3,
+          "max": 3,
+          "note": "제품·가격·법령·URL이 내부적으로 일관되고, 검증 불가한 No Brand 프리믹스 주장은 발명이 아니라 명시적 철회로 처리됐다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "출처·확인 시점·확인하지 못한 범위(\"We haven't surveyed the category\")를 모두 밝히고, 표를 \"a starting point ... not a clearance\"로 한계까지 규정했으며, 계량하지 않은 배합비를 만들지 않는다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 4,
+          "max": 4,
+          "note": "절대적 안전 보증이 없고, 교차오염(제빵 공유 설비·공용 제분)이 구체적으로 다뤄지며, NCGS와 셀리악을 분리하고 무증상 손상까지 명시해 셀리악 위험을 축소하지 않는다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "GIG 페이지(2021-02 갱신, 2026-08 열람)와 법령(총리령 개정·시행일)에 날짜가 붙고, 재조제 위험을 이유로 \"treat all of this as what to check, not as a standing clearance\"로 경과 시간의 의미까지 밝힌다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 2,
+          "max": 2,
+          "note": "찹쌀가루·소맥분·원재료명·같은 제조시설·쌀떡/밀떡 등 용어가 정확하고, 의무 알레르겐 표시가 밀은 포함하되 보리·호밀은 아니라는 핵심 사실을 정확히 서술한다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "GIG·법제처 별표 2 직결 링크, 라벨에서 볼 검색어(밀·소맥분·같은 제조시설), 가게에 물을 질문, 오류 신고 메일까지 독자가 직접 확인할 경로를 준다.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "a mainstream supermarket product, standard at many street stalls, and the subject of a running 쌀떡파 vs 밀떡파 argument that tells you how normal it is",
+          "why": "밀떡의 보편성은 이 글의 핵심 경고를 지탱하는 사실인데 출처나 저자 확인 표시가 없다. 결론의 방향은 안전하지만, 독자가 '얼마나 흔한가'를 스스로 가늠할 근거가 없다.",
+          "fix": "실제로 확인한 근거 한 줄을 붙일 것 — 예: 특정 대형마트/온라인몰에서 밀떡 제품을 확인한 시점, 또는 원재료명에 소맥분이 적힌 제품 링크 하나. 최소한 '우리가 2026-08에 매장에서 확인했다'는 관찰 표시로 전환."
+        },
+        {
+          "criterion": "method_transparency",
+          "severity": "minor",
+          "quote": "Roughly where the common ones sit:",
+          "why": "표의 \"Usually made from\" 열이 무엇으로 만들어졌는지(라벨 실독? 몇 개 제품? 어느 매대?) 밝히지 않는다. 한계는 뒤에서 명확히 제한하지만, 방법 자체가 비공개라 독자가 신뢰 범위를 계산할 수 없다.",
+          "fix": "표 앞이나 각주에 한 줄: 이 열이 어떤 확인(예: 2026-08 서울 대형마트 N개 매대의 원재료명 실독 / 공개 제품정보 확인)에서 나왔는지 명시."
+        },
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "minor",
+          "quote": "mixed, not pre-formed — you see every input",
+          "why": "표의 이 판정은 집에서 만들 때만 참이다. 표만 스캔하는 독자는 카페에서 사 먹는 버터떡도 '모든 재료를 볼 수 있다'로 읽을 수 있다 — 본문은 바로 뒤에서 이를 정정하지만 표는 단독으로 유통된다.",
+          "fix": "표 셀을 '집에서 섞을 때는 모든 재료를 본다 / 가게 제품은 미확인'처럼 구매 경로를 나누어 쓸 것."
+        },
+        {
+          "criterion": "no_fabrication",
+          "severity": "minor",
+          "quote": "총리령 제2004호, amended 30 December 2024, in force from 1 January 2026",
+          "why": "법령 호수·개정일·시행일은 독자가 인용할 가능성이 높은 수치인데, 개정과 시행 사이 1년 간격은 확인 없이는 오기 가능성이 있는 형태다. 기사 자체가 앞서 근거 법령을 한 번 정정한 이력이 있다.",
+          "fix": "법제처 본문(PDF 직독)으로 총리령 호수·개정일·시행일을 재확인하고, 확인 시점을 각주에 남길 것. 값이 충돌하면 평균하지 말고 둘 다 남긴다."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 19636,
+        "cache_read_input_tokens": 38224,
+        "output_tokens": 8628,
+        "output_tokens_details": {
+          "thinking_tokens": 5834
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 19636,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 8628,
+            "cache_read_input_tokens": 38224,
+            "cache_creation_input_tokens": 19636,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 19636
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: seo-eeat 9/9.5"
+  }
+}

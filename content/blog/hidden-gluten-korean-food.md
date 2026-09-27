@@ -14,10 +14,12 @@ faq:
   - q: "Is tteokbokki gluten-free?"
     a: "Usually not, and the rice cakes are only part of the answer. Tteokbokki tteok comes as 쌀떡 (rice) or 밀떡, which is made with wheat flour and is entirely mainstream — so check the 원재료명 on the bag rather than assuming rice. On top of that the sauce is usually gochujang-based and the dish almost always includes fish cake (어묵), typically bound with wheat starch. A home version using 쌀떡 with a checked label, a verified wheat-free gochujang and no fish cake removes the declared wheat. For celiac disease, a street-stall or restaurant version also carries shared-pan and shared-utensil risk that no ingredient swap addresses."
   - q: "Are Korean glass noodles (japchae) gluten-free?"
-    a: "The noodles usually are. Dangmyeon (당면, glass noodle) is made from sweet potato starch, so it's naturally gluten-free — a rare bright spot — but check the 원재료명, because some commercial dangmyeon is a mixed-starch product. The other risk in japchae is the sauce: it's seasoned with soy sauce, which normally contains wheat. Japchae you cook yourself, with single-starch dangmyeon and a verified wheat-free soy sauce, is one of the easiest Korean dishes to bring back. Restaurant japchae is a different question for celiac disease — shared woks and shared utensils are not addressed by swapping the sauce."
+    a: "The noodles usually are. Dangmyeon (당면, glass noodle) is a starch noodle — Ottogi's classic 옛날당면 is 100% sweet potato starch by the maker's own description — so it's a rare bright spot, but check the 원재료명, because starch blends vary between products. The other risk in japchae is the sauce: it's seasoned with soy sauce, which normally contains wheat. Japchae you cook yourself, with single-starch dangmyeon and a verified wheat-free soy sauce, is one of the easiest Korean dishes to bring back. Restaurant japchae is a different question for celiac disease — shared woks and shared utensils are not addressed by swapping the sauce."
 ---
 
 *Updated August 2026: anchored the soy sauce claim to the manufacturer's own ingredient listing, added the mandatory-allergen gap for barley and rye, removed a percentage figure we could not source, named the wheat-free condiments actually in our kitchen — corrected the source of the mandatory allergen list (시행규칙 별표 2, not the MFDS labelling standard first cited here), and corrected a real error, since an earlier version of this piece cleared 떡 (rice cake) as a category when 밀떡 is made with wheat flour.*
+
+*Updated September 2026: sourced the dangmyeon composition to Ottogi's own product description, and noted that starch blends differ between products.*
 
 If you take one thing from this post, let it be this: in Korean food, the danger is almost never the dish you're looking at. It's the **condiments inside it.**
 
@@ -66,7 +68,7 @@ Korean noodle culture is a wheat minefield: **라면** (instant noodles) is whea
 
 The two things worth memorizing:
 
-- **당면 (dangmyeon), the glass noodle in japchae, is sweet potato starch — naturally gluten-free.** Two catches: the sauce (soy sauce) rather than the noodle, and the fact that some commercial dangmyeon is a mixed-starch product, so the 원재료명 is still worth a look.
+- **당면 (dangmyeon), the glass noodle in japchae, is a starch noodle — no wheat in the classic version.** Ottogi, the biggest name on the shelf, [describes its 옛날당면 as 100% sweet potato starch](https://www.otoki.com/pr/column-detail?idx=14) — and the same page lists its 옛날녹두당면 as potato and mung-bean starch, which is why "dangmyeon" alone doesn't tell you the recipe (retrieved September 2026). Neither is a wheat ingredient, but blends differ between products, so the 원재료명 is still worth a look. The bigger catch in japchae is the sauce (soy sauce), not the noodle.
 - **떡 (tteok) made from rice is gluten-free — but "rice cake" is not a category you can clear.** Tteokbokki tteok comes in two kinds: 쌀떡 (rice) and **밀떡, made with wheat flour** — a mainstream product, sold in supermarkets and used at street stalls. 쌀떡파 vs 밀떡파 — rice-cake faction versus wheat-cake faction — is a running argument in Korea, which tells you how normal 밀떡 is. So the bag has to be read like any other package: check the 원재료명 for 밀 or 소맥분 before you cook with it.
 
 That pattern — a naturally safe base wrapped in an unsafe sauce — is the whole story of Korean gluten. It's also exactly why cooking at home changes everything: swap in gluten-free versions of a few condiments and huge swaths of the cuisine open back up.

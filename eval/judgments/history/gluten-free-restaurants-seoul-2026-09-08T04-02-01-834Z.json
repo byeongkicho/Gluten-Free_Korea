@@ -1,0 +1,286 @@
+{
+  "schema": 1,
+  "slug": "gluten-free-restaurants-seoul",
+  "source_ref": "working-tree",
+  "content_sha256": "cdafe432828ad7c6a2f6637bba07d90b9046b556abfc7b270901600860a83af1",
+  "judged_at": "2026-09-08T04:05:03.302Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.261 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 18,
+      "max_points": 20,
+      "score": 9,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "첫 문장에서 7곳을 실명으로 나열하고, 두 번째 단락에서 정렬 기준(증거 강도)까지 밝혀 200단어 안에 의도가 완전히 해소된다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 1,
+          "max": 2,
+          "note": "description은 152자로 적합하고 중복 표현도 없으나, 렌더 시 접미사 포함 74자가 되어 60자 상한을 위반한다.",
+          "evidence_quote": "7 Gluten-Free Restaurants in Seoul, Ranked by Evidence"
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "헤딩이 라벨이 아니라 주장을 담고 있어('237 Pizza is closed — and this is what it cost us', 'Honest limits') 헤딩만 훑어도 논지가 전달된다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "각 매장명이 자체 상세 페이지로 연결되고 label-reading guide·phrases guide·bakeries guide가 독자가 실제로 다음에 필요할 지점에 배치돼 있다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "세 문항 모두 본문에 대응 근거가 있고, 특히 '5곳 방문 중 4곳만 월 기재'라는 셈이 본문 각 항목과 정확히 일치해 리치 결과로 단독 노출돼도 성립한다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 3,
+          "max": 3,
+          "note": "방문 월, 매장 내 인증마크와 Caputo Fioreglut 봉지 촬영, 2026-09-08 HTTP 500 재확인, '2층·엘리베이터 없음', 그리고 한 곳은 월을 기록하지 못했다는 실패 고백까지 1인칭 관찰이 구체적이다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "밀가루 브랜드·인증기관·구 단위 위치·확인일이 검증 가능한 수준으로 적시돼 있어, 로마자 병기 부재와 'a handful' 같은 일부 뭉뚱그림에도 전반적 특정성은 충족한다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 1,
+          "max": 2,
+          "note": "237pizza.com 링크와 확인일은 제시했으나 알레르기 표시 법령 주장은 무출처이고 방증 블로거는 링크가 없어 1차 출처 연결이 불완전하다.",
+          "evidence_quote": "Korea's mandatory allergen line covers **wheat but not barley or rye**"
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "제휴 링크가 없어 공개 의무가 발생하지 않고, 'reading a menu is not checking an ingredient'·'We have not reached anyone who can say whether it is coming back'로 방법이 확립하지 못하는 범위를 명시한다.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "title_meta",
+          "severity": "major",
+          "quote": "7 Gluten-Free Restaurants in Seoul, Ranked by Evidence",
+          "why": "본문 제목만 54자인데 layout.js가 렌더 시 ' | Gluten-Free Korea'(20자)를 덧붙이므로 실제 <title>은 74자가 되어 SERP에서 'Ranked by Evidence'와 사이트명이 잘려나간다. 이 글의 차별점이 바로 그 잘리는 구간에 있다.",
+          "fix": "제목을 34자 이하로 줄여 접미사 포함 60자를 맞춘다. 예: '7 Gluten-Free Restaurants in Seoul' (34자 → 54자) 또는 'Gluten-Free Restaurants in Seoul, by Evidence' 대신 'Gluten-Free Seoul: 7 Restaurants Ranked'(39자 → 59자)."
+        },
+        {
+          "criterion": "authoritativeness",
+          "severity": "major",
+          "quote": "Korea's mandatory allergen line covers **wheat but not barley or rye**, so a shop can be genuinely wheat-free and still use barley, malt or 보리차 without being required to declare it.",
+          "why": "셀리악 독자의 행동을 직접 바꾸는 규제 주장인데 1차 출처가 붙어 있지 않다. 내부 label-reading guide 링크는 자사 콘텐츠라 외부 검증 경로가 되지 못하며, 검색엔진과 독자 모두 이 문장의 근거를 확인할 수 없다.",
+          "fix": "식품등의 표시·광고에 관한 법률 시행규칙 별표2 원문 링크와 개정·시행일(총리령 제2004호, 2024-12-30 개정, 2026-01-01 시행)을 문장 끝에 각주로 붙인다."
+        },
+        {
+          "criterion": "authoritativeness",
+          "severity": "minor",
+          "quote": "a Korean blogger writing on 3 September 2026 opens a post by describing the closure while hunting for a replacement",
+          "why": "폐업이라는 핵심 사실의 제3자 방증인데 날짜만 있고 URL이 없다. 독자가 추적할 수 없는 출처는 사실상 무출처와 같고, 237 Pizza 판정 전체가 자사 관찰 하나에 매달리게 된다.",
+          "fix": "해당 블로그 포스트 URL을 인라인 링크로 걸고, 링크가 불안정하면 확인일과 함께 인용문 한 줄을 병기한다."
+        },
+        {
+          "criterion": "expertise",
+          "severity": "minor",
+          "quote": "There are only a handful of these in all of Korea.",
+          "why": "이 글의 다른 수치(방문 월, HTTP 500, 2026-09-08 확인일)는 검증 가능할 만큼 정확한데 티어1 희소성만 'a handful'로 뭉뚱그려져 있다. 서울 한 곳뿐이라는 결론의 근거가 되는 숫자라서 추정치라도 명시하는 편이 낫다.",
+          "fix": "자체 데이터 기준 수치로 교체한다. 예: 'our database tracks N dedicated GF kitchens nationwide as of September 2026' 형태로 확인일과 함께 적는다."
+        },
+        {
+          "criterion": "expertise",
+          "severity": "minor",
+          "quote": "ask about 보리 and 맥아 by name",
+          "why": "한글 표기만 있고 로마자 병기가 없어, 한글을 못 읽는 여행자가 이 단어를 소리내어 물을 수 없다. 화면을 보여주는 용도로는 충분하나 루브릭이 요구하는 '로마자 병기된 한국어 용어' 기준에는 미달한다.",
+          "fix": "프로젝트 하우스 스타일상 발음 표기를 쓰지 않는다면, 대신 이 단어들을 복사 버튼 또는 보여주기용 카드로 감싸 '보여주는 용도'임을 명시한다(간장·튀김도 동일)."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 20774,
+        "cache_read_input_tokens": 34262,
+        "output_tokens": 7033,
+        "output_tokens_details": {
+          "thinking_tokens": 3576
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 20774,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 7033,
+            "cache_read_input_tokens": 34262,
+            "cache_creation_input_tokens": 20774,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 20774
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 17,
+      "max_points": 20,
+      "score": 8.5,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "거의 모든 항목이 출처 줄로 표시되지만, 도입부의 '7곳 모두 실질적 GF 경로가 있다'는 주장이 미방문·무인용인 Jihwaja(및 일반론뿐인 Cucciolo)에는 뒷받침되지 않는다.",
+          "evidence_quote": "Seven places in Seoul with a real gluten-free path"
+        },
+        {
+          "id": "no_fabrication",
+          "points": 3,
+          "max": 3,
+          "note": "방문 월, 폐업 확인일(8 September 2026), 블로그 글 날짜, Caputo Fioreglut·GFCO 등 고유명과 5/7·4곳 월 기재 집계가 본문과 FAQ에서 서로 일치한다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "method_transparency",
+          "points": 2,
+          "max": 3,
+          "note": "방법과 한계는 명시적으로 잘 밝혔으나 '증거 강도순 정렬'이라는 방법 서술이 실제 배열(티어순, 미방문 Vegetus가 방문 2곳보다 앞)과 어긋난다.",
+          "evidence_quote": "this list is sorted by **how strong the evidence is**, not by how good the food is"
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 3,
+          "max": 4,
+          "note": "셀리악/NCGS 구분과 교차오염 경고는 모범적이나 Monil2 항목의 '전체 메뉴가 안전하다'는 무조건적 단언이 같은 글의 보리·맥아 경고와 충돌한다.",
+          "evidence_quote": "one of the very few kitchens in Seoul where the *entire* menu is safe"
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "모든 근거에 연·월이 붙고 사이트 500은 확인일까지 명시했으며, 메뉴·소스가 몇 달 만에 바뀐다는 경년 위험을 별도로 경고했다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 2,
+          "max": 2,
+          "note": "의무 표시 대상이 밀뿐이고 보리·호밀은 아니라는 적재 사실이 정확하며 보리·맥아·보리차·간장·쌀통닭 등 용어와 자치구 매칭도 옳다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "한국어·영어 주소, 매장에 보여줄 문구 가이드, 물어야 할 한국어 단어(보리·맥아), 검증 가능한 237pizza.com URL, 제보 창구까지 독자가 직접 확인할 경로를 구체적으로 제시했다.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "major",
+          "quote": "one of the very few kitchens in Seoul where the *entire* menu is safe",
+          "why": "반복 방문은 '밀로 굽지 않는다'까지만 확립하며 메뉴 전체의 안전을 확립하지 않는다. 이 글 자신이 두 문단 위에서 밀 없는 매장도 보리·맥아를 의무 신고 없이 쓸 수 있다고 경고하고 FAQ에서 'no kitchen is [a guarantee]'라고 말하므로, 본문 항목만 읽은 셀리악 독자는 확인 없이 아무 품목이나 주문할 수 있다.",
+          "fix": "'entire menu is safe'를 'the kitchen bakes nothing with wheat'로 바꾸고, 티어1 경고를 이 항목 안에 반복해 보리·맥아를 이름으로 물으라고 덧붙일 것."
+        },
+        {
+          "criterion": "method_transparency",
+          "severity": "minor",
+          "quote": "this list is sorted by **how strong the evidence is**, not by how good the food is",
+          "why": "실제 배열은 티어/카테고리순이라 미방문·메뉴판 근거인 Vegetus가 방문 근거인 Cucciolo(2025-07)·Grain(2026-01, 03)보다 앞에 온다. 제목의 'Ranked by Evidence'까지 합치면 독자가 순서 자체를 증거 신호로 오독한다.",
+          "fix": "'티어별로 묶고 증거는 항목마다 표기했다'로 문장을 정정하거나, 티어2 내부를 실제 증거 강도순(방문·월 기재 우선)으로 재배열할 것."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "Seven places in Seoul with a real gluten-free path",
+          "why": "Jihwaja는 미방문이고 매장의 GF 표기·특정 GF 품목 어느 것도 인용되지 않은 채 본문은 오히려 간장·전 반죽·반찬 전반에 밀이 숨어 있다고 서술한다. '실질적 GF 경로'라는 상위 주장이 이 항목에 대해 근거 없이 남는다.",
+          "fix": "Jihwaja(및 근거가 일반론뿐인 Cucciolo)에 대해 무엇에 근거한 포함인지 한 줄로 밝히거나, '경로가 있다'가 아니라 '노력하면 시도해볼 만하다'로 상위 문장을 좁힐 것."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "a Korean blogger writing on 3 September 2026 opens a post by describing the closure while hunting for a replacement",
+          "why": "폐업 판단의 독립 근거 두 축 중 하나인데 링크가 없어 독자가 확인할 수 없다. 나머지 축(사이트 500)은 URL이 있어 대비가 두드러진다.",
+          "fix": "블로그 글 링크를 걸거나, 링크를 걸지 않는 이유(예: 개인 블로그 인용 정책)를 한 줄로 밝힐 것."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 20774,
+        "cache_read_input_tokens": 34221,
+        "output_tokens": 13033,
+        "output_tokens_details": {
+          "thinking_tokens": 9966
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 20774,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 13033,
+            "cache_read_input_tokens": 34221,
+            "cache_creation_input_tokens": 20774,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 20774
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: seo-eeat 9/9.5, accuracy-safety 8.5/9.5"
+  }
+}

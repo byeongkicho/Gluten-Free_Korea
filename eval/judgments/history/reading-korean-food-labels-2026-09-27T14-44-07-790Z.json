@@ -1,0 +1,265 @@
+{
+  "schema": 1,
+  "slug": "reading-korean-food-labels",
+  "source_ref": "working-tree",
+  "content_sha256": "7e7952028936d4bd0785a3b7f3a618e7e1a6d3f49d4d2718fbb1fb77e6a046ed",
+  "judged_at": "2026-09-27T14:46:59.251Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.283 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 19,
+      "max_points": 20,
+      "score": 9.5,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "Within the first ~150 words the reader is told to flip the package and scan for 밀 (wheat), which is exactly the intent behind 'korean food label gluten'.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 2,
+          "max": 2,
+          "note": "Title is 58 characters with the rendered ' | Gluten-Free Korea' suffix, description is 153 characters, keyword is present in both, and neither repeats the other's phrasing.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings carry the argument — why labels are a distinct skill, four numbered steps, what to do when the label can't answer, three traps, what passes — so a skim reproduces the method.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Six internal links (hidden-gluten guide, snack guide ×2, celiac travel guide ×2, butter tteok) each land at the moment the reader would want them.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All five FAQ answers are established in the body — the 19-item allergen table, the 무 글루텐 20mg/kg definition, the 저글루텐 gap, the 쌀 trap, and the 밀/소맥/보리/호밀 vocabulary — and each stands alone as a rich result.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 2,
+          "max": 3,
+          "note": "First-person voice and a real habit are present, but the observed episodes lack the dates, brands, and locations that would make them verifiably lived rather than illustrative.",
+          "evidence_quote": "The snack that broke me of trusting the allergen line alone was a \"rice\" cracker: allergen line clean, but 밀 전분 sitting a few items up in the ingredients."
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "Ordinance numbers, the 20mg/kg ceiling, the 19-vs-21-vs-22 count reconciliation, 포카칩 오리지널/어니언 and 양조간장 501 are all stated precisely enough to check.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "Primary instruments are linked with gazette numbers and dates (총리령 제2004호 amended 30 December 2024; 고시 제2025-60호, 29 August 2025) plus retrieval months, and product claims point to the makers' own pages.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "States plainly what the method cannot establish ('not a survey, and not lab-tested'; a clean scan proves only no declared grain), flags unverified sub-claims, logs a prior error, and carries no commercial links.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "experience",
+          "severity": "minor",
+          "quote": "The snack that broke me of trusting the allergen line alone was a \"rice\" cracker: allergen line clean, but 밀 전분 sitting a few items up in the ingredients.",
+          "why": "This is the article's central first-hand anecdote, yet it names no product, brand, store, or month — so it reads as a generic illustration rather than an observed event a reader could picture or verify. The same thinness runs through \"Rice breads and rice snacks are where we've been caught most often\" and the pass-list (eggs, whole fruit, plain yogurt), which any writer could produce without shopping in Korea.",
+          "fix": "Anchor the incident: the brand and flavour of the cracker, the chain and neighbourhood (e.g. a CU in Mapo), and the month it happened — or, if the details are unrecoverable, replace it with the one case that IS documented (the Pocachip Original vs Onion pair) framed as something observed on a shelf with a date, so at least one episode carries checkable specifics."
+        },
+        {
+          "criterion": "structure",
+          "severity": "minor",
+          "quote": "*Updated August 2026 — added the MFDS citation, dropped the romanisations in favour of the Korean itself, fixed the 엿기름 gloss (malted barley, not malt syrup), and corrected an error: the shared-facility caution line is **required** for designated allergens, not voluntary as an earlier version said.*",
+          "why": "Two changelog paragraphs sit above the lede, so the first thing a scanner (and the snippet-generating crawler) meets is editorial housekeeping rather than the answer. The correction log is a genuine trust asset but it is costing the top of the page, which is the most valuable real estate for the keyword.",
+          "fix": "Move both update notes to a collapsed \"Corrections & updates\" block at the foot of the article (keeping the dates and the substance intact) and open directly on the convenience-store lede, so 밀 lands in the first sentence."
+        },
+        {
+          "criterion": "expertise",
+          "severity": "minor",
+          "quote": "dropped the romanisations in favour of the Korean itself",
+          "why": "Every Korean term carries an English gloss, which preserves checkability, but a reader who cannot read Hangul has no way to say, search, or ask about 원재료명, 함유, or 엿기름 aloud — which is exactly the situation at a counter or on a phone call to the 소비자상담실. Brand names are romanised (Pocachip Original) while the operative label vocabulary is not, so the treatment is inconsistent.",
+          "fix": "Restore romanisation for the ~8 operative label terms only (원재료명 wonjaeryomyeong, 함유 hamyu, 소맥 somaek, 엿기름 yeotgireum, 맥아 maega, 호밀 homil, 무 글루텐 mu geulluten, 저글루텐 jeo-geulluten) inside the existing tables, leaving body prose in Hangul-plus-gloss as now."
+        }
+      ],
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 27521,
+        "cache_read_input_tokens": 98761,
+        "output_tokens": 7245,
+        "output_tokens_details": {
+          "thinking_tokens": 4709
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 27521,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 1995,
+            "cache_read_input_tokens": 60496,
+            "cache_creation_input_tokens": 5290,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 5290
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 17,
+      "max_points": 20,
+      "score": 8.5,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "Nearly every claim is sourced or explicitly marked as first-hand, but the statement that other allergen counts 'circulate' is asserted without a source, though it carries no safety weight.",
+          "evidence_quote": "Counts of 21 and 22 both circulate, and they are the same list counted differently"
+        },
+        {
+          "id": "no_fabrication",
+          "points": 2,
+          "max": 3,
+          "note": "Products, figures and dates are internally consistent and checkable, except the Orion citation whose URL parameters disagree and which is claimed as the source for two different flavours' allergen lines.",
+          "evidence_quote": "and on the same page, **포카칩 어니언 (Onion) declares 밀**, alongside milk and soy (retrieved September 2026)"
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "A dedicated paragraph names the two instruments read, labels the shelf observations as the authors' own shopping, and states outright that it is 'not a survey, and not lab-tested' with the package in hand overriding the article.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 3,
+          "max": 4,
+          "note": "No absolute guarantees, cross-contamination handled well, and celiac is consistently held to a stricter rule than NCGS — but oats, named as a gluten grain in the article's own cited provision, are absent from the reader-facing word list and the scan.",
+          "evidence_quote": "**Memorize four words:** 밀, 소맥, 보리, 호밀 — wheat (both names), barley, and rye."
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "Instrument numbers, promulgation and in-force dates, and retrieval months are all given, and both the legal staleness and manufacturer reformulation are explicitly flagged.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 2,
+          "max": 2,
+          "note": "The load-bearing fact is correct and repeated — 밀 is a designated allergen while 보리 and 호밀 are not — and the 무글루텐 20mg/kg ceiling, the optional nature of the label, the absence of a 저글루텐 definition, the mandatory shared-facility caution and the 'not printed when already an ingredient' exception are all described accurately.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "Direct law.go.kr and MFDS links, the full allergen list reproduced so the reader can see the single gluten grain rather than trust the claim, the 식품안전나라 database, and a copy-pasteable Korean question for the 소비자상담실.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "major",
+          "quote": "**Memorize four words:** 밀, 소맥, 보리, 호밀 — wheat (both names), barley, and rye.",
+          "why": "The article's own cited provision lists oats (귀리) among the grains that bar a 무 글루텐 label, yet 귀리 never appears in the word tables, the 4-step scan, or this summary. Oats are not a mandatory-declared allergen in Korea and Korean oat products are routinely handled alongside wheat and barley, so a celiac reader running this scan on an 오트밀 or 귀리 product would find it 'clears' with no prompt to treat it as a contamination risk.",
+          "fix": "Add 귀리 (oats) to the Step 3 table and to the memorisation list, with a one-line celiac note: oats are not gluten grains themselves but are not mandatory-declared in Korea and are commonly cross-contaminated, so uncertified oats should be treated like a shared-facility line."
+        },
+        {
+          "criterion": "no_fabrication",
+          "severity": "minor",
+          "quote": "and on the same page, **포카칩 어니언 (Onion) declares 밀**, alongside milk and soy (retrieved September 2026)",
+          "why": "The linked URL's path id and goods parameter disagree (`view/27` versus `goodsno=26`), and a single product-detail page is presented as the source for two distinct flavours' allergen declarations. A reader following the link may land on a different product and be unable to confirm the Onion/Original contrast, which the article itself calls 'this entire article in miniature'.",
+          "fix": "Cite each flavour to its own Orion product page with matching ids, or state plainly that the Onion line was read off the physical package and give the retrieval date and package lot wording."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "Counts of 21 and 22 both circulate, and they are the same list counted differently",
+          "why": "The reconciliation itself is sound and is explicitly attributed to the authors' own count of the regulation, but the existence of the competing 21 and 22 counts is asserted with neither a source nor an 'in our experience' marker, which is the one gap in an otherwise fully attributed piece. No safety decision rests on it.",
+          "fix": "Either link one example each of a 21-count and a 22-count source, or reframe as an observation ('the counts we have seen quoted elsewhere are 21 and 22')."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 22231,
+        "cache_read_input_tokens": 38224,
+        "output_tokens": 12019,
+        "output_tokens_details": {
+          "thinking_tokens": 9560
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 22231,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 12019,
+            "cache_read_input_tokens": 38224,
+            "cache_creation_input_tokens": 22231,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 22231
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: accuracy-safety 8.5/9.5"
+  }
+}

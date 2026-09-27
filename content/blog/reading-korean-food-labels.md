@@ -23,6 +23,8 @@ faq:
 
 *Updated August 2026 — added the MFDS citation, dropped the romanisations in favour of the Korean itself, fixed the 엿기름 gloss (malted barley, not malt syrup), and corrected an error: the shared-facility caution line is **required** for designated allergens, not voluntary as an earlier version said.*
 
+*Updated September 2026: sourced the Pocachip Onion allergen line to the same Orion product page as the Original.*
+
 Ask me to do one thing in a Korean convenience store and I'll do it without thinking: pick up a new snack, flip it over, and scan the back for one word — **밀** (wheat). It takes about two seconds now. But it took months of getting it wrong to make it automatic, and it's the single most useful habit we built while learning to eat gluten-free in Korea.
 
 Restaurants are a conversation. Packaged food is a *reading test* — and once you can read the label, a huge amount of Korean grocery and convenience-store food opens back up. Here's the exact routine.
@@ -110,6 +112,7 @@ Don't stop at the allergen line — run your eye up the whole **원재료명** l
 | 맥아 | malt | barley-derived; turns up in seasonings and drinks |
 | 대맥 | barley | another name for 보리 (rare on labels) |
 | 호밀 | rye | *not* on the allergen line |
+| 귀리 | oats | *not* on the allergen line — but it is one of the four grains the 무 글루텐 rule excludes (see "Why Korean labels are their own skill") |
 
 One gloss worth getting right, because we had it wrong here until August 2026: 엿기름 is **malted barley**, not malt syrup. The syrups are 물엿 and 조청. 물엿 is commonly described as corn-derived and 조청 as traditionally saccharified with 엿기름, but we haven't verified either per product — so treat both as a check rather than a pass, and read the 원재료명.
 
@@ -156,7 +159,7 @@ Once the flip-and-scan is automatic, a small core of convenience-store items kee
 - **Plain yogurt** — check the add-ins
 - **Chicken breast packs** — *without* the soy-sauce marinade. Brewed Korean soy sauce is a wheat product: [Sempio's own page for 양조간장 501](https://en.sempio.com/product/soysauce/view/598) lists wheat in the ingredients and declares wheat as an allergen (retrieved August 2026). More on the condiments in the [hidden-gluten guide](/blog/hidden-gluten-korean-food)
 - **Rice crackers (쌀과자)** — but only *after* you scan, because of the wheat-starch trap above
-- **Potato chips — and here the specifics matter.** [Orion's own product page](https://www.orionworld.com/goods/view/27?page=1&goodsno=26&category=0102) lists 포카칩 오리지널 (Pocachip Original) with allergens milk, soy and beef, and no 밀 (retrieved August 2026). The **Onion flavour of the same brand declares 밀.** One bag, two flavours, opposite answers — that pair is this entire article in miniature, and it's why the habit is reading the package rather than remembering a brand. Flavour-by-flavour detail is in the [snack guide](/blog/korean-convenience-store-gf-snacks).
+- **Potato chips — and here the specifics matter.** [Orion's own product page](https://www.orionworld.com/goods/view/27?page=1&goodsno=26&category=0102) lists 포카칩 오리지널 (Pocachip Original) with allergens milk, soy and beef, and no 밀 — and on the same page, **포카칩 어니언 (Onion) declares 밀**, alongside milk and soy (retrieved September 2026). One bag, two flavours, opposite answers — that pair is this entire article in miniature, and it's why the habit is reading the package rather than remembering a brand. Flavour-by-flavour detail is in the [snack guide](/blog/korean-convenience-store-gf-snacks).
 
 What fails is most of what you'd grab on autopilot: cup noodles, some triangle-kimbap fillings, most breads and pastries, battered snacks. Full breakdown by brand and flavor in the [convenience-store snack guide](/blog/korean-convenience-store-gf-snacks).
 
@@ -169,7 +172,7 @@ It collapses into one reflex: at the shelf, glance at the allergen line for **�
 1. **Memorize four words:** 밀, 소맥, 보리, 호밀 — wheat (both names), barley, and rye. (Barley also hides as 맥아 and 엿기름.)
 2. **Don't trust the allergen line alone.** It reliably flags declared wheat, but barley and rye live only in the full ingredient list.
 3. **Distrust "rice" and "gluten-free" claims** until the ingredients back them up.
-4. **If you're celiac,** remember what a clean scan proves — no *declared* wheat, barley, or rye — and what it doesn't. A printed shared-facility warning is required and meaningful; a missing one covers neither barley nor rye and rests on the maker's own judgment. Call the 소비자상담실 number on the package when the answer has to be certain.
+4. **If you're celiac,** remember what a clean scan proves — no *declared* wheat, barley, or rye — and what it doesn't. A printed shared-facility warning is required and meaningful; a missing one covers neither barley nor rye and rests on the maker's own judgment. Call the 소비자상담실 number on the package when the answer has to be certain. And add **귀리** (oats) to your scan: it isn't on the allergen line either, yet Korean law counts it among the grains a 무 글루텐 product must not use — whether oats suit you is a question for your own doctor, not for this label.
 
 ## Related guides
 

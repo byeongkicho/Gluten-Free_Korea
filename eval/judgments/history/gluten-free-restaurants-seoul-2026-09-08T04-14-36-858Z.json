@@ -1,0 +1,265 @@
+{
+  "schema": 1,
+  "slug": "gluten-free-restaurants-seoul",
+  "source_ref": "working-tree",
+  "content_sha256": "e0e4642ba2516fcf2ac80fc4dba43e00011f819027fd777d677b5c83edae29d0",
+  "judged_at": "2026-09-08T04:16:22.559Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.261 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 19,
+      "max_points": 20,
+      "score": 9.5,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "First paragraph names all seven places and immediately states that only Monil2 House is a dedicated GF kitchen, which is the intent behind 'gluten free restaurants seoul'.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 2,
+          "max": 2,
+          "note": "Title 54 chars with the site suffix, description 154 chars, keyword in title, no phrase overlap between the two.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings carry the argument on their own — tiering, the 237 Pizza closure and its cost, neighbourhood clustering, ordering method, honest limits.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Ten-plus internal links, each placed where a reader would actually want the next page (place pages, label guide, phrases guide).",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All three FAQ answers — Monil2 as the reliable pick, rice-batter chicken caveats, and the visited/unvisited split — are each established verbatim in the body and stand alone as rich results.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 3,
+          "max": 3,
+          "note": "Dated repeat visits, an in-store certification photo next to a named flour bag, a live HTTP 500 recheck, and physical details like 'second floor, no elevator'.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "expertise",
+          "points": 1,
+          "max": 2,
+          "note": "Product names, the legal citation and counts are precise, but several operative Korean terms the reader is told to say aloud carry no romanisation.",
+          "evidence_quote": "ask about 보리 and 맥아 by name — a \"no wheat\" answer does not cover them"
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "Primary sources are linked with publication or verification dates: the 별표 2 link with its 총리령 number and enforcement date, the blogger post dated 3 September 2026, and the site check on 8 September 2026.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "States plainly what the method cannot establish ('reading a menu is not checking an ingredient', 'no kitchen is a guarantee') and carries no affiliate or undisclosed commercial link.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "expertise",
+          "severity": "minor",
+          "quote": "ask about 보리 and 맥아 by name — a \"no wheat\" answer does not cover them",
+          "why": "The article gives an English-reading traveler an instruction they cannot execute: the two words they are told to say by name appear only in Hangul, with no romanisation or copyable phrase. The same gap hits 간장 and 튀김 in the ordering section.",
+          "fix": "Either add romanisation inline (보리 / bori, 맥아 / maega, 간장 / ganjang, 튀김 / twigim) or, if the site's no-pronunciation rule stands, link these terms to a copy-to-clipboard phrase card so the instruction is actionable."
+        },
+        {
+          "criterion": "title_meta",
+          "severity": "minor",
+          "quote": "Five we ate at, two we did not — each entry says which, with the month.",
+          "why": "The description never contains the target keyword or even the words 'restaurant' or 'Seoul', so the SERP snippet loses the strongest term-match signal and reads as ambiguous out of context.",
+          "fix": "It is 154/155 chars, so trim 'each entry says which,' and work the keyword in — e.g. 'Seven gluten-free restaurants in Seoul: five we ate at, with the month; two we did not.'"
+        },
+        {
+          "criterion": "structure",
+          "severity": "minor",
+          "quote": "## Fried chicken, done with rice flour",
+          "why": "6Day Chicken, Ssal Tongdak and Jihwaja are Tier 2 by the article's own definition, but they sit under H2s that drop the tier label, so a reader skimming headings may read them as a third, unexplained evidence category.",
+          "fix": "Add '(Tier 2)' to this H2 and to 'The Korean-cuisine wildcard', or nest both as H3 groups under the Tier 2 heading."
+        }
+      ],
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 26390,
+        "cache_read_input_tokens": 89690,
+        "output_tokens": 6575,
+        "output_tokens_details": {
+          "thinking_tokens": 3249
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 26390,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 1584,
+            "cache_read_input_tokens": 55428,
+            "cache_creation_input_tokens": 5224,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 5224
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 17,
+      "max_points": 20,
+      "score": 8.5,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "Provenance is marked entry-by-entry (visit month vs. unvisited, shop label vs. own test), but the nationwide dataset figure that frames the scarcity argument is asserted with no way for a reader to check it.",
+          "evidence_quote": "Across the 24 places we track nationwide, seven are dedicated gluten-free kitchens"
+        },
+        {
+          "id": "no_fabrication",
+          "points": 2,
+          "max": 3,
+          "note": "Dates, product names, and the law citation are checkable and mutually consistent (five listed visits match \"five times over a year\"), but the dedicated-kitchen count does not reconcile: seven minus one closed is six, not five.",
+          "evidence_quote": "seven are dedicated gluten-free kitchens, and one of those — 237 Pizza — is currently closed. Of the five still open in Seoul and Gyeonggi, most are dessert cafes"
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "The piece states how each claim was obtained and names what that method cannot establish, explicitly separating a shop's own menu label from an ingredient check.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 3,
+          "max": 4,
+          "note": "No absolute guarantees, cross-contamination and shared fryers raised at every relevant entry, and the NCGS basis is disclosed up front — but the FAQ still generalizes an NCGS-tested list to celiac readers before qualifying it.",
+          "evidence_quote": "Most of it works for celiac travelers too, but not always."
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "Every source carries a date (visit months, menu checked September 2026, site 500 rechecked 8 September 2026, blogger 3 September 2026, law in force 1 January 2026) and reformulation drift is flagged explicitly.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 2,
+          "max": 2,
+          "note": "The load-bearing labelling fact is stated correctly with a direct 별표2 citation and enforcement date, and 보리/맥아/간장/튀김/쌀통닭 are used and glossed accurately.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "Readers get the statute link, the closed shop's URL and blogger source, the exact Korean words to ask by name, and a phrase guide — concrete independent checks rather than trust.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "major",
+          "quote": "Most of it works for celiac travelers too, but not always.",
+          "why": "The entire evidence base is one person with non-celiac gluten sensitivity. NCGS tolerance says nothing about trace-level cross-contact, which is exactly what harms celiacs, so \"most of it works for celiac travelers too\" extends a finding beyond what the method can support. The qualifiers that follow reduce but do not remove the risk that a celiac reader reads the first clause as reassurance.",
+          "fix": "Replace with a statement that does not transfer the result: e.g. \"Our visits tell you a place had an orderable gluten-free path for someone with NCGS. They cannot tell you it is safe at celiac thresholds — that depends on shared fryers and prep surfaces we did not test. Treat every entry here as unverified for celiac disease until you confirm handling in person.\""
+        },
+        {
+          "criterion": "no_fabrication",
+          "severity": "minor",
+          "quote": "seven are dedicated gluten-free kitchens, and one of those — 237 Pizza — is currently closed. Of the five still open in Seoul and Gyeonggi, most are dessert cafes",
+          "why": "Seven minus one closed is six. If one of the six sits outside Seoul/Gyeonggi that is never said, so the reader is handed a count that does not reconcile in a passage whose whole point is how few dedicated kitchens remain.",
+          "fix": "State the arithmetic explicitly — e.g. \"seven dedicated kitchens nationwide; 237 Pizza is closed and one more is outside Seoul/Gyeonggi, leaving five you can reach on this trip\" — or correct the figure to six."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "Across the 24 places we track nationwide, seven are dedicated gluten-free kitchens",
+          "why": "This is the numeric backbone of the scarcity framing and of the advice to anchor a trip on one shop, but it is neither linked to the underlying dataset nor labelled as an in-house count the reader cannot audit.",
+          "fix": "Link to the site's places directory (or a dated snapshot of it) and add \"as of 8 September 2026, by our own tracking\" so the figure is both attributed and checkable."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 21166,
+        "cache_read_input_tokens": 34221,
+        "output_tokens": 7582,
+        "output_tokens_details": {
+          "thinking_tokens": 5543
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 21166,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 7582,
+            "cache_read_input_tokens": 34221,
+            "cache_creation_input_tokens": 21166,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 21166
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: accuracy-safety 8.5/9.5"
+  }
+}

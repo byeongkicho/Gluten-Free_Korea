@@ -1,0 +1,265 @@
+{
+  "schema": 1,
+  "slug": "korean-gluten-free-phrases",
+  "source_ref": "working-tree",
+  "content_sha256": "e2c5434de9aee812d7e08295513363bf14990a2a201552adda29ea82bdd4cd71",
+  "judged_at": "2026-09-27T14:44:07.022Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.283 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 19,
+      "max_points": 20,
+      "score": 9.5,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "첫 100단어 안에 외울 한 문장과 복사 버튼 안내가 나오고, 이어서 '발음 말고 보여주기'라는 운용 원칙까지 제시해 키워드 의도를 즉시 충족한다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 2,
+          "max": 2,
+          "note": "렌더링 후 title 53자, description 약 136자로 모두 한도 내이고 키워드가 title에 포함되며 중복 표현은 키워드 수준에 그친다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "헤딩만 훑어도 '알러지 프레이밍 → 상황별 문구 → 재확인 → 숨은 출처 → 한계'라는 논지가 그대로 읽힌다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "/places, hidden-gluten-korean-food, reading-korean-food-labels, celiac-travel-korea-guide가 모두 해당 문맥의 미해결 질문을 이어받는 자리에 놓였다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "5개 FAQ 모두 본문에 대응 근거가 있고(글루텐프리의 한계·밀가루 vs 밀·알러지 표기·교차오염) 각 답이 단독으로도 성립한다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 2,
+          "max": 3,
+          "note": "2025–26년·서울/경기/천안·빵집 10% 밀가루 일화처럼 구체적 대목이 있으나 대부분은 셀 수 없는 패턴 진술이어서 구체적이되 얇다.",
+          "evidence_quote": "We did not count conversations or record outcomes, so this is a consistent impression, not a measured rate."
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "양조간장/조선간장/한식간장 구분, 알레르기 유발물질 표기, 별표2 번호, Sempio 501 같은 확인 가능한 고유명과 수치가 일관되게 제시된다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "Sempio 제품 페이지(retrieved August 2026), 한국소비자원 2020 간장 안전실태조사 PDF 직결, 시행규칙 별표2에 총리령 제2004호·2024-12-30 개정·2026-01-01 시행까지 붙여 1차 자료가 날짜와 함께 링크됐다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "'no sample, no measurement, and no lab test' 등 방법론이 입증하지 못하는 범위를 명시하고 독립 검증 경로까지 제시하며, 제휴 링크는 없다.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "experience",
+          "severity": "minor",
+          "quote": "We did not count conversations or record outcomes, so this is a consistent impression, not a measured rate.",
+          "why": "본문의 1차 경험 대부분이 '한 해 동안 물어봤다'는 패턴 진술이고, 날짜·장소·수량이 붙은 개별 사건은 10% 밀가루를 말한 빵집 한 건뿐이다. 정직한 자기제한이라 신뢰에는 기여하지만, 경험 신호의 밀도는 최상위에 못 미친다.",
+          "fix": "재확인 요청이 실패했거나 간장 때문에 주문을 바꾼 구체 장면 2~3건을 월 단위 시점 + 동네 + 메뉴명 수준으로 추가한다(상호 없이도 '2025년 가을 성수동 돼지갈비집' 정도면 충분). 결제·사진 기록에서 시점을 복원하면 회수 가능하다."
+        },
+        {
+          "criterion": "faq_alignment",
+          "severity": "minor",
+          "quote": "Romanised Korean is hard to pronounce and staff frequently don't recognise it when a traveller attempts it, so showing beats speaking",
+          "why": "FAQ 2번과 3번이 '발음하지 말고 보여줘라'는 동일 논지를 거의 같은 문장으로 반복한다. 본문 근거는 충분해 감점 사유는 아니지만, 리치 결과에서 두 칸이 같은 답을 차지해 노출 다양성을 스스로 깎는다.",
+          "fix": "FAQ 2는 외울 문장 자체와 그것을 쓰는 상황에 집중시키고, 발음 논지는 3번에만 남긴다. 확보된 칸 하나를 '고기구이집에서 뭘 물어야 하나'(불판·집게·염지) 같은 미충족 질의로 교체한다."
+        },
+        {
+          "criterion": "title_meta",
+          "severity": "minor",
+          "quote": "Korean phrases that get a kitchen to actually check — allergy framing, copy-and-show text, and what to do when the first answer is wrong.",
+          "why": "description에 'gluten-free'가 없어 키워드 전체형이 title에만 존재하고, 'Korean phrases'가 title의 'Korean Gluten-Free Phrases'와 겹친다. 길이·중복 규정 위반은 아니지만 스니펫에서 키워드 볼드 매칭 기회를 한 번 잃는다.",
+          "fix": "description 앞부분을 'Gluten-free Korean phrases that get a kitchen to actually check' 형태로 바꿔 전체형 키워드를 넣고, 대신 뒷부분의 'what to do when the first answer is wrong'를 유지해 title과 다른 정보를 제공한다(155자 여유 있음)."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 20161,
+        "cache_read_input_tokens": 38265,
+        "output_tokens": 5170,
+        "output_tokens_details": {
+          "thinking_tokens": 2916
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 20161,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 5170,
+            "cache_read_input_tokens": 38265,
+            "cache_creation_input_tokens": 20161,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 20161
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 18,
+      "max_points": 20,
+      "score": 9,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "1차 자료(샘표 501, 한국소비자원 조사, 시행규칙 별표2)가 링크로 붙고 체험 주장은 전부 '우리 경험'으로 명시됐으나, 문화·행동 일반화 몇 개가 출처도 관찰 표시도 없이 단언된다(안전 판단에는 영향 없음).",
+          "evidence_quote": "Korean service culture is accommodating, and a specific, apologetic ask is usually met well."
+        },
+        {
+          "id": "no_fabrication",
+          "points": 3,
+          "max": 3,
+          "note": "제품명·법령 번호·개정일·인용 연도가 서로 어긋나지 않고 모두 확인 가능한 형태(직결 URL·retrieved 표기)로 제시된다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "'세지 않았다·측정 없다·개별 병을 확인하지 않았다·범주 정의일 뿐 보증이 아니다'까지 방법의 한계를 명시적으로 닫아둔다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 3,
+          "max": 4,
+          "note": "절대적 안전 보증이 없고 NCGS와 셀리악을 명확히 분리하며 불판·집게·튀김기·팬 교차오염을 다루지만, 교차오염이 가장 첨예한 베이커리(밀가루 분진·공용 오븐·공용 집게)는 '100% 쌀가루' 질문만 남기고 다루지 않는다.",
+          "evidence_quote": "The percentage question is the one that works."
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "샘표는 retrieved August 2026, 법령은 개정 2024-12-30/시행 2026-01-01로 현행이며, 제조사 리포뮬레이션 경고로 조사 자료의 노후화를 명시적으로 상계한다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 2,
+          "max": 2,
+          "note": "밀가루(flour)와 밀(grain)의 구분, 양조/한식/혼합간장 범주, 알레르기 유발물질·원재료명 표기, 그리고 의무표시가 밀만 포함하고 보리·호밀은 빠진다는 핵심 사실이 모두 정확하다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "포장은 원재료명 직독(four-word scan), 식당은 전화 선확인이라는 구체적 자기검증 경로를 주고 법령·제조사 원문 링크까지 열어둔다.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "major",
+          "quote": "The percentage question is the one that works.",
+          "why": "베이커리 섹션은 '100% 쌀가루인가'와 '밀가루 조금이라도 들어가나'로 성분만 닫고, 밀가루를 함께 쓰는 빵집의 분진·공용 오븐·공용 집게·공용 도구라는 셀리악 최대 위험을 어디에서도 언급하지 않는다. 'prep surface' 일반 경고가 뒤에 있어 전문을 읽은 독자는 오판하지 않겠지만, 이 섹션만 보고 '100% 쌀가루' 답을 안전 신호로 받아들일 여지가 남는다.",
+          "fix": "5번 섹션에 한 줄 추가: 같은 주방에서 밀가루 빵을 만드는 곳이면 성분이 100% 쌀가루여도 셀리악에게는 안전하지 않다는 경고와, 전용 공간·별도 도구를 묻는 한국어 문장(예: 밀가루 빵도 같이 만드시나요? / 반죽하는 공간이 따로 있나요?)을 함께 제시."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "Korean service culture is accommodating, and a specific, apologetic ask is usually met well.",
+          "why": "글 전체가 '우리 경험'을 성실하게 표시하는 데 비해, 이 문장과 '로마자를 시도하면 직원이 자주 못 알아듣는다'류의 행동·문화 일반화는 출처도 관찰 표시도 없이 사실처럼 놓인다. 안전 결정에 작용하지는 않는다.",
+          "fix": "'in our experience' 또는 '우리가 겪은 범위에서는' 표시를 이 두 문장에도 붙여 나머지 본문과 같은 수위로 맞춘다."
+        },
+        {
+          "criterion": "no_fabrication",
+          "severity": "minor",
+          "quote": "2020 soy-sauce safety survey",
+          "why": "본문은 2020년 조사로 부르지만 링크 경로에는 2021이 박혀 있다(조사연도 대 발간연도일 가능성). 판정을 뒤집을 만한 오류는 아니나 확인 없이 둔 파생값이다.",
+          "fix": "PDF 표제부를 직접 열어 조사연도와 발간연도를 확인하고, 본문에 '2020년 조사(2021년 발간)'처럼 둘 다 남긴다."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 20161,
+        "cache_read_input_tokens": 38224,
+        "output_tokens": 8306,
+        "output_tokens_details": {
+          "thinking_tokens": 6394
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 20161,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 8306,
+            "cache_read_input_tokens": 38224,
+            "cache_creation_input_tokens": 20161,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 20161
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: accuracy-safety 9/9.5"
+  }
+}

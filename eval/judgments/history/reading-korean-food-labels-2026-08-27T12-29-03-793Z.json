@@ -1,0 +1,272 @@
+{
+  "schema": 1,
+  "slug": "reading-korean-food-labels",
+  "source_ref": "working-tree",
+  "content_sha256": "3f7569b9e52423d5981a7b1dff462e04738d029ecc1ee7c67b37a89c63160a86",
+  "judged_at": "2026-08-27T12:30:53.352Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.237 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 19,
+      "max_points": 20,
+      "score": 9.5,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "The keyword intent (how to spot gluten on a Korean food label) is answered inside the first ~90 words — flip the package and scan for 밀 — with the four-step promise stated immediately after.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 2,
+          "max": 2,
+          "note": "Title is 38 chars (58 with the appended ' | Gluten-Free Korea'), description is ~153 chars, keyword tokens present in both, and neither repeats the other's phrasing verbatim.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings carry the argument on their own — the four numbered steps plus 'When the label can't answer' and 'What actually passes' let a skimmer reconstruct the method without reading prose.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Six internal links to four distinct guides, each placed where the reader would actually want the detour (저글루텐 trap, soy sauce, flavour-by-flavour snack breakdown).",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All five FAQ answers — the 원재료명 scan, the nineteen-item allergen line, the 20mg/kg 무글루텐 definition, the 쌀 marketing trap, and the wheat/barley/rye vocabulary — are each established in the body, including the 'caution line is required' point.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 2,
+          "max": 3,
+          "note": "There is real first-hand signal (own shopping in Seoul, a self-corrected 엿기름 gloss, a rice cracker that failed) but no named product, store, or month anchors it.",
+          "evidence_quote": "The snack that broke me of trusting the allergen line alone was a \"rice\" cracker: allergen line clean, but 밀 전분 sitting a few items up in the ingredients."
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "Named products (포카칩 오리지널, Sempio 양조간장 501), the full nineteen-entry allergen table, and checkable figures (20mg/kg, 고시 제2025-60호) let a reader verify nearly every claim.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "Primary regulatory sources are linked with the version and date in force ('고시 제2025-60호, 29 August 2025', retrieved August 2026), and the two product claims link to the manufacturers' own pages.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "The piece repeatedly states what the method cannot establish and separates regulation-derived claims from personal shopping; no commercial or affiliate links appear.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "experience",
+          "severity": "major",
+          "quote": "Everything about what sits on convenience-store shelves is our own shopping in Seoul — first-hand, but not a survey, and not lab-tested.",
+          "why": "First-hand shopping is asserted but never evidenced with anything checkable — no store, no month, no product name. The one failure story in the piece is an unnamed 'rice' cracker, so a reader has no way to distinguish lived experience from well-researched writing, which is exactly the distinction the experience signal exists to test.",
+          "fix": "Anchor at least two first-hand moments to specifics: name the rice cracker (brand + flavour) that hid 밀 전분, the month and the chain (CU/GS25/7-Eleven) where you found it, and one product that cleared the scan one month and failed the next after a reformulation."
+        },
+        {
+          "criterion": "experience",
+          "severity": "minor",
+          "quote": "[Orion's own product page](https://www.orionworld.com/goods/view/27?page=1&goodsno=26&category=0102) lists 포카칩 오리지널 (Pocachip Original) with allergens milk, soy and beef, and no 밀 (retrieved August 2026).",
+          "why": "This is the article's flagship concrete example, but it is sourced from a web page rather than a package held in a shop. It carries authoritativeness without carrying experience, so the piece's most memorable detail does nothing for its first-hand credibility.",
+          "fix": "Add the on-shelf counterpart: the date you compared the two bags side by side and what the physical Onion-flavour panel actually said, so the example does double duty as citation and observation."
+        },
+        {
+          "criterion": "search_intent",
+          "severity": "minor",
+          "quote": "*Updated August 2026 — added the MFDS citation, dropped the romanisations in favour of the Korean itself, fixed the 엿기름 gloss (malted barley, not malt syrup), and corrected an error: the shared-facility caution line is **required** for designated allergens, not voluntary as an earlier version said.*",
+          "why": "The changelog is sound trust practice but occupies the snippet-eligible opening, pushing the actual answer down and giving crawlers editorial housekeeping as the first indexable prose on a page targeting a how-to query.",
+          "fix": "Move the changelog to the foot of the article or collapse it under a 'Corrections' heading, so the first line is the 밀 scan itself."
+        },
+        {
+          "criterion": "faq_alignment",
+          "severity": "minor",
+          "quote": "Flip the package and read the ingredient list (원재료명). Korea's mandatory allergen list — set by 식품등의 표시·광고에 관한 법률 시행규칙, 별표 2 — includes wheat, so wheat shows up as 밀.",
+          "why": "FAQ 1 runs far past the length Google renders in an FAQ rich result, so the load-bearing caveat that a clean list 'does not establish the absence of trace gluten' sits deep enough to be truncated — the answer stands alone only if the reader sees all of it.",
+          "fix": "Front-load the limit into the first two sentences and trim the answer to roughly 300 characters; the body already carries the full reasoning for anyone who clicks through."
+        }
+      ],
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 26210,
+        "cache_read_input_tokens": 87543,
+        "output_tokens": 7070,
+        "output_tokens_details": {
+          "thinking_tokens": 3073
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 26210,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 2204,
+            "cache_read_input_tokens": 54212,
+            "cache_creation_input_tokens": 5329,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 5329
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 18,
+      "max_points": 20,
+      "score": 9,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "Regulatory claims are linked, first-hand observations are explicitly marked as such, and unverified items are hedged — but one product-specific allergen claim is asserted with no source while the paired claim beside it gets a link.",
+          "evidence_quote": "Onion flavour of the same brand declares 밀."
+        },
+        {
+          "id": "no_fabrication",
+          "points": 2,
+          "max": 3,
+          "note": "Product names, the 20mg/kg figure, the 19-item list and the retrieval dates are all checkable and mutually consistent, but the alternate-count aside does not follow from the explanation given for it.",
+          "evidence_quote": "You'll see the count given as 21 or 22 elsewhere, which is the same list with 조개류 split into its three named shellfish"
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "The piece names its two sources of knowledge (regulation reading versus the authors' own Seoul shopping), states the method is neither a survey nor lab-tested, and says outright what a completed scan cannot establish.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 4,
+          "max": 4,
+          "note": "No absolute safety guarantee anywhere; cross-contamination is given its own step with the barley/rye gap named, celiac and NCGS are handled separately at each decision point, and the 'passes' list is explicitly defined as 'not a safety rating'.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "Regulation version number and date are given with a retrieval date, amendment churn is flagged, and manufacturer reformulation is called out as a standing reason to re-scan rather than memorise.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 2,
+          "max": 2,
+          "note": "The 19 declared substances, the wheat-only mandatory coverage with 보리/호밀 excluded, the 무 글루텐 definition and ceiling, and the ingredient glosses (소맥, 엿기름, 맥아, 대맥, 밀 전분) are all described correctly.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "The reader gets the law.go.kr provisions, the 식품안전나라 database, a copy-ready Korean question for the 소비자상담실, and the full allergen list so they can see the wheat-only gap rather than take the author's word for it.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "Onion flavour of the same brand declares 밀.",
+          "why": "The Original-flavour claim beside it is anchored to Orion's own product page with a retrieval date, but the Onion claim — the half that makes the article's central 'one bag, two flavours' point — is asserted bare. The error direction is conservative (a reader avoids a chip rather than eats one), so it is not a safety event, but it leaves the piece's showcase example half-sourced.",
+          "fix": "Link the Orion product page for 포카칩 어니언 with a retrieval date, or state explicitly that the Onion allergen line was read off a package purchased in Seoul in August 2026."
+        },
+        {
+          "criterion": "no_fabrication",
+          "severity": "minor",
+          "quote": "You'll see the count given as 21 or 22 elsewhere, which is the same list with 조개류 split into its three named shellfish",
+          "why": "Splitting 조개류 into 굴/전복/홍합 takes 19 to 21, not 22. The stated explanation accounts for one of the two numbers offered, so a reader checking the arithmetic finds it does not close. Nothing safety-relevant turns on it, but the article's authority rests on being checkable line by line.",
+          "fix": "Either drop '22' or say where it comes from — e.g. that some sources keep 조개류 as a heading and count the three named shellfish beneath it, giving 22."
+        },
+        {
+          "criterion": "korean_accuracy",
+          "severity": "minor",
+          "quote": "the regulatory statements are read off the MFDS standard linked above (retrieved August 2026)",
+          "why": "The article elsewhere correctly locates the mandatory allergen list and the 무 글루텐 threshold in 식품등의 표시·광고에 관한 법률 시행규칙 별표 2, which is a 총리령 ordinance, not the MFDS 고시 (식품등의 표시기준) that governs format. The provenance sentence collapses two distinct instruments into one, which slightly undercuts an attribution the rest of the piece gets right.",
+          "fix": "Split the sentence: the substance list and the 무 글루텐 ceiling come from the 시행규칙 별표 2; the labelling format and allergen-box rules come from the MFDS 고시. Both with retrieval dates."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 20881,
+        "cache_read_input_tokens": 33290,
+        "output_tokens": 7594,
+        "output_tokens_details": {
+          "thinking_tokens": 5726
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 20881,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 7594,
+            "cache_read_input_tokens": 33290,
+            "cache_creation_input_tokens": 20881,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 20881
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: accuracy-safety 9/9.5"
+  }
+}
