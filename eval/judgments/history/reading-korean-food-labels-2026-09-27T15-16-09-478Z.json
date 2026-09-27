@@ -1,0 +1,258 @@
+{
+  "schema": 1,
+  "slug": "reading-korean-food-labels",
+  "source_ref": "working-tree",
+  "content_sha256": "cf087b157d3f4958f69bb4e17a4ace41414d105385a141c8d772040993aba156",
+  "judged_at": "2026-09-27T15:18:26.178Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.283 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 19,
+      "max_points": 20,
+      "score": 9.5,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "The keyword intent — how to spot gluten on a Korean food label — is answered inside the first 200 words with the concrete instruction to flip the pack and scan for 밀.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 2,
+          "max": 2,
+          "note": "Title is 38 chars plus the 20-char rendered suffix (58 total), description is 153 chars, keyword terms present in both, and the phrasings do not repeat each other.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings are descriptive rather than labels ('Why Korean labels are their own skill', 'What actually passes'), and skimming only the H2/H3s delivers the full four-step argument plus its limits.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Six internal links across four target articles, each placed where the reader has just hit the exact gap that target fills (저글루텐 trap → hidden-gluten guide; flavour variance → snack guide).",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All five FAQ answers are established in the body — the 19-item allergen table, the 20mg/kg 무 글루텐 threshold, the 밀 전분 rice trap, the 소맥/엿기름/맥아 aliases — and each stands alone as a rich result.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 2,
+          "max": 3,
+          "note": "Real habit-level detail and an admitted past error, but the shopping evidence is undated and unplaced, so it reads concrete-but-thin rather than observed.",
+          "evidence_quote": "Rice breads and rice snacks are where we've been caught most often by 밀가루 or 밀 전분 in the ingredients."
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "Named products (포카칩 오리지널/어니언, Sempio 양조간장 501), exact instruments (총리령 제2004호, 고시 제2025-60호) and exact figures (20mg/kg, nineteen entries) are all checkable, and the 21-vs-22 count discrepancy is explained rather than dodged.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "Primary legal instruments are linked directly with amendment and enforcement dates, and the two commercial claims carry retrieval dates.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "A dedicated provenance paragraph states what the method cannot establish, the conclusion repeats that limit explicitly, and there are no affiliate or commercial links to disclose.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "experience",
+          "severity": "minor",
+          "quote": "Everything about what sits on convenience-store shelves is our own shopping in Seoul — first-hand, but not a survey, and not lab-tested.",
+          "why": "First-hand signal is asserted rather than shown: there is no dated store visit, no named branch or neighbourhood, no count of packages scanned, and no specific failure incident from shopping. The two concrete product examples (Pocachip, Sempio) are read off manufacturer web pages, not observed on a shelf.",
+          "fix": "Add two or three recoverable specifics from payment or photo records — e.g. 'the CU on X street, March 2026, 14 rice-snack packages checked, 5 carried 밀 전분' — or one dated incident where a package cleared the scan and later reformulated."
+        },
+        {
+          "criterion": "search_intent",
+          "severity": "minor",
+          "quote": "*Updated August 2026 — added the MFDS citation, dropped the romanisations in favour of the Korean itself, fixed the 엿기름 gloss (malted barley, not malt syrup), and corrected an error: the shared-facility caution line is **required** for designated allergens, not voluntary as an earlier version said.*",
+          "why": "Two changelog paragraphs occupy the first screen before the answer starts, consuming roughly a third of the first-200-word budget that Google and readers use to judge intent match. The answer still lands in time, but with no margin.",
+          "fix": "Move both update notes to a dated changelog block at the foot of the article (or collapse them into a single one-line 'Last updated' stamp) so the 밀 answer is the first thing after the H1."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 22513,
+        "cache_read_input_tokens": 38265,
+        "output_tokens": 4938,
+        "output_tokens_details": {
+          "thinking_tokens": 3427
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 22513,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 4938,
+            "cache_read_input_tokens": 38265,
+            "cache_creation_input_tokens": 22513,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 22513
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 18,
+      "max_points": 20,
+      "score": 9,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "규제 주장은 모두 1차 법령에 연결되고 매장 관찰은 자기 경험으로 표시했으나, 안전 판단에 직접 영향을 주지 않는 경험적 일반화 한 건이 무출처로 남았다.",
+          "evidence_quote": "Korean manufacturers reformulate without redesigning the package."
+        },
+        {
+          "id": "no_fabrication",
+          "points": 3,
+          "max": 3,
+          "note": "제품명·수치·고시 번호·날짜가 서로 어긋나지 않고 FAQ와 본문의 19종 집계도 일치하며, 인용마다 조회 시점이 붙어 검증 가능한 형태다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "'Where the claims here come from' 단락에서 법령 직독과 서울 자가 쇼핑을 구분하고 설문·실험실 검사가 아님을 밝혔으며, 'Clears the scan'의 의미도 안전 등급이 아니라고 정의했다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 3,
+          "max": 4,
+          "note": "절대적 안전 보증이 없고 셀리악을 NCGS보다 엄격하게 다루지만, 같은 제조사가 밀 함유 어니언을 만드는 포카칩 오리지널을 '통과' 목록에 올리면서 그 라인 교차오염 가능성만은 언급하지 않았다.",
+          "evidence_quote": "lists 포카칩 오리지널 (Pocachip Original) with allergens milk, soy and beef, and no 밀 — and on the same page, **포카칩 어니언 (Onion) declares 밀**, alongside milk and soy (retrieved September 2026)"
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "총리령·고시의 호수와 시행일, 조회 월이 모두 적혀 있고 법령과 제품 배합이 모두 바뀔 수 있음을 독자에게 경고했다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 2,
+          "max": 2,
+          "note": "의무 알레르기 표시가 밀만 포함하고 보리·호밀은 빠진다는 핵심 사실이 반복적으로 정확하며, 소맥·대맥·엿기름·맥아·밀 전분의 뜻과 무(無) 글루텐 정의도 법령 문언과 일치한다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "별표 2·표시기준 직결 링크, 식품안전나라, 제조사 제품 페이지, 그리고 소비자상담실에 그대로 읽어줄 한국어 질문 문장까지 독자가 스스로 확인할 경로를 제공한다.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "major",
+          "quote": "lists 포카칩 오리지널 (Pocachip Original) with allergens milk, soy and beef, and no 밀 — and on the same page, **포카칩 어니언 (Onion) declares 밀**, alongside milk and soy (retrieved September 2026)",
+          "why": "본문 스스로 '같은 한 봉지, 두 맛'이라고 쓸 만큼 동일 제조사·동일 제품군에서 밀 함유 변형이 생산되는데, 오리지널을 '통과' 목록에 올린 자리에서 공유 라인·공유 시설 가능성은 한 줄도 다루지 않는다. Step 4가 셀리악에게 공유시설 문구를 회피 사유로 제시한 것과, 가장 구체적인 제품 추천 지점에서 그 위험을 적용하지 않은 것 사이에 간극이 있다. 전반적 면책 문구('not a safety rating')가 있어 차단 수준은 아니지만, 독자가 가장 행동으로 옮기는 문단이다.",
+          "fix": "포카칩 오리지널 언급 뒤에 한 문장을 덧붙일 것: 같은 제품군에 밀 함유 맛이 있으므로 오리지널의 혼입 주의 문구 유무를 직접 확인하고, 셀리악이면 표기가 없어도 오리온 소비자상담실에 라인 분리를 문의하라는 지시."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "Korean manufacturers reformulate without redesigning the package.",
+          "why": "기사 전체의 '매번 다시 읽어라'라는 습관을 정당화하는 경험적 전제인데, 출처도 없고 저자 관찰이라는 표시도 없다. 방향은 보수적이어서 독자를 위험으로 이끌지는 않으나, 다른 주장들이 모두 법령 링크나 '우리 경험'으로 귀속된 이 기사의 기준에서는 예외로 남는다.",
+          "fix": "'In our own shopping we have seen 배합 변경 without a package change' 처럼 자기 관찰로 표시하거나, 표시사항 변경 시 포장 소진까지 허용되는 근거 규정을 인용할 것."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "Brewed Korean soy sauce is a wheat product",
+          "why": "근거로 붙은 것은 샘표 양조간장 501 한 제품 페이지뿐인데 문장은 한국 양조간장 전체로 일반화한다. 결론 자체는 보수적이고 대체로 사실이지만, 한 제품 페이지가 카테고리 전체 주장을 지지하지는 못한다.",
+          "fix": "'Brewed Korean soy sauce is typically a wheat product — for example, ...' 로 한정하거나, 양조간장의 밀 사용을 카테고리 차원에서 기술한 2차 출처를 추가할 것."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 22513,
+        "cache_read_input_tokens": 38224,
+        "output_tokens": 7052,
+        "output_tokens_details": {
+          "thinking_tokens": 4848
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 22513,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 7052,
+            "cache_read_input_tokens": 38224,
+            "cache_creation_input_tokens": 22513,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 22513
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: accuracy-safety 9/9.5"
+  }
+}
