@@ -41,7 +41,7 @@
 - `phrases` **9.5/9.5 PASS**(로마자 일반화에 관찰 표시 · 간장 자료 2020년 명시) · `labels` **9.5/9.5 PASS**(변경이력 글 끝으로). → **발행 7편 = 판정 PASS 6 + 운영자 예외 1.**
 - ⚠️ 로컬 `freshness`는 여전히 빨갛다(8-25부터의 선재 이슈, CI에선 통과) — 이번 범위 밖.
 
-**▶ 순서 (운영자 승인 9-27):** ①정리 ✅ → ②FAIL 4편 ✅(4→0, 9-28) → ③고추장 취재 / 매장페이지 두껍게 / 베이커리 스텁.
+**▶ 순서 (운영자 승인 9-27):** ①정리 ✅ → ②FAIL 4편 ✅(4→0, 9-28) → ③매장페이지 두껍게 / 베이커리 스텁. ⏸️ **고추장 레시피 = 보류**(9-28 Ki: *"너무 막막하다"*) — 다시 꺼내지 말고 Ki 가 열 때까지 둔다.
 
 ## ▶ 로마자 철거 + 법령명 정정 — ✅ 커밋됨 `98dfc2f` (2026-09-07) · ✅ push됨(9-27 확인)
 
@@ -374,9 +374,9 @@ GitHub Actions (매시간) → healthcheck 16지표 → Grafana Cloud 도쿄(inf
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-09-28 00:22
+- **마지막 업데이트:** 2026-09-28 13:38
 - **작업자:** Claude Code
-- **마지막 커밋:** `a909b17` content(labels): 쌀과자 일화 → 규칙 문장 · 포카칩 공유 라인 경고 · 간장 카테고리 출처
+- **마지막 커밋:** `5d20fc7` harness(content-001): 운영자 승인 FAIL 예외 도입 · phrases·labels PASS
 - **브랜치:** main
 - **CI:** 🔴 **Harness Eval 9-07부터 연속 실패**(`content-001` — 상단 9-28 참조) · Deploy 🟢. ~~🟢 GitHub Actions 전원 success(`89cefc4`)~~ = 8-25 기록. ⚠️ 단 **로컬 `eval-runner`는 7/8** — `harness-001` freshness가 선재 이슈로 빨갛고, **CI는 임계값 5.0 회귀 판정이라 이걸 잡지 않는다**. 이전 기록 8/8 — content-001 포함 전원 녹색 (5편 PASS). baseline 갱신됨(`content-001,1,1`), 이제부터 회귀 감지가 실제로 작동한다
 - **✅ 이미지 79/79 resolve** (`node scripts/check-images.mjs live`, 08-20 확인) — "알려진 이슈"에 남아 있던 **cafe-pepper 404 4건은 08-07 `c53196b`로 이미 해소된 스테일 항목**이었다(원인은 `build_places`가 `.jpg` 원본까지 스캔해 없는 Cloudinary id를 만든 것, 83→79 참조). 목록에서 제거함. "IG 토큰 만료 추정"도 08-12 재인증(2026-11-10까지)으로 해소 → 제거.
@@ -429,7 +429,7 @@ GitHub Actions (매시간) → healthcheck 16지표 → Grafana Cloud 도쿄(inf
 | 1 | **#2 레스토랑 초안 재프레이밍 발행** ("personally tested" 제거 → curated/티어) + **237 폐업/이전 확인 후 데이터 정리** | 초안은 `content/blog/gluten-free-restaurants-seoul.md`(현 upcoming) |
 | 2 | 요리/식재료 스텁 완성 (주 1편): ~~reading-korean-food-labels~~ ✅(07-30) · ~~convenience-store-snacks~~ ✅(07-31) → **다음: gochujang(이모님 레시피 확보 후) 또는 커머셜 인텐트 글**(best eSIM·pantry kit) | 위키 `concepts/`로 write-ready |
 | 3 | **`/shop` 도구 연결** (P2→승격, 반나절): CU 가이드 플래그십 + HACCP 보조, disclaimer 전면, 이미지 hotlink 처리 | 컴포넌트 이미 완성 |
-| 4 | **이모님 수제 고추장 레시피 캡처** (운영자 net-new 입력 — 유일한 blocking 갭, 경쟁 전무 시그니처) | #9 |
+| ~~4~~ | ~~이모님 수제 고추장 레시피 캡처~~ ⏸️ **보류(9-28 Ki)** — 막막하다. Ki 가 열 때까지 제안 목록에서 뺀다 | #9 |
 | 5 | 포지셔닝 재구성 — 홈/nav ✅완료(07-29). **잔여: About 카피 3축 리프레이밍**, IG 토큰 갱신+백로그, 커뮤니티 시딩 | 콘텐츠 쌓인 뒤 |
 | ~~6~~ | ~~배포 후 PSI 모바일 재측정~~ ✅완료(07-29): LCP 9.4→1.7s, orange→green (위 참조) | — |
 
