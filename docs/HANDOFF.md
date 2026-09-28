@@ -41,6 +41,15 @@
 - `phrases` **9.5/9.5 PASS**(로마자 일반화에 관찰 표시 · 간장 자료 2020년 명시) · `labels` **9.5/9.5 PASS**(변경이력 글 끝으로). → **발행 7편 = 판정 PASS 6 + 운영자 예외 1.**
 - ⚠️ 로컬 `freshness`는 여전히 빨갛다(8-25부터의 선재 이슈, CI에선 통과) — 이번 범위 밖.
 
+### ✅ 9-29 — 매장 페이지 두껍게: 구조 + 샘플 1곳 (모닐이네)
+- 새 필드 `visits`·`details`(+`_ko`) → "What we found" 섹션 · **발행글이 `/place/<slug>` 로 링크한 글 자동 목록**("Featured in our guides", 8곳 즉시 적용) · 잠자던 `verified:"visited"` 배지 첫 점등. DECISIONS 9-29.
+- 🔑 **`details` 는 이미 발행·판정된 문장만** 옮긴다(모닐이네 6줄 = restaurants·celiac·hidden·butter 에서). 확인된 게 없는 매장은 섹션을 비운다.
+- 🔑 **방문 월은 파일 날짜로 못 뽑는다** — `mdls` 생성일은 복사일이다(쿠촐로 파일 2026-03 vs 실제 2025-07). 방문 월 정본 = restaurants-seoul 글(사진첩 GPS 기준).
+- 🔴 모닐이네 `note_ko` 가 "…내부에서  ." 로 잘려 라이브에 나가 있었다 → 수정(`f1dd469`). 24곳 전수 검사 1건.
+- ⚠️ **x-ake·FEEKE·Vegetus 사진 5장씩은 네이버에서 내려받은 것**(`025bda0`) — 우리 사진 아님, 저작권. 운영자 판단 대기(급하지 않음).
+- ▶ 다음: 방문 월 확인된 곳부터 확장 — cucciolo(2025-07) · grain(2026-01·03) · 6day(2025-11) · ssal-tongdak(월 미기록). 문장 원천 = restaurants-seoul 해당 단락.
+- ⚠️ 로컬 스크린샷: `npx playwright screenshot` 은 캐시 브라우저 버전 불일치로 실패 → `chromium_headless_shell-1217` 을 `executablePath` 로 지정하면 된다.
+
 **▶ 순서 (운영자 승인 9-27):** ①정리 ✅ → ②FAIL 4편 ✅(4→0, 9-28) → ③매장페이지 두껍게 / 베이커리 스텁. ⏸️ **고추장 레시피 = 보류**(9-28 Ki: *"너무 막막하다"*) — 다시 꺼내지 말고 Ki 가 열 때까지 둔다.
 
 ## ▶ 로마자 철거 + 법령명 정정 — ✅ 커밋됨 `98dfc2f` (2026-09-07) · ✅ push됨(9-27 확인)
@@ -374,9 +383,9 @@ GitHub Actions (매시간) → healthcheck 16지표 → Grafana Cloud 도쿄(inf
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-09-28 13:38
+- **마지막 업데이트:** 2026-09-29 07:59
 - **작업자:** Claude Code
-- **마지막 커밋:** `5d20fc7` harness(content-001): 운영자 승인 FAIL 예외 도입 · phrases·labels PASS
+- **마지막 커밋:** `f1dd469` data(monil2-house): 잘린 한국어 노트 수정 · 고추장 레시피 보류 기록
 - **브랜치:** main
 - **CI:** 🔴 **Harness Eval 9-07부터 연속 실패**(`content-001` — 상단 9-28 참조) · Deploy 🟢. ~~🟢 GitHub Actions 전원 success(`89cefc4`)~~ = 8-25 기록. ⚠️ 단 **로컬 `eval-runner`는 7/8** — `harness-001` freshness가 선재 이슈로 빨갛고, **CI는 임계값 5.0 회귀 판정이라 이걸 잡지 않는다**. 이전 기록 8/8 — content-001 포함 전원 녹색 (5편 PASS). baseline 갱신됨(`content-001,1,1`), 이제부터 회귀 감지가 실제로 작동한다
 - **✅ 이미지 79/79 resolve** (`node scripts/check-images.mjs live`, 08-20 확인) — "알려진 이슈"에 남아 있던 **cafe-pepper 404 4건은 08-07 `c53196b`로 이미 해소된 스테일 항목**이었다(원인은 `build_places`가 `.jpg` 원본까지 스캔해 없는 Cloudinary id를 만든 것, 83→79 참조). 목록에서 제거함. "IG 토큰 만료 추정"도 08-12 재인증(2026-11-10까지)으로 해소 → 제거.

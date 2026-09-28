@@ -77,3 +77,11 @@ export function getPublishedPosts() {
 export function getUpcomingPosts() {
   return getAllPosts().filter((p) => p.status === "upcoming");
 }
+
+// Published posts that link to a place page. Matched on the markdown link
+// target, not the name — a name match would pull in passing mentions and
+// spelling variants we can't check.
+export function getPostsLinkingToPlace(placeSlug) {
+  const target = `](/place/${placeSlug})`;
+  return getPublishedPosts().filter((p) => p.content.includes(target));
+}

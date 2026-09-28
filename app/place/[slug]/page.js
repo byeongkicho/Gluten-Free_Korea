@@ -7,6 +7,7 @@ import TrackedExternalLink from "@/app/components/TrackedExternalLink";
 import { cloudinaryUrl } from "@/app/lib/cloudinary";
 import places from "@/data/places.json";
 import { TYPE_MAP, sortTags, isClosed, isUnverified } from "@/app/lib/places";
+import { getPostsLinkingToPlace } from "@/app/lib/blog";
 
 function getValidatedPlaces() {
   const rows = Array.isArray(places) ? places : [];
@@ -139,6 +140,11 @@ export default async function PlaceDetailPage({ params }) {
   const unverified = isUnverified(place);
   const statusNote = place.statusNote;
   const statusNoteKo = place.statusNote_ko || place.statusNote;
+  const details = Array.isArray(place.details) ? place.details : [];
+  const detailsKo = Array.isArray(place.details_ko) && place.details_ko.length === details.length
+    ? place.details_ko
+    : details;
+  const linkingPosts = getPostsLinkingToPlace(slug);
 
   return (
     <main className="min-h-screen px-4 py-8 sm:px-6 sm:py-10 md:py-14">
@@ -331,6 +337,49 @@ export default async function PlaceDetailPage({ params }) {
               <span className="lang-en">{noteEn}</span>
               <span className="lang-ko">{noteKo}</span>
             </p>
+          </section>
+        ) : null}
+
+        {details.length > 0 || place.visits ? (
+          <section className="mt-5 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-fg">
+              <span className="lang-en">What we found</span>
+              <span className="lang-ko">우리가 확인한 것</span>
+            </h2>
+            {place.visits ? (
+              <p className="mt-3 text-sm font-medium text-fg">
+                <span className="lang-en">{place.visits}</span>
+                <span className="lang-ko">{place.visits_ko || place.visits}</span>
+              </p>
+            ) : null}
+            {details.length > 0 ? (
+              <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted">
+                {details.map((d, i) => (
+                  <li key={i}>
+                    <span className="lang-en">{d}</span>
+                    <span className="lang-ko">{detailsKo[i]}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+          </section>
+        ) : null}
+
+        {linkingPosts.length > 0 ? (
+          <section className="mt-5 rounded-2xl border border-rim bg-surface p-5 sm:p-6">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-fg">
+              <span className="lang-en">Featured in our guides</span>
+              <span className="lang-ko">이 매장이 나온 글</span>
+            </h2>
+            <ul className="mt-3 space-y-2 text-sm">
+              {linkingPosts.map((p) => (
+                <li key={p.slug}>
+                  <Link href={`/blog/${p.slug}`} className="text-accent underline-offset-2 hover:underline">
+                    {p.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </section>
         ) : null}
 
