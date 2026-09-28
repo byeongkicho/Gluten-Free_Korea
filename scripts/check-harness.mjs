@@ -205,6 +205,12 @@ function checkJudgments() {
       }),
   );
 
+  // Operator-approved FAIL publications. Kept apart from the judgment records
+  // because judge-post.mjs owns those files and rewrites them on every run.
+  const overridesPath = "eval/gate-overrides.json";
+  const overrides = existsSync(overridesPath) ? JSON.parse(read(overridesPath)) : {};
+  const overridden = [];
+
   const problems = [];
   const published = readdirSync("content/blog")
     .filter((f) => f.endsWith(".md"))
@@ -239,15 +245,32 @@ function checkJudgments() {
     if (record.provenance !== "runner" && record.provenance !== "claude-cli") {
       problems.push(`${slug}: provenance is "${record.provenance}", not runner/claude-cli`);
     }
-    // A recorded FAIL is not a passing gate. The two honest exits are fixing
-    // the post (and re-judging) or leaving this red — never editing the rubric.
+    // A recorded FAIL is not a passing gate. The honest exits are fixing the
+    // post (and re-judging), leaving this red, or an operator override pinned
+    // to these exact bytes — never editing the rubric or the record. The
+    // override is void the moment the post changes, so it cannot outlive the
+    // text it was granted for.
     if (record.gate?.passed !== true) {
-      problems.push(`${slug}: recorded gate is FAIL — ${record.gate?.reason ?? "no gate field"}`);
+      const o = overrides[slug];
+      const valid =
+        o &&
+        o.content_sha256 === actual &&
+        o.content_sha256 === record.content_sha256 &&
+        [o.approved_by, o.approved_at, o.reason].every((v) => typeof v === "string" && v.trim());
+      if (valid) {
+        overridden.push(`${slug} (${o.approved_at}: ${record.gate?.reason ?? "FAIL"})`);
+      } else {
+        const why = o ? " (override present but stale or incomplete)" : "";
+        problems.push(`${slug}: recorded gate is FAIL — ${record.gate?.reason ?? "no gate field"}${why}`);
+      }
     }
   }
 
   if (problems.length) fail(`${problems.length} judgment integrity problem(s)`, problems);
-  pass(`all ${published.length} published post(s) have a current judgment`);
+  // Printed on every pass so an override stays visible instead of turning green quietly.
+  overridden.forEach((d) => console.log(`OVERRIDE: operator-approved FAIL — ${d}`));
+  pass(`all ${published.length} published post(s) have a current judgment` +
+    (overridden.length ? ` (${overridden.length} by operator override)` : ""));
 }
 
 const CHECKS = {

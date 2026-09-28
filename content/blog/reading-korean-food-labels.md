@@ -21,10 +21,6 @@ faq:
     a: "Wheat is 밀, or 밀가루 for wheat flour, and it also appears as 소맥 / 소맥분 — the same thing under a different name, which trips people up. Barley is 보리, and hides as 엿기름 (malted barley) and 맥아 (malt). Rye is 호밀. Wheat starch, common in 'rice' products, is 밀 전분. Seeing any of these means the product contains gluten."
 ---
 
-*Updated August 2026 — added the MFDS citation, dropped the romanisations in favour of the Korean itself, fixed the 엿기름 gloss (malted barley, not malt syrup), and corrected an error: the shared-facility caution line is **required** for designated allergens, not voluntary as an earlier version said.*
-
-*Updated September 2026: sourced the Pocachip Onion allergen line to the same Orion product page as the Original.*
-
 Ask me to do one thing in a Korean convenience store and I'll do it without thinking: pick up a new snack, flip it over, and scan the back for one word — **밀** (wheat). It takes about two seconds now. But it took months of getting it wrong to make it automatic, and it's the single most useful habit we built while learning to eat gluten-free in Korea.
 
 Restaurants are a conversation. Packaged food is a *reading test* — and once you can read the label, a huge amount of Korean grocery and convenience-store food opens back up. Here's the exact routine.
@@ -183,3 +179,9 @@ It collapses into one reflex: at the shelf, glance at the allergen line for **�
 ---
 
 ← Back to [The Real Gluten-Free Guide to Korea](/blog/celiac-travel-korea-guide).
+
+---
+
+*Updated August 2026 — added the MFDS citation, dropped the romanisations in favour of the Korean itself, fixed the 엿기름 gloss (malted barley, not malt syrup), and corrected an error: the shared-facility caution line is **required** for designated allergens, not voluntary as an earlier version said.*
+
+*Updated September 2026: sourced the Pocachip Onion allergen line to the same Orion product page as the Original.*
