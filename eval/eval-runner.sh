@@ -37,7 +37,11 @@ for task_file in "$TASKS_DIR"/*.json; do
       step_pass=$((step_pass + 1))
     else
       echo "  ❌ $desc"
+      # Without the reason a red step is unreadable in the CI log.
+      tail -n 15 /tmp/eval-step-out.txt | sed 's/^/      /'
     fi
+    # Operator overrides pass the gate — keep them visible on every run.
+    grep '^OVERRIDE:' /tmp/eval-step-out.txt | sed 's/^/      /' || true
   done
   
   if [ $step_pass -eq $step_total ]; then
