@@ -1,0 +1,267 @@
+{
+  "schema": 1,
+  "slug": "gluten-free-restaurants-seoul",
+  "source_ref": "working-tree",
+  "content_sha256": "af2c84106996e303b3509f6a4e372321c3d213f23a9bacca445429551c51b56e",
+  "judged_at": "2026-10-06T03:18:29.464Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.290 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 20,
+      "max_points": 20,
+      "score": 10,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "The opening paragraph names all seven restaurants and immediately flags which single one is a dedicated kitchen, satisfying the keyword intent well inside 200 words.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 2,
+          "max": 2,
+          "note": "Title is 54 chars with the appended site name, description is 154 chars, keyword present, and no phrasing is duplicated between the two.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings carry the argument rather than labelling it, so a skim of the headings alone reconstructs the thesis.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Eight place pages plus four guide links, each placed where a reader would want the next step.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All three FAQ answers trace to visible body passages, including the exact four-dated-plus-one-undated visit accounting.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 3,
+          "max": 3,
+          "note": "Dated repeat visits, a photographed certification mark, a specific lunch order, a re-checked HTTP 500, and an explicit list of questions the author failed to ask.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "Named products and certifications, the exact Korean menu wording, hidden-source terms in Hangul, and a citable legal instrument make the claims checkable.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "The regulatory claim links the primary statute with its instrument number and in-force date, and the closure evidence cites a dated Korean blog post plus a dated site check.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "An explicit 'Honest limits' section states what the method cannot establish, the unvisited entries are labelled as menu-reading rather than testing, and there are no affiliate links.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "authoritativeness",
+          "severity": "minor",
+          "quote": "**Not visited — but the menu carries a gluten-free course.**",
+          "why": "Every other unverified entry carries a check date and source (Vegetus: 'listed on the shop's own menu, checked September 2026'), but the Jihwaja menu claim has no date and no link, so a reader cannot verify the one fact that earns it a slot on the list.",
+          "fix": "Add the check date and the source for the gluten-free course, e.g. 'listed on the restaurant's reservation page, checked September 2026', with a link if one exists."
+        },
+        {
+          "criterion": "search_intent",
+          "severity": "minor",
+          "quote": "Monil2 House is a dedicated GF bakery-and-cafe rather than a sit-down restaurant, but with 237 Pizza closed it is the anchor of this list.",
+          "why": "The title and keyword promise restaurants, yet the single Tier 1 recommendation is a bakery-cafe, which may read as a partial bait for a user searching for a meal. The body is transparent about it, but the SERP snippet is not.",
+          "fix": "Work the caveat into the description, e.g. note that the only dedicated kitchen is a bakery-cafe, so the expectation is set before the click."
+        },
+        {
+          "criterion": "expertise",
+          "severity": "minor",
+          "quote": "ask about 보리 and 맥아 by name — a \"no wheat\" answer does not cover them",
+          "why": "Hangul-only terms give a reader something to point at but no way to say or search them; the surrounding English sentences romanise other terms (hanjeongsik, Ssal Tongdak), so the treatment is inconsistent.",
+          "fix": "Either gloss these consistently with the rest of the piece or keep them Hangul-only throughout, and consider a copyable phrase line for the two barley terms."
+        }
+      ],
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 27469,
+        "cache_read_input_tokens": 99326,
+        "output_tokens": 6408,
+        "output_tokens_details": {
+          "thinking_tokens": 3425
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 27469,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 1356,
+            "cache_read_input_tokens": 61042,
+            "cache_creation_input_tokens": 4711,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 4711
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 18,
+      "max_points": 20,
+      "score": 9,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "모든 주장이 출처 또는 자체 관찰로 표시돼 있으나, 미방문 Jihwaja의 GF 코스 주장만 확인 시점·경로가 없다(Vegetus에는 'checked September 2026'이 붙어 있어 대비된다).",
+          "evidence_quote": "Not visited — but the menu carries a gluten-free course."
+        },
+        {
+          "id": "no_fabrication",
+          "points": 2,
+          "max": 3,
+          "note": "제품명·수치·날짜는 서로 맞고 Tier 1 산술(7곳−폐업 1 = 6, 그중 FEEKE 창원 → 서울·경기 5)도 일치하지만, description의 '월 표기' 약속이 본문의 월 미기록 1건과 어긋나는 사소한 불일치가 있다.",
+          "evidence_quote": "Five we ate at, two we did not — each entry says which, with the month."
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "각 항목이 근거 종류(방문+월 / 미방문 메뉴 표기)로 시작하고, 메뉴 읽기는 성분 확인이 아니라는 한계와 묻지 않은 세 가지까지 명시한다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 4,
+          "max": 4,
+          "note": "절대적 안전 보증이 없고, 공용 튀김기·전처리면 교차오염을 해당 항목마다 다루며, NCGS와 셀리악을 명시적으로 분리해 셀리악 위험을 축소하지 않았다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "웹 확인(2026-09-08 HTTP 500), 블로그(2026-09-03), 메뉴 확인(2026-09), 시행규칙 시행일(2026-01-01)이 모두 날짜와 함께 제시되고 경과에 따른 변질 위험도 명시적으로 경고한다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 2,
+          "max": 2,
+          "note": "의무 표시가 밀만 해당하고 보리·('rye')는 아니라는 핵심 사실, 근거를 시행규칙 별표2로 지목한 점, 보리·맥아·보리차·간장·튀김옷·쌀통닭 등 용어와 행정동-구 대응이 모두 맞다.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "별표2 직결 링크, 폐업 근거 URL, 매장별 한국어 주소·문구 페이지, 직원에게 물을 단어(보리·맥아·공용 튀김기)까지 독자가 스스로 확인할 수단을 준다.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "no_fabrication",
+          "severity": "minor",
+          "quote": "Five we ate at, two we did not — each entry says which, with the month.",
+          "why": "본문은 방문 5곳 중 1곳(Ssal Tongdak)을 'Visited, month not recorded.'로 명시하므로 description의 '각 항목에 월이 붙는다'는 약속과 어긋난다. 안전 판단에는 영향이 없지만 메타데이터와 본문이 불일치한다.",
+          "fix": "description을 'four with the month, one undated' 식으로 고쳐 본문 서술과 일치시킨다."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "Not visited — but the menu carries a gluten-free course.",
+          "why": "미방문 항목인데 '메뉴에 GF 코스가 있다'는 근거의 확인 시점·경로(매장 웹메뉴/전화/현장 사진 등)가 없다. 같은 미방문인 Vegetus는 'listed on the shop's own menu, checked September 2026'로 명시해 기준이 엇갈린다.",
+          "fix": "Vegetus와 동일하게 확인 경로와 월을 붙인다(예: 'listed on the restaurant's own course menu, checked September 2026')."
+        },
+        {
+          "criterion": "korean_accuracy",
+          "severity": "minor",
+          "quote": "A short walk from Hongik Station.",
+          "why": "해당 역의 정식 명칭은 홍대입구역(Hongik University Station)이며 'Hongik Station'이라는 역은 없다. 연남동-홍대입구역 위치 관계 자체는 맞아 길 찾기를 그르칠 정도는 아니다.",
+          "fix": "'Hongik University Station (홍대입구역)'으로 표기한다."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 22758,
+        "cache_read_input_tokens": 38243,
+        "output_tokens": 8402,
+        "output_tokens_details": {
+          "thinking_tokens": 6270
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 22758,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 8402,
+            "cache_read_input_tokens": 38243,
+            "cache_creation_input_tokens": 22758,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 22758
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: accuracy-safety 9/9.5"
+  }
+}

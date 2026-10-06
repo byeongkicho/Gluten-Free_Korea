@@ -1,10 +1,3 @@
 {
-  "_doc": "Operator-approved publication of a post whose recorded judge gate is FAIL. Read by scripts/check-harness.mjs judgments. An entry counts only while content_sha256 equals both the judged hash and the current file hash — editing the post voids it. Never write scores here; the judgment record stays FAIL and the finding stays open.",
-  "gluten-free-restaurants-seoul": {
-    "content_sha256": "17c499948fa64905ef40defdc5454d57e8e6bc8564e13400b6ea41916a84d10f",
-    "approved_by": "operator (Ki)",
-    "approved_at": "2026-09-08",
-    "reason": "Published over a FAIL (accuracy-safety 7/9.5) by operator decision. Three judge runs converged on one major: the evidence base is one NCGS person, so the method cannot establish that the picks 'mostly work' for coeliac readers. That is the site's verification method, not a sentence in this post — tracked as a separate methodology item in docs/HANDOFF.md.",
-    "open_finding": "celiac_safety_framing (major)"
-  }
+  "_doc": "Operator-approved publication of a post whose recorded judge gate is FAIL. Read by scripts/check-harness.mjs judgments. An entry counts only while content_sha256 equals both the judged hash and the current file hash — editing the post voids it. Never write scores here; the judgment record stays FAIL and the finding stays open."
 }

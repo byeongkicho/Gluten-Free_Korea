@@ -1,0 +1,288 @@
+{
+  "schema": 1,
+  "slug": "gluten-free-restaurants-seoul",
+  "source_ref": "working-tree",
+  "content_sha256": "186da6d253f44cc9b68773e3b995de6386058584a2bb39f25ddad6a686ff5dbf",
+  "judged_at": "2026-10-06T03:15:50.059Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.290 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 20,
+      "max_points": 20,
+      "score": 10,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "The opening sentence names all seven Seoul restaurants and the second paragraph explains the evidence-sorted premise, so the listicle intent behind 'gluten free restaurants seoul' is satisfied well inside 200 words.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 2,
+          "max": 2,
+          "note": "Title is 54 chars including the rendered ' | Gluten-Free Korea' suffix, description is ~153 chars, keyword appears in the title, and the two share no repeated phrasing.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings carry the argument rather than labelling it — tiering, the closure post-mortem, rice-flour chicken, neighborhood clustering, ordering script, limits — so a heading-only skim reproduces the thesis.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Eight /place/ links sit exactly where a reader needs the address and phrases, plus four earned /blog/ links (label-reading, bakeries, phrases, pillar guide).",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All three FAQ answers are traceable to body text, including the four-with-month/one-undated breakdown, and each reads standalone as a rich result.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 3,
+          "max": 3,
+          "note": "Repeat-visit months, a photographed GFCO mark next to the Caputo Fioreglut bag in June 2025, 'closed for remodelling when we last went', 'Second floor, no elevator', and an explicit list of questions they failed to ask.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "Caputo Fioreglut, 총리령 제2004호, the in-store swap phrase 글루텐프리 파스타면 변경, 보리/맥아/보리차 named in Hangul, and the 24-places/seven-dedicated count are all checkable as stated.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "The regulatory claim links the 시행규칙 별표 2 full text with its decree number and 1 January 2026 in-force date, and the closure rests on a 3 September 2026 blogger post plus an 8 September 2026 HTTP check.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "'Honest limits' states what the method cannot establish (no celiac guarantee, menu-reading is not ingredient-checking, unreached owner), and there are no affiliate or undisclosed commercial links.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "structure",
+          "severity": "minor",
+          "quote": "### Grain Seoul — Sinchon, Seodaemun-gu",
+          "why": "Grain Seoul is the only one of the seven that never appears in the 'Cluster your day by neighborhood' section — Mapo, Yongsan, Jongno and Southwest are covered, but Sinchon/Seodaemun is absent, so a reader planning by area silently loses an entry.",
+          "fix": "Add a Sinchon/Seodaemun line to the clustering list (Grain Seoul pairs naturally with the Mapo/Hongik stop, which is two subway stops away), or fold it into the Mapo bullet explicitly."
+        },
+        {
+          "criterion": "experience",
+          "severity": "minor",
+          "quote": "**Visited July 2025 and October 2026.**",
+          "why": "The frontmatter publication date is 8 September 2026 and the body elsewhere anchors itself to that day ('still HTTP 500 when we checked on 8 September 2026'), so an October 2026 visit narrated in the past tense reads as internally impossible and undercuts the otherwise strong first-hand dating.",
+          "fix": "Either move the publication date forward to reflect the October update, or add a visible 'Updated October 2026' line so the later visit is dated consistently with the page."
+        },
+        {
+          "criterion": "authoritativeness",
+          "severity": "minor",
+          "quote": "Across the 24 places we track nationwide, seven are dedicated gluten-free kitchens",
+          "why": "This is the load-bearing figure for the whole tiering argument but it is the only substantive claim with no link — readers cannot see the 24-place directory or the seven dedicated kitchens to verify the count.",
+          "fix": "Link '24 places we track' to the site directory and, if possible, to a filtered dedicated-kitchen view, with the date the count was taken."
+        },
+        {
+          "criterion": "title_meta",
+          "severity": "minor",
+          "quote": "Five we ate at, two we did not — each entry says which, with the month.",
+          "why": "The description contains none of the keyword terms (gluten-free, restaurants, Seoul), so the SERP snippet loses the bolding and relevance cue even though the title carries the keyword.",
+          "fix": "Work 'Seoul' and 'gluten-free' into the first clause without repeating the title wording, e.g. 'Five Seoul gluten-free spots we ate at, two we did not — each entry says which, with the month.'"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 60950,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 7946,
+        "output_tokens_details": {
+          "thinking_tokens": 5747
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 60950,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 7946,
+            "cache_read_input_tokens": 0,
+            "cache_creation_input_tokens": 60950,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 60950
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 16,
+      "max_points": 20,
+      "score": 8,
+      "pass_at": 9.5,
+      "passed": false,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "Nearly every claim is sourced (law link, dated HTTP check, dated blogger post, dated menu check) or explicitly flagged as the authors' own observation; one unvisited entry's load-bearing claim has no stated source or date.",
+          "evidence_quote": "Not visited — but the menu carries a gluten-free course."
+        },
+        {
+          "id": "no_fabrication",
+          "points": 2,
+          "max": 3,
+          "note": "Product names and figures are checkable, but the body describes an October 2026 visit inside an article dated 8 September 2026, and the dedicated-kitchen count (seven minus one closed) does not line up cleanly with \"five still open\".",
+          "evidence_quote": "At lunch in October 2026 our truffle pasta came on gluten-free pasta"
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "The piece states exactly how each claim was obtained (repeat visits with months, menu reading, HTTP status check, third-party post) and names what those methods cannot establish, including that reading a menu is not an ingredient check and listing the three questions it failed to ask.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 3,
+          "max": 4,
+          "note": "No absolute guarantees, shared-fryer and prep-surface risk raised at every relevant entry, and NCGS is kept distinct from celiac disease; the one soft spot is an unsupported extrapolation that most entries work for celiac travelers.",
+          "evidence_quote": "Most of it works for celiac travelers too, but not always."
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "Sources carry correct dates (총리령 in-force date, 8 September 2026 HTTP check, 3 September 2026 post, September 2026 menu check) and reformulation/menu-drift staleness is explicitly flagged with an instruction to re-ask every visit.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 1,
+          "max": 2,
+          "note": "The load-bearing labelling fact is right — wheat is mandatory, barley and rye are not, cited to 시행규칙 별표 2 rather than a 고시 — but one Korean gloss is imprecise (튀김 is fried food, not batter; batter is 튀김옷/반죽).",
+          "evidence_quote": "batter (튀김)"
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "The reader gets a direct 별표 2 link, the dead site URL, the dated third-party post, the exact Korean words to ask about (보리, 맥아, 간장), a label-reading guide, and a reporting address — all checkable without trusting the author.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "no_fabrication",
+          "severity": "major",
+          "quote": "At lunch in October 2026 our truffle pasta came on gluten-free pasta, and the kitchen checked and cleared the fries with the steak",
+          "why": "The frontmatter dates the article Tue Sep 08 2026, and the body elsewhere anchors itself to that week (\"still HTTP 500 when we checked on 8 September 2026\"). An October 2026 visit therefore postdates publication with no update note, so a reader cannot tell which dates in the piece are trustworthy — and date trust is what the whole evidence-tiering rests on.",
+          "fix": "Either add an explicit \"Updated: 2026-10-06\" field (and say in the Cucciolo entry that the October visit was added on update), or move the frontmatter date forward so the newest dated observation is not in the future relative to publication."
+        },
+        {
+          "criterion": "no_fabrication",
+          "severity": "minor",
+          "quote": "Of the five still open in Seoul and Gyeonggi, most are dessert cafes",
+          "why": "The preceding sentence says seven of 24 tracked places are dedicated gluten-free kitchens and one is closed, which leaves six. \"Five still open in Seoul and Gyeonggi\" only reconciles if a sixth sits outside those regions, which is never stated, so the arithmetic reads as inconsistent.",
+          "fix": "State the remainder explicitly, e.g. \"six remain open, five of them in Seoul and Gyeonggi and one in <region>\"."
+        },
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "Not visited — but the menu carries a gluten-free course.",
+          "why": "This is the sole justification for including an unvisited, highest-effort restaurant, yet unlike the Vegetus entry (\"listed on the shop's own menu, checked September 2026\") it gives no source and no date for the menu claim. A reader planning a hanjeongsik meal around it has nothing to check.",
+          "fix": "Name where the GF course was seen (shop website, Naver listing, phone call) and the month it was checked, matching the Vegetus provenance line."
+        },
+        {
+          "criterion": "celiac_safety_framing",
+          "severity": "minor",
+          "quote": "Most of it works for celiac travelers too, but not always.",
+          "why": "The list's evidence base is NCGS experience, and two of seven entries are unvisited while three have unresolved shared-fryer or shared-water questions. Asserting that most of it works for celiacs extrapolates beyond what the piece establishes, in the permissive direction, even though the same answer then prescribes stricter standards.",
+          "fix": "Replace with what the evidence supports, e.g. \"None of these has been verified against celiac standards; Tier 1 is the only entry where the kitchen itself is wheat-free, and every Tier 2 entry has open cross-contact questions listed in its section.\""
+        },
+        {
+          "criterion": "korean_accuracy",
+          "severity": "minor",
+          "quote": "batter (튀김)",
+          "why": "튀김 means fried food or a fritter, not batter; batter is 튀김옷 or 반죽. Since this line is a script for naming hidden gluten sources to staff, the gloss should map to the thing the reader actually wants asked about.",
+          "fix": "Use \"fried items (튀김)\" or, if batter is meant, \"batter (튀김옷/반죽)\"."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 60909,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 8564,
+        "output_tokens_details": {
+          "thinking_tokens": 6191
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 60909,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 8564,
+            "cache_read_input_tokens": 0,
+            "cache_creation_input_tokens": 60909,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 60909
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": false,
+    "reason": "below threshold: accuracy-safety 8/9.5"
+  }
+}

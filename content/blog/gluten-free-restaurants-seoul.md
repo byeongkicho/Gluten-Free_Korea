@@ -1,7 +1,7 @@
 ---
 slug: gluten-free-restaurants-seoul
 title: "7 Gluten-Free Restaurants in Seoul"
-description: "Five we ate at, two we did not — each entry says which, with the month. One dedicated kitchen, rice-flour fried chicken, and what to ask before you order."
+description: "Five we ate at, two we did not — each entry says which, and when. One dedicated kitchen, rice-flour fried chicken, and what to ask before you order."
 date: 2026-09-08
 author: Ki
 keyword: "gluten free restaurants seoul"
@@ -25,7 +25,7 @@ My wife has non-celiac gluten sensitivity (NCGS), so when I say a place worked, 
 
 ## How this list is tiered
 
-- **Tier 1 — Dedicated GF.** The kitchen works without wheat, so you are not picking safe items off a wheat menu. Across the 24 places we track nationwide, seven are dedicated gluten-free kitchens, and one of those — 237 Pizza — is currently closed. Of the five still open in Seoul and Gyeonggi, most are dessert cafes; Monil2 House is the one you can build a meal around. One caution that applies even here: Korea's mandatory allergen line covers **wheat but not barley or rye**, so a shop can be genuinely wheat-free and still use barley, malt or 보리차 without being required to declare it. The list of substances that must be declared is fixed by [시행규칙 별표 2](https://www.law.go.kr/LSW/lsBylInfoPLinkR.do?lsiSeq=267855&bylNo=0002&bylBrNo=00&bylCls=BE&bylClsCd=BE) (총리령 제2004호, in force 1 January 2026); wheat is on it, barley and rye are not. If you have celiac disease, ask about 보리 and 맥아 by name — a "no wheat" answer does not cover them. Our [label-reading guide](/blog/reading-korean-food-labels) walks through a real label.
+- **Tier 1 — Dedicated GF.** The kitchen works without wheat, so you are not picking safe items off a wheat menu. Across the 24 places we track nationwide, seven are dedicated gluten-free kitchens, and one of those — 237 Pizza — is currently closed. Of the five still open in Seoul and Gyeonggi (the sixth, FEEKE, is in Changwon), most are dessert cafes; Monil2 House is the one you can build a meal around. One caution that applies even here: Korea's mandatory allergen line covers **wheat but not barley or rye**, so a shop can be genuinely wheat-free and still use barley, malt or 보리차 without being required to declare it. The list of substances that must be declared is fixed by [시행규칙 별표 2](https://www.law.go.kr/LSW/lsBylInfoPLinkR.do?lsiSeq=267855&bylNo=0002&bylBrNo=00&bylCls=BE&bylClsCd=BE) (총리령 제2004호, in force 1 January 2026); wheat is on it, barley and rye are not. If you have celiac disease, ask about 보리 and 맥아 by name — a "no wheat" answer does not cover them. Our [label-reading guide](/blog/reading-korean-food-labels) walks through a real label.
 - **Tier 2 — GF-friendly.** Not gluten-free overall, but the shop advertises or lists specific gluten-free items. You order carefully and you ask every time.
 
 Each entry opens with where its claim comes from — a visit of ours, with the month, or an unvisited listing — so you can weigh it yourself.
@@ -36,7 +36,7 @@ Each restaurant links to its full page — address in Korean and English (hand i
 
 ### Monil2 House — Yeonnam, Mapo-gu
 
-**Visited repeatedly — June, July and September 2025, then June and July 2026.** [Monil2 House](/place/monil2-house) is a dedicated GF bakery-and-cafe rather than a sit-down restaurant, but with 237 Pizza closed it is the anchor of this list. It is gluten-free, not merely wheat-free — that is our own conclusion from going back five times over a year, not a certificate, and no kitchen is a guarantee. Ask about 보리 and 맥아 on the day like anywhere else. The bread has real structure; most "GF bread" in Seoul is closer to rice-flour cake. A short walk from Hongik Station. (More on GF bakeries in the dedicated [bakeries & cafes guide](/blog/gluten-free-bakeries-cafes-seoul).)
+**Visited repeatedly — June, July and September 2025, then June and July 2026.** [Monil2 House](/place/monil2-house) is a dedicated GF bakery-and-cafe rather than a sit-down restaurant, but with 237 Pizza closed it is the anchor of this list. It is gluten-free, not merely wheat-free — that is our own conclusion from going back five times over a year, not a certificate, and no kitchen is a guarantee. Ask about 보리 and 맥아 on the day like anywhere else. The bread has real structure; most "GF bread" in Seoul is closer to rice-flour cake. A short walk from Hongik University Station (홍대입구역). (More on GF bakeries in the dedicated [bakeries & cafes guide](/blog/gluten-free-bakeries-cafes-seoul).)
 
 #### 237 Pizza is closed — and this is what it cost us
 
@@ -56,7 +56,7 @@ These are not dedicated GF kitchens, but each has a real, verifiable gluten-free
 
 ### Cucciolo Seoul — Samgakji, Yongsan-gu
 
-**Visited July 2025.** [Cucciolo Seoul](/place/cucciolo-seoul) is an Italian restaurant by the Cucciolo Group inside the Amore Pacific building — a step up for a proper sit-down meal. Italian menus can be navigated gluten-free (grilled fish, risotto, salads), but pasta and fritti are the obvious traps, so verify current GF options and kitchen handling with staff. A nicer-occasion pick than most of this list.
+**Visited July 2025 and October 2026.** [Cucciolo Seoul](/place/cucciolo-seoul) is an Italian restaurant by the Cucciolo Group inside the Amore Pacific building — a step up for a proper sit-down meal. The menu offers the swap in writing: a printed footnote asks you to say if you need gluten-free pasta (글루텐프리 파스타면 변경). At lunch in October 2026 our truffle pasta came on gluten-free pasta, and the kitchen checked and cleared the fries with the steak; there is also a gluten-free cheesecake on the dessert menu. What we didn't ask: what the gluten-free pasta is made from, whether it is cooked in separate water, and whether the fries share a fryer with the fish and chips on the same menu — coeliac readers should ask all three. A nicer-occasion pick than most of this list.
 
 ### Grain Seoul — Sinchon, Seodaemun-gu
 
@@ -78,7 +78,7 @@ Korean fried chicken is usually a wheat-batter minefield — but two Seoul shops
 
 ### Jihwaja — Cheongun-dong, Jongno-gu
 
-**Not visited — but the menu carries a gluten-free course.** That is what earns it a place here rather than a general hope; a set course is easier to make safe than an à la carte order, because the kitchen plans the whole sequence. [Jihwaja](/place/jihwaja) is a traditional Korean restaurant, and the highest-effort entry on this list. Korean set meals hide wheat in soy sauce, jeon (pan-fried) batter, and countless banchan side dishes, so a full course requires careful, item-by-item verification with staff. Included because a good hanjeongsik experience is worth the effort if you get the communication right.
+**Not visited — but the menu carries a gluten-free course (we confirmed this in September 2026; we have not eaten it).** That is what earns it a place here rather than a general hope; a set course is easier to make safe than an à la carte order, because the kitchen plans the whole sequence. [Jihwaja](/place/jihwaja) is a traditional Korean restaurant, and the highest-effort entry on this list. Korean set meals hide wheat in soy sauce, jeon (pan-fried) batter, and countless banchan side dishes, so a full course requires careful, item-by-item verification with staff. Included because a good hanjeongsik experience is worth the effort if you get the communication right.
 
 ## Cluster your day by neighborhood
 
@@ -94,7 +94,7 @@ Seoul is big and traffic is real, so it helps to group these by area rather than
 The pattern that works everywhere on this list:
 
 1. Show the allergy phrase (full version and exact wording in our [Korean phrases guide](/blog/korean-gluten-free-phrases)).
-2. Name the specific hidden sources — soy sauce (간장), batter (튀김), and shared fryers — rather than just saying "no gluten."
+2. Name the specific hidden sources — soy sauce (간장), batter (튀김옷), and shared fryers — rather than just saying "no gluten."
 3. Reconfirm when the food arrives, not only when you order.
 
 ## Honest limits
@@ -110,3 +110,7 @@ None of these are a guarantee for a diagnosed celiac. Dedicated GF (Tier 1) is a
 ---
 
 ← Back to [The Real Gluten-Free Guide to Korea](/blog/celiac-travel-korea-guide).
+
+---
+
+*Updated October 2026: added our second Cucciolo Seoul visit (lunch, 4 October 2026) — the printed gluten-free pasta note on the menu, what we ordered, and the three questions we didn't ask. Everything else is as published on 8 September 2026.*
