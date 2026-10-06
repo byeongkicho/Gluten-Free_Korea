@@ -479,12 +479,12 @@
     "addressEn": "100 Hangang-daero, Yongsan-gu, Seoul",
     "note_ko": "아모레퍼시픽 빌딩 내 쿠초로 그룹의 이탈리안 레스토랑. 방문 시 글루텐프리 옵션과 주방 처리 방식을 직원에게 직접 확인하세요.",
     "images": [
+      "places/cucciolo-seoul/truffle-pasta-gf-2026-10",
+      "places/cucciolo-seoul/steak-fries-2026-10",
       "places/cucciolo-seoul/pasta",
       "places/cucciolo-seoul/fish",
-      "places/cucciolo-seoul/menu-page1",
-      "places/cucciolo-seoul/menu-page2",
-      "places/cucciolo-seoul/wine-cellar",
-      "places/cucciolo-seoul/private-room"
+      "places/cucciolo-seoul/menu-lunch-2026-10",
+      "places/cucciolo-seoul/menu-dessert-2026-10"
     ],
     "verified": "visited",
     "visits": "Two visits: July 2025, and lunch in October 2026.",
