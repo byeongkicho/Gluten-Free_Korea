@@ -10,7 +10,10 @@
 **사진:** 사진첩 DB(`Photos.sqlite` 복사본 조회)에서 10-04 **13:37~14:11 쿠촐로 20~29m** 이내 15장 + 12:26·12:45 근접 2장 + 14:44~14:57 60~100m 13장 확인(UUID 목록 = scratchpad, 세션 한정). 🔴 **원본 내보내기(Photos AppleScript)는 샌드박스 해제가 필요해 자동 권한 검사가 거부** → Ki 가 Photos 앱에서 직접 내보내기(파일 ▸ 내보내기 ▸ 수정되지 않은 원본) 또는 권한 판단.
 **✅ 10-06 반영:** Ki 승인(옵션 2)으로 `.claude/settings.local.json` 에 **Photos 내보내기 명령 한 형태만** 허용 + 샌드박스 제외(`osascript -e 'tell application "Photos" to export *`) → 원본 32장(IMG_1708~1739) 수령. 직접 열어 확인한 1차 자료: 메뉴판 각주 **「글루텐프리 파스타면 변경 필요 시에 말씀 부탁드립니다」** · 트러플 파스타 35(원래 노른자 타야린 생면) · 스테이크앤프라이 75/99 · **같은 메뉴판에 피시앤칩스**(튀김기 공유 미확인) · 디저트 **Glutenfree Cheesecake 10**. 제외: 1708 설화수 진열장 · **1709 인물 사진(동의 없이 게시 ✗)**.
 - 쿠촐로 `visits`·`details`(6줄, 미확인 3가지 명시) + 방문 배지. restaurants 단락 보강 + 글 끝 10월 변경 이력 + 튀김옷 뜻풀이·FEEKE(창원) 산수·홍대입구역·지화자 확인월 → **판정 9.5/9.5 PASS (3롤)** → **운영자 예외 해제**(`gate-overrides.json` 비움). 발행 7편 전원 판정 PASS.
-- ▶ 남은 것(Ki 판단): 사이트 사진 교체(네이버 사진 4장 → 직촬, Cloudinary 업로드 = 외부 전송) · IG 게시물 초안 · push(c373db1 정리 커밋이 함께 나간다).
+- ✅ **10-06 Ki "다해줘" → 전부 집행.** push(`c373db1`·`b6ba689`) · **사진 교체** `237982a`(직촬 4장 `*-2026-10` 업로드 · 네이버 wine-cellar/private-room + 2025 옛 메뉴판 제외 · check-images 79/79 · 라이브 확인) · **IG 게시** [`DeI2RcmD4aP`](https://www.instagram.com/p/DeI2RcmD4aP/) 2026-10-06 12:44 — 캐러셀 4장(커버 트러플 파스타·스테이크·런치 메뉴판·디저트 메뉴판) + EN/KO 캡션 1,147자 · 해시태그 12. Ki 게시 승인 후 집행, Graph API 로 게시본 4장 직접 열어 확인.
+- 🔧 `post-instagram.py`: "menu" 이미지 변환이 `w_1080,h_1080`(크롭 모드 없음 = 양변 스케일로 **찌그러짐**)이었다 → `c_pad,b_white`(`61eecde`). 쿠촐로 `cover` 신규 업로드(1080 정사각, 직접 확인).
+- ⚠️ `data/captions/` 는 **gitignore** — 쿠촐로 옛 캡션을 덮어썼고 git 이력은 없다. 원문은 위키 `entities/CUCCIOLO SEOUL.md` 「인스타 캡션」에 남아 있다.
+- 🔐 `.claude/settings.local.json` 에 Photos 내보내기 허용 1줄 + 샌드박스 제외 1줄(Ki 승인, 10-06). 백업 = 세션 scratchpad.
 
 ## ▶ 10-06 정리 (홈 ki-f5 경유 Ki 지시 — A급만 · 로컬 커밋 · push ✗)
 
@@ -94,9 +97,9 @@
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-10-06 06:46
+- **마지막 업데이트:** 2026-10-06 12:39
 - **작업자:** Claude Code
-- **마지막 커밋:** `c373db1` chore: HANDOFF 463→131줄 아카이브 · eval-runner 실패 사유·OVERRIDE 출력
+- **마지막 커밋:** `61eecde` ig: 메뉴판 이미지가 찌그러지던 Cloudinary 변환 수정
 - **브랜치:** main
 - **CI:** 🔴 **Harness Eval 9-07부터 연속 실패**(`content-001` — 상단 9-28 참조) · Deploy 🟢. ~~🟢 GitHub Actions 전원 success(`89cefc4`)~~ = 8-25 기록. ⚠️ 단 **로컬 `eval-runner`는 7/8** — `harness-001` freshness가 선재 이슈로 빨갛고, **CI는 임계값 5.0 회귀 판정이라 이걸 잡지 않는다**. 이전 기록 8/8 — content-001 포함 전원 녹색 (5편 PASS). baseline 갱신됨(`content-001,1,1`), 이제부터 회귀 감지가 실제로 작동한다
 - **✅ 이미지 79/79 resolve** (`node scripts/check-images.mjs live`, 08-20 확인) — "알려진 이슈"에 남아 있던 **cafe-pepper 404 4건은 08-07 `c53196b`로 이미 해소된 스테일 항목**이었다(원인은 `build_places`가 `.jpg` 원본까지 스캔해 없는 Cloudinary id를 만든 것, 83→79 참조). 목록에서 제거함. "IG 토큰 만료 추정"도 08-12 재인증(2026-11-10까지)으로 해소 → 제거.
