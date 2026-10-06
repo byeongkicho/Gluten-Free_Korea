@@ -117,9 +117,11 @@ def main():
         if skip and img.rsplit("/", 1)[-1] in skip:
             print(f"  제외: {img}")
             continue
-        # Menu images (pre-padded to 1080x1080) — no crop transformation
+        # Menu images: pad, never crop or stretch. A bare w_1080,h_1080 scales
+        # to both sides (distorts) — fine only for the old pre-padded squares.
+        # c_pad keeps those unchanged and letterboxes a portrait menu photo.
         if "menu" in img:
-            urls.append(f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/w_1080,h_1080,q_90/{img}")
+            urls.append(f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/c_pad,b_white,w_1080,h_1080,q_90/{img}")
         else:
             urls.append(f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/c_fill,w_1080,h_1080,q_90/{img}")
 
