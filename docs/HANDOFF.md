@@ -4,6 +4,15 @@
 > 이 문서는 세션 시작 시 "지금 어디까지 됐고 다음이 뭔지"만 빠르게 전달한다.
 > 재개 전략 전체: `~/.claude/plans/noble-discovering-aho.md` (2026-07-24 승인).
 
+## ▶ Grafana 「Healthcheck pipeline stale」 오탐 (2026-10-12 · 홈 경유 Ki 지시) — 🔴 임계 변경 미적용
+
+- **원인:** 크론은 시간당인데 GitHub 실제 실행이 하루 **5.3회**(10/5~11 · 8/17 주 23.9회에서 감소). 매일 두 구간(10:30→17:20, 17:20→01:00 KST)이 6시간을 넘는다. 실행은 전부 성공 — 장애 아님. 표·수치 = `docs/SLO.md` §5 「2026-10-12 재측정」.
+- ✅ **크론 `0 * * * *` → `17 * * * *`** (`7e21de9`). ⏳ **10/15 이후 판정:** `gh run list --workflow healthcheck.yml --limit 200 --json createdAt` 로 하루 실행 횟수가 회복됐나. 정각이 아닌 `50 14` 크론도 3.5~7시간 늦게 돌므로 **회복 안 될 수 있다** → 그때는 외부 트리거(`workflow_dispatch`).
+- 🔴 **임계 6h → 12h 는 미적용.** Ki 승인(10-12 09:34 「진행해」)은 받았으나 `terraform/alerts.tf` 의 `name`·`params` 수정이 자동 권한 검사(`Modify Shared Resources`)에 거부됐다. 우회하지 않고 되돌림. **남은 일:** `alerts.tf` 3곳(`name` → `(>12h)` · `params` `[21600]` → `[43200]` · summary `임계 12h`) + `monitoring/grafana-alerts.json` 4곳(`_thresholds.staleness_seconds`·title·params·summary) → `cd terraform && TF_VAR_grafana_auth=<.env.local GRAFANA_PROVISION_TOKEN> terraform plan`(변경이 `grafana_rule_group.health` 1건인지) → `apply` → `SLO.md` §4 표·§5 「남은 조치」 고치기.
+- **실물 확인(읽기 전용 GET, 10-12):** 규칙 6개 · stale 규칙 = 임계 21600 · `for` 0s · 평가 300s. **Terraform 은 5개만 관리** — `ngk-ig-dormant`(그룹 `ngk-operations`)는 `grafana-alerts.json` 에만 있다(`631436e`). 알림 정책은 루트 하나 · 반복 간격 미설정(기본 4시간) → 8/15~18 dormant 메일이 4시간마다 온 이유. 게시가 없으면 11월 초 재발.
+- 손대지 않은 것: `README.md:78·90` "runs it hourly" — 10/15 판정 뒤 사실에 맞춰 정리.
+- ⚠️ 로컬 `eval-runner` 7/8(`harness-001` freshness 선재 이슈 — 아래 10-06 B급 ①). `npm run build`·`eval-runner` 가 `data/places.json` 의 `updatedAt` 24곳을 오늘 날짜로 바꾼다 → 커밋하지 말고 `git checkout -- data/places.json`.
+
 ## ▶ 쿠촐로 재방문 (2026-10-04 점심) — 운영자 보고 10-06 · 사진 대기
 
 **Ki 확인 사실(10-06):** 런치 메뉴는 이번이 처음 · 먹은 것 = **트러플 파스타(GF 면으로 변경)** + **스테이크앤프라이** · 감자튀김은 **주방 확인 후 글루텐프리 가능** 답변 · 디저트 메뉴판에 **GF 표시 있음**(사진만, 먹지 않음) · 아내(NCGS) 이상 없음 — 셀리악 기준은 모름 · ❌ **GF 면 재료·따로 삶는지는 묻지 않음** → 글에 "확인 안 함"으로 명시할 것. 가격·영수증 미확인.
@@ -97,9 +106,9 @@
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-10-06 12:39
+- **마지막 업데이트:** 2026-10-12 10:43
 - **작업자:** Claude Code
-- **마지막 커밋:** `61eecde` ig: 메뉴판 이미지가 찌그러지던 Cloudinary 변환 수정
+- **마지막 커밋:** `7e21de9` fix(monitoring): 헬스체크 크론을 정각에서 17분으로 · SLO 재측정 기록
 - **브랜치:** main
 - **CI:** 🔴 **Harness Eval 9-07부터 연속 실패**(`content-001` — 상단 9-28 참조) · Deploy 🟢. ~~🟢 GitHub Actions 전원 success(`89cefc4`)~~ = 8-25 기록. ⚠️ 단 **로컬 `eval-runner`는 7/8** — `harness-001` freshness가 선재 이슈로 빨갛고, **CI는 임계값 5.0 회귀 판정이라 이걸 잡지 않는다**. 이전 기록 8/8 — content-001 포함 전원 녹색 (5편 PASS). baseline 갱신됨(`content-001,1,1`), 이제부터 회귀 감지가 실제로 작동한다
 - **✅ 이미지 79/79 resolve** (`node scripts/check-images.mjs live`, 08-20 확인) — "알려진 이슈"에 남아 있던 **cafe-pepper 404 4건은 08-07 `c53196b`로 이미 해소된 스테일 항목**이었다(원인은 `build_places`가 `.jpg` 원본까지 스캔해 없는 Cloudinary id를 만든 것, 83→79 참조). 목록에서 제거함. "IG 토큰 만료 추정"도 08-12 재인증(2026-11-10까지)으로 해소 → 제거.
