@@ -2,7 +2,7 @@
 
 **작성 2026-08-14.** 대상: 공개 사이트(Cloudflare Pages) 7개 엔드포인트.
 관측 파이프라인: `scripts/healthcheck.mjs` → `scripts/push-metrics.mjs` → Grafana Cloud Prometheus, GitHub Actions 시간당 실행.
-알림 정본 `monitoring/grafana-alerts.json`(적용 = `node scripts/provision-alerts.mjs --apply`).
+알림 정본 `terraform/alerts.tf`(적용 = `terraform apply`, 2026-08-15부터 — `terraform/README.md`). `monitoring/grafana-alerts.json`은 임계 근거(`_thresholds`)를 담은 참고용 사본이다.
 
 ---
 
@@ -41,7 +41,7 @@
 |---|---|---|
 | `ngk-http-down` | `ngk_http_up < 1` | 에러 버짓을 **소모하는** 사건 |
 | `ngk-http-slow` | 응답 > 1s | 버짓 소모 아님(경고) |
-| `ngk-healthcheck-stale` | 마지막 수집 후 > 6h | **측정 불능** — 버짓 판정 자체가 무효화됨 |
+| `ngk-healthcheck-stale` | 마지막 수집 후 > 6h (🔴 지금 간격에서는 오탐을 낸다, §5) | **측정 불능** — 버짓 판정 자체가 무효화됨 |
 | `ngk-ssl-expiry` / `ngk-ig-data-access` | 만료 임박 | 예방(사건 전) |
 
 **설계 원칙 — "서비스가 죽은 것"과 "지표가 안 오는 것"을 다른 룰로 나눴다.**
@@ -60,11 +60,28 @@
 
 **지금은 고치지 않는다.** 개인 서비스에 필요한 해상도가 아니고, 무료 러너의 지연을 지표로 관측하고 있다는 사실 자체가 파이프라인이 정직하게 작동한다는 증거다. 필요해지면 위 두 경로가 있다.
 
+### 2026-10-12 재측정 — 위 숫자는 더 이상 맞지 않는다
+
+크론은 그대로 시간당인데 GitHub이 실제로 돌린 횟수가 줄었다(`gh run list --workflow healthcheck.yml` 647건).
+
+| 주 | 하루 평균 실행 | 6h 초과 간격 | 최대 간격 |
+|---|---|---|---|
+| 8/17~23 | 23.9 | 0 | 1.9h |
+| 8/31~9/20 | 7.1~7.7 | 1~2 | 7.4h |
+| 9/28~10/4 | 5.7 | 10 | 7.9h |
+| 10/5~11 | **5.3** | 13 | **9.6h** |
+
+- 실행은 대략 01시·05시·06시 반·10시 반·17시 20분(KST)에만 온다. 10:30→17:20, 17:20→01:00 두 구간이 매일 6시간을 넘어 `ngk-healthcheck-stale`이 하루 두 번 울렸다 풀렸다(8/24 이후 38회). 실행 자체는 전부 성공이었다 — 고장이 아니라 임계가 정상 간격 안에 있었다.
+- **조치(10-12)**: 크론 `0 * * * *` → `17 * * * *`.
+- **남은 조치**: 임계 6h → 12h(`terraform/alerts.tf`의 `name`·`params` + `terraform apply`). 최근 6주 최대 간격이 9.6h라 12h면 오탐이 0이 된다. **아직 적용되지 않았다** — 적용하면 §4 표와 `monitoring/grafana-alerts.json`의 `_thresholds`를 같이 고친다.
+- **미확정**: 23:50 KST 일별 요약 크론(`50 14 * * *`, 정각이 아님)도 매일 3.5~7시간 늦게 돈다. 분을 옮기는 것만으로 횟수가 회복된다는 근거는 없다 — 10/15 이후 실행 이력으로 판정하고, 회복되지 않으면 위 3번의 외부 프로브나 외부 트리거(`workflow_dispatch`)로 간다.
+- **읽는 법이 바뀌는 곳**: 위 1번의 "1시간 미만"은 지금 "최대 7~9시간"이다. 수집 결손률은 약 20%가 아니라 약 78%(5.3/24)다.
+
 ## 6. 운영
 
 ```bash
 node scripts/grafana-query.mjs slo          # 24h 가용률·응답 집계
-node scripts/grafana-query.mjs continuity   # 수집 연속성 (기대 24, 실제 19~20)
+node scripts/grafana-query.mjs continuity   # 수집 연속성 (기대 24, 실제 19~20 → 2026-10 실측 5 안팎, §5)
 node scripts/grafana-query.mjs status       # 엔드포인트별 현재 상태
 node scripts/provision-alerts.mjs           # 알림 정본 대비 인스턴스 diff (dry-run)
 ```
