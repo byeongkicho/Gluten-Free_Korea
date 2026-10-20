@@ -36,7 +36,7 @@ Each restaurant links to its full page — address in Korean and English (hand i
 
 ### Monil2 House — Yeonnam, Mapo-gu
 
-**Visited repeatedly — June, July and September 2025, then June and July 2026.** [Monil2 House](/place/monil2-house) is a dedicated GF bakery-and-cafe rather than a sit-down restaurant, but with 237 Pizza closed it is the anchor of this list. It is gluten-free, not merely wheat-free — that is our own conclusion from going back five times over a year, not a certificate, and no kitchen is a guarantee. Ask about 보리 and 맥아 on the day like anywhere else. The bread has real structure; most "GF bread" in Seoul is closer to rice-flour cake. A short walk from Hongik University Station (홍대입구역). (More on GF bakeries in the dedicated [bakeries & cafes guide](/blog/gluten-free-bakeries-cafes-seoul).)
+**Visited repeatedly — June, July and September 2025, then June, July and October 2026.** [Monil2 House](/place/monil2-house) is a dedicated GF bakery-and-cafe rather than a sit-down restaurant, but with 237 Pizza closed it is the anchor of this list. It is gluten-free, not merely wheat-free — that is our own conclusion from going back six times over more than a year, not a certificate, and no kitchen is a guarantee. Ask about 보리 and 맥아 on the day like anywhere else. The bread has real structure; most "GF bread" in Seoul is closer to rice-flour cake. It does lunch, too: in October 2026 we had a basil chicken panini, a bulgogi pizza, churros and a chocolate latte. There are only three or four tables inside, and that lunchtime it was busy. A short walk from Hongik University Station (홍대입구역). (More on GF bakeries in the dedicated [bakeries & cafes guide](/blog/gluten-free-bakeries-cafes-seoul).)
 
 #### 237 Pizza is closed — and this is what it cost us
 
@@ -113,4 +113,4 @@ None of these are a guarantee for a diagnosed celiac. Dedicated GF (Tier 1) is a
 
 ---
 
-*Updated October 2026: added our second Cucciolo Seoul visit (lunch, 4 October 2026) — the printed gluten-free pasta note on the menu, what we ordered, and the three questions we didn't ask. Everything else is as published on 8 September 2026.*
+*Updated October 2026: added our second Cucciolo Seoul visit (lunch, 4 October 2026) — the printed gluten-free pasta note on the menu, what we ordered, and the three questions we didn't ask — and our sixth Monil2 House visit (lunch, 19 October 2026). Everything else is as published on 8 September 2026.*

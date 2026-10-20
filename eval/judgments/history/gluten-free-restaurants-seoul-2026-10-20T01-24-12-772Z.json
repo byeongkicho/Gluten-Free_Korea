@@ -1,0 +1,253 @@
+{
+  "schema": 1,
+  "slug": "gluten-free-restaurants-seoul",
+  "source_ref": "working-tree",
+  "content_sha256": "773261b5a94b206d17b40b20a65c0dffb3650bd5ba6aab1b76e2152f81748aec",
+  "judged_at": "2026-10-20T01:26:13.030Z",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "provenance": "claude-cli",
+  "claude_version": "2.1.304 (Claude Code)",
+  "runs": 1,
+  "axes": {
+    "seo_eeat": {
+      "rubric_id": "seo-eeat",
+      "rubric_version": 1,
+      "points": 20,
+      "max_points": 20,
+      "score": 10,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "search_intent",
+          "points": 3,
+          "max": 3,
+          "note": "The opening sentence names all seven restaurants and qualifies which single one is a dedicated kitchen, satisfying the keyword's intent well inside 200 words.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "title_meta",
+          "points": 2,
+          "max": 2,
+          "note": "Rendered title is 54 chars with the keyword, description ~147 chars, and no phrase overlap between them.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "structure",
+          "points": 2,
+          "max": 2,
+          "note": "Headings carry content rather than labels, and a heading-only skim reproduces the argument from tiering through closure impact to honest limits.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "internal_links",
+          "points": 2,
+          "max": 2,
+          "note": "Twelve internal links — place pages plus label-reading, phrases, bakeries and pillar guides — each sit where a reader needs the next step.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "faq_alignment",
+          "points": 2,
+          "max": 2,
+          "note": "All three FAQ answers map to body passages, including the four-with-month / one-undated visit accounting, and each stands alone as a snippet.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "experience",
+          "points": 3,
+          "max": 3,
+          "note": "Dated repeat visits, named dishes, counted tables, a photographed certification mark, an HTTP 500 checked on a stated day, and an explicit list of questions they failed to ask.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "expertise",
+          "points": 2,
+          "max": 2,
+          "note": "Named products (Caputo Fioreglut, GFCO), the exact printed Korean menu wording, a 24-place denominator and a cited 총리령 number make claims checkable despite one unglossed term.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "authoritativeness",
+          "points": 2,
+          "max": 2,
+          "note": "Primary sources carry both links and dates — 총리령 제2004호 with its 1 January 2026 force date, a blogger review dated 3 September 2026, and the dead site logged with its check date.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "trust",
+          "points": 2,
+          "max": 2,
+          "note": "States what the method cannot establish (\"not a certificate\", \"reading a menu is not checking an ingredient\", \"None of these are a guarantee\") and carries no undisclosed commercial links.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "expertise",
+          "severity": "minor",
+          "quote": "so a shop can be genuinely wheat-free and still use barley, malt or 보리차 without being required to declare it",
+          "why": "보리차 appears in bare Hangul with no gloss or romanisation, so a non-Korean-reading traveler cannot tell it means barley tea — the most practical trap in the sentence is its least legible term.",
+          "fix": "Gloss it inline as the piece does elsewhere: \"barley, malt, or 보리차 (boricha, barley tea — often the free water on the table)\", and the same for 보리 and 맥아."
+        },
+        {
+          "criterion": "title_meta",
+          "severity": "minor",
+          "quote": "Five we ate at, two we did not — each entry says which, and when. One dedicated kitchen, rice-flour fried chicken, and what to ask before you order.",
+          "why": "The description contains neither \"Seoul\" nor \"gluten-free\", so no target-keyword token is bolded in the SERP snippet — a CTR cost even though length and non-duplication rules are met.",
+          "fix": "Fit one keyword token in under 155 chars, e.g. \"Five of these seven Seoul gluten-free restaurants we ate at; two we did not — each entry says which, and when. One dedicated kitchen, and what to ask.\""
+        },
+        {
+          "criterion": "faq_alignment",
+          "severity": "minor",
+          "quote": "The shop that used to hold this answer, 237 Pizza in Hannam, has been closed since summer 2026.",
+          "why": "As a standalone rich result this reads as settled, while the body is more careful (\"We have not reached anyone who can say whether it is coming back\"); the snippet drops that hedge.",
+          "fix": "Append the hedge to the FAQ answer: \"...closed since summer 2026; reopening unconfirmed as of October 2026.\""
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 65971,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 9534,
+        "output_tokens_details": {
+          "thinking_tokens": 4343
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 65971,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 9534,
+            "cache_read_input_tokens": 0,
+            "cache_creation_input_tokens": 65971,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 65971
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      }
+    },
+    "accuracy_safety": {
+      "rubric_id": "accuracy-safety",
+      "rubric_version": 1,
+      "points": 19,
+      "max_points": 20,
+      "score": 9.5,
+      "pass_at": 9.5,
+      "passed": true,
+      "criteria": [
+        {
+          "id": "claim_verifiability",
+          "points": 3,
+          "max": 4,
+          "note": "Nearly every claim is either sourced (law link, blogger post, HTTP check with date) or explicitly flagged as the authors' own visit/conclusion; one permissive generalization about fried chicken is asserted without any stated basis.",
+          "evidence_quote": "Plain fried chicken is typically GF, but the sauced versions (soy, gochujang, teriyaki-style) usually are not."
+        },
+        {
+          "id": "no_fabrication",
+          "points": 3,
+          "max": 3,
+          "note": "Visit counts, the 24/7/5+1 place arithmetic, the FAQ-to-body visit tallies, and all dates reconcile with each other, and named specifics (GFCO, Caputo Fioreglut, 별표 2, district assignments) are checkable.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "method_transparency",
+          "points": 3,
+          "max": 3,
+          "note": "Every entry opens with the provenance of its claim, and the piece states outright what each method cannot establish — menu-reading is not ingredient-checking, repeat visits are not a certificate, and it lists the three questions it failed to ask at Cucciolo.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "celiac_safety_framing",
+          "points": 4,
+          "max": 4,
+          "note": "No absolute guarantee survives unhedged, shared fryers and prep surfaces are raised at each relevant entry, and celiac readers are explicitly told to apply stricter standards than the NCGS baseline the list was built on.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "source_recency",
+          "points": 2,
+          "max": 2,
+          "note": "Checks carry dates (HTTP 500 verified 8 September 2026, blogger 3 September 2026, menus checked September 2026), the law is given with its in-force date, and the October update states plainly that everything else still dates to 8 September.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "korean_accuracy",
+          "points": 2,
+          "max": 2,
+          "note": "The load-bearing fact is right and sourced — mandatory allergen labelling covers wheat but not barley or rye — and Korean terms, district assignments, and the 쌀통닭 gloss are all correct.",
+          "evidence_quote": ""
+        },
+        {
+          "id": "reader_verification",
+          "points": 2,
+          "max": 2,
+          "note": "The reader gets a direct 별표 2 link, the closed shop's URL and a dated third-party post, named Korean words to ask about, linked place pages with Korean addresses and phrases, and a contact channel to correct the piece.",
+          "evidence_quote": ""
+        }
+      ],
+      "findings": [
+        {
+          "criterion": "claim_verifiability",
+          "severity": "minor",
+          "quote": "Plain fried chicken is typically GF, but the sauced versions (soy, gochujang, teriyaki-style) usually are not.",
+          "why": "This is the one generalization in the piece that points a reader toward eating rather than toward caution, and no basis is given for it — not a visit, not a shop statement, not a source. Korean fried chicken is frequently brined or dusted before battering, so 'plain' is not self-evidently wheat-free even at a rice-batter franchise. The caveats that follow cover shared oil and branch variation, not what goes into the plain bird itself.",
+          "fix": "Attribute it or narrow it: say whose claim it is (e.g. 'the franchise describes its plain chicken as rice-only') and extend the ask-list to the marinade and seasoning dust, not just the fryer oil — e.g. 'ask what the chicken is marinated or dusted with before the rice batter goes on.'"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 65930,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 7093,
+        "output_tokens_details": {
+          "thinking_tokens": 5172
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 65930,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 7093,
+            "cache_read_input_tokens": 0,
+            "cache_creation_input_tokens": 65930,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 65930
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      }
+    }
+  },
+  "spread": null,
+  "gate": {
+    "passed": true,
+    "reason": null
+  }
+}
