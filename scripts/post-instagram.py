@@ -66,7 +66,17 @@ def main():
     parser.add_argument("--skip", default="",
                         help="캐러셀에서 뺄 이미지 번호(쉼표). cover로 쓴 원본이나 "
                              "음식이 아닌 컷을 제외할 때. 예: --skip 04,05")
+    parser.add_argument("--slides", default="",
+                        help="cover 뒤에 올 이미지를 직접 지정(places/<slug>/ 아래 이름, 쉼표, 순서대로). "
+                             "주면 places.json 의 images 와 --skip 대신 쓴다. 예: --slides panini-2026-10,churros-2026-10")
+    parser.add_argument("--ratio", choices=["1:1", "4:5"], default="1:1",
+                        help="캐러셀 비율. 4:5 는 cover 도 1080x1350 이어야 한다(generate-cover-v2.mjs). "
+                             "API 는 4:5 보다 긴 세로를 받지 않는다")
     args = parser.parse_args()
+    h = 1350 if args.ratio == "4:5" else 1080
+    # 4:5 로 자를 때는 가로 사진이 많아 가운데 고정 크롭이 음식을 자른다 → g_auto.
+    # f_jpg: API 문서의 형식은 JPEG 다(webp 원본이 그대로 나가도 지금까지는 받아 줬다).
+    fill = f"c_fill,g_auto,w_1080,h_{h},f_jpg" if args.ratio == "4:5" else "c_fill,w_1080,h_1080"
 
     # Load places.json to get image count
     root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -92,10 +102,10 @@ def main():
     # Add cache-busting timestamp to cover URL to avoid CDN serving stale images
     import time as _time
     cache_bust = int(_time.time())
-    cover_url = f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/c_fill,w_1080,h_1080,q_90/v{cache_bust}/places/{args.slug}/cover"
+    cover_url = f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/{fill},q_90/v{cache_bust}/places/{args.slug}/cover"
 
     # cover는 "있으면 좋은 것"이 아니라 게시 준비가 끝났다는 표시다. 수동으로
-    # 고른 정사각 대표 이미지이고, 자동 생성 경로가 없다. 게시된 9곳 중 8곳이
+    # 고른 정사각(--ratio 4:5 면 1080x1350) 대표 이미지이고, 자동 생성 경로가 없다. 게시된 9곳 중 8곳이
     # 보유, 미게시 15곳은 전무 — 즉 cover 유무가 큐레이션 여부를 가른다.
     #
     # 2026-08-15 사고: 이 자리에서 cover를 그냥 건너뛰도록 고쳤더니, 큐레이션되지
@@ -113,6 +123,10 @@ def main():
 
     urls = [cover_url]
     skip = {s.strip() for s in args.skip.split(",") if s.strip()}
+    slides = [s.strip() for s in args.slides.split(",") if s.strip()]
+    if slides:
+        images = [f"places/{args.slug}/{s}" for s in slides]
+        skip = set()
     for img in images:
         if skip and img.rsplit("/", 1)[-1] in skip:
             print(f"  제외: {img}")
@@ -120,10 +134,12 @@ def main():
         # Menu images: pad, never crop or stretch. A bare w_1080,h_1080 scales
         # to both sides (distorts) — fine only for the old pre-padded squares.
         # c_pad keeps those unchanged and letterboxes a portrait menu photo.
+        # v{cache_bust}: cover 와 같은 이유. 같은 이름으로 다시 올린 사진은 CDN 이 옛 변환본을
+        # 계속 준다(2026-10-20 실측: 덮어쓰기 + invalidate 뒤에도 크기가 그대로였다).
         if "menu" in img:
-            urls.append(f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/c_pad,b_white,w_1080,h_1080,q_90/{img}")
+            urls.append(f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/c_pad,b_white,w_1080,h_{h},q_90/v{cache_bust}/{img}")
         else:
-            urls.append(f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/c_fill,w_1080,h_1080,q_90/{img}")
+            urls.append(f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/{fill},q_90/v{cache_bust}/{img}")
 
     print(f"Place: {place['name']} ({args.slug})")
     print(f"Images: {len(urls)}")
