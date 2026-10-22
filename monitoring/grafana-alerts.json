@@ -3,7 +3,7 @@
   "_thresholds": {
     "why": "임계값은 실측 기준선에서 유도했다 (2026-08-14 24h 집계: 가용률 100%, 응답 avg 126ms / max 558ms, 실패 0).",
     "latency_seconds": "1.0 — 관측 최대(558ms)의 약 2배. 정상 변동은 통과시키고 실제 저하만 잡는다.",
-    "staleness_seconds": "21600(6h) — 시간당 수집이지만 무료 GitHub 러너 스케줄 지연으로 24h에 20/24 샘플이 관측된다. 3h면 오탐이 나고, 6h 무소식은 지연이 아니라 파이프라인 고장으로 본다.",
+    "staleness_seconds": "43200(12h) — 크론은 시간당이지만 GitHub 스케줄 지연으로 실제 실행은 하루 5~8회, 최대 간격 9.9h(2026-10 실측). 6h(2026-08-14 기준선 20/24 샘플에서 정한 값)는 정상 간격 안에 들어가 하루 두 번 오탐을 냈다(docs/SLO.md §5). 12h 무소식은 지연이 아니라 파이프라인 고장으로 본다.",
     "nodata_policy": "가용성·지연은 noDataState=OK — 수집 결손을 서비스 장애로 오인하지 않는다. 그 결손 자체는 staleness 룰이 noDataState=Alerting으로 잡는다. 즉 '서비스가 죽은 것'과 '지표가 안 오는 것'을 다른 룰로 분리했다.",
     "dormant_days": "30 — 게시 만료가 아니라 운영 정지를 잡는 축. healthcheck는 14일에 경고(주 1회 리듬 2회 결손), 알림은 30일로 더 보수적. noDataState=OK인 이유: 지표가 안 오는 것은 토큰·API 룰이 이미 잡으므로 중복 발화를 피한다.",
     "why_operations_group": "ngk-expiry는 시간이 흐르면 자동으로 나빠지는 것(SSL·데이터접근), ngk-operations는 사람이 하지 않아서 나빠지는 것. 2026-08-15 실측으로 후자가 무감시였음이 드러났다 — 파이프라인이 멀쩡한 채 115일 침묵."
@@ -182,7 +182,7 @@
       "orgID": 1,
       "folderUID": "ngk-monitoring",
       "ruleGroup": "ngk-health",
-      "title": "Healthcheck pipeline stale (>6h)",
+      "title": "Healthcheck pipeline stale (>12h)",
       "condition": "C",
       "data": [
         {
@@ -232,7 +232,7 @@
               {
                 "evaluator": {
                   "params": [
-                    21600
+                    43200
                   ],
                   "type": "gt"
                 }
@@ -251,7 +251,7 @@
       "for": "0s",
       "keep_firing_for": "0s",
       "annotations": {
-        "summary": "헬스체크 지표가 {{ $values.B }}초째 갱신되지 않았다 (임계 6h). 사이트 장애가 아니라 관측 파이프라인 고장 — GitHub Actions healthcheck 워크플로와 GRAFANA_PUSH_* 시크릿을 확인할 것. 이 룰만 noDataState=Alerting인 이유: '데이터 없음'이 바로 이 룰이 감시하는 대상이다."
+        "summary": "헬스체크 지표가 {{ $values.B }}초째 갱신되지 않았다 (임계 12h). 사이트 장애가 아니라 관측 파이프라인 고장 — GitHub Actions healthcheck 워크플로와 GRAFANA_PUSH_* 시크릿을 확인할 것. 이 룰만 noDataState=Alerting인 이유: '데이터 없음'이 바로 이 룰이 감시하는 대상이다."
       },
       "labels": {
         "service": "noglutenkorea",

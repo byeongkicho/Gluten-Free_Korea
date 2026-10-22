@@ -107,7 +107,7 @@ resource "grafana_rule_group" "health" {
   }
   rule {
     annotations = {
-      summary = "헬스체크 지표가 {{ $values.B }}초째 갱신되지 않았다 (임계 6h). 사이트 장애가 아니라 관측 파이프라인 고장 — GitHub Actions healthcheck 워크플로와 GRAFANA_PUSH_* 시크릿을 확인할 것. 이 룰만 noDataState=Alerting인 이유: '데이터 없음'이 바로 이 룰이 감시하는 대상이다."
+      summary = "헬스체크 지표가 {{ $values.B }}초째 갱신되지 않았다 (임계 12h). 사이트 장애가 아니라 관측 파이프라인 고장 — GitHub Actions healthcheck 워크플로와 GRAFANA_PUSH_* 시크릿을 확인할 것. 이 룰만 noDataState=Alerting인 이유: '데이터 없음'이 바로 이 룰이 감시하는 대상이다."
     }
     condition       = "C"
     exec_err_state  = "Alerting"
@@ -120,7 +120,7 @@ resource "grafana_rule_group" "health" {
       severity = "critical"
     }
     missing_series_evals_to_resolve = 0
-    name                            = "Healthcheck pipeline stale (>6h)"
+    name                            = "Healthcheck pipeline stale (>12h)"
     no_data_state                   = "Alerting"
     uid                             = "ngk-healthcheck-stale"
     data {
@@ -145,7 +145,7 @@ resource "grafana_rule_group" "health" {
     }
     data {
       datasource_uid = "__expr__"
-      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[21600],\"type\":\"gt\"}}],\"expression\":\"B\",\"refId\":\"C\",\"type\":\"threshold\"}"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[43200],\"type\":\"gt\"}}],\"expression\":\"B\",\"refId\":\"C\",\"type\":\"threshold\"}"
       query_type     = null
       ref_id         = "C"
       relative_time_range {

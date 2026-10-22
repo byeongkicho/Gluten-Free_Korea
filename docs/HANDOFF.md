@@ -11,11 +11,16 @@
 - **Ki 판단 대기:** ①장소 `note`/`note_ko` 의 "Celiac-friendly / 셀리악 친화"가 details 의 "운영자 설명" 헷지보다 강하다 ②`content/blog/celiac-travel-korea-guide.md:131` 한국어 상호 「모닐2하우스」 → 네이버 등록명 「모닐이네하우스」(글 수정 = 재판정) ③계정 개선(주 1회 · 릴스 · 가이드형 캐러셀) — 10-20 평가 대화.
 - 원본: `public/images/NoGlutenSeoul_Assets/모닐이네/2026-10/`(gitignore · 하위 폴더라 optimize-images 번호가 안 밀린다) · IG 슬라이드·카드 문구·옛 cover = `data/instagram-covers/`(gitignore). 사진첩 DB 조회는 Ki 가 명시적으로 요청했을 때만 권한 검사를 통과했다(10-19 거부 · 10-20 통과).
 
-## ▶ Grafana 「Healthcheck pipeline stale」 오탐 (2026-10-12 · 홈 경유 Ki 지시) — 🔴 임계 변경 미적용
+## ▶ Grafana 「Healthcheck pipeline stale」 오탐 (2026-10-12 · 홈 경유 Ki 지시) — ✅ 10-22 임계 12h 적용
+
+- ✅ **10-22 16:58 임계 6h → 12h 적용.** Ki 승인(AskUserQuestion 「전부 진행」 — 파일 7곳·plan·apply 를 이름으로 댐) → `alerts.tf` 3곳 + `grafana-alerts.json` 4곳 → `plan` = `grafana_rule_group.health` 1건(summary·name·params만) → `apply` → 재`plan` No changes · API GET 실물 = title `(>12h)` · params `[43200]` · noData/execErr `Alerting` 유지. 저장한 plan 파일(토큰 평문 포함)은 적용 직후 삭제.
+  - 적용 전 실측(10-22): 크론 이동 뒤 61회 · 6h 초과 6회 · 12h 초과 0회 · 최대 9.9h. Grafana 알림 메일은 10/17 이후 10/19 하루뿐(FIRING 2·RESOLVED 2) — 「하루 약 4통」은 10/12 기준이었고 10/20 이후 간격은 최대 5.7h.
+  - 홈 `local.gmail.grafana-sort` 는 발신자로 거르고 제목은 FIRING↔RESOLVED 짝 맞추기에만 쓴다 → 제목 `(>12h)` 변경에 안 깨진다(적용 시점 열린 FIRING 없음).
+  - **대가:** 파이프라인이 진짜로 멈춰도 12h 뒤에야 안다. 하루 24회 해상도 되찾기(외부 프로브·`workflow_dispatch`)는 **10-22 Ki 결정: 지금은 안 한다**(SLO.md §5). 10/23 이후 stale 메일이 0인지 보면 효과 판정.
 
 - **원인:** 크론은 시간당인데 GitHub 실제 실행이 하루 **5.3회**(10/5~11 · 8/17 주 23.9회에서 감소). 매일 두 구간(10:30→17:20, 17:20→01:00 KST)이 6시간을 넘는다. 실행은 전부 성공 — 장애 아님. 표·수치 = `docs/SLO.md` §5 「2026-10-12 재측정」.
 - ✅ **크론 `0 * * * *` → `17 * * * *`** (`7e21de9`). ⏳ **10/15 이후 판정:** `gh run list --workflow healthcheck.yml --limit 200 --json createdAt` 로 하루 실행 횟수가 회복됐나. 정각이 아닌 `50 14` 크론도 3.5~7시간 늦게 돌므로 **회복 안 될 수 있다** → 그때는 외부 트리거(`workflow_dispatch`).
-- 🔴 **임계 6h → 12h 는 미적용.** Ki 승인(10-12 09:34 「진행해」)은 받았으나 `terraform/alerts.tf` 의 `name`·`params` 수정이 자동 권한 검사(`Modify Shared Resources`)에 거부됐다. 우회하지 않고 되돌림. **남은 일:** `alerts.tf` 3곳(`name` → `(>12h)` · `params` `[21600]` → `[43200]` · summary `임계 12h`) + `monitoring/grafana-alerts.json` 4곳(`_thresholds.staleness_seconds`·title·params·summary) → `cd terraform && TF_VAR_grafana_auth=<.env.local GRAFANA_PROVISION_TOKEN> terraform plan`(변경이 `grafana_rule_group.health` 1건인지) → `apply` → `SLO.md` §4 표·§5 「남은 조치」 고치기.
+- ~~🔴 **임계 6h → 12h 는 미적용.**~~ → 10-22 적용(위). 경위: Ki 승인(10-12 09:34 「진행해」)은 받았으나 `terraform/alerts.tf` 의 `name`·`params` 수정이 자동 권한 검사(`Modify Shared Resources`)에 거부됐다. 우회하지 않고 되돌림. **남은 일:** `alerts.tf` 3곳(`name` → `(>12h)` · `params` `[21600]` → `[43200]` · summary `임계 12h`) + `monitoring/grafana-alerts.json` 4곳(`_thresholds.staleness_seconds`·title·params·summary) → `cd terraform && TF_VAR_grafana_auth=<.env.local GRAFANA_PROVISION_TOKEN> terraform plan`(변경이 `grafana_rule_group.health` 1건인지) → `apply` → `SLO.md` §4 표·§5 「남은 조치」 고치기.
 - **10-13 22:13 중간값**(`gh run list --limit 40`): 크론 이동 뒤 실행 10/12 18:14 · 10/13 04:06·07:15·10:22·18:26 — 하루 횟수 회복 없음. 간격 9h50m·9h52m 로 종전 최대 9.6h 를 넘었다 → 12h 임계의 여유는 약 2시간. 정식 판정은 10/15 이후. 이 대화 재개 = `claude --resume 5a320ebd-2c59-4b49-a360-38fde25f86e7`(10-13 macOS 업데이트 재부팅 전 저장).
 - **10-19 판정(회복 안 됨):** `gh run list --limit 120` — 크론 이동 뒤 하루 4~8회(10/13~18 평균 6.2 · 이동 전 5.3). 10/13 이후 6h 초과 간격 5회 · 12h 초과 0회 · 최대 9.9h · 실패 1회(원인 미확인). → 분 이동으로는 안 된다. 알림을 멈추는 길은 **임계 12h 적용(Ki 몫 — 권한)**, 수집 해상도를 되찾는 길은 외부 트리거/프로브(Ki 결정).
 - **실물 확인(읽기 전용 GET, 10-12):** 규칙 6개 · stale 규칙 = 임계 21600 · `for` 0s · 평가 300s. **Terraform 은 5개만 관리** — `ngk-ig-dormant`(그룹 `ngk-operations`)는 `grafana-alerts.json` 에만 있다(`631436e`). 알림 정책은 루트 하나 · 반복 간격 미설정(기본 4시간) → 8/15~18 dormant 메일이 4시간마다 온 이유. 게시가 없으면 11월 초 재발.
@@ -115,9 +120,9 @@
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-10-20 11:20
+- **마지막 업데이트:** 2026-10-22 17:00
 - **작업자:** Claude Code
-- **마지막 커밋:** `3bf7ea0` ig: 4:5 캐러셀 · 커버 v2 템플릿(훅 + 배지·상호) · 슬라이드 직접 지정
+- **마지막 커밋:** `562001d` monitoring: healthcheck stale 임계 6h → 12h (terraform apply)
 - **브랜치:** main
 - **CI:** 🔴 **Harness Eval 9-07부터 연속 실패**(`content-001` — 상단 9-28 참조) · Deploy 🟢. ~~🟢 GitHub Actions 전원 success(`89cefc4`)~~ = 8-25 기록. ⚠️ 단 **로컬 `eval-runner`는 7/8** — `harness-001` freshness가 선재 이슈로 빨갛고, **CI는 임계값 5.0 회귀 판정이라 이걸 잡지 않는다**. 이전 기록 8/8 — content-001 포함 전원 녹색 (5편 PASS). baseline 갱신됨(`content-001,1,1`), 이제부터 회귀 감지가 실제로 작동한다
 - **✅ 이미지 79/79 resolve** (`node scripts/check-images.mjs live`, 08-20 확인) — "알려진 이슈"에 남아 있던 **cafe-pepper 404 4건은 08-07 `c53196b`로 이미 해소된 스테일 항목**이었다(원인은 `build_places`가 `.jpg` 원본까지 스캔해 없는 Cloudinary id를 만든 것, 83→79 참조). 목록에서 제거함. "IG 토큰 만료 추정"도 08-12 재인증(2026-11-10까지)으로 해소 → 제거.
