@@ -11,12 +11,14 @@
 - **Ki 판단 대기:** ①장소 `note`/`note_ko` 의 "Celiac-friendly / 셀리악 친화"가 details 의 "운영자 설명" 헷지보다 강하다 ②`content/blog/celiac-travel-korea-guide.md:131` 한국어 상호 「모닐2하우스」 → 네이버 등록명 「모닐이네하우스」(글 수정 = 재판정) ③계정 개선(주 1회 · 릴스 · 가이드형 캐러셀) — 10-20 평가 대화.
 - 원본: `public/images/NoGlutenSeoul_Assets/모닐이네/2026-10/`(gitignore · 하위 폴더라 optimize-images 번호가 안 밀린다) · IG 슬라이드·카드 문구·옛 cover = `data/instagram-covers/`(gitignore). 사진첩 DB 조회는 Ki 가 명시적으로 요청했을 때만 권한 검사를 통과했다(10-19 거부 · 10-20 통과).
 
-## ▶ Grafana 「Healthcheck pipeline stale」 오탐 (2026-10-12 · 홈 경유 Ki 지시) — ✅ 10-22 임계 12h 적용
+## ▶ Grafana 「Healthcheck pipeline stale」 오탐 (2026-10-12 · 홈 경유 Ki 지시) — ✅ 10-22 임계 12h 적용 · ✅ 10-27 효과 확인 → 닫힘
+
+- ✅ **10-27 효과 확인 → 닫힘.** Grafana 알림 메일(발신 `grafana@bronzedeck1580.grafana.net` · 휴지통·스팸 포함 검색) 마지막 = 10/20 06:09 KST(응답시간 RESOLVED), 그 뒤 0통 — 같은 검색이 10/19 알림 4통은 잡는다. 적용 뒤(10/22 17시~10/27 08:54 KST) 헬스체크 32회 · 실패 0 · 최대 간격 7.0h · 6h 초과 2회(옛 임계였으면 2번 울렸을 것) · 12h 초과 0회.
 
 - ✅ **10-22 16:58 임계 6h → 12h 적용.** Ki 승인(AskUserQuestion 「전부 진행」 — 파일 7곳·plan·apply 를 이름으로 댐) → `alerts.tf` 3곳 + `grafana-alerts.json` 4곳 → `plan` = `grafana_rule_group.health` 1건(summary·name·params만) → `apply` → 재`plan` No changes · API GET 실물 = title `(>12h)` · params `[43200]` · noData/execErr `Alerting` 유지. 저장한 plan 파일(토큰 평문 포함)은 적용 직후 삭제.
   - 적용 전 실측(10-22): 크론 이동 뒤 61회 · 6h 초과 6회 · 12h 초과 0회 · 최대 9.9h. Grafana 알림 메일은 10/17 이후 10/19 하루뿐(FIRING 2·RESOLVED 2) — 「하루 약 4통」은 10/12 기준이었고 10/20 이후 간격은 최대 5.7h.
   - 홈 `local.gmail.grafana-sort` 는 발신자로 거르고 제목은 FIRING↔RESOLVED 짝 맞추기에만 쓴다 → 제목 `(>12h)` 변경에 안 깨진다(적용 시점 열린 FIRING 없음).
-  - **대가:** 파이프라인이 진짜로 멈춰도 12h 뒤에야 안다. 하루 24회 해상도 되찾기(외부 프로브·`workflow_dispatch`)는 **10-22 Ki 결정: 지금은 안 한다**(SLO.md §5). 10/23 이후 stale 메일이 0인지 보면 효과 판정.
+  - **대가:** 파이프라인이 진짜로 멈춰도 12h 뒤에야 안다. 하루 24회 해상도 되찾기(외부 프로브·`workflow_dispatch`)는 **10-22 Ki 결정: 지금은 안 한다**(SLO.md §5). 효과 판정 = 10-27(위).
 
 - **원인:** 크론은 시간당인데 GitHub 실제 실행이 하루 **5.3회**(10/5~11 · 8/17 주 23.9회에서 감소). 매일 두 구간(10:30→17:20, 17:20→01:00 KST)이 6시간을 넘는다. 실행은 전부 성공 — 장애 아님. 표·수치 = `docs/SLO.md` §5 「2026-10-12 재측정」.
 - ✅ **크론 `0 * * * *` → `17 * * * *`** (`7e21de9`). ⏳ **10/15 이후 판정:** `gh run list --workflow healthcheck.yml --limit 200 --json createdAt` 로 하루 실행 횟수가 회복됐나. 정각이 아닌 `50 14` 크론도 3.5~7시간 늦게 돌므로 **회복 안 될 수 있다** → 그때는 외부 트리거(`workflow_dispatch`).
@@ -120,11 +122,11 @@
 
 ## 현재 상태
 
-- **마지막 업데이트:** 2026-10-22 17:00
+- **마지막 업데이트:** 2026-10-27 13:15
 - **작업자:** Claude Code
-- **마지막 커밋:** `562001d` monitoring: healthcheck stale 임계 6h → 12h (terraform apply)
+- **마지막 커밋:** `1476152` monitoring: healthcheck stale 임계 6h → 12h (terraform apply)
 - **브랜치:** main
-- **CI:** 🔴 **Harness Eval 9-07부터 연속 실패**(`content-001` — 상단 9-28 참조) · Deploy 🟢. ~~🟢 GitHub Actions 전원 success(`89cefc4`)~~ = 8-25 기록. ⚠️ 단 **로컬 `eval-runner`는 7/8** — `harness-001` freshness가 선재 이슈로 빨갛고, **CI는 임계값 5.0 회귀 판정이라 이걸 잡지 않는다**. 이전 기록 8/8 — content-001 포함 전원 녹색 (5편 PASS). baseline 갱신됨(`content-001,1,1`), 이제부터 회귀 감지가 실제로 작동한다
+- **CI:** 🟢 **Harness Eval 9-28부터 8연속 success**(마지막 10-22 `1476152` · 9-07~9-27 실패는 9-28 `gate-overrides` 도입으로 복구 — 상단 9-28) · Deploy 🟢(마지막 10-22) — 10-27 `gh run list` 확인. ⚠️ 단 **로컬 `eval-runner`는 7/8** — `harness-001` freshness가 선재 이슈로 빨갛고, **CI는 임계값 5.0 회귀 판정이라 이걸 잡지 않는다**. 이전 기록 8/8 — content-001 포함 전원 녹색 (5편 PASS). baseline 갱신됨(`content-001,1,1`), 이제부터 회귀 감지가 실제로 작동한다
 - **✅ 이미지 79/79 resolve** (`node scripts/check-images.mjs live`, 08-20 확인) — "알려진 이슈"에 남아 있던 **cafe-pepper 404 4건은 08-07 `c53196b`로 이미 해소된 스테일 항목**이었다(원인은 `build_places`가 `.jpg` 원본까지 스캔해 없는 Cloudinary id를 만든 것, 83→79 참조). 목록에서 제거함. "IG 토큰 만료 추정"도 08-12 재인증(2026-11-10까지)으로 해소 → 제거.
 - **🔧 post-commit 훅이 두 층에서 고장나 있었다 (08-20 수정)** — ①**명령 매칭**: `grep -q "^git commit"`이 **가장 흔한 `git add … && git commit …` 형태를 통째로 놓쳤다.** 08-07 이후 훅은 사실상 거의 돌지 않았다 → 부분 일치로 완화(오탐 최대 피해 = 필드 세 줄 갱신). ②**앵커 결번**: 세 필드 중 `- **마지막 커밋:**` 라인이 문서에 아예 없어 갱신 대상이 없었다 → 라인 신설. **08-07에 "조용히 exit 0 하지 말고 stderr로 알리게" 고친 설계는 제대로 작동했다 — 실패한 건 알림을 읽는 쪽이었고, 그나마도 ①때문에 경고조차 뜨지 않았다.** ⚠️ 이 훅은 커밋 직후 문서를 고치므로 **워킹트리를 항상 한 스텝 dirty하게 남긴다**(다음 커밋에 딸려가는 것이 정상 동작).
 - **⚠️ 빌드 노이즈:** `npm run build`가 `data/places.json`의 `updatedAt` 24건을 빌드 시각으로 갱신한다(내용 무변경). 커밋 전 `git checkout data/places.json`으로 걷어낼 것
