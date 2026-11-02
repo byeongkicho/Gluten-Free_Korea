@@ -138,9 +138,10 @@ echo ""
 echo "To generate a caption:"
 echo "  npm run generate:caption <slug>"
 echo ""
-echo "To upload to Cloudinary + post to Instagram:"
+echo "To upload to Cloudinary + post to Instagram (docs/RUNBOOK.md 「인스타 게시」):"
 echo "  npm run upload:cloudinary"
-echo "  instagram-upload.sh --caption \"\$(cat data/captions/<slug>.txt)\" --images \"url1,url2,...\""
+echo "  python3 scripts/post-instagram.py --slug <slug> --dry-run   # 검사 + 시트(승인 코드는 시트 안에만)"
+echo "  python3 scripts/post-instagram.py --slug <slug> --approve <시트의 코드>   # Ki 승인 뒤"
 
 if [ "$DRY_RUN" = true ]; then
   echo ""
