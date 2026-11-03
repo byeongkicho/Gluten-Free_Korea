@@ -102,6 +102,13 @@ def main():
     parser.add_argument("--allow", default="",
                         help="자동 검사(여백·중복·크기)를 면제할 장 번호(쉼표). 시트를 보고 일부러 둔 장만. "
                              "승인 코드에 함께 묶인다. 예: --allow 3")
+    # 한 매장에 게시물이 둘 이상이면(재방문·재게시) 커버와 캡션이 게시물마다 다르다.
+    # 2026-11-02 재게시: 모닐이네·쿠촐로는 places/<slug>/cover 와 data/captions/<slug>.txt 가 이미 10월 게시물 것이다.
+    parser.add_argument("--cover", default="cover",
+                        help="커버로 쓸 places/<slug>/ 아래 이름. 예: --cover cover-2611-p02")
+    parser.add_argument("--caption", default="",
+                        help="캡션 파일(저장소 기준 경로). 기본 data/captions/<slug>.txt. "
+                             "예: --caption data/instagram-covers/repost-2611/captions/p02.txt")
     args = parser.parse_args()
     h = 1350 if args.ratio == "4:5" else 1080
     # 4:5 로 자를 때는 가로 사진이 많아 가운데 고정 크롭이 음식을 자른다 → g_auto.
@@ -119,7 +126,7 @@ def main():
         return
 
     # Load caption
-    caption_path = os.path.join(root, "data", "captions", f"{args.slug}.txt")
+    caption_path = os.path.join(root, args.caption) if args.caption else os.path.join(root, "data", "captions", f"{args.slug}.txt")
     with open(caption_path) as f:
         caption = f.read().strip()
 
@@ -132,7 +139,7 @@ def main():
     # Add cache-busting timestamp to cover URL to avoid CDN serving stale images
     import time as _time
     cache_bust = int(_time.time())
-    cover_url = f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/{fill},q_90/v{cache_bust}/places/{args.slug}/cover"
+    cover_url = f"https://res.cloudinary.com/{CLOUD_NAME}/image/upload/{fill},q_90/v{cache_bust}/places/{args.slug}/{args.cover}"
 
     # cover는 "있으면 좋은 것"이 아니라 게시 준비가 끝났다는 표시다. 수동으로
     # 고른 정사각(--ratio 4:5 면 1080x1350) 대표 이미지이고, 자동 생성 경로가 없다. 게시된 9곳 중 8곳이
@@ -143,12 +150,12 @@ def main():
     # 세로 배너였고 1080 정사각으로 잘려 나갔다(8월에 2년 전 크리스마스 홍보물).
     # 게시물은 삭제했다. cover가 없으면 건너뛰는 게 아니라 멈춰야 한다.
     if not url_exists(cover_url):
-        print(f"\n중단: places/{args.slug}/cover 가 Cloudinary에 없습니다.")
+        print(f"\n중단: places/{args.slug}/{args.cover} 가 Cloudinary에 없습니다.")
         print("  cover = 수동으로 고른 정사각 대표 이미지 = 게시 준비 완료 표시.")
         print("  이게 없으면 캐러셀 1번이 무엇이 될지 통제되지 않습니다")
         print("  (세로 배너·철 지난 프로모션·메뉴판이 첫 장이 될 수 있음).")
         print(f"\n  해야 할 일: {args.slug}의 대표 사진을 골라 1080x1080으로")
-        print(f"  Cloudinary에 'places/{args.slug}/cover'로 업로드한 뒤 다시 실행하세요.")
+        print(f"  Cloudinary에 'places/{args.slug}/{args.cover}'로 업로드한 뒤 다시 실행하세요.")
         raise SystemExit(1)
 
     urls = [cover_url]
@@ -194,7 +201,9 @@ def main():
     content = hashlib.sha256(json.dumps({"urls": stable, "caption": caption, "allow": allow},
                                         ensure_ascii=False).encode()).hexdigest()
     sha = lambda s: hashlib.sha256(s.encode()).hexdigest()
-    out_dir = os.path.join(tempfile.gettempdir(), "ig-preview", args.slug)
+    # 같은 매장의 다른 게시물 승인 기록을 덮지 않게 커버 이름으로 나눈다
+    out_dir = os.path.join(tempfile.gettempdir(), "ig-preview",
+                           args.slug if args.cover == "cover" else f"{args.slug}--{args.cover}")
     manifest_path = os.path.join(out_dir, "manifest.json")
 
     manifest = None
@@ -249,7 +258,9 @@ def main():
         parts = ["python3", "scripts/post-instagram.py", "--slug", args.slug]
         if args.ratio != "1:1":
             parts += ["--ratio", args.ratio]
-        for flag, val in (("--skip", args.skip), ("--slides", args.slides), ("--allow", args.allow)):
+        cover_arg = args.cover if args.cover != "cover" else ""
+        for flag, val in (("--skip", args.skip), ("--slides", args.slides), ("--allow", args.allow),
+                          ("--cover", cover_arg), ("--caption", args.caption)):
             if val:
                 parts += [flag, val]
         print("  Ki 가 승인하면: " + " ".join(shlex.quote(p) for p in parts) + " --approve <시트의 코드>")
