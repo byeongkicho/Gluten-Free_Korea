@@ -364,7 +364,8 @@
     "slug": "x-ake",
     "type": "Cafe",
     "location": "Gyeonggi, Suwon (Paldal-gu)",
-    "addressEn": "316 Suwoncheon-ro, Paldal-gu, Suwon, Gyeonggi",
+    "address": "경기 수원시 팔달구 권광로196번길 57",
+    "addressEn": "57 Gwongwang-ro 196beon-gil, Paldal-gu, Suwon, Gyeonggi",
     "note": "Dedicated gluten-free cake cafe in Suwon. All cakes are gluten-free.",
     "note_ko": "수원 팔달구의 글루텐프리 케이크 전문 카페. 전 메뉴 글루텐프리.",
     "tags": [
@@ -373,8 +374,8 @@
       "Dessert"
     ],
     "instagram": "https://www.instagram.com/x_.ake/",
-    "lat": 37.2816024,
-    "lng": 127.0185134
+    "lat": 37.2645365,
+    "lng": 127.0366366
   },
   "1812117530": {
     "nameEn": "Benir",
